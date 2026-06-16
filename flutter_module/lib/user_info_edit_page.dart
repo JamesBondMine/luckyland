@@ -25,7 +25,7 @@ class _UserEditInfoPageState extends State<UserEditInfoPage> {
 
   static const List<Map<String, String>> _sections = [
     {
-      'title': '为什么需要进行网络设置？',
+      'title': '为什么需要进行网络设置6？',
       'id': 'flutter_mine_index0',
       'content':
           '可以通过客户端随时随地享受数据服务的存储和管理。服务器归属于私有化部署的经营主体，只有经过经营主体许可的人员才能使用，安全性更高、私密性更强，提供非常好的信息安全服务。',
