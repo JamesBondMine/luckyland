@@ -1960,9 +1960,9 @@
 		18B1535C28A2703E0033CB51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18B1535E28A2703E0033CB51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18B1535F28A2703E0033CB51 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		18B1536528A2703E0033CB51 /* CandyTalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CandyTalkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		18B1536528A2703E0033CB51 /* LuckyLandTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LuckyLandTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B1536928A2703E0033CB51 /* NoaChatKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaChatKitTests.m; sourceTree = "<group>"; };
-		18B1536F28A2703E0033CB51 /* CandyTalkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CandyTalkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		18B1536F28A2703E0033CB51 /* LuckyLandUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LuckyLandUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B1537328A2703E0033CB51 /* NoaChatKitUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaChatKitUITests.m; sourceTree = "<group>"; };
 		18B1537528A2703E0033CB51 /* NoaChatKitUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaChatKitUITestsLaunchTests.m; sourceTree = "<group>"; };
 		18B153DB28A2763A0033CB51 /* NoaChatCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NoaChatCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -4877,8 +4877,8 @@
 			isa = PBXGroup;
 			children = (
 				18B1534A28A2703D0033CB51 /* 咕噜.app */,
-				18B1536528A2703E0033CB51 /* CandyTalkTests.xctest */,
-				18B1536F28A2703E0033CB51 /* CandyTalkUITests.xctest */,
+				18B1536528A2703E0033CB51 /* LuckyLandTests.xctest */,
+				18B1536F28A2703E0033CB51 /* LuckyLandUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -5841,9 +5841,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		18B1534928A2703D0033CB51 /* CandyTalk */ = {
+		18B1534928A2703D0033CB51 /* LuckyLand */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 18B1537928A2703E0033CB51 /* Build configuration list for PBXNativeTarget "CandyTalk" */;
+			buildConfigurationList = 18B1537928A2703E0033CB51 /* Build configuration list for PBXNativeTarget "LuckyLand" */;
 			buildPhases = (
 				566B0FA1A04CD81B344A1659 /* [CP] Check Pods Manifest.lock */,
 				DFFE29821E66C090504A7C38 /* [CP-User] Run Flutter Build flutter_module Script */,
@@ -5861,14 +5861,14 @@
 			);
 			dependencies = (
 			);
-			name = CandyTalk;
+			name = LuckyLand;
 			productName = NoaChatKit;
 			productReference = 18B1534A28A2703D0033CB51 /* 咕噜.app */;
 			productType = "com.apple.product-type.application";
 		};
-		18B1536428A2703E0033CB51 /* CandyTalkTests */ = {
+		18B1536428A2703E0033CB51 /* LuckyLandTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 18B1537C28A2703E0033CB51 /* Build configuration list for PBXNativeTarget "CandyTalkTests" */;
+			buildConfigurationList = 18B1537C28A2703E0033CB51 /* Build configuration list for PBXNativeTarget "LuckyLandTests" */;
 			buildPhases = (
 				18B1536128A2703E0033CB51 /* Sources */,
 				18B1536228A2703E0033CB51 /* Frameworks */,
@@ -5879,14 +5879,14 @@
 			dependencies = (
 				18B1536728A2703E0033CB51 /* PBXTargetDependency */,
 			);
-			name = CandyTalkTests;
+			name = LuckyLandTests;
 			productName = NoaChatKitTests;
-			productReference = 18B1536528A2703E0033CB51 /* CandyTalkTests.xctest */;
+			productReference = 18B1536528A2703E0033CB51 /* LuckyLandTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		18B1536E28A2703E0033CB51 /* CandyTalkUITests */ = {
+		18B1536E28A2703E0033CB51 /* LuckyLandUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 18B1537F28A2703E0033CB51 /* Build configuration list for PBXNativeTarget "CandyTalkUITests" */;
+			buildConfigurationList = 18B1537F28A2703E0033CB51 /* Build configuration list for PBXNativeTarget "LuckyLandUITests" */;
 			buildPhases = (
 				18B1536B28A2703E0033CB51 /* Sources */,
 				18B1536C28A2703E0033CB51 /* Frameworks */,
@@ -5897,9 +5897,9 @@
 			dependencies = (
 				18B1537128A2703E0033CB51 /* PBXTargetDependency */,
 			);
-			name = CandyTalkUITests;
+			name = LuckyLandUITests;
 			productName = NoaChatKitUITests;
-			productReference = 18B1536F28A2703E0033CB51 /* CandyTalkUITests.xctest */;
+			productReference = 18B1536F28A2703E0033CB51 /* LuckyLandUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -5925,7 +5925,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 18B1534528A2703D0033CB51 /* Build configuration list for PBXProject "CandyTalk" */;
+			buildConfigurationList = 18B1534528A2703D0033CB51 /* Build configuration list for PBXProject "LuckyLand" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -5955,9 +5955,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				18B1534928A2703D0033CB51 /* CandyTalk */,
-				18B1536428A2703E0033CB51 /* CandyTalkTests */,
-				18B1536E28A2703E0033CB51 /* CandyTalkUITests */,
+				18B1534928A2703D0033CB51 /* LuckyLand */,
+				18B1536428A2703E0033CB51 /* LuckyLandTests */,
+				18B1536E28A2703E0033CB51 /* LuckyLandUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -6813,12 +6813,12 @@
 /* Begin PBXTargetDependency section */
 		18B1536728A2703E0033CB51 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 18B1534928A2703D0033CB51 /* CandyTalk */;
+			target = 18B1534928A2703D0033CB51 /* LuckyLand */;
 			targetProxy = 18B1536628A2703E0033CB51 /* PBXContainerItemProxy */;
 		};
 		18B1537128A2703E0033CB51 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 18B1534928A2703D0033CB51 /* CandyTalk */;
+			target = 18B1534928A2703D0033CB51 /* LuckyLand */;
 			targetProxy = 18B1537028A2703E0033CB51 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -7533,7 +7533,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CandyTalk.app/CandyTalk";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LuckyLand.app/LuckyLand";
 			};
 			name = Debug;
 		};
@@ -7552,7 +7552,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CandyTalk.app/CandyTalk";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LuckyLand.app/LuckyLand";
 			};
 			name = Release;
 		};
@@ -7593,7 +7593,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		18B1534528A2703D0033CB51 /* Build configuration list for PBXProject "CandyTalk" */ = {
+		18B1534528A2703D0033CB51 /* Build configuration list for PBXProject "LuckyLand" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				18B1537728A2703E0033CB51 /* Debug */,
@@ -7602,7 +7602,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		18B1537928A2703E0033CB51 /* Build configuration list for PBXNativeTarget "CandyTalk" */ = {
+		18B1537928A2703E0033CB51 /* Build configuration list for PBXNativeTarget "LuckyLand" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				18B1537A28A2703E0033CB51 /* Debug */,
@@ -7611,7 +7611,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		18B1537C28A2703E0033CB51 /* Build configuration list for PBXNativeTarget "CandyTalkTests" */ = {
+		18B1537C28A2703E0033CB51 /* Build configuration list for PBXNativeTarget "LuckyLandTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				18B1537D28A2703E0033CB51 /* Debug */,
@@ -7620,7 +7620,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		18B1537F28A2703E0033CB51 /* Build configuration list for PBXNativeTarget "CandyTalkUITests" */ = {
+		18B1537F28A2703E0033CB51 /* Build configuration list for PBXNativeTarget "LuckyLandUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				18B1538028A2703E0033CB51 /* Debug */,

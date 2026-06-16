@@ -15,10 +15,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "18B1538B28A270570033CB51"
-               BuildableName = "NoaChatCore.framework"
-               BlueprintName = "CandyTalkPro"
-               ReferencedContainer = "container:CandyTalkPro.xcodeproj">
+               BlueprintIdentifier = "18B1534928A2703D0033CB51"
+               BuildableName = "&#x5495;&#x565c;.app"
+               BlueprintName = "LuckyLand"
+               ReferencedContainer = "container:LuckyLand.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -40,6 +40,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "18B1534928A2703D0033CB51"
+            BuildableName = "&#x5495;&#x565c;.app"
+            BlueprintName = "LuckyLand"
+            ReferencedContainer = "container:LuckyLand.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -47,15 +57,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "18B1538B28A270570033CB51"
-            BuildableName = "NoaChatCore.framework"
-            BlueprintName = "CandyTalkPro"
-            ReferencedContainer = "container:CandyTalkPro.xcodeproj">
+            BlueprintIdentifier = "18B1534928A2703D0033CB51"
+            BuildableName = "&#x5495;&#x565c;.app"
+            BlueprintName = "LuckyLand"
+            ReferencedContainer = "container:LuckyLand.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

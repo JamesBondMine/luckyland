@@ -39,7 +39,7 @@ class _RegisterSelectPageState extends State<RegisterSelectPage> {
   Widget _bodyView(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(height: 80),
+        const SizedBox(height: 30),
         _cardItem(context, Icons.email_outlined, '邮箱注册', '通过邮箱和验证码注册', () {
           widget.tap('registerDetail0');
         }),
