@@ -4863,7 +4863,7 @@
 		18B1534128A2703D0033CB51 = {
 			isa = PBXGroup;
 			children = (
-				18B1534C28A2703D0033CB51 /* CandyTalk */,
+				18B1534C28A2703D0033CB51 /* LuckyLand */,
 				18B1536828A2703E0033CB51 /* NoaChatKitTests */,
 				18B1537228A2703E0033CB51 /* NoaChatKitUITests */,
 				18B1534B28A2703D0033CB51 /* Products */,
@@ -4883,7 +4883,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		18B1534C28A2703D0033CB51 /* CandyTalk */ = {
+		18B1534C28A2703D0033CB51 /* LuckyLand */ = {
 			isa = PBXGroup;
 			children = (
 				883D68A42FD7B70D009E87E6 /* OldControllers */,
@@ -4896,7 +4896,7 @@
 				04F9D5F428BDF391000AE80A /* Resource */,
 				0497EBBD28BDA6CE003550F9 /* Main */,
 			);
-			path = CandyTalk;
+			path = LuckyLand;
 			sourceTree = "<group>";
 		};
 		18B1536828A2703E0033CB51 /* NoaChatKitTests */ = {
@@ -6987,7 +6987,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = CandyTalk/NoaChatKit.entitlements;
+				CODE_SIGN_ENTITLEMENTS = LuckyLand/NoaChatKit.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
@@ -7046,10 +7046,10 @@
 					"\"${PODS_ROOT}/ZegoExpressEngine/release/Library\"",
 					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/WebRTC-SDK\"",
 					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/ZegoExpressEngine\"",
-					"$(PROJECT_DIR)/CandyTalk/Base/Tools/ThirdLibs/OBS",
-					"$(PROJECT_DIR)/CandyTalk/Base/Tools/ThirdLibs/wcdb",
+					"$(PROJECT_DIR)/LuckyLand/Base/Tools/ThirdLibs/OBS",
+					"$(PROJECT_DIR)/LuckyLand/Base/Tools/ThirdLibs/wcdb",
 				);
-				GCC_PREFIX_HEADER = "$(SRCROOT)/CandyTalk/Base/Headers/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/LuckyLand/Base/Headers/PrefixHeader.pch";
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -7058,7 +7058,7 @@
 					"\"${PODS_ROOT}/Headers/Public/Protobuf\"",
 					"$(SRCROOT)/../NoaChatSDKCore",
 				);
-				INFOPLIST_FILE = CandyTalk/Main/Info.plist;
+				INFOPLIST_FILE = LuckyLand/Main/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "幸运岛";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please click 'OK' to allow access. If you do not allow it, you will not be able to use the camera to scan code to log in, take photos, avatars, record videos, or make video calls.";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "";
@@ -7080,9 +7080,9 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/CandyTalk/Base/Tools/ThirdLibs/FatLame",
-					"$(PROJECT_DIR)/CandyTalk/Base/Tools/ThirdLibs/ZFatlameTool/FatLame",
-					"$(PROJECT_DIR)/CandyTalk/Base/Tools/ThirdLibs/LXChatEncrypt",
+					"$(PROJECT_DIR)/LuckyLand/Base/Tools/ThirdLibs/FatLame",
+					"$(PROJECT_DIR)/LuckyLand/Base/Tools/ThirdLibs/ZFatlameTool/FatLame",
+					"$(PROJECT_DIR)/LuckyLand/Base/Tools/ThirdLibs/LXChatEncrypt",
 				);
 				MARKETING_VERSION = 1.0.0;
 				ONLY_ACTIVE_ARCH = NO;
@@ -7229,7 +7229,7 @@
 					"-weak_framework",
 					"\"SwiftUI\"",
 					"-force_load",
-					"$(SRCROOT)/CandyTalk/Base/Tools/ThirdLibs/OBS/OBS.framework/OBS",
+					"$(SRCROOT)/LuckyLand/Base/Tools/ThirdLibs/OBS/OBS.framework/OBS",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.codeappyang.idnumberft;
 				PRODUCT_NAME = "咕噜";
@@ -7239,7 +7239,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "CandyTalk/Base/Headers/NoaChatKit-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "LuckyLand/Base/Headers/NoaChatKit-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "NoaChatKit-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -7258,7 +7258,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = CandyTalk/NoaChatKit.entitlements;
+				CODE_SIGN_ENTITLEMENTS = LuckyLand/NoaChatKit.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
@@ -7317,10 +7317,10 @@
 					"\"${PODS_ROOT}/ZegoExpressEngine/release/Library\"",
 					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/WebRTC-SDK\"",
 					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/ZegoExpressEngine\"",
-					"$(PROJECT_DIR)/CandyTalk/Base/Tools/ThirdLibs/OBS",
-					"$(PROJECT_DIR)/CandyTalk/Base/Tools/ThirdLibs/wcdb",
+					"$(PROJECT_DIR)/LuckyLand/Base/Tools/ThirdLibs/OBS",
+					"$(PROJECT_DIR)/LuckyLand/Base/Tools/ThirdLibs/wcdb",
 				);
-				GCC_PREFIX_HEADER = "$(SRCROOT)/CandyTalk/Base/Headers/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/LuckyLand/Base/Headers/PrefixHeader.pch";
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -7330,7 +7330,7 @@
 					"$(SRCROOT)/../NoaChatSDKCore",
 					"\"$(PODS_ROOT)/\"",
 				);
-				INFOPLIST_FILE = CandyTalk/Main/Info.plist;
+				INFOPLIST_FILE = LuckyLand/Main/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "幸运岛";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please click 'OK' to allow access. If you do not allow it, you will not be able to use the camera to scan code to log in, take photos, avatars, record videos, or make video calls.";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "";
@@ -7352,9 +7352,9 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/CandyTalk/Base/Tools/ThirdLibs/FatLame",
-					"$(PROJECT_DIR)/CandyTalk/Base/Tools/ThirdLibs/ZFatlameTool/FatLame",
-					"$(PROJECT_DIR)/CandyTalk/Base/Tools/ThirdLibs/LXChatEncrypt",
+					"$(PROJECT_DIR)/LuckyLand/Base/Tools/ThirdLibs/FatLame",
+					"$(PROJECT_DIR)/LuckyLand/Base/Tools/ThirdLibs/ZFatlameTool/FatLame",
+					"$(PROJECT_DIR)/LuckyLand/Base/Tools/ThirdLibs/LXChatEncrypt",
 				);
 				MARKETING_VERSION = 1.0.0;
 				OTHER_LDFLAGS = (
@@ -7500,7 +7500,7 @@
 					"-weak_framework",
 					"\"SwiftUI\"",
 					"-force_load",
-					"$(SRCROOT)/CandyTalk/Base/Tools/ThirdLibs/OBS/OBS.framework/OBS",
+					"$(SRCROOT)/LuckyLand/Base/Tools/ThirdLibs/OBS/OBS.framework/OBS",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.codeappyang.idnumberft;
 				PRODUCT_NAME = "咕噜";
@@ -7510,7 +7510,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "CandyTalk/Base/Headers/NoaChatKit-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "LuckyLand/Base/Headers/NoaChatKit-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "NoaChatKit-Swift.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
