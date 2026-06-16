@@ -1,0 +1,88 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+/// 与 OC `NoaSsoHelpView` 一致的「网络设置说明」文案与结构。
+class HelpPage extends StatelessWidget {
+  const HelpPage({super.key});
+
+  static const List<Map<String, String>> _sections = [
+    {
+      'title': '为什么需要进行网络设置？',
+      'content':
+          '可以通过客户端随时随地享受数据服务的存储和管理。服务器归属于私有化部署的经营主体，只有经过经营主体许可的人员才能使用，安全性更高、私密性更强，提供非常好的信息安全服务。',
+    },
+    {
+      'title': '一、加入服务器',
+      'content':
+          '登录账户时需要加入服务器，以便您能精准找到所属企业或服务主体，支持邀请码、域名加入服务器。邀请码、域名需要您与平台客服人员进行联系或者由公司内部人员告知。服务器登录后，需填写账号密码完成登录，第二次登录不需要再次进行邀请码设置。',
+    },
+    {
+      'title': '二、输入规范',
+      'content': '邀请码方式：100000\n域名方式：xxx.com（系统自动匹配http://或https://）',
+    },
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+
+    return Scaffold(
+      backgroundColor: colorScheme.surface,
+      appBar: AppBar(
+        elevation: 0,
+        scrolledUnderElevation: 0,
+        backgroundColor: colorScheme.surface,
+        foregroundColor: colorScheme.onSurface,
+        automaticallyImplyLeading: false,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios_new, size: 20),
+          onPressed: () => SystemNavigator.pop(),
+        ),
+        centerTitle: true,
+        title: Text(
+          '网络设置说明',
+          style: theme.textTheme.titleMedium?.copyWith(
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+      body: ListView.builder(
+        padding: const EdgeInsets.fromLTRB(20, 12, 20, 32),
+        itemCount: _sections.length,
+        itemBuilder: (context, index) {
+          final item = _sections[index];
+          final title = item['title']!;
+          final content = item['content']!;
+
+          // OC: section 间 footer 高度 30；首段前由 ListView padding 留白。
+          return Padding(
+            padding: EdgeInsets.only(top: index == 0 ? 0 : 30),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: index == 0 ? 8 : 20),
+                Text(
+                  title,
+                  style: theme.textTheme.titleSmall?.copyWith(
+                    fontWeight: FontWeight.w600,
+                    height: 1.35,
+                    color: colorScheme.onSurface,
+                  ),
+                ),
+                const SizedBox(height: 12),
+                Text(
+                  content,
+                  style: theme.textTheme.bodyMedium?.copyWith(
+                    height: 1.45,
+                    color: colorScheme.onSurface.withOpacity(0.85),
+                  ),
+                ),
+              ],
+            ),
+          );
+        },
+      ),
+    );
+  }
+}

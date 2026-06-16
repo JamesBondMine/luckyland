@@ -1,0 +1,16 @@
+PODS:
+  - GaOnchainLib (0.1.0)
+
+DEPENDENCIES:
+  - GaOnchainLib (from `../`)
+
+EXTERNAL SOURCES:
+  GaOnchainLib:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  GaOnchainLib: 3fdc3c3f11424077062108751ea5962f81cbf24c
+
+PODFILE CHECKSUM: 3f14c8ece361ddc8d816ed261bb33141dedba778
+
+COCOAPODS: 1.16.2
