@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_module/global_color.dart';
 
 class RegisterSelectPage extends StatefulWidget {
   RegisterSelectPage({Key? key, required this.tap}) : super(key: key);
@@ -20,7 +21,7 @@ class _RegisterSelectPageState extends State<RegisterSelectPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.white,
+        backgroundColor:  const Color.fromRGBO(238, 240, 240, 1),
         elevation: 0,
         systemOverlayStyle: SystemUiOverlayStyle.dark,
         leading: IconButton(
@@ -30,7 +31,7 @@ class _RegisterSelectPageState extends State<RegisterSelectPage> {
           },
         ),
       ),
-      backgroundColor: Colors.white,
+      backgroundColor:  const Color.fromRGBO(238, 240, 240, 1),
       body: _bodyView(context),
     );
   }
@@ -38,6 +39,7 @@ class _RegisterSelectPageState extends State<RegisterSelectPage> {
   Widget _bodyView(BuildContext context) {
     return Column(
       children: [
+        const SizedBox(height: 80),
         _cardItem(context, Icons.email_outlined, '邮箱注册', '通过邮箱和验证码注册', () {
           widget.tap('registerDetail0');
         }),
@@ -61,9 +63,10 @@ class _RegisterSelectPageState extends State<RegisterSelectPage> {
           onTap();
         },
         child: Container(
-          padding: EdgeInsets.only(top: 30),
+          margin: const EdgeInsets.only(left: 20, right: 20, top: 20),
+          padding: const EdgeInsets.only(left: 12, right: 12, top: 20, bottom: 20),
           decoration: BoxDecoration(
-              color: colorScheme.surface,
+              color: Colors.white,
               borderRadius: BorderRadius.circular(12)),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -71,9 +74,10 @@ class _RegisterSelectPageState extends State<RegisterSelectPage> {
               Icon(
                 icon,
                 size: 20,
-                color: colorScheme.primary,
+                color: Global.primaryColor,
+                
               ),
-              SizedBox(height: 30),
+              const SizedBox(width: 12),
               Expanded(
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
