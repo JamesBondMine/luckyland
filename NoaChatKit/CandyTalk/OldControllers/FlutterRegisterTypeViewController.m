@@ -32,18 +32,28 @@ static NSString * const kFlutterBridgeChannelName = @"com.noa.flutter/bridge";
 - (void)setupMethodChannel {
     FlutterMethodChannel *channel = [FlutterMethodChannel methodChannelWithName:kFlutterBridgeChannelName
                                                                binaryMessenger:self.binaryMessenger];
+    @weakify(self)
     [channel setMethodCallHandler:^(FlutterMethodCall * _Nonnull call, FlutterResult  _Nonnull result) {
-        if ([call.method isEqualToString:@"registerSelectTap"]) {
-            NSString *itemId = @"";
-            if ([call.arguments isKindOfClass:[NSString class]]) {
-                itemId = (NSString *)call.arguments;
-            } else if ([call.arguments isKindOfClass:[NSDictionary class]]) {
-                itemId = [(NSDictionary *)call.arguments objectForKey:@"id"] ?: @"";
-            }
-            NSLog(@"[FlutterRegisterType] register select tapped: %@", itemId);
+        if ([call.method isEqualToString:@"back"]) {
+            [self.navigationController popToRootViewControllerAnimated:YES];
             result(@(YES));
             return;
         }
+        
+        if ([call.method isEqualToString:@"registerDetail0"]) {
+            result(@(YES));
+            return;
+        }
+        if ([call.method isEqualToString:@"registerDetail1"]) {
+            result(@(YES));
+            return;
+        }
+        if ([call.method isEqualToString:@"registerDetail2"]) {
+            result(@(YES));
+            return;
+        }
+        
+        
         result(FlutterMethodNotImplemented);
     }];
 }
