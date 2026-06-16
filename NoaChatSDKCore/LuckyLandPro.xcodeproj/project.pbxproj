@@ -1371,9 +1371,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		18B1538B28A270570033CB51 /* CandyTalkPro */ = {
+		18B1538B28A270570033CB51 /* LuckyLandPro */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 18B153A028A270580033CB51 /* Build configuration list for PBXNativeTarget "CandyTalkPro" */;
+			buildConfigurationList = 18B153A028A270580033CB51 /* Build configuration list for PBXNativeTarget "LuckyLandPro" */;
 			buildPhases = (
 				A7ACBFF8FB39BC5C38FE7FED /* [CP] Check Pods Manifest.lock */,
 				18B1538728A270570033CB51 /* Headers */,
@@ -1385,7 +1385,7 @@
 			);
 			dependencies = (
 			);
-			name = CandyTalkPro;
+			name = LuckyLandPro;
 			productName = NoaChatSDKCore;
 			productReference = 18B1538C28A270570033CB51 /* NoaChatCore.framework */;
 			productType = "com.apple.product-type.framework";
@@ -1405,7 +1405,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 18B1538628A270570033CB51 /* Build configuration list for PBXProject "CandyTalkPro" */;
+			buildConfigurationList = 18B1538628A270570033CB51 /* Build configuration list for PBXProject "LuckyLandPro" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -1418,7 +1418,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				18B1538B28A270570033CB51 /* CandyTalkPro */,
+				18B1538B28A270570033CB51 /* LuckyLandPro */,
 			);
 		};
 /* End PBXProject section */
@@ -1844,7 +1844,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		18B1538628A270570033CB51 /* Build configuration list for PBXProject "CandyTalkPro" */ = {
+		18B1538628A270570033CB51 /* Build configuration list for PBXProject "LuckyLandPro" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				18B1539E28A270580033CB51 /* Debug */,
@@ -1853,7 +1853,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		18B153A028A270580033CB51 /* Build configuration list for PBXNativeTarget "CandyTalkPro" */ = {
+		18B153A028A270580033CB51 /* Build configuration list for PBXNativeTarget "LuckyLandPro" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				18B153A128A270580033CB51 /* Debug */,
