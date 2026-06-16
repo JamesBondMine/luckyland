@@ -18,6 +18,9 @@
 /// 视图上方切线圆角
 @property (nonatomic, strong) CAShapeLayer *innerShadowLayer;
 
+/// 视图上方切线圆角
+@property (nonatomic, strong) NSString *code;
+
 /// 是否是悬浮弹窗
 @property (nonatomic, assign, readwrite) BOOL isPopWindows;
 

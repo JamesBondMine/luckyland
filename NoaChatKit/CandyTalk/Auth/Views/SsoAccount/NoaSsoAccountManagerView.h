@@ -40,6 +40,8 @@ typedef void(^ClickNetworkDetectionBtnAction)(NSString *ssoText);
 /// 扫码后，修改幸运数字
 - (void)scanQrcodeChangeSsoType:(ZSsoTypeMenu)ssoType SsoInfo:(NSString *)ssoInfo;
 
+- (void)refreshLuckyNumber:(NSString *)number;
+
 @end
 
 NS_ASSUME_NONNULL_END

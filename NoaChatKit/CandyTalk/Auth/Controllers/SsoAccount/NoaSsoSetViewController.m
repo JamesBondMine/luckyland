@@ -95,6 +95,9 @@
     
     //用户协议提示框
     [self showAppUserAgreement];
+    
+    
+    [self.blurView refreshLuckyNumber:@"stag001"];
 }
 
 - (void)configNetWorkAuthority {

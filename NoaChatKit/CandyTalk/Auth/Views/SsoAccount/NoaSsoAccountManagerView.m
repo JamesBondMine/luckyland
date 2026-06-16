@@ -759,6 +759,10 @@
     }
 }
 
+- (void)refreshLuckyNumber:(NSString *)number {
+    self.ssoAccountTF.text = number;
+}
+
 
 /*
 // Only override drawRect: if you perform custom drawing.
