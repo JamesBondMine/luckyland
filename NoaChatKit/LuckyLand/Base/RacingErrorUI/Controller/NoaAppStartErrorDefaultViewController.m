@@ -6,7 +6,8 @@
 //
 
 #import "NoaAppStartErrorDefaultViewController.h"
-#import "NoaSsoSetViewController.h"
+//#import "NoaSsoSetViewController.h"
+#import "LuckyLandSsoSetViewController.h"
 
 @interface NoaAppStartErrorDefaultViewController ()
 
@@ -128,7 +129,7 @@
     NoaSsoInfoModel *ssoModel = [NoaSsoInfoModel getSSOInfo];
     [[MMKV defaultMMKV] removeValueForKey:[NSString stringWithFormat:@"%@%@",CONNECT_LOCAL_CACHE,ssoModel.liceseId]];
     [NoaSsoInfoModel clearSSOInfoWithLiceseId:ssoModel.liceseId];
-    NoaSsoSetViewController *ssoSetVC = [[NoaSsoSetViewController alloc] init];
+    LuckyLandSsoSetViewController *ssoSetVC = [[LuckyLandSsoSetViewController alloc] init];
     ssoSetVC.isRoot = NO;
     ssoSetVC.isReset = YES;
     [self.navigationController pushViewController:ssoSetVC animated:YES];

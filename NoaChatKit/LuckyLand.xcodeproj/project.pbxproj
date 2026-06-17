@@ -705,6 +705,7 @@
 		8815567E2FA88BE9004702A6 /* NoaVerCodeLoginEmailInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8815563E2FA88BE9004702A6 /* NoaVerCodeLoginEmailInputView.m */; };
 		8815567F2FA88BE9004702A6 /* NoaVerCodeLoginPhoneNumberInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 881556402FA88BE9004702A6 /* NoaVerCodeLoginPhoneNumberInputView.m */; };
 		881556802FA88BE9004702A6 /* NoaVerCodeLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 881556422FA88BE9004702A6 /* NoaVerCodeLoginView.m */; };
+		8826BF1F2FE23B28003EB3D9 /* LuckyLandSsoSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8826BF1E2FE23B28003EB3D9 /* LuckyLandSsoSetViewController.m */; };
 		88AE5C6A2FA87D7C00DA3F8E /* CandyTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88AE5C632FA87D7C00DA3F8E /* CandyTabBarController.m */; };
 		88AE5C6B2FA87D7C00DA3F8E /* UITabBar+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 88AE5C652FA87D7C00DA3F8E /* UITabBar+Badge.m */; };
 		88AE5C6C2FA87D7C00DA3F8E /* CandyTalkHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88AE5C682FA87D7C00DA3F8E /* CandyTalkHomeViewController.m */; };
@@ -2182,6 +2183,8 @@
 		881556402FA88BE9004702A6 /* NoaVerCodeLoginPhoneNumberInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaVerCodeLoginPhoneNumberInputView.m; sourceTree = "<group>"; };
 		881556412FA88BE9004702A6 /* NoaVerCodeLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaVerCodeLoginView.h; sourceTree = "<group>"; };
 		881556422FA88BE9004702A6 /* NoaVerCodeLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaVerCodeLoginView.m; sourceTree = "<group>"; };
+		8826BF1D2FE23B28003EB3D9 /* LuckyLandSsoSetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LuckyLandSsoSetViewController.h; sourceTree = "<group>"; };
+		8826BF1E2FE23B28003EB3D9 /* LuckyLandSsoSetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuckyLandSsoSetViewController.m; sourceTree = "<group>"; };
 		88AE5C622FA87D7C00DA3F8E /* CandyTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CandyTabBarController.h; sourceTree = "<group>"; };
 		88AE5C632FA87D7C00DA3F8E /* CandyTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CandyTabBarController.m; sourceTree = "<group>"; };
 		88AE5C642FA87D7C00DA3F8E /* UITabBar+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+Badge.h"; sourceTree = "<group>"; };
@@ -4886,6 +4889,7 @@
 		18B1534C28A2703D0033CB51 /* LuckyLand */ = {
 			isa = PBXGroup;
 			children = (
+				8826BF1C2FE23A46003EB3D9 /* luckyLandJoin */,
 				883D68A42FD7B70D009E87E6 /* OldControllers */,
 				881556452FA88BE9004702A6 /* Auth */,
 				88AE5C692FA87D7C00DA3F8E /* Tab */,
@@ -5407,7 +5411,6 @@
 				881555C22FA88BE9004702A6 /* LoginAccount */,
 				881555C72FA88BE9004702A6 /* OldPassword */,
 				881555CC2FA88BE9004702A6 /* Register */,
-				881555CF2FA88BE9004702A6 /* SsoAccount */,
 				881555D22FA88BE9004702A6 /* VerCodeLogin */,
 			);
 			path = Controllers;
@@ -5708,6 +5711,16 @@
 				881556442FA88BE9004702A6 /* Views */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		8826BF1C2FE23A46003EB3D9 /* luckyLandJoin */ = {
+			isa = PBXGroup;
+			children = (
+				881555CF2FA88BE9004702A6 /* SsoAccount */,
+				8826BF1D2FE23B28003EB3D9 /* LuckyLandSsoSetViewController.h */,
+				8826BF1E2FE23B28003EB3D9 /* LuckyLandSsoSetViewController.m */,
+			);
+			path = luckyLandJoin;
 			sourceTree = "<group>";
 		};
 		883D68A42FD7B70D009E87E6 /* OldControllers */ = {
@@ -6697,6 +6710,7 @@
 				2D7B4B002E9FD4C100E71727 /* NoaNetworkDetectionSectionHeaderView.m in Sources */,
 				04D21EDD2A66659C000B4572 /* NoaChatLinkCollectCell.m in Sources */,
 				046E04872AB402DB00429E76 /* UIView+RTL.m in Sources */,
+				8826BF1F2FE23B28003EB3D9 /* LuckyLandSsoSetViewController.m in Sources */,
 				04C43DC629EE474800555D7E /* NoaChatMultiSelectTipsView.m in Sources */,
 				042D7F1E291657D700D2BB59 /* NoaChatGroupSetVC.m in Sources */,
 				881556702FA88BE9004702A6 /* NoaRegisterBaseInputView.m in Sources */,

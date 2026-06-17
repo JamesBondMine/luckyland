@@ -11,7 +11,8 @@
 #import "CandyTabBarController.h"
 #import "NoaNavigationController.h"
 #import "NoaLoginViewController.h"
-#import "NoaSsoSetViewController.h"
+//#import "NoaSsoSetViewController.h"
+#import "LuckyLandSsoSetViewController.h"
 #import "NoaAppStartErrorDefaultViewController.h"
 #import "NoaBaseWebViewController.h"
 #import "NoaKnownTipView.h"
@@ -358,7 +359,7 @@ static NSString *g_CurrentLoganPublishURL = nil; // 内存记录当前 Logan pub
     [ZTOOL doInMain:^{
         //多语言设置初始化
         [ZLanguageTOOL initLanguageSetting];
-        NoaSsoSetViewController *ssoSetVC = [NoaSsoSetViewController new];
+        LuckyLandSsoSetViewController *ssoSetVC = [LuckyLandSsoSetViewController new];
         ssoSetVC.isRoot = YES;
         ssoSetVC.isReset = NO;
         NoaNavigationController *nav = [[NoaNavigationController alloc] initWithRootViewController:ssoSetVC];

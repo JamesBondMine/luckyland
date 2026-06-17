@@ -26,7 +26,8 @@
 // 设备验证码验证页面
 #import "NoaSafeCodeAuthViewController.h"
 // 修改幸运数字页面
-#import "NoaSsoSetViewController.h"
+//#import "NoaSsoSetViewController.h"
+#import "LuckyLandSsoSetViewController.h"
 // 手机号选择区号页面
 #import "NoaCountryCodeViewController.h"
 // 验证码登录
