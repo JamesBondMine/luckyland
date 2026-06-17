@@ -256,13 +256,13 @@ static NSString *g_CurrentLoganPublishURL = nil; // 内存记录当前 Logan pub
         appdelegate.window.rootViewController = tabbarVC;
         //通讯录红点先取本地展示
         NSInteger friendInviteCount = [IMSDKManager toolFriendApplyCount];
-        [tabbarVC setBadgeValue:1 number:friendInviteCount];
+        [tabbarVC setBadgeValue:2 number:friendInviteCount];
         //会话列表红点先取本地展示
         __block NSInteger sessionUnreadCount;
         [ZTOOL doAsync:^{
             sessionUnreadCount = [IMSDKManager toolGetAllSessionUnreadCount];
         } completion:^{
-            [tabbarVC setBadgeValue:0 number:sessionUnreadCount];
+            [tabbarVC setBadgeValue:1 number:sessionUnreadCount];
         }];
         
         // 设置完 tabBar 后，立即检查手势锁，避免闪烁

@@ -38,14 +38,14 @@
         CandyTabBarController *tab = (CandyTabBarController *)self.window.rootViewController;
         //通讯录红点先取本地展示
         NSInteger friendInviteCount = [IMSDKManager toolFriendApplyCount];
-        [tab setBadgeValue:1 number:friendInviteCount];
+        [tab setBadgeValue:2 number:friendInviteCount];
         //会话列表红点先取本地展示
         WeakSelf
         __block NSInteger sessionUnreadCount;
         [ZTOOL doAsync:^{
             sessionUnreadCount = [IMSDKManager toolGetAllSessionUnreadCount];
         } completion:^{
-            [tab setBadgeValue:0 number:sessionUnreadCount];
+            [tab setBadgeValue:1 number:sessionUnreadCount];
             [weakSelf configAppUnreadBadgeWitMessageCount:sessionUnreadCount friendInviteCount:friendInviteCount];
         }];
     }
@@ -139,7 +139,7 @@
     //更新通讯录红点
     if ([self.window.rootViewController isKindOfClass:[CandyTabBarController class]]) {
         CandyTabBarController *tab = (CandyTabBarController *)self.window.rootViewController;
-        [tab setBadgeValue:1 number:friendApplyCount];
+        [tab setBadgeValue:2 number:friendApplyCount];
         //通讯录好友申请，红点更新
         [[NSNotificationCenter defaultCenter] postNotificationName:@"FriendApplyCountChange" object:nil];
     }
@@ -328,8 +328,8 @@
     NSInteger friendInviteCount = [IMSDKManager toolFriendApplyCount];
     if ([self.window.rootViewController isKindOfClass:[CandyTabBarController class]]) {
         CandyTabBarController *tab = (CandyTabBarController *)self.window.rootViewController;
-        [tab setBadgeValue:0 number:totalUnreadCount];
-        [tab setBadgeValue:1 number:friendInviteCount];
+        [tab setBadgeValue:1 number:totalUnreadCount];
+        [tab setBadgeValue:2 number:friendInviteCount];
     }
     
     [self configAppUnreadBadgeWitMessageCount:totalUnreadCount friendInviteCount:friendInviteCount];
@@ -470,7 +470,7 @@
             //更新通讯录红点
             if ([weakSelf.window.rootViewController isKindOfClass:[CandyTabBarController class]]) {
                 CandyTabBarController *tab = (CandyTabBarController *)weakSelf.window.rootViewController;
-                [tab setBadgeValue:1 number:friendApplyCount];
+                [tab setBadgeValue:2 number:friendApplyCount];
                 //通讯录好友申请，红点更新
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"FriendApplyCountChange" object:nil];
             }

@@ -19,11 +19,14 @@
 // 移除“我的”Tab及相关自定义转场依赖
 #import "CandyTalkTeamViewController.h"//团队
 
+#import "LuckyLandHomeViewController.h"
+
 @interface CandyTabBarController () <UITabBarControllerDelegate,UITabBarDelegate>
 {
     NSInteger _currentSelectedIndex;//当前选中下标
 }
 
+@property (nonatomic, strong) LuckyLandHomeViewController  *vcLuckyLandHome;
 @property (nonatomic, strong) CandyTalkHomeViewController  *vcSession;
 @property (nonatomic, strong) CandyTalkContactVC  *vcContact;
 @property (nonatomic, strong) CandyTalkSignInViewController  *signvc;
@@ -85,21 +88,24 @@
 
     [[UITabBarItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, -2)];
     
+    _vcLuckyLandHome = [LuckyLandHomeViewController new];
+    [self addChildViewController:_vcLuckyLandHome imageNormal:@"atab_l_d" imageSelected:@"atab_l_a" title:@"幸运岛" tag:1000];
+    
     _vcSession = [CandyTalkHomeViewController new];
-    [self addChildViewController:_vcSession imageNormal:@"atab_l_d" imageSelected:@"atab_l_a" title:LanguageToolMatch(@"消息") tag:1000];
+    [self addChildViewController:_vcSession imageNormal:@"atab_l_d" imageSelected:@"atab_l_a" title:LanguageToolMatch(@"消息") tag:1001];
     
 //    _signvc = [CandyTalkSignInViewController new];
-//    [self addChildViewController:_signvc imageNormal:@"qiandaodef" imageSelected:@"qiandao" title:LanguageToolMatch(@"签到") tag:1001];
+//    [self addChildViewController:_signvc imageNormal:@"qiandaodef" imageSelected:@"qiandao" title:LanguageToolMatch(@"签到") tag:1002];
     
     _vcContact = [CandyTalkContactVC new];
-    [self addChildViewController:_vcContact imageNormal:@"atab_c_d" imageSelected:@"atab_c_a" title:LanguageToolMatch(@"通讯录") tag:1001];
+    [self addChildViewController:_vcContact imageNormal:@"atab_c_d" imageSelected:@"atab_c_a" title:LanguageToolMatch(@"通讯录") tag:1002];
     
     
 //    _teamvc  = [CandyTalkTeamViewController new];
-//    [self addChildViewController:_teamvc imageNormal:@"tuanduidef" imageSelected:@"tuandui" title:LanguageToolMatch(@"团队") tag:1001];
+//    [self addChildViewController:_teamvc imageNormal:@"tuanduidef" imageSelected:@"tuandui" title:LanguageToolMatch(@"团队") tag:1003];
     
     _mineVc  = [FlutterTallkMineViewController new];
-    [self addChildViewController:_mineVc imageNormal:@"atab_r_d" imageSelected:@"atab_r_a" title:LanguageToolMatch(@"我的") tag:1001];
+    [self addChildViewController:_mineVc imageNormal:@"atab_r_d" imageSelected:@"atab_r_a" title:LanguageToolMatch(@"我的") tag:1003];
     
     
     self.selectedIndex = 0;

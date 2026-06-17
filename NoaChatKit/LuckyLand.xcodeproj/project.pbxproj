@@ -641,6 +641,8 @@
 		6CAE35382E72C6B10024763A /* NoaFallbackEndpointStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CAE35372E72C6B10024763A /* NoaFallbackEndpointStore.m */; };
 		6CD0B5D52E17AC42009FCAE5 /* NoaChatAtBannedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD0B5D42E17AC42009FCAE5 /* NoaChatAtBannedView.m */; };
 		6CEFA8D62E49955A00D872DC /* NoaGroupNoticeDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CEFA8D52E49955A00D872DC /* NoaGroupNoticeDetailVC.m */; };
+		880D8AA22FE25C8A00D1578F /* LuckyLandHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 880D8AA02FE25C8A00D1578F /* LuckyLandHomeViewController.m */; };
+		880D8AA32FE25C8A00D1578F /* LuckyLandHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 880D8AA12FE25C8A00D1578F /* LuckyLandHomeViewController.xib */; };
 		881555A62FA88BB4004702A6 /* shejiaoliaotian.png in Resources */ = {isa = PBXBuildFile; fileRef = 881555A12FA88BB4004702A6 /* shejiaoliaotian.png */; };
 		881555A72FA88BB4004702A6 /* talk.png in Resources */ = {isa = PBXBuildFile; fileRef = 881555A22FA88BB4004702A6 /* talk.png */; };
 		881555A82FA88BB4004702A6 /* liaotian-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 881555A32FA88BB4004702A6 /* liaotian-2.png */; };
@@ -2061,6 +2063,9 @@
 		6CD0B5D42E17AC42009FCAE5 /* NoaChatAtBannedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaChatAtBannedView.m; sourceTree = "<group>"; };
 		6CEFA8D42E49955A00D872DC /* NoaGroupNoticeDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaGroupNoticeDetailVC.h; sourceTree = "<group>"; };
 		6CEFA8D52E49955A00D872DC /* NoaGroupNoticeDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaGroupNoticeDetailVC.m; sourceTree = "<group>"; };
+		880D8A9F2FE25C8A00D1578F /* LuckyLandHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LuckyLandHomeViewController.h; sourceTree = "<group>"; };
+		880D8AA02FE25C8A00D1578F /* LuckyLandHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuckyLandHomeViewController.m; sourceTree = "<group>"; };
+		880D8AA12FE25C8A00D1578F /* LuckyLandHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LuckyLandHomeViewController.xib; sourceTree = "<group>"; };
 		881555A12FA88BB4004702A6 /* shejiaoliaotian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shejiaoliaotian.png; sourceTree = "<group>"; };
 		881555A22FA88BB4004702A6 /* talk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = talk.png; sourceTree = "<group>"; };
 		881555A32FA88BB4004702A6 /* liaotian-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "liaotian-2.png"; sourceTree = "<group>"; };
@@ -5306,6 +5311,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		880D8A9E2FE25C4900D1578F /* home */ = {
+			isa = PBXGroup;
+			children = (
+				880D8A9F2FE25C8A00D1578F /* LuckyLandHomeViewController.h */,
+				880D8AA02FE25C8A00D1578F /* LuckyLandHomeViewController.m */,
+				880D8AA12FE25C8A00D1578F /* LuckyLandHomeViewController.xib */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
 		881555AF2FA88BE9004702A6 /* AuthTools */ = {
 			isa = PBXGroup;
 			children = (
@@ -5719,6 +5734,7 @@
 		8826BF1C2FE23A46003EB3D9 /* luckyLandJoin */ = {
 			isa = PBXGroup;
 			children = (
+				880D8A9E2FE25C4900D1578F /* home */,
 				881555CF2FA88BE9004702A6 /* SsoAccount */,
 				8826BF302FE23C00003EB3D9 /* LuckyLandIslandSceneView.h */,
 				8826BF312FE23C00003EB3D9 /* LuckyLandIslandSceneView.m */,
@@ -6000,6 +6016,7 @@
 				04882509298C999800FC58CB /* KNPhotoBrowser.bundle in Resources */,
 				04ACC8D42CD4A26F00629B5B /* noa_captcha_tx.html in Resources */,
 				881555A72FA88BB4004702A6 /* talk.png in Resources */,
+				880D8AA32FE25C8A00D1578F /* LuckyLandHomeViewController.xib in Resources */,
 				04A5FD992A3B324500E532A4 /* InfoPlist.strings in Resources */,
 				04AAE0DE2CDB3BB60090660F /* noa_captcha_alitwo.html in Resources */,
 				04AAE0DD2CDB3BB60090660F /* noa_captcha_alione.html in Resources */,
@@ -6379,6 +6396,7 @@
 				042D7F002912653100D2BB59 /* MGSwipeTableCell.m in Sources */,
 				881556552FA88BE9004702A6 /* NoaForgetPasswordDataHandle.m in Sources */,
 				047047B0295D2E23001FDB90 /* NoaChatSingleSetCommonCell.m in Sources */,
+				880D8AA22FE25C8A00D1578F /* LuckyLandHomeViewController.m in Sources */,
 				184043F42B0C54E400E575B0 /* YYTextWeakProxy.m in Sources */,
 				042D7EFF2912653100D2BB59 /* MGSwipeButton.m in Sources */,
 				8815567F2FA88BE9004702A6 /* NoaVerCodeLoginPhoneNumberInputView.m in Sources */,

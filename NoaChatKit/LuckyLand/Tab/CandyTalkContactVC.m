@@ -252,7 +252,7 @@
     _viewHeader.newFriendApplyNum = count;
     
     CandyTabBarController *tab = (CandyTabBarController *)self.tabBarController;
-    [tab setBadgeValue:1 number:count];
+    [tab setBadgeValue:2 number:count];
     
 }
 #pragma mark - UITableViewDataSource
