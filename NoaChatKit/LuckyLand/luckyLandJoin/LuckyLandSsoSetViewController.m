@@ -6,6 +6,7 @@
 //
 
 #import "LuckyLandSsoSetViewController.h"
+#import "LuckyLandIslandSceneView.h"
 #import "NoaSsoHelpView.h"
 #import "NoaToolManager.h"
 #import "NoaInputTextView.h"
@@ -39,6 +40,8 @@
 /// 是否已经处理过本次竞速的错误提示（确保一次用户操作只显示一次错误）
 @property (nonatomic, assign) BOOL hasHandledRacingError;
 
+/// 幸运岛海面场景
+@property (nonatomic, strong) LuckyLandIslandSceneView *islandSceneView;
 
 @end
 
@@ -87,6 +90,7 @@
     // 取消网络质量检测(进入到幸运数字页面，用户需要输入幸运数字，故不需要网络质量检测 --- 需要用户在tcp竞速成功后，使用最新节点进行质量检测 --- 解决在用户输入幸运数字过程中，网络质量检测导致的节点切换问题)
     [[NoaUrlHostManager shareManager] stopNetworkQualityDetection];
 
+    [self setupLuckyLandSceneUI];
     [self setupSsoSetUI];
     [self processData];
 
@@ -95,9 +99,6 @@
     
     //用户协议提示框
     [self showAppUserAgreement];
-    
-    
-    [self.blurView refreshLuckyNumber:@"stag001"];
 }
 
 - (void)configNetWorkAuthority {
@@ -109,6 +110,38 @@
         [self requestLocalNetworkPermission];
         [[MMKV defaultMMKV] setBool:YES forKey:@"isFirstUseApp"];
     }
+}
+
+#pragma mark - 幸运数字加入
+
+- (void)joinOrganizationWithLuckyNumber:(NSString *)luckyNumber {
+    if (luckyNumber.length == 0) {
+        [HUD showMessage:LanguageToolMatch(@"幸运数字错误") inView:self.view];
+        return;
+    }
+
+    [HUD showActivityMessage:@""];
+    [self saveUserInputCompanyIdSSoInfo:luckyNumber];
+}
+
+- (void)setupLuckyLandSceneUI {
+    self.islandSceneView = [[LuckyLandIslandSceneView alloc] init];
+    [self.view insertSubview:self.islandSceneView atIndex:0];
+    [self.islandSceneView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.navView.mas_bottom);
+        make.leading.trailing.bottom.equalTo(self.view);
+    }];
+
+    [self.view addSubview:self.islandSceneView.interactionOverlayView];
+    [self.islandSceneView.interactionOverlayView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.islandSceneView);
+    }];
+
+    @weakify(self)
+    self.islandSceneView.islandTapAction = ^(LuckyLandIslandIndex islandIndex) {
+        @strongify(self)
+        [self joinOrganizationWithLuckyNumber:@"stag001"];
+    };
 }
 
 - (void)setupSsoSetUI {
@@ -137,6 +170,13 @@
     
     // 展示版本号
     [self showAppVersion];
+
+    self.blurView.hidden = YES;
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    [self.islandSceneView relayoutIslandInteraction];
 }
 
 - (void)processData {
@@ -144,15 +184,8 @@
     self.blurView.clickLoginBtnAction = ^(ZSsoTypeMenu ssoType, NSString * _Nonnull ssoText) {
         @strongify(self)
         if (ssoType == ZSsoTypeMenuCompanyId) {
-            if (ssoText.length == 0) {
-                [HUD showMessage:LanguageToolMatch(@"幸运数字错误") inView:self.view];
-                return;
-            }
-            
-            [HUD showActivityMessage:@""];
-            //请求 检查接口，节点竞速
-            [self saveUserInputCompanyIdSSoInfo:ssoText];
-        }else if (ssoType == ZSsoTypeMenuIPAndDomain) {
+            [self joinOrganizationWithLuckyNumber:ssoText];
+        } else if (ssoType == ZSsoTypeMenuIPAndDomain) {
             if (ssoText.length == 0) {
                 [HUD showMessage:LanguageToolMatch(@"域名错误") inView:self.view];
                 return;
