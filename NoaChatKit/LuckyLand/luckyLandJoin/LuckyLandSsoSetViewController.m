@@ -128,7 +128,7 @@
     self.islandSceneView = [[LuckyLandIslandSceneView alloc] init];
     [self.view insertSubview:self.islandSceneView atIndex:0];
     [self.islandSceneView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.navView.mas_bottom);
+        make.top.equalTo(self.navView);
         make.leading.trailing.bottom.equalTo(self.view);
     }];
 
@@ -149,8 +149,8 @@
     [self showNetworkDetectionAndSystemLanguageButton:YES];
     [self showSsoAccountSetButton:NO];
     
-    self.topTitleLabel.text = LanguageToolMatch(@"幸运数字加入");
-    self.topSubTitleLabel.text = LanguageToolMatch(@"请输入您幸运岛专属的幸运数字或IP/域名");
+    self.topTitleLabel.text = LanguageToolMatch(@"请点击小岛加入");
+    self.topSubTitleLabel.text = LanguageToolMatch(@"点击小岛加入您的组织");
     [self.view addSubview:self.topTitleLabel];
     [self.view addSubview:self.topSubTitleLabel];
     

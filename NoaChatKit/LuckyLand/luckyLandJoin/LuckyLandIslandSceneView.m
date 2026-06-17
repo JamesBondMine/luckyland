@@ -225,11 +225,8 @@ static NSString * const kLuckyLandIslandIndexKey = @"index";
 #pragma mark - Helicopter animation
 
 - (CGPoint)helicopterStartPointInBounds:(CGRect)bounds {
-    CGRect imageRect = [self displayedLandImageRectInBounds:bounds];
-    CGFloat marginX = imageRect.size.width * 0.04;
-    CGFloat marginY = imageRect.size.height * 0.03;
-    return CGPointMake(imageRect.origin.x + marginX,
-                     CGRectGetMaxY(imageRect) - marginY);
+    CGFloat marginY = bounds.size.height * 0.03;
+    return CGPointMake(CGRectGetMidX(bounds), CGRectGetMaxY(bounds) - marginY);
 }
 
 - (CGPoint)centerForIsland:(LuckyLandIslandIndex)islandIndex inBounds:(CGRect)bounds {
