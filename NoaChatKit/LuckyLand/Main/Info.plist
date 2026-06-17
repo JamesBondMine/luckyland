@@ -12,10 +12,10 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>candyshareInvite</string>
+			<string>luckyshareInvite</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>candylind</string>
+				<string>luckyland</string>
 			</array>
 		</dict>
 	</array>

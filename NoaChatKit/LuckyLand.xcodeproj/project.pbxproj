@@ -615,7 +615,7 @@
 		2DEDB39C2EE01058007D1DF1 /* NoaMyQRCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DEDB39B2EE01058007D1DF1 /* NoaMyQRCodeView.m */; };
 		2DF1BA262ED70182008785D0 /* WCDBObjc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF1BA242ED70175008785D0 /* WCDBObjc.framework */; };
 		2DF1BA272ED70182008785D0 /* WCDBObjc.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF1BA242ED70175008785D0 /* WCDBObjc.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5B94D23E2B99B8B80039E67D /* CandyLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B94D23D2B99B8B80039E67D /* CandyLaunchViewController.m */; };
+		5B94D23E2B99B8B80039E67D /* LuckyLandLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B94D23D2B99B8B80039E67D /* LuckyLandLaunchViewController.m */; };
 		5DC2ECB32E9C8FAC005C8DC5 /* NoaWeakPwdCheckTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC2ECB22E9C8FAC005C8DC5 /* NoaWeakPwdCheckTool.m */; };
 		5DFDA9A32E8919DF0028DC0C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DFDA9A22E8919DF0028DC0C /* AudioToolbox.framework */; };
 		5DFDA9A52E8919F10028DC0C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C08F1BF2E02A8420089649E /* libz.tbd */; };
@@ -2009,8 +2009,8 @@
 		2DEDB39B2EE01058007D1DF1 /* NoaMyQRCodeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaMyQRCodeView.m; sourceTree = "<group>"; };
 		2DF1BA242ED70175008785D0 /* WCDBObjc.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WCDBObjc.framework; sourceTree = "<group>"; };
 		513A3B6189DDA56789D10217 /* Pods_CandyTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CandyTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5B94D23C2B99B8B80039E67D /* CandyLaunchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CandyLaunchViewController.h; sourceTree = "<group>"; };
-		5B94D23D2B99B8B80039E67D /* CandyLaunchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CandyLaunchViewController.m; sourceTree = "<group>"; };
+		5B94D23C2B99B8B80039E67D /* LuckyLandLaunchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LuckyLandLaunchViewController.h; sourceTree = "<group>"; };
+		5B94D23D2B99B8B80039E67D /* LuckyLandLaunchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuckyLandLaunchViewController.m; sourceTree = "<group>"; };
 		5DC2ECB12E9C8FAC005C8DC5 /* NoaWeakPwdCheckTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaWeakPwdCheckTool.h; sourceTree = "<group>"; };
 		5DC2ECB22E9C8FAC005C8DC5 /* NoaWeakPwdCheckTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaWeakPwdCheckTool.m; sourceTree = "<group>"; };
 		5DFDA9A22E8919DF0028DC0C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -4889,7 +4889,7 @@
 				883D68A42FD7B70D009E87E6 /* OldControllers */,
 				881556452FA88BE9004702A6 /* Auth */,
 				88AE5C692FA87D7C00DA3F8E /* Tab */,
-				2DF1BA212ED6FD4A008785D0 /* CandyLaunchViewController */,
+				2DF1BA212ED6FD4A008785D0 /* LuckyLandLaunchViewController */,
 				2DF1BA202ED6FAF0008785D0 /* AppDelegate */,
 				0497EBC428BDABD6003550F9 /* Base */,
 				0462E87828BDB5DB00996A8A /* Modules */,
@@ -5144,14 +5144,14 @@
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
-		2DF1BA212ED6FD4A008785D0 /* CandyLaunchViewController */ = {
+		2DF1BA212ED6FD4A008785D0 /* LuckyLandLaunchViewController */ = {
 			isa = PBXGroup;
 			children = (
 				18B1535B28A2703E0033CB51 /* LaunchScreen.storyboard */,
-				5B94D23C2B99B8B80039E67D /* CandyLaunchViewController.h */,
-				5B94D23D2B99B8B80039E67D /* CandyLaunchViewController.m */,
+				5B94D23C2B99B8B80039E67D /* LuckyLandLaunchViewController.h */,
+				5B94D23D2B99B8B80039E67D /* LuckyLandLaunchViewController.m */,
 			);
-			path = CandyLaunchViewController;
+			path = LuckyLandLaunchViewController;
 			sourceTree = "<group>";
 		};
 		2DF1BA292ED70747008785D0 /* View */ = {
@@ -6117,7 +6117,7 @@
 				041EEB5A29EFE05200CDCC1A /* NoaNewMassMessageContentView.m in Sources */,
 				047777B729DEC54C0005496B /* NoaQrcodeTextContentViewController.m in Sources */,
 				04A6BCC72A6781B7000A818D /* AppDelegate+MiniApp.m in Sources */,
-				5B94D23E2B99B8B80039E67D /* CandyLaunchViewController.m in Sources */,
+				5B94D23E2B99B8B80039E67D /* LuckyLandLaunchViewController.m in Sources */,
 				04A6BCAE2A665F6F000A818D /* NoaMyMiniAppView.m in Sources */,
 				04180F9E2A259C5B00046229 /* NoaCallGroupVC.m in Sources */,
 				0407DDF72A403C7B00FFD474 /* NoaComplainVC.m in Sources */,

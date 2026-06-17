@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CandyLaunchViewController : UIViewController
+@interface LuckyLandLaunchViewController : UIViewController
 
 @end
 

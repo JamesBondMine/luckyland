@@ -14,7 +14,7 @@
 #import "AppDelegate+GestureLock.h"
 #import "AppDelegate+MediaCall.h"//视频
 #import "AppDelegate+MiniApp.h"//小程序
-#import "CandyLaunchViewController.h"
+#import "LuckyLandLaunchViewController.h"
 #import "NoaPushNavTools.h"   //推送消息点击后跳转处理
 #import <SDWebImageSVGCoder/SDWebImageSVGCoder.h>
 #import <SDWebImageWebPCoder/SDWebImageWebPCoder.h>
@@ -91,7 +91,7 @@ static NSString * const kLastAppVersionKey = @"LastAppVersion";
     // 全局图片策略（缩略解码/首帧/缓存上限/并发限制）
     [NoaImageLoader configureGlobalImagePolicies];
     
-    CandyLaunchViewController * launchViewController = [[CandyLaunchViewController alloc] init];
+    LuckyLandLaunchViewController * launchViewController = [[LuckyLandLaunchViewController alloc] init];
     ((AppDelegate *)[UIApplication sharedApplication].delegate).window.rootViewController = launchViewController;
     
     //防止崩溃

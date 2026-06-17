@@ -5,13 +5,13 @@
 //  Created by 郑开 on 2024/3/7.
 //
 
-#import "CandyLaunchViewController.h"
+#import "LuckyLandLaunchViewController.h"
 
-@interface CandyLaunchViewController ()
+@interface LuckyLandLaunchViewController ()
 
 @end
 
-@implementation CandyLaunchViewController
+@implementation LuckyLandLaunchViewController
 
 - (instancetype)init{
     id  controller;
