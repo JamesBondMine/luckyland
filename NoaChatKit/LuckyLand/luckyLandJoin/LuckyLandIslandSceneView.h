@@ -21,7 +21,7 @@ typedef NS_ENUM(NSInteger, LuckyLandIslandIndex) {
 /// 仅负责海岛点击与直升机动画，背景透明，可叠在表单上方
 @property (nonatomic, strong, readonly) UIView *interactionOverlayView;
 
-/// 直升机开始飞向海岛时触发（用于发起幸运数字加入）
+/// 直升机到达海岛后触发（用于发起 OSS 竞速）
 @property (nonatomic, copy, nullable) void (^islandTapAction)(LuckyLandIslandIndex islandIndex);
 
 /// 在布局变化后刷新海岛点击区域（交互层可能被加到 VC 根视图上）
