@@ -643,6 +643,8 @@
 		6CEFA8D62E49955A00D872DC /* NoaGroupNoticeDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CEFA8D52E49955A00D872DC /* NoaGroupNoticeDetailVC.m */; };
 		880D8AA22FE25C8A00D1578F /* LuckyLandHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 880D8AA02FE25C8A00D1578F /* LuckyLandHomeViewController.m */; };
 		880D8AA32FE25C8A00D1578F /* LuckyLandHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 880D8AA12FE25C8A00D1578F /* LuckyLandHomeViewController.xib */; };
+		880D8AB42FE2601000D1578F /* LuckyLandBoatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 880D8AB72FE2601000D1578F /* LuckyLandBoatView.m */; };
+		880D8AB52FE2601000D1578F /* LuckyLandSeaSceneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 880D8AB92FE2601000D1578F /* LuckyLandSeaSceneView.m */; };
 		881555A62FA88BB4004702A6 /* shejiaoliaotian.png in Resources */ = {isa = PBXBuildFile; fileRef = 881555A12FA88BB4004702A6 /* shejiaoliaotian.png */; };
 		881555A72FA88BB4004702A6 /* talk.png in Resources */ = {isa = PBXBuildFile; fileRef = 881555A22FA88BB4004702A6 /* talk.png */; };
 		881555A82FA88BB4004702A6 /* liaotian-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 881555A32FA88BB4004702A6 /* liaotian-2.png */; };
@@ -2066,6 +2068,10 @@
 		880D8A9F2FE25C8A00D1578F /* LuckyLandHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LuckyLandHomeViewController.h; sourceTree = "<group>"; };
 		880D8AA02FE25C8A00D1578F /* LuckyLandHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuckyLandHomeViewController.m; sourceTree = "<group>"; };
 		880D8AA12FE25C8A00D1578F /* LuckyLandHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LuckyLandHomeViewController.xib; sourceTree = "<group>"; };
+		880D8AB62FE2601000D1578F /* LuckyLandBoatView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LuckyLandBoatView.h; sourceTree = "<group>"; };
+		880D8AB72FE2601000D1578F /* LuckyLandBoatView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuckyLandBoatView.m; sourceTree = "<group>"; };
+		880D8AB82FE2601000D1578F /* LuckyLandSeaSceneView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LuckyLandSeaSceneView.h; sourceTree = "<group>"; };
+		880D8AB92FE2601000D1578F /* LuckyLandSeaSceneView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuckyLandSeaSceneView.m; sourceTree = "<group>"; };
 		881555A12FA88BB4004702A6 /* shejiaoliaotian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shejiaoliaotian.png; sourceTree = "<group>"; };
 		881555A22FA88BB4004702A6 /* talk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = talk.png; sourceTree = "<group>"; };
 		881555A32FA88BB4004702A6 /* liaotian-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "liaotian-2.png"; sourceTree = "<group>"; };
@@ -5317,6 +5323,10 @@
 				880D8A9F2FE25C8A00D1578F /* LuckyLandHomeViewController.h */,
 				880D8AA02FE25C8A00D1578F /* LuckyLandHomeViewController.m */,
 				880D8AA12FE25C8A00D1578F /* LuckyLandHomeViewController.xib */,
+				880D8AB62FE2601000D1578F /* LuckyLandBoatView.h */,
+				880D8AB72FE2601000D1578F /* LuckyLandBoatView.m */,
+				880D8AB82FE2601000D1578F /* LuckyLandSeaSceneView.h */,
+				880D8AB92FE2601000D1578F /* LuckyLandSeaSceneView.m */,
 			);
 			path = home;
 			sourceTree = "<group>";
@@ -6397,6 +6407,8 @@
 				881556552FA88BE9004702A6 /* NoaForgetPasswordDataHandle.m in Sources */,
 				047047B0295D2E23001FDB90 /* NoaChatSingleSetCommonCell.m in Sources */,
 				880D8AA22FE25C8A00D1578F /* LuckyLandHomeViewController.m in Sources */,
+				880D8AB42FE2601000D1578F /* LuckyLandBoatView.m in Sources */,
+				880D8AB52FE2601000D1578F /* LuckyLandSeaSceneView.m in Sources */,
 				184043F42B0C54E400E575B0 /* YYTextWeakProxy.m in Sources */,
 				042D7EFF2912653100D2BB59 /* MGSwipeButton.m in Sources */,
 				8815567F2FA88BE9004702A6 /* NoaVerCodeLoginPhoneNumberInputView.m in Sources */,
