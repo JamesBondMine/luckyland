@@ -8,14 +8,18 @@
 #import <UIKit/UIKit.h>
 
 @class LuckyLandBoatView;
+@class LingIMGroupMemberModel;
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// 幸运岛首页海面场景：背景 + 多艘漂浮小船
+/// 幸运岛首页海面场景：背景 + 群成员小船
 @interface LuckyLandSeaSceneView : UIView
 
-/// 点击小船回调
-@property (nonatomic, copy, nullable) void (^boatTapAction)(LuckyLandBoatView *boatView, NSInteger boatIndex);
+/// 点击小船回调，memberUid 为群成员 userUid
+@property (nonatomic, copy, nullable) void (^boatTapAction)(LuckyLandBoatView *boatView, NSString *memberUid);
+
+/// 按群成员列表刷新小船（一对一）
+- (void)reloadWithGroupMembers:(NSArray<LingIMGroupMemberModel *> *)members;
 
 /// 开始小船航行动画
 - (void)startBoatAnimations;

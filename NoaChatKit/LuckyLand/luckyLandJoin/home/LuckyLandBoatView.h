@@ -21,8 +21,17 @@ typedef NS_ENUM(NSInteger, LuckyLandBoatDirection) {
 
 @property (nonatomic, assign) LuckyLandBoatDirection direction;
 
+/// 对应群成员 userUid
+@property (nonatomic, copy, nullable) NSString *memberUid;
+
 /// 点击小船回调
 @property (nonatomic, copy, nullable) void (^tapAction)(LuckyLandBoatView *boatView);
+
+/// 设置小船图片（boat0 ~ boat4）
+- (void)setBoatImageName:(NSString *)imageName;
+
+/// 按给定宽度计算小船展示尺寸
+- (CGSize)boatImageSizeForWidth:(CGFloat)width;
 
 /// 设置船头头像
 - (void)setBowAvatarImage:(nullable UIImage *)image;

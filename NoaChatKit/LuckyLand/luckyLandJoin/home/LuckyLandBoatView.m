@@ -14,6 +14,7 @@ static CGFloat const kLuckyLandBoatAvatarCenterY = 0.60;
 
 @interface LuckyLandBoatView ()
 
+@property (nonatomic, copy) NSString *boatImageName;
 @property (nonatomic, strong) UIImageView *boatImageView;
 @property (nonatomic, strong) UIImageView *bowAvatarView;
 @property (nonatomic, strong) UIImageView *sternAvatarView;
@@ -49,8 +50,9 @@ static CGFloat const kLuckyLandBoatAvatarCenterY = 0.60;
   self.backgroundColor = UIColor.clearColor;
   self.clipsToBounds = NO;
   _direction = LuckyLandBoatDirectionRightToLeft;
+  _boatImageName = @"boat0";
 
-  _boatImageView = [[UIImageView alloc] initWithImage:ImgNamed(@"boat0")];
+  _boatImageView = [[UIImageView alloc] initWithImage:ImgNamed(_boatImageName)];
   _boatImageView.contentMode = UIViewContentModeScaleAspectFit;
   _boatImageView.userInteractionEnabled = NO;
   [self addSubview:_boatImageView];
@@ -108,6 +110,24 @@ static CGFloat const kLuckyLandBoatAvatarCenterY = 0.60;
   }
   _direction = direction;
   [self setNeedsLayout];
+}
+
+- (void)setBoatImageName:(NSString *)imageName {
+  if (imageName.length == 0) {
+    imageName = @"boat0";
+  }
+  _boatImageName = [imageName copy];
+  self.boatImageView.image = ImgNamed(_boatImageName);
+  [self setNeedsLayout];
+}
+
+- (CGSize)boatImageSizeForWidth:(CGFloat)width {
+  UIImage *boatImage = ImgNamed(self.boatImageName);
+  if (!boatImage || boatImage.size.width <= 0) {
+    return CGSizeMake(width, width);
+  }
+  CGFloat aspect = boatImage.size.height / boatImage.size.width;
+  return CGSizeMake(width, width * aspect);
 }
 
 - (void)setBowAvatarImage:(UIImage *)image {
