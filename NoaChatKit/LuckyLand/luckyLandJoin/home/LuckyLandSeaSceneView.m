@@ -11,6 +11,8 @@
 
 static CGFloat const kLuckyLandSeaTopRatio = 0.34;
 static CGFloat const kLuckyLandBoatWidthRatio = 0.28;
+static CGFloat const kLuckyLandBoatMinScale = 0.55;
+static CGFloat const kLuckyLandBoatMaxScale = 1.0;
 
 @interface LuckyLandSeaSceneView ()
 
@@ -43,6 +45,7 @@ static CGFloat const kLuckyLandBoatWidthRatio = 0.28;
 
 - (void)commonInit {
   self.clipsToBounds = YES;
+  self.userInteractionEnabled = YES;
   self.boatViews = [NSMutableArray array];
   self.boatConfigs = @[];
 
@@ -117,8 +120,11 @@ static CGFloat const kLuckyLandBoatWidthRatio = 0.28;
   return seaTop + seaHeight * normalizedY;
 }
 
-- (CGFloat)boatWidth {
-  return CGRectGetWidth(self.bounds) * kLuckyLandBoatWidthRatio;
+- (CGFloat)boatWidthForNormalizedY:(CGFloat)normalizedY {
+  CGFloat baseWidth = CGRectGetWidth(self.bounds) * kLuckyLandBoatWidthRatio;
+  normalizedY = MAX(0.f, MIN(1.f, normalizedY));
+  CGFloat scale = kLuckyLandBoatMinScale + (kLuckyLandBoatMaxScale - kLuckyLandBoatMinScale) * normalizedY;
+  return baseWidth * scale;
 }
 
 - (void)layoutBoats {
@@ -126,12 +132,13 @@ static CGFloat const kLuckyLandBoatWidthRatio = 0.28;
     return;
   }
 
-  CGFloat width = [self boatWidth];
   for (NSUInteger idx = 0; idx < self.boatViews.count; idx++) {
     LuckyLandBoatView *boatView = self.boatViews[idx];
     NSDictionary *config = self.boatConfigs[idx];
+    CGFloat normalizedY = [config[@"y"] floatValue];
+    CGFloat width = [self boatWidthForNormalizedY:normalizedY];
     CGSize size = [boatView boatImageSizeForWidth:width];
-    CGFloat centerY = [self seaYForNormalized:[config[@"y"] floatValue]];
+    CGFloat centerY = [self seaYForNormalized:normalizedY];
     boatView.frame = CGRectMake(0, 0, size.width, size.height);
     boatView.center = CGPointMake(-size.width, centerY);
   }
@@ -145,13 +152,14 @@ static CGFloat const kLuckyLandBoatWidthRatio = 0.28;
     return;
   }
 
-  CGFloat width = [self boatWidth];
   for (NSUInteger idx = 0; idx < self.boatViews.count; idx++) {
     LuckyLandBoatView *boatView = self.boatViews[idx];
     NSDictionary *config = self.boatConfigs[idx];
+    CGFloat normalizedY = [config[@"y"] floatValue];
+    CGFloat width = [self boatWidthForNormalizedY:normalizedY];
     CGSize size = [boatView boatImageSizeForWidth:width];
     CGFloat offscreenX = CGRectGetWidth(self.bounds) + size.width;
-    CGFloat centerY = [self seaYForNormalized:[config[@"y"] floatValue]];
+    CGFloat centerY = [self seaYForNormalized:normalizedY];
     NSTimeInterval duration = [config[@"duration"] doubleValue];
     NSTimeInterval delay = [config[@"delay"] doubleValue];
     LuckyLandBoatDirection direction = [config[@"direction"] integerValue];
@@ -180,15 +188,15 @@ static CGFloat const kLuckyLandBoatWidthRatio = 0.28;
 
 - (NSDictionary *)sailingConfigAtIndex:(NSUInteger)index {
   NSArray *templates = @[
-    @{@"direction": @(LuckyLandBoatDirectionLeftToRight), @"y": @(0.22), @"duration": @(20), @"delay": @(0)},
-    @{@"direction": @(LuckyLandBoatDirectionRightToLeft), @"y": @(0.34), @"duration": @(14), @"delay": @(2)},
+    @{@"direction": @(LuckyLandBoatDirectionLeftToRight), @"y": @(0.22), @"duration": @(4), @"delay": @(0)},
+    @{@"direction": @(LuckyLandBoatDirectionRightToLeft), @"y": @(0.34), @"duration": @(4), @"delay": @(2)},
     @{@"direction": @(LuckyLandBoatDirectionRightToLeft), @"y": @(0.04), @"duration": @(28), @"delay": @(1)},
     @{@"direction": @(LuckyLandBoatDirectionLeftToRight), @"y": @(0.42), @"duration": @(16), @"delay": @(4)},
     @{@"direction": @(LuckyLandBoatDirectionRightToLeft), @"y": @(0.52), @"duration": @(19), @"delay": @(10)},
     @{@"direction": @(LuckyLandBoatDirectionLeftToRight), @"y": @(0.62), @"duration": @(10), @"delay": @(6)},
     @{@"direction": @(LuckyLandBoatDirectionRightToLeft), @"y": @(0.74), @"duration": @(24), @"delay": @(8)},
     @{@"direction": @(LuckyLandBoatDirectionLeftToRight), @"y": @(0.12), @"duration": @(25), @"delay": @(12)},
-    @{@"direction": @(LuckyLandBoatDirectionRightToLeft), @"y": @(0.19), @"duration": @(27), @"delay": @(14)},
+    @{@"direction": @(LuckyLandBoatDirectionRightToLeft), @"y": @(0.19), @"duration": @(3), @"delay": @(14)},
   ];
   NSMutableDictionary *config = [[templates[index % templates.count] mutableCopy] ?: @{} mutableCopy];
   config[@"delay"] = @([config[@"delay"] doubleValue] + (index / templates.count) * 1.5);

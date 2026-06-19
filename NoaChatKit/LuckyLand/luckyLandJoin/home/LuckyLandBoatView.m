@@ -11,10 +11,12 @@ static CGFloat const kLuckyLandBoatAvatarRatio = 0.44;
 static CGFloat const kLuckyLandBoatBowXWhenFacingLeft = 0.12;
 static CGFloat const kLuckyLandBoatSternXWhenFacingLeft = 0.80;
 static CGFloat const kLuckyLandBoatAvatarCenterY = 0.60;
+static CGFloat const kLuckyLandBoatHitTestInset = 16.f;
 
 @interface LuckyLandBoatView ()
 
 @property (nonatomic, copy) NSString *boatImageName;
+@property (nonatomic, strong) UIView *contentContainer;
 @property (nonatomic, strong) UIImageView *boatImageView;
 @property (nonatomic, strong) UIImageView *bowAvatarView;
 @property (nonatomic, strong) UIImageView *sternAvatarView;
@@ -49,21 +51,26 @@ static CGFloat const kLuckyLandBoatAvatarCenterY = 0.60;
 - (void)commonInit {
   self.backgroundColor = UIColor.clearColor;
   self.clipsToBounds = NO;
+  self.userInteractionEnabled = YES;
   _direction = LuckyLandBoatDirectionRightToLeft;
   _boatImageName = @"boat0";
+
+  _contentContainer = [[UIView alloc] initWithFrame:CGRectZero];
+  _contentContainer.backgroundColor = UIColor.clearColor;
+  _contentContainer.userInteractionEnabled = NO;
+  [self addSubview:_contentContainer];
 
   _boatImageView = [[UIImageView alloc] initWithImage:ImgNamed(_boatImageName)];
   _boatImageView.contentMode = UIViewContentModeScaleAspectFit;
   _boatImageView.userInteractionEnabled = NO;
-  [self addSubview:_boatImageView];
+  [_contentContainer addSubview:_boatImageView];
 
   _bowAvatarView = [self createAvatarView];
   _sternAvatarView = [self createAvatarView];
-  [self addSubview:_bowAvatarView];
-  [self addSubview:_sternAvatarView];
+  [_contentContainer addSubview:_bowAvatarView];
+  [_contentContainer addSubview:_sternAvatarView];
 
-  UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap)];
-  [self addGestureRecognizer:tap];
+  [self addTarget:self action:@selector(handleTap) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (UIImageView *)createAvatarView {
@@ -78,12 +85,39 @@ static CGFloat const kLuckyLandBoatAvatarCenterY = 0.60;
   return avatarView;
 }
 
+#pragma mark - Hit Test
+
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
+  CGRect hitRect = CGRectInset(self.bounds, -kLuckyLandBoatHitTestInset, -kLuckyLandBoatHitTestInset);
+  if (CGRectContainsPoint(hitRect, point)) {
+    return YES;
+  }
+
+  CALayer *presentationLayer = self.layer.presentationLayer;
+  if (presentationLayer && self.superview) {
+    CGPoint pointInSuperview = [self convertPoint:point toView:self.superview];
+    return CGRectContainsPoint(CGRectInset(presentationLayer.frame, -kLuckyLandBoatHitTestInset, -kLuckyLandBoatHitTestInset), pointInSuperview);
+  }
+  return NO;
+}
+
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+  if (!self.userInteractionEnabled || self.hidden || self.alpha < 0.01) {
+    return nil;
+  }
+  if ([self pointInside:point withEvent:event]) {
+    return self;
+  }
+  return nil;
+}
+
 #pragma mark - Layout
 
 - (void)layoutSubviews {
   [super layoutSubviews];
 
-  self.boatImageView.frame = self.bounds;
+  self.contentContainer.frame = self.bounds;
+  self.boatImageView.frame = self.contentContainer.bounds;
 
   BOOL facingRight = (self.direction == LuckyLandBoatDirectionLeftToRight);
   self.boatImageView.transform = facingRight ? CGAffineTransformMakeScale(-1, 1) : CGAffineTransformIdentity;
@@ -184,6 +218,7 @@ static CGFloat const kLuckyLandBoatAvatarCenterY = 0.60;
   self.sailingDuration = MAX(duration, 0.1);
 
   [self.layer removeAllAnimations];
+  [self.contentContainer.layer removeAllAnimations];
   self.center = CGPointMake(startX, centerY);
   [self startBobbingAnimation];
 
@@ -200,19 +235,23 @@ static CGFloat const kLuckyLandBoatAvatarCenterY = 0.60;
 - (void)stopSailing {
   self.isSailing = NO;
   [self.layer removeAllAnimations];
+  [self.contentContainer.layer removeAllAnimations];
 }
 
 #pragma mark - Animation
 
 - (void)startBobbingAnimation {
-  CABasicAnimation *bobbing = [CABasicAnimation animationWithKeyPath:@"position.y"];
-  bobbing.fromValue = @(self.sailingCenterY - 4);
-  bobbing.toValue = @(self.sailingCenterY + 4);
+  [self.contentContainer.layer removeAnimationForKey:@"luckyLandBoatBobbing"];
+
+  CABasicAnimation *bobbing = [CABasicAnimation animationWithKeyPath:@"transform.translation.y"];
+  bobbing.fromValue = @(-4);
+  bobbing.toValue = @(4);
   bobbing.duration = 1.8;
   bobbing.autoreverses = YES;
   bobbing.repeatCount = HUGE_VALF;
   bobbing.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-  [self.layer addAnimation:bobbing forKey:@"luckyLandBoatBobbing"];
+  bobbing.removedOnCompletion = NO;
+  [self.contentContainer.layer addAnimation:bobbing forKey:@"luckyLandBoatBobbing"];
 }
 
 - (void)runSailingStep {

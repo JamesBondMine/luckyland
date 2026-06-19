@@ -17,7 +17,7 @@ typedef NS_ENUM(NSInteger, LuckyLandBoatDirection) {
 };
 
 /// 幸运岛小船：可点击，船头/船尾可放置头像
-@interface LuckyLandBoatView : UIView
+@interface LuckyLandBoatView : UIControl
 
 @property (nonatomic, assign) LuckyLandBoatDirection direction;
 
