@@ -71,7 +71,9 @@ class MyApp extends StatelessWidget {
               name: '',
               url: '',
               idStr: '',
-              tap: (String value) {},
+              tap: (String value) {
+                _bridgeChannel.invokeMethod('mineSelectTap', value);
+              },
             ),
       },
       onGenerateRoute: _onGenerateRoute,
