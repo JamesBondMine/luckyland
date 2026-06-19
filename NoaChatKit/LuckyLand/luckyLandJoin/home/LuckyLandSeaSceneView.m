@@ -54,6 +54,8 @@ static CGFloat const kLuckyLandBoatWidthRatio = 0.28;
     @{@"direction": @(LuckyLandBoatDirectionRightToLeft), @"y": @(0.62), @"duration": @(26), @"delay": @(3)},
     @{@"direction": @(LuckyLandBoatDirectionLeftToRight), @"y": @(0.72), @"duration": @(30), @"delay": @(6)},
     @{@"direction": @(LuckyLandBoatDirectionRightToLeft), @"y": @(0.34), @"duration": @(24), @"delay": @(2)},
+    @{@"direction": @(LuckyLandBoatDirectionLeftToRight), @"y": @(0.22), @"duration": @(20), @"delay": @(0)},
+    @{@"direction": @(LuckyLandBoatDirectionRightToLeft), @"y": @(0.44), @"duration": @(24), @"delay": @(2)},
   ];
 
   [self.boatConfigs enumerateObjectsUsingBlock:^(NSDictionary *config, NSUInteger idx, BOOL *stop) {

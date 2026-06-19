@@ -10,6 +10,7 @@
 #import "LuckyLandBoatView.h"
 #import "LingIMGroup.h"
 #import "NoaMessageTools.h"
+#import "NoaUserHomePageVC.h"
 
 @interface LuckyLandHomeViewController ()
 
@@ -25,6 +26,8 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+    
+    self.groupID = @"1001";
   [self setupSeaScene];
     [self requestGroupInfo];
 }
@@ -58,6 +61,14 @@
   };
 }
 
+// 跳转到推荐用户详情
+- (void)pushSuggestUserInfoWithUid:(NSString *)uidStr{
+    NoaUserHomePageVC *vc = [NoaUserHomePageVC new];
+    vc.isFromQRCode = YES;
+    vc.userUID = uidStr;
+    vc.groupID = @"";
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 #pragma mark - 查询群组详情 数据请求
 - (void)requestGroupInfo {
@@ -72,6 +83,9 @@
             if ([data isKindOfClass:[NSDictionary class]]) {
                 NSDictionary *dict = (NSDictionary *)data;
                 weakSelf.groupInfoModel = [LingIMGroup mj_objectWithKeyValues:dict];
+                // 群成员信息
+                weakSelf.groupInfoModel.groupMemberList;
+                
                 LingIMGroupModel *imGroupModel = [NoaMessageTools netWorkGroupModelToDBGroupModel:weakSelf.groupInfoModel];
                 if (imGroupModel) {
                     LingIMGroupModel *localGroupModel = [IMSDKManager toolCheckMyGroupWith:weakSelf.groupInfoModel.groupId];

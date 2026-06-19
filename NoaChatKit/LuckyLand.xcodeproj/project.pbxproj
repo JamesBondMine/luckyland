@@ -341,7 +341,6 @@
 		04A6D9C52C6A0B6F00FD7521 /* NoaChatHistoryChoiceUserVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D9C42C6A0B6F00FD7521 /* NoaChatHistoryChoiceUserVC.m */; };
 		04A6D9C82C6A0F0800FD7521 /* NoaHistoryChoiceUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D9C72C6A0F0800FD7521 /* NoaHistoryChoiceUserCell.m */; };
 		04A6D9CB2C6A0F2C00FD7521 /* NoaHistoryChoiceUseredTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D9CA2C6A0F2C00FD7521 /* NoaHistoryChoiceUseredTopView.m */; };
-		04A79D8E2942D48A00FF324A /* NoaGroupMemberPageInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A79D8D2942D48A00FF324A /* NoaGroupMemberPageInfoCell.m */; };
 		04A99FC82B96EF2900DFD946 /* NoaFileUploadTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A99FC72B96EF2900DFD946 /* NoaFileUploadTools.m */; };
 		04A9FCF82A19F1E700960096 /* NoaFriendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A9FCF72A19F1E700960096 /* NoaFriendModel.m */; };
 		04AA729628F80CE800985862 /* NoaChatTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AA729528F80CE800985862 /* NoaChatTopView.m */; };
@@ -1460,8 +1459,6 @@
 		04A6D9C72C6A0F0800FD7521 /* NoaHistoryChoiceUserCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaHistoryChoiceUserCell.m; sourceTree = "<group>"; };
 		04A6D9C92C6A0F2C00FD7521 /* NoaHistoryChoiceUseredTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaHistoryChoiceUseredTopView.h; sourceTree = "<group>"; };
 		04A6D9CA2C6A0F2C00FD7521 /* NoaHistoryChoiceUseredTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaHistoryChoiceUseredTopView.m; sourceTree = "<group>"; };
-		04A79D8C2942D48A00FF324A /* NoaGroupMemberPageInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaGroupMemberPageInfoCell.h; sourceTree = "<group>"; };
-		04A79D8D2942D48A00FF324A /* NoaGroupMemberPageInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaGroupMemberPageInfoCell.m; sourceTree = "<group>"; };
 		04A99FC62B96EF2900DFD946 /* NoaFileUploadTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaFileUploadTools.h; sourceTree = "<group>"; };
 		04A99FC72B96EF2900DFD946 /* NoaFileUploadTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaFileUploadTools.m; sourceTree = "<group>"; };
 		04A9FCF62A19F1E700960096 /* NoaFriendModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaFriendModel.h; sourceTree = "<group>"; };
@@ -2574,8 +2571,6 @@
 				04CDB51229221DA700EFEABA /* NoaGroupManageMemberCell.m */,
 				04CDB51729233DF100EFEABA /* NoaGroupManageManagerCell.h */,
 				04CDB51829233DF100EFEABA /* NoaGroupManageManagerCell.m */,
-				04A79D8C2942D48A00FF324A /* NoaGroupMemberPageInfoCell.h */,
-				04A79D8D2942D48A00FF324A /* NoaGroupMemberPageInfoCell.m */,
 				18420EA42AC15B420077E479 /* NoaRobotListTableViewCell.h */,
 				18420EA52AC15B420077E479 /* NoaRobotListTableViewCell.m */,
 				04942A2D2B81CFA300109695 /* noticeTranslateItemView.h */,
@@ -6263,7 +6258,6 @@
 				045F1EE228DEE3DA003D2818 /* MImageBrowserGestureHandle.m in Sources */,
 				049EE2672D2638AE00E5D211 /* NoaSafeSettingTools.m in Sources */,
 				04B82D8028CAEC21001196E1 /* NoaGroupListVC.m in Sources */,
-				04A79D8E2942D48A00FF324A /* NoaGroupMemberPageInfoCell.m in Sources */,
 				04D21EE92A668F36000B4572 /* NoaChatLinkSetViewCell.m in Sources */,
 				04CDB51F29247C1E00EFEABA /* NoaSheetCustomView.m in Sources */,
 				041EEB9929F66BB200CDCC1A /* NoaGestureLockCheckAccountPasswordView.m in Sources */,
