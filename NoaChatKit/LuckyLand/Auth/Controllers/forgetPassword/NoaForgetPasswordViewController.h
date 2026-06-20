@@ -5,11 +5,11 @@
 //  Created by phl on 2025/11/17.
 //
 
-#import "NoaRegisterAccountAndForgetPasswordBaseViewController.h"
+#import "LuckyLandForgetBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaForgetPasswordViewController : NoaRegisterAccountAndForgetPasswordBaseViewController
+@interface NoaForgetPasswordViewController : LuckyLandForgetBaseViewController
 
 /// 手机重置账号 - 区号
 @property (nonatomic, copy, readwrite) NSString *areaCode;

@@ -1,20 +1,20 @@
 //
-//  NoaRegisterAccountAndForgetPasswordBaseViewController.m
+//  LuckyLandForgetBaseViewController.m
 //  NoaChatKit
 //
 //  Created by phl on 2025/11/11.
 //
 
-#import "NoaRegisterAccountAndForgetPasswordBaseViewController.h"
+#import "LuckyLandForgetBaseViewController.h"
 
-@interface NoaRegisterAccountAndForgetPasswordBaseViewController ()
+@interface LuckyLandForgetBaseViewController ()
 
 /// 背景图片
 @property (nonatomic, strong) UIImageView *bgImgView;
 
 @end
 
-@implementation NoaRegisterAccountAndForgetPasswordBaseViewController
+@implementation LuckyLandForgetBaseViewController
 
 // MARK: set/get
 - (UIImageView *)bgImgView {

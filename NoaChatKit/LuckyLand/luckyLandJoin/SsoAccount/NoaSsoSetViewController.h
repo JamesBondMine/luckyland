@@ -5,11 +5,11 @@
 //  Created by Candy on 2026/9/1.
 //
 
-#import "NoaLoginBaseViewController.h"
+#import "LuckyLandLoginBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaSsoSetViewController : NoaLoginBaseViewController
+@interface NoaSsoSetViewController : LuckyLandLoginBaseViewController
 
 /// 是否是rootController
 @property (nonatomic, assign) BOOL isRoot;

@@ -5,7 +5,7 @@
 //  Created by phl on 2025/11/14.
 //
 
-#import "NoaLoginBaseViewController.h"
+#import "LuckyLandLoginBaseViewController.h"
 // 转场动画
 #import "NoaCenterAlertTransitioningDelegate.h"
 

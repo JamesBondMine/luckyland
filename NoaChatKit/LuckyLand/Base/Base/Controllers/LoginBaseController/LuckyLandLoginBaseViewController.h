@@ -1,5 +1,5 @@
 //
-//  NoaLoginBaseViewController.h
+//  LuckyLandLoginBaseViewController.h
 //  NoaChatKit
 //
 //  Created by phl on 2025/11/4.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaLoginBaseViewController : LuckyLandBaseViewController
+@interface LuckyLandLoginBaseViewController : LuckyLandBaseViewController
 
 /// 上方标题
 @property (nonatomic, strong, readonly) UILabel *topTitleLabel;

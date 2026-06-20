@@ -1,15 +1,15 @@
 //
-//  NoaLoginBaseViewController.m
+//  LuckyLandLoginBaseViewController.m
 //  NoaChatKit
 //
 //  Created by phl on 2025/11/4.
 //
 
-#import "NoaLoginBaseViewController.h"
+#import "LuckyLandLoginBaseViewController.h"
 #import "NoaNetSetViewController.h"
 #import "NoaLanguageSetViewController.h"
 
-@interface NoaLoginBaseViewController ()
+@interface LuckyLandLoginBaseViewController ()
 
 
 /// 网络设置
@@ -35,7 +35,7 @@
 
 @end
 
-@implementation NoaLoginBaseViewController
+@implementation LuckyLandLoginBaseViewController
 
 - (UIButton *)networkSetBtn {
     if (!_networkSetBtn) {
