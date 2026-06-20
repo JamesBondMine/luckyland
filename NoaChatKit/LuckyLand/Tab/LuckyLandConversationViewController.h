@@ -1,5 +1,5 @@
 //
-//  CandyTalkHomeViewController.h
+//  LuckyLandHomeViewController.h
 //  NoaKit
 //
 //  Created by Apple on 2026/9/2.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CandyTalkHomeViewController : CandyBaseViewController
+@interface LuckyLandConversationViewController : CandyBaseViewController
 
 - (void)sessionListAllRead:(NSString *)lastServerMsgId;
 

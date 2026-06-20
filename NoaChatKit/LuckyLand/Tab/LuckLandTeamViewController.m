@@ -5,7 +5,7 @@
 //  Created by Candy on 2023/7/19.
 //
 
-#import "CandyTalkTeamViewController.h"
+#import "LuckLandTeamViewController.h"
 #import "NoaTeamHomeHeaderView.h"
 #import "NoaTeamTitleHeaderView.h"
 #import "NoaTeamCell.h"
@@ -16,7 +16,7 @@
 #import "NoaAlertTipView.h"
 #import "NoaTeamUpdateNameView.h"
 
-@interface CandyTalkTeamViewController () <UITableViewDelegate, UITableViewDataSource, ZTeamHomeHeaderViewDelegate, ZTeamUpdateNameViewDelegate>
+@interface LuckLandTeamViewController () <UITableViewDelegate, UITableViewDataSource, ZTeamHomeHeaderViewDelegate, ZTeamUpdateNameViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *teamList;
 @property (nonatomic, strong) NSMutableArray *defaultDataArr;
@@ -25,7 +25,7 @@
 
 @end
 
-@implementation CandyTalkTeamViewController
+@implementation LuckLandTeamViewController
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];

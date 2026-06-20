@@ -4,7 +4,7 @@
 //
 
 #import "FlutterTallkMineViewController.h"
-#import "CandyTalkTeamViewController.h"//团队
+#import "LuckLandTeamViewController.h"//团队
 #import "NoaTeamListVC.h"
 #import "NoaDrawerPresentationController.h"
 #import "NoaMyCollectionViewController.h"//我的收藏
@@ -25,7 +25,7 @@
 
 #import "NoaAboutUsViewController.h"//关于我们
 
-#import "CandyTalkSignInViewController.h" //签到页面
+#import "LuckyLandSignInViewController.h" //签到页面
 #import "NoaMyQRCodeViewController.h"//我的二维码
 #import "NoaQRCodeModel.h"
 #import <SDWebImage/SDWebImage.h>
@@ -229,7 +229,7 @@ static NSString * const kFlutterMineAvatarCachePrefix = @"flutter_mine_avatar";
             //我的二维码
             [self getQtcondeContent];
         } else if ([action isEqualToString:@"mineTouchIndex103"]) {
-            CandyTalkSignInViewController * signInVC = [[CandyTalkSignInViewController alloc] init];
+            LuckyLandSignInViewController * signInVC = [[LuckyLandSignInViewController alloc] init];
             [self openFullScreen:signInVC];
         } else if ([action isEqualToString:@"mineTouchIndex104"]) {
             //个人信息

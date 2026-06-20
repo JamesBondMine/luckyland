@@ -5,7 +5,7 @@
 //  Created by Apple on 2026/9/2.
 //
 
-#import "CandyTalkContactVC.h"
+#import "LuckLandContactVC.h"
 
 #import "NoaContactHeaderView.h"
 #import "NoaContactSectionHeaderView.h"
@@ -26,10 +26,10 @@
 
 #import "NoaSessionTopView.h"
 
-#import "CandyTabBarController.h"//tabbar
-#import "CandyTallkMineViewController.h"
+#import "LuckyLandTabBarController.h"//tabbar
+#import "LuckyLandMineViewController.h"
 
-@interface CandyTalkContactVC () <ZContactHeaderViewDelegate, UITableViewDelegate, UITableViewDataSource, JXCategoryViewDelegate, UIGestureRecognizerDelegate>
+@interface LuckLandContactVC () <ZContactHeaderViewDelegate, UITableViewDelegate, UITableViewDataSource, JXCategoryViewDelegate, UIGestureRecognizerDelegate>
 
 //@property (nonatomic, strong) UIButton *searchView;
 @property (nonatomic, strong) NoaContactHeaderView *viewHeader;
@@ -44,7 +44,7 @@
 @property (nonatomic, strong) NoaSessionTopView *viewTop;
 @end
 
-@implementation CandyTalkContactVC
+@implementation LuckLandContactVC
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [_viewTop viewAppearUpdateUI];
@@ -251,7 +251,7 @@
     
     _viewHeader.newFriendApplyNum = count;
     
-    CandyTabBarController *tab = (CandyTabBarController *)self.tabBarController;
+    LuckyLandTabBarController *tab = (LuckyLandTabBarController *)self.tabBarController;
     [tab setBadgeValue:2 number:count];
     
 }
@@ -331,7 +331,7 @@
     CGPoint translation = [recognizer translationInView:self.view];
     if (recognizer.state == UIGestureRecognizerStateEnded || recognizer.state == UIGestureRecognizerStateCancelled) {
         if (translation.x > 60) {
-            [CandyTallkMineViewController presentMineDrawerFromTop];
+            [LuckyLandMineViewController presentMineDrawerFromTop];
         }
     }
 }

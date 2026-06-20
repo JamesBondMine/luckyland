@@ -8,7 +8,7 @@
 #import "NoaToolManager.h"
 #import <AFNetworking/AFNetworking.h>
 #import "AppDelegate.h"
-#import "CandyTabBarController.h"
+#import "LuckyLandTabBarController.h"
 #import "NoaNavigationController.h"
 #import "NoaLoginViewController.h"
 //#import "NoaSsoSetViewController.h"
@@ -16,9 +16,9 @@
 #import "NoaAppStartErrorDefaultViewController.h"
 #import "NoaBaseWebViewController.h"
 #import "NoaKnownTipView.h"
-#import "CandyTabBarController.h"
+#import "LuckyLandTabBarController.h"
 #import "NoaChatViewController.h"
-#import "CandyTalkHomeViewController.h"
+#import "LuckyLandHomeViewController.h"
 #import "NoaMessageModel.h"
 #import "NoaAuthBannedAlertView.h"
 #import <Photos/Photos.h>
@@ -251,7 +251,7 @@ static NSString *g_CurrentLoganPublishURL = nil; // 内存记录当前 Logan pub
     
     [ZTOOL doInMain:^{
         [ZLanguageTOOL initLanguageSetting];
-        CandyTabBarController * tabbarVC = [[CandyTabBarController alloc] init];
+        LuckyLandTabBarController * tabbarVC = [[LuckyLandTabBarController alloc] init];
         AppDelegate *appdelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
         appdelegate.window.rootViewController = tabbarVC;
         //通讯录红点先取本地展示

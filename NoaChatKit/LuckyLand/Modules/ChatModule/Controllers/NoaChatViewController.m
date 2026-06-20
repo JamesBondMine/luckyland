@@ -83,7 +83,7 @@
 #import "ZGroupTopMessageListViewController.h"
 
 
-#import "CandyTalkHomeViewController.h"
+#import "LuckyLandHomeViewController.h"
 
 
 #define ChatTopTitleWidth DWScale(180)
@@ -1008,8 +1008,8 @@
                 [self deleteSessionAndChatMessage];
                 WeakSelf
                 [self.navigationController.childViewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                    if ([obj isKindOfClass:[CandyTalkHomeViewController class]]) {
-                        CandyTalkHomeViewController *vc = (CandyTalkHomeViewController *)obj;
+                    if ([obj isKindOfClass:[LuckyLandHomeViewController class]]) {
+                        LuckyLandHomeViewController *vc = (LuckyLandHomeViewController *)obj;
                         [weakSelf.navigationController popToViewController:vc animated:YES];
                         *stop = YES;
                     }
@@ -1088,8 +1088,8 @@
                     } else {
                         [weakSelf deleteSessionAndChatMessage];
                         [weakSelf.navigationController.childViewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                            if ([obj isKindOfClass:[CandyTalkHomeViewController class]]) {
-                                CandyTalkHomeViewController *vc = (CandyTalkHomeViewController *)obj;
+                            if ([obj isKindOfClass:[LuckyLandHomeViewController class]]) {
+                                LuckyLandHomeViewController *vc = (LuckyLandHomeViewController *)obj;
                                 [weakSelf.navigationController popToViewController:vc animated:YES];
                                 *stop = YES;
                             }
@@ -1110,8 +1110,8 @@
                     } else {
                         [weakSelf deleteSessionAndChatMessage];
                         [weakSelf.navigationController.childViewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                            if ([obj isKindOfClass:[CandyTalkHomeViewController class]]) {
-                                CandyTalkHomeViewController *vc = (CandyTalkHomeViewController *)obj;
+                            if ([obj isKindOfClass:[LuckyLandHomeViewController class]]) {
+                                LuckyLandHomeViewController *vc = (LuckyLandHomeViewController *)obj;
                                 [weakSelf.navigationController popToViewController:vc animated:YES];
                                 *stop = YES;
                             }
@@ -3239,8 +3239,8 @@
                 } else {
                     [self deleteSessionAndChatMessage];
                     [weakSelf.navigationController.childViewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                        if ([obj isKindOfClass:[CandyTalkHomeViewController class]]) {
-                            CandyTalkHomeViewController *vc = (CandyTalkHomeViewController *)obj;
+                        if ([obj isKindOfClass:[LuckyLandHomeViewController class]]) {
+                            LuckyLandHomeViewController *vc = (LuckyLandHomeViewController *)obj;
                             [weakSelf.navigationController popToViewController:vc animated:YES];
                             *stop = YES;
                         }

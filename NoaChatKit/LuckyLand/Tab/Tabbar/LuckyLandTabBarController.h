@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CandyTabBarController : UITabBarController
+@interface LuckyLandTabBarController : UITabBarController
 - (void)setBadgeValue:(NSInteger)index number:(NSInteger)number;
 @end
 

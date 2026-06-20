@@ -5,7 +5,7 @@
 //  Created by Apple on 2023/8/8.
 //
 
-#import "CandyTalkSignInViewController.h"
+#import "LuckyLandSignInViewController.h"
 #import "NoaRuleViewController.h" //签到规则
 #import "NoaSignRecordsViewController.h" //签到记录
 #import "NoaIntegralDetailViewController.h" //积分明细
@@ -15,7 +15,7 @@
 #import "KLSignInModel.h"
 #import "NoaSignInRuleModel.h"
 
-@interface CandyTalkSignInViewController ()
+@interface LuckyLandSignInViewController ()
 //@property (nonatomic, strong) KLSignInView *signInView;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) KLSICalendarView *calendarView;
@@ -32,7 +32,7 @@
 
 @end
 
-@implementation CandyTalkSignInViewController
+@implementation LuckyLandSignInViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

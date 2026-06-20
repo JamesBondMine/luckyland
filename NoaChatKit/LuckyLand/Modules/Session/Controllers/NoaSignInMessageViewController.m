@@ -7,7 +7,7 @@
 
 #import "NoaSignInMessageViewController.h"
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
-#import "CandyTalkSignInViewController.h"
+#import "LuckyLandSignInViewController.h"
 #import "SignInTableViewCell.h"
 @interface NoaSignInMessageViewController ()<UITableViewDelegate,UITableViewDataSource,ZBaseCellDelegate,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 @property(nonatomic,strong) NSMutableArray * signHistoryList;
@@ -96,7 +96,7 @@
 }
 #pragma mark - ZSessionCellDelegate cell点击事件
 - (void)cellClickAction:(NSIndexPath *)indexPath{
-    CandyTalkSignInViewController * signInVC = [[CandyTalkSignInViewController alloc] init];
+    LuckyLandSignInViewController * signInVC = [[LuckyLandSignInViewController alloc] init];
     [self.navigationController pushViewController:signInVC animated:YES];
 }
 #pragma mark - DZNEmptyDataSetSource

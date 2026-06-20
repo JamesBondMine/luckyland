@@ -1,18 +1,18 @@
 //
-//  CandyTalkHomeViewController.m
+//  LuckyLandHomeViewController.m
 //  NoaKit
 //
 //  Created by Apple on 2026/9/2.
 //
 
-#import "CandyTalkHomeViewController.h"
+#import "LuckyLandConversationViewController.h"
 
 
 #import "NoaSessionTopView.h"
 #import "NoaSearchView.h"
 #import "NoaSessionCell.h"
 #import "NoaSessionHeaderView.h"
-#import "CandyTallkMineViewController.h"
+#import "LuckyLandMineViewController.h"
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 #import "AppDelegate+MiniApp.h"
 //跳转
@@ -20,7 +20,7 @@
 #import "NoaAddFriendVC.h"//添加好友
 #import "NoaInviteFriendVC.h"//创建群聊邀请好友
 #import "NoaChatViewController.h"//聊天
-#import "CandyTabBarController.h"//tabbar
+#import "LuckyLandTabBarController.h"//tabbar
 #import "NoaPushNavTools.h"   //推送消息点击跳转
 #import "NoaToolManager.h"    //工具类
 #import "NoaQRcodeScanViewController.h"//扫描二维码
@@ -36,7 +36,7 @@
 #import "NoaMessageTools.h"
 #import "NoaSessionReadTool.h"
 
-@interface CandyTalkHomeViewController () <NoaToolSessionDelegate,UITableViewDelegate,UITableViewDataSource,MGSwipeTableCellDelegate, DZNEmptyDataSetSource,DZNEmptyDataSetDelegate,ZSessionCellDelegate>
+@interface LuckyLandConversationViewController () <NoaToolSessionDelegate,UITableViewDelegate,UITableViewDataSource,MGSwipeTableCellDelegate, DZNEmptyDataSetSource,DZNEmptyDataSetDelegate,ZSessionCellDelegate>
 @property (nonatomic, strong) NoaSessionTopView *viewTop;
 @property (nonatomic, strong) UIButton *btnTop;
 @property (nonatomic, strong) SyncMutableArray *sessionList;//会话列表
@@ -54,7 +54,7 @@
 @property (nonatomic, copy) dispatch_block_t pendingReloadBlock;
 @end
 
-@implementation CandyTalkHomeViewController
+@implementation LuckyLandConversationViewController
 
 - (void)refreshRowForSessionId:(NSString *)sessionId {
     if (sessionId.length == 0) return;
@@ -76,7 +76,7 @@
                 @try {
                     [self.baseTableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
                 } @catch (NSException *exception) {
-                    NSLog(@"❌ [CandyTalkHomeViewController] reloadRowsAtIndexPaths 异常: %@", exception.reason);
+                    NSLog(@"❌ [LuckyLandHomeViewController] reloadRowsAtIndexPaths 异常: %@", exception.reason);
                     // 如果局部刷新失败，回退到全量刷新
                     [self.baseTableView reloadData];
                 }

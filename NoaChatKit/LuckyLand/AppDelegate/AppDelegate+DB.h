@@ -6,7 +6,7 @@
 //
 
 #import "AppDelegate.h"
-#import "CandyTabBarController.h"
+#import "LuckyLandTabBarController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

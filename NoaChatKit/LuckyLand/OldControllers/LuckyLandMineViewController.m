@@ -5,7 +5,7 @@
 //  Created by Apple on 2026/9/2.
 //
 
-#import "CandyTallkMineViewController.h"
+#import "LuckyLandMineViewController.h"
 
 #import "NoaMineInfoView.h"
 #import "NoaMineCenterCell.h"
@@ -20,10 +20,10 @@
 #import "NoaLanguageSetViewController.h"//多语言
 #import "NoaAboutUsViewController.h"//关于我们
 #import "NoaShareInviteViewController.h"//分享邀请
-#import "CandyTalkSignInViewController.h" //签到页面
+#import "LuckyLandSignInViewController.h" //签到页面
 #import "NoaTranslateSetDefaultViewController.h" //翻译管理
 #import "NoaPrivacySettingViewController.h"
-#import "CandyTalkTeamViewController.h"//团队
+#import "LuckLandTeamViewController.h"//团队
 #import "NoaTeamListVC.h"
 #import "NoaQRCodeModel.h"
 // 网络检测页面
@@ -58,7 +58,7 @@
 }
 @end
 
-@interface CandyTallkMineViewController () <UITableViewDelegate, UITableViewDataSource, ZBaseCellDelegate, ZMineInfoViewDelegate>
+@interface LuckyLandMineViewController () <UITableViewDelegate, UITableViewDataSource, ZBaseCellDelegate, ZMineInfoViewDelegate>
 
 @property (nonatomic, strong) NoaMineInfoView *viewMineInfo;
 @property (nonatomic, strong)NSMutableArray *dataArr;
@@ -66,7 +66,7 @@
 
 @end
 
-@implementation CandyTallkMineViewController
+@implementation LuckyLandMineViewController
 
 // 统一方式重新 present 抽屉样式的 ZMineVC
 + (void)presentMineDrawerFromTop {
@@ -87,12 +87,12 @@
     if ([presented isKindOfClass:[UINavigationController class]]) {
         UINavigationController *pnav = (UINavigationController *)presented;
         UIViewController *first = pnav.viewControllers.firstObject;
-        if ([first isKindOfClass:[CandyTallkMineViewController class]] && pnav.transitioningDelegate) {
+        if ([first isKindOfClass:[LuckyLandMineViewController class]] && pnav.transitioningDelegate) {
             return;
         }
     }
 
-    CandyTallkMineViewController *mine = [CandyTallkMineViewController new];
+    LuckyLandMineViewController *mine = [LuckyLandMineViewController new];
     UINavigationController *drawerNav = [[UINavigationController alloc] initWithRootViewController:mine];
     drawerNav.navigationBarHidden = YES;
     drawerNav.modalPresentationStyle = UIModalPresentationCustom;
@@ -208,7 +208,7 @@
             if ([vcItem isKindOfClass:[UINavigationController class]]) {
                 UINavigationController *navItem = (UINavigationController *)vcItem;
                 UIViewController *root = navItem.viewControllers.firstObject;
-                if ([root isKindOfClass:[CandyTallkMineViewController class]]) {
+                if ([root isKindOfClass:[LuckyLandMineViewController class]]) {
                     mineNav = navItem;
                     break;
                 }
@@ -451,7 +451,7 @@
         [self openFullScreen:teamVC];
     }
     if ([titleName isEqualToString:LanguageToolMatch(@"每日签到")]) {
-        CandyTalkSignInViewController * signInVC = [[CandyTalkSignInViewController alloc] init];
+        LuckyLandSignInViewController * signInVC = [[LuckyLandSignInViewController alloc] init];
         [self openFullScreen:signInVC];
     }
 
@@ -527,7 +527,7 @@
     }else if (actionTag == 9901){
         [self getQtcondeContent];
     }else if (actionTag == 9902){
-        CandyTalkSignInViewController * signInVC = [[CandyTalkSignInViewController alloc] init];
+        LuckyLandSignInViewController * signInVC = [[LuckyLandSignInViewController alloc] init];
         [self openFullScreen:signInVC];
     }
 }

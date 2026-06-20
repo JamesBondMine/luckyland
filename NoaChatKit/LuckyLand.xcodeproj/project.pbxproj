@@ -330,7 +330,7 @@
 		04A6BCC72A6781B7000A818D /* AppDelegate+MiniApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A6BCC62A6781B7000A818D /* AppDelegate+MiniApp.m */; };
 		04A6BCCA2A679814000A818D /* NoaMiniAppFloatListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A6BCC92A679814000A818D /* NoaMiniAppFloatListView.m */; };
 		04A6BCCD2A67BF21000A818D /* NoaMiniAppFloatListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A6BCCC2A67BF21000A818D /* NoaMiniAppFloatListCell.m */; };
-		04A6BCD42A67E2C1000A818D /* CandyTalkTeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A6BCD32A67E2C1000A818D /* CandyTalkTeamViewController.m */; };
+		04A6BCD42A67E2C1000A818D /* LuckLandTeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A6BCD32A67E2C1000A818D /* LuckLandTeamViewController.m */; };
 		04A6BCDD2A68E069000A818D /* NoaTeamDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A6BCDC2A68E069000A818D /* NoaTeamDetailVC.m */; };
 		04A6BCE02A68E18F000A818D /* NoaTeamMemberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A6BCDF2A68E18F000A818D /* NoaTeamMemberCell.m */; };
 		04A6BCE32A690F7D000A818D /* NoaTeamCreateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A6BCE22A690F7D000A818D /* NoaTeamCreateVC.m */; };
@@ -561,7 +561,7 @@
 		18420EA32AC1586C0077E479 /* NoaRobotListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18420EA22AC1586C0077E479 /* NoaRobotListViewController.m */; };
 		18420EA62AC15B420077E479 /* NoaRobotListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18420EA52AC15B420077E479 /* NoaRobotListTableViewCell.m */; };
 		18420EA92AC188020077E479 /* NoaRobotModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18420EA82AC188020077E479 /* NoaRobotModel.m */; };
-		1863DAD72A94AC23005351F6 /* CandyTalkSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1863DAD12A94AC22005351F6 /* CandyTalkSignInViewController.m */; };
+		1863DAD72A94AC23005351F6 /* LuckyLandSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1863DAD12A94AC22005351F6 /* LuckyLandSignInViewController.m */; };
 		1863DAD82A94AC23005351F6 /* NoaSignRecordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1863DAD42A94AC23005351F6 /* NoaSignRecordsViewController.m */; };
 		1863DAD92A94AC23005351F6 /* NoaRuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1863DAD52A94AC23005351F6 /* NoaRuleViewController.m */; };
 		1863DADC2A94AC4D005351F6 /* NoaSignRecordsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1863DADB2A94AC4D005351F6 /* NoaSignRecordsTableViewCell.m */; };
@@ -573,8 +573,8 @@
 		1863DAF22A94AFEC005351F6 /* KLSICalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1863DAED2A94AFEC005351F6 /* KLSICalendarView.m */; };
 		1863DAF32A94AFEC005351F6 /* NoaFDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1863DAEE2A94AFEC005351F6 /* NoaFDatePickerView.m */; };
 		1863DAF42A94AFEC005351F6 /* KLSignInView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1863DAF02A94AFEC005351F6 /* KLSignInView.m */; };
-		1899A0D428C1C5BC0045A652 /* CandyTalkContactVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1899A0D328C1C5BC0045A652 /* CandyTalkContactVC.m */; };
-		1899A0DC28C1EE1B0045A652 /* CandyTallkMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1899A0DB28C1EE1B0045A652 /* CandyTallkMineViewController.m */; };
+		1899A0D428C1C5BC0045A652 /* LuckLandContactVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1899A0D328C1C5BC0045A652 /* LuckLandContactVC.m */; };
+		1899A0DC28C1EE1B0045A652 /* LuckyLandMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1899A0DB28C1EE1B0045A652 /* LuckyLandMineViewController.m */; };
 		1899A0E428C2F6F80045A652 /* NoaSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1899A0E328C2F6F80045A652 /* NoaSearchView.m */; };
 		18A407CD2B01FAC5006315B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A407CC2B01FAC5006315B3 /* UIKit.framework */; };
 		18A407CF2B01FAE0006315B3 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A407CE2B01FAE0006315B3 /* CoreText.framework */; };
@@ -659,7 +659,6 @@
 		8815564E2FA88BE9004702A6 /* NoaLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555C12FA88BE9004702A6 /* NoaLoginViewController.m */; };
 		8815564F2FA88BE9004702A6 /* NoaFindPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555C42FA88BE9004702A6 /* NoaFindPasswordViewController.m */; };
 		881556502FA88BE9004702A6 /* NoaPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555C62FA88BE9004702A6 /* NoaPasswordViewController.m */; };
-		881556512FA88BE9004702A6 /* NoaRegisterTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555C92FA88BE9004702A6 /* NoaRegisterTypeViewController.m */; };
 		881556522FA88BE9004702A6 /* NoaRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555CB2FA88BE9004702A6 /* NoaRegisterViewController.m */; };
 		881556532FA88BE9004702A6 /* NoaSsoSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555CE2FA88BE9004702A6 /* NoaSsoSetViewController.m */; };
 		881556542FA88BE9004702A6 /* NoaVerCodeLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555D12FA88BE9004702A6 /* NoaVerCodeLoginViewController.m */; };
@@ -709,9 +708,9 @@
 		881556802FA88BE9004702A6 /* NoaVerCodeLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 881556422FA88BE9004702A6 /* NoaVerCodeLoginView.m */; };
 		8826BF1F2FE23B28003EB3D9 /* LuckyLandSsoSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8826BF1E2FE23B28003EB3D9 /* LuckyLandSsoSetViewController.m */; };
 		8826BF322FE23C00003EB3D9 /* LuckyLandIslandSceneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8826BF312FE23C00003EB3D9 /* LuckyLandIslandSceneView.m */; };
-		88AE5C6A2FA87D7C00DA3F8E /* CandyTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88AE5C632FA87D7C00DA3F8E /* CandyTabBarController.m */; };
+		88AE5C6A2FA87D7C00DA3F8E /* LuckyLandTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88AE5C632FA87D7C00DA3F8E /* LuckyLandTabBarController.m */; };
 		88AE5C6B2FA87D7C00DA3F8E /* UITabBar+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 88AE5C652FA87D7C00DA3F8E /* UITabBar+Badge.m */; };
-		88AE5C6C2FA87D7C00DA3F8E /* CandyTalkHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88AE5C682FA87D7C00DA3F8E /* CandyTalkHomeViewController.m */; };
+		88AE5C6C2FA87D7C00DA3F8E /* LuckyLandConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88AE5C682FA87D7C00DA3F8E /* LuckyLandConversationViewController.m */; };
 		88BF1C9E2FE632670065A1EE /* NoaMineInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88BF1C9C2FE632670065A1EE /* NoaMineInfoView.m */; };
 		C31AEEBA2E31E3ED00870262 /* NoaTeamInviteDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C31AEEB92E31E3ED00870262 /* NoaTeamInviteDetailVC.m */; };
 		C31AEEBD2E31E40100870262 /* NoaTeamInviteDetailDataHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = C31AEEBC2E31E40100870262 /* NoaTeamInviteDetailDataHandle.m */; };
@@ -1437,8 +1436,8 @@
 		04A6BCC92A679814000A818D /* NoaMiniAppFloatListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaMiniAppFloatListView.m; sourceTree = "<group>"; };
 		04A6BCCB2A67BF21000A818D /* NoaMiniAppFloatListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaMiniAppFloatListCell.h; sourceTree = "<group>"; };
 		04A6BCCC2A67BF21000A818D /* NoaMiniAppFloatListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaMiniAppFloatListCell.m; sourceTree = "<group>"; };
-		04A6BCD22A67E2C1000A818D /* CandyTalkTeamViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CandyTalkTeamViewController.h; sourceTree = "<group>"; };
-		04A6BCD32A67E2C1000A818D /* CandyTalkTeamViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CandyTalkTeamViewController.m; sourceTree = "<group>"; };
+		04A6BCD22A67E2C1000A818D /* LuckLandTeamViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LuckLandTeamViewController.h; sourceTree = "<group>"; };
+		04A6BCD32A67E2C1000A818D /* LuckLandTeamViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuckLandTeamViewController.m; sourceTree = "<group>"; };
 		04A6BCDB2A68E069000A818D /* NoaTeamDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaTeamDetailVC.h; sourceTree = "<group>"; };
 		04A6BCDC2A68E069000A818D /* NoaTeamDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaTeamDetailVC.m; sourceTree = "<group>"; };
 		04A6BCDE2A68E18F000A818D /* NoaTeamMemberCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaTeamMemberCell.h; sourceTree = "<group>"; };
@@ -1890,9 +1889,9 @@
 		18420EA52AC15B420077E479 /* NoaRobotListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaRobotListTableViewCell.m; sourceTree = "<group>"; };
 		18420EA72AC188020077E479 /* NoaRobotModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaRobotModel.h; sourceTree = "<group>"; };
 		18420EA82AC188020077E479 /* NoaRobotModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaRobotModel.m; sourceTree = "<group>"; };
-		1863DAD12A94AC22005351F6 /* CandyTalkSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CandyTalkSignInViewController.m; sourceTree = "<group>"; };
+		1863DAD12A94AC22005351F6 /* LuckyLandSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuckyLandSignInViewController.m; sourceTree = "<group>"; };
 		1863DAD22A94AC22005351F6 /* NoaRuleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaRuleViewController.h; sourceTree = "<group>"; };
-		1863DAD32A94AC23005351F6 /* CandyTalkSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CandyTalkSignInViewController.h; sourceTree = "<group>"; };
+		1863DAD32A94AC23005351F6 /* LuckyLandSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuckyLandSignInViewController.h; sourceTree = "<group>"; };
 		1863DAD42A94AC23005351F6 /* NoaSignRecordsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaSignRecordsViewController.m; sourceTree = "<group>"; };
 		1863DAD52A94AC23005351F6 /* NoaRuleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaRuleViewController.m; sourceTree = "<group>"; };
 		1863DAD62A94AC23005351F6 /* NoaSignRecordsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaSignRecordsViewController.h; sourceTree = "<group>"; };
@@ -1914,10 +1913,10 @@
 		1863DAEF2A94AFEC005351F6 /* KLSICalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLSICalendarView.h; sourceTree = "<group>"; };
 		1863DAF02A94AFEC005351F6 /* KLSignInView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLSignInView.m; sourceTree = "<group>"; };
 		1871B0FB29E67FAA00F5E371 /* NoaAPIKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaAPIKey.h; sourceTree = "<group>"; };
-		1899A0D228C1C5BC0045A652 /* CandyTalkContactVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CandyTalkContactVC.h; sourceTree = "<group>"; };
-		1899A0D328C1C5BC0045A652 /* CandyTalkContactVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CandyTalkContactVC.m; sourceTree = "<group>"; };
-		1899A0DA28C1EE1B0045A652 /* CandyTallkMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CandyTallkMineViewController.h; sourceTree = "<group>"; };
-		1899A0DB28C1EE1B0045A652 /* CandyTallkMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CandyTallkMineViewController.m; sourceTree = "<group>"; };
+		1899A0D228C1C5BC0045A652 /* LuckLandContactVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LuckLandContactVC.h; sourceTree = "<group>"; };
+		1899A0D328C1C5BC0045A652 /* LuckLandContactVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuckLandContactVC.m; sourceTree = "<group>"; };
+		1899A0DA28C1EE1B0045A652 /* LuckyLandMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LuckyLandMineViewController.h; sourceTree = "<group>"; };
+		1899A0DB28C1EE1B0045A652 /* LuckyLandMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuckyLandMineViewController.m; sourceTree = "<group>"; };
 		1899A0E228C2F6F80045A652 /* NoaSearchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaSearchView.h; sourceTree = "<group>"; };
 		1899A0E328C2F6F80045A652 /* NoaSearchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaSearchView.m; sourceTree = "<group>"; };
 		18A407CC2B01FAC5006315B3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -2094,8 +2093,6 @@
 		881555C42FA88BE9004702A6 /* NoaFindPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaFindPasswordViewController.m; sourceTree = "<group>"; };
 		881555C52FA88BE9004702A6 /* NoaPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaPasswordViewController.h; sourceTree = "<group>"; };
 		881555C62FA88BE9004702A6 /* NoaPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaPasswordViewController.m; sourceTree = "<group>"; };
-		881555C82FA88BE9004702A6 /* NoaRegisterTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaRegisterTypeViewController.h; sourceTree = "<group>"; };
-		881555C92FA88BE9004702A6 /* NoaRegisterTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaRegisterTypeViewController.m; sourceTree = "<group>"; };
 		881555CA2FA88BE9004702A6 /* NoaRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaRegisterViewController.h; sourceTree = "<group>"; };
 		881555CB2FA88BE9004702A6 /* NoaRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaRegisterViewController.m; sourceTree = "<group>"; };
 		881555CD2FA88BE9004702A6 /* NoaSsoSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaSsoSetViewController.h; sourceTree = "<group>"; };
@@ -2194,12 +2191,12 @@
 		8826BF1E2FE23B28003EB3D9 /* LuckyLandSsoSetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuckyLandSsoSetViewController.m; sourceTree = "<group>"; };
 		8826BF302FE23C00003EB3D9 /* LuckyLandIslandSceneView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LuckyLandIslandSceneView.h; sourceTree = "<group>"; };
 		8826BF312FE23C00003EB3D9 /* LuckyLandIslandSceneView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuckyLandIslandSceneView.m; sourceTree = "<group>"; };
-		88AE5C622FA87D7C00DA3F8E /* CandyTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CandyTabBarController.h; sourceTree = "<group>"; };
-		88AE5C632FA87D7C00DA3F8E /* CandyTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CandyTabBarController.m; sourceTree = "<group>"; };
+		88AE5C622FA87D7C00DA3F8E /* LuckyLandTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuckyLandTabBarController.h; sourceTree = "<group>"; };
+		88AE5C632FA87D7C00DA3F8E /* LuckyLandTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuckyLandTabBarController.m; sourceTree = "<group>"; };
 		88AE5C642FA87D7C00DA3F8E /* UITabBar+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+Badge.h"; sourceTree = "<group>"; };
 		88AE5C652FA87D7C00DA3F8E /* UITabBar+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+Badge.m"; sourceTree = "<group>"; };
-		88AE5C672FA87D7C00DA3F8E /* CandyTalkHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CandyTalkHomeViewController.h; sourceTree = "<group>"; };
-		88AE5C682FA87D7C00DA3F8E /* CandyTalkHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CandyTalkHomeViewController.m; sourceTree = "<group>"; };
+		88AE5C672FA87D7C00DA3F8E /* LuckyLandConversationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuckyLandConversationViewController.h; sourceTree = "<group>"; };
+		88AE5C682FA87D7C00DA3F8E /* LuckyLandConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuckyLandConversationViewController.m; sourceTree = "<group>"; };
 		88BF1C9C2FE632670065A1EE /* NoaMineInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaMineInfoView.m; sourceTree = "<group>"; };
 		88BF1C9D2FE632670065A1EE /* NoaMineInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaMineInfoView.h; sourceTree = "<group>"; };
 		C31AEEB82E31E3ED00870262 /* NoaTeamInviteDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaTeamInviteDetailVC.h; sourceTree = "<group>"; };
@@ -5752,10 +5749,8 @@
 			children = (
 				88BF1C9D2FE632670065A1EE /* NoaMineInfoView.h */,
 				88BF1C9C2FE632670065A1EE /* NoaMineInfoView.m */,
-				1899A0DA28C1EE1B0045A652 /* CandyTallkMineViewController.h */,
-				1899A0DB28C1EE1B0045A652 /* CandyTallkMineViewController.m */,
-				881555C82FA88BE9004702A6 /* NoaRegisterTypeViewController.h */,
-				881555C92FA88BE9004702A6 /* NoaRegisterTypeViewController.m */,
+				1899A0DA28C1EE1B0045A652 /* LuckyLandMineViewController.h */,
+				1899A0DB28C1EE1B0045A652 /* LuckyLandMineViewController.m */,
 				F2A3B4C52E20000100000001 /* FlutterRegisterTypeViewController.h */,
 				F2A3B4C62E20000100000002 /* FlutterRegisterTypeViewController.m */,
 			);
@@ -5765,8 +5760,8 @@
 		88AE5C662FA87D7C00DA3F8E /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
-				88AE5C622FA87D7C00DA3F8E /* CandyTabBarController.h */,
-				88AE5C632FA87D7C00DA3F8E /* CandyTabBarController.m */,
+				88AE5C622FA87D7C00DA3F8E /* LuckyLandTabBarController.h */,
+				88AE5C632FA87D7C00DA3F8E /* LuckyLandTabBarController.m */,
 				88AE5C642FA87D7C00DA3F8E /* UITabBar+Badge.h */,
 				88AE5C652FA87D7C00DA3F8E /* UITabBar+Badge.m */,
 			);
@@ -5776,17 +5771,17 @@
 		88AE5C692FA87D7C00DA3F8E /* Tab */ = {
 			isa = PBXGroup;
 			children = (
-				1863DAD32A94AC23005351F6 /* CandyTalkSignInViewController.h */,
-				1863DAD12A94AC22005351F6 /* CandyTalkSignInViewController.m */,
-				04A6BCD22A67E2C1000A818D /* CandyTalkTeamViewController.h */,
-				04A6BCD32A67E2C1000A818D /* CandyTalkTeamViewController.m */,
+				1863DAD32A94AC23005351F6 /* LuckyLandSignInViewController.h */,
+				1863DAD12A94AC22005351F6 /* LuckyLandSignInViewController.m */,
+				04A6BCD22A67E2C1000A818D /* LuckLandTeamViewController.h */,
+				04A6BCD32A67E2C1000A818D /* LuckLandTeamViewController.m */,
 				F1A2B3C42E10000100000001 /* FlutterTallkMineViewController.h */,
 				F1A2B3C52E10000100000002 /* FlutterTallkMineViewController.m */,
-				1899A0D228C1C5BC0045A652 /* CandyTalkContactVC.h */,
-				1899A0D328C1C5BC0045A652 /* CandyTalkContactVC.m */,
+				1899A0D228C1C5BC0045A652 /* LuckLandContactVC.h */,
+				1899A0D328C1C5BC0045A652 /* LuckLandContactVC.m */,
 				88AE5C662FA87D7C00DA3F8E /* Tabbar */,
-				88AE5C672FA87D7C00DA3F8E /* CandyTalkHomeViewController.h */,
-				88AE5C682FA87D7C00DA3F8E /* CandyTalkHomeViewController.m */,
+				88AE5C672FA87D7C00DA3F8E /* LuckyLandConversationViewController.h */,
+				88AE5C682FA87D7C00DA3F8E /* LuckyLandConversationViewController.m */,
 			);
 			path = Tab;
 			sourceTree = "<group>";
@@ -6219,13 +6214,13 @@
 				04B044812A0B871F00E0E3E1 /* NoaFileUploadModel.m in Sources */,
 				048A67862A52C7F800DB1078 /* NoaFriendGroupSectionHeaderView.m in Sources */,
 				04AD93DD29225509007D2885 /* NoaChangeUserInfoViewController.m in Sources */,
-				1899A0D428C1C5BC0045A652 /* CandyTalkContactVC.m in Sources */,
+				1899A0D428C1C5BC0045A652 /* LuckLandContactVC.m in Sources */,
 				045EE90528D06DB400CC9AC3 /* NSArray+Addition.m in Sources */,
 				043D2D5028D1C70D00DF6A83 /* NoaGlobalSearchVC.m in Sources */,
 				184043DF2B0C54E400E575B0 /* YYTextContainerView.m in Sources */,
 				04F5078128D2C4500048FFB5 /* NoaBaseModel.m in Sources */,
 				04B19E892A6A631D0090164E /* NoaChatTagModel.m in Sources */,
-				88AE5C6C2FA87D7C00DA3F8E /* CandyTalkHomeViewController.m in Sources */,
+				88AE5C6C2FA87D7C00DA3F8E /* LuckyLandConversationViewController.m in Sources */,
 				6CEFA8D62E49955A00D872DC /* NoaGroupNoticeDetailVC.m in Sources */,
 				8815565A2FA88BE9004702A6 /* NoaRegisterTypeDataHandle.m in Sources */,
 				04942A2F2B81CFA300109695 /* noticeTranslateItemView.m in Sources */,
@@ -6326,7 +6321,6 @@
 				04A6BCE62A6916C4000A818D /* NoaTeamManagerVC.m in Sources */,
 				184043EC2B0C54E400E575B0 /* YYTextRubyAnnotation.m in Sources */,
 				04F6F33D29910C140021D136 /* NoaMediaCallMoreVideoItem.m in Sources */,
-				881556512FA88BE9004702A6 /* NoaRegisterTypeViewController.m in Sources */,
 				F2A3B4C72E20000100000003 /* FlutterRegisterTypeViewController.m in Sources */,
 				049D0B8329DA637D006F2577 /* NoaMyQRCodeViewController.m in Sources */,
 				041EEB6E29F28AE200CDCC1A /* NoaMassMessageFileDetailVC.m in Sources */,
@@ -6411,7 +6405,7 @@
 				04C31F06292C63DF005F40BF /* NoaMsgReadProgressView.m in Sources */,
 				049C8B182AE9F5EF00E64D60 /* NoaMessageStickersCell.m in Sources */,
 				0430E1CA29EFE7380071B489 /* NoaCollectionTextCell.m in Sources */,
-				1899A0DC28C1EE1B0045A652 /* CandyTallkMineViewController.m in Sources */,
+				1899A0DC28C1EE1B0045A652 /* LuckyLandMineViewController.m in Sources */,
 				F1A2B3C62E10000100000003 /* FlutterTallkMineViewController.m in Sources */,
 				04CDD4942AE8EE850068D830 /* NoaEmojiShopFeaturedViewController.m in Sources */,
 				04AE18662B4F79C9007D33F8 /* NoaBaseUserModel.m in Sources */,
@@ -6493,7 +6487,7 @@
 				04C43DC929EE476300555D7E /* NoaChatMultiSelectTipsCell.m in Sources */,
 				184043E52B0C54E400E575B0 /* YYTextKeyboardManager.m in Sources */,
 				041A81DA2A160E0D00EC4FB3 /* NoaCallOptions.m in Sources */,
-				04A6BCD42A67E2C1000A818D /* CandyTalkTeamViewController.m in Sources */,
+				04A6BCD42A67E2C1000A818D /* LuckLandTeamViewController.m in Sources */,
 				C397B4F12E97612F00A030CA /* NoaDraftStore.m in Sources */,
 				0462E89428BDC0C900996A8A /* UIButton+Addition.m in Sources */,
 				881556482FA88BE9004702A6 /* NoaAuthPCloginViewController.m in Sources */,
@@ -6680,7 +6674,7 @@
 				184043E92B0C54E400E575B0 /* YYTextParser.m in Sources */,
 				042D7F28291665D200D2BB59 /* NoaChatSetGroupNoteCell.m in Sources */,
 				0468558428CB2CEF00853098 /* NoaAddFriendVC.m in Sources */,
-				88AE5C6A2FA87D7C00DA3F8E /* CandyTabBarController.m in Sources */,
+				88AE5C6A2FA87D7C00DA3F8E /* LuckyLandTabBarController.m in Sources */,
 				1863DAE82A94AF93005351F6 /* KLSignInTool.m in Sources */,
 				049F6A462BBBA40000E0C75B /* NoaChatEmojiContentCell.m in Sources */,
 				049D0B8729DA7896006F2577 /* NoaQRcodeScanViewController.m in Sources */,
@@ -6790,7 +6784,7 @@
 				184043E82B0C54E400E575B0 /* YYTextRunDelegate.m in Sources */,
 				04CDB52229248E7C00EFEABA /* NoaGroupChangeOwnerVC.m in Sources */,
 				C3610F182E2DDB74005BEF12 /* NoaTeamListVC.m in Sources */,
-				1863DAD72A94AC23005351F6 /* CandyTalkSignInViewController.m in Sources */,
+				1863DAD72A94AC23005351F6 /* LuckyLandSignInViewController.m in Sources */,
 				044C4BBB29655E62008CBC01 /* NoaFilePickerHeaderView.m in Sources */,
 				046E04812AB4025600429E76 /* UILabel+RTL.m in Sources */,
 				04882506298C999800FC58CB /* KNPhotoAVPlayerActionView.m in Sources */,

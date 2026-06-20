@@ -5,39 +5,41 @@
 //  Created by Candy on 2026/7/8.
 //
 
-#import "CandyTabBarController.h"
+#import "LuckyLandTabBarController.h"
 
 
 #import "UITabBar+Badge.h"
 #import "NoaNavigationController.h"
-#import "CandyTalkSignInViewController.h"
+#import "LuckyLandSignInViewController.h"
 #import "FlutterTallkMineViewController.h"
 
-#import "CandyTalkHomeViewController.h"
+#import "LuckyLandHomeViewController.h"
+#import "LuckyLandConversationViewController.h"
 
-#import "CandyTalkContactVC.h"//通讯录
+
+#import "LuckLandContactVC.h"//通讯录
 // 移除“我的”Tab及相关自定义转场依赖
-#import "CandyTalkTeamViewController.h"//团队
+#import "LuckLandTeamViewController.h"//团队
 
 #import "LuckyLandHomeViewController.h"
 
-@interface CandyTabBarController () <UITabBarControllerDelegate,UITabBarDelegate>
+@interface LuckyLandTabBarController () <UITabBarControllerDelegate,UITabBarDelegate>
 {
     NSInteger _currentSelectedIndex;//当前选中下标
 }
 
 @property (nonatomic, strong) LuckyLandHomeViewController  *vcLuckyLandHome;
-@property (nonatomic, strong) CandyTalkHomeViewController  *vcSession;
-@property (nonatomic, strong) CandyTalkContactVC  *vcContact;
-@property (nonatomic, strong) CandyTalkSignInViewController  *signvc;
-@property (nonatomic, strong) CandyTalkTeamViewController  *teamvc;
+@property (nonatomic, strong) LuckyLandConversationViewController  *vcSession;
+@property (nonatomic, strong) LuckLandContactVC  *vcContact;
+@property (nonatomic, strong) LuckyLandSignInViewController  *signvc;
+@property (nonatomic, strong) LuckLandTeamViewController  *teamvc;
 @property (nonatomic, strong) FlutterTallkMineViewController  *mineVc;
 
 
 
 @end
 
-@implementation CandyTabBarController
+@implementation LuckyLandTabBarController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -91,18 +93,12 @@
     _vcLuckyLandHome = [LuckyLandHomeViewController new];
     [self addChildViewController:_vcLuckyLandHome imageNormal:@"atab_l_d" imageSelected:@"atab_l_a" title:@"幸运岛" tag:1000];
     
-    _vcSession = [CandyTalkHomeViewController new];
+    _vcSession = [LuckyLandConversationViewController new];
     [self addChildViewController:_vcSession imageNormal:@"atab_l_d" imageSelected:@"atab_l_a" title:LanguageToolMatch(@"消息") tag:1001];
     
-//    _signvc = [CandyTalkSignInViewController new];
-//    [self addChildViewController:_signvc imageNormal:@"qiandaodef" imageSelected:@"qiandao" title:LanguageToolMatch(@"签到") tag:1002];
-    
-    _vcContact = [CandyTalkContactVC new];
+    _vcContact = [LuckLandContactVC new];
     [self addChildViewController:_vcContact imageNormal:@"atab_c_d" imageSelected:@"atab_c_a" title:LanguageToolMatch(@"通讯录") tag:1002];
     
-    
-//    _teamvc  = [CandyTalkTeamViewController new];
-//    [self addChildViewController:_teamvc imageNormal:@"tuanduidef" imageSelected:@"tuandui" title:LanguageToolMatch(@"团队") tag:1003];
     
     _mineVc  = [FlutterTallkMineViewController new];
     [self addChildViewController:_mineVc imageNormal:@"atab_r_d" imageSelected:@"atab_r_a" title:LanguageToolMatch(@"我的") tag:1003];

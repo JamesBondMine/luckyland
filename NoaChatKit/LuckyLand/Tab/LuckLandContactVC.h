@@ -10,7 +10,7 @@
 #import "CandyBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
-@interface CandyTalkContactVC : CandyBaseViewController
+@interface LuckLandContactVC : CandyBaseViewController
 
 @end
 

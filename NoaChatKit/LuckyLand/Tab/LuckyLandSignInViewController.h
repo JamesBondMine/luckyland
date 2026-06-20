@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CandyTalkSignInViewController : CandyBaseViewController
+@interface LuckyLandSignInViewController : CandyBaseViewController
 
 @end
 
