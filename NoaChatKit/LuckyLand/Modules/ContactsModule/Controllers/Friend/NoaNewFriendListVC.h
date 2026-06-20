@@ -7,11 +7,11 @@
 
 // 新朋友 VC
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaNewFriendListVC : CandyBaseViewController
+@interface NoaNewFriendListVC : LuckyLandBaseViewController
 
 @end
 

@@ -1,16 +1,16 @@
 //
-//  NoaBaseWebViewController.h
+//  LuckyLandBaseWebViewController.h
 //  NoaKit
 //
 //  Created by Candy on 2026/9/20.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 #import <WebKit/WebKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaBaseWebViewController : CandyBaseViewController
+@interface LuckyLandBaseWebViewController : LuckyLandBaseViewController
 
 @property (nonatomic, copy) NSString* webViewTitle;
 @property (nonatomic, copy) NSString* webViewUrl;

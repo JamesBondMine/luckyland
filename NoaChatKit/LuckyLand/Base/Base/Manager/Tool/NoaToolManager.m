@@ -14,7 +14,7 @@
 //#import "NoaSsoSetViewController.h"
 #import "LuckyLandSsoSetViewController.h"
 #import "NoaAppStartErrorDefaultViewController.h"
-#import "NoaBaseWebViewController.h"
+#import "LuckyLandBaseWebViewController.h"
 #import "NoaKnownTipView.h"
 #import "LuckyLandTabBarController.h"
 #import "NoaChatViewController.h"
@@ -414,7 +414,7 @@ static NSString *g_CurrentLoganPublishURL = nil; // 内存记录当前 Logan pub
      */
     [ZTOOL doInMain:^{
         NSString *urlStr = servicePolicyUrl;
-        NoaBaseWebViewController *webVC = [[NoaBaseWebViewController alloc] init];
+        LuckyLandBaseWebViewController *webVC = [[LuckyLandBaseWebViewController alloc] init];
         webVC.webViewTitle = LanguageToolMatch(@"服务协议");
         webVC.webViewUrl = urlStr;
         [self.getCurrentVC.navigationController pushViewController:webVC animated:YES];
@@ -435,7 +435,7 @@ static NSString *g_CurrentLoganPublishURL = nil; // 内存记录当前 Logan pub
     
     [ZTOOL doInMain:^{
         NSString *urlStr = privacyPolicyUrl;
-        NoaBaseWebViewController *webVC = [[NoaBaseWebViewController alloc] init];
+        LuckyLandBaseWebViewController *webVC = [[LuckyLandBaseWebViewController alloc] init];
         webVC.webViewTitle = LanguageToolMatch(@"用户隐私协议");
         webVC.webViewUrl = urlStr;
         [self.getCurrentVC.navigationController pushViewController:webVC animated:YES];

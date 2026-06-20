@@ -5,7 +5,7 @@
 //  Created by Candy on 2023/7/20.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 #import "NoaTeamModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface NoaTeamDetailVC : CandyBaseViewController
+@interface NoaTeamDetailVC : LuckyLandBaseViewController
 
 @property (nonatomic, strong) NoaTeamModel *teamModel;
 @property (nonatomic, assign) NSInteger listIndex;

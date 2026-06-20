@@ -5,11 +5,11 @@
 //  Created by Candy on 2023/5/18.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaAppStartErrorDefaultViewController : CandyBaseViewController
+@interface NoaAppStartErrorDefaultViewController : LuckyLandBaseViewController
 
 @property (nonatomic, assign)ZNetRacingStep step;
 @property (nonatomic, assign)NSInteger code;

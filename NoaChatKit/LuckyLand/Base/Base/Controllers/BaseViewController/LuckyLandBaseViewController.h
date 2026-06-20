@@ -1,5 +1,5 @@
 //
-//  CandyBaseViewController.h
+//  LuckyLandBaseViewController.h
 //  NoaKit
 //
 //  Created by Candy on 2026/8/30.
@@ -13,7 +13,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CandyBaseViewController : UIViewController
+@interface LuckyLandBaseViewController : UIViewController
 
 //自定义导航栏
 @property (nonatomic, strong) UIView  *navView;//自定义导航栏

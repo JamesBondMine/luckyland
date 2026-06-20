@@ -5,12 +5,12 @@
 //  Created by Candy on 2025/2/19.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 #import "LingIMGroup.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaChatActivityLevelVC : CandyBaseViewController
+@interface NoaChatActivityLevelVC : LuckyLandBaseViewController
 
 @property(nonatomic, strong)LingIMGroup *groupInfo;
 

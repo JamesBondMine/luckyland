@@ -5,12 +5,12 @@
 //  Created by Candy on 2023/7/20.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 #import "NoaTeamModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaTeamCreateVC : CandyBaseViewController
+@interface NoaTeamCreateVC : LuckyLandBaseViewController
 
 @end
 

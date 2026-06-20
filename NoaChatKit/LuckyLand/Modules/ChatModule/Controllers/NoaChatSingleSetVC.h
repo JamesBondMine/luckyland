@@ -7,10 +7,10 @@
 
 // 单聊设置VC
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaChatSingleSetVC : CandyBaseViewController
+@interface NoaChatSingleSetVC : LuckyLandBaseViewController
 
 @property (nonatomic, copy) NSString *friendUid;
 

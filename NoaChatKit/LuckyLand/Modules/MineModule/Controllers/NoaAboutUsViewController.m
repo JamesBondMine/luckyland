@@ -10,7 +10,7 @@
 #import "NoaAppUpdateTools.h"
 #import "AppDelegate.h"
 #import <Flutter/Flutter.h>
-#import "NoaBaseWebViewController.h"
+#import "LuckyLandBaseWebViewController.h"
 
 #define SERVE_BTN_TAG           101
 #define PRIVACY_BTN_TAG         102
@@ -114,7 +114,7 @@
 }
 
 - (void)openFlutterPolicyDetailWithTitle:(NSString *)title url:(NSString *)url {
-    NoaBaseWebViewController *webVC = [[NoaBaseWebViewController alloc] init];
+    LuckyLandBaseWebViewController *webVC = [[LuckyLandBaseWebViewController alloc] init];
     webVC.webViewTitle = title;
     webVC.webViewUrl = url;
     [self.navigationController pushViewController:webVC animated:YES];

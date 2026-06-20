@@ -5,11 +5,11 @@
 //  Created by Candy on 2023/7/19.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LuckLandTeamViewController : CandyBaseViewController
+@interface LuckLandTeamViewController : LuckyLandBaseViewController
 
 @end
 

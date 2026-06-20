@@ -5,11 +5,11 @@
 //  Created by phl on 2025/8/11.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @class LingIMGroup;
-@interface NoaGroupNoticeListVC : CandyBaseViewController
+@interface NoaGroupNoticeListVC : LuckyLandBaseViewController
 
 /// 当前群信息
 @property (nonatomic, strong) LingIMGroup *groupInfoModel;

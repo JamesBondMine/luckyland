@@ -7,7 +7,7 @@
 
 // 音视频通话 基类VC
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 #import "NoaMediaCallManager.h"
 #import "NoaBaseImageView.h"
 #import "NoaToolManager.h"//工具类
@@ -20,7 +20,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaMediaCallVC : CandyBaseViewController
+@interface NoaMediaCallVC : LuckyLandBaseViewController
 <
 RoomDelegateObjC,
 ZMediaCallManagerDelegate

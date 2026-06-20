@@ -6,12 +6,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 NS_ASSUME_NONNULL_BEGIN
 
 /// 踢人后，在返回时需要记录下刷新记号
 typedef void(^HadTickOutPeopleBlock)(void);
-@interface NoaTeamTotalNumberListVC : CandyBaseViewController
+@interface NoaTeamTotalNumberListVC : LuckyLandBaseViewController
 
 @property (nonatomic, copy) NSString *teamId;
 

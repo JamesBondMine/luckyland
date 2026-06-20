@@ -5,13 +5,13 @@
 //  Created by Candy on 2023/4/11.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 #import "NoaMessageModel.h"
 #import "NoaMyCollectionModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaChatFileDetailViewController : CandyBaseViewController
+@interface NoaChatFileDetailViewController : LuckyLandBaseViewController
 
 @property (nonatomic, strong)NoaMessageModel *fileMsgModel;
 @property (nonatomic, copy)NSString *localFilePath;

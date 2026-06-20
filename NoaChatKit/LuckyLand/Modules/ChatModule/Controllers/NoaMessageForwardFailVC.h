@@ -5,11 +5,11 @@
 //  Created by Candy on 2024/3/18.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaMessageForwardFailVC : CandyBaseViewController
+@interface NoaMessageForwardFailVC : LuckyLandBaseViewController
 
 @property (nonatomic, strong)NSArray *forwardErroInfoList;
 

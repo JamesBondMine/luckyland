@@ -5,11 +5,11 @@
 //  Created by Candy on 2023/9/15.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaCharacterBindViewController : CandyBaseViewController
+@interface NoaCharacterBindViewController : LuckyLandBaseViewController
 
 //绑定结果
 @property (nonatomic, copy) void(^chartManageBindResult)(BOOL result);

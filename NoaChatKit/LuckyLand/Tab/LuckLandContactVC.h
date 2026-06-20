@@ -7,10 +7,10 @@
 
 // 通讯录 VC
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
-@interface LuckLandContactVC : CandyBaseViewController
+@interface LuckLandContactVC : LuckyLandBaseViewController
 
 @end
 

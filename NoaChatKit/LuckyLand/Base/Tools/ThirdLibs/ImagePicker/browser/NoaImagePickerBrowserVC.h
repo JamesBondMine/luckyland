@@ -5,7 +5,7 @@
 //  Created by Candy on 2026/9/30.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)browserVCDelegateSure;//确定
 @end
 
-@interface NoaImagePickerBrowserVC : CandyBaseViewController
+@interface NoaImagePickerBrowserVC : LuckyLandBaseViewController
 
 @property (nonatomic, assign) NSInteger maxSelectNum;//最大选择数
 @property (nonatomic, assign)  NSInteger selectIndex;//选择的索引值

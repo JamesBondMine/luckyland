@@ -7,7 +7,7 @@
 
 // 手势密码验证VC
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -29,7 +29,7 @@ typedef NS_ENUM(NSUInteger, GestureLockCheckType) {
 - (void)gestureLockCheckResultType:(GestureLockCheckResultType)checkResultType checkType:(GestureLockCheckType)checkType;
 @end
 
-@interface NoaGestureLockCheckVC : CandyBaseViewController
+@interface NoaGestureLockCheckVC : LuckyLandBaseViewController
 @property (nonatomic, weak) id <ZGestureLockCheckVCDelegate> delegate;
 @property (nonatomic, assign) GestureLockCheckType checkType;
 @end

@@ -5,12 +5,12 @@
 //  Created by Auto on 2025/1/15.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 #import "LingIMGroup.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZGroupTopMessageListViewController : CandyBaseViewController
+@interface ZGroupTopMessageListViewController : LuckyLandBaseViewController
 
 /// 群组ID（群聊时使用）
 @property (nonatomic, strong) NSString *groupId;

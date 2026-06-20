@@ -5,7 +5,7 @@
 //  Created by Candy on 2023/5/19.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 #import "NoaCallManager.h"//即构音视频单例
 
 #import "NoaBaseImageView.h"//图片基类
@@ -19,7 +19,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaCallVC : CandyBaseViewController
+@interface NoaCallVC : LuckyLandBaseViewController
 <ZCallManagerDelegate>
 
 //功能按钮

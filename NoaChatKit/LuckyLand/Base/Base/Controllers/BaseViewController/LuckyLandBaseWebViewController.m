@@ -1,5 +1,5 @@
 //
-//  NoaBaseWebViewController.m
+//  LuckyLandBaseWebViewController.m
 //  NoaKit
 //
 //  Created by Candy on 2026/9/20.
@@ -12,10 +12,10 @@ typedef NS_ENUM(NSUInteger, CurrentLoadType) {
     CurrentLoadTypeHttps = 3,       //网址手动拼接https
 };
 
-#import "NoaBaseWebViewController.h"
+#import "LuckyLandBaseWebViewController.h"
 #import "NoaMessageAlertView.h"
 
-@interface NoaBaseWebViewController ()<WKNavigationDelegate,WKUIDelegate>
+@interface LuckyLandBaseWebViewController ()<WKNavigationDelegate,WKUIDelegate>
 //进度条
 @property (nonatomic, strong) UIProgressView *viewProgress;
 //当前网页加载类型
@@ -23,7 +23,7 @@ typedef NS_ENUM(NSUInteger, CurrentLoadType) {
 
 @end
 
-@implementation NoaBaseWebViewController
+@implementation LuckyLandBaseWebViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

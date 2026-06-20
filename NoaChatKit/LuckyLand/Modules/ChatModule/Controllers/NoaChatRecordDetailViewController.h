@@ -5,12 +5,12 @@
 //  Created by Candy on 2023/4/25.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 #import "NoaMessageModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaChatRecordDetailViewController : CandyBaseViewController
+@interface NoaChatRecordDetailViewController : LuckyLandBaseViewController
 
 @property (nonatomic, assign) NSInteger levelNum;
 @property (nonatomic, strong) NoaMessageModel *model;

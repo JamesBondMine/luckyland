@@ -5,11 +5,11 @@
 //  Created by phl on 2025/7/21.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaTeamListVC : CandyBaseViewController
+@interface NoaTeamListVC : LuckyLandBaseViewController
 
 @end
 

@@ -5,11 +5,11 @@
 //  Created by Apple on 2026/9/2.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LuckyLandConversationViewController : CandyBaseViewController
+@interface LuckyLandConversationViewController : LuckyLandBaseViewController
 
 - (void)sessionListAllRead:(NSString *)lastServerMsgId;
 

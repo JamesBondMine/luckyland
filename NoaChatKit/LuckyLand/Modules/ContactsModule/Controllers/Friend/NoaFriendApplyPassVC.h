@@ -7,12 +7,12 @@
 
 //好友申请通过 VC
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 #import "NoaFriendApplyModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaFriendApplyPassVC : CandyBaseViewController
+@interface NoaFriendApplyPassVC : LuckyLandBaseViewController
 @property (nonatomic, strong) NoaFriendApplyModel *applyModel;//好友申请信息
 @end
 

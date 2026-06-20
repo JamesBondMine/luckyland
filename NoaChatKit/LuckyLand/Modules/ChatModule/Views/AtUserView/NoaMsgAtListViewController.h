@@ -5,11 +5,11 @@
 //  Created by Candy on 2026/12/5.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaMsgAtListViewController : CandyBaseViewController
+@interface NoaMsgAtListViewController : LuckyLandBaseViewController
 
 @property (nonatomic, assign)CIMChatType chatType;
 @property (nonatomic, copy)NSString *sessionId;

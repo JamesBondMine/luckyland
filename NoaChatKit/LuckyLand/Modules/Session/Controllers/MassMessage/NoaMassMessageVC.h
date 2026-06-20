@@ -7,11 +7,11 @@
 
 // 群发助手列表VC
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaMassMessageVC : CandyBaseViewController
+@interface NoaMassMessageVC : LuckyLandBaseViewController
 
 @end
 

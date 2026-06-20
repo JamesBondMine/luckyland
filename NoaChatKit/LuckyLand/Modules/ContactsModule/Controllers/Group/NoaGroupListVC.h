@@ -7,11 +7,11 @@
 
 // 群聊列表 VC
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaGroupListVC : CandyBaseViewController
+@interface NoaGroupListVC : LuckyLandBaseViewController
 
 - (void)groupListScrollEnable:(BOOL)canScroll;
 

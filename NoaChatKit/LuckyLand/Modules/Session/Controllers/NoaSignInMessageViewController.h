@@ -5,11 +5,11 @@
 //  Created by Apple on 2023/8/15.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaSignInMessageViewController : CandyBaseViewController
+@interface NoaSignInMessageViewController : LuckyLandBaseViewController
 @property (nonatomic, copy) NSString *sessionID;
 @end
 

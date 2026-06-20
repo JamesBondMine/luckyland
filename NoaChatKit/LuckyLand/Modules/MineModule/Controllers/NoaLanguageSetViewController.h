@@ -5,7 +5,7 @@
 //  Created by Candy on 2026/12/28.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 //设置语言后，修改UI类型
 typedef NS_ENUM(NSUInteger, LanguageChangeUIType) {
@@ -15,7 +15,7 @@ typedef NS_ENUM(NSUInteger, LanguageChangeUIType) {
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaLanguageSetViewController : CandyBaseViewController
+@interface NoaLanguageSetViewController : LuckyLandBaseViewController
 @property (nonatomic, assign) LanguageChangeUIType changeType;
 @end
 

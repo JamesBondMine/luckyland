@@ -5,11 +5,11 @@
 //  Created by Candy on 2023/6/30.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaShareInviteViewController : CandyBaseViewController
+@interface NoaShareInviteViewController : LuckyLandBaseViewController
 @property (nonatomic, copy) NSString *teamID;//分享的团队ID
 @end
 

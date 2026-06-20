@@ -7,11 +7,11 @@
 
 // 好友管理VC
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 #import "NoaUserModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaFriendManageVC : CandyBaseViewController
+@interface NoaFriendManageVC : LuckyLandBaseViewController
 @property (nonatomic, strong) NoaUserModel *userModel;
 @property (nonatomic, copy) NSString *friendUID;
 @end

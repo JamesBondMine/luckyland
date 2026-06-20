@@ -5,11 +5,11 @@
 //  Created by phl on 2025/7/22.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 typedef void(^CreateGroupSuccessHandle)(void);
-@interface NoaTeamInviteCreateVC : CandyBaseViewController
+@interface NoaTeamInviteCreateVC : LuckyLandBaseViewController
 
 /// 创建团队成功，返回刷新页面
 @property (nonatomic, copy) CreateGroupSuccessHandle createGroupSuccessHandle;

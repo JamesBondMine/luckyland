@@ -7,11 +7,11 @@
 
 // 通讯录-好友-分组管理 VC
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaFriendGroupManagerVC : CandyBaseViewController
+@interface NoaFriendGroupManagerVC : LuckyLandBaseViewController
 //好友分组是否可以编辑
 @property (nonatomic, assign) BOOL friendGroupCanEdit;
 //当前好友所属好友分组信息

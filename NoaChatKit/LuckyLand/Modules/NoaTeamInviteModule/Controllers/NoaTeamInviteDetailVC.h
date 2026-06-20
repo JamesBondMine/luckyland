@@ -5,14 +5,14 @@
 //  Created by phl on 2025/7/24.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @class NoaTeamModel;
 
 typedef void(^ReloadDataBlock)(void);
-@interface NoaTeamInviteDetailVC : CandyBaseViewController
+@interface NoaTeamInviteDetailVC : LuckyLandBaseViewController
 
 /// 从上个页面传入的团队信息
 @property (nonatomic, strong, readwrite) NoaTeamModel *currentTeamModel;

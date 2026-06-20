@@ -7,11 +7,11 @@
 
 // 新建群发VC
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaNewMassMessageVC : CandyBaseViewController
+@interface NoaNewMassMessageVC : LuckyLandBaseViewController
 @property (nonatomic, strong) LIMMassMessageModel *messageModel;//再发一次消息信息
 @end
 

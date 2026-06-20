@@ -5,14 +5,14 @@
 //  Created by Candy on 2026/9/23.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 #import "LingIMGroup.h"
 
 #import "SyncMutableArray.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaChatViewController : CandyBaseViewController
+@interface NoaChatViewController : LuckyLandBaseViewController
 @property (nonatomic, assign) CIMChatType chatType;//会话类型
 //单聊
 @property (nonatomic, copy) NSString *chatName;

@@ -5,12 +5,12 @@
 //  Created by Candy on 2023/4/19.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 #import "NoaMyCollectionItemModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaMyCollectionViewController : CandyBaseViewController
+@interface NoaMyCollectionViewController : LuckyLandBaseViewController
 
 @property (nonatomic, assign)BOOL isFromChat;
 @property (nonatomic, copy) NSString *chatSession;

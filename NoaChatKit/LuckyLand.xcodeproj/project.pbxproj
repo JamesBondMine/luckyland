@@ -130,7 +130,7 @@
 		044581702AA9D1FE00DBB474 /* NoaTeamCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445816E2AA9D1FE00DBB474 /* NoaTeamCell.m */; };
 		0448D84529A849C9002D413A /* NoaMessageCallCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0448D84429A849C9002D413A /* NoaMessageCallCell.m */; };
 		04490C6C2A405D7B00D839AD /* NoaComplainImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04490C6B2A405D7B00D839AD /* NoaComplainImageCell.m */; };
-		0449279328D98F6B0089B309 /* NoaBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0449279228D98F6B0089B309 /* NoaBaseWebViewController.m */; };
+		0449279328D98F6B0089B309 /* LuckyLandBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0449279228D98F6B0089B309 /* LuckyLandBaseWebViewController.m */; };
 		044C4BB529651C57008CBC01 /* NoaFilePickerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 044C4BB429651C57008CBC01 /* NoaFilePickerVC.m */; };
 		044C4BB829652720008CBC01 /* NoaFileSourceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 044C4BB729652720008CBC01 /* NoaFileSourceView.m */; };
 		044C4BBB29655E62008CBC01 /* NoaFilePickerHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 044C4BBA29655E62008CBC01 /* NoaFilePickerHeaderView.m */; };
@@ -355,7 +355,7 @@
 		04AF35872A554EF3007A7A78 /* NoaFriendGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AF35862A554EF3007A7A78 /* NoaFriendGroupModel.m */; };
 		04AF7C7B2B3BF1D400B881CE /* NoaTranslateSetFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AF7C7A2B3BF1D400B881CE /* NoaTranslateSetFooterView.m */; };
 		04AF7C7E2B3BFF1D00B881CE /* NoaTranslateChannelLanguageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AF7C7D2B3BFF1D00B881CE /* NoaTranslateChannelLanguageView.m */; };
-		04AF820928C33CF200927514 /* CandyBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AF820528C33CF100927514 /* CandyBaseViewController.m */; };
+		04AF820928C33CF200927514 /* LuckyLandBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AF820528C33CF100927514 /* LuckyLandBaseViewController.m */; };
 		04B0255E2B82EAB8005A0AD5 /* NoaGroupNoticeTranslateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0255D2B82EAB8005A0AD5 /* NoaGroupNoticeTranslateVC.m */; };
 		04B025612B82FB4A005A0AD5 /* NoaNoticeTranslateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B025602B82FB4A005A0AD5 /* NoaNoticeTranslateCell.m */; };
 		04B044622A0B2EC000E0E3E1 /* NoaSystemMessageAllVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B044612A0B2EC000E0E3E1 /* NoaSystemMessageAllVC.m */; };
@@ -1026,8 +1026,8 @@
 		0448D84429A849C9002D413A /* NoaMessageCallCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaMessageCallCell.m; sourceTree = "<group>"; };
 		04490C6A2A405D7B00D839AD /* NoaComplainImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaComplainImageCell.h; sourceTree = "<group>"; };
 		04490C6B2A405D7B00D839AD /* NoaComplainImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaComplainImageCell.m; sourceTree = "<group>"; };
-		0449279128D98F6B0089B309 /* NoaBaseWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaBaseWebViewController.h; sourceTree = "<group>"; };
-		0449279228D98F6B0089B309 /* NoaBaseWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaBaseWebViewController.m; sourceTree = "<group>"; };
+		0449279128D98F6B0089B309 /* LuckyLandBaseWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LuckyLandBaseWebViewController.h; sourceTree = "<group>"; };
+		0449279228D98F6B0089B309 /* LuckyLandBaseWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuckyLandBaseWebViewController.m; sourceTree = "<group>"; };
 		044C4BB329651C57008CBC01 /* NoaFilePickerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaFilePickerVC.h; sourceTree = "<group>"; };
 		044C4BB429651C57008CBC01 /* NoaFilePickerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaFilePickerVC.m; sourceTree = "<group>"; };
 		044C4BB629652720008CBC01 /* NoaFileSourceView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaFileSourceView.h; sourceTree = "<group>"; };
@@ -1484,8 +1484,8 @@
 		04AF7C7A2B3BF1D400B881CE /* NoaTranslateSetFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaTranslateSetFooterView.m; sourceTree = "<group>"; };
 		04AF7C7C2B3BFF1D00B881CE /* NoaTranslateChannelLanguageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaTranslateChannelLanguageView.h; sourceTree = "<group>"; };
 		04AF7C7D2B3BFF1D00B881CE /* NoaTranslateChannelLanguageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaTranslateChannelLanguageView.m; sourceTree = "<group>"; };
-		04AF820528C33CF100927514 /* CandyBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CandyBaseViewController.m; sourceTree = "<group>"; };
-		04AF820728C33CF200927514 /* CandyBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CandyBaseViewController.h; sourceTree = "<group>"; };
+		04AF820528C33CF100927514 /* LuckyLandBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuckyLandBaseViewController.m; sourceTree = "<group>"; };
+		04AF820728C33CF200927514 /* LuckyLandBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuckyLandBaseViewController.h; sourceTree = "<group>"; };
 		04B0255C2B82EAB8005A0AD5 /* NoaGroupNoticeTranslateVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaGroupNoticeTranslateVC.h; sourceTree = "<group>"; };
 		04B0255D2B82EAB8005A0AD5 /* NoaGroupNoticeTranslateVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaGroupNoticeTranslateVC.m; sourceTree = "<group>"; };
 		04B0255F2B82FB4A005A0AD5 /* NoaNoticeTranslateCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaNoticeTranslateCell.h; sourceTree = "<group>"; };
@@ -5009,10 +5009,10 @@
 		2DF1BA152ED6F0C2008785D0 /* BaseViewController */ = {
 			isa = PBXGroup;
 			children = (
-				04AF820728C33CF200927514 /* CandyBaseViewController.h */,
-				04AF820528C33CF100927514 /* CandyBaseViewController.m */,
-				0449279128D98F6B0089B309 /* NoaBaseWebViewController.h */,
-				0449279228D98F6B0089B309 /* NoaBaseWebViewController.m */,
+				04AF820728C33CF200927514 /* LuckyLandBaseViewController.h */,
+				04AF820528C33CF100927514 /* LuckyLandBaseViewController.m */,
+				0449279128D98F6B0089B309 /* LuckyLandBaseWebViewController.h */,
+				0449279228D98F6B0089B309 /* LuckyLandBaseWebViewController.m */,
 			);
 			path = BaseViewController;
 			sourceTree = "<group>";
@@ -6260,7 +6260,7 @@
 				C3610F212E2DF3DA005BEF12 /* NoaTeamListHeaderView.m in Sources */,
 				04840B1128C9FA0300936BFA /* SCIndexViewConfiguration.m in Sources */,
 				045F1EEE28DEF2DA003D2818 /* NoaBaseVideoPlayerVC.m in Sources */,
-				04AF820928C33CF200927514 /* CandyBaseViewController.m in Sources */,
+				04AF820928C33CF200927514 /* LuckyLandBaseViewController.m in Sources */,
 				04CDB51029221D6300EFEABA /* NoaGroupManageCommonCell.m in Sources */,
 				04EBB86628C201000022FC22 /* UILabel+Addition.m in Sources */,
 				04516C3E2B510D59009B6A78 /* NoaMassMessageSelectModel.m in Sources */,
@@ -6388,7 +6388,7 @@
 				0402D29628E6E4C40079DF51 /* NoaImagePickerBrowserVC.m in Sources */,
 				04F36B6C298501B2006E38A2 /* NoaLameTool.m in Sources */,
 				1863DAD82A94AC23005351F6 /* NoaSignRecordsViewController.m in Sources */,
-				0449279328D98F6B0089B309 /* NoaBaseWebViewController.m in Sources */,
+				0449279328D98F6B0089B309 /* LuckyLandBaseWebViewController.m in Sources */,
 				041EEB4629EF8F0000CDCC1A /* NoaMassMessageBaseCell.m in Sources */,
 				0400A354296BA82F001BA200 /* NoaWindowFloatView.m in Sources */,
 				041EEB6829F2377500CDCC1A /* NoaMassMessageUserModel.m in Sources */,

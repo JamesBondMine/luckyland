@@ -5,11 +5,11 @@
 //  Created by Candy on 2024/12/30.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaSafeCodeAuthViewController : CandyBaseViewController
+@interface NoaSafeCodeAuthViewController : LuckyLandBaseViewController
 
 @property (nonatomic, copy)NSString *loginInfo;
 @property (nonatomic, assign)int loginType;

@@ -7,11 +7,11 @@
 
 // 创建群聊 邀请好友 VC
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaInviteFriendVC : CandyBaseViewController
+@interface NoaInviteFriendVC : LuckyLandBaseViewController
 //最多选择几人
 @property (nonatomic, assign) NSInteger maxNum;
 //至少选择几人

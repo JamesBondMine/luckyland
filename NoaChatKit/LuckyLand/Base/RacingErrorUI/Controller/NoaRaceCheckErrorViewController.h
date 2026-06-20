@@ -5,11 +5,11 @@
 //  Created by Candy on 2024/5/11.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaRaceCheckErrorViewController : CandyBaseViewController
+@interface NoaRaceCheckErrorViewController : LuckyLandBaseViewController
 
 @property (nonatomic, strong) NSArray *dataArr;
 

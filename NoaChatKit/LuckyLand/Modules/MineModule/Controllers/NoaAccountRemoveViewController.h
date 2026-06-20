@@ -5,11 +5,11 @@
 //  Created by Candy on 2023/4/17.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaAccountRemoveViewController : CandyBaseViewController
+@interface NoaAccountRemoveViewController : LuckyLandBaseViewController
 
 @end
 

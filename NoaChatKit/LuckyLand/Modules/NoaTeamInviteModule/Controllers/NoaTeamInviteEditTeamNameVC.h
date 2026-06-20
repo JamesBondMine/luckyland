@@ -5,11 +5,11 @@
 //  Created by phl on 2025/7/25.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 #import "NoaTeamModel.h"
 NS_ASSUME_NONNULL_BEGIN
 typedef void(^ChangeTeamNameHandle)(NSString *newTeamName);
-@interface NoaTeamInviteEditTeamNameVC : CandyBaseViewController
+@interface NoaTeamInviteEditTeamNameVC : LuckyLandBaseViewController
 
 /// 从上个页面传入的团队信息
 @property (nonatomic, strong, readwrite) NoaTeamModel *currentTeamModel;

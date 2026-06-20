@@ -5,11 +5,11 @@
 //  Created by Candy on 2023/2/2.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 #import "LingIMGroup.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaChatHistoryFileVC : CandyBaseViewController
+@interface NoaChatHistoryFileVC : LuckyLandBaseViewController
 
 @property (nonatomic, assign) CIMChatType chatType;//会话类型
 @property (nonatomic, copy) NSString *sessionID;//会话ID(单聊userUid 群聊groupID)

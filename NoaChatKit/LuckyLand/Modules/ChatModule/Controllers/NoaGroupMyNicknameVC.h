@@ -7,14 +7,14 @@
 
 // 我的群昵称VC
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 #import "LingIMGroup.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 typedef void(^myGroupNicknameChangeBlock)(void);
 
-@interface NoaGroupMyNicknameVC : CandyBaseViewController
+@interface NoaGroupMyNicknameVC : LuckyLandBaseViewController
 
 //我在本群的昵称发生修改
 @property (nonatomic, copy) myGroupNicknameChangeBlock myGroupNicknameChange;

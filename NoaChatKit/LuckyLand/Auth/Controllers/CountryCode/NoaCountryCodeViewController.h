@@ -5,11 +5,11 @@
 //  Created by Candy on 2023/3/28.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaCountryCodeViewController : CandyBaseViewController
+@interface NoaCountryCodeViewController : LuckyLandBaseViewController
 
 //选中Countrycode的Block回调
 @property (nonatomic, copy) void(^selecgCountryCodeBlock)(NSDictionary *dic);

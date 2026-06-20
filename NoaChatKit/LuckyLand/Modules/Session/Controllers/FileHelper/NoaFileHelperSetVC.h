@@ -7,11 +7,11 @@
 
 // 文件助手 设置 VC
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaFileHelperSetVC : CandyBaseViewController
+@interface NoaFileHelperSetVC : LuckyLandBaseViewController
 @property (nonatomic, copy) NSString *sessionID;
 @end
 

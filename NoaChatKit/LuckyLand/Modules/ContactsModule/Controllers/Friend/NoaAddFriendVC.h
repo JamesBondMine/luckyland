@@ -7,11 +7,11 @@
 
 // 添加好友 搜索用户 VC
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaAddFriendVC : CandyBaseViewController
+@interface NoaAddFriendVC : LuckyLandBaseViewController
 
 @end
 

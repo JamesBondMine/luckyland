@@ -5,11 +5,11 @@
 //  Created by Apple on 2023/9/12.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaCharacterManagerViewController : CandyBaseViewController
+@interface NoaCharacterManagerViewController : LuckyLandBaseViewController
 
 //是否绑定
 @property (nonatomic, assign) BOOL isBinded;

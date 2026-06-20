@@ -5,7 +5,7 @@
 //  Created by Candy on 2026/11/14.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,7 +14,7 @@ typedef NS_ENUM(NSUInteger, changeUserInfoType) {
     changeUserInfoTypeAccount,       //修改账号
 };
 
-@interface NoaChangeUserInfoViewController : CandyBaseViewController
+@interface NoaChangeUserInfoViewController : LuckyLandBaseViewController
 
 @property (nonatomic, assign)changeUserInfoType changeType;
 @property (nonatomic, copy)NSString *originalContent;

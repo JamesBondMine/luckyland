@@ -1,17 +1,17 @@
 //
-//  CandyBaseViewController.m
+//  LuckyLandBaseViewController.m
 //  NoaKit
 //
 //  Created by Candy on 2026/8/30.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
-@interface CandyBaseViewController () <UIGestureRecognizerDelegate>
+@interface LuckyLandBaseViewController () <UIGestureRecognizerDelegate>
 
 @end
 
-@implementation CandyBaseViewController
+@implementation LuckyLandBaseViewController
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];

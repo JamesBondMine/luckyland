@@ -5,11 +5,11 @@
 //  Created by Candy on 2023/10/25.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaEmojiPackageDetailViewController : CandyBaseViewController
+@interface NoaEmojiPackageDetailViewController : LuckyLandBaseViewController
 
 @property (nonatomic, assign) NSInteger supIndex;
 @property (nonatomic, copy) NSString *stickersId;

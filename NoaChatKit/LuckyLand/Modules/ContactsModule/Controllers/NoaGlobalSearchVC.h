@@ -7,11 +7,11 @@
 
 // 全局搜索 VC
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaGlobalSearchVC : CandyBaseViewController
+@interface NoaGlobalSearchVC : LuckyLandBaseViewController
 
 @end
 

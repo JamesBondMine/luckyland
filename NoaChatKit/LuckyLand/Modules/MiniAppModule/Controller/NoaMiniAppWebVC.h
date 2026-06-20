@@ -10,11 +10,11 @@ typedef NS_ENUM(NSUInteger, ZMiniAppWebVCType) {
     ZMiniAppWebVCTypeMiniApp = 1,      //小程序
 };
 
-#import "NoaBaseWebViewController.h"
+#import "LuckyLandBaseWebViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaMiniAppWebVC : NoaBaseWebViewController
+@interface NoaMiniAppWebVC : LuckyLandBaseWebViewController
 @property (nonatomic, assign) ZMiniAppWebVCType webType;//类型
 //小程序专用
 @property (nonatomic, strong) NoaFloatMiniAppModel * floatMiniAppModel;

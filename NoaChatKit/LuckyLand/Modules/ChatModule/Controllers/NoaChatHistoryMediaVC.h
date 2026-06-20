@@ -7,11 +7,11 @@
 
 // 聊天记录 - 多媒体(图片/视频)
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 #import "LingIMGroup.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaChatHistoryMediaVC : CandyBaseViewController
+@interface NoaChatHistoryMediaVC : LuckyLandBaseViewController
 
 @property (nonatomic, assign) CIMChatType chatType;//会话类型
 @property (nonatomic, copy) NSString *sessionID;//会话ID(单聊userUid 群聊groupID)

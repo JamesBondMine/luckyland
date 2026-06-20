@@ -17,7 +17,7 @@ typedef void(^ConfigureImgVerCodeSuccessBlock)(NSString *imgVerCodeStr);
 /// 取消图文验证码
 typedef void(^CancelInputImgVerCodeBlock)(void);
 
-@interface NoaGetImgVerCodeViewController : CandyBaseViewController
+@interface NoaGetImgVerCodeViewController : LuckyLandBaseViewController
 
 /// 配置图文验证码成功，回调给上个页面
 @property (nonatomic, copy) ConfigureImgVerCodeSuccessBlock configureImgVerCodeSuccessBlock;

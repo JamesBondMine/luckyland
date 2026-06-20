@@ -5,11 +5,11 @@
 //  Created by Candy on 2023/5/10.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaSystemMessageAllVC : CandyBaseViewController
+@interface NoaSystemMessageAllVC : LuckyLandBaseViewController
 
 @property (nonatomic, assign)ZGroupHelperFormType groupHelperType;
 @property (nonatomic, copy) NSString *groupId;

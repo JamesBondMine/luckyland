@@ -7,11 +7,11 @@
 
 // 文件助手VC
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaFileHelperVC : CandyBaseViewController
+@interface NoaFileHelperVC : LuckyLandBaseViewController
 @property (nonatomic, copy) NSString *sessionID;
 
 //通过点击全局搜索结果进入聊天界面

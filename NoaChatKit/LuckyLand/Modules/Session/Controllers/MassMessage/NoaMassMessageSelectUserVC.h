@@ -5,7 +5,7 @@
 //  Created by Candy on 2023/4/19.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 #import "NoaBaseUserModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)massMessageSelectedUserList:(NSArray<NoaBaseUserModel *> *)selectedUserList;
 @end
 
-@interface NoaMassMessageSelectUserVC : CandyBaseViewController
+@interface NoaMassMessageSelectUserVC : LuckyLandBaseViewController
 @property (nonatomic, weak) id <ZMassMessageSelectUserDelegate> delegate;
 
 @property (nonatomic, strong) NSMutableArray<NoaBaseUserModel *> *selectedList;//选中的

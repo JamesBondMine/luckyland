@@ -7,11 +7,11 @@
 
 // 群发助手-转发接收人展示列表(全部列表和失败列表)
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaMassMessageUserVC : CandyBaseViewController
+@interface NoaMassMessageUserVC : LuckyLandBaseViewController
 @property (nonatomic, assign) BOOL allUsers;
 @property (nonatomic, strong) LIMMassMessageModel *messageModel;
 @end

@@ -5,11 +5,11 @@
 //  Created by Candy on 2026/11/13.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaSafeSettingViewController : CandyBaseViewController
+@interface NoaSafeSettingViewController : LuckyLandBaseViewController
 
 //检查是否设置过设备安去码
 - (void)checkDeviceSafeCodeStatus;

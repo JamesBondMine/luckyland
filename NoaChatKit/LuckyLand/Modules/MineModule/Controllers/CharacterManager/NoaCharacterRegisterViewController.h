@@ -5,13 +5,13 @@
 //  Created by Candy on 2023/9/15.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 @class NoaCharacterManagerViewController;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaCharacterRegisterViewController : CandyBaseViewController
+@interface NoaCharacterRegisterViewController : LuckyLandBaseViewController
 
 @property (nonatomic, assign) BOOL isFromBind;
 @property (nonatomic, assign) BOOL isBinded;

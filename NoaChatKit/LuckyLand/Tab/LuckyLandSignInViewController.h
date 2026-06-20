@@ -5,11 +5,11 @@
 //  Created by Apple on 2023/8/8.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LuckyLandSignInViewController : CandyBaseViewController
+@interface LuckyLandSignInViewController : LuckyLandBaseViewController
 
 @end
 

@@ -7,7 +7,7 @@
 
 // 用户主页VC
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 
 //typedef NS_ENUM(NSUInteger, UserHomePageVCType) {
@@ -18,7 +18,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaUserHomePageVC : CandyBaseViewController
+@interface NoaUserHomePageVC : LuckyLandBaseViewController
 
 /// 用户id
 @property (nonatomic, copy) NSString *userUID;

@@ -5,11 +5,11 @@
 //  Created by Candy on 2023/6/19.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaComplainVC : CandyBaseViewController
+@interface NoaComplainVC : LuckyLandBaseViewController
 @property (nonatomic, copy) NSString *complainID;//投诉ID
 @property (nonatomic, assign) CIMChatType complainType;//投诉类型 群聊 好友
 @end

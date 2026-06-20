@@ -5,12 +5,12 @@
 //  Created by phl on 2025/11/4.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 #import "NoaLoginBaseBlurView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaLoginBaseViewController : CandyBaseViewController
+@interface NoaLoginBaseViewController : LuckyLandBaseViewController
 
 /// 上方标题
 @property (nonatomic, strong, readonly) UILabel *topTitleLabel;

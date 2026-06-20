@@ -5,12 +5,12 @@
 //  Created by Candy on 2023/4/3.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 #import "Nav.pbobjc.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaQRcodeScanViewController : CandyBaseViewController
+@interface NoaQRcodeScanViewController : LuckyLandBaseViewController
 
 //是否是竞速扫码
 @property (nonatomic, assign)BOOL isRacing;

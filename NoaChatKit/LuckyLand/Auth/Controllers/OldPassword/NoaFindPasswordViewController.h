@@ -5,11 +5,11 @@
 //  Created by Candy on 2023/3/28.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaFindPasswordViewController : CandyBaseViewController
+@interface NoaFindPasswordViewController : LuckyLandBaseViewController
 
 @property (nonatomic, strong)NSString *loginInfo;
 @property (nonatomic, assign)int findPasswordWay;

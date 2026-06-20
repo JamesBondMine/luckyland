@@ -5,12 +5,12 @@
 //  Created by Candy on 2023/4/11.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 #import "NoaMessageModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaChatMultiSelectViewController : CandyBaseViewController
+@interface NoaChatMultiSelectViewController : LuckyLandBaseViewController
 
 //转发类型
 @property (nonatomic, assign)ZMultiSelectType multiSelectType;

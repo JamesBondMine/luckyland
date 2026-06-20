@@ -7,13 +7,13 @@
 
 // 音视频通话 多人 邀请 VC
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 #import "NoaMediaCallManager.h"
 #import "NoaCallManager.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaMediaCallMoreInviteVC : CandyBaseViewController
+@interface NoaMediaCallMoreInviteVC : LuckyLandBaseViewController
 @property (nonatomic, copy) NSString *groupID;//群ID
 @property (nonatomic, assign) LingIMCallType callType;//视频 / 语音
 @property (nonatomic, assign) NSInteger requestMore;//1发起多人音视频 2邀请加入多人音视频

@@ -5,12 +5,12 @@
 //  Created by Apple on 2023/8/9.
 //
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 #import "NoaSignInRuleModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaRuleViewController : CandyBaseViewController
+@interface NoaRuleViewController : LuckyLandBaseViewController
 
 @property (nonatomic, assign) CGFloat ruleContentAttHeight;
 @property (nonatomic, copy) NSMutableAttributedString *ruleContentAtt;

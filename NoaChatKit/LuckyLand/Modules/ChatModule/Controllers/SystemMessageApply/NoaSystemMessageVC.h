@@ -7,11 +7,11 @@
 
 // 系统消息VC(群助手)
 
-#import "CandyBaseViewController.h"
+#import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaSystemMessageVC : CandyBaseViewController
+@interface NoaSystemMessageVC : LuckyLandBaseViewController
 
 @property (nonatomic, assign)ZGroupHelperFormType groupHelperType;
 @property (nonatomic, copy) NSString *groupId;
