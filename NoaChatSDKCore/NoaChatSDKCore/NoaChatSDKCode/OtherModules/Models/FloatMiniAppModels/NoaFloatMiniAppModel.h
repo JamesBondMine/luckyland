@@ -2,7 +2,7 @@
 //  NoaFloatMiniAppModel.h
 //  NoaChatSDKCore
 //
-//  Created by 郑开 on 2024/5/11.
+//  Created by 郑开1 on 2024/5/11.
 //
 
 #import <Foundation/Foundation.h>

@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,6 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="enr-8G-93Q">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_login_logo" translatesAutoresizingMaskIntoConstraints="NO" id="0sM-qj-vVO">
                                 <rect key="frame" x="136.66666666666666" y="155" width="119.99999999999997" height="120"/>
                                 <constraints>
@@ -33,11 +38,16 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hU6-1Q-8kT"/>
-                        <color key="backgroundColor" red="0.97999999999999998" green="0.97999999999999998" blue="0.97999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <color key="tintColor" systemColor="systemBrownColor"/>
                         <constraints>
+                            <constraint firstItem="enr-8G-93Q" firstAttribute="bottom" secondItem="hU6-1Q-8kT" secondAttribute="bottom" constant="34" id="EnJ-sP-Tfc"/>
+                            <constraint firstItem="enr-8G-93Q" firstAttribute="leading" secondItem="hU6-1Q-8kT" secondAttribute="leading" id="Mqn-Bg-LrU"/>
                             <constraint firstItem="0sM-qj-vVO" firstAttribute="top" secondItem="hU6-1Q-8kT" secondAttribute="top" constant="96.099999999999994" id="eCi-68-SiJ"/>
+                            <constraint firstItem="hU6-1Q-8kT" firstAttribute="trailing" secondItem="enr-8G-93Q" secondAttribute="trailing" id="kDh-1b-KQQ"/>
                             <constraint firstItem="opt-launch-view" firstAttribute="leading" secondItem="hU6-1Q-8kT" secondAttribute="leading" id="opt-launch-c1"/>
                             <constraint firstItem="opt-launch-view" firstAttribute="top" secondItem="hU6-1Q-8kT" secondAttribute="top" id="opt-launch-c2"/>
+                            <constraint firstItem="hU6-1Q-8kT" firstAttribute="top" secondItem="enr-8G-93Q" secondAttribute="top" constant="59" id="t6X-Sy-C6w"/>
                             <constraint firstItem="0sM-qj-vVO" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="zAC-v6-PhM"/>
                         </constraints>
                     </view>
@@ -49,5 +59,14 @@
     </scenes>
     <resources>
         <image name="img_login_logo" width="82" height="82"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

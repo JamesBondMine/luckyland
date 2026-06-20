@@ -342,12 +342,12 @@
 		04A99FC82B96EF2900DFD946 /* NoaFileUploadTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A99FC72B96EF2900DFD946 /* NoaFileUploadTools.m */; };
 		04A9FCF82A19F1E700960096 /* NoaFriendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A9FCF72A19F1E700960096 /* NoaFriendModel.m */; };
 		04AA729628F80CE800985862 /* NoaChatTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AA729528F80CE800985862 /* NoaChatTopView.m */; };
-		04AAE0DD2CDB3BB60090660F /* noa_captcha_alione.html in Resources */ = {isa = PBXBuildFile; fileRef = 04AAE0DB2CDB3BB60090660F /* noa_captcha_alione.html */; };
-		04AAE0DE2CDB3BB60090660F /* noa_captcha_alitwo.html in Resources */ = {isa = PBXBuildFile; fileRef = 04AAE0DC2CDB3BB60090660F /* noa_captcha_alitwo.html */; };
+		04AAE0DD2CDB3BB60090660F /* noa_LuckyLand_captcha_alione.html in Resources */ = {isa = PBXBuildFile; fileRef = 04AAE0DB2CDB3BB60090660F /* noa_LuckyLand_captcha_alione.html */; };
+		04AAE0DE2CDB3BB60090660F /* noa_luckyLand_captcha_alitwo.html in Resources */ = {isa = PBXBuildFile; fileRef = 04AAE0DC2CDB3BB60090660F /* noa_luckyLand_captcha_alitwo.html */; };
 		04AAF7A128F69D6D006ABF40 /* NoaMessageAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AAF7A028F69D6D006ABF40 /* NoaMessageAlertView.m */; };
 		04AAF7A528F6C1D5006ABF40 /* NoaMessageTimeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AAF7A428F6C1D5006ABF40 /* NoaMessageTimeTool.m */; };
 		04ACB0752A3C455400FA82E8 /* NoaFileOssInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04ACB0742A3C455300FA82E8 /* NoaFileOssInfoModel.m */; };
-		04ACC8D42CD4A26F00629B5B /* noa_captcha_tx.html in Resources */ = {isa = PBXBuildFile; fileRef = 04ACC8D32CD4A26F00629B5B /* noa_captcha_tx.html */; };
+		04ACC8D42CD4A26F00629B5B /* noa_luckyLand_captcha_tx.html in Resources */ = {isa = PBXBuildFile; fileRef = 04ACC8D32CD4A26F00629B5B /* noa_luckyLand_captcha_tx.html */; };
 		04AD93DD29225509007D2885 /* NoaChangeUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AD93DC29225509007D2885 /* NoaChangeUserInfoViewController.m */; };
 		04AE18662B4F79C9007D33F8 /* NoaBaseUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AE18652B4F79C9007D33F8 /* NoaBaseUserModel.m */; };
 		04AE186C2B4F915C007D33F8 /* NoaInviteFriendHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AE186B2B4F915C007D33F8 /* NoaInviteFriendHeaderView.m */; };
@@ -594,7 +594,6 @@
 		2D63D3D72EA4DF48001D8698 /* NoaNetworkDetectionMainResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D63D3D62EA4DF48001D8698 /* NoaNetworkDetectionMainResultCell.m */; };
 		2D66B8292EC479780092CE4F /* LuckyLandLoginBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D66B8232EC479780092CE4F /* LuckyLandLoginBaseViewController.m */; };
 		2D66B82A2EC479780092CE4F /* NoaLoginBaseBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D66B8212EC479780092CE4F /* NoaLoginBaseBlurView.m */; };
-		2D66B82B2EC479780092CE4F /* NoaRegisterTypeBaseBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D66B8272EC479780092CE4F /* NoaRegisterTypeBaseBlurView.m */; };
 		2D66B82C2EC479780092CE4F /* LuckyLandForgetBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D66B8252EC479780092CE4F /* LuckyLandForgetBaseViewController.m */; };
 		2D7B4B002E9FD4C100E71727 /* NoaNetworkDetectionSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7B4AFF2E9FD4C100E71727 /* NoaNetworkDetectionSectionHeaderView.m */; };
 		2D7B4B032E9FD4E100E71727 /* NoaNetworkDetectionSubResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7B4B022E9FD4E100E71727 /* NoaNetworkDetectionSubResultCell.m */; };
@@ -687,8 +686,6 @@
 		881556702FA88BE9004702A6 /* NoaRegisterBaseInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8815561E2FA88BE9004702A6 /* NoaRegisterBaseInputView.m */; };
 		881556712FA88BE9004702A6 /* NoaRegisterEMailInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 881556202FA88BE9004702A6 /* NoaRegisterEMailInputView.m */; };
 		881556722FA88BE9004702A6 /* NoaRegisterPhoneNumberInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 881556222FA88BE9004702A6 /* NoaRegisterPhoneNumberInputView.m */; };
-		881556732FA88BE9004702A6 /* NoaRegisterTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 881556242FA88BE9004702A6 /* NoaRegisterTypeCell.m */; };
-		881556742FA88BE9004702A6 /* NoaRegisterTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 881556262FA88BE9004702A6 /* NoaRegisterTypeView.m */; };
 		881556752FA88BE9004702A6 /* NoaRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 881556282FA88BE9004702A6 /* NoaRegisterView.m */; };
 		881556762FA88BE9004702A6 /* NoaSsoAccountManagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8815562B2FA88BE9004702A6 /* NoaSsoAccountManagerView.m */; };
 		881556772FA88BE9004702A6 /* NoaSsoHelpCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8815562E2FA88BE9004702A6 /* NoaSsoHelpCell.m */; };
@@ -1457,8 +1454,8 @@
 		04A9FCF72A19F1E700960096 /* NoaFriendModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaFriendModel.m; sourceTree = "<group>"; };
 		04AA729428F80CE800985862 /* NoaChatTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaChatTopView.h; sourceTree = "<group>"; };
 		04AA729528F80CE800985862 /* NoaChatTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaChatTopView.m; sourceTree = "<group>"; };
-		04AAE0DB2CDB3BB60090660F /* noa_captcha_alione.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = noa_captcha_alione.html; sourceTree = "<group>"; };
-		04AAE0DC2CDB3BB60090660F /* noa_captcha_alitwo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = noa_captcha_alitwo.html; sourceTree = "<group>"; };
+		04AAE0DB2CDB3BB60090660F /* noa_LuckyLand_captcha_alione.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = noa_LuckyLand_captcha_alione.html; sourceTree = "<group>"; };
+		04AAE0DC2CDB3BB60090660F /* noa_luckyLand_captcha_alitwo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = noa_luckyLand_captcha_alitwo.html; sourceTree = "<group>"; };
 		04AAF79F28F69D6D006ABF40 /* NoaMessageAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaMessageAlertView.h; sourceTree = "<group>"; };
 		04AAF7A028F69D6D006ABF40 /* NoaMessageAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaMessageAlertView.m; sourceTree = "<group>"; };
 		04AAF7A328F6C1D5006ABF40 /* NoaMessageTimeTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaMessageTimeTool.h; sourceTree = "<group>"; };
@@ -1466,7 +1463,7 @@
 		04ACB0732A3C455300FA82E8 /* NoaFileOssInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaFileOssInfoModel.h; sourceTree = "<group>"; };
 		04ACB0742A3C455300FA82E8 /* NoaFileOssInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaFileOssInfoModel.m; sourceTree = "<group>"; };
 		04ACB2162C9EDE03000F17C3 /* AliyunOSSiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AliyunOSSiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		04ACC8D32CD4A26F00629B5B /* noa_captcha_tx.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = noa_captcha_tx.html; sourceTree = "<group>"; };
+		04ACC8D32CD4A26F00629B5B /* noa_luckyLand_captcha_tx.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = noa_luckyLand_captcha_tx.html; sourceTree = "<group>"; };
 		04AD93DB29225509007D2885 /* NoaChangeUserInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaChangeUserInfoViewController.h; sourceTree = "<group>"; };
 		04AD93DC29225509007D2885 /* NoaChangeUserInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaChangeUserInfoViewController.m; sourceTree = "<group>"; };
 		04AE18642B4F79C9007D33F8 /* NoaBaseUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaBaseUserModel.h; sourceTree = "<group>"; };
@@ -1971,8 +1968,6 @@
 		2D66B8232EC479780092CE4F /* LuckyLandLoginBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuckyLandLoginBaseViewController.m; sourceTree = "<group>"; };
 		2D66B8242EC479780092CE4F /* LuckyLandForgetBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LuckyLandForgetBaseViewController.h; sourceTree = "<group>"; };
 		2D66B8252EC479780092CE4F /* LuckyLandForgetBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuckyLandForgetBaseViewController.m; sourceTree = "<group>"; };
-		2D66B8262EC479780092CE4F /* NoaRegisterTypeBaseBlurView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaRegisterTypeBaseBlurView.h; sourceTree = "<group>"; };
-		2D66B8272EC479780092CE4F /* NoaRegisterTypeBaseBlurView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaRegisterTypeBaseBlurView.m; sourceTree = "<group>"; };
 		2D7B4AFE2E9FD4C100E71727 /* NoaNetworkDetectionSectionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaNetworkDetectionSectionHeaderView.h; sourceTree = "<group>"; };
 		2D7B4AFF2E9FD4C100E71727 /* NoaNetworkDetectionSectionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaNetworkDetectionSectionHeaderView.m; sourceTree = "<group>"; };
 		2D7B4B012E9FD4E100E71727 /* NoaNetworkDetectionSubResultCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaNetworkDetectionSubResultCell.h; sourceTree = "<group>"; };
@@ -2149,10 +2144,6 @@
 		881556202FA88BE9004702A6 /* NoaRegisterEMailInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaRegisterEMailInputView.m; sourceTree = "<group>"; };
 		881556212FA88BE9004702A6 /* NoaRegisterPhoneNumberInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaRegisterPhoneNumberInputView.h; sourceTree = "<group>"; };
 		881556222FA88BE9004702A6 /* NoaRegisterPhoneNumberInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaRegisterPhoneNumberInputView.m; sourceTree = "<group>"; };
-		881556232FA88BE9004702A6 /* NoaRegisterTypeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaRegisterTypeCell.h; sourceTree = "<group>"; };
-		881556242FA88BE9004702A6 /* NoaRegisterTypeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaRegisterTypeCell.m; sourceTree = "<group>"; };
-		881556252FA88BE9004702A6 /* NoaRegisterTypeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaRegisterTypeView.h; sourceTree = "<group>"; };
-		881556262FA88BE9004702A6 /* NoaRegisterTypeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaRegisterTypeView.m; sourceTree = "<group>"; };
 		881556272FA88BE9004702A6 /* NoaRegisterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaRegisterView.h; sourceTree = "<group>"; };
 		881556282FA88BE9004702A6 /* NoaRegisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaRegisterView.m; sourceTree = "<group>"; };
 		8815562A2FA88BE9004702A6 /* NoaSsoAccountManagerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaSsoAccountManagerView.h; sourceTree = "<group>"; };
@@ -4631,9 +4622,9 @@
 			isa = PBXGroup;
 			children = (
 				04C065012D6D6D36004009F5 /* NoaDINPro-Bold.ttf */,
-				04AAE0DB2CDB3BB60090660F /* noa_captcha_alione.html */,
-				04AAE0DC2CDB3BB60090660F /* noa_captcha_alitwo.html */,
-				04ACC8D32CD4A26F00629B5B /* noa_captcha_tx.html */,
+				04AAE0DB2CDB3BB60090660F /* noa_LuckyLand_captcha_alione.html */,
+				04AAE0DC2CDB3BB60090660F /* noa_luckyLand_captcha_alitwo.html */,
+				04ACC8D32CD4A26F00629B5B /* noa_luckyLand_captcha_tx.html */,
 				04BD6BE729D29B250021750F /* noa_constant.db */,
 				04C0D5532989F9C200C926D3 /* NoaMineToFile.plist */,
 				04A226952A3879310035BE0A /* NoaNetResultCode.plist */,
@@ -4920,8 +4911,6 @@
 				2D66B8232EC479780092CE4F /* LuckyLandLoginBaseViewController.m */,
 				2D66B8242EC479780092CE4F /* LuckyLandForgetBaseViewController.h */,
 				2D66B8252EC479780092CE4F /* LuckyLandForgetBaseViewController.m */,
-				2D66B8262EC479780092CE4F /* NoaRegisterTypeBaseBlurView.h */,
-				2D66B8272EC479780092CE4F /* NoaRegisterTypeBaseBlurView.m */,
 			);
 			path = LoginBaseController;
 			sourceTree = "<group>";
@@ -5627,10 +5616,6 @@
 				881556202FA88BE9004702A6 /* NoaRegisterEMailInputView.m */,
 				881556212FA88BE9004702A6 /* NoaRegisterPhoneNumberInputView.h */,
 				881556222FA88BE9004702A6 /* NoaRegisterPhoneNumberInputView.m */,
-				881556232FA88BE9004702A6 /* NoaRegisterTypeCell.h */,
-				881556242FA88BE9004702A6 /* NoaRegisterTypeCell.m */,
-				881556252FA88BE9004702A6 /* NoaRegisterTypeView.h */,
-				881556262FA88BE9004702A6 /* NoaRegisterTypeView.m */,
 				881556272FA88BE9004702A6 /* NoaRegisterView.h */,
 				881556282FA88BE9004702A6 /* NoaRegisterView.m */,
 			);
@@ -6000,11 +5985,11 @@
 				042240382A8E00D500350D31 /* EmojiResource.xcassets in Resources */,
 				18B1535D28A2703E0033CB51 /* LaunchScreen.storyboard in Resources */,
 				04882509298C999800FC58CB /* KNPhotoBrowser.bundle in Resources */,
-				04ACC8D42CD4A26F00629B5B /* noa_captcha_tx.html in Resources */,
+				04ACC8D42CD4A26F00629B5B /* noa_luckyLand_captcha_tx.html in Resources */,
 				880D8AA32FE25C8A00D1578F /* LuckyLandHomeViewController.xib in Resources */,
 				04A5FD992A3B324500E532A4 /* InfoPlist.strings in Resources */,
-				04AAE0DE2CDB3BB60090660F /* noa_captcha_alitwo.html in Resources */,
-				04AAE0DD2CDB3BB60090660F /* noa_captcha_alione.html in Resources */,
+				04AAE0DE2CDB3BB60090660F /* noa_luckyLand_captcha_alitwo.html in Resources */,
+				04AAE0DD2CDB3BB60090660F /* noa_LuckyLand_captcha_alione.html in Resources */,
 				18B1535A28A2703E0033CB51 /* Assets.xcassets in Resources */,
 				18B1535828A2703D0033CB51 /* Main.storyboard in Resources */,
 				04A226962A3879310035BE0A /* NoaNetResultCode.plist in Resources */,
@@ -6419,7 +6404,6 @@
 				881556762FA88BE9004702A6 /* NoaSsoAccountManagerView.m in Sources */,
 				2D66B8292EC479780092CE4F /* LuckyLandLoginBaseViewController.m in Sources */,
 				2D66B82A2EC479780092CE4F /* NoaLoginBaseBlurView.m in Sources */,
-				2D66B82B2EC479780092CE4F /* NoaRegisterTypeBaseBlurView.m in Sources */,
 				2D66B82C2EC479780092CE4F /* LuckyLandForgetBaseViewController.m in Sources */,
 				6C94C35C2E30862C00DA43B2 /* NoaTeamTotalNumberListVC.m in Sources */,
 				0430130A28E4608800188581 /* NoaBubbleReceiveView.m in Sources */,
@@ -6686,7 +6670,6 @@
 				04D0D4AB2B7F6070008532AA /* NoaPrivacySettingViewController.m in Sources */,
 				04CDD4982AE8F5F90068D830 /* NoaEmojiShopPackagCell.m in Sources */,
 				045F1EBB28DDC156003D2818 /* NoaSessionCell.m in Sources */,
-				881556742FA88BE9004702A6 /* NoaRegisterTypeView.m in Sources */,
 				04A239F12B3AD615006FF4AB /* NoaChannelLanguageCell.m in Sources */,
 				08B3F8112DB6238C00CE0DE4 /* ErrorCodeInfo.m in Sources */,
 				045F1EE128DEE3DA003D2818 /* MImageBrowserManager.m in Sources */,
@@ -6754,7 +6737,6 @@
 				04AA729628F80CE800985862 /* NoaChatTopView.m in Sources */,
 				045F1EB528DDA914003D2818 /* NoaSessionMoreView.m in Sources */,
 				04B9D9572C6313A4006D4C9E /* NoaTranslateChannelLanguageModel.m in Sources */,
-				881556732FA88BE9004702A6 /* NoaRegisterTypeCell.m in Sources */,
 				042D7F2B29166A7100D2BB59 /* NoaChatSetGroupCommonCell.m in Sources */,
 				184043F22B0C54E400E575B0 /* UIView+YYText.m in Sources */,
 				04A99FC82B96EF2900DFD946 /* NoaFileUploadTools.m in Sources */,

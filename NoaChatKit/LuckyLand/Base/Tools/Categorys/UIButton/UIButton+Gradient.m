@@ -2,7 +2,7 @@
 //  UIButton+Gradient.m
 //  NoaSNewsMedia
 //
-//  Created by 郑开 on 2023/3/20.
+//  Created by 郑开1 on 2023/3/20.
 //  Copyright © 2023 HNZS. All rights reserved.
 //
 
