@@ -122,6 +122,7 @@ install_all_flutter_pods(flutter_application_path)
   #swift
   #SnapKit
   pod 'SnapKit', '5.6.0'
+  pod 'lottie-ios'
   #图片下载
   pod 'Kingfisher'
   #openinstall数据统计
