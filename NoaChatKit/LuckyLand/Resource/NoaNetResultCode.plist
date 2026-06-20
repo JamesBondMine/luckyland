@@ -730,27 +730,5 @@
 	<string>可用邀请码已达上限</string>
 	<key>-999999</key>
 	<string>当前无法连接网络，请检查网络设置是否正常</string>
-	<key>8201</key>
-	<string>error</string>
-	<key>New item - 3</key>
-	<string>error!</string>
-	<key>New item - 5</key>
-	<string></string>
-	<key>New item - 4</key>
-	<string></string>
-	<key>New item - 2</key>
-	<string>error</string>
-	<key>8202</key>
-	<string>error</string>
-	<key>8203</key>
-	<string>error</string>
-	<key>8204</key>
-	<string>error</string>
-	<key>8205</key>
-	<string>error</string>
-	<key>8206</key>
-	<string></string>
-	<key>New item</key>
-	<string></string>
 </dict>
 </plist>

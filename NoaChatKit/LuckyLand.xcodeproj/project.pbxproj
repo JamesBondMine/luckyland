@@ -643,11 +643,6 @@
 		880D8AA32FE25C8A00D1578F /* LuckyLandHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 880D8AA12FE25C8A00D1578F /* LuckyLandHomeViewController.xib */; };
 		880D8AB42FE2601000D1578F /* LuckyLandBoatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 880D8AB72FE2601000D1578F /* LuckyLandBoatView.m */; };
 		880D8AB52FE2601000D1578F /* LuckyLandSeaSceneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 880D8AB92FE2601000D1578F /* LuckyLandSeaSceneView.m */; };
-		881555A62FA88BB4004702A6 /* shejiaoliaotian.png in Resources */ = {isa = PBXBuildFile; fileRef = 881555A12FA88BB4004702A6 /* shejiaoliaotian.png */; };
-		881555A72FA88BB4004702A6 /* talk.png in Resources */ = {isa = PBXBuildFile; fileRef = 881555A22FA88BB4004702A6 /* talk.png */; };
-		881555A82FA88BB4004702A6 /* liaotian-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 881555A32FA88BB4004702A6 /* liaotian-2.png */; };
-		881555A92FA88BB4004702A6 /* liaotian.png in Resources */ = {isa = PBXBuildFile; fileRef = 881555A42FA88BB4004702A6 /* liaotian.png */; };
-		881555AA2FA88BB4004702A6 /* liaotian-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 881555A52FA88BB4004702A6 /* liaotian-3.png */; };
 		881556462FA88BE9004702A6 /* NoaAuthInputTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555AC2FA88BE9004702A6 /* NoaAuthInputTools.m */; };
 		881556472FA88BE9004702A6 /* NoaCaptchaCodeTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555AE2FA88BE9004702A6 /* NoaCaptchaCodeTools.m */; };
 		881556482FA88BE9004702A6 /* NoaAuthPCloginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555B12FA88BE9004702A6 /* NoaAuthPCloginViewController.m */; };
@@ -2066,11 +2061,6 @@
 		880D8AB72FE2601000D1578F /* LuckyLandBoatView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuckyLandBoatView.m; sourceTree = "<group>"; };
 		880D8AB82FE2601000D1578F /* LuckyLandSeaSceneView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LuckyLandSeaSceneView.h; sourceTree = "<group>"; };
 		880D8AB92FE2601000D1578F /* LuckyLandSeaSceneView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuckyLandSeaSceneView.m; sourceTree = "<group>"; };
-		881555A12FA88BB4004702A6 /* shejiaoliaotian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shejiaoliaotian.png; sourceTree = "<group>"; };
-		881555A22FA88BB4004702A6 /* talk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = talk.png; sourceTree = "<group>"; };
-		881555A32FA88BB4004702A6 /* liaotian-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "liaotian-2.png"; sourceTree = "<group>"; };
-		881555A42FA88BB4004702A6 /* liaotian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = liaotian.png; sourceTree = "<group>"; };
-		881555A52FA88BB4004702A6 /* liaotian-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "liaotian-3.png"; sourceTree = "<group>"; };
 		881555AB2FA88BE9004702A6 /* NoaAuthInputTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaAuthInputTools.h; sourceTree = "<group>"; };
 		881555AC2FA88BE9004702A6 /* NoaAuthInputTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaAuthInputTools.m; sourceTree = "<group>"; };
 		881555AD2FA88BE9004702A6 /* NoaCaptchaCodeTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaCaptchaCodeTools.h; sourceTree = "<group>"; };
@@ -4638,11 +4628,6 @@
 		04F9D5F428BDF391000AE80A /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				881555A32FA88BB4004702A6 /* liaotian-2.png */,
-				881555A52FA88BB4004702A6 /* liaotian-3.png */,
-				881555A42FA88BB4004702A6 /* liaotian.png */,
-				881555A12FA88BB4004702A6 /* shejiaoliaotian.png */,
-				881555A22FA88BB4004702A6 /* talk.png */,
 				04C065012D6D6D36004009F5 /* NoaDINPro-Bold.ttf */,
 				04AAE0DB2CDB3BB60090660F /* noa_captcha_alione.html */,
 				04AAE0DC2CDB3BB60090660F /* noa_captcha_alitwo.html */,
@@ -6001,7 +5986,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				881555A62FA88BB4004702A6 /* shejiaoliaotian.png in Resources */,
 				04C065022D6D6D37004009F5 /* NoaDINPro-Bold.ttf in Resources */,
 				04C0D5542989F9C200C926D3 /* NoaMineToFile.plist in Resources */,
 				04F9D5F728BDF3D8000AE80A /* Localizable.strings in Resources */,
@@ -6010,19 +5994,15 @@
 				1863DAF12A94AFEC005351F6 /* KLSignInView.xib in Resources */,
 				042240362A8E00D500350D31 /* NoaChatInputEmoji.plist in Resources */,
 				042240382A8E00D500350D31 /* EmojiResource.xcassets in Resources */,
-				881555A82FA88BB4004702A6 /* liaotian-2.png in Resources */,
-				881555A92FA88BB4004702A6 /* liaotian.png in Resources */,
 				18B1535D28A2703E0033CB51 /* LaunchScreen.storyboard in Resources */,
 				04882509298C999800FC58CB /* KNPhotoBrowser.bundle in Resources */,
 				04ACC8D42CD4A26F00629B5B /* noa_captcha_tx.html in Resources */,
-				881555A72FA88BB4004702A6 /* talk.png in Resources */,
 				880D8AA32FE25C8A00D1578F /* LuckyLandHomeViewController.xib in Resources */,
 				04A5FD992A3B324500E532A4 /* InfoPlist.strings in Resources */,
 				04AAE0DE2CDB3BB60090660F /* noa_captcha_alitwo.html in Resources */,
 				04AAE0DD2CDB3BB60090660F /* noa_captcha_alione.html in Resources */,
 				18B1535A28A2703E0033CB51 /* Assets.xcassets in Resources */,
 				18B1535828A2703D0033CB51 /* Main.storyboard in Resources */,
-				881555AA2FA88BB4004702A6 /* liaotian-3.png in Resources */,
 				04A226962A3879310035BE0A /* NoaNetResultCode.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -7029,7 +7009,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2026061901;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
@@ -7300,7 +7280,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2026061901;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
