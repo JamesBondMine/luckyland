@@ -1945,7 +1945,7 @@
 		18AB495C28C58F02001FCE80 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		18AB496728C5CAFE001FCE80 /* NoaChineseSort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaChineseSort.m; sourceTree = "<group>"; };
 		18AB496828C5CAFE001FCE80 /* NoaChineseSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaChineseSort.h; sourceTree = "<group>"; };
-		18B1534A28A2703D0033CB51 /* 咕噜.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "咕噜.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		18B1534A28A2703D0033CB51 /* 幸运岛.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "幸运岛.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B1534D28A2703D0033CB51 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18B1534E28A2703D0033CB51 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		18B1535728A2703D0033CB51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -4861,7 +4861,7 @@
 		18B1534B28A2703D0033CB51 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				18B1534A28A2703D0033CB51 /* 咕噜.app */,
+				18B1534A28A2703D0033CB51 /* 幸运岛.app */,
 				18B1536528A2703E0033CB51 /* LuckyLandTests.xctest */,
 				18B1536F28A2703E0033CB51 /* LuckyLandUITests.xctest */,
 			);
@@ -5871,7 +5871,7 @@
 			);
 			name = LuckyLand;
 			productName = NoaChatKit;
-			productReference = 18B1534A28A2703D0033CB51 /* 咕噜.app */;
+			productReference = 18B1534A28A2703D0033CB51 /* 幸运岛.app */;
 			productType = "com.apple.product-type.application";
 		};
 		18B1536428A2703E0033CB51 /* LuckyLandTests */ = {
@@ -7236,7 +7236,7 @@
 					"$(SRCROOT)/LuckyLand/Base/Tools/ThirdLibs/OBS/OBS.framework/OBS",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.codeappyang.idnumberft;
-				PRODUCT_NAME = "咕噜";
+				PRODUCT_NAME = "幸运岛";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = idnumberft0530;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -7507,7 +7507,7 @@
 					"$(SRCROOT)/LuckyLand/Base/Tools/ThirdLibs/OBS/OBS.framework/OBS",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.codeappyang.idnumberft;
-				PRODUCT_NAME = "咕噜";
+				PRODUCT_NAME = "幸运岛";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = idnumberft0530;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
