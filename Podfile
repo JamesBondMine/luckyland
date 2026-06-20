@@ -17,8 +17,8 @@ flutter_application_path = File.expand_path('../flutter_module', __dir__)
 
 
 ## 工程路径
-target 'CandyTalkPro' do
-project './NoaChatSDKCore/CandyTalkPro.xcodeproj'
+target 'LuckyLandPro' do
+project './NoaChatSDKCore/LuckyLandPro.xcodeproj'
 
   pod "AFNetworking", '4.0.1'
   pod 'MJExtension', '3.4.0'
@@ -45,8 +45,8 @@ project './NoaChatSDKCore/CandyTalkPro.xcodeproj'
   
 end
 
-target 'CandyTalk' do
-project './NoaChatKit/CandyTalk.xcodeproj'
+target 'LuckyLand' do
+project './NoaChatKit/LuckyLand.xcodeproj'
 
 
 load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')

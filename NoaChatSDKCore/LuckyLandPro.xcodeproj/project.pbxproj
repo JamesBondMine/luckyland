@@ -25,6 +25,7 @@
 		6CAE352E2E6FDD680024763A /* NoaIMUncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CAE351D2E6FDD680024763A /* NoaIMUncaughtExceptionHandler.m */; };
 		6CAE35312E6FDEC00024763A /* NoaIMSDKManager+Logan.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CAE352F2E6FDEC00024763A /* NoaIMSDKManager+Logan.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6CAE35322E6FDEC00024763A /* NoaIMSDKManager+Logan.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CAE35302E6FDEC00024763A /* NoaIMSDKManager+Logan.m */; };
+		A67BEBD80670FD9CD52283BE /* Pods_LuckyLandPro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B63033A1874A852BFFB82E7 /* Pods_LuckyLandPro.framework */; };
 		C31576182E68431D007EC45E /* NovDecryptorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C31576142E68431D007EC45E /* NovDecryptorManager.m */; };
 		C31576192E68431D007EC45E /* ECDHClientProtocolHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C31576102E68431D007EC45E /* ECDHClientProtocolHandler.m */; };
 		C315761A2E68431D007EC45E /* ZIMMessageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = C315760A2E68431D007EC45E /* ZIMMessageDecoder.m */; };
@@ -273,7 +274,6 @@
 		C3DF0DAD2E88233B007AF2EE /* LoggerWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DF0DAB2E88233B007AF2EE /* LoggerWrapper.m */; };
 		C3DF0DB22E88233B007AF2EE /* NoaLocalLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = C3DF0DB02E88233B007AF2EE /* NoaLocalLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C3DF0DB32E88233B007AF2EE /* NoaLocalLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DF0DB12E88233B007AF2EE /* NoaLocalLogger.m */; };
-		E81A79093526FBA928481561 /* Pods_CandyTalkPro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D1DA0B27A16771ED2012A9 /* Pods_CandyTalkPro.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -285,6 +285,7 @@
 		2DF1BA222ED700D0008785D0 /* WCDBObjc.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WCDBObjc.framework; sourceTree = "<group>"; };
 		2DF1BA322ED71CF2008785D0 /* NoaIMSocketManagerTool+LingImTcpReplaceHttp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NoaIMSocketManagerTool+LingImTcpReplaceHttp.h"; sourceTree = "<group>"; };
 		2DF1BA332ED71CF2008785D0 /* NoaIMSocketManagerTool+LingImTcpReplaceHttp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NoaIMSocketManagerTool+LingImTcpReplaceHttp.m"; sourceTree = "<group>"; };
+		3B63033A1874A852BFFB82E7 /* Pods_LuckyLandPro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LuckyLandPro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E6A025058C358A8445C4CA7 /* Pods-CandyTalkPro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CandyTalkPro.release.xcconfig"; path = "Target Support Files/Pods-CandyTalkPro/Pods-CandyTalkPro.release.xcconfig"; sourceTree = "<group>"; };
 		6C8487C12E7A98A500AF71B8 /* NoaIMSDKManager+Probe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NoaIMSDKManager+Probe.h"; sourceTree = "<group>"; };
 		6C8487C22E7A98A500AF71B8 /* NoaIMSDKManager+Probe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NoaIMSDKManager+Probe.m"; sourceTree = "<group>"; };
@@ -300,8 +301,9 @@
 		6CAE352F2E6FDEC00024763A /* NoaIMSDKManager+Logan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NoaIMSDKManager+Logan.h"; sourceTree = "<group>"; };
 		6CAE35302E6FDEC00024763A /* NoaIMSDKManager+Logan.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NoaIMSDKManager+Logan.m"; sourceTree = "<group>"; };
 		6D313F282C8F837B9CA02574 /* Pods-CandyTalkPro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CandyTalkPro.debug.xcconfig"; path = "Target Support Files/Pods-CandyTalkPro/Pods-CandyTalkPro.debug.xcconfig"; sourceTree = "<group>"; };
-		73D1DA0B27A16771ED2012A9 /* Pods_CandyTalkPro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CandyTalkPro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		71C58FD1A081D247BA51A06D /* Pods-LuckyLandPro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuckyLandPro.debug.xcconfig"; path = "Target Support Files/Pods-LuckyLandPro/Pods-LuckyLandPro.debug.xcconfig"; sourceTree = "<group>"; };
 		8C9480EAA42CF09FA26B2305 /* Pods-NoaChatSDKCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoaChatSDKCore.release.xcconfig"; path = "Target Support Files/Pods-NoaChatSDKCore/Pods-NoaChatSDKCore.release.xcconfig"; sourceTree = "<group>"; };
+		989B8B2D2E8B77F7E0C3DD10 /* Pods-LuckyLandPro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuckyLandPro.release.xcconfig"; path = "Target Support Files/Pods-LuckyLandPro/Pods-LuckyLandPro.release.xcconfig"; sourceTree = "<group>"; };
 		C31576092E68431D007EC45E /* ZIMMessageDecoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZIMMessageDecoder.h; sourceTree = "<group>"; };
 		C315760A2E68431D007EC45E /* ZIMMessageDecoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZIMMessageDecoder.m; sourceTree = "<group>"; };
 		C315760B2E68431D007EC45E /* ZIMAESEncryption.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZIMAESEncryption.h; sourceTree = "<group>"; };
@@ -560,7 +562,7 @@
 			files = (
 				2DF1BA232ED700D0008785D0 /* WCDBObjc.framework in Frameworks */,
 				C3DAE0742E54828B00CCA36B /* libLXChatEncrypt.a in Frameworks */,
-				E81A79093526FBA928481561 /* Pods_CandyTalkPro.framework in Frameworks */,
+				A67BEBD80670FD9CD52283BE /* Pods_LuckyLandPro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,6 +689,8 @@
 				8C9480EAA42CF09FA26B2305 /* Pods-NoaChatSDKCore.release.xcconfig */,
 				6D313F282C8F837B9CA02574 /* Pods-CandyTalkPro.debug.xcconfig */,
 				4E6A025058C358A8445C4CA7 /* Pods-CandyTalkPro.release.xcconfig */,
+				71C58FD1A081D247BA51A06D /* Pods-LuckyLandPro.debug.xcconfig */,
+				989B8B2D2E8B77F7E0C3DD10 /* Pods-LuckyLandPro.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../Pods;
@@ -719,7 +723,7 @@
 		B1C1F6E390B4EC3DAE9612A2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				73D1DA0B27A16771ED2012A9 /* Pods_CandyTalkPro.framework */,
+				3B63033A1874A852BFFB82E7 /* Pods_LuckyLandPro.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1449,7 +1453,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CandyTalkPro-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-LuckyLandPro-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1709,7 +1713,7 @@
 		};
 		18B153A128A270580033CB51 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6D313F282C8F837B9CA02574 /* Pods-CandyTalkPro.debug.xcconfig */;
+			baseConfigurationReference = 71C58FD1A081D247BA51A06D /* Pods-LuckyLandPro.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -1777,7 +1781,7 @@
 		};
 		18B153A228A270580033CB51 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4E6A025058C358A8445C4CA7 /* Pods-CandyTalkPro.release.xcconfig */;
+			baseConfigurationReference = 989B8B2D2E8B77F7E0C3DD10 /* Pods-LuckyLandPro.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
