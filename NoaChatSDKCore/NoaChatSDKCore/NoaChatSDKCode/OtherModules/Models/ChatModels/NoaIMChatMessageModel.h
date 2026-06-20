@@ -2,7 +2,7 @@
 //  NoaIMChatMessageModel.h
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2026/10/21.
+//  Created by LuckyLand on 2026/10/21.
 //
 
 // 数据库 消息Model

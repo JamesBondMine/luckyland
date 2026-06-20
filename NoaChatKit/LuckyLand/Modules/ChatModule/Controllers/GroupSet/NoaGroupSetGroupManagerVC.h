@@ -2,7 +2,7 @@
 //  NoaGroupSetGroupManagerVC.h
 //  NoaKit
 //
-//  Created by Candy on 2026/11/16.
+//  Created by LuckyLand on 2026/11/16.
 //
 
 #import "LuckyLandBaseViewController.h"

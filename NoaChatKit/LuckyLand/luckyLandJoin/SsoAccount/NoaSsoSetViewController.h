@@ -2,7 +2,7 @@
 //  NoaSsoSetViewController.h
 //  NoaKit
 //
-//  Created by Candy on 2026/9/1.
+//  Created by LuckyLand on 2026/9/1.
 //
 
 #import "LuckyLandLoginBaseViewController.h"

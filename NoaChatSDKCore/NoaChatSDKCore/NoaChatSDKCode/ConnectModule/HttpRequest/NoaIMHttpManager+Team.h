@@ -2,7 +2,7 @@
 //  NoaIMHttpManager+Team.h
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2023/9/1.
+//  Created by LuckyLand on 2023/9/1.
 //
 
 // 团队

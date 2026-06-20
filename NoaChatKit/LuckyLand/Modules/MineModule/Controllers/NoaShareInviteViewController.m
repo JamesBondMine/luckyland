@@ -2,7 +2,7 @@
 //  NoaShareInviteViewController.m
 //  NoaKit
 //
-//  Created by Candy on 2023/6/30.
+//  Created by LuckyLand on 2023/6/30.
 //
 
 #import "NoaShareInviteViewController.h"

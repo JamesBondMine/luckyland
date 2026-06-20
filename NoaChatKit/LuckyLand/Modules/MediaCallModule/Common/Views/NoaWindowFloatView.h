@@ -2,7 +2,7 @@
 //  NoaWindowFloatView.h
 //  NoaKit
 //
-//  Created by Candy on 2023/1/9.
+//  Created by LuckyLand on 2023/1/9.
 //
 
 // 可全局拖拽的View

@@ -2,7 +2,7 @@
 //  NoaIMHttpManager+MiniApp.m
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2023/9/1.
+//  Created by LuckyLand on 2023/9/1.
 //
 
 #import "NoaIMHttpManager+MiniApp.h"

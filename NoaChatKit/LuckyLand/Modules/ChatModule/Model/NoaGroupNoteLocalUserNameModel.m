@@ -2,7 +2,7 @@
 //  NoaGroupNoteLocalUserNameModel.m
 //  NoaKit
 //
-//  Created by phl on 2025/8/12.
+//  Created by ppppphl on 2025/8/12.
 //  继承于ZGroupNoteModel类，增加字段，主要是用于根据noticeCreateUid字段，从本地缓存中查询出用户名称，并展示
 
 #import "NoaGroupNoteLocalUserNameModel.h"

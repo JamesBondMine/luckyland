@@ -2,7 +2,7 @@
 //  NoaIMStickersPackageModel.h
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2023/10/30.
+//  Created by LuckyLand on 2023/10/30.
 //
 
 #import <Foundation/Foundation.h>

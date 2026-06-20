@@ -2,7 +2,7 @@
 //  NoaIMHttpManager+signin.m
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2023/9/1.
+//  Created by LuckyLand on 2023/9/1.
 //
 
 #import "NoaIMHttpManager+signin.h"

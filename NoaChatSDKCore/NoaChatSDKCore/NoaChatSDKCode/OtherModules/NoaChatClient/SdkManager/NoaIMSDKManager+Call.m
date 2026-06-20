@@ -2,7 +2,7 @@
 //  NoaIMSDKManager+Call.m
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2023/1/2.
+//  Created by LuckyLand on 2023/1/2.
 //
 
 #import "NoaIMSDKManager+Call.h"

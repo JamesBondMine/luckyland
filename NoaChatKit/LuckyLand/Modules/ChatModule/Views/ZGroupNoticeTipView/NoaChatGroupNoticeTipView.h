@@ -2,7 +2,7 @@
 //  NoaChatGroupNoticeTipView.h
 //  NoaKit
 //
-//  Created by Candy on 2023/3/8.
+//  Created by LuckyLand on 2023/3/8.
 //
 
 // 聊天界面VC - 群公告提示 View

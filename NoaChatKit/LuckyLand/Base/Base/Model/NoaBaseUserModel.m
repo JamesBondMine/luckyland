@@ -2,7 +2,7 @@
 //  NoaBaseUserModel.m
 //  NoaKit
 //
-//  Created by Candy on 2024/1/11.
+//  Created by LuckyLand on 2024/1/11.
 //
 
 #import "NoaBaseUserModel.h"

@@ -2,7 +2,7 @@
 //  NoaMassMessageGroupEntranceView.m
 //  NoaKit
 //
-//  Created by Candy on 2023/9/4.
+//  Created by LuckyLand on 2023/9/4.
 //
 
 #import "NoaMassMessageGroupEntranceView.h"

@@ -2,7 +2,7 @@
 //  NoaChatInputCommonEmojiView.h
 //  NoaKit
 //
-//  Created by Candy on 2023/6/28.
+//  Created by LuckyLand on 2023/6/28.
 //
 
 // 常用表情View

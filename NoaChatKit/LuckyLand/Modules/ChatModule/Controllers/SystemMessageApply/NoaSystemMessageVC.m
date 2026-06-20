@@ -2,7 +2,7 @@
 //  NoaSystemMessageVC.m
 //  NoaKit
 //
-//  Created by Candy on 2023/5/9.
+//  Created by LuckyLand on 2023/5/9.
 //
 
 #import "NoaSystemMessageVC.h"

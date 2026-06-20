@@ -2,7 +2,7 @@
 //  NoaNewMassMessageVC.h
 //  NoaKit
 //
-//  Created by Candy on 2023/4/17.
+//  Created by LuckyLand on 2023/4/17.
 //
 
 // 新建群发VC

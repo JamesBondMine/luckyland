@@ -2,7 +2,7 @@
 //  LingIMProtocol.h
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2026/8/18.
+//  Created by LuckyLand on 2026/8/18.
 //
 
 #import <Foundation/Foundation.h>

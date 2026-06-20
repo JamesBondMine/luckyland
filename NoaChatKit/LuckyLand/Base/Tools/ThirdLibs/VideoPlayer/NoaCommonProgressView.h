@@ -2,7 +2,7 @@
 //  NoaCommonProgressView.h
 //  NoaKit
 //
-//  Created by Candy on 2026/9/26.
+//  Created by LuckyLand on 2026/9/26.
 //
 
 // 自定义 通用进度条

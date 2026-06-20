@@ -2,7 +2,7 @@
 //  NoaSystemSettingModel.m
 //  NoaKit
 //
-//  Created by Candy on 2023/5/17.
+//  Created by LuckyLand on 2023/5/17.
 //
 
 #import "NoaSystemSettingModel.h"

@@ -2,7 +2,7 @@
 //  NoaSafeCodeSettingViewController.m
 //  NoaKit
 //
-//  Created by Candy on 2025/1/2.
+//  Created by LuckyLand on 2025/1/2.
 //
 
 #import "NoaSafeCodeSettingViewController.h"

@@ -2,7 +2,7 @@
 //  NoaPresentItem.m
 //  NoaKit
 //
-//  Created by Candy on 2026/9/3.
+//  Created by LuckyLand on 2026/9/3.
 //
 
 #import "NoaPresentItem.h"

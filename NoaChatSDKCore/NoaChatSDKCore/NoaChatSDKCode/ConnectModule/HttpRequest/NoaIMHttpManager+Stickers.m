@@ -2,7 +2,7 @@
 //  NoaIMHttpManager+Stickers.m
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2023/10/27.
+//  Created by LuckyLand on 2023/10/27.
 //
 
 #import "NoaIMHttpManager+Stickers.h"

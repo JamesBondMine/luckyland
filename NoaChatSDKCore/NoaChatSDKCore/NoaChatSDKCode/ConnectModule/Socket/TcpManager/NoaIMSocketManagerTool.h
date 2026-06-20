@@ -2,7 +2,7 @@
 //  NoaIMSocketManagerTool.h
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2023/5/22.
+//  Created by LuckyLand on 2023/5/22.
 //
 
 // Socket消息业务管理类

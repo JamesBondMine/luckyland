@@ -2,7 +2,7 @@
 //  NoaGraphCodeView.m
 //  NoaKit
 //
-//  Created by Candy on 2026/10/18.
+//  Created by LuckyLand on 2026/10/18.
 //
 
 #import "NoaGraphCodeView.h"

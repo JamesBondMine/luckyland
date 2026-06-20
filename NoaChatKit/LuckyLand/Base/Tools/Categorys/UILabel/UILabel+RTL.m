@@ -2,7 +2,7 @@
 //  UILabel+RTL.m
 //  NoaKit
 //
-//  Created by Candy on 2023/9/15.
+//  Created by LuckyLand on 2023/9/15.
 //
 
 #import "UILabel+RTL.h"

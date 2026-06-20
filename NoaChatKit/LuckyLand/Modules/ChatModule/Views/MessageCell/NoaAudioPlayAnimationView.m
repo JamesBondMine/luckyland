@@ -2,7 +2,7 @@
 //  NoaAudioPlayAnimationView.m
 //  NoaKit
 //
-//  Created by Candy on 2023/1/14.
+//  Created by LuckyLand on 2023/1/14.
 //
 
 #import "NoaAudioPlayAnimationView.h"

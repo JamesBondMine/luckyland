@@ -2,7 +2,7 @@
 //  NoaBlackListCell.m
 //  NoaKit
 //
-//  Created by Candy on 2026/11/17.
+//  Created by LuckyLand on 2026/11/17.
 //
 
 #import "NoaBlackListCell.h"

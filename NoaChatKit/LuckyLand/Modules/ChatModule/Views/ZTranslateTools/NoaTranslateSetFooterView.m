@@ -2,7 +2,7 @@
 //  NoaTranslateSetFooterView.m
 //  NoaKit
 //
-//  Created by Candy on 2023/12/27.
+//  Created by LuckyLand on 2023/12/27.
 //
 
 #import "NoaTranslateSetFooterView.h"

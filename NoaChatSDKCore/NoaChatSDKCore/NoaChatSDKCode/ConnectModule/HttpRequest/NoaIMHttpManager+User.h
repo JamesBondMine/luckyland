@@ -2,7 +2,7 @@
 //  NoaIMHttpManager+User.h
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2026/12/20.
+//  Created by LuckyLand on 2026/12/20.
 //
 
 //查询用户(用户搜索)[1.0.11不用]

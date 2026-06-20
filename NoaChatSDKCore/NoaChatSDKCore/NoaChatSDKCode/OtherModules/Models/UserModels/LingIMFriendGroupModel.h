@@ -2,7 +2,7 @@
 //  LingIMFriendGroupModel.h
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2023/7/5.
+//  Created by LuckyLand on 2023/7/5.
 //
 
 // 通讯录 好友分组相关数据库Model

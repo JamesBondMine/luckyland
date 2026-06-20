@@ -2,7 +2,7 @@
 //  NoaScrollView.h
 //  NoaKit
 //
-//  Created by Candy on 2026/11/11.
+//  Created by LuckyLand on 2026/11/11.
 //
 
 // 可传递手势的UIScrollView

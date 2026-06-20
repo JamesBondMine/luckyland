@@ -2,7 +2,7 @@
 //  NoaChatHistoryVC.h
 //  NoaKit
 //
-//  Created by Candy on 2026/11/11.
+//  Created by LuckyLand on 2026/11/11.
 //
 
 // 聊天记录VC

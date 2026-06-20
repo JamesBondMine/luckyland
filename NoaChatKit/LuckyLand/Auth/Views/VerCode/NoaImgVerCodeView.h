@@ -2,7 +2,7 @@
 //  NoaImgVerCodeView.h
 //  NoaKit
 //
-//  Created by Candy on 2026/9/5.
+//  Created by LuckyLand on 2026/9/5.
 //
 
 #import <UIKit/UIKit.h>

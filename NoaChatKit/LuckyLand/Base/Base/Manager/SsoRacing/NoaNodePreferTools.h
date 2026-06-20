@@ -2,7 +2,7 @@
 //  NoaNodePreferTools.h
 //  NoaKit
 //
-//  Created by Candy on 2024/10/24.
+//  Created by LuckyLand on 2024/10/24.
 //
 
 #import <Foundation/Foundation.h>

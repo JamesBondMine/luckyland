@@ -2,7 +2,7 @@
 //  NoaTeamInviteDetailView.h
 //  NoaKit
 //
-//  Created by phl on 2025/7/24.
+//  Created by ppppphl on 2025/7/24.
 //
 
 #import <UIKit/UIKit.h>

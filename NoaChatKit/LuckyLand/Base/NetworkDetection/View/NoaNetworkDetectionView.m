@@ -2,7 +2,7 @@
 //  NoaNetworkDetectionView.m
 //  NoaChatKit
 //
-//  Created by phl on 2025/10/15.
+//  Created by ppppphl on 2025/10/15.
 //  TODO: 网络检测页面
 
 #import "NoaNetworkDetectionView.h"

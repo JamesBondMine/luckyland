@@ -2,7 +2,7 @@
 //  NoaChatViewController.h
 //  NoaKit
 //
-//  Created by Candy on 2026/9/23.
+//  Created by LuckyLand on 2026/9/23.
 //
 
 #import "LuckyLandBaseViewController.h"

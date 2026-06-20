@@ -2,7 +2,7 @@
 //  NoaMediaCallMoreInviteVC.h
 //  NoaKit
 //
-//  Created by Candy on 2023/2/6.
+//  Created by LuckyLand on 2023/2/6.
 //
 
 // 音视频通话 多人 邀请 VC

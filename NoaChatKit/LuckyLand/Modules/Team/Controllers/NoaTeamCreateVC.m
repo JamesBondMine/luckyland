@@ -2,7 +2,7 @@
 //  NoaTeamCreateVC.m
 //  NoaKit
 //
-//  Created by Candy on 2023/7/20.
+//  Created by LuckyLand on 2023/7/20.
 //
 
 #import "NoaTeamCreateVC.h"

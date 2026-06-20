@@ -2,7 +2,7 @@
 //  LingIMSDKUserOptions.h
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2023/5/24.
+//  Created by LuckyLand on 2023/5/24.
 //
 
 // SDK 用户信息 相关配置

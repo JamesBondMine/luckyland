@@ -2,7 +2,7 @@
 //  NoaInviteFriendVC.h
 //  NoaKit
 //
-//  Created by Candy on 2026/9/22.
+//  Created by LuckyLand on 2026/9/22.
 //
 
 // 创建群聊 邀请好友 VC

@@ -2,7 +2,7 @@
 //  NoaCallFloatView.h
 //  NoaKit
 //
-//  Created by Candy on 2023/5/24.
+//  Created by LuckyLand on 2023/5/24.
 //
 
 // 即构 单人 音视频通话 最小化控件

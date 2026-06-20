@@ -2,7 +2,7 @@
 //  AppDelegate+MediaCall.h
 //  NoaKit
 //
-//  Created by Candy on 2023/5/29.
+//  Created by LuckyLand on 2023/5/29.
 //
 
 // 音视频通话 相关处理

@@ -2,7 +2,7 @@
 //  NoaFriendApplyPassVC.m
 //  NoaKit
 //
-//  Created by Candy on 2026/10/21.
+//  Created by LuckyLand on 2026/10/21.
 //
 
 #import "NoaFriendApplyPassVC.h"

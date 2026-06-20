@@ -2,7 +2,7 @@
 //  NoaNoDataView.m
 //  NoaKit
 //
-//  Created by Candy on 2026/9/15.
+//  Created by LuckyLand on 2026/9/15.
 //
 
 #import "NoaNoDataView.h"

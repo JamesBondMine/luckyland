@@ -2,7 +2,7 @@
 //  NoaRaceCheckErrorModel.m
 //  NoaKit
 //
-//  Created by Candy on 2024/5/11.
+//  Created by LuckyLand on 2024/5/11.
 //
 
 #import "NoaRaceCheckErrorModel.h"

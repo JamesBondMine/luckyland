@@ -2,7 +2,7 @@
 //  NoaExcursionSelectCell.h
 //  NoaKit
 //
-//  Created by Candy on 2024/1/12.
+//  Created by LuckyLand on 2024/1/12.
 //
 
 #import "NoaBaseCell.h"

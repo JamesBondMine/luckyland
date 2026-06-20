@@ -2,7 +2,7 @@
 //  NoaTranslateSettingCell.h
 //  NoaKit
 //
-//  Created by Candy on 2023/12/26.
+//  Created by LuckyLand on 2023/12/26.
 //
 
 #import "NoaBaseCell.h"

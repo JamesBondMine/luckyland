@@ -2,7 +2,7 @@
 //  NoaSsoHelpView.h
 //  NoaKit
 //
-//  Created by Candy on 2026/9/2.
+//  Created by LuckyLand on 2026/9/2.
 //
 
 #import <UIKit/UIKit.h>

@@ -2,7 +2,7 @@
 //  NoaRegisterTypeView.m
 //  NoaChatKit
 //
-//  Created by phl on 2025/11/11.
+//  Created by ppppphl on 2025/11/11.
 //
 
 #import "NoaRegisterTypeView.h"

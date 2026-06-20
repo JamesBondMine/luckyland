@@ -2,7 +2,7 @@
 //  NoaCompanyConfigSetVC.h
 //  NoaKit
 //
-//  Created by Candy on 2023/6/25.
+//  Created by LuckyLand on 2023/6/25.
 //
 
 // 幸运数字加入 设置 界面

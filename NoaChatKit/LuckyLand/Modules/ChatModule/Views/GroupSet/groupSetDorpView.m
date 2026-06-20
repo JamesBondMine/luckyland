@@ -2,7 +2,7 @@
 //  groupSetDorpView.m
 //  NoaKit
 //
-//  Created by Candy on 2024/2/17.
+//  Created by LuckyLand on 2024/2/17.
 //
 
 #import "groupSetDorpView.h"

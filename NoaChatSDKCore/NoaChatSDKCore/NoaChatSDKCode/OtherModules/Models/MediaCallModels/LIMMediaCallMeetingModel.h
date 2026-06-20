@@ -2,7 +2,7 @@
 //  LIMMediaCallMeetingModel.h
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2023/2/9.
+//  Created by LuckyLand on 2023/2/9.
 //
 
 // 音视频通话 - 会议模式

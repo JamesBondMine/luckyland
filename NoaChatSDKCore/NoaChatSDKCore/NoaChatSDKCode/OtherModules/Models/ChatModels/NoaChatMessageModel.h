@@ -2,7 +2,7 @@
 //  NoaChatMessageModel.h
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2026/12/23.
+//  Created by LuckyLand on 2026/12/23.
 //
 
 #import <Foundation/Foundation.h>

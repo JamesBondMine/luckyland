@@ -2,7 +2,7 @@
 //  NoaIMDBHeader.h
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2026/10/23.
+//  Created by LuckyLand on 2026/10/23.
 //
 
 #ifndef NoaIMDBHeader_h

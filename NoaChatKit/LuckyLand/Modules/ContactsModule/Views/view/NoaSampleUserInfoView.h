@@ -2,7 +2,7 @@
 //  NoaSampleUserInfoView.h
 //  NoaKit
 //
-//  Created by Candy on 2026/9/13.
+//  Created by LuckyLand on 2026/9/13.
 //
 
 // 简单的用户信息View

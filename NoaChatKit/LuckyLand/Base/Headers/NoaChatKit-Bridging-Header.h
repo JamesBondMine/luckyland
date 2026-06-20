@@ -2,7 +2,7 @@
 //  NoaKit-Bridging-Header.h
 //  NoaKit
 //
-//  Created by Candy on 2024/3/21.
+//  Created by LuckyLand on 2024/3/21.
 //
 
 #ifndef CIMKit_Bridging_Header_h

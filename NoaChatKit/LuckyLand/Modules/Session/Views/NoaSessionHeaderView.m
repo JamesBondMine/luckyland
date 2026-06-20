@@ -2,7 +2,7 @@
 //  NoaSessionHeaderView.m
 //  NoaKit
 //
-//  Created by Candy on 2026/11/2.
+//  Created by LuckyLand on 2026/11/2.
 //
 
 #import "NoaSessionHeaderView.h"

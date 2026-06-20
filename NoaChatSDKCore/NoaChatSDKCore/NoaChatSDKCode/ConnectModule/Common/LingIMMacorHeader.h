@@ -2,7 +2,7 @@
 //  LingIMMacorHeader.h
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2026/9/6.
+//  Created by LuckyLand on 2026/9/6.
 //
 
 // 宏定义

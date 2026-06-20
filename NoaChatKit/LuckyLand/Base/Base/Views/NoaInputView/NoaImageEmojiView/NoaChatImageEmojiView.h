@@ -2,7 +2,7 @@
 //  NoaChatImageEmojiView.h
 //  NoaKit
 //
-//  Created by Candy on 2023/8/10.
+//  Created by LuckyLand on 2023/8/10.
 //
 
 #import <UIKit/UIKit.h>

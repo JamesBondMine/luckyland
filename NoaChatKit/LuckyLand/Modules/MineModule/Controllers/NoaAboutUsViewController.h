@@ -2,7 +2,7 @@
 //  NoaAboutUsViewController.h
 //  NoaKit
 //
-//  Created by Candy on 2026/11/13.
+//  Created by LuckyLand on 2026/11/13.
 //
 
 #import "LuckyLandBaseViewController.h"

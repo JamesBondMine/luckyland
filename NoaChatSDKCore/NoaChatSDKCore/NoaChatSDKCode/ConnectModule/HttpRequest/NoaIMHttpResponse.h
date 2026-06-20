@@ -2,7 +2,7 @@
 //  NoaIMHttpResponse.h
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2026/12/19.
+//  Created by LuckyLand on 2026/12/19.
 //
 
 // SDK数据请求响应类

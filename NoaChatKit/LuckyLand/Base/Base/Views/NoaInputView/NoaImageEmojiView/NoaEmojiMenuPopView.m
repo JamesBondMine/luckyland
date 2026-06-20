@@ -2,7 +2,7 @@
 //  NoaEmojiMenuPopView.m
 //  NoaKit
 //
-//  Created by Candy on 2023/8/15.
+//  Created by LuckyLand on 2023/8/15.
 //
 
 #import "NoaEmojiMenuPopView.h"

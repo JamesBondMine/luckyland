@@ -2,7 +2,7 @@
 //  NoaMessageForwardUserCell.m
 //  NoaKit
 //
-//  Created by Candy on 2026/12/7.
+//  Created by LuckyLand on 2026/12/7.
 //
 
 #import "NoaMessageForwardUserCell.h"

@@ -2,7 +2,7 @@
 //  NoaMyQRCodeView.h
 //  NoaChatKit
 //
-//  Created by phl on 2025/12/3.
+//  Created by ppppphl on 2025/12/3.
 //
 
 #import "NoaLoginBaseBlurView.h"

@@ -2,7 +2,7 @@
 //  NoaMassMessageUserHeaderCell.m
 //  NoaKit
 //
-//  Created by Candy on 2023/4/20.
+//  Created by LuckyLand on 2023/4/20.
 //
 
 #import "NoaMassMessageUserHeaderCell.h"

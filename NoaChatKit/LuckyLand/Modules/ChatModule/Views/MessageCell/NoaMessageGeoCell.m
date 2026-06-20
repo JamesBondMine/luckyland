@@ -2,7 +2,7 @@
 //  NoaMessageGeoCell.m
 //  NoaKit
 //
-//  Created by Candy on 2023/4/13.
+//  Created by LuckyLand on 2023/4/13.
 //
 
 #import "NoaMessageGeoCell.h"

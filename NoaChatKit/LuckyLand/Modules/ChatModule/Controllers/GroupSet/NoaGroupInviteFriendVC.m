@@ -2,7 +2,7 @@
 //  NoaGroupInviteFriendVC.m
 //  NoaKit
 //
-//  Created by Candy on 2026/11/9.
+//  Created by LuckyLand on 2026/11/9.
 //
 
 #import "NoaGroupInviteFriendVC.h"

@@ -2,7 +2,7 @@
 //  NoaCallInfoModel.h
 //  NoaKit
 //
-//  Created by Candy on 2023/6/2.
+//  Created by LuckyLand on 2023/6/2.
 //
 
 // 即构 音视频通话信息Model

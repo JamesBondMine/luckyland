@@ -2,7 +2,7 @@
 //  NoaCallMiniView.h
 //  NoaKit
 //
-//  Created by Candy on 2023/5/19.
+//  Created by LuckyLand on 2023/5/19.
 //
 
 #import <UIKit/UIKit.h>

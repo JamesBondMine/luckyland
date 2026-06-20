@@ -2,7 +2,7 @@
 //  NoaIMChatMessageModel+WCTTableCoding.h
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2026/10/21.
+//  Created by LuckyLand on 2026/10/21.
 //
 
 #import "NoaIMChatMessageModel.h"

@@ -2,7 +2,7 @@
 //  NoaMassMessageSelectUserVC.m
 //  NoaKit
 //
-//  Created by Candy on 2023/4/19.
+//  Created by LuckyLand on 2023/4/19.
 //
 
 #import "NoaMassMessageSelectUserVC.h"

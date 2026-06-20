@@ -2,7 +2,7 @@
 //  LingIMSessionModel.mm
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2026/10/25.
+//  Created by LuckyLand on 2026/10/25.
 //
 
 #import "LingIMSessionModel+WCTTableCoding.h"

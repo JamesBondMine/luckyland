@@ -2,7 +2,7 @@
 //  NoaContactListTableCell.m
 //  NoaKit
 //
-//  Created by Candy on 2026/9/9.
+//  Created by LuckyLand on 2026/9/9.
 //
 
 #import "NoaContactListTableCell.h"

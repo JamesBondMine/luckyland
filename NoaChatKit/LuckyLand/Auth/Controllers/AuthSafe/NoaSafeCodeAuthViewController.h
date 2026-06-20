@@ -2,7 +2,7 @@
 //  NoaSafeCodeAuthViewController.h
 //  NoaKit
 //
-//  Created by Candy on 2024/12/30.
+//  Created by LuckyLand on 2024/12/30.
 //
 
 #import "LuckyLandBaseViewController.h"

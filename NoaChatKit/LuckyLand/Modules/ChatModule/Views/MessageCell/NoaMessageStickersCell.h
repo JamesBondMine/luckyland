@@ -2,7 +2,7 @@
 //  NoaMessageStickersCell.h
 //  NoaKit
 //
-//  Created by Candy on 2023/10/26.
+//  Created by LuckyLand on 2023/10/26.
 //
 
 #import "NoaMessageContentBaseCell.h"

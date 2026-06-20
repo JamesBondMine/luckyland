@@ -2,7 +2,7 @@
 //  NoaGroupManageContentCell.h
 //  NoaKit
 //
-//  Created by Candy on 2023/4/25.
+//  Created by LuckyLand on 2023/4/25.
 //
 
 // 群管理 标题+描述+开关 Cell

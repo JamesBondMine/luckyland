@@ -2,7 +2,7 @@
 //  NoaFriendGroupManagerVC.h
 //  NoaKit
 //
-//  Created by Candy on 2023/7/3.
+//  Created by LuckyLand on 2023/7/3.
 //
 
 // 通讯录-好友-分组管理 VC

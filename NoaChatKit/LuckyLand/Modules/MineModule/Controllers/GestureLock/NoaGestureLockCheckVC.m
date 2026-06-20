@@ -2,7 +2,7 @@
 //  NoaGestureLockCheckVC.m
 //  NoaKit
 //
-//  Created by Candy on 2023/4/24.
+//  Created by LuckyLand on 2023/4/24.
 //
 
 #import "NoaGestureLockCheckVC.h"

@@ -2,7 +2,7 @@
 //  LingIMUserModel.h
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2026/10/25.
+//  Created by LuckyLand on 2026/10/25.
 //
 
 // 用户相关数据库Model

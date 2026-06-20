@@ -2,7 +2,7 @@
 //  NSDate+LingIMDateTime.h
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2023/4/17.
+//  Created by LuckyLand on 2023/4/17.
 //
 
 #import <Foundation/Foundation.h>

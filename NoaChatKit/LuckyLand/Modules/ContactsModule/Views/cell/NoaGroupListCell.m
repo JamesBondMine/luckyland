@@ -2,7 +2,7 @@
 //  NoaGroupListCell.m
 //  NoaKit
 //
-//  Created by Candy on 2026/9/14.
+//  Created by LuckyLand on 2026/9/14.
 //
 
 #import "NoaGroupListCell.h"

@@ -2,7 +2,7 @@
 //  NoaMassMessageUserModel.m
 //  NoaKit
 //
-//  Created by Candy on 2023/4/21.
+//  Created by LuckyLand on 2023/4/21.
 //
 
 #import "NoaMassMessageUserModel.h"

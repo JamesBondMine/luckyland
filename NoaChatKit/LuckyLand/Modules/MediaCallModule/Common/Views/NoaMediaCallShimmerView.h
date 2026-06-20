@@ -2,7 +2,7 @@
 //  NoaMediaCallShimmerView.h
 //  NoaKit
 //
-//  Created by Candy on 2023/2/7.
+//  Created by LuckyLand on 2023/2/7.
 //
 
 // 闪光动画view

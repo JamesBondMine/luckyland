@@ -2,7 +2,7 @@
 //  NoaEmojiShopPackageViewController.h
 //  NoaKit
 //
-//  Created by Candy on 2023/10/25.
+//  Created by LuckyLand on 2023/10/25.
 //
 
 #import "LuckyLandBaseViewController.h"

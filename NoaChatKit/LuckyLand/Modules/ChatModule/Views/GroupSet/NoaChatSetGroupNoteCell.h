@@ -2,7 +2,7 @@
 //  NoaChatSetGroupNoteCell.h
 //  NoaKit
 //
-//  Created by Candy on 2026/11/5.
+//  Created by LuckyLand on 2026/11/5.
 //
 
 // 群设置 - 群公告Cell

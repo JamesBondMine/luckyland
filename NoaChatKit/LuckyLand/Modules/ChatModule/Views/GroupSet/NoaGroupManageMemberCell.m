@@ -2,7 +2,7 @@
 //  NoaGroupManageMemberCell.m
 //  NoaKit
 //
-//  Created by Candy on 2026/11/14.
+//  Created by LuckyLand on 2026/11/14.
 //
 
 #import "NoaGroupManageMemberCell.h"

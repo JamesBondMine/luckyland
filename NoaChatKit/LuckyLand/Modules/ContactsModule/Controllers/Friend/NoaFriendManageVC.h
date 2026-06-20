@@ -2,7 +2,7 @@
 //  NoaFriendManageVC.h
 //  NoaKit
 //
-//  Created by Candy on 2026/10/22.
+//  Created by LuckyLand on 2026/10/22.
 //
 
 // 好友管理VC

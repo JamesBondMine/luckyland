@@ -2,7 +2,7 @@
 //  NoaIMHttpManager+Translate.m
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2023/9/22.
+//  Created by LuckyLand on 2023/9/22.
 //
 
 #import "NoaIMHttpManager+Translate.h"

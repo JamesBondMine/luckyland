@@ -2,7 +2,7 @@
 //  NoaQrcodeTextContentViewController.h
 //  NoaKit
 //
-//  Created by Candy on 2023/4/6.
+//  Created by LuckyLand on 2023/4/6.
 //
 
 #import "LuckyLandBaseViewController.h"

@@ -2,7 +2,7 @@
 //  NoaIMSDKManager+ServiceMessage.h
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2026/10/26.
+//  Created by LuckyLand on 2026/10/26.
 //
 
 // 系统类型消息 处理

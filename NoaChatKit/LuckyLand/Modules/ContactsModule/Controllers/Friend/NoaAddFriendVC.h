@@ -2,7 +2,7 @@
 //  NoaAddFriendVC.h
 //  NoaKit
 //
-//  Created by Candy on 2026/9/9.
+//  Created by LuckyLand on 2026/9/9.
 //
 
 // 添加好友 搜索用户 VC

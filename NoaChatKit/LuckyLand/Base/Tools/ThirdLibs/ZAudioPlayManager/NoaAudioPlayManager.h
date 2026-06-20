@@ -2,7 +2,7 @@
 //  NoaAudioPlayManager.h
 //  NoaKit
 //
-//  Created by Candy on 2023/1/28.
+//  Created by LuckyLand on 2023/1/28.
 //
 
 #define ZAudioPlayerTOOL [NoaAudioPlayManager shareManager]

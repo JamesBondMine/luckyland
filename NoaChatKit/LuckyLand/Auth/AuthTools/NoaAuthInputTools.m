@@ -2,7 +2,7 @@
 //  NoaAuthInputTools.m
 //  NoaKit
 //
-//  Created by Candy on 2023/4/7.
+//  Created by LuckyLand on 2023/4/7.
 //
 
 #import "NoaAuthInputTools.h"

@@ -2,7 +2,7 @@
 //  LXChatEncrypt.h
 //  LXChatEncrypt
 //
-//  Created by Candy on 2024/7/10.
+//  Created by LuckyLand on 2024/7/10.
 //
 
 #import <Foundation/Foundation.h>

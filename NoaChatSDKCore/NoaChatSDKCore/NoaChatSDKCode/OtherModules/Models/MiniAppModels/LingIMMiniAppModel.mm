@@ -2,7 +2,7 @@
 //  LingIMMiniAppModel.mm
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2023/7/21.
+//  Created by LuckyLand on 2023/7/21.
 //
 
 #import "LingIMMiniAppModel+WCTTableCoding.h"

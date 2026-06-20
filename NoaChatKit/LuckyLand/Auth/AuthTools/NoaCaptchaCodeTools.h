@@ -2,7 +2,7 @@
 //  NoaCaptchaCodeTools.h
 //  NoaKit
 //
-//  Created by Candy on 2024/7/23.
+//  Created by LuckyLand on 2024/7/23.
 //
 
 #import <Foundation/Foundation.h>

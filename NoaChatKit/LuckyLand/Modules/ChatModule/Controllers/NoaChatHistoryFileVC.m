@@ -2,7 +2,7 @@
 //  NoaChatHistoryFileVC.m
 //  NoaKit
 //
-//  Created by Candy on 2023/2/2.
+//  Created by LuckyLand on 2023/2/2.
 //
 
 #import "NoaChatHistoryFileVC.h"

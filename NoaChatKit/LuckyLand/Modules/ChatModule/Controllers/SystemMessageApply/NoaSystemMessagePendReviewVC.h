@@ -2,7 +2,7 @@
 //  NoaSystemMessagePendReviewVC.h
 //  NoaKit
 //
-//  Created by Candy on 2023/5/10.
+//  Created by LuckyLand on 2023/5/10.
 //
 
 #import "LuckyLandBaseViewController.h"

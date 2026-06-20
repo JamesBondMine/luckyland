@@ -2,7 +2,7 @@
 //  Ipv6WithSequence.m
 //  NoaKit
 //
-//  Created by Candy on 2024/9/20.
+//  Created by LuckyLand on 2024/9/20.
 //
 
 #import "Ipv6WithSequence.h"

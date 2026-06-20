@@ -2,7 +2,7 @@
 //  NoaChatTextView.h
 //  NoaKit
 //
-//  Created by Candy on 2026/11/26.
+//  Created by LuckyLand on 2026/11/26.
 //
 
 #import <UIKit/UIKit.h>

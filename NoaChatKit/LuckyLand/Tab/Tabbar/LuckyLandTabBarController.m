@@ -2,7 +2,7 @@
 //  NoaTabBarController.m
 //  NoaIMChatService
 //
-//  Created by Candy on 2026/7/8.
+//  Created by LuckyLand on 2026/7/8.
 //
 
 #import "LuckyLandTabBarController.h"
@@ -91,17 +91,17 @@
     [[UITabBarItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, -2)];
     
     _vcLuckyLandHome = [LuckyLandHomeViewController new];
-    [self addChildViewController:_vcLuckyLandHome imageNormal:@"atab_l_d" imageSelected:@"atab_l_a" title:@"幸运岛" tag:1000];
+    [self addChildViewController:_vcLuckyLandHome imageNormal:@"luck_t1_d" imageSelected:@"luck_t1_a" title:@"幸运岛" tag:1000];
     
     _vcSession = [LuckyLandConversationViewController new];
-    [self addChildViewController:_vcSession imageNormal:@"atab_l_d" imageSelected:@"atab_l_a" title:LanguageToolMatch(@"消息") tag:1001];
+    [self addChildViewController:_vcSession imageNormal:@"luck_t2_d" imageSelected:@"luck_t2_a" title:LanguageToolMatch(@"消息") tag:1001];
     
     _vcContact = [LuckLandContactVC new];
-    [self addChildViewController:_vcContact imageNormal:@"atab_c_d" imageSelected:@"atab_c_a" title:LanguageToolMatch(@"通讯录") tag:1002];
+    [self addChildViewController:_vcContact imageNormal:@"luck_t3_d" imageSelected:@"luck_t3_a" title:LanguageToolMatch(@"通讯录") tag:1002];
     
     
     _mineVc  = [FlutterTallkMineViewController new];
-    [self addChildViewController:_mineVc imageNormal:@"atab_r_d" imageSelected:@"atab_r_a" title:LanguageToolMatch(@"我的") tag:1003];
+    [self addChildViewController:_mineVc imageNormal:@"luck_t4_d" imageSelected:@"luck_t4_a" title:LanguageToolMatch(@"我的") tag:1003];
     
     
     self.selectedIndex = 0;

@@ -2,7 +2,7 @@
 //  NoaVideoPlayerManager.h
 //  NoaKit
 //
-//  Created by Candy on 2026/9/24.
+//  Created by LuckyLand on 2026/9/24.
 //
 
 // 视频播放器 Manager

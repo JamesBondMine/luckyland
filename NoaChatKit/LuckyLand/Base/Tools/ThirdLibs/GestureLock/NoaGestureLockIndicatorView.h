@@ -2,7 +2,7 @@
 //  NoaGestureLockIndicatorView.h
 //  NoaKit
 //
-//  Created by Candy on 2023/4/23.
+//  Created by LuckyLand on 2023/4/23.
 //
 
 // 手势锁 指示器 小图提示

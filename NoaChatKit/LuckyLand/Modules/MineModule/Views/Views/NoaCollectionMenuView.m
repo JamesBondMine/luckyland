@@ -2,7 +2,7 @@
 //  NoaCollectionMenuView.m
 //  NoaKit
 //
-//  Created by Candy on 2024/8/2.
+//  Created by LuckyLand on 2024/8/2.
 //
 
 #import "NoaCollectionMenuView.h"

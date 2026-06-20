@@ -2,7 +2,7 @@
 //  NoaIntegralDetailViewController.m
 //  NoaKit
 //
-//  Created by Candy on 2024/1/9.
+//  Created by LuckyLand on 2024/1/9.
 //
 
 #import "NoaIntegralDetailViewController.h"

@@ -2,7 +2,7 @@
 //  NSDate+Addition.m
 //  NoaIMChatService
 //
-//  Created by Candy on 2026/7/13.
+//  Created by LuckyLand on 2026/7/13.
 //
 
 #import "NSDate+Addition.h"

@@ -2,7 +2,7 @@
 //  NoaMineInfoView.h
 //  NoaKit
 //
-//  Created by Candy on 2023/6/26.
+//  Created by LuckyLand on 2023/6/26.
 //
 
 #import <UIKit/UIKit.h>

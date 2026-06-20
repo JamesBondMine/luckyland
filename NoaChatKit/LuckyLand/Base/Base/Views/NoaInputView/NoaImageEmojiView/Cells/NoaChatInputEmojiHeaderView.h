@@ -2,7 +2,7 @@
 //  NoaChatInputEmojiHeaderView.h
 //  NoaKit
 //
-//  Created by Candy on 2023/8/11.
+//  Created by LuckyLand on 2023/8/11.
 //
 
 #import <UIKit/UIKit.h>

@@ -2,7 +2,7 @@
 //  NoaFileUploadTools.m
 //  NoaKit
 //
-//  Created by Candy on 2024/3/5.
+//  Created by LuckyLand on 2024/3/5.
 //
 
 #import "NoaFileUploadTools.h"

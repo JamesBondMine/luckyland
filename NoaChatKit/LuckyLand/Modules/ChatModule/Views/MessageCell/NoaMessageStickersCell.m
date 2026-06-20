@@ -2,7 +2,7 @@
 //  NoaMessageStickersCell.m
 //  NoaKit
 //
-//  Created by Candy on 2023/10/26.
+//  Created by LuckyLand on 2023/10/26.
 //
 
 #define k_radius 18

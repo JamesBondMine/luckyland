@@ -2,7 +2,7 @@
 //  NoaGroupActivityInfoModel.m
 //  NoaKit
 //
-//  Created by Candy on 2025/2/24.
+//  Created by LuckyLand on 2025/2/24.
 //
 
 #import "NoaGroupActivityInfoModel.h"

@@ -2,7 +2,7 @@
 //  NoaIMHttpManager+Friend.m
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2026/12/20
+//  Created by LuckyLand on 2026/12/20
 //
 
 #import "NoaIMHttpManager+Friend.h"

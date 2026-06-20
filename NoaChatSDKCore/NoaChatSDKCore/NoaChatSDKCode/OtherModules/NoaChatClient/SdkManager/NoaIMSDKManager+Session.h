@@ -2,7 +2,7 @@
 //  NoaIMSDKManager+Session.h
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2026/10/27.
+//  Created by LuckyLand on 2026/10/27.
 //
 
 #import "NoaIMSDKManager.h"

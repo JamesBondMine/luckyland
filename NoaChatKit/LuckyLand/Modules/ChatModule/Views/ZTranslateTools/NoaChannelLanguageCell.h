@@ -2,7 +2,7 @@
 //  NoaChannelLanguageCell.h
 //  NoaKit
 //
-//  Created by Candy on 2023/9/14.
+//  Created by LuckyLand on 2023/9/14.
 //
 
 #import "NoaBaseCell.h"

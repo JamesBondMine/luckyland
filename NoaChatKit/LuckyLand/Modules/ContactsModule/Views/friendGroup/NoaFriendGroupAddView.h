@@ -2,7 +2,7 @@
 //  NoaFriendGroupAddView.h
 //  NoaKit
 //
-//  Created by Candy on 2023/7/4.
+//  Created by LuckyLand on 2023/7/4.
 //
 
 // 添加 好友分组 View

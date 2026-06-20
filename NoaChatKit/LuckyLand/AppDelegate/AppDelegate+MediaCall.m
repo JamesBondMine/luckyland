@@ -2,7 +2,7 @@
 //  AppDelegate+MediaCall.m
 //  NoaKit
 //
-//  Created by Candy on 2023/5/29.
+//  Created by LuckyLand on 2023/5/29.
 //
 
 #import "AppDelegate+MediaCall.h"

@@ -2,7 +2,7 @@
 //  NoaInviteFriendHeaderView.h
 //  NoaKit
 //
-//  Created by Candy on 2024/1/11.
+//  Created by LuckyLand on 2024/1/11.
 //
 
 #import <UIKit/UIKit.h>

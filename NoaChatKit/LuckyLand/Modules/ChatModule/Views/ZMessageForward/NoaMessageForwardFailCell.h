@@ -2,7 +2,7 @@
 //  NoaMessageForwardFailCell.h
 //  NoaKit
 //
-//  Created by Candy on 2024/3/18.
+//  Created by LuckyLand on 2024/3/18.
 //
 
 #import "NoaBaseCell.h"

@@ -2,7 +2,7 @@
 //  NoaCallInfoModel.m
 //  NoaKit
 //
-//  Created by Candy on 2023/6/2.
+//  Created by LuckyLand on 2023/6/2.
 //
 
 #import "NoaCallInfoModel.h"

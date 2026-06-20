@@ -2,7 +2,7 @@
 //  NoaRegisterTypeCell.m
 //  NoaChatKit
 //
-//  Created by phl on 2025/11/12.
+//  Created by ppppphl on 2025/11/12.
 //
 
 #import "NoaRegisterTypeCell.h"

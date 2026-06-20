@@ -2,7 +2,7 @@
 //  NoaChatInputVoiceStateView.m
 //  NoaKit
 //
-//  Created by Candy on 2023/1/10.
+//  Created by LuckyLand on 2023/1/10.
 //
 
 #import "NoaChatInputVoiceStateView.h"

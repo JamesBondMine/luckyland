@@ -2,7 +2,7 @@
 //  NoaTranslateChannelLanguageModel.m
 //  NoaKit
 //
-//  Created by Candy on 2024/8/7.
+//  Created by LuckyLand on 2024/8/7.
 //
 
 #import "NoaTranslateChannelLanguageModel.h"

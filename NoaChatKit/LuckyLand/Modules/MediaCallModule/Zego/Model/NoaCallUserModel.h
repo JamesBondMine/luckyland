@@ -2,7 +2,7 @@
 //  NoaCallUserModel.h
 //  NoaKit
 //
-//  Created by Candy on 2023/5/26.
+//  Created by LuckyLand on 2023/5/26.
 //
 
 // 即构 参与音视频通话的用户信息

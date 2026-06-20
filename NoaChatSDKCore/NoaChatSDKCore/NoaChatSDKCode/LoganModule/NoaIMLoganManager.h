@@ -2,7 +2,7 @@
 //  NoaIMLoganManager.h
 //  CIMSDKCore
 //
-//  Created by Candy on 2023/5/16.
+//  Created by LuckyLand on 2023/5/16.
 //
 
 

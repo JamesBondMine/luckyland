@@ -2,7 +2,7 @@
 //  NSData+Addition.m
 //  NoaKit
 //
-//  Created by Candy on 2025/1/13.
+//  Created by LuckyLand on 2025/1/13.
 //
 
 #import "NSData+Addition.h"

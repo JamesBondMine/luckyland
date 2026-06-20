@@ -2,7 +2,7 @@
 //  NoaChatInputView.h
 //  NoaKit
 //
-//  Created by Candy on 2026/9/27.
+//  Created by LuckyLand on 2026/9/27.
 //
 
 // 聊天输入内容 总 View

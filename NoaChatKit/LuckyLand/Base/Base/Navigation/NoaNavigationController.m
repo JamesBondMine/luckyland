@@ -2,7 +2,7 @@
 //  NoaNavigationController.m
 //  NoaIMChatService
 //
-//  Created by Candy on 2026/7/8.
+//  Created by LuckyLand on 2026/7/8.
 //
 
 #import "NoaNavigationController.h"

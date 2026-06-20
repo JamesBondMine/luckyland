@@ -2,7 +2,7 @@
 //  NoaPrivacySettingTableViewCell.m
 //  NoaKit
 //
-//  Created by Candy on 2024/2/16.
+//  Created by LuckyLand on 2024/2/16.
 //
 
 #import "NoaPrivacySettingTableViewCell.h"

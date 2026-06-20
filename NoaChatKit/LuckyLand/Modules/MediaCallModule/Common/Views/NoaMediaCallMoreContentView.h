@@ -2,7 +2,7 @@
 //  NoaMediaCallMoreContentView.h
 //  NoaKit
 //
-//  Created by Candy on 2023/2/15.
+//  Created by LuckyLand on 2023/2/15.
 //
 
 // 多人音视频通话 展示 VideoView + 用户头像 的内容View

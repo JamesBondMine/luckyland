@@ -2,7 +2,7 @@
 //  NoaIMHttpManager+Message.h
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2026/12/20.
+//  Created by LuckyLand on 2026/12/20.
 //
 
 //获取会话列表

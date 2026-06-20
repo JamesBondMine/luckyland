@@ -2,7 +2,7 @@
 //  NoaNoticeTranslateEditView.h
 //  NoaKit
 //
-//  Created by Candy on 2024/2/21.
+//  Created by LuckyLand on 2024/2/21.
 //
 
 #import <UIKit/UIKit.h>

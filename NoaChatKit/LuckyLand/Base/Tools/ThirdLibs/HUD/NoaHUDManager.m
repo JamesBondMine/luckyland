@@ -2,7 +2,7 @@
 //  NoaHUDManager.m
 //  NoaIMChatService
 //
-//  Created by Candy on 2026/7/8.
+//  Created by LuckyLand on 2026/7/8.
 //
 
 /// 使用UIActivityIndicatorView来显示进度，这是默认值

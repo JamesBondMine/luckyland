@@ -2,7 +2,7 @@
 //  NoaMessageVoiceCell.m
 //  NoaKit
 //
-//  Created by Candy on 2023/1/5.
+//  Created by LuckyLand on 2023/1/5.
 //
 
 #import "NoaMessageVoiceCell.h"

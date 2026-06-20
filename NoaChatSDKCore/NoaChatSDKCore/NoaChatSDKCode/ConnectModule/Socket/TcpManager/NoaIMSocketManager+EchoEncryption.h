@@ -2,7 +2,7 @@
 //  NoaIMSocketManager+EchoEncryption.h
 //  NoaChatSDKCore
 //
-//  Created by phl on 2025/8/31.
+//  Created by ppppphl on 2025/8/31.
 //
 
 #import "NoaIMSocketManager.h"

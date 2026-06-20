@@ -2,7 +2,7 @@
 //  NoaLanguageManager.h
 //  NoaKit
 //
-//  Created by Candy on 2026/12/28.
+//  Created by LuckyLand on 2026/12/28.
 //
 
 #define ZLanguageTOOL                   [NoaLanguageManager shareManager]

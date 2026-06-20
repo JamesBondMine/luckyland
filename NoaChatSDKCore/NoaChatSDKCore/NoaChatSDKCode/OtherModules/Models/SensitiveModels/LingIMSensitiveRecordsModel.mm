@@ -2,7 +2,7 @@
 //  LingIMSensitiveRecordsModel.mm
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2023/7/12.
+//  Created by LuckyLand on 2023/7/12.
 //
 
 #import "LingIMSensitiveRecordsModel+WCTTableCoding.h"

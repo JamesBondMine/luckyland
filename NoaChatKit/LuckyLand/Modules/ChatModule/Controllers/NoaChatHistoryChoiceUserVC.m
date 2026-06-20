@@ -2,7 +2,7 @@
 //  NoaChatHistoryChoiceUserVC.m
 //  NoaKit
 //
-//  Created by Candy on 2024/8/12.
+//  Created by LuckyLand on 2024/8/12.
 //
 
 #import "NoaChatHistoryChoiceUserVC.h"

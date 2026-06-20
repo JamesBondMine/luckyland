@@ -2,7 +2,7 @@
 //  LIMMediaCallSingleModel.h
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2023/1/3.
+//  Created by LuckyLand on 2023/1/3.
 //
 
 // 音视频通话 - 单人模式

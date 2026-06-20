@@ -2,7 +2,7 @@
 //  NoaLameTool.h
 //  NoaKit
 //
-//  Created by Candy on 2023/1/28.
+//  Created by LuckyLand on 2023/1/28.
 //
 
 /** 将录音生成的 .caf文件转换成 .mp3 文件*/

@@ -2,7 +2,7 @@
 //  NoaTeamHeaderCollectCell.m
 //  NoaKit
 //
-//  Created by Candy on 2023/9/7.
+//  Created by LuckyLand on 2023/9/7.
 //
 
 #import "NoaTeamHeaderCollectCell.h"

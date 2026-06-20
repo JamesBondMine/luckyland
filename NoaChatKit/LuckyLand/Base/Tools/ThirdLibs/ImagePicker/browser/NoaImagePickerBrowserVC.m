@@ -2,7 +2,7 @@
 //  NoaImagePickerBrowserVC.m
 //  NoaKit
 //
-//  Created by Candy on 2026/9/30.
+//  Created by LuckyLand on 2026/9/30.
 //
 
 #import "NoaImagePickerBrowserVC.h"

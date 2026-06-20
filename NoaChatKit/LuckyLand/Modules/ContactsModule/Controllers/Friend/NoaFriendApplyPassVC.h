@@ -2,7 +2,7 @@
 //  NoaFriendApplyPassVC.h
 //  NoaKit
 //
-//  Created by Candy on 2026/10/21.
+//  Created by LuckyLand on 2026/10/21.
 //
 
 //好友申请通过 VC

@@ -2,7 +2,7 @@
 //  NoaTeamUpdateNameView.h
 //  NoaKit
 //
-//  Created by Candy on 2023/11/7.
+//  Created by LuckyLand on 2023/11/7.
 //
 
 #import <UIKit/UIKit.h>

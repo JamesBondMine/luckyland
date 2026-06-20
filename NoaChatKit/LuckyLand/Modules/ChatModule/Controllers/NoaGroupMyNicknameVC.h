@@ -2,7 +2,7 @@
 //  NoaGroupMyNicknameVC.h
 //  NoaKit
 //
-//  Created by Candy on 2026/11/11.
+//  Created by LuckyLand on 2026/11/11.
 //
 
 // 我的群昵称VC

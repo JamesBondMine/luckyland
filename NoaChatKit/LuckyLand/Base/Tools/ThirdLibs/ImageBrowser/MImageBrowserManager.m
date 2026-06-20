@@ -2,7 +2,7 @@
 //  MImageBrowserManager.m
 //  MiMaoApp
 //
-//  Created by Candy on 2020/10/13.
+//  Created by LuckyLand on 2020/10/13.
 //  Copyright © 2020 MiMao. All rights reserved.
 //
 

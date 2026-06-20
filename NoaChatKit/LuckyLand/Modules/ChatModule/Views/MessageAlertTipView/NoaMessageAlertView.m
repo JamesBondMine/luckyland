@@ -2,7 +2,7 @@
 //  NoaMessageAlertView.m
 //  NoaKit
 //
-//  Created by Candy on 2026/10/12.
+//  Created by LuckyLand on 2026/10/12.
 //
 
 #import "NoaMessageAlertView.h"

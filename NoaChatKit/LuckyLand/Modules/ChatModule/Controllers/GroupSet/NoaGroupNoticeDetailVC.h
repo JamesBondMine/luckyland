@@ -2,7 +2,7 @@
 //  NoaGroupNoticeDetailVC.h
 //  NoaKit
 //
-//  Created by Candy on 2025/8/11.
+//  Created by LuckyLand on 2025/8/11.
 //
 
 #import <Foundation/Foundation.h>

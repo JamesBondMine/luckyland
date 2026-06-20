@@ -2,7 +2,7 @@
 //  NoaColorHeader.h
 //  NoaKit
 //
-//  Created by Candy on 2026/9/6.
+//  Created by LuckyLand on 2026/9/6.
 //
 
 #ifndef ZColorHeader_h
@@ -146,7 +146,9 @@
 #define COLOR_F81205_DARK       HEXCOLOR(@"F81205")
 #define COLOR_E8E8E8_DARK       HEXCOLOR(@"E8E8E8")
 #define COLOR_8D93A6_DARK       HEXCOLOR(@"FFFFFF")
-#define COLOR_EB5C5C_DARK       HEXCOLOR(@"5966F2")
+//#define COLOR_EB5C5C_DARK       HEXCOLOR(@"5966F2")
+#define COLOR_EB5C5C_DARK       HEXCOLOR(@"EB5C5C")
+
 #define COLOR_EEF1FA_DARK       HEXCOLOR(@"3C3E45")
 #define COLOR_EFEFF2_DARK       HEXCOLOR(@"EFEFF2")
 #define COLOR_B8BDCC_DARK       HEXCOLOR(@"B8BDCC")

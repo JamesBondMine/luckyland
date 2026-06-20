@@ -2,7 +2,7 @@
 //  NoaMediaCallMoreFloatView.h
 //  NoaKit
 //
-//  Created by Candy on 2023/2/8.
+//  Created by LuckyLand on 2023/2/8.
 //
 
 // 多人音视频浮窗

@@ -2,7 +2,7 @@
 //  NoaUpdateVersionView.h
 //  NoaKit
 //
-//  Created by Candy on 2023/3/30.
+//  Created by LuckyLand on 2023/3/30.
 //
 
 #import <UIKit/UIKit.h>

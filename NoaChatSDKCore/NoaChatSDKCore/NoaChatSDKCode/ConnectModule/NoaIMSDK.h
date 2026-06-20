@@ -2,7 +2,7 @@
 //  LingIMSDK.h
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2026/10/21.
+//  Created by LuckyLand on 2026/10/21.
 //
 
 //SDK对外头文件

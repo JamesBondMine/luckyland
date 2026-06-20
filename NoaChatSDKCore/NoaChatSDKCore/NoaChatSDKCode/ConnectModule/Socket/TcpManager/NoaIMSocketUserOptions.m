@@ -2,7 +2,7 @@
 //  LingIMSocketUserOptions.m
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2023/5/22.
+//  Created by LuckyLand on 2023/5/22.
 //
 
 #import "NoaIMSocketUserOptions.h"

@@ -2,7 +2,7 @@
 //  NoaTeamTotalNumberListVC.h
 //  NoaKit
 //
-//  Created by Candy on 2025/7/23.
+//  Created by LuckyLand on 2025/7/23.
 //
 
 #import <Foundation/Foundation.h>

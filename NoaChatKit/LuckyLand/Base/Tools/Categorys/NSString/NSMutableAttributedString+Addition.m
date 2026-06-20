@@ -2,7 +2,7 @@
 //  NSMutableAttributedString+Addition.m
 //  NoaKit
 //
-//  Created by Candy on 2026/12/17.
+//  Created by LuckyLand on 2026/12/17.
 //
 
 #import "NSMutableAttributedString+Addition.h"

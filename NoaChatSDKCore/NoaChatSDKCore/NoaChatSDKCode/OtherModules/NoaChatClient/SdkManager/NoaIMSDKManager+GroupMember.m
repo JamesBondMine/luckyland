@@ -2,7 +2,7 @@
 //  NoaIMSDKManager+GroupMember.m
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2023/2/21.
+//  Created by LuckyLand on 2023/2/21.
 //
 
 #import "NoaIMSDKManager+GroupMember.h"

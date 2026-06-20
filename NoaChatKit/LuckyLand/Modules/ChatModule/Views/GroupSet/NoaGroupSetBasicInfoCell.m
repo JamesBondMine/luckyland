@@ -2,7 +2,7 @@
 //  NoaGroupSetBasicInfoCell.m
 //  NoaKit
 //
-//  Created by Candy on 2026/11/7.
+//  Created by LuckyLand on 2026/11/7.
 //
 
 #import "NoaGroupSetBasicInfoCell.h"

@@ -2,7 +2,7 @@
 //  NoaCompanyConfigSetVC.m
 //  NoaKit
 //
-//  Created by Candy on 2023/6/25.
+//  Created by LuckyLand on 2023/6/25.
 //
 
 #import "NoaCompanyConfigSetVC.h"

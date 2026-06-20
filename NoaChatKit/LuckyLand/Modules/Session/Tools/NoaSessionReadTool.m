@@ -2,7 +2,7 @@
 //  NoaSessionReadTool.m
 //  NoaKit
 //
-//  Created by Candy on 2024/12/30.
+//  Created by LuckyLand on 2024/12/30.
 //
 
 #import "NoaSessionReadTool.h"

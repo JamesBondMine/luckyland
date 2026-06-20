@@ -2,7 +2,7 @@
 //  NoaMessageVoiceHudView.h
 //  NoaKit
 //
-//  Created by Candy on 2024/3/6.
+//  Created by LuckyLand on 2024/3/6.
 //
 
 #import <UIKit/UIKit.h>

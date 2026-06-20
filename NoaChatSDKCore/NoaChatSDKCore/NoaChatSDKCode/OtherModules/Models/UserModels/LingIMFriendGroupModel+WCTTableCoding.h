@@ -2,7 +2,7 @@
 //  LingIMFriendGroupModel+WCTTableCoding.h
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2023/7/5.
+//  Created by LuckyLand on 2023/7/5.
 //
 
 #import "LingIMFriendGroupModel.h"

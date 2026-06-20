@@ -2,7 +2,7 @@
 //  LIMMediaCallModel.h
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2023/2/9.
+//  Created by LuckyLand on 2023/2/9.
 //
 
 #import <Foundation/Foundation.h>

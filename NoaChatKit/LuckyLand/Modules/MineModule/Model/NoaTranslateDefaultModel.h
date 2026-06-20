@@ -2,7 +2,7 @@
 //  NoaTranslateDefaultModel.h
 //  NoaKit
 //
-//  Created by Candy on 2024/2/18.
+//  Created by LuckyLand on 2024/2/18.
 //
 
 #import "NoaBaseModel.h"

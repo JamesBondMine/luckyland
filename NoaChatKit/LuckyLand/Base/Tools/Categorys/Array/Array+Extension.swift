@@ -2,7 +2,7 @@
 //  Array+Extension.swift
 //  NoaKit
 //
-//  Created by Candy on 2024/3/26.
+//  Created by LuckyLand on 2024/3/26.
 //
 
 import Foundation

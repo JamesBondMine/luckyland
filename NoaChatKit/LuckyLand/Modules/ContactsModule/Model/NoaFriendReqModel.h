@@ -2,7 +2,7 @@
 //  NoaFriendReqModel.h
 //  NoaKit
 //
-//  Created by Candy on 2024/6/4.
+//  Created by LuckyLand on 2024/6/4.
 //
 
 #import <UIKit/UIKit.h>

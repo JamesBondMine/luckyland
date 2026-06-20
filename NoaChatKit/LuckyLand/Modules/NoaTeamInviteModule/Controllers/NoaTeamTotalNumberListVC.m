@@ -2,7 +2,7 @@
 //  NoaTeamTotalNumberListVC.m
 //  NoaKit
 //
-//  Created by Candy on 2025/7/23.
+//  Created by LuckyLand on 2025/7/23.
 //  团队邀请-团队总人数
 
 #import "NoaTeamTotalNumberListVC.h"

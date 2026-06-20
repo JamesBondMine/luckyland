@@ -2,7 +2,7 @@
 //  NoaTeamMemberModel.h
 //  NoaKit
 //
-//  Created by Candy on 2023/7/24.
+//  Created by LuckyLand on 2023/7/24.
 //
 
 #import "NoaBaseModel.h"

@@ -2,7 +2,7 @@
 //  IOSTcpRaceManager.h
 //  NoaKit
 //
-//  Created by Candy on 2025/1/15.
+//  Created by LuckyLand on 2025/1/15.
 //
 
 #import <Foundation/Foundation.h>

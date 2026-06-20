@@ -2,7 +2,7 @@
 //  NoaChatAtBannedView.m
 //  NoaKit
 //
-//  Created by Candy on 2025/7/4.
+//  Created by LuckyLand on 2025/7/4.
 //
 
 #import "NoaChatAtBannedView.h"

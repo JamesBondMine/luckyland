@@ -2,7 +2,7 @@
 //  LIMMassMessageModel.h
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2023/4/23.
+//  Created by LuckyLand on 2023/4/23.
 //
 
 // 会话列表-群发助手-最新的消息Model

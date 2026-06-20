@@ -2,7 +2,7 @@
 //  NoaFriendApplyModel.h
 //  NoaKit
 //
-//  Created by Candy on 2026/10/20.
+//  Created by LuckyLand on 2026/10/20.
 //
 
 #import "NoaBaseModel.h"

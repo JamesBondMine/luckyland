@@ -2,7 +2,7 @@
 //  NoaAlertTipView.h
 //  NoaKit
 //
-//  Created by Candy on 2026/9/19.
+//  Created by LuckyLand on 2026/9/19.
 //
 
 #import <UIKit/UIKit.h>

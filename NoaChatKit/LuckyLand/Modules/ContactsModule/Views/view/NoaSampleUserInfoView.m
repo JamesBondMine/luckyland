@@ -2,7 +2,7 @@
 //  NoaSampleUserInfoView.m
 //  NoaKit
 //
-//  Created by Candy on 2026/9/13.
+//  Created by LuckyLand on 2026/9/13.
 //
 
 #import "NoaSampleUserInfoView.h"

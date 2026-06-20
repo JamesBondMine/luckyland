@@ -2,7 +2,7 @@
 //  NoaMediaCallMoreContentView.m
 //  NoaKit
 //
-//  Created by Candy on 2023/2/15.
+//  Created by LuckyLand on 2023/2/15.
 //
 
 #import "NoaMediaCallMoreContentView.h"

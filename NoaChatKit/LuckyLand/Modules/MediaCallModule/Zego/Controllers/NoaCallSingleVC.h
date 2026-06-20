@@ -2,7 +2,7 @@
 //  NoaCallSingleVC.h
 //  NoaKit
 //
-//  Created by Candy on 2023/5/19.
+//  Created by LuckyLand on 2023/5/19.
 //
 
 // 即构 单聊 音视频通话 VC

@@ -2,7 +2,7 @@
 //  NoaIMSDKManager+MessageRemind.h
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2026/12/7.
+//  Created by LuckyLand on 2026/12/7.
 //
 
 // 消息提醒

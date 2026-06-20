@@ -2,7 +2,7 @@
 //  NoaGroupRemoveFriendVC.m
 //  NoaKit
 //
-//  Created by Candy on 2026/11/10.
+//  Created by LuckyLand on 2026/11/10.
 //
 
 #import "NoaGroupRemoveFriendVC.h"

@@ -2,7 +2,7 @@
 //  NoaSensitiveManager.h
 //  NoaKit
 //
-//  Created by Candy on 2023/7/6.
+//  Created by LuckyLand on 2023/7/6.
 //
 
 #define ZSensitiveTOOL                 [NoaSensitiveManager shareManager]

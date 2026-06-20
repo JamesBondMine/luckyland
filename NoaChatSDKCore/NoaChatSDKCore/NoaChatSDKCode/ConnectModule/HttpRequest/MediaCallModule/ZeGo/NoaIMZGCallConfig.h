@@ -2,7 +2,7 @@
 //  NoaIMZGCallConfig.h
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2023/5/31.
+//  Created by LuckyLand on 2023/5/31.
 //
 
 //即构SDK相关信息

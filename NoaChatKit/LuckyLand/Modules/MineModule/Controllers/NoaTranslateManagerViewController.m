@@ -2,7 +2,7 @@
 //  NoaTranslateManagerViewController.m
 //  NoaKit
 //
-//  Created by Candy on 2023/9/26.
+//  Created by LuckyLand on 2023/9/26.
 //
 
 #import "NoaTranslateManagerViewController.h"

@@ -2,7 +2,7 @@
 //  ProtocolPolicyView.m
 //  NoaKit
 //
-//  Created by Candy on 2026/9/20.
+//  Created by LuckyLand on 2026/9/20.
 //
 
 #import "ProtocolPolicyView.h"

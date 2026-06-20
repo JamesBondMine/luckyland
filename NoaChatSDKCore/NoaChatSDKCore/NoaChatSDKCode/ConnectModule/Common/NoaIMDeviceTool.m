@@ -2,7 +2,7 @@
 //  NoaIMDeviceTool.m
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2023/2/3.
+//  Created by LuckyLand on 2023/2/3.
 //
 
 #import "NoaIMDeviceTool.h"

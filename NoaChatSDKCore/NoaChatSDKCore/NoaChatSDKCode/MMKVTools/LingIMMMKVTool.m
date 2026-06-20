@@ -2,7 +2,7 @@
 //  LingIMMMKVTool.m
 //  NoaChatSDKCore
 //
-//  Created by Candy on 2026/11/3.
+//  Created by LuckyLand on 2026/11/3.
 //
 
 #import "LingIMMMKVTool.h"

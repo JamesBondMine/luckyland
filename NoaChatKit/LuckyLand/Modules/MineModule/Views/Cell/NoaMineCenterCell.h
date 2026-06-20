@@ -2,7 +2,7 @@
 //  NoaMineCenterCell.h
 //  NoaKit
 //
-//  Created by Candy on 2026/11/12.
+//  Created by LuckyLand on 2026/11/12.
 //
 
 #import "NoaBaseCell.h"

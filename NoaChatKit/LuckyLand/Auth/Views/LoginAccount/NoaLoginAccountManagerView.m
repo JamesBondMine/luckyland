@@ -2,7 +2,7 @@
 //  NoaLoginAccountManagerView.m
 //  NoaChatKit
 //
-//  Created by phl on 2025/11/6.
+//  Created by ppppphl on 2025/11/6.
 //
 
 #import "NoaLoginAccountManagerView.h"

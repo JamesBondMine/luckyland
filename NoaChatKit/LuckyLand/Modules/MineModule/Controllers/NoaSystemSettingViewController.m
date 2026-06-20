@@ -2,7 +2,7 @@
 //  NoaSystemSettingViewController.m
 //  NoaKit
 //
-//  Created by Candy on 2026/11/13.
+//  Created by LuckyLand on 2026/11/13.
 //
 
 #import "NoaSystemSettingViewController.h"

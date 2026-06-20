@@ -2,7 +2,7 @@
 //  NovDecryptorManager.m
 //  NoaKit
 //
-//  Created by Candy on 2025/8/30.
+//  Created by LuckyLand on 2025/8/30.
 //
 
 #import "NovDecryptorManager.h"

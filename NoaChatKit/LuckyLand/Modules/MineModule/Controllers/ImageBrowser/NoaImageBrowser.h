@@ -2,7 +2,7 @@
 //  NoaImageBrowser.h
 //  NoaKit
 //
-//  Created by Candy on 2024/9/14.
+//  Created by LuckyLand on 2024/9/14.
 //
 
 #import <Foundation/Foundation.h>
