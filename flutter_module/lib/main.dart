@@ -1,8 +1,11 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_module/about_detail_page.dart';
 import 'package:flutter_module/help_page.dart';
 import 'package:flutter_module/home_page.dart';
+import 'package:flutter_module/http_ssl_overrides.dart';
 import 'package:flutter_module/message_star_page.dart';
 import 'package:flutter_module/mine_page.dart';
 import 'package:flutter_module/register_select_page.dart';
@@ -10,7 +13,10 @@ import 'package:flutter_module/safe_setting_page.dart';
 import 'package:flutter_module/sign_log_page.dart';
 import 'package:flutter_module/user_info_edit_page.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  HttpOverrides.global = InsecureHttpOverrides();
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

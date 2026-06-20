@@ -28,9 +28,15 @@
 #import "CandyTalkSignInViewController.h" //签到页面
 #import "NoaMyQRCodeViewController.h"//我的二维码
 #import "NoaQRCodeModel.h"
+#import <SDWebImage/SDWebImage.h>
 
 
 static NSString * const kFlutterBridgeChannelName = @"com.noa.flutter/bridge";
+static NSString * const kFlutterMineAvatarCachePrefix = @"flutter_mine_avatar";
+
+@interface FlutterTallkMineViewController ()
+@property (nonatomic, strong) FlutterMethodChannel *bridgeChannel;
+@end
 
 @implementation FlutterTallkMineViewController
 
@@ -42,11 +48,13 @@ static NSString * const kFlutterBridgeChannelName = @"com.noa.flutter/bridge";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupMethodChannel];
+    [self sendUserInfoToFlutter];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [self sendUserInfoToFlutter];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -54,12 +62,104 @@ static NSString * const kFlutterBridgeChannelName = @"com.noa.flutter/bridge";
     [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
-- (void)setupMethodChannel {
-    FlutterMethodChannel *channel = [FlutterMethodChannel methodChannelWithName:kFlutterBridgeChannelName
-                                                               binaryMessenger:self.binaryMessenger];
+- (NSString *)flutterMineAvatarCachePathForUserId:(NSString *)userId avatar:(NSString *)avatar {
+    NSString *cacheDir = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
+    NSString *safeUserId = userId.length > 0 ? userId : @"default";
+    NSString *avatarKey = avatar.length > 0 ? avatar : @"default";
+    NSCharacterSet *invalidSet = [NSCharacterSet characterSetWithCharactersInString:@"/:"];
+    safeUserId = [[safeUserId componentsSeparatedByCharactersInSet:invalidSet] componentsJoinedByString:@"_"];
+    avatarKey = [[avatarKey componentsSeparatedByCharactersInSet:invalidSet] componentsJoinedByString:@"_"];
+    if (avatarKey.length > 64) {
+        avatarKey = [avatarKey substringFromIndex:avatarKey.length - 64];
+    }
+    return [cacheDir stringByAppendingPathComponent:
+            [NSString stringWithFormat:@"%@_%@_%@.jpg", kFlutterMineAvatarCachePrefix, safeUserId, avatarKey]];
+}
+
+- (NSString *)jsonStringWithUserName:(NSString *)userName
+                              userId:(NSString *)userId
+                          avatarPath:(NSString *)avatarPath {
+    NSDictionary *userInfo = @{
+        @"userName": userName ?: @"",
+        @"id": userId ?: @"",
+        @"userAvatar": avatarPath ?: @""
+    };
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:userInfo options:0 error:nil];
+    if (!jsonData) {
+        return @"{}";
+    }
+    return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding] ?: @"{}";
+}
+
+- (void)sendUserInfoToFlutter {
+    if (!self.bridgeChannel) {
+        return;
+    }
+
+    NSString *userName = UserManager.userInfo.nickname ?: @"";
+    NSString *userId = UserManager.userInfo.userName ?: @"";
+    NSString *userAvatar = UserManager.userInfo.avatar ?: @"";
+
+    [self.bridgeChannel invokeMethod:@"initMineUserInfo"
+                           arguments:[self jsonStringWithUserName:userName
+                                                           userId:userId
+                                                       avatarPath:@""]];
+
+    if (userAvatar.length == 0) {
+        return;
+    }
+
+    NSURL *imageURL = [userAvatar getImageFullUrl];
+    if (!imageURL) {
+        return;
+    }
+
+    NSString *localPath = [self flutterMineAvatarCachePathForUserId:userId avatar:userAvatar];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:localPath]) {
+        [self.bridgeChannel invokeMethod:@"initMineUserInfo"
+                               arguments:[self jsonStringWithUserName:userName
+                                                               userId:userId
+                                                           avatarPath:localPath]];
+        return;
+    }
+
     @weakify(self)
-    [channel setMethodCallHandler:^(FlutterMethodCall * _Nonnull call, FlutterResult  _Nonnull result) {
+    [[SDWebImageManager sharedManager] loadImageWithURL:imageURL
+                                                options:SDWebImageAllowInvalidSSLCertificates
+                                               progress:nil
+                                              completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
         @strongify(self)
+        if (!self || !finished) {
+            return;
+        }
+
+        NSString *avatarPath = @"";
+        if (image) {
+            NSData *imageData = data.length > 0 ? data : UIImageJPEGRepresentation(image, 0.9);
+            if (imageData.length > 0 && [imageData writeToFile:localPath atomically:YES]) {
+                avatarPath = localPath;
+            }
+        }
+
+        [self.bridgeChannel invokeMethod:@"initMineUserInfo"
+                               arguments:[self jsonStringWithUserName:userName
+                                                               userId:userId
+                                                           avatarPath:avatarPath]];
+    }];
+}
+
+- (void)setupMethodChannel {
+    self.bridgeChannel = [FlutterMethodChannel methodChannelWithName:kFlutterBridgeChannelName
+                                                     binaryMessenger:self.binaryMessenger];
+    @weakify(self)
+    [self.bridgeChannel setMethodCallHandler:^(FlutterMethodCall * _Nonnull call, FlutterResult  _Nonnull result) {
+        @strongify(self)
+        if ([call.method isEqualToString:@"mineReady"]) {
+            [self sendUserInfoToFlutter];
+            result(@(YES));
+            return;
+        }
+
         if (![call.method isEqualToString:@"mineSelectTap"]) {
             result(FlutterMethodNotImplemented);
             return;

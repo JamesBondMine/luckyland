@@ -1,10 +1,11 @@
-import 'dart:math';
+import 'dart:convert';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_module/mine_cell_item.dart';
 
-class MinePage extends StatelessWidget {
+class MinePage extends StatefulWidget {
   MinePage(
       {Key? key,
       required this.name,
@@ -16,7 +17,56 @@ class MinePage extends StatelessWidget {
   final String name;
   final String url;
   final String idStr;
-  ValueChanged<String> tap;
+  final ValueChanged<String> tap;
+
+  @override
+  State<MinePage> createState() => _MinePageState();
+}
+
+class _MinePageState extends State<MinePage> {
+  static const MethodChannel _bridgeChannel =
+      MethodChannel('com.noa.flutter/bridge');
+
+  late String _name;
+  late String _avatarPath;
+  late String _idStr;
+
+  @override
+  void initState() {
+    super.initState();
+    _name = widget.name;
+    _avatarPath = widget.url;
+    _idStr = widget.idStr;
+    _bridgeChannel.setMethodCallHandler(_handleNativeCall);
+    _bridgeChannel.invokeMethod('mineReady');
+  }
+
+  @override
+  void dispose() {
+    _bridgeChannel.setMethodCallHandler(null);
+    super.dispose();
+  }
+
+  Future<dynamic> _handleNativeCall(MethodCall call) async {
+    if (call.method != 'initMineUserInfo') {
+      return null;
+    }
+    final dynamic args = call.arguments;
+    if (args is! String || args.isEmpty) {
+      return null;
+    }
+    final Map<String, dynamic> userInfo =
+        Map<String, dynamic>.from(jsonDecode(args) as Map);
+    if (!mounted) {
+      return null;
+    }
+    setState(() {
+      _name = userInfo['userName']?.toString() ?? '';
+      _idStr = userInfo['id']?.toString() ?? '';
+      _avatarPath = userInfo['userAvatar']?.toString() ?? '';
+    });
+    return null;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +117,7 @@ class MinePage extends StatelessWidget {
               IconButton(
                 icon: Image.asset('images/qiandao-2.png',width:20,height:20,),
                 onPressed: () {
-                  tap('mineTouchIndex103');
+                  widget.tap('mineTouchIndex103');
                 },
               ),
               SizedBox(width: 48),
@@ -85,20 +135,20 @@ class MinePage extends StatelessWidget {
                 icon: const Icon(Icons.qr_code_scanner_sharp,
                     color: Colors.white),
                 onPressed: () {
-                  tap('mineTouchIndex102');
+                  widget.tap('mineTouchIndex102');
                 },
               ),
               IconButton(
                 icon: const Icon(Icons.settings_outlined, color: Colors.white),
                 onPressed: () {
-                  tap('mineTouchIndex101');
+                  widget.tap('mineTouchIndex101');
                 },
               ),
             ]),
             Row(children: [
               InkWell(
                 onTap: () {
-                  tap('mineTouchIndex104');
+                  widget.tap('mineTouchIndex104');
                 },
                 child: Container(
                   width: 80,
@@ -109,28 +159,25 @@ class MinePage extends StatelessWidget {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(40),
                   ),
-                  child: Image.network(
-                    'https://gips1.baidu.com/it/u=3249564727,2553492563&fm=3074&app=3074&f=PNG?w=2048&h=2048',
-                    width: 80,
-                    height: 80,
-                    fit: BoxFit.cover,
-                  ),
+                  child: _buildAvatarImage(),
                 ),
               ),
               Expanded(
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                    Text('诸葛亮',
+                    Text(_name.isNotEmpty ? _name : '--',
                         style:
                             const TextStyle(fontSize: 18, color: Colors.white)),
                     InkWell(
                       onTap: () {
-                        Clipboard.setData(ClipboardData(text: '123456667677'));
-                        tap('mineTouchIndex105');
+                        if (_idStr.isNotEmpty) {
+                          Clipboard.setData(ClipboardData(text: _idStr));
+                        }
+                        widget.tap('mineTouchIndex105');
                       },
                       child: Row(children: [
-                        Text('123456667677',
+                        Text(_idStr.isNotEmpty ? _idStr : '--',
                           style: const TextStyle(
                               fontSize: 14, color: Colors.white)),
                               Icon(Icons.copy, color: Colors.white,size: 16)
@@ -139,7 +186,7 @@ class MinePage extends StatelessWidget {
                   ])),
               InkWell(
                 onTap: () {
-                  tap('mineTouchIndex100');
+                  widget.tap('mineTouchIndex100');
                 },
                 child: Container(
                   width: 120,
@@ -160,6 +207,28 @@ class MinePage extends StatelessWidget {
         )));
   }
 
+  Widget _buildAvatarImage() {
+    if (_avatarPath.isEmpty) {
+      return _defaultAvatar();
+    }
+    return Image.file(
+      File(_avatarPath),
+      width: 80,
+      height: 80,
+      fit: BoxFit.cover,
+      errorBuilder: (_, __, ___) => _defaultAvatar(),
+    );
+  }
+
+  Widget _defaultAvatar() {
+    return Container(
+      width: 80,
+      height: 80,
+      color: Colors.grey[200],
+      child: const Icon(Icons.person, size: 40, color: Colors.grey),
+    );
+  }
+
   Widget _listView(BuildContext context, String title, String content) {
     return ListView(
       padding: EdgeInsets.zero,
@@ -169,7 +238,7 @@ class MinePage extends StatelessWidget {
           title: '我的团队',
           icon: 'tuandui',
           tap: (tag) {
-            tap(tag);
+            widget.tap(tag);
           },
         ),
         _divider(),
@@ -178,7 +247,7 @@ class MinePage extends StatelessWidget {
           title: '我的收藏',
           icon: 'shoucang',
           tap: (tag) {
-            tap(tag);
+            widget.tap(tag);
           },
         ),
         MineCellItem(
@@ -186,7 +255,7 @@ class MinePage extends StatelessWidget {
           title: '黑名单',
           icon: 'heimingdan',
           tap: (tag) {
-            tap(tag);
+            widget.tap(tag);
           },
         ),
         _divider(),
@@ -195,7 +264,7 @@ class MinePage extends StatelessWidget {
           title: '应用语言',
           icon: 'yuyan',
           tap: (tag) {
-            tap(tag);
+            widget.tap(tag);
           },
         ),
         MineCellItem(
@@ -203,7 +272,7 @@ class MinePage extends StatelessWidget {
           title: '安全设置',
           icon: 'anquanbaozhang',
           tap: (tag) {
-            tap(tag);
+            widget.tap(tag);
           },
         ),
         MineCellItem(
@@ -211,7 +280,7 @@ class MinePage extends StatelessWidget {
           title: '隐私设置',
           icon: 'yinsi',
           tap: (tag) {
-            tap(tag);
+            widget.tap(tag);
           },
         ),
         MineCellItem(
@@ -219,7 +288,7 @@ class MinePage extends StatelessWidget {
           title: '网络监测',
           icon: 'wangluo',
           tap: (tag) {
-            tap(tag);
+            widget.tap(tag);
           },
         ),
         MineCellItem(
@@ -227,7 +296,7 @@ class MinePage extends StatelessWidget {
           title: '投诉与支持',
           icon: 'tousujianyi',
           tap: (tag) {
-            tap(tag);
+            widget.tap(tag);
           },
         ),
         _divider(),
@@ -236,27 +305,13 @@ class MinePage extends StatelessWidget {
           title: '关于',
           icon: 'guanyu',
           tap: (tag) {
-            tap(tag);
+            widget.tap(tag);
           },
         ),
       ],
-      // itemCount: _sections.length,
-      // itemBuilder: (context, index) {
-      //   final item = _sections[index];
-      //   final title = item['title']!;
-      //   final content = item['content']!;
-
-      //   return InkWell(
-      //     onTap: () {
-      //       tap(item['id'] ?? 'flutter_mine_index0');
-      //     },
-      //     child: _cardItem(context, title, content, index),
-      //   );
-      // },
     );
   }
 
-  // 分割线
   Widget _divider() {
     return Container(
       margin: const EdgeInsets.only(top: 10),

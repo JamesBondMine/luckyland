@@ -55,6 +55,7 @@
 @end
 
 @implementation CandyTalkHomeViewController
+
 - (void)refreshRowForSessionId:(NSString *)sessionId {
     if (sessionId.length == 0) return;
 

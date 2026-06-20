@@ -312,7 +312,6 @@
 		04A239F12B3AD615006FF4AB /* NoaChannelLanguageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A239F02B3AD615006FF4AB /* NoaChannelLanguageCell.m */; };
 		04A239F42B3AD62C006FF4AB /* NoaTranslateSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A239F32B3AD62C006FF4AB /* NoaTranslateSettingCell.m */; };
 		04A2DE772B85D799007655BA /* NoaNoticeTranslateEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A2DE762B85D799007655BA /* NoaNoticeTranslateEditView.m */; };
-		04A5144E2A49285900884078 /* NoaMineInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A5144D2A49285900884078 /* NoaMineInfoView.m */; };
 		04A517B92CCA31120050026E /* NoaNodePreferTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A517B82CCA31120050026E /* NoaNodePreferTools.m */; };
 		04A59F2F2B4CF3D300F18864 /* NoaIntegralDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A59F2E2B4CF3D300F18864 /* NoaIntegralDetailViewController.m */; };
 		04A59F322B4CF4D700F18864 /* NoaIntergralDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A59F312B4CF4D700F18864 /* NoaIntergralDetailCell.m */; };
@@ -713,6 +712,7 @@
 		88AE5C6A2FA87D7C00DA3F8E /* CandyTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88AE5C632FA87D7C00DA3F8E /* CandyTabBarController.m */; };
 		88AE5C6B2FA87D7C00DA3F8E /* UITabBar+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 88AE5C652FA87D7C00DA3F8E /* UITabBar+Badge.m */; };
 		88AE5C6C2FA87D7C00DA3F8E /* CandyTalkHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88AE5C682FA87D7C00DA3F8E /* CandyTalkHomeViewController.m */; };
+		88BF1C9E2FE632670065A1EE /* NoaMineInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88BF1C9C2FE632670065A1EE /* NoaMineInfoView.m */; };
 		C31AEEBA2E31E3ED00870262 /* NoaTeamInviteDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C31AEEB92E31E3ED00870262 /* NoaTeamInviteDetailVC.m */; };
 		C31AEEBD2E31E40100870262 /* NoaTeamInviteDetailDataHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = C31AEEBC2E31E40100870262 /* NoaTeamInviteDetailDataHandle.m */; };
 		C31AEEC02E31FF1D00870262 /* NoaTeamInviteDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = C31AEEBF2E31FF1D00870262 /* NoaTeamInviteDetailView.m */; };
@@ -1402,8 +1402,6 @@
 		04A239F32B3AD62C006FF4AB /* NoaTranslateSettingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaTranslateSettingCell.m; sourceTree = "<group>"; };
 		04A2DE752B85D799007655BA /* NoaNoticeTranslateEditView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaNoticeTranslateEditView.h; sourceTree = "<group>"; };
 		04A2DE762B85D799007655BA /* NoaNoticeTranslateEditView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaNoticeTranslateEditView.m; sourceTree = "<group>"; };
-		04A5144C2A49285900884078 /* NoaMineInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaMineInfoView.h; sourceTree = "<group>"; };
-		04A5144D2A49285900884078 /* NoaMineInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaMineInfoView.m; sourceTree = "<group>"; };
 		04A517B72CCA31120050026E /* NoaNodePreferTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaNodePreferTools.h; sourceTree = "<group>"; };
 		04A517B82CCA31120050026E /* NoaNodePreferTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaNodePreferTools.m; sourceTree = "<group>"; };
 		04A59F2D2B4CF3D300F18864 /* NoaIntegralDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaIntegralDetailViewController.h; sourceTree = "<group>"; };
@@ -2202,6 +2200,8 @@
 		88AE5C652FA87D7C00DA3F8E /* UITabBar+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+Badge.m"; sourceTree = "<group>"; };
 		88AE5C672FA87D7C00DA3F8E /* CandyTalkHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CandyTalkHomeViewController.h; sourceTree = "<group>"; };
 		88AE5C682FA87D7C00DA3F8E /* CandyTalkHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CandyTalkHomeViewController.m; sourceTree = "<group>"; };
+		88BF1C9C2FE632670065A1EE /* NoaMineInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaMineInfoView.m; sourceTree = "<group>"; };
+		88BF1C9D2FE632670065A1EE /* NoaMineInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaMineInfoView.h; sourceTree = "<group>"; };
 		C31AEEB82E31E3ED00870262 /* NoaTeamInviteDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaTeamInviteDetailVC.h; sourceTree = "<group>"; };
 		C31AEEB92E31E3ED00870262 /* NoaTeamInviteDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaTeamInviteDetailVC.m; sourceTree = "<group>"; };
 		C31AEEBB2E31E40100870262 /* NoaTeamInviteDetailDataHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaTeamInviteDetailDataHandle.h; sourceTree = "<group>"; };
@@ -3927,8 +3927,6 @@
 				049BA72229267A62001A44C5 /* NoaBlackListHeaderView.m */,
 				04BBA44929ED4059007F4D61 /* NoaSystemFooterView.h */,
 				04BBA44829ED4058007F4D61 /* NoaSystemFooterView.m */,
-				04A5144C2A49285900884078 /* NoaMineInfoView.h */,
-				04A5144D2A49285900884078 /* NoaMineInfoView.m */,
 				04F7E17D2AB3F9E7007F99FE /* NoaCharManagerInput.h */,
 				04F7E17E2AB3F9E7007F99FE /* NoaCharManagerInput.m */,
 				04C78CDC2D1D576E00A99BA6 /* NoaRuleContentHeader.h */,
@@ -5752,6 +5750,8 @@
 		883D68A42FD7B70D009E87E6 /* OldControllers */ = {
 			isa = PBXGroup;
 			children = (
+				88BF1C9D2FE632670065A1EE /* NoaMineInfoView.h */,
+				88BF1C9C2FE632670065A1EE /* NoaMineInfoView.m */,
 				1899A0DA28C1EE1B0045A652 /* CandyTallkMineViewController.h */,
 				1899A0DB28C1EE1B0045A652 /* CandyTallkMineViewController.m */,
 				881555C82FA88BE9004702A6 /* NoaRegisterTypeViewController.h */,
@@ -6184,6 +6184,7 @@
 				18420EA62AC15B420077E479 /* NoaRobotListTableViewCell.m in Sources */,
 				1863DAE92A94AF93005351F6 /* UIResponder+KLMethod.m in Sources */,
 				045DDC13291919450031F7F5 /* NoaGroupQRCodeVC.m in Sources */,
+				88BF1C9E2FE632670065A1EE /* NoaMineInfoView.m in Sources */,
 				04CDB4FE291BD0A000EFEABA /* NoaGroupMemberListCell.m in Sources */,
 				044D4B18299251C500D13AA7 /* NoaProgressButton.m in Sources */,
 				04F7E1782AB3F7DD007F99FE /* NoaCharacterBindViewController.m in Sources */,
@@ -6450,7 +6451,6 @@
 				8815564D2FA88BE9004702A6 /* NoaGetImgVerCodeViewController.m in Sources */,
 				04741B3E298B4A57009F7F02 /* NoaChatHistoryFileCell.m in Sources */,
 				04CDB51329221DA700EFEABA /* NoaGroupManageMemberCell.m in Sources */,
-				04A5144E2A49285900884078 /* NoaMineInfoView.m in Sources */,
 				C3C434302E2E9395003D6185 /* NoaTeamCreateView.m in Sources */,
 				04B45C3129E52FAA00E37A41 /* NoaChatMultiSelectViewController.m in Sources */,
 				881556522FA88BE9004702A6 /* NoaRegisterViewController.m in Sources */,
@@ -7035,7 +7035,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2026061602;
+				CURRENT_PROJECT_VERSION = 2026061901;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
@@ -7306,7 +7306,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2026061602;
+				CURRENT_PROJECT_VERSION = 2026061901;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
