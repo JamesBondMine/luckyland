@@ -13,10 +13,10 @@
 #import "AppDelegate+DB.h"
 #import "AppDelegate+MediaCall.h"
 #import "AppDelegate+MiniApp.h"
-#import "NoaAuthInputTools.h"
+#import "LuckyLandAuthInputTools.h"
 #import "LXChatEncrypt.h"
 #import "NoaImgVerCodeView.h"
-#import "NoaCaptchaCodeTools.h"
+#import "LuckyLandCaptchaCodeTools.h"
 #import "NoaWeakPwdCheckTool.h"
 
 @interface NoaFindPasswordViewController ()
@@ -28,7 +28,7 @@
 @property (nonatomic, strong)UILabel *tipLbl;
 @property (nonatomic, strong)UILabel *dynamicTipLbl;
 @property (nonatomic, strong)UIButton *loginBtn;
-@property (nonatomic, strong)NoaCaptchaCodeTools *captchaTools;
+@property (nonatomic, strong)LuckyLandCaptchaCodeTools *captchaTools;
 
 @end
 
@@ -260,28 +260,28 @@
 //手机号/邮箱 监听
 - (void)listenAccountInput {
     if (self.findPasswordWay == UserAuthTypePhone) {
-        [NoaAuthInputTools loginCheckPhoneWithText:self.accountInput.inputText.text IsShowToast:YES];
+        [LuckyLandAuthInputTools loginCheckPhoneWithText:self.accountInput.inputText.text IsShowToast:YES];
     }
     if (self.findPasswordWay == UserAuthTypeEmail) {
-        [NoaAuthInputTools loginCheckEmailWithText:self.accountInput.inputText.text IsShowToast:YES];
+        [LuckyLandAuthInputTools loginCheckEmailWithText:self.accountInput.inputText.text IsShowToast:YES];
     }
 }
 
 //验证码监听
 - (void)listenVercodeInput {
-    [NoaAuthInputTools checkVerCodeWithText:self.vercodeInput.inputText.text IsShowToast:YES];
+    [LuckyLandAuthInputTools checkVerCodeWithText:self.vercodeInput.inputText.text IsShowToast:YES];
 }
 
 //密码监听
 - (void)listenPasswordInput {
-    if ([NoaAuthInputTools checkCreatPasswordEndWithTextLength:self.passwordInput.inputText.text] == NO) {
+    if ([LuckyLandAuthInputTools checkCreatPasswordEndWithTextLength:self.passwordInput.inputText.text] == NO) {
         self.dynamicTipLbl.hidden = NO;
         self.dynamicTipLbl.text = LanguageToolMatch(@"密码长度6-16");
         [self.dynamicTipLbl mas_updateConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.passwordInput.mas_bottom).offset(DWScale(4));
             make.height.mas_equalTo(DWScale(16));
         }];
-    } else if ([NoaAuthInputTools checkCreatPasswordEndWithTextFormat:self.passwordInput.inputText.text] == NO) {
+    } else if ([LuckyLandAuthInputTools checkCreatPasswordEndWithTextFormat:self.passwordInput.inputText.text] == NO) {
         self.dynamicTipLbl.hidden = NO;
         self.dynamicTipLbl.text = LanguageToolMatch(@"密码须包含字母、数字");
         [self.dynamicTipLbl mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -350,21 +350,21 @@
     [self.confimPasswordInput.inputText resignFirstResponder];
     
     if (self.findPasswordWay == UserAuthTypePhone) {
-        if ([NoaAuthInputTools loginCheckPhoneWithText:self.accountInput.inputText.text IsShowToast:YES] == NO ||
-            [NoaAuthInputTools checkVerCodeWithText:self.vercodeInput.inputText.text IsShowToast:YES] == NO) {
+        if ([LuckyLandAuthInputTools loginCheckPhoneWithText:self.accountInput.inputText.text IsShowToast:YES] == NO ||
+            [LuckyLandAuthInputTools checkVerCodeWithText:self.vercodeInput.inputText.text IsShowToast:YES] == NO) {
             return;
         }
     }
     if (self.findPasswordWay == UserAuthTypeEmail) {
-        if ([NoaAuthInputTools loginCheckEmailWithText:self.accountInput.inputText.text IsShowToast:YES] == NO ||
-            [NoaAuthInputTools checkVerCodeWithText:self.vercodeInput.inputText.text IsShowToast:YES] == NO) {
+        if ([LuckyLandAuthInputTools loginCheckEmailWithText:self.accountInput.inputText.text IsShowToast:YES] == NO ||
+            [LuckyLandAuthInputTools checkVerCodeWithText:self.vercodeInput.inputText.text IsShowToast:YES] == NO) {
             return;
         }
     }
-    if ( [NoaAuthInputTools checkCreatPasswordEndWithTextLength:self.passwordInput.inputText.text] == NO ||
-        [NoaAuthInputTools checkCreatPasswordEndWithTextFormat:self.passwordInput.inputText.text] == NO ||
-        [NoaAuthInputTools checkCreatPasswordEndWithTextLength:self.confimPasswordInput.inputText.text] == NO ||
-        [NoaAuthInputTools checkCreatPasswordEndWithTextFormat:self.confimPasswordInput.inputText.text] == NO) {
+    if ( [LuckyLandAuthInputTools checkCreatPasswordEndWithTextLength:self.passwordInput.inputText.text] == NO ||
+        [LuckyLandAuthInputTools checkCreatPasswordEndWithTextFormat:self.passwordInput.inputText.text] == NO ||
+        [LuckyLandAuthInputTools checkCreatPasswordEndWithTextLength:self.confimPasswordInput.inputText.text] == NO ||
+        [LuckyLandAuthInputTools checkCreatPasswordEndWithTextFormat:self.confimPasswordInput.inputText.text] == NO) {
         
         [HUD showMessage:LanguageToolMatch(@"密码长度6-16位，须包含字母、数字") inView:self.view];
         return;
@@ -664,9 +664,9 @@
     return _loginBtn;
 }
 
-- (NoaCaptchaCodeTools *)captchaTools {
+- (LuckyLandCaptchaCodeTools *)captchaTools {
     if (!_captchaTools) {
-        _captchaTools = [[NoaCaptchaCodeTools alloc] init];
+        _captchaTools = [[LuckyLandCaptchaCodeTools alloc] init];
         _captchaTools.aliyunVerNum = 0;
     }
     return _captchaTools;

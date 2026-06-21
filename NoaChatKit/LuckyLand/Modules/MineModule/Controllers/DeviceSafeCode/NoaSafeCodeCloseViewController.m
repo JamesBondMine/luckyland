@@ -8,7 +8,7 @@
 #import "NoaSafeCodeCloseViewController.h"
 #import "NoaInputTextView.h"
 #import "NoaSafeSettingTools.h"
-#import "NoaAuthInputTools.h"
+#import "LuckyLandAuthInputTools.h"
 #import "NoaSafeSettingViewController.h"
 #import "LXChatEncrypt.h"
 

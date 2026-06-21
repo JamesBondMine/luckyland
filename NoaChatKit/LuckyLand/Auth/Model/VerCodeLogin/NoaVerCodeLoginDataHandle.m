@@ -7,7 +7,7 @@
 
 #import "NoaVerCodeLoginDataHandle.h"
 // 输入内容校验
-#import "NoaAuthInputTools.h"
+#import "LuckyLandAuthInputTools.h"
 // 弱密码校验
 #import "NoaWeakPwdCheckTool.h"
 // AppDelegate
@@ -119,14 +119,14 @@
             // 账号登录方式，验证码登录暂不支持，故直接放行
             break;
         case ZLoginTypeMenuPhoneNumber:
-            if (![NoaAuthInputTools registerCheckPhoneWithText:account IsShowToast:YES] ||
-                ![NoaAuthInputTools checkVerCodeWithText:verCode IsShowToast:YES]) {
+            if (![LuckyLandAuthInputTools registerCheckPhoneWithText:account IsShowToast:YES] ||
+                ![LuckyLandAuthInputTools checkVerCodeWithText:verCode IsShowToast:YES]) {
                 return NO;
             }
             break;
         case ZLoginTypeMenuEmail:
-            if (![NoaAuthInputTools registerCheckEmailWithText:account IsShowToast:YES] ||
-                ![NoaAuthInputTools checkVerCodeWithText:verCode IsShowToast:YES]) {
+            if (![LuckyLandAuthInputTools registerCheckEmailWithText:account IsShowToast:YES] ||
+                ![LuckyLandAuthInputTools checkVerCodeWithText:verCode IsShowToast:YES]) {
                 return NO;
             }
             break;

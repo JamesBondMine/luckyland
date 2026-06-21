@@ -7,7 +7,7 @@
 
 #import "NoaForgetPasswordDataHandle.h"
 // 输入内容校验
-#import "NoaAuthInputTools.h"
+#import "LuckyLandAuthInputTools.h"
 // 弱密码校验
 #import "NoaWeakPwdCheckTool.h"
 // AppDelegate
@@ -142,27 +142,27 @@
     
     switch (self.currentLoginTypeMenu) {
         case ZLoginTypeMenuAccountPassword:
-            if (![NoaAuthInputTools registerCheckInputAccountEndWithTextFormat:account]) {
+            if (![LuckyLandAuthInputTools registerCheckInputAccountEndWithTextFormat:account]) {
                 [self.showToastSubject sendNext:LanguageToolMatch(@"帐号前两位必须为英文，只支持英文或数字")];
                 return NO;
             }
             
-            if (![NoaAuthInputTools registerCheckInputAccountEndWithTextLength:account]) {
+            if (![LuckyLandAuthInputTools registerCheckInputAccountEndWithTextLength:account]) {
                 [self.showToastSubject sendNext:LanguageToolMatch(@"帐号长度6～16位")];
                 return NO;
             }
             break;
         case ZLoginTypeMenuPhoneNumber:
-            if (![NoaAuthInputTools registerCheckPhoneWithText:account IsShowToast:YES] ||
-                ![NoaAuthInputTools checkVerCodeWithText:verCode IsShowToast:YES]) {
+            if (![LuckyLandAuthInputTools registerCheckPhoneWithText:account IsShowToast:YES] ||
+                ![LuckyLandAuthInputTools checkVerCodeWithText:verCode IsShowToast:YES]) {
                 return NO;
             }
             break;
         case ZLoginTypeMenuEmail:
-            if (![NoaAuthInputTools registerCheckEmailWithText:account IsShowToast:YES] ||
-                ![NoaAuthInputTools checkVerCodeWithText:verCode IsShowToast:YES] ||
-                ![NoaAuthInputTools checkPasswordWithText:password IsShowToast:YES] ||
-                ![NoaAuthInputTools checkPasswordWithText:confirmPassword IsShowToast:YES]) {
+            if (![LuckyLandAuthInputTools registerCheckEmailWithText:account IsShowToast:YES] ||
+                ![LuckyLandAuthInputTools checkVerCodeWithText:verCode IsShowToast:YES] ||
+                ![LuckyLandAuthInputTools checkPasswordWithText:password IsShowToast:YES] ||
+                ![LuckyLandAuthInputTools checkPasswordWithText:confirmPassword IsShowToast:YES]) {
                 return NO;
             }
             break;
@@ -171,8 +171,8 @@
     }
     
     // 检查密码合规性
-    if (![NoaAuthInputTools checkCreatPasswordEndWithTextLength:password] ||
-        ![NoaAuthInputTools checkCreatPasswordEndWithTextLength:confirmPassword]) {
+    if (![LuckyLandAuthInputTools checkCreatPasswordEndWithTextLength:password] ||
+        ![LuckyLandAuthInputTools checkCreatPasswordEndWithTextLength:confirmPassword]) {
         if (ZHostTool.appSysSetModel.checkEnglishSymbol) {
             [self.showToastSubject sendNext:LanguageToolMatch(@"密码长度6-16位，须包含字母、数字和字符")];
         } else {

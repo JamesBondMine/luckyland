@@ -13,11 +13,11 @@
 #import "AppDelegate+MediaCall.h"
 #import "AppDelegate+MiniApp.h"
 #import "NoaFindPasswordViewController.h"
-#import "NoaAuthInputTools.h"
+#import "LuckyLandAuthInputTools.h"
 #import "NoaImgVerCodeView.h"
 #import "LXChatEncrypt.h"
 #import "NoaImgVerCodeInputView.h"
-#import "NoaCaptchaCodeTools.h"
+#import "LuckyLandCaptchaCodeTools.h"
 #import "NoaSafeCodeAuthViewController.h"
 #import "NoaWeakPwdCheckTool.h"
 #import "NoaEncryptKeyGuard.h"
@@ -33,7 +33,7 @@
 @property (nonatomic, assign) BOOL isShowImgCode;
 @property (nonatomic, assign) BOOL isShowCaptcha;
 @property (nonatomic, strong)NoaImgVerCodeInputView *imageCodeView;
-@property (nonatomic, strong)NoaCaptchaCodeTools *captchaTools;
+@property (nonatomic, strong)LuckyLandCaptchaCodeTools *captchaTools;
 
 @end
 
@@ -246,7 +246,7 @@
         }
     }
     if (self.inputType == 1) { //验证码登录
-        [NoaAuthInputTools checkVerCodeWithText:self.passwordInput.inputText.text IsShowToast:YES];
+        [LuckyLandAuthInputTools checkVerCodeWithText:self.passwordInput.inputText.text IsShowToast:YES];
     }
 }
 
@@ -330,7 +330,7 @@
 - (void)accountLoginAction {
     //对输入框的内容进行验证
     NSString *inputText = self.passwordInput.inputText.text;
-    if ((self.inputType == 0 && [NoaAuthInputTools checkPasswordWithText:inputText IsShowToast:YES] == NO) || (self.inputType == 1 && [NoaAuthInputTools checkVerCodeWithText:inputText IsShowToast:YES] == NO)) {
+    if ((self.inputType == 0 && [LuckyLandAuthInputTools checkPasswordWithText:inputText IsShowToast:YES] == NO) || (self.inputType == 1 && [LuckyLandAuthInputTools checkVerCodeWithText:inputText IsShowToast:YES] == NO)) {
         return;
     }
     
@@ -570,7 +570,7 @@
             return;
         }
     }
-    if (self.inputType == 1 && ![NoaAuthInputTools checkVerCodeWithText:self.passwordInput.inputText.text IsShowToast:YES]) { //验证码登录
+    if (self.inputType == 1 && ![LuckyLandAuthInputTools checkVerCodeWithText:self.passwordInput.inputText.text IsShowToast:YES]) { //验证码登录
         return;
     }
     NSString *userPwStr = @"";
@@ -825,9 +825,9 @@
     return _loginBtn;
 }
 
-- (NoaCaptchaCodeTools *)captchaTools {
+- (LuckyLandCaptchaCodeTools *)captchaTools {
     if (!_captchaTools) {
-        _captchaTools = [[NoaCaptchaCodeTools alloc] init];
+        _captchaTools = [[LuckyLandCaptchaCodeTools alloc] init];
         _captchaTools.aliyunVerNum = 0;
     }
     return _captchaTools;

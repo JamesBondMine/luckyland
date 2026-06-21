@@ -7,9 +7,9 @@
 
 #import "NoaAuthBaseDataHandle.h"
 // 阿里、腾讯验证
-#import "NoaCaptchaCodeTools.h"
+#import "LuckyLandCaptchaCodeTools.h"
 // 输入内容校验
-#import "NoaAuthInputTools.h"
+#import "LuckyLandAuthInputTools.h"
 
 @interface NoaAuthBaseDataHandle ()
 
@@ -17,7 +17,7 @@
 @property (nonatomic, copy) NSString *areaCode;
 
 /// 阿里、腾讯验证
-@property (nonatomic, strong) NoaCaptchaCodeTools *captchaTools;
+@property (nonatomic, strong) LuckyLandCaptchaCodeTools *captchaTools;
 
 @end
 
@@ -46,9 +46,9 @@
     return _jumpChangeAreaCodeSubject;
 }
 
-- (NoaCaptchaCodeTools *)captchaTools {
+- (LuckyLandCaptchaCodeTools *)captchaTools {
     if (!_captchaTools) {
-        _captchaTools = [[NoaCaptchaCodeTools alloc] init];
+        _captchaTools = [[LuckyLandCaptchaCodeTools alloc] init];
         _captchaTools.aliyunVerNum = 0;
     }
     return _captchaTools;
@@ -570,14 +570,14 @@
                            WhenEditFinish:(void (^)(BOOL, NSString * _Nullable))resultFunc {
     NSString *accountStr = [NSString isNil:accountInputString] ? @"" : accountInputString;
     if (registerType == ZLoginTypeMenuAccountPassword) {
-        if (![NoaAuthInputTools registerCheckInputAccountEndWithTextFormat:accountStr]) {
+        if (![LuckyLandAuthInputTools registerCheckInputAccountEndWithTextFormat:accountStr]) {
             if (resultFunc) {
                 resultFunc(NO, LanguageToolMatch(@"帐号前两位必须为英文，只支持英文或数字"));
             }
             return;
         }
         
-        if (![NoaAuthInputTools registerCheckInputAccountEndWithTextLength:accountStr]) {
+        if (![LuckyLandAuthInputTools registerCheckInputAccountEndWithTextLength:accountStr]) {
             if (resultFunc) {
                 resultFunc(NO, LanguageToolMatch(@"帐号长度6～16位"));
             }
@@ -588,7 +588,7 @@
             resultFunc(YES, @"");
         }
     } else if (registerType == ZLoginTypeMenuEmail) {
-        if (![NoaAuthInputTools registerCheckEmailWithText:accountStr IsShowToast:NO]) {
+        if (![LuckyLandAuthInputTools registerCheckEmailWithText:accountStr IsShowToast:NO]) {
             if (resultFunc) {
                 resultFunc(NO, LanguageToolMatch(@"请输入正确的邮箱格式，如：google@mail.com"));
             }
@@ -599,7 +599,7 @@
             resultFunc(YES, @"");
         }
     } else if (registerType == ZLoginTypeMenuPhoneNumber) {
-        if (![NoaAuthInputTools registerCheckPhoneWithText:accountStr IsShowToast:NO]) {
+        if (![LuckyLandAuthInputTools registerCheckPhoneWithText:accountStr IsShowToast:NO]) {
             if (resultFunc) {
                 resultFunc(NO, LanguageToolMatch(@"请输入有效的手机号码"));
             }
@@ -621,7 +621,7 @@
                              PasswordInput:(NSString *)passwordInputString
                             WhenEditFinish:(void (^)(BOOL, NSString * _Nullable))resultFunc {
     NSString *passwordStr = [NSString isNil:passwordInputString] ? @"" : passwordInputString;
-    if (![NoaAuthInputTools checkCreatPasswordEndWithTextLength:passwordStr]) {
+    if (![LuckyLandAuthInputTools checkCreatPasswordEndWithTextLength:passwordStr]) {
         if (resultFunc) {
             resultFunc(NO, LanguageToolMatch(@"密码长度6-16"));
         }
@@ -657,7 +657,7 @@
                              VerCodeInput:(NSString *)verCodeInputString
                            WhenEditFinish:(void (^)(BOOL, NSString * _Nullable))resultFunc {
     NSString *verCodeStr = [NSString isNil:verCodeInputString] ? @"" : verCodeInputString;
-    if (![NoaAuthInputTools checkVerCodeWithText:verCodeStr IsShowToast:NO]) {
+    if (![LuckyLandAuthInputTools checkVerCodeWithText:verCodeStr IsShowToast:NO]) {
         if (resultFunc) {
             resultFunc(NO, LanguageToolMatch(@"请输入验证码"));
         }
@@ -674,7 +674,7 @@
                              InviteCodeInput:(NSString *)inviteCodeInputString
                               WhenEditFinish:(void (^)(BOOL, NSString * _Nullable))resultFunc {
     NSString *inviteCodeStr = [NSString isNil:inviteCodeInputString] ? @"" : inviteCodeInputString;
-    if (![NoaAuthInputTools checkInviteCodeWithText:inviteCodeStr IsShowToast:NO]) {
+    if (![LuckyLandAuthInputTools checkInviteCodeWithText:inviteCodeStr IsShowToast:NO]) {
         if (resultFunc) {
             resultFunc(NO, LanguageToolMatch(@"幸运数字不能为空"));
         }
@@ -693,23 +693,23 @@
     // 检测内容
     switch (self.currentLoginTypeMenu) {
         case ZLoginTypeMenuAccountPassword:
-            if (![NoaAuthInputTools registerCheckInputAccountEndWithTextFormat:account]) {
+            if (![LuckyLandAuthInputTools registerCheckInputAccountEndWithTextFormat:account]) {
                 [self.showToastSubject sendNext:LanguageToolMatch(@"帐号前两位必须为英文，只支持英文或数字")];
                 return NO;
             }
             
-            if (![NoaAuthInputTools registerCheckInputAccountEndWithTextLength:account]) {
+            if (![LuckyLandAuthInputTools registerCheckInputAccountEndWithTextLength:account]) {
                 [self.showToastSubject sendNext:LanguageToolMatch(@"帐号长度6～16位")];
                 return NO;
             }
             break;
         case ZLoginTypeMenuPhoneNumber:
-            if (![NoaAuthInputTools registerCheckPhoneWithText:account IsShowToast:YES]) {
+            if (![LuckyLandAuthInputTools registerCheckPhoneWithText:account IsShowToast:YES]) {
                 return NO;
             }
             break;
         case ZLoginTypeMenuEmail:
-            if (![NoaAuthInputTools registerCheckEmailWithText:account IsShowToast:YES]) {
+            if (![LuckyLandAuthInputTools registerCheckEmailWithText:account IsShowToast:YES]) {
                 return NO;
             }
             break;
@@ -729,12 +729,12 @@
             // 账号密码不支持获取验证码，故不判断-UI隐藏处理
             break;
         case ZLoginTypeMenuPhoneNumber:
-            if (![NoaAuthInputTools registerCheckPhoneWithText:account IsShowToast:YES]) {
+            if (![LuckyLandAuthInputTools registerCheckPhoneWithText:account IsShowToast:YES]) {
                 return NO;
             }
             break;
         case ZLoginTypeMenuEmail:
-            if (![NoaAuthInputTools registerCheckEmailWithText:account IsShowToast:YES]) {
+            if (![LuckyLandAuthInputTools registerCheckEmailWithText:account IsShowToast:YES]) {
                 return NO;
             }
             break;

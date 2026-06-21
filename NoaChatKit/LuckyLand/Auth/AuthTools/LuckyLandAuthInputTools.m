@@ -1,13 +1,13 @@
 //
-//  NoaAuthInputTools.m
+//  LuckyLandAuthInputTools.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2023/4/7.
 //
 
-#import "NoaAuthInputTools.h"
+#import "LuckyLandAuthInputTools.h"
 
-@implementation NoaAuthInputTools
+@implementation LuckyLandAuthInputTools
 
 #pragma mark - 校验手机号
 + (BOOL)loginCheckPhoneWithText:(NSString *)text

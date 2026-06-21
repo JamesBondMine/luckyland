@@ -7,7 +7,7 @@
 
 #import "NoaAccountRemoveViewController.h"
 #import "NoaInputTextView.h"
-#import "NoaAuthInputTools.h"
+#import "LuckyLandAuthInputTools.h"
 #import "NoaToolManager.h"
 #import "LXChatEncrypt.h"
 
@@ -104,7 +104,7 @@
 
 //监听输入框输入内容变化，做条件判断处理
 - (void)listenTextFieldEndInputAction {
-    [NoaAuthInputTools checkPasswordWithText:self.passwordInput.inputText.text IsShowToast:YES];
+    [LuckyLandAuthInputTools checkPasswordWithText:self.passwordInput.inputText.text IsShowToast:YES];
 }
 
 #pragma mark - Keyboard Notification
@@ -144,7 +144,7 @@
 
 #pragma mark - Request
 - (void)getEncryptKeyAction {
-    if ([NoaAuthInputTools checkPasswordWithText:self.passwordInput.inputText.text IsShowToast:YES] == NO) {
+    if ([LuckyLandAuthInputTools checkPasswordWithText:self.passwordInput.inputText.text IsShowToast:YES] == NO) {
         return;
     }
     [HUD showActivityMessage:@"" inView:self.view];

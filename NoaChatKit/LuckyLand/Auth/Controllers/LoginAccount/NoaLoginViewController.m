@@ -13,7 +13,7 @@
 #import "ProtocolPolicyView.h"
 #import "LoginTypeMenuView.h"
 
-#import "NoaAuthInputTools.h"
+#import "LuckyLandAuthInputTools.h"
 #import "NoaToolManager.h"
 #import "NoaNavigationController.h"
 #import "AppDelegate.h"

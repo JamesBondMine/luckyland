@@ -1,5 +1,5 @@
 //
-//  NoaCaptchaCodeTools.h
+//  LuckyLandCaptchaCodeTools.h
 //  NoaKit
 //
 //  Created by LuckyLand on 2024/7/23.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaCaptchaCodeTools : NSObject
+@interface LuckyLandCaptchaCodeTools : NSObject
 
 @property (nonatomic, assign) NSInteger aliyunVerNum;
 

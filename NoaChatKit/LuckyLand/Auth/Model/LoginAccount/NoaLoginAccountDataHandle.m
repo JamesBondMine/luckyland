@@ -7,7 +7,7 @@
 
 #import "NoaLoginAccountDataHandle.h"
 // 信息校验
-#import "NoaAuthInputTools.h"
+#import "LuckyLandAuthInputTools.h"
 // 弱密码校验
 #import "NoaWeakPwdCheckTool.h"
 // AppDelegate
@@ -306,12 +306,12 @@
 - (BOOL)checkAccountAvailable:(NSString *)account {
     switch (self.currentLoginTypeMenu) {
         case ZLoginTypeMenuAccountPassword:
-            return [NoaAuthInputTools loginCheckAccountWithText:account IsShowToast:YES];
+            return [LuckyLandAuthInputTools loginCheckAccountWithText:account IsShowToast:YES];
             break;
         case ZLoginTypeMenuPhoneNumber:
-            return [NoaAuthInputTools loginCheckPhoneWithText:account IsShowToast:YES];
+            return [LuckyLandAuthInputTools loginCheckPhoneWithText:account IsShowToast:YES];
         case ZLoginTypeMenuEmail:
-            return [NoaAuthInputTools loginCheckEmailWithText:account IsShowToast:YES];
+            return [LuckyLandAuthInputTools loginCheckEmailWithText:account IsShowToast:YES];
         default:
             break;
     }
@@ -319,7 +319,7 @@
 }
 
 - (BOOL)checkPasswordAvailable:(NSString *)password {
-    return [NoaAuthInputTools checkPasswordWithText:password IsShowToast:YES];
+    return [LuckyLandAuthInputTools checkPasswordWithText:password IsShowToast:YES];
 }
 
 /// 点击登录按钮时，校验登录参数

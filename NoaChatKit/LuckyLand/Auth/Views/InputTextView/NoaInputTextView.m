@@ -7,7 +7,7 @@
 
 #import "NoaInputTextView.h"
 #import "FMDB.h"
-#import "NoaAuthInputTools.h"
+#import "LuckyLandAuthInputTools.h"
 
 @interface NoaInputTextView() <UITextFieldDelegate>
 
@@ -645,7 +645,7 @@
             BOOL isValid = [string rangeOfCharacterFromSet:allowedCharacters].location == NSNotFound;
             return isValid;
         } else if (_isPassword) {
-            if ([NoaAuthInputTools checkCreatPasswordInputWithText:string]) {
+            if ([LuckyLandAuthInputTools checkCreatPasswordInputWithText:string]) {
                 return YES;
             } else {
                 return NO;
@@ -668,7 +668,7 @@
     }
     if (_isPassword) {
         NSString *pastedString = [UIPasteboard generalPasteboard].string;
-        if ([NoaAuthInputTools checkCreatPasswordEndWithTextFormat:pastedString]) {
+        if ([LuckyLandAuthInputTools checkCreatPasswordEndWithTextFormat:pastedString]) {
             textField.text = pastedString;
         } else {
             textField.text = @"";

@@ -6,7 +6,7 @@
 //
 
 #import "NoaInputNewPasswordViewController.h"
-#import "NoaAuthInputTools.h"
+#import "LuckyLandAuthInputTools.h"
 #import "LXChatEncrypt.h"
 #import "NoaInputTextView.h"
 
@@ -150,10 +150,10 @@
 }
 
 - (void)checkNextBtnAvailable {
-    if ([NoaAuthInputTools checkCreatPasswordEndWithTextLength:self.passwordInput.inputText.text] &&
-        [NoaAuthInputTools checkCreatPasswordEndWithTextFormat:self.passwordInput.inputText.text] &&
-        [NoaAuthInputTools checkCreatPasswordEndWithTextLength:self.confimPasswordInput.inputText.text] &&
-        [NoaAuthInputTools checkCreatPasswordEndWithTextFormat:self.confimPasswordInput.inputText.text]) {
+    if ([LuckyLandAuthInputTools checkCreatPasswordEndWithTextLength:self.passwordInput.inputText.text] &&
+        [LuckyLandAuthInputTools checkCreatPasswordEndWithTextFormat:self.passwordInput.inputText.text] &&
+        [LuckyLandAuthInputTools checkCreatPasswordEndWithTextLength:self.confimPasswordInput.inputText.text] &&
+        [LuckyLandAuthInputTools checkCreatPasswordEndWithTextFormat:self.confimPasswordInput.inputText.text]) {
         self.navBtnRight.enabled = YES;
         [self.navBtnRight setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
         self.navBtnRight.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
@@ -168,14 +168,14 @@
 
 //密码监听
 - (void)listenPasswordInput {
-    if ([NoaAuthInputTools checkCreatPasswordEndWithTextLength:self.passwordInput.inputText.text] == NO) {
+    if ([LuckyLandAuthInputTools checkCreatPasswordEndWithTextLength:self.passwordInput.inputText.text] == NO) {
         self.dynamicTipLbl.hidden = NO;
         self.dynamicTipLbl.text = LanguageToolMatch(@"密码长度6-16");
         [self.dynamicTipLbl mas_updateConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.passwordInput.mas_bottom).offset(DWScale(4));
             make.height.mas_equalTo(DWScale(16));
         }];
-    } else if ([NoaAuthInputTools checkCreatPasswordEndWithTextFormat:self.passwordInput.inputText.text] == NO) {
+    } else if ([LuckyLandAuthInputTools checkCreatPasswordEndWithTextFormat:self.passwordInput.inputText.text] == NO) {
         self.dynamicTipLbl.hidden = NO;
         self.dynamicTipLbl.text = LanguageToolMatch(@"密码须包含字母、数字");
         [self.dynamicTipLbl mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -202,10 +202,10 @@
 
 #pragma mark - Action
 - (void)navBtnRightClicked {
-    if ( [NoaAuthInputTools checkCreatPasswordEndWithTextLength:self.passwordInput.inputText.text] == NO ||
-        [NoaAuthInputTools checkCreatPasswordEndWithTextFormat:self.passwordInput.inputText.text] == NO ||
-        [NoaAuthInputTools checkCreatPasswordEndWithTextLength:self.confimPasswordInput.inputText.text] == NO ||
-        [NoaAuthInputTools checkCreatPasswordEndWithTextFormat:self.confimPasswordInput.inputText.text] == NO) {
+    if ( [LuckyLandAuthInputTools checkCreatPasswordEndWithTextLength:self.passwordInput.inputText.text] == NO ||
+        [LuckyLandAuthInputTools checkCreatPasswordEndWithTextFormat:self.passwordInput.inputText.text] == NO ||
+        [LuckyLandAuthInputTools checkCreatPasswordEndWithTextLength:self.confimPasswordInput.inputText.text] == NO ||
+        [LuckyLandAuthInputTools checkCreatPasswordEndWithTextFormat:self.confimPasswordInput.inputText.text] == NO) {
 
         [HUD showMessage:LanguageToolMatch(@"密码长度6-16位，须包含字母、数字") inView:self.view];
         return;

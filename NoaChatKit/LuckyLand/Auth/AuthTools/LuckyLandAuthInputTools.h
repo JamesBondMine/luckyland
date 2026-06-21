@@ -1,5 +1,5 @@
 //
-//  NoaAuthInputTools.h
+//  LuckyLandAuthInputTools.h
 //  NoaKit
 //
 //  Created by LuckyLand on 2023/4/7.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaAuthInputTools : NSObject
+@interface LuckyLandAuthInputTools : NSObject
 
 /// 登录校验手机号
 /// - Parameters:

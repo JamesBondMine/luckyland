@@ -654,8 +654,8 @@
 		880D8AA32FE25C8A00D1578F /* LuckyLandHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 880D8AA12FE25C8A00D1578F /* LuckyLandHomeViewController.xib */; };
 		880D8AB42FE2601000D1578F /* LuckyLandBoatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 880D8AB72FE2601000D1578F /* LuckyLandBoatView.m */; };
 		880D8AB52FE2601000D1578F /* LuckyLandSeaSceneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 880D8AB92FE2601000D1578F /* LuckyLandSeaSceneView.m */; };
-		881556462FA88BE9004702A6 /* NoaAuthInputTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555AC2FA88BE9004702A6 /* NoaAuthInputTools.m */; };
-		881556472FA88BE9004702A6 /* NoaCaptchaCodeTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555AE2FA88BE9004702A6 /* NoaCaptchaCodeTools.m */; };
+		881556462FA88BE9004702A6 /* LuckyLandAuthInputTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555AC2FA88BE9004702A6 /* LuckyLandAuthInputTools.m */; };
+		881556472FA88BE9004702A6 /* LuckyLandCaptchaCodeTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555AE2FA88BE9004702A6 /* LuckyLandCaptchaCodeTools.m */; };
 		881556482FA88BE9004702A6 /* NoaAuthPCloginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555B12FA88BE9004702A6 /* NoaAuthPCloginViewController.m */; };
 		881556492FA88BE9004702A6 /* NoaSafeCodeAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555B32FA88BE9004702A6 /* NoaSafeCodeAuthViewController.m */; };
 		8815564A2FA88BE9004702A6 /* NoaCompanyConfigSetVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555B62FA88BE9004702A6 /* NoaCompanyConfigSetVC.m */; };
@@ -2084,10 +2084,10 @@
 		880D8AB72FE2601000D1578F /* LuckyLandBoatView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuckyLandBoatView.m; sourceTree = "<group>"; };
 		880D8AB82FE2601000D1578F /* LuckyLandSeaSceneView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LuckyLandSeaSceneView.h; sourceTree = "<group>"; };
 		880D8AB92FE2601000D1578F /* LuckyLandSeaSceneView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuckyLandSeaSceneView.m; sourceTree = "<group>"; };
-		881555AB2FA88BE9004702A6 /* NoaAuthInputTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaAuthInputTools.h; sourceTree = "<group>"; };
-		881555AC2FA88BE9004702A6 /* NoaAuthInputTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaAuthInputTools.m; sourceTree = "<group>"; };
-		881555AD2FA88BE9004702A6 /* NoaCaptchaCodeTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaCaptchaCodeTools.h; sourceTree = "<group>"; };
-		881555AE2FA88BE9004702A6 /* NoaCaptchaCodeTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaCaptchaCodeTools.m; sourceTree = "<group>"; };
+		881555AB2FA88BE9004702A6 /* LuckyLandAuthInputTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuckyLandAuthInputTools.h; sourceTree = "<group>"; };
+		881555AC2FA88BE9004702A6 /* LuckyLandAuthInputTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuckyLandAuthInputTools.m; sourceTree = "<group>"; };
+		881555AD2FA88BE9004702A6 /* LuckyLandCaptchaCodeTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuckyLandCaptchaCodeTools.h; sourceTree = "<group>"; };
+		881555AE2FA88BE9004702A6 /* LuckyLandCaptchaCodeTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuckyLandCaptchaCodeTools.m; sourceTree = "<group>"; };
 		881555B02FA88BE9004702A6 /* NoaAuthPCloginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaAuthPCloginViewController.h; sourceTree = "<group>"; };
 		881555B12FA88BE9004702A6 /* NoaAuthPCloginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaAuthPCloginViewController.m; sourceTree = "<group>"; };
 		881555B22FA88BE9004702A6 /* NoaSafeCodeAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaSafeCodeAuthViewController.h; sourceTree = "<group>"; };
@@ -5354,10 +5354,10 @@
 		881555AF2FA88BE9004702A6 /* AuthTools */ = {
 			isa = PBXGroup;
 			children = (
-				881555AB2FA88BE9004702A6 /* NoaAuthInputTools.h */,
-				881555AC2FA88BE9004702A6 /* NoaAuthInputTools.m */,
-				881555AD2FA88BE9004702A6 /* NoaCaptchaCodeTools.h */,
-				881555AE2FA88BE9004702A6 /* NoaCaptchaCodeTools.m */,
+				881555AB2FA88BE9004702A6 /* LuckyLandAuthInputTools.h */,
+				881555AC2FA88BE9004702A6 /* LuckyLandAuthInputTools.m */,
+				881555AD2FA88BE9004702A6 /* LuckyLandCaptchaCodeTools.h */,
+				881555AE2FA88BE9004702A6 /* LuckyLandCaptchaCodeTools.m */,
 			);
 			path = AuthTools;
 			sourceTree = "<group>";
@@ -6587,7 +6587,7 @@
 				04A0EDFD2AF9E088009BC23B /* NoaTeamUpdateNameView.m in Sources */,
 				049EE26A2D263AA300E5D211 /* NoaSafeCodeSettingViewController.m in Sources */,
 				04CDD49E2AE9076D0068D830 /* NoaEmojiShopFeaturedCell.m in Sources */,
-				881556472FA88BE9004702A6 /* NoaCaptchaCodeTools.m in Sources */,
+				881556472FA88BE9004702A6 /* LuckyLandCaptchaCodeTools.m in Sources */,
 				04A59F322B4CF4D700F18864 /* NoaIntergralDetailCell.m in Sources */,
 				183838522A95A91C0056D345 /* SignInTableViewCell.m in Sources */,
 				041EEB3F29EE392E00CDCC1A /* NoaMessageTimeDeleteCell.m in Sources */,
@@ -6835,7 +6835,7 @@
 				045F1EE328DEE3DA003D2818 /* MImageBrowserZoomView.m in Sources */,
 				C37739162E4B127B00EC038B /* NoaGroupNoteLocalUserNameModel.m in Sources */,
 				04D0D4B72B81F96C008532AA /* NoaTranslateDefaultModel.m in Sources */,
-				881556462FA88BE9004702A6 /* NoaAuthInputTools.m in Sources */,
+				881556462FA88BE9004702A6 /* LuckyLandAuthInputTools.m in Sources */,
 				04C02F2828BF5B0B007E4B74 /* UITextField+Addition.m in Sources */,
 				C3F3081B2E3EF84D00D13F2E /* NoaTeamInviteCustomTextField.m in Sources */,
 				042240372A8E00D500350D31 /* NoaChatInputEmojiManager.m in Sources */,

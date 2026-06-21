@@ -1,20 +1,20 @@
 //
-//  NoaCaptchaCodeTools.m
+//  LuckyLandCaptchaCodeTools.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2024/7/23.
 //
 
-#import "NoaCaptchaCodeTools.h"
+#import "LuckyLandCaptchaCodeTools.h"
 #import <WebKit/WebKit.h>
 
-@interface NoaCaptchaCodeTools() <WKScriptMessageHandler, WKNavigationDelegate, WKUIDelegate>
+@interface LuckyLandCaptchaCodeTools() <WKScriptMessageHandler, WKNavigationDelegate, WKUIDelegate>
 
 @property (nonatomic, strong) WKWebView *webView;
 
 @end
 
-@implementation NoaCaptchaCodeTools
+@implementation LuckyLandCaptchaCodeTools
 
 - (void)verCaptchaCode {
     if (self.webView == nil) {
