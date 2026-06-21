@@ -18,7 +18,7 @@
 //跳转
 #import "NoaGlobalSearchVC.h"//全局搜索
 #import "NoaAddFriendVC.h"//添加好友
-#import "NoaInviteFriendVC.h"//创建群聊邀请好友
+#import "LuckyLandInviteFriendVC.h"//创建群聊邀请好友
 #import "NoaChatViewController.h"//聊天
 #import "LuckyLandTabBarController.h"//tabbar
 #import "NoaPushNavTools.h"   //推送消息点击跳转
@@ -29,7 +29,7 @@
 #import "NoaAppUpdateTools.h" //检查App版本信息
 #import "NoaWeakPwdCheckTool.h" //检查密码强度
 #import "NoaFileHelperVC.h"//文件助手
-#import "NoaSignInMessageViewController.h"//签到提醒
+#import "LuckyLandSignInMessageViewController.h"//签到提醒
 #import "NoaUserRoleAuthorityModel.h"
 #import "NoaSessionNetStateView.h"
 #import "NoaMessageSendHander.h"
@@ -196,7 +196,7 @@
             [weakSelf.navigationController pushViewController:vc animated:YES];
         } else if (actionType == ZSessionMoreActionTypeCreateGroup) {
             //创建群聊
-            NoaInviteFriendVC *vc = [NoaInviteFriendVC new];
+            LuckyLandInviteFriendVC *vc = [LuckyLandInviteFriendVC new];
             vc.maxNum = 200;
             vc.minNum = 2;
             [weakSelf.navigationController pushViewController:vc animated:YES];
@@ -592,7 +592,7 @@
         
         if (model.sessionType == CIMSessionTypeSignInReminder) {
             //签到提醒
-            NoaSignInMessageViewController *signInVC = [NoaSignInMessageViewController new];
+            LuckyLandSignInMessageViewController *signInVC = [LuckyLandSignInMessageViewController new];
             signInVC.sessionID = model.sessionID;
             [self.navigationController pushViewController:signInVC animated:YES];
             

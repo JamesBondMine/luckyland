@@ -7,7 +7,7 @@
 
 #import "NoaChatSingleSetVC.h"
 #import "NoaBaseImageView.h"
-#import "NoaInviteFriendVC.h"
+#import "LuckyLandInviteFriendVC.h"
 #import "NoaMessageAlertView.h"
 
 #import "NoaChatHistoryVC.h"
@@ -186,7 +186,7 @@
         NoaChatSingleSetInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:[NoaChatSingleSetInfoCell cellIdentifier] forIndexPath:indexPath];
         [cell cellConfigWithModel:self.friendModel];
         [cell setTapSingleInfoAddBlock:^{
-            NoaInviteFriendVC *vc = [NoaInviteFriendVC new];
+            LuckyLandInviteFriendVC *vc = [LuckyLandInviteFriendVC new];
             vc.maxNum = 200;
             vc.minNum = 1;
             vc.friendUid = weakSelf.friendUid;

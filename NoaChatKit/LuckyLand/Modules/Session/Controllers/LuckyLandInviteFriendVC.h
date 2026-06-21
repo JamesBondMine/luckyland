@@ -1,5 +1,5 @@
 //
-//  NoaInviteFriendVC.h
+//  LuckyLandInviteFriendVC.h
 //  NoaKit
 //
 //  Created by LuckyLand on 2026/9/22.
@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaInviteFriendVC : LuckyLandBaseViewController
+@interface LuckyLandInviteFriendVC : LuckyLandBaseViewController
 //最多选择几人
 @property (nonatomic, assign) NSInteger maxNum;
 //至少选择几人

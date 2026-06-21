@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaSignInMessageViewController : LuckyLandBaseViewController
+@interface LuckyLandSignInMessageViewController : LuckyLandBaseViewController
 @property (nonatomic, copy) NSString *sessionID;
 @end
 

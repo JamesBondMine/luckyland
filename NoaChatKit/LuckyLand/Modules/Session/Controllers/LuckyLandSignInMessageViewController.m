@@ -5,15 +5,15 @@
 //  Created by Apple on 2023/8/15.
 //
 
-#import "NoaSignInMessageViewController.h"
+#import "LuckyLandSignInMessageViewController.h"
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 #import "LuckyLandSignInViewController.h"
 #import "SignInTableViewCell.h"
-@interface NoaSignInMessageViewController ()<UITableViewDelegate,UITableViewDataSource,ZBaseCellDelegate,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
+@interface LuckyLandSignInMessageViewController ()<UITableViewDelegate,UITableViewDataSource,ZBaseCellDelegate,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 @property(nonatomic,strong) NSMutableArray * signHistoryList;
 @end
 
-@implementation NoaSignInMessageViewController
+@implementation LuckyLandSignInMessageViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

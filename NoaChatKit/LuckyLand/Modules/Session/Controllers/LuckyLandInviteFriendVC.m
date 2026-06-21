@@ -1,11 +1,11 @@
 //
-//  NoaInviteFriendVC.m
+//  LuckyLandInviteFriendVC.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2026/9/22.
 //
 
-#import "NoaInviteFriendVC.h"
+#import "LuckyLandInviteFriendVC.h"
 #import "NoaSearchView.h"
 #import "NoaInviteFriendHeaderView.h"
 #import "NoaInviteFriendCell.h"
@@ -19,7 +19,7 @@
 #import "NoaMassMessageSelectModel.h"
 #import "NoaMassMessageGroupSelectedTopView.h"
 
-@interface NoaInviteFriendVC () <ZSearchViewDelegate,UITableViewDataSource,UITableViewDelegate,ZBaseCellDelegate>
+@interface LuckyLandInviteFriendVC () <ZSearchViewDelegate,UITableViewDataSource,UITableViewDelegate,ZBaseCellDelegate>
 
 @property (nonatomic, strong) NoaSearchView *viewSearch;
 @property (nonatomic, strong) NSMutableArray<NoaBaseUserModel *> *searchList;//搜索结果
@@ -31,7 +31,7 @@
 
 @end
 
-@implementation NoaInviteFriendVC
+@implementation LuckyLandInviteFriendVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
