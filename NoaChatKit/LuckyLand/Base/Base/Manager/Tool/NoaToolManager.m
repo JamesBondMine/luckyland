@@ -28,59 +28,12 @@
 static dispatch_once_t onceToken;
 
 @implementation NoaToolManager
-#pragma mark - Sentry DSN 管理
-
-static NSString *const kSentryDSNKey = @"ZIM_Sentry_DSN";
-static NSString *const kSentryDefaultDSN = sentryDSNOriginal;
-static NSString *g_CurrentSentryDSN = nil; // 内存记录当前生效的DSN
 
 static NSString *const kLoganPublishURLKey = @"ZIM_Logan_PublishURL";
 static NSString *const kLoganDefaultPublishURL = publishUrlOriginal; // 默认取宏定义
 static NSString *g_CurrentLoganPublishURL = nil; // 内存记录当前 Logan publish URL
 
-- (NSString *)getPersistedSentryDSN {
-    NSString *dsn = [[NSUserDefaults standardUserDefaults] stringForKey:kSentryDSNKey];
-    return dsn;
-}
 
-- (void)setPersistedSentryDSN:(NSString *)dsn {
-    if (!dsn || dsn.length == 0) return;
-    [[NSUserDefaults standardUserDefaults] setObject:dsn forKey:kSentryDSNKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
-- (NSString *)sentryEffectiveDSN {
-    NSString *persisted = [self getPersistedSentryDSN];
-    if (persisted.length > 0) {
-        return persisted;
-    }
-    // 第一次无值，写入默认
-    [self setPersistedSentryDSN:kSentryDefaultDSN];
-    return kSentryDefaultDSN;
-}
-
-- (void)initSentryWithDSN:(NSString *)dsn {
-    if (!dsn || dsn.length == 0) return;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        g_CurrentSentryDSN = [dsn copy];
-        NSLog(@"[Sentry] Initialized with DSN: %@", dsn);
-    });
-}
-
-- (void)reloadSentryIfNeededWithDSN:(NSString *)newDSN {
-    if (!newDSN || newDSN.length == 0) return;
-    NSString *current = g_CurrentSentryDSN ?: [self getPersistedSentryDSN];
-    if ([current isEqualToString:newDSN]) {
-        return; // 无变化
-    }
-    // 持久化并重载
-    [self setPersistedSentryDSN:newDSN];
-    [self initSentryWithDSN:newDSN];
-
-    // 记录配置切换事件
-    NSString *logMsg = [NSString stringWithFormat:@"Sentry DSN switched: old=%@, new=%@", current ?: @"<nil>", newDSN];
-    [self sentryUploadWithString:logMsg sentryUploadType:ZSentryUploadTypeEnterprise errorCode:@"sentry_dsn_switch"];
-}
 
 #pragma mark - Lazy
 - (NSDictionary *)pushUserInfo {
@@ -1018,135 +971,6 @@ static NSString *g_CurrentLoganPublishURL = nil; // 内存记录当前 Logan pub
     
 }
 
-- (void)sentryUploadWithDictionary:(NSDictionary *)dictionary sentryUploadType:(ZSentryUploadType)sentryUploadType errorCode:(NSString *)errorCode{
-    NSError *error;
-    // 转换为 JSON 字符串
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dictionary
-                                                       options:NSJSONWritingPrettyPrinted
-                                                         error:&error];
-//    错误码，筛选条件：user.email
-//    设备ID，筛选条件：geo.region
-//    事件时间，筛选条件：geo.city
-//    幸运数字（已进入幸运数字），筛选条件：geo.country_code
-//    用户ID（已登录），筛选条件：user.id
-//    用户名（已登录），筛选条件：user.username
-    
-    if (jsonData) {
-        NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-        NoaSsoInfoModel *infoModel = [NoaSsoInfoModel getSSOInfo];
-        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-        [dict setValue:errorCode forKey:@"errorCode"];
-        if (UserManager.isLogined) {
-            [dict setValue:UserManager.userInfo.userUID forKey:@"userId"];
-            [dict setValue:UserManager.userInfo.userName forKey:@"userName"];
-        }
-        [dict setValue:infoModel.liceseId forKey:@"liceseId"];
-        [dict setValue:infoModel.lastLiceseId ?: @"" forKey:@"lastLiceseId"];
-        [dict setValue:[FCUUID uuidForDevice] forKey:@"deviceId"];
-        [dict setValue:[NSDate transSecondToTimeMethod1:[NSDate currentTimeIntervalWithSecond]] forKey:@"errorTime"];
-
-        //消息发送失败
-        //event_message
-        //接口调用失败
-        //event_http
-        //幸运数字加入失败
-        //event_enterprise
-        //图片加载失败
-        //event_image
-        //媒体消息上传失败
-        //event_message_upload
-        //socket连接
-        //event_socketConnect
-        //GaOnChain获取数据成功
-        //event_ga_onchain_success
-        //socket连接
-        //GaOnChain获取数据失败
-        NSString *transaction = @"";
-        switch (sentryUploadType) {
-            case ZSentryUploadTypeMessage:
-                transaction = @"event_message";
-                break;
-            case ZSentryUploadTypeHttp:
-                transaction = @"event_http";
-                break;
-            case ZSentryUploadTypeEnterprise:
-                transaction = @"event_enterprise";
-                break;
-            case ZSentryUploadTypeImage:
-                transaction = @"event_image";
-                break;
-            case ZSentryUploadTypeUpload:
-                transaction = @"event_message_upload";
-                break;
-            case ZSentryUploadTypeSocketConnect:
-                transaction = @"event_socketConnect";
-                break;
-            case ZSentryUploadTypeEnterpriseSuccess:
-                transaction = @"event_enterprise_success";
-                break;
-            case ZSentryGaOnChainSuccess:
-                transaction = @"event_ga_onchain_success";
-                break;
-            case ZSentryGaOnChainFailed:
-                transaction = @"event_ga_onchain_failed";
-                break;
-            default:
-                break;
-        }
-    } else {
-        NSLog(@"Error: %@", error.localizedDescription);
-    }
-}
-- (void)sentryUploadWithString:(NSString *)string sentryUploadType:(ZSentryUploadType)sentryUploadType errorCode:(NSString *)errorCode{
-
-    NoaSsoInfoModel *infoModel = [NoaSsoInfoModel getSSOInfo];
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    [dict setValue:errorCode forKey:@"errorCode"];
-    if (UserManager.isLogined) {
-        [dict setValue:UserManager.userInfo.userUID forKey:@"userId"];
-        [dict setValue:UserManager.userInfo.userName forKey:@"userName"];
-    }
-    [dict setValue:infoModel.liceseId forKey:@"liceseId"];
-    [dict setValue:infoModel.lastLiceseId ?: @"" forKey:@"lastLiceseId"];
-    [dict setValue:[FCUUID uuidForDevice] forKey:@"deviceId"];
-    [dict setValue:[NSDate transSecondToTimeMethod1:[NSDate currentTimeIntervalWithMillisecond]] forKey:@"errorTime"];
-    [dict setValue:[NSString isNil:self.publicIP] ? @"" : self.publicIP forKey:@"publicIpAddress"];
-
-    //消息发送失败
-    //event_message
-    //接口调用失败
-    //event_http
-    //幸运数字加入失败
-    //event_enterprise
-    //图片加载失败
-    //event_image
-    //媒体消息上传失败
-    //event_message_upload
-    NSString *transaction = @"";
-    switch (sentryUploadType) {
-        case ZSentryUploadTypeMessage:
-            transaction = @"event_message";
-            break;
-        case ZSentryUploadTypeHttp:
-            transaction = @"event_http";
-            break;
-        case ZSentryUploadTypeEnterprise:
-            transaction = @"event_enterprise";
-            break;
-        case ZSentryUploadTypeImage:
-            transaction = @"event_image";
-            break;
-        case ZSentryUploadTypeUpload:
-            transaction = @"event_message_upload";
-            break;
-        case ZSentryUploadTypeEnterpriseSuccess:
-            transaction = @"event_enterprise_success";
-            break;
-        default:
-            break;
-    }
-}
-
 
 BOOL isRTLString(NSString *string) {
     if ([string hasPrefix:@"\u202B"] || [string hasPrefix:@"\u202A"]) {
@@ -1249,12 +1073,6 @@ NSAttributedString *RTLAttributeString(NSAttributedString *attributeString ){
     return [regionCode isEqualToString:@"CN"];
 }
 
-- (void)sentryOpenEventWithDSNKey:(NSString *)DSNkey {
-    // Override point for customization after application launch.
-    // SentrySDK
-    
-}
-
 #pragma mark - Logan publish URL 管理
 
 - (NSString *)getPersistedLoganPublishURL {
@@ -1311,9 +1129,8 @@ NSAttributedString *RTLAttributeString(NSAttributedString *attributeString ){
         [IMSDKManager imSdkOpenLoganWith:loganOption];
         g_CurrentLoganPublishURL = [newURL copy];
         NSLog(@"[Logan] Reloaded with Publish URL: %@", newURL);
-        // 记录配置切换事件（Sentry）
+        // 记录配置切换事件
         NSString *msg = [NSString stringWithFormat:@"Logan publishUrl switched: old=%@, new=%@", current ?: @"<nil>", newURL];
-        [self sentryUploadWithString:msg sentryUploadType:ZSentryUploadTypeEnterprise errorCode:@"logan_publishurl_switch"];
     });
 }
 @end

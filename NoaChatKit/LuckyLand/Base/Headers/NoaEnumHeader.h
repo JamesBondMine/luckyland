@@ -220,17 +220,6 @@ typedef NS_ENUM(NSUInteger, ZDNSLocalModelType) {
 //媒体消息上传失败
 //event_message_upload
 
-typedef NS_ENUM(NSUInteger, ZSentryUploadType) {
-    ZSentryUploadTypeMessage = 1,       //消息发送失败
-    ZSentryUploadTypeHttp = 2,          //接口调用失败
-    ZSentryUploadTypeEnterprise = 3,    //幸运数字加入失败
-    ZSentryUploadTypeImage = 4,         //图片加载失败
-    ZSentryUploadTypeUpload = 5,        //媒体消息上传失败
-    ZSentryUploadTypeSocketConnect = 6, //socket连接
-    ZSentryUploadTypeEnterpriseSuccess = 7, //导航获取成功
-    ZSentryGaOnChainSuccess = 8, // GaOnChain获取数据成功
-    ZSentryGaOnChainFailed = 9 // GaOnChain获取数据失败
-};
 
 typedef NS_ENUM(NSInteger, ProxyType) {
     ProxyTypeSystem = 0,

@@ -324,7 +324,6 @@
     } else {
         // 账号密码or其他
         [self.showToastSubject sendNext:LanguageToolCodeMatch(errorCode, errorMsg)];
-        [ZTOOL sentryUploadWithString:LanguageToolCodeMatch(errorCode, errorMsg) sentryUploadType:ZSentryUploadTypeHttp errorCode:[NSString stringWithFormat:@"%ld",(long)errorCode]];
     }
 }
 
@@ -348,7 +347,6 @@
         [self showImgVerCodePopWindowWithCode:@""];
     } else {
         [self.showToastSubject sendNext:LanguageToolCodeMatch(errorCode, errorMsg)];
-        [ZTOOL sentryUploadWithString:LanguageToolCodeMatch(errorCode, errorMsg) sentryUploadType:ZSentryUploadTypeHttp errorCode:[NSString stringWithFormat:@"%ld",(long)errorCode]];
 
     }
 }

@@ -304,7 +304,6 @@ static int huaweiyun_obs_slicing_offset = 1024 * 1024 * 50; // 每片的大小�
             [loganDict setValue:error.description forKey:@"failReason"];//失败原因
             //写入日志
             [IMSDKManager imSdkWriteLoganWith:LingIMLoganTypeApi loganContent:[[NoaIMLoganManager sharedManager] configLoganContent:loganDict]];
-            [self sentryCaptureWithDictionary:loganDict];
             
             // 转换为 JSON 字符串
             NSData *jsonData = [NSJSONSerialization dataWithJSONObject:loganDict
@@ -638,7 +637,6 @@ static int huaweiyun_obs_slicing_offset = 1024 * 1024 * 50; // 每片的大小�
         [loganDict setValue:error.description forKey:@"failReason"];//失败原因
         //写入日志
         [IMSDKManager imSdkWriteLoganWith:LingIMLoganTypeApi loganContent:[[NoaIMLoganManager sharedManager] configLoganContent:loganDict]];
-        [self sentryCaptureWithDictionary:loganDict];
         
         if (uploadTask){
             dispatch_semaphore_signal(uploadTask.semaphore);
@@ -677,7 +675,6 @@ static int huaweiyun_obs_slicing_offset = 1024 * 1024 * 50; // 每片的大小�
             [loganDict setValue:@"oss_config_end_point为空" forKey:@"failReason"];//失败原因
             //写入日志
             [IMSDKManager imSdkWriteLoganWith:LingIMLoganTypeApi loganContent:[[NoaIMLoganManager sharedManager] configLoganContent:loganDict]];
-            [self sentryCaptureWithDictionary:loganDict];
             
             return;
         }
@@ -726,7 +723,6 @@ static int huaweiyun_obs_slicing_offset = 1024 * 1024 * 50; // 每片的大小�
             [loganDict setValue:task.error.description forKey:@"failReason"];//失败原因
             //写入日志
             [IMSDKManager imSdkWriteLoganWith:LingIMLoganTypeApi loganContent:[[NoaIMLoganManager sharedManager] configLoganContent:loganDict]];
-            [self sentryCaptureWithDictionary:loganDict];
             
         }
         
@@ -795,7 +791,6 @@ static int huaweiyun_obs_slicing_offset = 1024 * 1024 * 50; // 每片的大小�
             [loganDict setValue:error.description forKey:@"failReason"];//失败原因
             //写入日志
             [IMSDKManager imSdkWriteLoganWith:LingIMLoganTypeApi loganContent:[[NoaIMLoganManager sharedManager] configLoganContent:loganDict]];
-            [self sentryCaptureWithDictionary:loganDict];
             
         }
         if(uploadTask){
@@ -842,7 +837,6 @@ static int huaweiyun_obs_slicing_offset = 1024 * 1024 * 50; // 每片的大小�
         [loganDict setValue:@"tencent_upload_ststoken为空" forKey:@"failReason"];//失败原因
         //写入日志
         [IMSDKManager imSdkWriteLoganWith:LingIMLoganTypeApi loganContent:[[NoaIMLoganManager sharedManager] configLoganContent:loganDict]];
-        [self sentryCaptureWithDictionary:loganDict];
         
         return;
     }
@@ -916,7 +910,6 @@ static int huaweiyun_obs_slicing_offset = 1024 * 1024 * 50; // 每片的大小�
             [loganDict setValue:error.description forKey:@"failReason"];//失败原因
             //写入日志
             [IMSDKManager imSdkWriteLoganWith:LingIMLoganTypeApi loganContent:[[NoaIMLoganManager sharedManager] configLoganContent:loganDict]];
-            [self sentryCaptureWithDictionary:loganDict];
             
         }
         if(uploadTask){
@@ -945,7 +938,6 @@ static int huaweiyun_obs_slicing_offset = 1024 * 1024 * 50; // 每片的大小�
         [loganDict setValue:@"obs_upload_ststoken为空" forKey:@"failReason"];//失败原因
         //写入日志
         [IMSDKManager imSdkWriteLoganWith:LingIMLoganTypeApi loganContent:[[NoaIMLoganManager sharedManager] configLoganContent:loganDict]];
-        [self sentryCaptureWithDictionary:loganDict];
         
         return;
     }
@@ -1006,7 +998,6 @@ static int huaweiyun_obs_slicing_offset = 1024 * 1024 * 50; // 每片的大小�
                 [loganDict setValue:error.description forKey:@"failReason"];//失败原因
                 //写入日志
                 [IMSDKManager imSdkWriteLoganWith:LingIMLoganTypeApi loganContent:[[NoaIMLoganManager sharedManager] configLoganContent:loganDict]];
-                [self sentryCaptureWithDictionary:loganDict];
                 
             }
             if(uploadTask){
@@ -1117,17 +1108,12 @@ static int huaweiyun_obs_slicing_offset = 1024 * 1024 * 50; // 每片的大小�
             [loganDict setValue:error.description forKey:@"failReason"];//失败原因
             //写入日志
             [IMSDKManager imSdkWriteLoganWith:LingIMLoganTypeApi loganContent:[[NoaIMLoganManager sharedManager] configLoganContent:loganDict]];
-            [self sentryCaptureWithDictionary:loganDict];
             
         }
         if(uploadTask){
             dispatch_semaphore_signal(uploadTask.semaphore);
         }
     }];
-}
-
-- (void)sentryCaptureWithDictionary:(NSDictionary *)dict {
-    [ZTOOL sentryUploadWithDictionary:dict sentryUploadType:ZSentryUploadTypeUpload errorCode:@""];
 }
 
 

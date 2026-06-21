@@ -262,12 +262,6 @@ static const NSTimeInterval kKeyExchangeTimeout = 15.0;
         if (self.socketHost.length == 0) {
             [NoaLocalLogger error:@"[socket连接] 暂无主机信息，不再连接"];
             
-            [self sentryUploadWithEventObj:@{
-                @"event" : @"socket连接",
-                @"error" : @"暂无主机信息，不再连接",
-                @"host" : self.socketHost ? self.socketHost : @"",
-                @"port" : @(self.socketPort)
-            } errorCode:@""];
             
             return;
         }
@@ -310,13 +304,7 @@ static const NSTimeInterval kKeyExchangeTimeout = 15.0;
                                               error:&error];
             if (!ok || error) {
                 [NoaLocalLogger error: [NSString stringWithFormat:@"[socket连接] 参数连接失败，失败信息:%@", error]];
-                
-                [self sentryUploadWithEventObj:@{
-                    @"event" : @"socket连接",
-                    @"error" : [NSString stringWithFormat:@"使用参数连接失败，失败信息:%@", error],
-                    @"host" : self.socketHost ? self.socketHost : @"",
-                    @"port" : @(self.socketPort)
-                } errorCode:@""];
+   
                 
                 [SOCKETMANAGERTOOL cimConnectFailWithError:error];
                 [self updateConnectState:LingIMSocketConnectStateDisconnected];
@@ -1028,22 +1016,9 @@ static const NSTimeInterval kKeyExchangeTimeout = 15.0;
     if (err) {
         [NoaLocalLogger info:[NSString stringWithFormat:@"[socket] 断开了连接，错误码:%ld，原因:%@", (long)err.code, err]];
         
-        [self sentryUploadWithEventObj:@{
-            @"event" : @"socket连接",
-            @"error" : [NSString stringWithFormat:@"socketDidDisconnect回调断开了连接，原因:%@", err],
-            @"host" : self.socketHost ? self.socketHost : @"",
-            @"port" : @(self.socketPort)
-        } errorCode:@""];
         
     }else {
         [NoaLocalLogger info:@"[socket] 断开了连接，原因:客户端主动断开"];
-        
-        [self sentryUploadWithEventObj:@{
-            @"event" : @"socket连接",
-            @"error" : @"socketDidDisconnect断开了连接，原因:客户端主动断开",
-            @"host" : self.socketHost ? self.socketHost : @"",
-            @"port" : @(self.socketPort)
-        } errorCode:@""];
     }
     
     [NoaLocalLogger error:@"[幸运数字竞速] socketDidDisconnect断开连接"];
@@ -1142,25 +1117,11 @@ static const NSTimeInterval kKeyExchangeTimeout = 15.0;
             }else {
                 [NoaLocalLogger error:@"[Socket-ECDH] 生成共享密钥失败，开始断开重连..."];
                 
-                [self sentryUploadWithEventObj:@{
-                    @"event" : @"socket连接 - ECDH",
-                    @"error" : @"生成共享密钥失败，开始断开重连...",
-                    @"host" : self.socketHost ? self.socketHost : @"",
-                    @"port" : @(self.socketPort)
-                } errorCode:@""];
-                
                 [self handleKeyExchangeFailure];
                 return;
             }
         }else {
             [NoaLocalLogger error:@"[Socket-ECDH] 获取服务器公钥失败，开始断开重连..."];
-            
-            [self sentryUploadWithEventObj:@{
-                @"event" : @"socket连接 - ECDH",
-                @"error" : @"获取服务器公钥失败，开始断开重连...",
-                @"host" : self.socketHost ? self.socketHost : @"",
-                @"port" : @(self.socketPort)
-            } errorCode:@""];
             
             [self handleKeyExchangeFailure];
             return;
@@ -1419,13 +1380,7 @@ static const NSTimeInterval kKeyExchangeTimeout = 15.0;
             if (!publicKey || !privateKey) {
                 [NoaLocalLogger error:@"[Socket-ECDH] ❌ 生成密钥对失败，立即断开重连"];
                 
-                [self sentryUploadWithEventObj:@{
-                    @"event" : @"socket连接 - ECDH",
-                    @"error" : @"生成密钥对失败，立即断开重连",
-                    @"host" : self.socketHost ? self.socketHost : @"",
-                    @"port" : @(self.socketPort)
-                } errorCode:@""];
-                
+
                 [self handleKeyExchangeFailure];
                 return;
             }
@@ -1497,14 +1452,7 @@ static const NSTimeInterval kKeyExchangeTimeout = 15.0;
 /// 处理ECDH密钥交换失败
 - (void)handleKeyExchangeFailure {
     [NoaLocalLogger error:@"[Socket-ECDH] 密钥交换失败，立即断开连接并重连"];
-    
-    [self sentryUploadWithEventObj:@{
-        @"event" : @"socket连接 - ECDH",
-        @"error" : @"密钥交换失败，立即断开连接并重连",
-        @"host" : self.socketHost ? self.socketHost : @"",
-        @"port" : @(self.socketPort)
-    } errorCode:@""];
-    
+
     // 停止ECDH密钥交换超时定时器
     [self stopKeyExchangeTimer];
     
@@ -1526,54 +1474,6 @@ static const NSTimeInterval kKeyExchangeTimeout = 15.0;
     self.novDecryptorManager.serverPublicKeyData = nil;
     SOCKETMANAGERTOOL.isAuth = NO;
 }
-
-// MARK: SENTRY
-- (void)sentryUploadWithEventObj:(id)eventObj
-                       errorCode:(NSString *)errorCode {
-    NSError *error = nil;
-    NSString *eventStr = @"";
-    if ([eventObj isKindOfClass:[NSDictionary class]] ||
-        [eventObj isKindOfClass:[NSArray class]]) {
-        // 转换为 JSON 字符串
-        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:eventObj
-                                                           options:NSJSONWritingPrettyPrinted
-                                                             error:&error];
-        if (jsonData && !error) {
-            eventStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-        }
-    }else if ([eventObj isKindOfClass:[NSString class]]) {
-        eventStr = eventObj;
-    }else {
-        return;
-    }
-    
-    if (eventStr.length == 0) {
-        return;
-    }
-    
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    [dict setValue:errorCode forKey:@"errorCode"];
-    if (self.socketUserID && self.socketUserID.length > 0) {
-        [dict setValue:self.socketUserID forKey:@"userId"];
-    }
-    
-    if (IMSDKManager.currentLiceseId && IMSDKManager.currentLiceseId.length > 0) {
-        [dict setValue:IMSDKManager.currentLiceseId forKey:@"liceseId"];
-    }
-    
-    if (IMSDKManager.myUserNickname && IMSDKManager.myUserNickname.length > 0) {
-        [dict setValue:IMSDKManager.myUserNickname forKey:@"nickName"];
-    }
-    
-    [dict setValue:[FCUUID uuidForDevice] forKey:@"deviceId"];
-    
-    [dict setValue:[self transSecondToTimeStr] forKey:@"errorTime"];
-    
-    //socket连接 --- 类型固定
-    //event_socketConnect
-    NSString *transaction = @"event_socketConnect";
-}
-
 //毫秒转换成： 03:23
 - (NSString *)transSecondToTimeStr {
     NSDate *date = [NSDate date];

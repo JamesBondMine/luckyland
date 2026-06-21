@@ -901,31 +901,7 @@ typedef NS_ENUM(NSUInteger, LingIMUserAuthStatus) {
     //写入日志
     NoaIMLoganManager *loganManager = [NoaIMLoganManager sharedManager];
     [loganManager writeLoganWith:LingIMLoganTypeCommon loganContent:[loganManager configLoganContent:loganDict]];
-    
-    [self sentryUploadWithDictionary:loganDict transaction:@"event_message"];
 
-}
-
-- (void)sentryUploadWithDictionary:(NSDictionary *)dictionary transaction:(NSString *)transaction{
-    NSError *error;
-    // 转换为 JSON 字符串
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dictionary
-                                                       options:NSJSONWritingPrettyPrinted
-                                                         error:&error];
-//    错误码，筛选条件：user.email
-//    设备ID，筛选条件：geo.region
-//    事件时间，筛选条件：geo.city
-//    幸运数字（已进入幸运数字），筛选条件：geo.country_code
-//    用户ID（已登录），筛选条件：user.id
-//    用户名（已登录），筛选条件：user.username
-    
-    if (jsonData) {
-        NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-        [dict setValue:[FCUUID uuidForDevice] forKey:@"deviceId"];
-    } else {
-        NSLog(@"Error: %@", error.localizedDescription);
-    }
 }
 
 

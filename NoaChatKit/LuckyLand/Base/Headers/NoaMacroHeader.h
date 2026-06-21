@@ -123,8 +123,7 @@ return __singleton__; \
 #define complainBaseurl     @"https://im.net" 
 //Logan 日志
 #define publishUrlOriginal  @""
-//sentry
-#define sentryDSNOriginal  @"http://54a47c25e99ef4f30846d810655cc8e7@mysentry.zfawhx.cn/7"
+
 //oss地址后缀(不带桶名称，桶名称通过DNS解析获取，解析出阿里云、火山云后再拼接到前面)
 #define ossSuffixUrl  @"/lx/%@/navpoint"
 //aws地址

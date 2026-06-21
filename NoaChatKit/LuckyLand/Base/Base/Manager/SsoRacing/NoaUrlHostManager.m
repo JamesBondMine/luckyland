@@ -426,11 +426,7 @@ static NSArray<NSString *> *ZParseDNSResponseA(const uint8_t *buf, ssize_t len, 
             }
         }
         
-        // 同步服务器下发的 Sentry DSN
-        if (serverResponse.meta && serverResponse.meta.config.sentryUrlsArray.firstObject.length > 0) {
-            NSString *newDSN = serverResponse.meta.config.sentryUrlsArray.firstObject;
-            [ZTOOL reloadSentryIfNeededWithDSN:newDSN];
-        }
+
         
         // 同步服务器下发的 Logan
         if (serverResponse.meta && serverResponse.meta.config.loganUrlsArray.firstObject.length > 0) {
@@ -1490,12 +1486,11 @@ static inline NSString *Z_SHA256Hex(NSString *input) {
                 
                 NSArray *imArr = serverResponse.imEndpointsArray;
                 CIMLog(@"✅ 单个TCP竞速成功: %@, 当前成功的地址: %@", imArr, ossUrlModel.urlString);
-                // 上报 Sentry 成功
+                // 上报  成功
                 NSMutableDictionary *succDict = [NSMutableDictionary dictionary];
                 [succDict setValue:sourceTag ?: @"unknown" forKey:@"source"];
                 [succDict setValue:ossUrlModel.urlString ?: @"" forKey:@"address"];
                 [succDict setValue:@"0" forKey:@"errorCode"];
-                [ZTOOL sentryUploadWithDictionary:succDict sentryUploadType:ZSentryUploadTypeEnterpriseSuccess errorCode:@"0"];
                 CIMLog(@"当前成功的地址: %@",ossUrlModel.urlString);
                 // 短路其余源
                 self.ossFirstSuccessGlobal = YES;
@@ -1516,12 +1511,7 @@ static inline NSString *Z_SHA256Hex(NSString *input) {
                     }
                 }
                 
-                // 同步服务器下发的 Sentry DSN
-                if (serverResponse.meta && serverResponse.meta.config.sentryUrlsArray.firstObject.length > 0) {
-                    NSString *newDSN = serverResponse.meta.config.sentryUrlsArray.firstObject;
-                    [ZTOOL reloadSentryIfNeededWithDSN:newDSN];
-                }
-                
+  
                 // 同步服务器下发的 Logan
                 if (serverResponse.meta && serverResponse.meta.config.loganUrlsArray.firstObject.length > 0) {
                     NSString *newLoganURL = serverResponse.meta.config.loganUrlsArray.firstObject;
@@ -1644,7 +1634,6 @@ static inline NSString *Z_SHA256Hex(NSString *input) {
                             CIMLog(@"[DNS并发] 五源均失败或直连竞速全部失败，走 Resolver 兜底");
                             NSMutableDictionary *dict = [NSMutableDictionary dictionary];
                             [loganDict setValue:@"014099" forKey:@"failReason"];//失败原因
-                            [ZTOOL sentryUploadWithDictionary:dict sentryUploadType:ZSentryUploadTypeEnterprise errorCode:@"014099"];
                             BOOL isProxyFB = ([ZTOOL getCurrentProxyType] == ProxyTypeSOCKS5);
                             [self getDirectOssUrlListFromDNSComplete:^(NSArray<NoaUrlHostModel *> *ossUrlList) {
                                 @strongify(self)
@@ -3619,10 +3608,9 @@ static inline NSString *Z_SHA256Hex(NSString *input) {
                 if (currentFailureCount >= totalCount) {
                     CIMLog(@"[GaOnchain] GaOnchain方法全部失败");
                     
-                    // 上报 Sentry GaOnchain 失败
+                    // 上报 GaOnchain 失败
                     NSMutableDictionary *failureDict = [NSMutableDictionary dictionary];
                     [failureDict setValue:rpcUrl forKey:@"rpcUrl"];
-                    [ZTOOL sentryUploadWithDictionary:failureDict sentryUploadType:ZSentryGaOnChainFailed errorCode:@"999999"];
                     
                     return;
                 }
@@ -3638,11 +3626,10 @@ static inline NSString *Z_SHA256Hex(NSString *input) {
             responseStr = [NSString isNil:responseStr] ? @"" : responseStr;
             CIMLog(@"[GaOnchain] 请求成功，rpcUrl = %@, responseStr = %@", rpcUrl, responseStr);
             
-            // 上报 Sentry GaOnchain 成功
+            // 上报  GaOnchain 成功
             NSMutableDictionary *successDict = [NSMutableDictionary dictionary];
             [successDict setValue:rpcUrl forKey:@"rpcUrl"];
             [successDict setValue:responseStr forKey:@"response"];
-            [ZTOOL sentryUploadWithDictionary:successDict sentryUploadType:ZSentryGaOnChainSuccess errorCode:@"0"];
             
             // 取消所有其他任务
             for (NSURLSessionDataTask *otherTask in allTasks) {
@@ -3667,10 +3654,9 @@ static inline NSString *Z_SHA256Hex(NSString *input) {
             if (currentFailureCount >= totalCount) {
                 CIMLog(@"[GaOnchain] GaOnchain方法全部失败");
                 
-                // 上报 Sentry GaOnchain 失败
+                // 上报 GaOnchain 失败
                 NSMutableDictionary *failureDict = [NSMutableDictionary dictionary];
                 [failureDict setValue:rpcUrl forKey:@"rpcUrl"];
-                [ZTOOL sentryUploadWithDictionary:failureDict sentryUploadType:ZSentryGaOnChainFailed errorCode:@"999999"];
                 
                 return;
             }

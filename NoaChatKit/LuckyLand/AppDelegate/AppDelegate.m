@@ -73,9 +73,6 @@ static NSString * const kLastAppVersionKey = @"LastAppVersion";
     [self configureLocalLog];
     
     
-    // 使用持久化或默认 DSN 初始化 Sentry
-    NSString *dsn = [ZTOOL sentryEffectiveDSN];
-    [ZTOOL initSentryWithDSN:dsn];
     [SDImageCache sharedImageCache].config.maxDiskAge = 7 * 24 * 3600;
     [SDImageCache sharedImageCache].config.maxMemoryCost = 1024 * 1024 * 900;
     [SDImageCache sharedImageCache].config.maxMemoryCount = 1500;

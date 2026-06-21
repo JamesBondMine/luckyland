@@ -533,7 +533,6 @@
                 // 根据错误码提示
                 [self.dataHandle.showToastSubject sendNext:LanguageToolCodeMatch(code, msg)];
             }
-            [ZTOOL sentryUploadWithString:LanguageToolCodeMatch(code, msg) sentryUploadType:ZSentryUploadTypeHttp errorCode:[NSString stringWithFormat:@"%ld", (long)code]];
             return;
         }
         

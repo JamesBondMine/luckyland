@@ -432,9 +432,6 @@
         }
     }
 }
-- (void)sentryUploadWithErrorMessage:(NSString *)errorMessage errorCode:(NSString *)errorCode {
-    [ZTOOL sentryUploadWithString:errorMessage sentryUploadType:ZSentryUploadTypeEnterprise errorCode:errorCode];
-}
 
 /// 显示错误消息
 - (void)showErrorMessageWithMessage:(NSString *)message errorCode:(NSString *)errorCode {
@@ -443,7 +440,6 @@
         @strongify(self)
         // showMessage 内部已经会调用 hideHUD，所以不需要提前调用
         [HUD showMessage:message inView:self.view];
-        [self sentryUploadWithErrorMessage:message errorCode:errorCode];
     }];
 }
 

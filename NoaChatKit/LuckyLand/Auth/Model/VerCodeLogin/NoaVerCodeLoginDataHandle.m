@@ -293,7 +293,6 @@
         [self showImgVerCodePopWindowWithCode:@""];
     } else {
         [self.showToastSubject sendNext:LanguageToolCodeMatch(errorCode, errorMsg)];
-        [ZTOOL sentryUploadWithString:LanguageToolCodeMatch(errorCode, errorMsg) sentryUploadType:ZSentryUploadTypeHttp errorCode:[NSString stringWithFormat:@"%ld",(long)errorCode]];
 
     }
 }

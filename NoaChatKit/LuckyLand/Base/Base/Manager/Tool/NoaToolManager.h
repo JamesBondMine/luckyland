@@ -145,24 +145,11 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - 是否有网络
 - (BOOL)isNetworkAvailable;
 
-- (void)sentryUploadWithDictionary:(NSDictionary *)dictionary sentryUploadType:(ZSentryUploadType)sentryUploadType errorCode:(NSString *)errorCode;
-- (void)sentryUploadWithString:(NSString *)string sentryUploadType:(ZSentryUploadType)sentryUploadType errorCode:(NSString *)errorCode;
 //获取当前公网IP地址
 - (void)getDevicePublicNetworkIPWithCompletion:(void(^)(NSString *ip))completion;
 // 公网IP区域判断（简易版）
 - (BOOL)isDomestic;
 
-#pragma mark - Sentry DSN 管理
-/// 读取当前生效的DSN（优先持久化，其次默认值）
-- (NSString *)sentryEffectiveDSN;
-/// 设置并持久化DSN
-- (void)setPersistedSentryDSN:(NSString *)dsn;
-/// 获取已持久化的DSN（可能为空）
-- (NSString *)getPersistedSentryDSN;
-/// 使用指定DSN初始化Sentry（主线程）
-- (void)initSentryWithDSN:(NSString *)dsn;
-/// 若新DSN与当前不同，则更新持久化并重载Sentry；并记录变更事件
-- (void)reloadSentryIfNeededWithDSN:(NSString *)newDSN;
 
 #pragma mark - Logan publish URL 管理
 /// 读取当前生效的 publishUrlOriginal（优先持久化，其次默认值）
