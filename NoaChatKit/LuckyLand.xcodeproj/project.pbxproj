@@ -1415,7 +1415,6 @@
 		04A5DDCE2985242A00702866 /* NoaSheetInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaSheetInputView.m; sourceTree = "<group>"; };
 		04A5FD9A2A3B324500E532A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		04A5FD9C2A3B324900E532A4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		04A5FD9D2A3B324E00E532A4 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		04A673A32BA7D0BD00F14833 /* NoaMessageForwardFailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaMessageForwardFailVC.h; sourceTree = "<group>"; };
 		04A673A42BA7D0BD00F14833 /* NoaMessageForwardFailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaMessageForwardFailVC.m; sourceTree = "<group>"; };
 		04A673A62BA7D30F00F14833 /* NoaMessageForwardFailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaMessageForwardFailCell.h; sourceTree = "<group>"; };
@@ -1745,7 +1744,6 @@
 		04E8911028C8A5D300272A35 /* UIImage+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Addition.h"; sourceTree = "<group>"; };
 		04EBB86428C201000022FC22 /* UILabel+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Addition.m"; sourceTree = "<group>"; };
 		04EBB86528C201000022FC22 /* UILabel+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Addition.h"; sourceTree = "<group>"; };
-		04EC89FE2A380FB600ECC2F6 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		04ECDAFF2BB271C700F7EE1F /* Dictionary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
 		04ECDB022BB272CA00F7EE1F /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		04ECDB052BB2C1B200F7EE1F /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
@@ -6901,7 +6899,6 @@
 			children = (
 				04A5FD9A2A3B324500E532A4 /* en */,
 				04A5FD9C2A3B324900E532A4 /* zh-Hans */,
-				04A5FD9D2A3B324E00E532A4 /* zh-Hant */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -6911,7 +6908,6 @@
 			children = (
 				04F9D5F828BDF3D8000AE80A /* en */,
 				04F9D5FA28BDF696000AE80A /* zh-Hans */,
-				04EC89FE2A380FB600ECC2F6 /* zh-Hant */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -7061,13 +7057,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = LuckyLand/NoaChatKit.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 38544L6R8V;
+				DEVELOPMENT_TEAM = 6ZPN4Y6M3U;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -7303,10 +7297,9 @@
 					"-force_load",
 					"$(SRCROOT)/LuckyLand/Base/Tools/ThirdLibs/OBS/OBS.framework/OBS",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.codeappyang.idnumberft;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.healone.user;
 				PRODUCT_NAME = "幸运岛";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = idnumberft0530;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
@@ -7332,13 +7325,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = LuckyLand/NoaChatKit.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 38544L6R8V;
+				DEVELOPMENT_TEAM = 6ZPN4Y6M3U;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -7574,10 +7565,9 @@
 					"-force_load",
 					"$(SRCROOT)/LuckyLand/Base/Tools/ThirdLibs/OBS/OBS.framework/OBS",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.codeappyang.idnumberft;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.healone.user;
 				PRODUCT_NAME = "幸运岛";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = idnumberft0530;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;

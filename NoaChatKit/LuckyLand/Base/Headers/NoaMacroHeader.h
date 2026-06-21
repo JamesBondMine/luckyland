@@ -136,9 +136,9 @@ return __singleton__; \
 //内置域名
 #define builtInBucketName       @"lxpoint.oss-cn-hangzhou.aliyuncs.com"
 //服务协议地址
-#define servicePolicyUrl  @"https://jiguangniao.com/terms.html"
+#define servicePolicyUrl  @"https://niumowangai.top/luckyland/terms.html"
 // 隐私协议地址
-#define privacyPolicyUrl @"https://jiguangniao.com/privacy.html"
+#define privacyPolicyUrl @"https://niumowangai.top/luckyland/privacy.html"
 
 #define httpId       @"161860"
 //内置域名
