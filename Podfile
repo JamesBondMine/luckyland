@@ -103,7 +103,6 @@ install_all_flutter_pods(flutter_application_path)
   pod 'AvoidCrash', '2.5.2'
   
 
-  pod 'SDCycleScrollView'
   pod 'Toast', '~> 4.1.1'
   pod 'TTTAttributedLabel', '2.0.0'
 

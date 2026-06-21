@@ -178,7 +178,7 @@ return __singleton__; \
 
 // 阿里/腾讯 HttpDNS 测试域名常量（可按需替换） ✅需要替换
 #define ALI_HTTPDNS_TEST_DOMAIN         @"nav.ziyouyi.com"
-#define TENCENT_HTTPDNS_TEST_DOMAIN     @"pdd.jsimapp.com"
+#define TENCENT_HTTPDNS_TEST_DOMAIN     @"pxx.xxjsimapp.com"
 
 // TXT 解密密钥（Ali/CF TXT解密用）
 #define Z_DNS_TXT_AES_SECRET            @"2be4613f40779c85"
