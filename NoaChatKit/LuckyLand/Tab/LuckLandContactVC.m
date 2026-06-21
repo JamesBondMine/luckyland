@@ -88,6 +88,10 @@
         NoaGlobalSearchVC *vc = [NoaGlobalSearchVC new];
         [weakSelf.navigationController pushViewController:vc animated:YES];
     };
+    _viewTop.avatarTapBlock = ^{
+        // 返回
+        [weakSelf.navigationController popViewControllerAnimated:YES];
+    };
     _viewTop.addBlock = ^(ZSessionMoreActionType actionType) {
         [weakSelf navBtnRightClicked];
     };

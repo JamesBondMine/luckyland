@@ -36,9 +36,9 @@ static const CGFloat kMiniAppEntryTopMargin = 11.0;
 + (CGFloat)preferredFirstRowHeightIsHome:(BOOL)isHome {
     CGFloat height = DStatusBarH + DWScale(kFirstRowTopMargin);
     if (isHome) {
-        height += kFirstRowAvatarSize;
+        height += kFirstRowAvatarSize + 40;
     } else {
-        height += DWScale(kFirstRowTitleHeight);
+        height += DWScale(kFirstRowTitleHeight) + 40;
     }
     return height;
 }
@@ -77,23 +77,28 @@ static const CGFloat kMiniAppEntryTopMargin = 11.0;
 #pragma mark - 界面布局
 - (void)setupUI {
     UIView *titleAnchorView = nil;
-    if (_isHome == YES) {
+//    if (_isHome == YES) {
         _ivHeader = [[NoaBaseImageView alloc] init];
         _ivHeader.layer.cornerRadius = DWScale(34)/2;
         _ivHeader.layer.masksToBounds = YES;
-        [_ivHeader sd_setImageWithURL:[UserManager.userInfo.avatar getImageFullUrl] placeholderImage:DefaultAvatar options:SDWebImageAllowInvalidSSLCertificates];
+        
+        // https://niumowangai.top/userfile/oss/luckyland_land-2.png
+        [_ivHeader sd_setImageWithURL:[NSURL URLWithString:@"https://niumowangai.top/userfile/oss/luckyland_land-2.png"] placeholderImage:DefaultAvatar options:SDWebImageAllowInvalidSSLCertificates];
+        
+//        [_ivHeader sd_setImageWithURL:[UserManager.userInfo.avatar getImageFullUrl] placeholderImage:DefaultAvatar options:SDWebImageAllowInvalidSSLCertificates];
         [self addSubview:_ivHeader];
         [_ivHeader mas_makeConstraints:^(MASConstraintMaker *make) {
             make.leading.equalTo(self).offset(DWScale(16));
             make.top.equalTo(self).offset(DWScale(5) + DStatusBarH);
-            make.size.mas_equalTo(CGSizeMake(34, 34));
+            make.size.mas_equalTo(CGSizeMake(64, 64));
         }];
         _ivHeader.userInteractionEnabled = YES;
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onAvatarTapped)];
         [_ivHeader addGestureRecognizer:tap];
         
         _lblUser = [UILabel new];
-        _lblUser.text = UserManager.userInfo.nickname;
+//        _lblUser.text = UserManager.userInfo.nickname;
+    _lblUser.text = @"Lucky Land 9780021";
         _lblUser.tkThemetextColors = @[COLOR_11, COLOR_11_DARK];
         _lblUser.font = FONTB(16);
         [self addSubview:_lblUser];
@@ -103,19 +108,19 @@ static const CGFloat kMiniAppEntryTopMargin = 11.0;
             make.centerY.mas_equalTo(_ivHeader);
         }];
         titleAnchorView = _ivHeader;
-    } else {
-        _lblUser = [UILabel new];
-        _lblUser.text = LanguageToolMatch(@"通讯录");
-        _lblUser.tkThemetextColors = @[COLOR_11, COLOR_11_DARK];
-        _lblUser.font = FONTB(16);
-        [self addSubview:_lblUser];
-        [_lblUser mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.leading.equalTo(self).offset(DWScale(10));
-            make.size.mas_equalTo(CGSizeMake(DWScale(200), DWScale(24)));
-            make.top.equalTo(self).offset(DWScale(5) + DStatusBarH);
-        }];
-        titleAnchorView = _lblUser;
-    }
+//    } else {
+//        _lblUser = [UILabel new];
+//        _lblUser.text = LanguageToolMatch(@"通讯录");
+//        _lblUser.tkThemetextColors = @[COLOR_11, COLOR_11_DARK];
+//        _lblUser.font = FONTB(16);
+//        [self addSubview:_lblUser];
+//        [_lblUser mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.leading.equalTo(self).offset(DWScale(10));
+//            make.size.mas_equalTo(CGSizeMake(DWScale(200), DWScale(24)));
+//            make.top.equalTo(self).offset(DWScale(5) + DStatusBarH);
+//        }];
+//        titleAnchorView = _lblUser;
+//    }
     
     
     
@@ -215,8 +220,8 @@ static const CGFloat kMiniAppEntryTopMargin = 11.0;
     if (!_isHome) {
         return;
     }
-    [_ivHeader sd_setImageWithURL:[UserManager.userInfo.avatar getImageFullUrl] placeholderImage:DefaultAvatar options:SDWebImageAllowInvalidSSLCertificates];
-    _lblUser.text = UserManager.userInfo.nickname;
+//    [_ivHeader sd_setImageWithURL:[UserManager.userInfo.avatar getImageFullUrl] placeholderImage:DefaultAvatar options:SDWebImageAllowInvalidSSLCertificates];
+//    _lblUser.text = UserManager.userInfo.nickname;
 }
 
 - (void)setShowLoading:(BOOL)showLoading {
@@ -265,6 +270,13 @@ static const CGFloat kMiniAppEntryTopMargin = 11.0;
 - (void)searchViewClickAction {
     if (self.searchBlock) {
         self.searchBlock();
+    }
+}
+
+#pragma mark - SearchClickAction
+- (void)landViewClickAction {
+    if (self.landBlock) {
+        self.landBlock();
     }
 }
 

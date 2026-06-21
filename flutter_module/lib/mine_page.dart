@@ -71,7 +71,7 @@ class _MinePageState extends State<MinePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xFFE5E5E5),
       body: _bodyView(context),
     );
   }
@@ -82,15 +82,34 @@ class _MinePageState extends State<MinePage> {
           left: 0,
           right: 0,
           top: 0,
-          height: 230 + MediaQuery.of(context).padding.top,
+          height: 250 + MediaQuery.of(context).padding.top,
           child: _headerView(context)),
       Positioned(
-          left: 0,
-          right: 0,
-          top: 160 + MediaQuery.of(context).padding.top,
+          left: 12,
+          right: 12,
+          top: 150 + MediaQuery.of(context).padding.top,
+          height: 60,
+          child: Container(
+            alignment: Alignment.center,
+            clipBehavior: Clip.hardEdge,
+            decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.all(Radius.circular(20))),
+            child: MineCellItem(
+              tag: "mineTouchIndex200",
+              title: '通讯录',
+              icon: 'auth/lianxiren',
+              tap: (tag) {
+                widget.tap(tag);
+              },
+            ),
+          )),
+      Positioned(
+          left: 12,
+          right: 12,
+          top: 60 + 160 + MediaQuery.of(context).padding.top,
           bottom: 0,
           child: Container(
-            width: MediaQuery.of(context).size.width,
             padding: const EdgeInsets.only(top: 16),
             clipBehavior: Clip.hardEdge,
             decoration: const BoxDecoration(
@@ -115,7 +134,11 @@ class _MinePageState extends State<MinePage> {
           children: [
             Row(children: [
               IconButton(
-                icon: Image.asset('images/qiandao-2.png',width:20,height:20,),
+                icon: Image.asset(
+                  'images/qiandao-2.png',
+                  width: 20,
+                  height: 20,
+                ),
                 onPressed: () {
                   widget.tap('mineTouchIndex103');
                 },
@@ -170,19 +193,18 @@ class _MinePageState extends State<MinePage> {
                         style:
                             const TextStyle(fontSize: 18, color: Colors.white)),
                     InkWell(
-                      onTap: () {
-                        if (_idStr.isNotEmpty) {
-                          Clipboard.setData(ClipboardData(text: _idStr));
-                        }
-                        widget.tap('mineTouchIndex105');
-                      },
-                      child: Row(children: [
-                        Text(_idStr.isNotEmpty ? _idStr : '--',
-                          style: const TextStyle(
-                              fontSize: 14, color: Colors.white)),
-                              Icon(Icons.copy, color: Colors.white,size: 16)
-                      ])
-                    )
+                        onTap: () {
+                          if (_idStr.isNotEmpty) {
+                            Clipboard.setData(ClipboardData(text: _idStr));
+                          }
+                          widget.tap('mineTouchIndex105');
+                        },
+                        child: Row(children: [
+                          Text(_idStr.isNotEmpty ? _idStr : '--',
+                              style: const TextStyle(
+                                  fontSize: 14, color: Colors.white)),
+                          Icon(Icons.copy, color: Colors.white, size: 16)
+                        ]))
                   ])),
               InkWell(
                 onTap: () {

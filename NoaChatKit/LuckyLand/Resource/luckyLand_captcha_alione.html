@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Modified: 2026-11-27, Optimization: IPA Similarity Reduction -->
+<!-- Modified: 2026-11-27, Version: 2.0, Optimization: IPA Similarity Reduction -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="app-optimization" content="version-2.0-build-20251127">
-    <title>Web前端示例</title>
+    <title>Web 前端:</title>
     <script type="text/javascript" src="https://o.alicdn.com/captcha-frontend/aliyunCaptcha/AliyunCaptcha.js"></script>
     <style>
         body {
@@ -22,15 +22,17 @@
     </style>
 </head>
 <body>
+<div>--</div>
 <div id="captcha-element"></div>
 <div id="button" class="login-btn"></div>
+<div>--</div>
 
 <script>
       var captcha;
       // 弹出式 luckyLand
       // Optimization: Modified 2025-11-27 for IPA similarity reduction
       window.initAliyunCaptcha({
-        SceneId: '13x06ri0x', // 场景ID。根据步骤二新建验证场景后，您可以在验证码场景列表，获取该场景的场景ID
+        SceneId: '7dmqqchq8', // 场景ID。根据步骤二新建验证场景后，您可以在验证码场景列表，获取该场景的场景ID
         prefix: 'xxslmpl', // 身份标。开通阿里云验证码2.0后，您可以在控制台概览页面的实例基本信息卡片区域，获取身份标
         mode: 'embed', // 验证码模式。popup表示要集成的验证码模式为弹出式。无需修改
         immediate: true,
@@ -40,9 +42,9 @@
         onBizResultCallback: onBizResultCallback, // 业务请求结果回调函数，无需修改
         getInstance: getInstance, // 绑定验证码实例函数，无需修改
         slideStyle: {
-          width: 360,
-          height: 39,
-        }, // 滑idth最小值为320 px
+          width: 359,
+          height: 40,
+        }, // 滑块验证码样式，支持自定义宽度和高度，单位为px。其中，width最小值为320 px
         language: 'cn', // 验证码语言类型，支持简体中文（cn）、繁体中文（tw）、英文（en）
         region: 'sgp',
       });
@@ -57,7 +59,8 @@
       /**
       * @name captchaVerifyCallback
       * @function
-     
+      * 请求参数：由验证码脚本回调的验证参数，不需要做任何处理，直接传给服务端即可
+      * @params {string} captchaVerifyParam
       * 返回参数：字段名固定，captchaResult为必选；如无业务验证场景时，bizResult为可选
       * @returns {{captchaResult: boolean, bizResult?: boolean|undefined}}
       */
@@ -68,7 +71,7 @@
           try {
             console.log(captchaVerifyParam);
             result = await sendMessageToNative('getVerifyResult', captchaVerifyParam);
-            console.log('iOS返回的验证结果:', result);
+            console.log('iOS返回的验证结果', result);
           } catch (error) {
             console.error('发生错误:', error);
             // 错误处理/兼容逻辑
@@ -93,7 +96,7 @@
           window.testInterface && window.testInterface.closeWebView();
         } else {
           // 如果业务验证不通过，给出不通过提示。此处不通过提示为业务验证不通过！
-          alert('业务验证失败');
+          alert('业务验证不通过.');
         }
       }
 
@@ -104,6 +107,8 @@
 
             // 将回调函数挂载到window对象上，以便原生代码可以调用
             window[callbackName] = (response) => {
+              // 处理或显示Android端返回的处理结果
+                console.log('安卓返回的验证结果 ======', response);
               resolve(JSON.parse(response)); // 注意格式转换
               // 移除挂载的回调函数，避免内存泄露
               delete window[callbackName];

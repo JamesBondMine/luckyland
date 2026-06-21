@@ -30,6 +30,8 @@
 #import "NoaQRCodeModel.h"
 #import <SDWebImage/SDWebImage.h>
 
+#import "LuckLandContactVC.h"
+
 
 static NSString * const kFlutterBridgeChannelName = @"com.noa.flutter/bridge";
 static NSString * const kFlutterMineAvatarCachePrefix = @"flutter_mine_avatar";
@@ -178,7 +180,10 @@ static NSString * const kFlutterMineAvatarCachePrefix = @"flutter_mine_avatar";
         }
 
         ZLoginAndRegisterTypeMenu registerWay = NSNotFound;
-        if ([action isEqualToString:@"mineTouchIndex0"]) {
+        if ([action isEqualToString:@"mineTouchIndex200"]) {
+            LuckLandContactVC *teamVC = [LuckLandContactVC new];
+            [self openFullScreen:teamVC];
+        } else if ([action isEqualToString:@"mineTouchIndex0"]) {
             NoaTeamListVC *teamVC = [NoaTeamListVC new];
             [self openFullScreen:teamVC];
         } else if ([action isEqualToString:@"mineTouchIndex1"]) {

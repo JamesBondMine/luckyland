@@ -13,10 +13,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef void (^ZSessionTopAddBlock) (ZSessionMoreActionType actionType);
 typedef void (^ZSessionTopSearchBlock) (void);
+typedef void (^ZSessionTopLandBlock) (void);
 typedef void (^ZSessionTopAvatarTapBlock) (void);
 
 @interface NoaSessionTopView : UIView
 @property (nonatomic, copy) ZSessionTopSearchBlock searchBlock;
+@property (nonatomic, copy) ZSessionTopLandBlock landBlock;
 @property (nonatomic, copy) ZSessionTopAddBlock addBlock;
 @property (nonatomic, copy) ZSessionTopAvatarTapBlock avatarTapBlock;
 @property (nonatomic, assign) BOOL showLoading;

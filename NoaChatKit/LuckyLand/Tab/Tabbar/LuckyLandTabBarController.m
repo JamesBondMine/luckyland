@@ -96,10 +96,10 @@
     _vcSession = [LuckyLandConversationViewController new];
     [self addChildViewController:_vcSession imageNormal:@"luck_t2_d" imageSelected:@"luck_t2_a" title:LanguageToolMatch(@"消息") tag:1001];
     
-    _vcContact = [LuckLandContactVC new];
-    [self addChildViewController:_vcContact imageNormal:@"luck_t3_d" imageSelected:@"luck_t3_a" title:LanguageToolMatch(@"通讯录") tag:1002];
-    
-    
+//    _vcContact = [LuckLandContactVC new];
+//    [self addChildViewController:_vcContact imageNormal:@"luck_t3_d" imageSelected:@"luck_t3_a" title:LanguageToolMatch(@"通讯录") tag:1002];
+//    
+//    
     _mineVc  = [FlutterTallkMineViewController new];
     [self addChildViewController:_mineVc imageNormal:@"luck_t4_d" imageSelected:@"luck_t4_a" title:LanguageToolMatch(@"我的") tag:1003];
     

@@ -53,13 +53,13 @@
     // 加载本地 HTML
     if (ZHostTool.appSysSetModel.captchaChannel == 3) {
         //腾讯云
-        NSURL *htmlURL = [[NSBundle mainBundle] URLForResource:@"noa_luckyLand_captcha_tx" withExtension:@"html"];
+        NSURL *htmlURL = [[NSBundle mainBundle] URLForResource:@"luckyLand_captcha_tx" withExtension:@"html"];
         [self.webView loadFileURL:htmlURL allowingReadAccessToURL:htmlURL];
     }
     if (ZHostTool.appSysSetModel.captchaChannel == 4) {
         //阿里云
         self.aliyunVerNum += 1;
-        NSURL *htmlURL = [[NSBundle mainBundle] URLForResource:@"noa_LuckyLand_captcha_alione" withExtension:@"html"];
+        NSURL *htmlURL = [[NSBundle mainBundle] URLForResource:@"luckyLand_captcha_alione" withExtension:@"html"];
         [self.webView loadFileURL:htmlURL allowingReadAccessToURL:htmlURL];
     }
 }
@@ -109,7 +109,7 @@
     if (ZHostTool.appSysSetModel.captchaChannel == 4) {
         //阿里云
         self.aliyunVerNum += 1;
-        NSURL *htmlURL = [[NSBundle mainBundle] URLForResource:@"noa_luckyLand_captcha_alitwo" withExtension:@"html"];
+        NSURL *htmlURL = [[NSBundle mainBundle] URLForResource:@"luckyLand_captcha_alitwo" withExtension:@"html"];
         [self.webView loadFileURL:htmlURL allowingReadAccessToURL:htmlURL];
     }
     

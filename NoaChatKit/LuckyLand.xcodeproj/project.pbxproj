@@ -342,12 +342,12 @@
 		04A99FC82B96EF2900DFD946 /* NoaFileUploadTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A99FC72B96EF2900DFD946 /* NoaFileUploadTools.m */; };
 		04A9FCF82A19F1E700960096 /* NoaFriendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A9FCF72A19F1E700960096 /* NoaFriendModel.m */; };
 		04AA729628F80CE800985862 /* NoaChatTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AA729528F80CE800985862 /* NoaChatTopView.m */; };
-		04AAE0DD2CDB3BB60090660F /* noa_LuckyLand_captcha_alione.html in Resources */ = {isa = PBXBuildFile; fileRef = 04AAE0DB2CDB3BB60090660F /* noa_LuckyLand_captcha_alione.html */; };
-		04AAE0DE2CDB3BB60090660F /* noa_luckyLand_captcha_alitwo.html in Resources */ = {isa = PBXBuildFile; fileRef = 04AAE0DC2CDB3BB60090660F /* noa_luckyLand_captcha_alitwo.html */; };
+		04AAE0DD2CDB3BB60090660F /* luckyLand_captcha_alione.html in Resources */ = {isa = PBXBuildFile; fileRef = 04AAE0DB2CDB3BB60090660F /* luckyLand_captcha_alione.html */; };
+		04AAE0DE2CDB3BB60090660F /* luckyLand_captcha_alitwo.html in Resources */ = {isa = PBXBuildFile; fileRef = 04AAE0DC2CDB3BB60090660F /* luckyLand_captcha_alitwo.html */; };
 		04AAF7A128F69D6D006ABF40 /* NoaMessageAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AAF7A028F69D6D006ABF40 /* NoaMessageAlertView.m */; };
 		04AAF7A528F6C1D5006ABF40 /* NoaMessageTimeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AAF7A428F6C1D5006ABF40 /* NoaMessageTimeTool.m */; };
 		04ACB0752A3C455400FA82E8 /* NoaFileOssInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04ACB0742A3C455300FA82E8 /* NoaFileOssInfoModel.m */; };
-		04ACC8D42CD4A26F00629B5B /* noa_luckyLand_captcha_tx.html in Resources */ = {isa = PBXBuildFile; fileRef = 04ACC8D32CD4A26F00629B5B /* noa_luckyLand_captcha_tx.html */; };
+		04ACC8D42CD4A26F00629B5B /* luckyLand_captcha_tx.html in Resources */ = {isa = PBXBuildFile; fileRef = 04ACC8D32CD4A26F00629B5B /* luckyLand_captcha_tx.html */; };
 		04AD93DD29225509007D2885 /* NoaChangeUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AD93DC29225509007D2885 /* NoaChangeUserInfoViewController.m */; };
 		04AE18662B4F79C9007D33F8 /* NoaBaseUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AE18652B4F79C9007D33F8 /* NoaBaseUserModel.m */; };
 		04AE186C2B4F915C007D33F8 /* NoaInviteFriendHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AE186B2B4F915C007D33F8 /* NoaInviteFriendHeaderView.m */; };
@@ -1465,8 +1465,8 @@
 		04A9FCF72A19F1E700960096 /* NoaFriendModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaFriendModel.m; sourceTree = "<group>"; };
 		04AA729428F80CE800985862 /* NoaChatTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaChatTopView.h; sourceTree = "<group>"; };
 		04AA729528F80CE800985862 /* NoaChatTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaChatTopView.m; sourceTree = "<group>"; };
-		04AAE0DB2CDB3BB60090660F /* noa_LuckyLand_captcha_alione.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = noa_LuckyLand_captcha_alione.html; sourceTree = "<group>"; };
-		04AAE0DC2CDB3BB60090660F /* noa_luckyLand_captcha_alitwo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = noa_luckyLand_captcha_alitwo.html; sourceTree = "<group>"; };
+		04AAE0DB2CDB3BB60090660F /* luckyLand_captcha_alione.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = luckyLand_captcha_alione.html; sourceTree = "<group>"; };
+		04AAE0DC2CDB3BB60090660F /* luckyLand_captcha_alitwo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = luckyLand_captcha_alitwo.html; sourceTree = "<group>"; };
 		04AAF79F28F69D6D006ABF40 /* NoaMessageAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaMessageAlertView.h; sourceTree = "<group>"; };
 		04AAF7A028F69D6D006ABF40 /* NoaMessageAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaMessageAlertView.m; sourceTree = "<group>"; };
 		04AAF7A328F6C1D5006ABF40 /* NoaMessageTimeTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaMessageTimeTool.h; sourceTree = "<group>"; };
@@ -1474,7 +1474,7 @@
 		04ACB0732A3C455300FA82E8 /* NoaFileOssInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaFileOssInfoModel.h; sourceTree = "<group>"; };
 		04ACB0742A3C455300FA82E8 /* NoaFileOssInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaFileOssInfoModel.m; sourceTree = "<group>"; };
 		04ACB2162C9EDE03000F17C3 /* AliyunOSSiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AliyunOSSiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		04ACC8D32CD4A26F00629B5B /* noa_luckyLand_captcha_tx.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = noa_luckyLand_captcha_tx.html; sourceTree = "<group>"; };
+		04ACC8D32CD4A26F00629B5B /* luckyLand_captcha_tx.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = luckyLand_captcha_tx.html; sourceTree = "<group>"; };
 		04AD93DB29225509007D2885 /* NoaChangeUserInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaChangeUserInfoViewController.h; sourceTree = "<group>"; };
 		04AD93DC29225509007D2885 /* NoaChangeUserInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaChangeUserInfoViewController.m; sourceTree = "<group>"; };
 		04AE18642B4F79C9007D33F8 /* NoaBaseUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaBaseUserModel.h; sourceTree = "<group>"; };
@@ -4649,9 +4649,9 @@
 		04F9D5F428BDF391000AE80A /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				04AAE0DB2CDB3BB60090660F /* noa_LuckyLand_captcha_alione.html */,
-				04AAE0DC2CDB3BB60090660F /* noa_luckyLand_captcha_alitwo.html */,
-				04ACC8D32CD4A26F00629B5B /* noa_luckyLand_captcha_tx.html */,
+				04AAE0DB2CDB3BB60090660F /* luckyLand_captcha_alione.html */,
+				04AAE0DC2CDB3BB60090660F /* luckyLand_captcha_alitwo.html */,
+				04ACC8D32CD4A26F00629B5B /* luckyLand_captcha_tx.html */,
 				04BD6BE729D29B250021750F /* luckyland_constant.db */,
 				880BDEE32FE794F5003321BC /* LuckyFlutterToFile.plist */,
 				04C0D5532989F9C200C926D3 /* LuckyMineToFile.plist */,
@@ -6043,11 +6043,11 @@
 				042240382A8E00D500350D31 /* EmojiResource.xcassets in Resources */,
 				18B1535D28A2703E0033CB51 /* LaunchScreen.storyboard in Resources */,
 				04882509298C999800FC58CB /* KNPhotoBrowser.bundle in Resources */,
-				04ACC8D42CD4A26F00629B5B /* noa_luckyLand_captcha_tx.html in Resources */,
+				04ACC8D42CD4A26F00629B5B /* luckyLand_captcha_tx.html in Resources */,
 				880D8AA32FE25C8A00D1578F /* LuckyLandHomeViewController.xib in Resources */,
 				04A5FD992A3B324500E532A4 /* InfoPlist.strings in Resources */,
-				04AAE0DE2CDB3BB60090660F /* noa_luckyLand_captcha_alitwo.html in Resources */,
-				04AAE0DD2CDB3BB60090660F /* noa_LuckyLand_captcha_alione.html in Resources */,
+				04AAE0DE2CDB3BB60090660F /* luckyLand_captcha_alitwo.html in Resources */,
+				04AAE0DD2CDB3BB60090660F /* luckyLand_captcha_alione.html in Resources */,
 				8808EC392FE773A5003CEAFD /* MessageReceiveCustomViewController.xib in Resources */,
 				18B1535A28A2703E0033CB51 /* Assets.xcassets in Resources */,
 				18B1535828A2703D0033CB51 /* Main.storyboard in Resources */,
@@ -7057,11 +7057,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = LuckyLand/NoaChatKit.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6ZPN4Y6M3U;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 38544L6R8V;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -7297,9 +7299,10 @@
 					"-force_load",
 					"$(SRCROOT)/LuckyLand/Base/Tools/ThirdLibs/OBS/OBS.framework/OBS",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cn.healone.user;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codeappyang.jjtufy;
 				PRODUCT_NAME = "幸运岛";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = 519;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
@@ -7325,11 +7328,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = LuckyLand/NoaChatKit.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6ZPN4Y6M3U;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 38544L6R8V;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -7565,9 +7570,10 @@
 					"-force_load",
 					"$(SRCROOT)/LuckyLand/Base/Tools/ThirdLibs/OBS/OBS.framework/OBS",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cn.healone.user;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codeappyang.jjtufy;
 				PRODUCT_NAME = "幸运岛";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = 519;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
