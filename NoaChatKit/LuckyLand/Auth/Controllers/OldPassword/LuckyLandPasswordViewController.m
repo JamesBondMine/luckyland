@@ -1,18 +1,18 @@
 //
-//  NoaPasswordViewController.m
+//  LuckyLandPasswordViewController.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2026/9/19.
 //
 
-#import "NoaPasswordViewController.h"
+#import "LuckyLandPasswordViewController.h"
 #import "NoaInputTextView.h"
 #import "NoaToolManager.h"
 #import "AppDelegate.h"
 #import "AppDelegate+DB.h"
 #import "AppDelegate+MediaCall.h"
 #import "AppDelegate+MiniApp.h"
-#import "NoaFindPasswordViewController.h"
+#import "LuckyLandFindPasswordViewController.h"
 #import "LuckyLandAuthInputTools.h"
 #import "NoaImgVerCodeView.h"
 #import "LXChatEncrypt.h"
@@ -22,7 +22,7 @@
 #import "NoaWeakPwdCheckTool.h"
 #import "NoaEncryptKeyGuard.h"
 
-@interface NoaPasswordViewController ()
+@interface LuckyLandPasswordViewController ()
 
 @property (nonatomic, strong)NoaInputTextView *passwordInput;
 @property (nonatomic, strong)UIButton *switchBtn;
@@ -37,7 +37,7 @@
 
 @end
 
-@implementation NoaPasswordViewController
+@implementation LuckyLandPasswordViewController
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -321,7 +321,7 @@
 }
 
 - (void)forgetPasswordAction {
-    NoaFindPasswordViewController *findPasswordVC = [[NoaFindPasswordViewController alloc] init];
+    LuckyLandFindPasswordViewController *findPasswordVC = [[LuckyLandFindPasswordViewController alloc] init];
     findPasswordVC.loginInfo = self.loginInfo;
     findPasswordVC.findPasswordWay = self.loginType;
     [self.navigationController pushViewController:findPasswordVC animated:YES];

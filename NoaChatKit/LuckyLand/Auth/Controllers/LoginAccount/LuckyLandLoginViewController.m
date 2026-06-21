@@ -1,14 +1,14 @@
 //
-//  NoaLoginViewController.m
+//  LuckyLandLoginViewController.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2026/8/30.
 //
 
-#import "NoaLoginViewController.h"
+#import "LuckyLandLoginViewController.h"
 #import "FlutterRegisterTypeViewController.h"
-#import "NoaRegisterViewController.h"
-#import "NoaPasswordViewController.h"
+#import "LuckyLandRegisterViewController.h"
+#import "LuckyLandPasswordViewController.h"
 #import "NoaAlertTipView.h"
 #import "ProtocolPolicyView.h"
 #import "LoginTypeMenuView.h"
@@ -31,11 +31,11 @@
 // 手机号选择区号页面
 #import "LuckyLandCountryCodeViewController.h"
 // 验证码登录
-#import "NoaVerCodeLoginViewController.h"
+#import "LuckyLandVerCodeLoginViewController.h"
 // 忘记密码
-#import "NoaForgetPasswordViewController.h"
+#import "LuckyLandForgetPasswordViewController.h"
 
-@interface NoaLoginViewController ()
+@interface LuckyLandLoginViewController ()
 
 /// 重新声明 blurView 为子类类型，覆盖父类的声明
 @property (nonatomic, strong, readwrite) NoaLoginAccountManagerView *blurView;
@@ -45,7 +45,7 @@
 
 @end
 
-@implementation NoaLoginViewController
+@implementation LuckyLandLoginViewController
 
 // MARK: dealloc
 - (void)dealloc {
@@ -164,7 +164,7 @@
         ZLoginAndRegisterTypeMenu loginTypeMenu = self.dataHandle.currentLoginTypeMenu;
         NSString *inputAccount = [self.dataHandle getAccountText];
         
-        NoaVerCodeLoginViewController *verCodeLoginVC = [[NoaVerCodeLoginViewController alloc] init];
+        LuckyLandVerCodeLoginViewController *verCodeLoginVC = [[LuckyLandVerCodeLoginViewController alloc] init];
         verCodeLoginVC.currentVerCodeLoginType = loginTypeMenu;
         verCodeLoginVC.areaCode = [self.dataHandle getAreaCode];
         verCodeLoginVC.loginAccount = inputAccount;
@@ -177,7 +177,7 @@
         ZLoginAndRegisterTypeMenu loginTypeMenu = self.dataHandle.currentLoginTypeMenu;
         NSString *inputAccount = [self.dataHandle getAccountText];
         
-        NoaForgetPasswordViewController *forgetPasswordVC = [[NoaForgetPasswordViewController alloc] init];
+        LuckyLandForgetPasswordViewController *forgetPasswordVC = [[LuckyLandForgetPasswordViewController alloc] init];
         forgetPasswordVC.currentResetPasswordType = loginTypeMenu;
         forgetPasswordVC.areaCode = [self.dataHandle getAreaCode];
         forgetPasswordVC.resetAccount = inputAccount;

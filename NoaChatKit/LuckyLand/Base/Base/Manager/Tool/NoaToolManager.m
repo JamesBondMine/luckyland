@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 #import "LuckyLandTabBarController.h"
 #import "NoaNavigationController.h"
-#import "NoaLoginViewController.h"
+#import "LuckyLandLoginViewController.h"
 //#import "NoaSsoSetViewController.h"
 #import "LuckyLandSsoSetViewController.h"
 #import "NoaAppStartErrorDefaultViewController.h"
@@ -229,7 +229,7 @@ static NSString *g_CurrentLoganPublishURL = nil; // 内存记录当前 Logan pub
 #pragma mark - 设置登录界面
 - (void)setupLoginUI {
     UIViewController *currentVC = CurrentVC;
-    if ([currentVC isKindOfClass:[NoaLoginViewController class]]) {
+    if ([currentVC isKindOfClass:[LuckyLandLoginViewController class]]) {
         // 如果当前已经是登录页面了，就没必要再次设置了(避免重复操作)
         return;
     }
@@ -237,7 +237,7 @@ static NSString *g_CurrentLoganPublishURL = nil; // 内存记录当前 Logan pub
     if (currentVC.navigationController && currentVC.navigationController.viewControllers > 0) {
         __block UIViewController *loginVC = nil;
         [currentVC.navigationController.viewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            if ([obj isKindOfClass:[NoaLoginViewController class]]) {
+            if ([obj isKindOfClass:[LuckyLandLoginViewController class]]) {
                 // 如果当前是登录页面push了，就没必要再次设置了(避免重复操作)，直接pop返回即可
                 loginVC = obj;
                 *stop = YES;
@@ -266,7 +266,7 @@ static NSString *g_CurrentLoganPublishURL = nil; // 内存记录当前 Logan pub
     // TODO: 主动断开socket连接，然后重连，避免收到上一个账号(同一个socket的消息)
     [IMSDKManager toolDisconnectCanReconnect];
     //设置主界面未登录界面
-    NoaLoginViewController *loginVC = [NoaLoginViewController new];
+    LuckyLandLoginViewController *loginVC = [LuckyLandLoginViewController new];
     NoaNavigationController *nav = [[NoaNavigationController alloc] initWithRootViewController:loginVC];
     AppDelegate *appdelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     appdelegate.window.rootViewController = nav;
@@ -342,7 +342,7 @@ static NSString *g_CurrentLoganPublishURL = nil; // 内存记录当前 Logan pub
             // TODO: 主动断开socket连接，然后重连，避免收到上一个账号(同一个socket的消息)
             [IMSDKManager toolDisconnectCanReconnect];
             //跳转到登录页面
-            NoaLoginViewController *loginVC = [NoaLoginViewController new];
+            LuckyLandLoginViewController *loginVC = [LuckyLandLoginViewController new];
             NoaNavigationController *nav = [[NoaNavigationController alloc] initWithRootViewController:loginVC];
             AppDelegate *appdelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
             appdelegate.window.rootViewController = nav;

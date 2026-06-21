@@ -659,14 +659,14 @@
 		881556482FA88BE9004702A6 /* LuckyLandAuthPCloginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555B12FA88BE9004702A6 /* LuckyLandAuthPCloginViewController.m */; };
 		881556492FA88BE9004702A6 /* LuckyLandSafeCodeAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555B32FA88BE9004702A6 /* LuckyLandSafeCodeAuthViewController.m */; };
 		8815564B2FA88BE9004702A6 /* LuckyLandCountryCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555B82FA88BE9004702A6 /* LuckyLandCountryCodeViewController.m */; };
-		8815564C2FA88BE9004702A6 /* NoaForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555BB2FA88BE9004702A6 /* NoaForgetPasswordViewController.m */; };
-		8815564D2FA88BE9004702A6 /* NoaGetImgVerCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555BE2FA88BE9004702A6 /* NoaGetImgVerCodeViewController.m */; };
-		8815564E2FA88BE9004702A6 /* NoaLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555C12FA88BE9004702A6 /* NoaLoginViewController.m */; };
-		8815564F2FA88BE9004702A6 /* NoaFindPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555C42FA88BE9004702A6 /* NoaFindPasswordViewController.m */; };
-		881556502FA88BE9004702A6 /* NoaPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555C62FA88BE9004702A6 /* NoaPasswordViewController.m */; };
-		881556522FA88BE9004702A6 /* NoaRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555CB2FA88BE9004702A6 /* NoaRegisterViewController.m */; };
+		8815564C2FA88BE9004702A6 /* LuckyLandForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555BB2FA88BE9004702A6 /* LuckyLandForgetPasswordViewController.m */; };
+		8815564D2FA88BE9004702A6 /* LuckyLandGetImgVerCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555BE2FA88BE9004702A6 /* LuckyLandGetImgVerCodeViewController.m */; };
+		8815564E2FA88BE9004702A6 /* LuckyLandLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555C12FA88BE9004702A6 /* LuckyLandLoginViewController.m */; };
+		8815564F2FA88BE9004702A6 /* LuckyLandFindPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555C42FA88BE9004702A6 /* LuckyLandFindPasswordViewController.m */; };
+		881556502FA88BE9004702A6 /* LuckyLandPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555C62FA88BE9004702A6 /* LuckyLandPasswordViewController.m */; };
+		881556522FA88BE9004702A6 /* LuckyLandRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555CB2FA88BE9004702A6 /* LuckyLandRegisterViewController.m */; };
 		881556532FA88BE9004702A6 /* NoaSsoSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555CE2FA88BE9004702A6 /* NoaSsoSetViewController.m */; };
-		881556542FA88BE9004702A6 /* NoaVerCodeLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555D12FA88BE9004702A6 /* NoaVerCodeLoginViewController.m */; };
+		881556542FA88BE9004702A6 /* LuckyLandVerCodeLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555D12FA88BE9004702A6 /* LuckyLandVerCodeLoginViewController.m */; };
 		881556552FA88BE9004702A6 /* NoaForgetPasswordDataHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555D52FA88BE9004702A6 /* NoaForgetPasswordDataHandle.m */; };
 		881556562FA88BE9004702A6 /* NoaGetImgVerCodeBlurDataHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555D82FA88BE9004702A6 /* NoaGetImgVerCodeBlurDataHandle.m */; };
 		881556572FA88BE9004702A6 /* NoaLoginAccountDataHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555DB2FA88BE9004702A6 /* NoaLoginAccountDataHandle.m */; };
@@ -2093,22 +2093,22 @@
 		881555B32FA88BE9004702A6 /* LuckyLandSafeCodeAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuckyLandSafeCodeAuthViewController.m; sourceTree = "<group>"; };
 		881555B72FA88BE9004702A6 /* LuckyLandCountryCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuckyLandCountryCodeViewController.h; sourceTree = "<group>"; };
 		881555B82FA88BE9004702A6 /* LuckyLandCountryCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuckyLandCountryCodeViewController.m; sourceTree = "<group>"; };
-		881555BA2FA88BE9004702A6 /* NoaForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaForgetPasswordViewController.h; sourceTree = "<group>"; };
-		881555BB2FA88BE9004702A6 /* NoaForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaForgetPasswordViewController.m; sourceTree = "<group>"; };
-		881555BD2FA88BE9004702A6 /* NoaGetImgVerCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaGetImgVerCodeViewController.h; sourceTree = "<group>"; };
-		881555BE2FA88BE9004702A6 /* NoaGetImgVerCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaGetImgVerCodeViewController.m; sourceTree = "<group>"; };
-		881555C02FA88BE9004702A6 /* NoaLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaLoginViewController.h; sourceTree = "<group>"; };
-		881555C12FA88BE9004702A6 /* NoaLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaLoginViewController.m; sourceTree = "<group>"; };
-		881555C32FA88BE9004702A6 /* NoaFindPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaFindPasswordViewController.h; sourceTree = "<group>"; };
-		881555C42FA88BE9004702A6 /* NoaFindPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaFindPasswordViewController.m; sourceTree = "<group>"; };
-		881555C52FA88BE9004702A6 /* NoaPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaPasswordViewController.h; sourceTree = "<group>"; };
-		881555C62FA88BE9004702A6 /* NoaPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaPasswordViewController.m; sourceTree = "<group>"; };
-		881555CA2FA88BE9004702A6 /* NoaRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaRegisterViewController.h; sourceTree = "<group>"; };
-		881555CB2FA88BE9004702A6 /* NoaRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaRegisterViewController.m; sourceTree = "<group>"; };
+		881555BA2FA88BE9004702A6 /* LuckyLandForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuckyLandForgetPasswordViewController.h; sourceTree = "<group>"; };
+		881555BB2FA88BE9004702A6 /* LuckyLandForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuckyLandForgetPasswordViewController.m; sourceTree = "<group>"; };
+		881555BD2FA88BE9004702A6 /* LuckyLandGetImgVerCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuckyLandGetImgVerCodeViewController.h; sourceTree = "<group>"; };
+		881555BE2FA88BE9004702A6 /* LuckyLandGetImgVerCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuckyLandGetImgVerCodeViewController.m; sourceTree = "<group>"; };
+		881555C02FA88BE9004702A6 /* LuckyLandLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuckyLandLoginViewController.h; sourceTree = "<group>"; };
+		881555C12FA88BE9004702A6 /* LuckyLandLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuckyLandLoginViewController.m; sourceTree = "<group>"; };
+		881555C32FA88BE9004702A6 /* LuckyLandFindPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuckyLandFindPasswordViewController.h; sourceTree = "<group>"; };
+		881555C42FA88BE9004702A6 /* LuckyLandFindPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuckyLandFindPasswordViewController.m; sourceTree = "<group>"; };
+		881555C52FA88BE9004702A6 /* LuckyLandPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuckyLandPasswordViewController.h; sourceTree = "<group>"; };
+		881555C62FA88BE9004702A6 /* LuckyLandPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuckyLandPasswordViewController.m; sourceTree = "<group>"; };
+		881555CA2FA88BE9004702A6 /* LuckyLandRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuckyLandRegisterViewController.h; sourceTree = "<group>"; };
+		881555CB2FA88BE9004702A6 /* LuckyLandRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuckyLandRegisterViewController.m; sourceTree = "<group>"; };
 		881555CD2FA88BE9004702A6 /* NoaSsoSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaSsoSetViewController.h; sourceTree = "<group>"; };
 		881555CE2FA88BE9004702A6 /* NoaSsoSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaSsoSetViewController.m; sourceTree = "<group>"; };
-		881555D02FA88BE9004702A6 /* NoaVerCodeLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaVerCodeLoginViewController.h; sourceTree = "<group>"; };
-		881555D12FA88BE9004702A6 /* NoaVerCodeLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaVerCodeLoginViewController.m; sourceTree = "<group>"; };
+		881555D02FA88BE9004702A6 /* LuckyLandVerCodeLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuckyLandVerCodeLoginViewController.h; sourceTree = "<group>"; };
+		881555D12FA88BE9004702A6 /* LuckyLandVerCodeLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuckyLandVerCodeLoginViewController.m; sourceTree = "<group>"; };
 		881555D42FA88BE9004702A6 /* NoaForgetPasswordDataHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaForgetPasswordDataHandle.h; sourceTree = "<group>"; };
 		881555D52FA88BE9004702A6 /* NoaForgetPasswordDataHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaForgetPasswordDataHandle.m; sourceTree = "<group>"; };
 		881555D72FA88BE9004702A6 /* NoaGetImgVerCodeBlurDataHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaGetImgVerCodeBlurDataHandle.h; sourceTree = "<group>"; };
@@ -5382,8 +5382,8 @@
 		881555BC2FA88BE9004702A6 /* forgetPassword */ = {
 			isa = PBXGroup;
 			children = (
-				881555BA2FA88BE9004702A6 /* NoaForgetPasswordViewController.h */,
-				881555BB2FA88BE9004702A6 /* NoaForgetPasswordViewController.m */,
+				881555BA2FA88BE9004702A6 /* LuckyLandForgetPasswordViewController.h */,
+				881555BB2FA88BE9004702A6 /* LuckyLandForgetPasswordViewController.m */,
 			);
 			path = forgetPassword;
 			sourceTree = "<group>";
@@ -5391,8 +5391,8 @@
 		881555BF2FA88BE9004702A6 /* ImageVerCode */ = {
 			isa = PBXGroup;
 			children = (
-				881555BD2FA88BE9004702A6 /* NoaGetImgVerCodeViewController.h */,
-				881555BE2FA88BE9004702A6 /* NoaGetImgVerCodeViewController.m */,
+				881555BD2FA88BE9004702A6 /* LuckyLandGetImgVerCodeViewController.h */,
+				881555BE2FA88BE9004702A6 /* LuckyLandGetImgVerCodeViewController.m */,
 			);
 			path = ImageVerCode;
 			sourceTree = "<group>";
@@ -5400,8 +5400,8 @@
 		881555C22FA88BE9004702A6 /* LoginAccount */ = {
 			isa = PBXGroup;
 			children = (
-				881555C02FA88BE9004702A6 /* NoaLoginViewController.h */,
-				881555C12FA88BE9004702A6 /* NoaLoginViewController.m */,
+				881555C02FA88BE9004702A6 /* LuckyLandLoginViewController.h */,
+				881555C12FA88BE9004702A6 /* LuckyLandLoginViewController.m */,
 			);
 			path = LoginAccount;
 			sourceTree = "<group>";
@@ -5409,10 +5409,10 @@
 		881555C72FA88BE9004702A6 /* OldPassword */ = {
 			isa = PBXGroup;
 			children = (
-				881555C32FA88BE9004702A6 /* NoaFindPasswordViewController.h */,
-				881555C42FA88BE9004702A6 /* NoaFindPasswordViewController.m */,
-				881555C52FA88BE9004702A6 /* NoaPasswordViewController.h */,
-				881555C62FA88BE9004702A6 /* NoaPasswordViewController.m */,
+				881555C32FA88BE9004702A6 /* LuckyLandFindPasswordViewController.h */,
+				881555C42FA88BE9004702A6 /* LuckyLandFindPasswordViewController.m */,
+				881555C52FA88BE9004702A6 /* LuckyLandPasswordViewController.h */,
+				881555C62FA88BE9004702A6 /* LuckyLandPasswordViewController.m */,
 			);
 			path = OldPassword;
 			sourceTree = "<group>";
@@ -5420,8 +5420,8 @@
 		881555CC2FA88BE9004702A6 /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				881555CA2FA88BE9004702A6 /* NoaRegisterViewController.h */,
-				881555CB2FA88BE9004702A6 /* NoaRegisterViewController.m */,
+				881555CA2FA88BE9004702A6 /* LuckyLandRegisterViewController.h */,
+				881555CB2FA88BE9004702A6 /* LuckyLandRegisterViewController.m */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -5438,8 +5438,8 @@
 		881555D22FA88BE9004702A6 /* VerCodeLogin */ = {
 			isa = PBXGroup;
 			children = (
-				881555D02FA88BE9004702A6 /* NoaVerCodeLoginViewController.h */,
-				881555D12FA88BE9004702A6 /* NoaVerCodeLoginViewController.m */,
+				881555D02FA88BE9004702A6 /* LuckyLandVerCodeLoginViewController.h */,
+				881555D12FA88BE9004702A6 /* LuckyLandVerCodeLoginViewController.m */,
 			);
 			path = VerCodeLogin;
 			sourceTree = "<group>";
@@ -6189,7 +6189,7 @@
 				8815565B2FA88BE9004702A6 /* NoaRegisterTypeModel.m in Sources */,
 				04D21EE32A6688E0000B4572 /* NoaChatNavLinkSettingView.m in Sources */,
 				048824B22986227800FC58CB /* NoaMediaCallVideoView.m in Sources */,
-				881556542FA88BE9004702A6 /* NoaVerCodeLoginViewController.m in Sources */,
+				881556542FA88BE9004702A6 /* LuckyLandVerCodeLoginViewController.m in Sources */,
 				045DDC0D2918FFB90031F7F5 /* NoaGroupSetBasicInfoCell.m in Sources */,
 				04882508298C999800FC58CB /* KNPhotoAVPlayerView.m in Sources */,
 				881556532FA88BE9004702A6 /* NoaSsoSetViewController.m in Sources */,
@@ -6468,12 +6468,12 @@
 				049EAAC42B86D6D4004C625B /* NoaNoticeTranslateModel.m in Sources */,
 				C3C434272E2E45CF003D6185 /* NoaTeamListCell.m in Sources */,
 				04DF65C12940A28500D77C52 /* NoaMessageForwardTipView.m in Sources */,
-				8815564D2FA88BE9004702A6 /* NoaGetImgVerCodeViewController.m in Sources */,
+				8815564D2FA88BE9004702A6 /* LuckyLandGetImgVerCodeViewController.m in Sources */,
 				04741B3E298B4A57009F7F02 /* NoaChatHistoryFileCell.m in Sources */,
 				04CDB51329221DA700EFEABA /* NoaGroupManageMemberCell.m in Sources */,
 				C3C434302E2E9395003D6185 /* NoaTeamCreateView.m in Sources */,
 				04B45C3129E52FAA00E37A41 /* NoaChatMultiSelectViewController.m in Sources */,
-				881556522FA88BE9004702A6 /* NoaRegisterViewController.m in Sources */,
+				881556522FA88BE9004702A6 /* LuckyLandRegisterViewController.m in Sources */,
 				0432116F2C32914A00E7919E /* NoaWebCacheManager.m in Sources */,
 				2D88CB3D2E9F98C000490906 /* NoaNetworkDetectionView.m in Sources */,
 				04C78CD52D1D259A00A99BA6 /* NoaSignInRuleModel.m in Sources */,
@@ -6533,7 +6533,7 @@
 				2D88CB402E9FA54200490906 /* NoaNetworkDetectionTopHeaderView.m in Sources */,
 				049F6A4E2BBBA40000E0C75B /* NoaChatImgEmojiToolsView.m in Sources */,
 				04C959592AA1D79F006F75F5 /* NoaHttpResponse.m in Sources */,
-				8815564C2FA88BE9004702A6 /* NoaForgetPasswordViewController.m in Sources */,
+				8815564C2FA88BE9004702A6 /* LuckyLandForgetPasswordViewController.m in Sources */,
 				042240392A8E00D500350D31 /* NoaChatInputView.m in Sources */,
 				046A28E72999CEF1008A5BE7 /* NoaMediaCallMoreLayout.m in Sources */,
 				0430E1D029EFE75B0071B489 /* NoaCollectionVideoCell.m in Sources */,
@@ -6622,7 +6622,7 @@
 				041EEB8629F52E3A00CDCC1A /* NoaGestureLockIndicatorView.m in Sources */,
 				042D7F58291E873400D2BB59 /* NoaChatHistoryTextVC.m in Sources */,
 				04E5192D295BE02500EF0500 /* NoaLanguageSettingCell.m in Sources */,
-				8815564F2FA88BE9004702A6 /* NoaFindPasswordViewController.m in Sources */,
+				8815564F2FA88BE9004702A6 /* LuckyLandFindPasswordViewController.m in Sources */,
 				046A29FC299C8766008A5BE7 /* NoaMediaCallMoreContentView.m in Sources */,
 				881556602FA88BE9004702A6 /* NoaVerCodeLoginDataHandle.m in Sources */,
 				8815567D2FA88BE9004702A6 /* NoaVerCodeLoginBaseInputView.m in Sources */,
@@ -6649,7 +6649,7 @@
 				043D2D3828D09CAD00DF6A83 /* NoaNewFriendVerifyApplyInfoCell.m in Sources */,
 				049F6A492BBBA40000E0C75B /* NoaChatEmojiToolsCell.m in Sources */,
 				04CDD4AD2AE9100B0068D830 /* NoaEmojiPackageDetailHeaderView.m in Sources */,
-				8815564E2FA88BE9004702A6 /* NoaLoginViewController.m in Sources */,
+				8815564E2FA88BE9004702A6 /* LuckyLandLoginViewController.m in Sources */,
 				042240352A8E00D500350D31 /* NoaChatInputVoiceView.m in Sources */,
 				0488250A298C999800FC58CB /* KNPhotoBrowserImageView.m in Sources */,
 				041A81D72A160B5F00EC4FB3 /* NoaCallManager.m in Sources */,
@@ -6662,7 +6662,7 @@
 				04D18CA729B877C1003684EE /* NoaChatGroupNoticeTipView.m in Sources */,
 				0471E92D291FC541008A8830 /* NoaMineCenterCell.m in Sources */,
 				C3F666652E73D60B00FE6DA6 /* NoaNetworkQualityDetector.m in Sources */,
-				881556502FA88BE9004702A6 /* NoaPasswordViewController.m in Sources */,
+				881556502FA88BE9004702A6 /* LuckyLandPasswordViewController.m in Sources */,
 				0497EBBC28BDA5EE003550F9 /* AppDelegate+Tabbar.m in Sources */,
 				049F6A522BBBA40000E0C75B /* NoaChatGitImgCollectionView.m in Sources */,
 				04C321FE2A4ADB4800EDCC0F /* VIResourceLoaderManager.m in Sources */,

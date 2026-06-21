@@ -1,11 +1,11 @@
 //
-//  NoaFindPasswordViewController.m
+//  LuckyLandFindPasswordViewController.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2023/3/28.
 //
 
-#import "NoaFindPasswordViewController.h"
+#import "LuckyLandFindPasswordViewController.h"
 #import "NoaInputTextView.h"
 #import "LuckyLandCountryCodeViewController.h"
 #import "NoaToolManager.h"
@@ -19,7 +19,7 @@
 #import "LuckyLandCaptchaCodeTools.h"
 #import "NoaWeakPwdCheckTool.h"
 
-@interface NoaFindPasswordViewController ()
+@interface LuckyLandFindPasswordViewController ()
 
 @property (nonatomic, strong)NoaInputTextView *accountInput;
 @property (nonatomic, strong)NoaInputTextView *vercodeInput;
@@ -32,7 +32,7 @@
 
 @end
 
-@implementation NoaFindPasswordViewController
+@implementation LuckyLandFindPasswordViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

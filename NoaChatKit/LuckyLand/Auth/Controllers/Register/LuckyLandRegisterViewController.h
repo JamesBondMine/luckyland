@@ -1,5 +1,5 @@
 //
-//  NoaRegisterViewController.h
+//  LuckyLandRegisterViewController.h
 //  NoaChatKit
 //
 //  Created by ppppphl on 2025/11/12.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaRegisterViewController : LuckyLandForgetBaseViewController
+@interface LuckyLandRegisterViewController : LuckyLandForgetBaseViewController
 
 /// 手机注册 - 区号
 @property (nonatomic, copy, readwrite) NSString *areaCode;

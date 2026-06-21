@@ -1,5 +1,5 @@
 //
-//  NoaForgetPasswordViewController.h
+//  LuckyLandForgetPasswordViewController.h
 //  NoaChatKit
 //
 //  Created by ppppphl on 2025/11/17.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaForgetPasswordViewController : LuckyLandForgetBaseViewController
+@interface LuckyLandForgetPasswordViewController : LuckyLandForgetBaseViewController
 
 /// 手机重置账号 - 区号
 @property (nonatomic, copy, readwrite) NSString *areaCode;

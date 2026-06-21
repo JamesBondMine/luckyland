@@ -1,29 +1,29 @@
 //
-//  NoaVerCodeLoginViewController.m
+//  LuckyLandForgetPasswordViewController.m
 //  NoaChatKit
 //
 //  Created by ppppphl on 2025/11/17.
 //
 
-#import "NoaVerCodeLoginViewController.h"
-#import "NoaVerCodeLoginDataHandle.h"
-#import "NoaVerCodeLoginView.h"
+#import "LuckyLandForgetPasswordViewController.h"
+#import "NoaForgetPasswordDataHandle.h"
+#import "NoaForgetPasswordView.h"
 // 手机号选择区号页面
 #import "LuckyLandCountryCodeViewController.h"
 // 图文验证码弹窗
-#import "NoaGetImgVerCodeViewController.h"
+#import "LuckyLandGetImgVerCodeViewController.h"
 
-@interface NoaVerCodeLoginViewController ()
+@interface LuckyLandForgetPasswordViewController ()
 
 /// UI
-@property (nonatomic, strong) NoaVerCodeLoginView *verCodeLoginView;
+@property (nonatomic, strong) NoaForgetPasswordView *resetPasswordView;
 
 /// 数据处理
-@property (nonatomic, strong) NoaVerCodeLoginDataHandle *dataHandle;
+@property (nonatomic, strong) NoaForgetPasswordDataHandle *dataHandle;
 
 @end
 
-@implementation NoaVerCodeLoginViewController
+@implementation LuckyLandForgetPasswordViewController
 
 // MARK: dealloc
 - (void)dealloc {
@@ -31,21 +31,21 @@
 }
 
 // MARK: set/get
-- (NoaVerCodeLoginDataHandle *)dataHandle {
+- (NoaForgetPasswordDataHandle *)dataHandle {
     if (!_dataHandle) {
-        _dataHandle = [[NoaVerCodeLoginDataHandle alloc] initWithVerCodeLoginWay:self.currentVerCodeLoginType
-                                                                      AreaCode:self.areaCode
-                                                                  LoginAccount:self.loginAccount];
+        _dataHandle = [[NoaForgetPasswordDataHandle alloc] initWithResetPasswordWay:self.currentResetPasswordType
+                                                                         AreaCode:self.areaCode
+                                                                     ResetAccount:self.resetAccount];
     }
     return _dataHandle;
 }
 
-- (NoaVerCodeLoginView *)verCodeLoginView {
-    if (!_verCodeLoginView) {
-        _verCodeLoginView = [[NoaVerCodeLoginView alloc] initWithFrame:CGRectZero
+- (NoaForgetPasswordView *)resetPasswordView {
+    if (!_resetPasswordView) {
+        _resetPasswordView = [[NoaForgetPasswordView alloc] initWithFrame:CGRectZero
                                                              DataHandle:self.dataHandle];
     }
-    return _verCodeLoginView;
+    return _resetPasswordView;
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -61,9 +61,9 @@
 }
 
 - (void)setUpUI {
-    self.navTitleLabel.text = LanguageToolMatch(@"验证码登录");
-    [self.view addSubview:self.verCodeLoginView];
-    [self.verCodeLoginView mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.navTitleLabel.text = LanguageToolMatch(@"忘记密码");
+    [self.view addSubview:self.resetPasswordView];
+    [self.resetPasswordView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.navView.mas_bottom).offset(25);
         make.leading.trailing.equalTo(self.view);
         make.bottom.equalTo(self.view);
@@ -81,7 +81,7 @@
             NSNumber *areaCode = [dic objectForKey:@"prefix"];
             NSString *newAreaCode = [NSString stringWithFormat:@"+%@", areaCode];
             [self.dataHandle changeAreaCode:newAreaCode];
-            [self.verCodeLoginView refreshShowAreaCode];
+            [self.resetPasswordView refreshShowAreaCode];
         }];
     }];
     
@@ -92,7 +92,7 @@
         }
         
         NSString *msg = x;
-        if ([NSString isNil:msg]) {
+        if (![x isKindOfClass:[NSString class]]) {
             return;
         }
         
@@ -114,7 +114,7 @@
         // 账号
         NSString *account = [self.dataHandle getAccountText];
         
-        NoaGetImgVerCodeViewController *imgVerCodeVC = [[NoaGetImgVerCodeViewController alloc] init];
+        LuckyLandGetImgVerCodeViewController *imgVerCodeVC = [[LuckyLandGetImgVerCodeViewController alloc] init];
         imgVerCodeVC.account = account;
         imgVerCodeVC.imgVerCode = imgVerCode;
         imgVerCodeVC.verCodeType = verCodeType;
@@ -138,6 +138,8 @@
         };
     }];
 }
+
+
 /*
 #pragma mark - Navigation
 

@@ -4,7 +4,7 @@
 //
 
 #import "FlutterRegisterTypeViewController.h"
-#import "NoaRegisterViewController.h"
+#import "LuckyLandRegisterViewController.h"
 #import "NoaEnumHeader.h"
 
 static NSString * const kFlutterBridgeChannelName = @"com.noa.flutter/bridge";
@@ -64,7 +64,7 @@ static NSString * const kFlutterBridgeChannelName = @"com.noa.flutter/bridge";
         }
 
         if (registerWay != NSNotFound) {
-            NoaRegisterViewController *registerVC = [[NoaRegisterViewController alloc] init];
+            LuckyLandRegisterViewController *registerVC = [[LuckyLandRegisterViewController alloc] init];
             registerVC.currentRegisterWay = registerWay;
             [self.navigationController pushViewController:registerVC animated:YES];
             result(@(YES));

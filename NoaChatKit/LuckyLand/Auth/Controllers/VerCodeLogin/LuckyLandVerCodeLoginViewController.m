@@ -1,31 +1,29 @@
 //
-//  NoaRegisterViewController.m
+//  LuckyLandVerCodeLoginViewController.m
 //  NoaChatKit
 //
-//  Created by ppppphl on 2025/11/12.
+//  Created by ppppphl on 2025/11/17.
 //
 
-#import "NoaRegisterViewController.h"
-// 注册页面
-#import "NoaRegisterView.h"
-// 数据处理
-#import "NoaRegisterDataHandle.h"
+#import "LuckyLandVerCodeLoginViewController.h"
+#import "NoaVerCodeLoginDataHandle.h"
+#import "NoaVerCodeLoginView.h"
 // 手机号选择区号页面
 #import "LuckyLandCountryCodeViewController.h"
 // 图文验证码弹窗
-#import "NoaGetImgVerCodeViewController.h"
+#import "LuckyLandGetImgVerCodeViewController.h"
 
-@interface NoaRegisterViewController ()
+@interface LuckyLandVerCodeLoginViewController ()
 
 /// UI
-@property (nonatomic, strong) NoaRegisterView *registerView;
+@property (nonatomic, strong) NoaVerCodeLoginView *verCodeLoginView;
 
 /// 数据处理
-@property (nonatomic, strong) NoaRegisterDataHandle *dataHandle;
+@property (nonatomic, strong) NoaVerCodeLoginDataHandle *dataHandle;
 
 @end
 
-@implementation NoaRegisterViewController
+@implementation LuckyLandVerCodeLoginViewController
 
 // MARK: dealloc
 - (void)dealloc {
@@ -33,21 +31,21 @@
 }
 
 // MARK: set/get
-- (NoaRegisterDataHandle *)dataHandle {
+- (NoaVerCodeLoginDataHandle *)dataHandle {
     if (!_dataHandle) {
-        _dataHandle = [[NoaRegisterDataHandle alloc] initWithRegisterWay:self.currentRegisterWay
-                                                                AreaCode:self.areaCode
-                                                       UnRegisterAccount:self.unusedAccount];
+        _dataHandle = [[NoaVerCodeLoginDataHandle alloc] initWithVerCodeLoginWay:self.currentVerCodeLoginType
+                                                                      AreaCode:self.areaCode
+                                                                  LoginAccount:self.loginAccount];
     }
     return _dataHandle;
 }
 
-- (NoaRegisterView *)registerView {
-    if (!_registerView) {
-        _registerView = [[NoaRegisterView alloc] initWithFrame:CGRectZero
-                                                  DataHandle:self.dataHandle];
+- (NoaVerCodeLoginView *)verCodeLoginView {
+    if (!_verCodeLoginView) {
+        _verCodeLoginView = [[NoaVerCodeLoginView alloc] initWithFrame:CGRectZero
+                                                             DataHandle:self.dataHandle];
     }
-    return _registerView;
+    return _verCodeLoginView;
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -63,9 +61,9 @@
 }
 
 - (void)setUpUI {
-    self.navTitleLabel.text = LanguageToolMatch(@"选择注册方式");
-    [self.view addSubview:self.registerView];
-    [self.registerView mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.navTitleLabel.text = LanguageToolMatch(@"验证码登录");
+    [self.view addSubview:self.verCodeLoginView];
+    [self.verCodeLoginView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.navView.mas_bottom).offset(25);
         make.leading.trailing.equalTo(self.view);
         make.bottom.equalTo(self.view);
@@ -83,17 +81,7 @@
             NSNumber *areaCode = [dic objectForKey:@"prefix"];
             NSString *newAreaCode = [NSString stringWithFormat:@"+%@", areaCode];
             [self.dataHandle changeAreaCode:newAreaCode];
-            [self.registerView refreshShowAreaCode];
-        }];
-    }];
-    
-    [self.dataHandle.popLoginVCSubject subscribeNext:^(id  _Nullable x) {
-        @strongify(self)
-        [self.navigationController.viewControllers enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            if ([NSStringFromClass([obj class]) isEqualToString:@"NoaLoginViewController"]) {
-                [self.navigationController popToViewController:obj animated:YES];
-                *stop = YES;
-            }
+            [self.verCodeLoginView refreshShowAreaCode];
         }];
     }];
     
@@ -104,7 +92,7 @@
         }
         
         NSString *msg = x;
-        if (![x isKindOfClass:[NSString class]]) {
+        if ([NSString isNil:msg]) {
             return;
         }
         
@@ -126,7 +114,7 @@
         // 账号
         NSString *account = [self.dataHandle getAccountText];
         
-        NoaGetImgVerCodeViewController *imgVerCodeVC = [[NoaGetImgVerCodeViewController alloc] init];
+        LuckyLandGetImgVerCodeViewController *imgVerCodeVC = [[LuckyLandGetImgVerCodeViewController alloc] init];
         imgVerCodeVC.account = account;
         imgVerCodeVC.imgVerCode = imgVerCode;
         imgVerCodeVC.verCodeType = verCodeType;
@@ -150,16 +138,14 @@
         };
     }];
 }
-
-
 /*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

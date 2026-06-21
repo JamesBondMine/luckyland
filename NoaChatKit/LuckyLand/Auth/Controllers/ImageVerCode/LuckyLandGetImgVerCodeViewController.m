@@ -1,17 +1,17 @@
 //
-//  NoaGetImgVerCodeViewController.m
+//  LuckyLandGetImgVerCodeViewController.m
 //  NoaChatKit
 //
 //  Created by ppppphl on 2025/11/14.
 //
 
-#import "NoaGetImgVerCodeViewController.h"
+#import "LuckyLandGetImgVerCodeViewController.h"
 // 高斯模糊view
 #import "NoaGetImgVerCodeBlurView.h"
 // 数据处理
 #import "NoaGetImgVerCodeBlurDataHandle.h"
 
-@interface NoaGetImgVerCodeViewController ()
+@interface LuckyLandGetImgVerCodeViewController ()
 
 @property (nonatomic, strong) UIView *shadowView;
 
@@ -23,7 +23,7 @@
 
 @end
 
-@implementation NoaGetImgVerCodeViewController
+@implementation LuckyLandGetImgVerCodeViewController
 
 // MARK: dealloc
 - (void)dealloc {

@@ -1,29 +1,31 @@
 //
-//  NoaForgetPasswordViewController.m
+//  LuckyLandRegisterViewController.m
 //  NoaChatKit
 //
-//  Created by ppppphl on 2025/11/17.
+//  Created by ppppphl on 2025/11/12.
 //
 
-#import "NoaForgetPasswordViewController.h"
-#import "NoaForgetPasswordDataHandle.h"
-#import "NoaForgetPasswordView.h"
+#import "LuckyLandRegisterViewController.h"
+// 注册页面
+#import "NoaRegisterView.h"
+// 数据处理
+#import "NoaRegisterDataHandle.h"
 // 手机号选择区号页面
 #import "LuckyLandCountryCodeViewController.h"
 // 图文验证码弹窗
-#import "NoaGetImgVerCodeViewController.h"
+#import "LuckyLandGetImgVerCodeViewController.h"
 
-@interface NoaForgetPasswordViewController ()
+@interface LuckyLandRegisterViewController ()
 
 /// UI
-@property (nonatomic, strong) NoaForgetPasswordView *resetPasswordView;
+@property (nonatomic, strong) NoaRegisterView *registerView;
 
 /// 数据处理
-@property (nonatomic, strong) NoaForgetPasswordDataHandle *dataHandle;
+@property (nonatomic, strong) NoaRegisterDataHandle *dataHandle;
 
 @end
 
-@implementation NoaForgetPasswordViewController
+@implementation LuckyLandRegisterViewController
 
 // MARK: dealloc
 - (void)dealloc {
@@ -31,21 +33,21 @@
 }
 
 // MARK: set/get
-- (NoaForgetPasswordDataHandle *)dataHandle {
+- (NoaRegisterDataHandle *)dataHandle {
     if (!_dataHandle) {
-        _dataHandle = [[NoaForgetPasswordDataHandle alloc] initWithResetPasswordWay:self.currentResetPasswordType
-                                                                         AreaCode:self.areaCode
-                                                                     ResetAccount:self.resetAccount];
+        _dataHandle = [[NoaRegisterDataHandle alloc] initWithRegisterWay:self.currentRegisterWay
+                                                                AreaCode:self.areaCode
+                                                       UnRegisterAccount:self.unusedAccount];
     }
     return _dataHandle;
 }
 
-- (NoaForgetPasswordView *)resetPasswordView {
-    if (!_resetPasswordView) {
-        _resetPasswordView = [[NoaForgetPasswordView alloc] initWithFrame:CGRectZero
-                                                             DataHandle:self.dataHandle];
+- (NoaRegisterView *)registerView {
+    if (!_registerView) {
+        _registerView = [[NoaRegisterView alloc] initWithFrame:CGRectZero
+                                                  DataHandle:self.dataHandle];
     }
-    return _resetPasswordView;
+    return _registerView;
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -61,9 +63,9 @@
 }
 
 - (void)setUpUI {
-    self.navTitleLabel.text = LanguageToolMatch(@"忘记密码");
-    [self.view addSubview:self.resetPasswordView];
-    [self.resetPasswordView mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.navTitleLabel.text = LanguageToolMatch(@"选择注册方式");
+    [self.view addSubview:self.registerView];
+    [self.registerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.navView.mas_bottom).offset(25);
         make.leading.trailing.equalTo(self.view);
         make.bottom.equalTo(self.view);
@@ -81,7 +83,17 @@
             NSNumber *areaCode = [dic objectForKey:@"prefix"];
             NSString *newAreaCode = [NSString stringWithFormat:@"+%@", areaCode];
             [self.dataHandle changeAreaCode:newAreaCode];
-            [self.resetPasswordView refreshShowAreaCode];
+            [self.registerView refreshShowAreaCode];
+        }];
+    }];
+    
+    [self.dataHandle.popLoginVCSubject subscribeNext:^(id  _Nullable x) {
+        @strongify(self)
+        [self.navigationController.viewControllers enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([NSStringFromClass([obj class]) isEqualToString:@"LuckyLandLoginViewController"]) {
+                [self.navigationController popToViewController:obj animated:YES];
+                *stop = YES;
+            }
         }];
     }];
     
@@ -114,7 +126,7 @@
         // 账号
         NSString *account = [self.dataHandle getAccountText];
         
-        NoaGetImgVerCodeViewController *imgVerCodeVC = [[NoaGetImgVerCodeViewController alloc] init];
+        LuckyLandGetImgVerCodeViewController *imgVerCodeVC = [[LuckyLandGetImgVerCodeViewController alloc] init];
         imgVerCodeVC.account = account;
         imgVerCodeVC.imgVerCode = imgVerCode;
         imgVerCodeVC.verCodeType = verCodeType;
@@ -141,13 +153,13 @@
 
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

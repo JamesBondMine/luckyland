@@ -1,5 +1,5 @@
 //
-//  NoaPasswordViewController.h
+//  LuckyLandPasswordViewController.h
 //  NoaKit
 //
 //  Created by LuckyLand on 2026/9/19.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaPasswordViewController : LuckyLandBaseViewController
+@interface LuckyLandPasswordViewController : LuckyLandBaseViewController
 
 @property (nonatomic, strong)NSString *areaCode;
 @property (nonatomic, strong)NSString *loginInfo;
