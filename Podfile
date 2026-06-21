@@ -104,7 +104,6 @@ install_all_flutter_pods(flutter_application_path)
   
 
   pod 'Toast', '~> 4.1.1'
-  pod 'TTTAttributedLabel', '2.0.0'
 
   #阿里云OSS
   pod 'AliyunOSSiOS'
