@@ -1,16 +1,16 @@
 //
-//  NoaCountryCodeViewController.m
+//  LuckyLandCountryCodeViewController.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2023/3/28.
 //
 
-#import "NoaCountryCodeViewController.h"
+#import "LuckyLandCountryCodeViewController.h"
 #import "NoaSearchView.h"
 #import "NoaCountryCodeCell.h"
 #import "FMDB.h"
 
-@interface NoaCountryCodeViewController () <UITableViewDataSource, UITableViewDelegate, ZSearchViewDelegate>
+@interface LuckyLandCountryCodeViewController () <UITableViewDataSource, UITableViewDelegate, ZSearchViewDelegate>
 
 @property (nonatomic, strong) FMDatabase *db;
 @property (nonatomic, strong) NSMutableArray *countryList;
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation NoaCountryCodeViewController
+@implementation LuckyLandCountryCodeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

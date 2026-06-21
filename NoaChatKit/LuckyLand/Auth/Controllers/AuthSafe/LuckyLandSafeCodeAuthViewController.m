@@ -1,25 +1,25 @@
 //
-//  NoaSafeCodeAuthViewController.m
+//  LuckyLandSafeCodeAuthViewController.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2024/12/30.
 //
 
-#import "NoaSafeCodeAuthViewController.h"
+#import "LuckyLandSafeCodeAuthViewController.h"
 #import "NoaInputTextView.h"
 #import "LXChatEncrypt.h"
 #import "AppDelegate+DB.h"
 #import "AppDelegate+MediaCall.h"
 #import "AppDelegate+MiniApp.h"
 
-@interface NoaSafeCodeAuthViewController ()
+@interface LuckyLandSafeCodeAuthViewController ()
 
 @property (nonatomic, strong)NoaInputTextView *safeCodeTextInput;
 @property (nonatomic, strong)UIButton *authLoginButton;
 
 @end
 
-@implementation NoaSafeCodeAuthViewController
+@implementation LuckyLandSafeCodeAuthViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

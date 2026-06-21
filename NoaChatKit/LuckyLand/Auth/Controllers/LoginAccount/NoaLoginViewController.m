@@ -24,12 +24,12 @@
 // 数据处理
 #import "NoaLoginAccountDataHandle.h"
 // 设备验证码验证页面
-#import "NoaSafeCodeAuthViewController.h"
+#import "LuckyLandSafeCodeAuthViewController.h"
 // 修改幸运数字页面
 //#import "NoaSsoSetViewController.h"
 #import "LuckyLandSsoSetViewController.h"
 // 手机号选择区号页面
-#import "NoaCountryCodeViewController.h"
+#import "LuckyLandCountryCodeViewController.h"
 // 验证码登录
 #import "NoaVerCodeLoginViewController.h"
 // 忘记密码
@@ -104,7 +104,7 @@
     @weakify(self)
     [self.dataHandle.jumpChangeAreaCodeSubject subscribeNext:^(id  _Nullable x) {
         @strongify(self)
-        NoaCountryCodeViewController *countryCodeVC = [[NoaCountryCodeViewController alloc] init];
+        LuckyLandCountryCodeViewController *countryCodeVC = [[LuckyLandCountryCodeViewController alloc] init];
         [self.navigationController pushViewController:countryCodeVC animated:YES];
         [countryCodeVC setSelecgCountryCodeBlock:^(NSDictionary * _Nonnull dic) {
             @strongify(self)
@@ -134,7 +134,7 @@
         ZLoginAndRegisterTypeMenu loginTypeMenu = self.dataHandle.currentLoginTypeMenu;
         int loginType = [self.dataHandle covertInterfaceParamWithLoginTypeMenu:loginTypeMenu];
         
-        NoaSafeCodeAuthViewController *vc = [[NoaSafeCodeAuthViewController alloc] init];
+        LuckyLandSafeCodeAuthViewController *vc = [[LuckyLandSafeCodeAuthViewController alloc] init];
         vc.scKey = scKey;
         vc.loginInfo = account;
         vc.loginType = loginType;

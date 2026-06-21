@@ -1,5 +1,5 @@
 //
-//  NoaAuthPCloginViewController.h
+//  LuckyLandAuthPCloginViewController.h
 //  NoaKit
 //
 //  Created by LuckyLand on 2023/4/3.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaAuthPCloginViewController : LuckyLandBaseViewController
+@interface LuckyLandAuthPCloginViewController : LuckyLandBaseViewController
 
 //二维码解析出来的 需要登录的设备id
 @property (nonatomic, copy)NSString *deviceUuidStr;

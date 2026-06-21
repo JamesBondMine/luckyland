@@ -11,7 +11,7 @@
 // 数据处理
 #import "NoaRegisterDataHandle.h"
 // 手机号选择区号页面
-#import "NoaCountryCodeViewController.h"
+#import "LuckyLandCountryCodeViewController.h"
 // 图文验证码弹窗
 #import "NoaGetImgVerCodeViewController.h"
 
@@ -76,7 +76,7 @@
     @weakify(self)
     [self.dataHandle.jumpChangeAreaCodeSubject subscribeNext:^(id  _Nullable x) {
         @strongify(self)
-        NoaCountryCodeViewController *countryCodeVC = [[NoaCountryCodeViewController alloc] init];
+        LuckyLandCountryCodeViewController *countryCodeVC = [[LuckyLandCountryCodeViewController alloc] init];
         [self.navigationController pushViewController:countryCodeVC animated:YES];
         [countryCodeVC setSelecgCountryCodeBlock:^(NSDictionary * _Nonnull dic) {
             @strongify(self)

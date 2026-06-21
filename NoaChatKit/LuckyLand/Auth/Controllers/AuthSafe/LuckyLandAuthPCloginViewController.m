@@ -1,17 +1,17 @@
 //
-//  NoaAuthPCloginViewController.m
+//  LuckyLandAuthPCloginViewController.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2023/4/3.
 //
 
-#import "NoaAuthPCloginViewController.h"
+#import "LuckyLandAuthPCloginViewController.h"
 
-@interface NoaAuthPCloginViewController ()
+@interface LuckyLandAuthPCloginViewController ()
 
 @end
 
-@implementation NoaAuthPCloginViewController
+@implementation LuckyLandAuthPCloginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

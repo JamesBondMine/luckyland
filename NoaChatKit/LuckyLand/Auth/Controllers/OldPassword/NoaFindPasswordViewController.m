@@ -7,7 +7,7 @@
 
 #import "NoaFindPasswordViewController.h"
 #import "NoaInputTextView.h"
-#import "NoaCountryCodeViewController.h"
+#import "LuckyLandCountryCodeViewController.h"
 #import "NoaToolManager.h"
 #import "AppDelegate.h"
 #import "AppDelegate+DB.h"
@@ -307,7 +307,7 @@
 
 //选择国家区号
 - (void)selectCountryCodeAction {
-    NoaCountryCodeViewController *countryCodeVC = [[NoaCountryCodeViewController alloc] init];
+    LuckyLandCountryCodeViewController *countryCodeVC = [[LuckyLandCountryCodeViewController alloc] init];
     [self.navigationController pushViewController:countryCodeVC animated:YES];
     
     @weakify(self)

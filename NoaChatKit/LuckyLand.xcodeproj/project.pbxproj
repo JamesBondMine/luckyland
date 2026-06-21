@@ -656,10 +656,9 @@
 		880D8AB52FE2601000D1578F /* LuckyLandSeaSceneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 880D8AB92FE2601000D1578F /* LuckyLandSeaSceneView.m */; };
 		881556462FA88BE9004702A6 /* LuckyLandAuthInputTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555AC2FA88BE9004702A6 /* LuckyLandAuthInputTools.m */; };
 		881556472FA88BE9004702A6 /* LuckyLandCaptchaCodeTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555AE2FA88BE9004702A6 /* LuckyLandCaptchaCodeTools.m */; };
-		881556482FA88BE9004702A6 /* NoaAuthPCloginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555B12FA88BE9004702A6 /* NoaAuthPCloginViewController.m */; };
-		881556492FA88BE9004702A6 /* NoaSafeCodeAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555B32FA88BE9004702A6 /* NoaSafeCodeAuthViewController.m */; };
-		8815564A2FA88BE9004702A6 /* NoaCompanyConfigSetVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555B62FA88BE9004702A6 /* NoaCompanyConfigSetVC.m */; };
-		8815564B2FA88BE9004702A6 /* NoaCountryCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555B82FA88BE9004702A6 /* NoaCountryCodeViewController.m */; };
+		881556482FA88BE9004702A6 /* LuckyLandAuthPCloginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555B12FA88BE9004702A6 /* LuckyLandAuthPCloginViewController.m */; };
+		881556492FA88BE9004702A6 /* LuckyLandSafeCodeAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555B32FA88BE9004702A6 /* LuckyLandSafeCodeAuthViewController.m */; };
+		8815564B2FA88BE9004702A6 /* LuckyLandCountryCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555B82FA88BE9004702A6 /* LuckyLandCountryCodeViewController.m */; };
 		8815564C2FA88BE9004702A6 /* NoaForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555BB2FA88BE9004702A6 /* NoaForgetPasswordViewController.m */; };
 		8815564D2FA88BE9004702A6 /* NoaGetImgVerCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555BE2FA88BE9004702A6 /* NoaGetImgVerCodeViewController.m */; };
 		8815564E2FA88BE9004702A6 /* NoaLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881555C12FA88BE9004702A6 /* NoaLoginViewController.m */; };
@@ -2088,14 +2087,12 @@
 		881555AC2FA88BE9004702A6 /* LuckyLandAuthInputTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuckyLandAuthInputTools.m; sourceTree = "<group>"; };
 		881555AD2FA88BE9004702A6 /* LuckyLandCaptchaCodeTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuckyLandCaptchaCodeTools.h; sourceTree = "<group>"; };
 		881555AE2FA88BE9004702A6 /* LuckyLandCaptchaCodeTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuckyLandCaptchaCodeTools.m; sourceTree = "<group>"; };
-		881555B02FA88BE9004702A6 /* NoaAuthPCloginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaAuthPCloginViewController.h; sourceTree = "<group>"; };
-		881555B12FA88BE9004702A6 /* NoaAuthPCloginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaAuthPCloginViewController.m; sourceTree = "<group>"; };
-		881555B22FA88BE9004702A6 /* NoaSafeCodeAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaSafeCodeAuthViewController.h; sourceTree = "<group>"; };
-		881555B32FA88BE9004702A6 /* NoaSafeCodeAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaSafeCodeAuthViewController.m; sourceTree = "<group>"; };
-		881555B52FA88BE9004702A6 /* NoaCompanyConfigSetVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaCompanyConfigSetVC.h; sourceTree = "<group>"; };
-		881555B62FA88BE9004702A6 /* NoaCompanyConfigSetVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaCompanyConfigSetVC.m; sourceTree = "<group>"; };
-		881555B72FA88BE9004702A6 /* NoaCountryCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaCountryCodeViewController.h; sourceTree = "<group>"; };
-		881555B82FA88BE9004702A6 /* NoaCountryCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaCountryCodeViewController.m; sourceTree = "<group>"; };
+		881555B02FA88BE9004702A6 /* LuckyLandAuthPCloginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuckyLandAuthPCloginViewController.h; sourceTree = "<group>"; };
+		881555B12FA88BE9004702A6 /* LuckyLandAuthPCloginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuckyLandAuthPCloginViewController.m; sourceTree = "<group>"; };
+		881555B22FA88BE9004702A6 /* LuckyLandSafeCodeAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuckyLandSafeCodeAuthViewController.h; sourceTree = "<group>"; };
+		881555B32FA88BE9004702A6 /* LuckyLandSafeCodeAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuckyLandSafeCodeAuthViewController.m; sourceTree = "<group>"; };
+		881555B72FA88BE9004702A6 /* LuckyLandCountryCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuckyLandCountryCodeViewController.h; sourceTree = "<group>"; };
+		881555B82FA88BE9004702A6 /* LuckyLandCountryCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuckyLandCountryCodeViewController.m; sourceTree = "<group>"; };
 		881555BA2FA88BE9004702A6 /* NoaForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaForgetPasswordViewController.h; sourceTree = "<group>"; };
 		881555BB2FA88BE9004702A6 /* NoaForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaForgetPasswordViewController.m; sourceTree = "<group>"; };
 		881555BD2FA88BE9004702A6 /* NoaGetImgVerCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaGetImgVerCodeViewController.h; sourceTree = "<group>"; };
@@ -5365,10 +5362,10 @@
 		881555B42FA88BE9004702A6 /* AuthSafe */ = {
 			isa = PBXGroup;
 			children = (
-				881555B02FA88BE9004702A6 /* NoaAuthPCloginViewController.h */,
-				881555B12FA88BE9004702A6 /* NoaAuthPCloginViewController.m */,
-				881555B22FA88BE9004702A6 /* NoaSafeCodeAuthViewController.h */,
-				881555B32FA88BE9004702A6 /* NoaSafeCodeAuthViewController.m */,
+				881555B02FA88BE9004702A6 /* LuckyLandAuthPCloginViewController.h */,
+				881555B12FA88BE9004702A6 /* LuckyLandAuthPCloginViewController.m */,
+				881555B22FA88BE9004702A6 /* LuckyLandSafeCodeAuthViewController.h */,
+				881555B32FA88BE9004702A6 /* LuckyLandSafeCodeAuthViewController.m */,
 			);
 			path = AuthSafe;
 			sourceTree = "<group>";
@@ -5376,10 +5373,8 @@
 		881555B92FA88BE9004702A6 /* CountryCode */ = {
 			isa = PBXGroup;
 			children = (
-				881555B52FA88BE9004702A6 /* NoaCompanyConfigSetVC.h */,
-				881555B62FA88BE9004702A6 /* NoaCompanyConfigSetVC.m */,
-				881555B72FA88BE9004702A6 /* NoaCountryCodeViewController.h */,
-				881555B82FA88BE9004702A6 /* NoaCountryCodeViewController.m */,
+				881555B72FA88BE9004702A6 /* LuckyLandCountryCodeViewController.h */,
+				881555B82FA88BE9004702A6 /* LuckyLandCountryCodeViewController.m */,
 			);
 			path = CountryCode;
 			sourceTree = "<group>";
@@ -6329,7 +6324,6 @@
 				047812662935E12000F7802C /* NoaClipImageVC.m in Sources */,
 				881556672FA88BE9004702A6 /* NoaInputTextView.m in Sources */,
 				04BE7A3528F5619300B96A7F /* NoaChatMessageMoreItemView.m in Sources */,
-				8815564A2FA88BE9004702A6 /* NoaCompanyConfigSetVC.m in Sources */,
 				04F48A942A0A37D00081A6EA /* NoaSystemMessageVC.m in Sources */,
 				04C321F92A4ADB4800EDCC0F /* NSString+VIMD5.m in Sources */,
 				04D0D4B12B81AAB1008532AA /* NoaTranslateSettingViewController.m in Sources */,
@@ -6522,7 +6516,7 @@
 				04A6BCD42A67E2C1000A818D /* LuckLandTeamViewController.m in Sources */,
 				C397B4F12E97612F00A030CA /* NoaDraftStore.m in Sources */,
 				0462E89428BDC0C900996A8A /* UIButton+Addition.m in Sources */,
-				881556482FA88BE9004702A6 /* NoaAuthPCloginViewController.m in Sources */,
+				881556482FA88BE9004702A6 /* LuckyLandAuthPCloginViewController.m in Sources */,
 				04BE7A3628F5619300B96A7F /* NoaChatMessageMoreView.m in Sources */,
 				881556792FA88BE9004702A6 /* NoaSsoHelpView.m in Sources */,
 				1863DAF22A94AFEC005351F6 /* KLSICalendarView.m in Sources */,
@@ -6632,7 +6626,7 @@
 				046A29FC299C8766008A5BE7 /* NoaMediaCallMoreContentView.m in Sources */,
 				881556602FA88BE9004702A6 /* NoaVerCodeLoginDataHandle.m in Sources */,
 				8815567D2FA88BE9004702A6 /* NoaVerCodeLoginBaseInputView.m in Sources */,
-				881556492FA88BE9004702A6 /* NoaSafeCodeAuthViewController.m in Sources */,
+				881556492FA88BE9004702A6 /* LuckyLandSafeCodeAuthViewController.m in Sources */,
 				04C321FB2A4ADB4800EDCC0F /* VIResourceLoader.m in Sources */,
 				042D7F172915089500D2BB59 /* NoaChatSingleSetVC.m in Sources */,
 				04ACB0752A3C455400FA82E8 /* NoaFileOssInfoModel.m in Sources */,
@@ -6855,7 +6849,7 @@
 				04BBA45029ED4F28007F4D61 /* NoaNewMassMessageVC.m in Sources */,
 				2DA5FCA12EC74CAC00B5B105 /* NoaCenterAlertAnimator.m in Sources */,
 				2DA5FCA22EC74CAC00B5B105 /* NoaCenterAlertPresentationController.m in Sources */,
-				8815564B2FA88BE9004702A6 /* NoaCountryCodeViewController.m in Sources */,
+				8815564B2FA88BE9004702A6 /* LuckyLandCountryCodeViewController.m in Sources */,
 				2DA5FCA32EC74CAC00B5B105 /* NoaCenterAlertTransitioningDelegate.m in Sources */,
 				043A680A2995002900F5DEA8 /* NoaMediaCallGroupMemberModel.m in Sources */,
 			);

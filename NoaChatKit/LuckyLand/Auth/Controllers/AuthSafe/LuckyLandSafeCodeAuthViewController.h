@@ -1,5 +1,5 @@
 //
-//  NoaSafeCodeAuthViewController.h
+//  LuckyLandSafeCodeAuthViewController.h
 //  NoaKit
 //
 //  Created by LuckyLand on 2024/12/30.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaSafeCodeAuthViewController : LuckyLandBaseViewController
+@interface LuckyLandSafeCodeAuthViewController : LuckyLandBaseViewController
 
 @property (nonatomic, copy)NSString *loginInfo;
 @property (nonatomic, assign)int loginType;

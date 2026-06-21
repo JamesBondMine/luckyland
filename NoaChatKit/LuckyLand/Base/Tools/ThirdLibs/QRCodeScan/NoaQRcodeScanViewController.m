@@ -11,7 +11,7 @@
 #import "NoaToolManager.h"
 
 #import "NoaUserHomePageVC.h" //用户个人资料页
-#import "NoaAuthPCloginViewController.h"  //授权登录
+#import "LuckyLandAuthPCloginViewController.h"  //授权登录
 #import "NoaMessageAlertView.h"   //跳转到safari提醒弹窗
 #import "NoaQrcodeTextContentViewController.h"    //纯文本展示
 #import "NoaApplyJoinGroupViewController.h"   //扫码进群申请页
@@ -575,7 +575,7 @@
                     NSString *deviceUuid = (NSString *)[dataDic objectForKey:@"deviceUuid"];
                     NSString *ewmKey = (NSString *)[dataDic objectForKey:@"ewmKey"];
                     //授权PC登录页
-                    NoaAuthPCloginViewController *pcAuthVC = [[NoaAuthPCloginViewController alloc] init];
+                    LuckyLandAuthPCloginViewController *pcAuthVC = [[LuckyLandAuthPCloginViewController alloc] init];
                     pcAuthVC.deviceUuidStr = deviceUuid;
                     pcAuthVC.ewmKeyStr = ewmKey;
                     [self.navigationController pushViewController:pcAuthVC animated:YES];

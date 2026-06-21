@@ -18,7 +18,7 @@
 #import "LXChatEncrypt.h"
 #import "NoaImgVerCodeInputView.h"
 #import "LuckyLandCaptchaCodeTools.h"
-#import "NoaSafeCodeAuthViewController.h"
+#import "LuckyLandSafeCodeAuthViewController.h"
 #import "NoaWeakPwdCheckTool.h"
 #import "NoaEncryptKeyGuard.h"
 
@@ -726,7 +726,7 @@
             } else if (code == Auth_Login_Security_Code_Error_Code) {
                 [HUD hideHUD];
                 //登录需要安全码，跳转到安全码输入界面
-                NoaSafeCodeAuthViewController *vc = [[NoaSafeCodeAuthViewController alloc] init];
+                LuckyLandSafeCodeAuthViewController *vc = [[LuckyLandSafeCodeAuthViewController alloc] init];
                 vc.scKey = msg;
                 vc.loginInfo = self.loginInfo;
                 vc.loginType = self.loginType;

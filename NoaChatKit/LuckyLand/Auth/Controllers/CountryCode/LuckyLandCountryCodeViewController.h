@@ -1,5 +1,5 @@
 //
-//  NoaCountryCodeViewController.h
+//  LuckyLandCountryCodeViewController.h
 //  NoaKit
 //
 //  Created by LuckyLand on 2023/3/28.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaCountryCodeViewController : LuckyLandBaseViewController
+@interface LuckyLandCountryCodeViewController : LuckyLandBaseViewController
 
 //选中Countrycode的Block回调
 @property (nonatomic, copy) void(^selecgCountryCodeBlock)(NSDictionary *dic);
