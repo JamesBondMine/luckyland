@@ -101,9 +101,6 @@ install_all_flutter_pods(flutter_application_path)
   
   #防止崩溃
   pod 'AvoidCrash', '2.5.2'
-  
-
-  pod 'Toast', '~> 4.1.1'
 
   #阿里云OSS
   pod 'AliyunOSSiOS'
