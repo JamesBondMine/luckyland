@@ -7,7 +7,7 @@
 
 #import "NoaRegisterAccountInputView.h"
 #import "NoaFixedSizeRightView.h"
-#import "NoaRegisterDataHandle.h"
+#import "LuckkyLandRegisterDataHandle.h"
 
 @interface NoaRegisterAccountInputView ()
 
@@ -162,7 +162,7 @@
         updateClearButtonVisibility();
         
         // 编辑结束，校验账号是否合法
-        [NoaRegisterDataHandle checkAccountInputWithRegisterType:ZLoginTypeMenuAccountPassword
+        [LuckkyLandRegisterDataHandle checkAccountInputWithRegisterType:ZLoginTypeMenuAccountPassword
                                                   AccountInput:self.accountTF.text
                                                 WhenEditFinish:^(BOOL res, NSString * _Nullable errorText) {
             @strongify(self)

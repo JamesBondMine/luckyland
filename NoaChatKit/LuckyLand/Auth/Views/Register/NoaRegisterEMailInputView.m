@@ -7,7 +7,7 @@
 
 #import "NoaRegisterEMailInputView.h"
 #import "NoaFixedSizeRightView.h"
-#import "NoaRegisterDataHandle.h"
+#import "LuckkyLandRegisterDataHandle.h"
 
 @interface NoaRegisterEMailInputView ()
 
@@ -162,7 +162,7 @@
         updateClearButtonVisibility();
         
         // 编辑结束，校验邮箱账号是否合法
-        [NoaRegisterDataHandle checkAccountInputWithRegisterType:ZLoginTypeMenuEmail
+        [LuckkyLandRegisterDataHandle checkAccountInputWithRegisterType:ZLoginTypeMenuEmail
                                                   AccountInput:self.emailTF.text
                                                 WhenEditFinish:^(BOOL res, NSString * _Nullable errorText) {
             @strongify(self)

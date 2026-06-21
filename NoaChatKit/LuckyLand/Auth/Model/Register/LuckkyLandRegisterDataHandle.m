@@ -1,11 +1,11 @@
 //
-//  NoaRegisterDataHandle.m
+//  LuckkyLandRegisterDataHandle.m
 //  NoaChatKit
 //
 //  Created by ppppphl on 2025/11/12.
 //
 
-#import "NoaRegisterDataHandle.h"
+#import "LuckkyLandRegisterDataHandle.h"
 // 输入内容校验
 #import "LuckyLandAuthInputTools.h"
 // 弱密码校验
@@ -15,7 +15,7 @@
 // 加密
 #import "LXChatEncrypt.h"
 
-@interface NoaRegisterDataHandle ()
+@interface LuckkyLandRegisterDataHandle ()
 
 /// 标题
 @property (nonatomic, strong, readwrite) NSArray *titleArr;
@@ -25,7 +25,7 @@
 
 @end
 
-@implementation NoaRegisterDataHandle
+@implementation LuckkyLandRegisterDataHandle
 
 // MARK: set/get
 

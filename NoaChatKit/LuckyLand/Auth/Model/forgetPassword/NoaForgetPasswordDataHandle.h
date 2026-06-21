@@ -5,11 +5,11 @@
 //  Created by ppppphl on 2025/11/17.
 //
 
-#import "NoaAuthBaseDataHandle.h"
+#import "LuckyLandAuthBaseDataHandle.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaForgetPasswordDataHandle : NoaAuthBaseDataHandle
+@interface NoaForgetPasswordDataHandle : LuckyLandAuthBaseDataHandle
 
 /// 获取验证码成功，开启倒计时
 @property (nonatomic, strong) RACSubject *startVerCodeCountDownSubject;

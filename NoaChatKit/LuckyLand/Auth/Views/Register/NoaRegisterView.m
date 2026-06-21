@@ -7,7 +7,7 @@
 
 #import "NoaRegisterView.h"
 // 数据处理
-#import "NoaRegisterDataHandle.h"
+#import "LuckkyLandRegisterDataHandle.h"
 // 页签切换
 #import "JXCategoryTitleView.h"
 #import "JXCategoryIndicatorLineView.h"
@@ -26,7 +26,7 @@
 
 @interface NoaRegisterView ()<JXCategoryViewDelegate>
 
-@property (nonatomic, strong) NoaRegisterDataHandle *dataHandle;
+@property (nonatomic, strong) LuckkyLandRegisterDataHandle *dataHandle;
 
 /// 顶部切换
 @property (nonatomic, strong) JXCategoryTitleView *registerTypeCategoryView;
@@ -210,7 +210,7 @@
 }
 
 - (instancetype)initWithFrame:(CGRect)frame
-                   DataHandle:(NoaRegisterDataHandle *)dataHandle {
+                   DataHandle:(LuckkyLandRegisterDataHandle *)dataHandle {
     self = [super initWithFrame:frame IsPopWindows:NO];
     if (self) {
         self.dataHandle = dataHandle;

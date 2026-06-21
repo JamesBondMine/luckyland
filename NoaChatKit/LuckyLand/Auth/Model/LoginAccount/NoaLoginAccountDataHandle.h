@@ -5,13 +5,13 @@
 //  Created by ppppphl on 2025/11/6.
 //
 
-#import "NoaAuthBaseDataHandle.h"
+#import "LuckyLandAuthBaseDataHandle.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @class NoaEncryptKeyGuard;
 
-@interface NoaLoginAccountDataHandle : NoaAuthBaseDataHandle
+@interface NoaLoginAccountDataHandle : LuckyLandAuthBaseDataHandle
 
 /// 跳转至注册账号页面
 @property (nonatomic, strong) RACSubject *jumpRegisterSubject;

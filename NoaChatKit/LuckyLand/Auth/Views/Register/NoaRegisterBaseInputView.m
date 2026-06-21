@@ -7,7 +7,7 @@
 
 #import "NoaRegisterBaseInputView.h"
 #import "NoaFixedSizeRightView.h"
-#import "NoaRegisterDataHandle.h"
+#import "LuckkyLandRegisterDataHandle.h"
 
 @interface NoaRegisterBaseInputView ()
 
@@ -601,7 +601,7 @@
         updateClearButtonVisibility();
         
         // 编辑结束，校验密码是否合法
-        [NoaRegisterDataHandle checkVerCodeInputWithRegisterType:self.currentRegisterTypeMenu
+        [LuckkyLandRegisterDataHandle checkVerCodeInputWithRegisterType:self.currentRegisterTypeMenu
                                                   VerCodeInput:self.codeTF.text
                                                 WhenEditFinish:^(BOOL res, NSString * _Nullable errorText) {
             @strongify(self)
@@ -687,7 +687,7 @@
         updateClearButtonVisibility();
         
         // 编辑结束，校验密码是否合法
-        [NoaRegisterDataHandle checkPasswordInputWithRegisterType:self.currentRegisterTypeMenu
+        [LuckkyLandRegisterDataHandle checkPasswordInputWithRegisterType:self.currentRegisterTypeMenu
                                                   PasswordInput:self.passwordTF.text
                                                  WhenEditFinish:^(BOOL res, NSString * _Nullable errorText) {
             @strongify(self)
@@ -778,7 +778,7 @@
         updateClearButtonVisibility();
         
         // 编辑结束，校验确认密码是否合法
-        [NoaRegisterDataHandle checkConfirmPasswordInputWithRegisterType:self.currentRegisterTypeMenu
+        [LuckkyLandRegisterDataHandle checkConfirmPasswordInputWithRegisterType:self.currentRegisterTypeMenu
                                                          PasswordInput:self.passwordTF.text
                                                   ConfirmPasswordInput:self.confirmPasswordTF.text
                                                         WhenEditFinish:^(BOOL res, NSString * _Nullable errorText) {
@@ -852,7 +852,7 @@
         updateClearButtonVisibility();
         
         // 编辑结束，校验幸运数字是否合法
-        [NoaRegisterDataHandle checkInviteCodeInputWithRegisterType:self.currentRegisterTypeMenu
+        [LuckkyLandRegisterDataHandle checkInviteCodeInputWithRegisterType:self.currentRegisterTypeMenu
                                                   InviteCodeInput:self.inviteCodeTF.text
                                                    WhenEditFinish:^(BOOL res, NSString * _Nullable errorText) {
             @strongify(self)

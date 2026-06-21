@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class NoaRegisterDataHandle;
+@class LuckkyLandRegisterDataHandle;
 
 @interface NoaRegisterView : NoaLoginBaseBlurView
 
@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 ///   - frame: frame
 ///   - dataHandle: 注册数据处理
 - (instancetype)initWithFrame:(CGRect)frame
-                   DataHandle:(NoaRegisterDataHandle *)dataHandle;
+                   DataHandle:(LuckkyLandRegisterDataHandle *)dataHandle;
 
 /// 变更显示的areaCode
 - (void)refreshShowAreaCode;

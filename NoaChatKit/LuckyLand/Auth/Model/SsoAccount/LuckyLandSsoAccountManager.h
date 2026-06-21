@@ -1,5 +1,5 @@
 //
-//  NoaSsoAccountManager.h
+//  LuckyLandSsoAccountManager.h
 //  NoaChatKit
 //
 //  Created by ppppphl on 2025/11/6.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaSsoAccountManager : NSObject
+@interface LuckyLandSsoAccountManager : NSObject
 
 @end
 

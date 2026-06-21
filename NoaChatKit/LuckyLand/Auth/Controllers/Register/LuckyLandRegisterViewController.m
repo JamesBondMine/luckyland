@@ -9,7 +9,7 @@
 // 注册页面
 #import "NoaRegisterView.h"
 // 数据处理
-#import "NoaRegisterDataHandle.h"
+#import "LuckkyLandRegisterDataHandle.h"
 // 手机号选择区号页面
 #import "LuckyLandCountryCodeViewController.h"
 // 图文验证码弹窗
@@ -21,7 +21,7 @@
 @property (nonatomic, strong) NoaRegisterView *registerView;
 
 /// 数据处理
-@property (nonatomic, strong) NoaRegisterDataHandle *dataHandle;
+@property (nonatomic, strong) LuckkyLandRegisterDataHandle *dataHandle;
 
 @end
 
@@ -33,9 +33,9 @@
 }
 
 // MARK: set/get
-- (NoaRegisterDataHandle *)dataHandle {
+- (LuckkyLandRegisterDataHandle *)dataHandle {
     if (!_dataHandle) {
-        _dataHandle = [[NoaRegisterDataHandle alloc] initWithRegisterWay:self.currentRegisterWay
+        _dataHandle = [[LuckkyLandRegisterDataHandle alloc] initWithRegisterWay:self.currentRegisterWay
                                                                 AreaCode:self.areaCode
                                                        UnRegisterAccount:self.unusedAccount];
     }

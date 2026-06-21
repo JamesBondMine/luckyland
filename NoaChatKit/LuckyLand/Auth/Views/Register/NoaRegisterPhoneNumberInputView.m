@@ -7,7 +7,7 @@
 
 #import "NoaRegisterPhoneNumberInputView.h"
 #import "NoaFixedSizeRightView.h"
-#import "NoaRegisterDataHandle.h"
+#import "LuckkyLandRegisterDataHandle.h"
 
 @interface NoaRegisterPhoneNumberInputView ()
 
@@ -214,7 +214,7 @@
         updateClearButtonVisibility();
         
         // 编辑结束，校验手机号是否合法
-        [NoaRegisterDataHandle checkAccountInputWithRegisterType:ZLoginTypeMenuPhoneNumber
+        [LuckkyLandRegisterDataHandle checkAccountInputWithRegisterType:ZLoginTypeMenuPhoneNumber
                                                   AccountInput:self.phoneNumberTF.text
                                                 WhenEditFinish:^(BOOL res, NSString * _Nullable errorText) {
             @strongify(self)

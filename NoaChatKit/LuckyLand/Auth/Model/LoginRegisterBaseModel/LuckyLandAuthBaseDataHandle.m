@@ -1,17 +1,17 @@
 //
-//  NoaAuthBaseDataHandle.m
+//  LuckyLandAuthBaseDataHandle.m
 //  NoaChatKit
 //
 //  Created by ppppphl on 2025/11/18.
 //
 
-#import "NoaAuthBaseDataHandle.h"
+#import "LuckyLandAuthBaseDataHandle.h"
 // 阿里、腾讯验证
 #import "LuckyLandCaptchaCodeTools.h"
 // 输入内容校验
 #import "LuckyLandAuthInputTools.h"
 
-@interface NoaAuthBaseDataHandle ()
+@interface LuckyLandAuthBaseDataHandle ()
 
 /// 手机号码 - 区号
 @property (nonatomic, copy) NSString *areaCode;
@@ -21,7 +21,7 @@
 
 @end
 
-@implementation NoaAuthBaseDataHandle
+@implementation LuckyLandAuthBaseDataHandle
 
 // MARK: set/get
 
