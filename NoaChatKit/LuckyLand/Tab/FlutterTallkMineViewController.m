@@ -15,7 +15,7 @@
 
 #import "NoaPrivacySettingViewController.h"
 #import "NoaUserInfoViewController.h"//个人资料
-#import "NoaSystemSettingViewController.h"//系统设置
+#import "LuckyLandSystemSettingViewController.h"//系统设置
 
 // 网络检测页面
 #import "NoaNetworkDetectionVC.h"
@@ -23,7 +23,7 @@
 #import "NoaDrawerTransitioningDelegate.h"
 #import <objc/runtime.h>
 
-#import "NoaAboutUsViewController.h"//关于我们
+#import "LuckyLandAboutUsViewController.h"//关于我们
 
 #import "LuckyLandSignInViewController.h" //签到页面
 #import "NoaMyQRCodeViewController.h"//我的二维码
@@ -220,7 +220,7 @@ static NSString * const kFlutterMineAvatarCachePrefix = @"flutter_mine_avatar";
             [self openFullScreen:vc];
         } else if ([action isEqualToString:@"mineTouchIndex8"]) {
             //关于我们
-            NoaAboutUsViewController *aboutUsVC = [[NoaAboutUsViewController alloc] init];
+            LuckyLandAboutUsViewController *aboutUsVC = [[LuckyLandAboutUsViewController alloc] init];
             [self openFullScreen:aboutUsVC];
         } else if ([action isEqualToString:@"mineTouchIndex100"]) {
             //个人信息
@@ -228,7 +228,7 @@ static NSString * const kFlutterMineAvatarCachePrefix = @"flutter_mine_avatar";
             [self openFullScreen:userInfoVC];
         } else if ([action isEqualToString:@"mineTouchIndex101"]) {
             //系统设置
-            NoaSystemSettingViewController *sysSettingVC = [[NoaSystemSettingViewController alloc] init];
+            LuckyLandSystemSettingViewController *sysSettingVC = [[LuckyLandSystemSettingViewController alloc] init];
             [self openFullScreen:sysSettingVC];
         } else if ([action isEqualToString:@"mineTouchIndex102"]) {
             //我的二维码

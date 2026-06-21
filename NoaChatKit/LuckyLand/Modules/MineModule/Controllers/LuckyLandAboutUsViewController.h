@@ -1,5 +1,5 @@
 //
-//  NoaAboutUsViewController.h
+//  LuckyLandAboutUsViewController.h
 //  NoaKit
 //
 //  Created by LuckyLand on 2026/11/13.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaAboutUsViewController : LuckyLandBaseViewController
+@interface LuckyLandAboutUsViewController : LuckyLandBaseViewController
 
 @end
 

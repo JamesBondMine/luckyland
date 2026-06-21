@@ -9,7 +9,7 @@
 #import "NoaSystemSettingCell.h"
 #import "NoaSystemFooterView.h"
 #import "NoaToolManager.h"
-#import "NoaAboutUsViewController.h"
+#import "LuckyLandAboutUsViewController.h"
 #import "NoaMessageAlertView.h"
 #import "NoaToolManager.h"
 #import "LuckyLandAccountRemoveViewController.h"

@@ -13,15 +13,15 @@
 #import "NoaUserInfoViewController.h"//个人资料
 #import "NoaBlackListViewController.h"//黑名单
 #import "NoaSafeSettingViewController.h"//安全设置
-#import "NoaSystemSettingViewController.h"//系统设置
+#import "LuckyLandSystemSettingViewController.h"//系统设置
 #import "NoaMyQRCodeViewController.h"//我的二维码
 #import "NoaMyCollectionViewController.h"//我的收藏
 #import "NoaComplainVC.h"//投诉与支持
 #import "NoaLanguageSetViewController.h"//多语言
-#import "NoaAboutUsViewController.h"//关于我们
+#import "LuckyLandAboutUsViewController.h"//关于我们
 #import "NoaShareInviteViewController.h"//分享邀请
 #import "LuckyLandSignInViewController.h" //签到页面
-#import "NoaTranslateSetDefaultViewController.h" //翻译管理
+#import "LuckyLandTranslateSetDefaultViewController.h" //翻译管理
 #import "NoaPrivacySettingViewController.h"
 #import "LuckLandTeamViewController.h"//团队
 #import "NoaTeamListVC.h"
@@ -468,7 +468,7 @@
     }
     if ([titleName isEqualToString:LanguageToolMatch(@"翻译管理")]) {
         //翻译管理
-        NoaTranslateSetDefaultViewController *vc = [[NoaTranslateSetDefaultViewController alloc] init];
+        LuckyLandTranslateSetDefaultViewController *vc = [[LuckyLandTranslateSetDefaultViewController alloc] init];
         [self openFullScreen:vc];
     }
     if ([titleName isEqualToString:LanguageToolMatch(@"应用语言")]) {
@@ -494,12 +494,12 @@
     }
     if ([titleName isEqualToString:LanguageToolMatch(@"关于")]) {
         //关于我们
-        NoaAboutUsViewController *aboutUsVC = [[NoaAboutUsViewController alloc] init];
+        LuckyLandAboutUsViewController *aboutUsVC = [[LuckyLandAboutUsViewController alloc] init];
         [self openFullScreen:aboutUsVC];
     }
     if ([titleName isEqualToString:LanguageToolMatch(@"系统设置")]) {
         //系统设置
-        NoaSystemSettingViewController *sysSettingVC = [[NoaSystemSettingViewController alloc] init];
+        LuckyLandSystemSettingViewController *sysSettingVC = [[LuckyLandSystemSettingViewController alloc] init];
         [self openFullScreen:sysSettingVC];
     }
     if ([titleName isEqualToString:LanguageToolMatch(@"网络检测")]) {
@@ -519,7 +519,7 @@
         [self openFullScreen:userInfoVC];
     }else if (actionTag == 201){
         //系统设置
-        NoaSystemSettingViewController *sysSettingVC = [[NoaSystemSettingViewController alloc] init];
+        LuckyLandSystemSettingViewController *sysSettingVC = [[LuckyLandSystemSettingViewController alloc] init];
         [self openFullScreen:sysSettingVC];
     }else if (actionTag == 202){
         NoaUserInfoViewController *userInfoVC = [[NoaUserInfoViewController alloc] init];

@@ -1,5 +1,5 @@
 //
-//  NoaTranslateSettingViewController.h
+//  LuckyLandTranslateSetDefaultViewController.h
 //  NoaKit
 //
 //  Created by LuckyLand on 2024/2/18.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaTranslateSettingViewController : LuckyLandBaseViewController
+@interface LuckyLandTranslateSetDefaultViewController : LuckyLandBaseViewController
 
 @end
 

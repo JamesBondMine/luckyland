@@ -1,22 +1,22 @@
 //
-//  NoaTranslateSetDefaultViewController.m
+//  LuckyLandTranslateSetDefaultViewController.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2024/2/18.
 //
 
-#import "NoaTranslateSetDefaultViewController.h"
+#import "LuckyLandTranslateSetDefaultViewController.h"
 #import "NoaTranslateSettingCell.h"
 #import "NoaTranslateChannelLanguageView.h"
 #import "NoaTranslateDefaultModel.h"
 
-@interface NoaTranslateSetDefaultViewController ()<UITableViewDelegate, UITableViewDataSource, ZBaseCellDelegate, ZTranslateChannelLanguageViewDelegate>
+@interface LuckyLandTranslateSetDefaultViewController ()<UITableViewDelegate, UITableViewDataSource, ZBaseCellDelegate, ZTranslateChannelLanguageViewDelegate>
 @property (nonatomic, strong) NSMutableArray *dataArr;
 @property (nonatomic, strong) NoaTranslateDefaultModel *defaultModel;
 @property (nonatomic, strong) LingIMSessionModel * sessionModel;
 @end
 
-@implementation NoaTranslateSetDefaultViewController
+@implementation LuckyLandTranslateSetDefaultViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
