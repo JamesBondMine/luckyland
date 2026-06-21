@@ -76,7 +76,7 @@
 + (NSMutableArray *)searchCountryArea:(NSString *)name {
     NSMutableArray *resultArr = [NSMutableArray array];
     NSString *sql= [NSString stringWithFormat:@"select * from SMS_country where (zh like '%%%@%%' or en like '%%%@%%' or es like '%%%@%%' or prefix like '%%%@%%' or emojiLogo like '%%%@%%') order by countryPinyin asc",name,name,name,name,name];
-    NSString *dbPath = [[NSBundle mainBundle] pathForResource:@"noa_constant" ofType:@"db"];
+    NSString *dbPath = [[NSBundle mainBundle] pathForResource:@"luckyland_constant" ofType:@"db"];
     FMDatabase *db = [[FMDatabase alloc] initWithPath:dbPath];
     if ([db open]) {
         FMResultSet *rs = [db executeQuery:sql];

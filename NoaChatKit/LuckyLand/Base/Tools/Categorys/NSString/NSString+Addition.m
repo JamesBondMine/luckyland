@@ -1050,7 +1050,7 @@ static NSString * notReachable = @"notReachable";
     
     NSString *fileType;
     if (![NSString isNil:mimeType]) {
-        NSString *fileTypeDicPath = [[NSBundle mainBundle] pathForResource:@"NoaMineToFile" ofType:@"plist"];
+        NSString *fileTypeDicPath = [[NSBundle mainBundle] pathForResource:@"LuckyMineToFile" ofType:@"plist"];
         NSDictionary *fileTypeDic = [NSDictionary dictionaryWithContentsOfFile:fileTypeDicPath];
         if ([[fileTypeDic allKeys] containsObject:mimeType]) {
             fileType = [fileTypeDic objectForKey:mimeType];

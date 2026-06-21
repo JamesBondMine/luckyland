@@ -109,7 +109,7 @@
     //select prefix from SMS_country where country_code_2 = 'HK'
     NSString *area_code = [ [NSLocale currentLocale] objectForKey:NSLocaleCountryCode];
     NSString *prefixCode;
-    NSString *dbPath = [[NSBundle mainBundle] pathForResource:@"noa_constant" ofType:@"db"];
+    NSString *dbPath = [[NSBundle mainBundle] pathForResource:@"luckyland_constant" ofType:@"db"];
     FMDatabase *db = [[FMDatabase alloc] initWithPath:dbPath];
     if ([db open]) {
         NSString *sql = [NSString stringWithFormat:@"select prefix from SMS_country where country_code_2 = '%@'", area_code];

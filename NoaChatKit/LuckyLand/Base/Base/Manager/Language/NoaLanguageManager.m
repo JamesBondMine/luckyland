@@ -99,7 +99,7 @@ static dispatch_once_t onceToken;
 //根据后台返回的code码，返回对应翻译后的提示文字内容
 - (NSString *)matchTranslateMessageFromCode:(NSInteger)errorCode errorMsg:(NSString *)errorMsg  {
     //获取errorCode和errorMsg对应的plist表内容
-    NSString *netResultCodePath = [[NSBundle mainBundle] pathForResource:@"NoaNetResultCode" ofType:@"plist"];
+    NSString *netResultCodePath = [[NSBundle mainBundle] pathForResource:@"LuckyLandNetResultCode" ofType:@"plist"];
     NSDictionary *NetResultCodeDic = [NSDictionary dictionaryWithContentsOfFile:netResultCodePath];
     
     NSString *keyStr = [NSString stringWithFormat:@"%ld", (long)errorCode];
@@ -129,7 +129,7 @@ static dispatch_once_t onceToken;
             languageCode = language;
         }
         //从本地数据库里查找对应的MapLanguageCode
-        NSString *dbPath = [[NSBundle mainBundle] pathForResource:@"noa_constant" ofType:@"db"];
+        NSString *dbPath = [[NSBundle mainBundle] pathForResource:@"luckyland_constant" ofType:@"db"];
         self.db = [[FMDatabase alloc] initWithPath:dbPath];
         if ([self.db open]) {
             //根据当前的语言，选择不同的国家名称展示

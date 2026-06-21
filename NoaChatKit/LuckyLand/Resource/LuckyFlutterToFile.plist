@@ -42,5 +42,17 @@
 	<string>mkv</string>
 	<key>video/x-ms-wmv</key>
 	<string>wmv</string>
+	<key>image/lucky-f</key>
+	<string>1</string>
+	<key>imgae/lucky-t</key>
+	<string>2</string>
+	<key>image/lucky-tr</key>
+	<string>3</string>
+	<key>video/lucky-f</key>
+	<string>4</string>
+	<key>video/lucky-t</key>
+	<string>5</string>
+	<key>video/lucky-tr</key>
+	<string>6</string>
 </dict>
 </plist>

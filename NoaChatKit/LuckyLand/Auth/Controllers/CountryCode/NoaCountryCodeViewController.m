@@ -65,7 +65,7 @@
     self.oriArray = @[].mutableCopy;
     WeakSelf
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        NSString *dbPath = [[NSBundle mainBundle] pathForResource:@"noa_constant" ofType:@"db"];
+        NSString *dbPath = [[NSBundle mainBundle] pathForResource:@"luckyland_constant" ofType:@"db"];
         weakSelf.db = [[FMDatabase alloc] initWithPath:dbPath];
         if ([weakSelf.db open]) {
             //根据当前的语言，选择不同的国家名称展示            

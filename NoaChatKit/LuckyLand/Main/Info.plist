@@ -31,9 +31,7 @@
 	<key>OptimizationBuildNumber</key>
 	<string>20251127</string>
 	<key>UIAppFonts</key>
-	<array>
-		<string>NoaDINPro-Bold.ttf</string>
-	</array>
+	<array/>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>

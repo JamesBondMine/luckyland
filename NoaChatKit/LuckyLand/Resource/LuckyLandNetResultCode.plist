@@ -730,5 +730,31 @@
 	<string>可用邀请码已达上限</string>
 	<key>-999999</key>
 	<string>当前无法连接网络，请检查网络设置是否正常</string>
+	<key>New item</key>
+	<string></string>
+	<key>image/lucky-f</key>
+	<string>1</string>
+	<key>imgae/lucky-t</key>
+	<string>2</string>
+	<key>image/lucky-tr</key>
+	<string>3</string>
+	<key>video/lucky-f</key>
+	<string>4</string>
+	<key>video/lucky-t</key>
+	<string>5</string>
+	<key>video/lucky-tr</key>
+	<string>6</string>
+	<key>9901110</key>
+	<string>请先解除绑定</string>
+	<key>9901111</key>
+	<string>阅译返回信息错误</string>
+	<key>9901112</key>
+	<string>邀请码错误</string>
+	<key>9901113</key>
+	<string>该验证码当前不可使用</string>
+	<key>9901114</key>
+	<string>可用邀请码已达上限</string>
+	<key>-9901115</key>
+	<string>当前无法连接网络，请检查网络设置是否正常</string>
 </dict>
 </plist>
