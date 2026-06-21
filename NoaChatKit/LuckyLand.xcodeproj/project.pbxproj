@@ -638,6 +638,18 @@
 		6CAE35382E72C6B10024763A /* NoaFallbackEndpointStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CAE35372E72C6B10024763A /* NoaFallbackEndpointStore.m */; };
 		6CD0B5D52E17AC42009FCAE5 /* NoaChatAtBannedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD0B5D42E17AC42009FCAE5 /* NoaChatAtBannedView.m */; };
 		6CEFA8D62E49955A00D872DC /* NoaGroupNoticeDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CEFA8D52E49955A00D872DC /* NoaGroupNoticeDetailVC.m */; };
+		8808EC242FE772EA003CEAFD /* UserInfoCustomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8808EC232FE772EA003CEAFD /* UserInfoCustomViewController.xib */; };
+		8808EC252FE772EA003CEAFD /* UserInfoCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8808EC222FE772EA003CEAFD /* UserInfoCustomViewController.m */; };
+		8808EC282FE77323003CEAFD /* UserInfoEditCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8808EC272FE77323003CEAFD /* UserInfoEditCustomViewController.m */; };
+		8808EC2C2FE7734E003CEAFD /* NickNameEditCustomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8808EC2B2FE7734E003CEAFD /* NickNameEditCustomViewController.xib */; };
+		8808EC2D2FE7734E003CEAFD /* NickNameEditCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8808EC2A2FE7734E003CEAFD /* NickNameEditCustomViewController.m */; };
+		8808EC312FE7736F003CEAFD /* MessageEditCustomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8808EC302FE7736F003CEAFD /* MessageEditCustomViewController.xib */; };
+		8808EC322FE7736F003CEAFD /* MessageEditCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8808EC2F2FE7736F003CEAFD /* MessageEditCustomViewController.m */; };
+		8808EC352FE77389003CEAFD /* MessageSenderCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8808EC342FE77389003CEAFD /* MessageSenderCustomViewController.m */; };
+		8808EC392FE773A5003CEAFD /* MessageReceiveCustomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8808EC382FE773A5003CEAFD /* MessageReceiveCustomViewController.xib */; };
+		8808EC3A2FE773A5003CEAFD /* MessageReceiveCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8808EC372FE773A5003CEAFD /* MessageReceiveCustomViewController.m */; };
+		8808EC3C2FE773D2003CEAFD /* StoryboardMessage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8808EC3B2FE773D2003CEAFD /* StoryboardMessage.storyboard */; };
+		8808EC3E2FE773F0003CEAFD /* Empty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8808EC3D2FE773F0003CEAFD /* Empty.xib */; };
 		880D8AA22FE25C8A00D1578F /* LuckyLandHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 880D8AA02FE25C8A00D1578F /* LuckyLandHomeViewController.m */; };
 		880D8AA32FE25C8A00D1578F /* LuckyLandHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 880D8AA12FE25C8A00D1578F /* LuckyLandHomeViewController.xib */; };
 		880D8AB42FE2601000D1578F /* LuckyLandBoatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 880D8AB72FE2601000D1578F /* LuckyLandBoatView.m */; };
@@ -2049,6 +2061,24 @@
 		6CD0B5D42E17AC42009FCAE5 /* NoaChatAtBannedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaChatAtBannedView.m; sourceTree = "<group>"; };
 		6CEFA8D42E49955A00D872DC /* NoaGroupNoticeDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaGroupNoticeDetailVC.h; sourceTree = "<group>"; };
 		6CEFA8D52E49955A00D872DC /* NoaGroupNoticeDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaGroupNoticeDetailVC.m; sourceTree = "<group>"; };
+		8808EC212FE772EA003CEAFD /* UserInfoCustomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfoCustomViewController.h; sourceTree = "<group>"; };
+		8808EC222FE772EA003CEAFD /* UserInfoCustomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfoCustomViewController.m; sourceTree = "<group>"; };
+		8808EC232FE772EA003CEAFD /* UserInfoCustomViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserInfoCustomViewController.xib; sourceTree = "<group>"; };
+		8808EC262FE77323003CEAFD /* UserInfoEditCustomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfoEditCustomViewController.h; sourceTree = "<group>"; };
+		8808EC272FE77323003CEAFD /* UserInfoEditCustomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfoEditCustomViewController.m; sourceTree = "<group>"; };
+		8808EC292FE7734E003CEAFD /* NickNameEditCustomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NickNameEditCustomViewController.h; sourceTree = "<group>"; };
+		8808EC2A2FE7734E003CEAFD /* NickNameEditCustomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NickNameEditCustomViewController.m; sourceTree = "<group>"; };
+		8808EC2B2FE7734E003CEAFD /* NickNameEditCustomViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NickNameEditCustomViewController.xib; sourceTree = "<group>"; };
+		8808EC2E2FE7736F003CEAFD /* MessageEditCustomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageEditCustomViewController.h; sourceTree = "<group>"; };
+		8808EC2F2FE7736F003CEAFD /* MessageEditCustomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageEditCustomViewController.m; sourceTree = "<group>"; };
+		8808EC302FE7736F003CEAFD /* MessageEditCustomViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageEditCustomViewController.xib; sourceTree = "<group>"; };
+		8808EC332FE77389003CEAFD /* MessageSenderCustomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageSenderCustomViewController.h; sourceTree = "<group>"; };
+		8808EC342FE77389003CEAFD /* MessageSenderCustomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageSenderCustomViewController.m; sourceTree = "<group>"; };
+		8808EC362FE773A5003CEAFD /* MessageReceiveCustomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageReceiveCustomViewController.h; sourceTree = "<group>"; };
+		8808EC372FE773A5003CEAFD /* MessageReceiveCustomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageReceiveCustomViewController.m; sourceTree = "<group>"; };
+		8808EC382FE773A5003CEAFD /* MessageReceiveCustomViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageReceiveCustomViewController.xib; sourceTree = "<group>"; };
+		8808EC3B2FE773D2003CEAFD /* StoryboardMessage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoryboardMessage.storyboard; sourceTree = "<group>"; };
+		8808EC3D2FE773F0003CEAFD /* Empty.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Empty.xib; sourceTree = "<group>"; };
 		880D8A9F2FE25C8A00D1578F /* LuckyLandHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LuckyLandHomeViewController.h; sourceTree = "<group>"; };
 		880D8AA02FE25C8A00D1578F /* LuckyLandHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuckyLandHomeViewController.m; sourceTree = "<group>"; };
 		880D8AA12FE25C8A00D1578F /* LuckyLandHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LuckyLandHomeViewController.xib; sourceTree = "<group>"; };
@@ -4871,6 +4901,7 @@
 		18B1534C28A2703D0033CB51 /* LuckyLand */ = {
 			isa = PBXGroup;
 			children = (
+				8808EC202FE772B8003CEAFD /* XibCustom */,
 				8826BF1C2FE23A46003EB3D9 /* luckyLandJoin */,
 				883D68A42FD7B70D009E87E6 /* OldControllers */,
 				881556452FA88BE9004702A6 /* Auth */,
@@ -5281,6 +5312,31 @@
 				101DEEAEA3EF03F1BE5686A2 /* Pods_LuckyLand.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8808EC202FE772B8003CEAFD /* XibCustom */ = {
+			isa = PBXGroup;
+			children = (
+				8808EC212FE772EA003CEAFD /* UserInfoCustomViewController.h */,
+				8808EC222FE772EA003CEAFD /* UserInfoCustomViewController.m */,
+				8808EC232FE772EA003CEAFD /* UserInfoCustomViewController.xib */,
+				8808EC262FE77323003CEAFD /* UserInfoEditCustomViewController.h */,
+				8808EC272FE77323003CEAFD /* UserInfoEditCustomViewController.m */,
+				8808EC292FE7734E003CEAFD /* NickNameEditCustomViewController.h */,
+				8808EC2A2FE7734E003CEAFD /* NickNameEditCustomViewController.m */,
+				8808EC2B2FE7734E003CEAFD /* NickNameEditCustomViewController.xib */,
+				8808EC2E2FE7736F003CEAFD /* MessageEditCustomViewController.h */,
+				8808EC2F2FE7736F003CEAFD /* MessageEditCustomViewController.m */,
+				8808EC302FE7736F003CEAFD /* MessageEditCustomViewController.xib */,
+				8808EC332FE77389003CEAFD /* MessageSenderCustomViewController.h */,
+				8808EC342FE77389003CEAFD /* MessageSenderCustomViewController.m */,
+				8808EC3B2FE773D2003CEAFD /* StoryboardMessage.storyboard */,
+				8808EC3D2FE773F0003CEAFD /* Empty.xib */,
+				8808EC362FE773A5003CEAFD /* MessageReceiveCustomViewController.h */,
+				8808EC372FE773A5003CEAFD /* MessageReceiveCustomViewController.m */,
+				8808EC382FE773A5003CEAFD /* MessageReceiveCustomViewController.xib */,
+			);
+			path = XibCustom;
 			sourceTree = "<group>";
 		};
 		880D8A9E2FE25C4900D1578F /* home */ = {
@@ -5982,6 +6038,10 @@
 				04BD6BE829D29B250021750F /* noa_constant.db in Resources */,
 				1863DAF12A94AFEC005351F6 /* KLSignInView.xib in Resources */,
 				042240362A8E00D500350D31 /* NoaChatInputEmoji.plist in Resources */,
+				8808EC312FE7736F003CEAFD /* MessageEditCustomViewController.xib in Resources */,
+				8808EC2C2FE7734E003CEAFD /* NickNameEditCustomViewController.xib in Resources */,
+				8808EC3E2FE773F0003CEAFD /* Empty.xib in Resources */,
+				8808EC3C2FE773D2003CEAFD /* StoryboardMessage.storyboard in Resources */,
 				042240382A8E00D500350D31 /* EmojiResource.xcassets in Resources */,
 				18B1535D28A2703E0033CB51 /* LaunchScreen.storyboard in Resources */,
 				04882509298C999800FC58CB /* KNPhotoBrowser.bundle in Resources */,
@@ -5990,9 +6050,11 @@
 				04A5FD992A3B324500E532A4 /* InfoPlist.strings in Resources */,
 				04AAE0DE2CDB3BB60090660F /* noa_luckyLand_captcha_alitwo.html in Resources */,
 				04AAE0DD2CDB3BB60090660F /* noa_LuckyLand_captcha_alione.html in Resources */,
+				8808EC392FE773A5003CEAFD /* MessageReceiveCustomViewController.xib in Resources */,
 				18B1535A28A2703E0033CB51 /* Assets.xcassets in Resources */,
 				18B1535828A2703D0033CB51 /* Main.storyboard in Resources */,
 				04A226962A3879310035BE0A /* NoaNetResultCode.plist in Resources */,
+				8808EC242FE772EA003CEAFD /* UserInfoCustomViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6175,8 +6237,10 @@
 				043482022920F09C00456FD0 /* NoaSafeSettingCell.m in Sources */,
 				6C11D4FA2EDD7950007D0AB2 /* ZGroupTopMessageView.m in Sources */,
 				048751BD2A6E47F40010B70D /* NoaTeamMemberModel.m in Sources */,
+				8808EC352FE77389003CEAFD /* MessageSenderCustomViewController.m in Sources */,
 				04AF7C7E2B3BFF1D00B881CE /* NoaTranslateChannelLanguageView.m in Sources */,
 				08B3F7F82DAF876D00CE0DE4 /* NoaCustomProxyTableViewCell.m in Sources */,
+				8808EC2D2FE7734E003CEAFD /* NickNameEditCustomViewController.m in Sources */,
 				041EEB6B29F23C2400CDCC1A /* NoaMassMessageErrorUserModel.m in Sources */,
 				043791472BC27F7100A07BBC /* MBadgeView.m in Sources */,
 				0476A5202A1DEF34005E2229 /* NoaCallFloatView.m in Sources */,
@@ -6244,6 +6308,7 @@
 				C3BDAAD32E49949200CD6FD3 /* NoaGroupNoticeListView.m in Sources */,
 				C3EDD56A2E33551B0023D49E /* NoaTeamInviteEditTeamNameVC.m in Sources */,
 				045F1EE428DEE3DA003D2818 /* MImageBrowserModel.m in Sources */,
+				8808EC322FE7736F003CEAFD /* MessageEditCustomViewController.m in Sources */,
 				042741832AA5C6B7000EB6B2 /* NoaMassMessageGroupSelectedTopView.m in Sources */,
 				04BEAD4829727EF800B49358 /* NoaAudioPlayAnimationView.m in Sources */,
 				046583E429680AEE00B39080 /* NoaMediaCallVC.m in Sources */,
@@ -6404,6 +6469,7 @@
 				881556762FA88BE9004702A6 /* NoaSsoAccountManagerView.m in Sources */,
 				2D66B8292EC479780092CE4F /* LuckyLandLoginBaseViewController.m in Sources */,
 				2D66B82A2EC479780092CE4F /* NoaLoginBaseBlurView.m in Sources */,
+				8808EC3A2FE773A5003CEAFD /* MessageReceiveCustomViewController.m in Sources */,
 				2D66B82C2EC479780092CE4F /* LuckyLandForgetBaseViewController.m in Sources */,
 				6C94C35C2E30862C00DA43B2 /* NoaTeamTotalNumberListVC.m in Sources */,
 				0430130A28E4608800188581 /* NoaBubbleReceiveView.m in Sources */,
@@ -6618,6 +6684,7 @@
 				881556572FA88BE9004702A6 /* NoaLoginAccountDataHandle.m in Sources */,
 				0430130F28E4608800188581 /* NoaMessageVideoCell.m in Sources */,
 				04840B1928C9FC3400936BFA /* NoaPresentView.m in Sources */,
+				8808EC252FE772EA003CEAFD /* UserInfoCustomViewController.m in Sources */,
 				04CDD4A42AE907B00068D830 /* NoaEmojiShopFeaturedHeaderView.m in Sources */,
 				04CEDBDF29F7E0EE00080E17 /* NoaChatRecordDetailViewController.m in Sources */,
 				04B967062B80AE9800DBD76A /* groupSetDorpView.m in Sources */,
@@ -6689,6 +6756,7 @@
 				04C43DCC29EE64AA00555D7E /* NoaChatMultiSelectSendHander.m in Sources */,
 				2D88CB432E9FBCFE00490906 /* NoaNetworkDetectionMessageModel.m in Sources */,
 				8815566C2FA88BE9004702A6 /* NoaLoginPhoneNumberInputView.m in Sources */,
+				8808EC282FE77323003CEAFD /* UserInfoEditCustomViewController.m in Sources */,
 				04F5078D28D2FA930048FFB5 /* NoaSsoInfoModel.m in Sources */,
 				184043ED2B0C54E400E575B0 /* YYTextUtilities.m in Sources */,
 				042D7F0729129D2100D2BB59 /* NoaSessionHeaderView.m in Sources */,
@@ -7077,7 +7145,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -7349,7 +7417,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

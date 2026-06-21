@@ -16,7 +16,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "18B1534928A2703D0033CB51"
-               BuildableName = "&#x5495;&#x565c;.app"
+               BuildableName = "&#x5e78;&#x8fd0;&#x5c9b;.app"
                BlueprintName = "LuckyLand"
                ReferencedContainer = "container:LuckyLand.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "18B1534928A2703D0033CB51"
-            BuildableName = "&#x5495;&#x565c;.app"
+            BuildableName = "&#x5e78;&#x8fd0;&#x5c9b;.app"
             BlueprintName = "LuckyLand"
             ReferencedContainer = "container:LuckyLand.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "18B1534928A2703D0033CB51"
-            BuildableName = "&#x5495;&#x565c;.app"
+            BuildableName = "&#x5e78;&#x8fd0;&#x5c9b;.app"
             BlueprintName = "LuckyLand"
             ReferencedContainer = "container:LuckyLand.xcodeproj">
          </BuildableReference>

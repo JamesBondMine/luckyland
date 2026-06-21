@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '13.0'
+platform :ios, '14.0'
 
 source "https://github.com/CocoaPods/Specs"
 source 'https://github.com/aliyun/aliyun-specs.git'
@@ -157,7 +157,7 @@ post_install do |installer|
 
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
-      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '14.0'
       config.build_settings['ONLY_ACTIVE_ARCH'] = 'NO'
       # 部分 Pod（如 CocoaLumberjack）会声明 Swift 6.x，旧版 Xcode 只支持到 5.0
       config.build_settings['SWIFT_VERSION'] = '5.0'
