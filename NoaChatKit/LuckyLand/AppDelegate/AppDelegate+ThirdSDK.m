@@ -13,7 +13,7 @@
 #pragma mark - 初始化第三方SDK信息
 - (void)configThirdSDK {
     [self configAliyunCloundPDNS];
-    [self configOpenInstallSDK];
+//    [self configOpenInstallSDK];
 }
 
 
@@ -26,14 +26,14 @@
 //初始化openinstall
 - (void)configOpenInstallSDK {
     if ([self hasAppInfoOpenInstallAppKey]) {
-        [OpenInstallSDK initWithDelegate:self];
+//        [OpenInstallSDK initWithDelegate:self];
     }
 }
 
 - (void)openInstallReportRegister {
     if ([self hasAppInfoOpenInstallAppKey]) {
         //用户注册成功后调用
-        [OpenInstallSDK reportRegister];
+//        [OpenInstallSDK reportRegister];
     }
 }
 

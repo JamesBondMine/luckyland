@@ -6,11 +6,11 @@
 //
 
 #import "AppDelegate.h"
-#import "OpenInstallSDK.h"
+//#import "OpenInstallSDK.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AppDelegate (ThirdSDK) <OpenInstallDelegate>
+@interface AppDelegate (ThirdSDK)
 
 - (void)configThirdSDK;
 - (void)openInstallReportRegister;

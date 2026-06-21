@@ -122,8 +122,7 @@ install_all_flutter_pods(flutter_application_path)
   pod 'Canvas'
   #图片下载
   pod 'Kingfisher'
-  #openinstall数据统计
-  pod 'libOpenInstallSDK'
+
 
   # RAC
   pod 'ReactiveObjC', :inhibit_warnings => true
