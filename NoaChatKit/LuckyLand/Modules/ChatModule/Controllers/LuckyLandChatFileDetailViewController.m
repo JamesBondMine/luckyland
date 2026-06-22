@@ -1,17 +1,17 @@
 //
-//  NoaChatFileDetailViewController.m
+//  LuckyLandChatFileDetailViewController.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2023/4/11.
 //
 
-#import "NoaChatFileDetailViewController.h"
+#import "LuckyLandChatFileDetailViewController.h"
 #import "NoaProgressButton.h"
-#import "NoaChatMultiSelectViewController.h"   //转发选择接收对象
+#import "LuckyLandChatMultiSelectViewController.h"   //转发选择接收对象
 #import "NoaFileDownloadManager.h"
 //#import "ZFileNetProgressManager.h"
 
-@interface NoaChatFileDetailViewController () <ZFileDownloadTaskDelegate>
+@interface LuckyLandChatFileDetailViewController () <ZFileDownloadTaskDelegate>
 
 @property (nonatomic, strong)UIImageView *fileTypeImgView;
 @property (nonatomic, strong)UILabel *fileTypeLbl;
@@ -25,7 +25,7 @@
 
 @end
 
-@implementation NoaChatFileDetailViewController
+@implementation LuckyLandChatFileDetailViewController
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -236,7 +236,7 @@
 
 #pragma mark - 转发文件消息
 - (void)forwardFileMessage {
-    NoaChatMultiSelectViewController *vc = [NoaChatMultiSelectViewController new];
+    LuckyLandChatMultiSelectViewController *vc = [LuckyLandChatMultiSelectViewController new];
     vc.multiSelectType = ZMultiSelectTypeSingleForward;
     vc.fromSessionId = self.fromSessionId;
     vc.forwardMsgList = @[self.fileMsgModel];

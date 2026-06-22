@@ -1,5 +1,5 @@
 //
-//  NoaChatFileDetailViewController.h
+//  LuckyLandChatFileDetailViewController.h
 //  NoaKit
 //
 //  Created by LuckyLand on 2023/4/11.
@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaChatFileDetailViewController : LuckyLandBaseViewController
+@interface LuckyLandChatFileDetailViewController : LuckyLandBaseViewController
 
 @property (nonatomic, strong)NoaMessageModel *fileMsgModel;
 @property (nonatomic, copy)NSString *localFilePath;

@@ -32,16 +32,16 @@
 #import "NoaFilePickerVC.h"//文件
 #import "NoaMessageSendHander.h"//消息发送工具
 #import "NoaToolManager.h"//工具类
-#import "NoaChatMultiSelectViewController.h"//消息转发选择转发对象
+#import "LuckyLandChatMultiSelectViewController.h"//消息转发选择转发对象
 #import "NoaChatSingleSetVC.h"//单聊设置VC
 #import "NoaAudioPlayManager.h"//语音消息播放单例
-#import "NoaChatFileDetailViewController.h"//文件消息中文件详情
+#import "LuckyLandChatFileDetailViewController.h"//文件消息中文件详情
 #import "KNPhotoBrowser.h"//图片视频浏览
 //#import "ZFileNetProgressManager.h"//文件上传
 #import "NoaMyCollectionViewController.h"//收藏
 #import "NoaChatMultiSelectSendHander.h"
 #import "NoaMessageMultiBottomView.h" //多选bottom
-#import "NoaChatRecordDetailViewController.h" //会话记录详情
+#import "LuckyLandChatRecordDetailViewController.h" //会话记录详情
 #import "NoaUserHomePageVC.h"//用户主页
 #import "NoaMessageAlertView.h"//弹窗提示类的控件
 #import "NoaMessageTools.h"//消息工具类
@@ -992,7 +992,7 @@
 #pragma mark - 合并转发(将选择的消息进行数据转换成合并转发需要的IMChatMessage)
 - (void)sendChatRecordMessage {
     //选择 消息记录 接收者
-    NoaChatMultiSelectViewController *vc = [NoaChatMultiSelectViewController new];
+    LuckyLandChatMultiSelectViewController *vc = [LuckyLandChatMultiSelectViewController new];
     vc.multiSelectType = ZMultiSelectTypeMergeForward;
     vc.mergeMsgCount = self.selectedMsgModels.count;
     [self.navigationController pushViewController:vc animated:YES];
@@ -1854,7 +1854,7 @@
         NSString *foldPath = [NSString getFileDiectoryWithCustomPath:[NSString stringWithFormat:@"%@-%@",UserManager.userInfo.userUID, self.sessionID]];
         NSString *fileFullPath = [NSString stringWithFormat:@"%@/%@", foldPath, bubbleMsgClickModel.message.fileName];
         
-        NoaChatFileDetailViewController *fileDetailVC = [[NoaChatFileDetailViewController alloc] init];
+        LuckyLandChatFileDetailViewController *fileDetailVC = [[LuckyLandChatFileDetailViewController alloc] init];
         fileDetailVC.fileMsgModel = bubbleMsgClickModel;
         fileDetailVC.fromSessionId = self.sessionID;
         fileDetailVC.localFilePath = fileFullPath;
@@ -1869,7 +1869,7 @@
         [self.navigationController pushViewController:userHomeVC animated:YES];
     } else if (bubbleMsgClickModel.message.messageType == CIMChatMessageType_ForwardMessage) {
         //消息记录详情页面
-        NoaChatRecordDetailViewController *chatRecordDetailVC = [[NoaChatRecordDetailViewController alloc] init];
+        LuckyLandChatRecordDetailViewController *chatRecordDetailVC = [[LuckyLandChatRecordDetailViewController alloc] init];
         chatRecordDetailVC.levelNum = 1;
         chatRecordDetailVC.model = bubbleMsgClickModel;
         [self.navigationController pushViewController:chatRecordDetailVC animated:YES];
@@ -2073,7 +2073,7 @@
 
 //转发
 - (void)messageForwardActionWithMsgList:(NSArray *)msgModelList multiSelectType:(ZMultiSelectType)multiSelectType {
-    NoaChatMultiSelectViewController *vc = [NoaChatMultiSelectViewController new];
+    LuckyLandChatMultiSelectViewController *vc = [LuckyLandChatMultiSelectViewController new];
     vc.multiSelectType = multiSelectType;
     vc.fromSessionId = self.sessionID;
     vc.forwardMsgList = msgModelList;

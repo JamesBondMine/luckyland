@@ -36,13 +36,13 @@
 #import "NoaDraftStore.h"
 #import "NoaMessageSendHander.h"
 #import "NoaToolManager.h"                //工具类
-#import "NoaChatMultiSelectViewController.h"  //消息转发选择转发对象
+#import "LuckyLandChatMultiSelectViewController.h"  //消息转发选择转发对象
 #import "NoaChatSingleSetVC.h"            //单聊设置VC
-#import "NoaChatGroupSetVC.h"             //群聊设置VC
+#import "LuckyLandChatGroupSetVC.h"             //群聊设置VC
 #import "NoaMsgAtListViewController.h"    //@用户的列表
 #import "NoaUserHomePageVC.h"             //用户个人资料
 #import "NoaAudioPlayManager.h"           //语音消息播放单例
-#import "NoaChatFileDetailViewController.h"   //文件消息中文件详情
+#import "LuckyLandChatFileDetailViewController.h"   //文件消息中文件详情
 #import "NoaChatGroupNoticeTipView.h"    //群公告提示
 #import "NoaMediaCallManager.h"//LiveKit音视频通话
 #import "NoaCallManager.h"//即构音视频通话
@@ -55,7 +55,7 @@
 #import "NoaMessageTimeDeleteView.h"//消息定时删除配置
 #import "NoaChatMultiSelectSendHander.h"
 #import "NoaMessageMultiBottomView.h" //多选bottom
-#import "NoaChatRecordDetailViewController.h" //会话记录详情
+#import "LuckyLandChatRecordDetailViewController.h" //会话记录详情
 #import "NoaSensitiveManager.h" //敏感词过滤
 #import "NoaChatTextUrlListView.h" //topView标签栏相关
 #import "NoaChatNavLinkAddView.h"
@@ -69,7 +69,7 @@
 #import "NoaMessageSendTask.h"
 
 #import "NoaMessageVoiceHudView.h"
-#import "NoaChatActivityLevelVC.h"
+#import "LuckyLandChatActivityLevelVC.h"
 #import "NoaChatAtBannedView.h"
 // 群公告列表
 #import "NoaGroupNoticeListVC.h"
@@ -80,7 +80,7 @@
 // 群置顶消息 View
 #import "ZGroupTopMessageView.h"
 // 群置顶消息列表页面
-#import "ZGroupTopMessageListViewController.h"
+#import "LuckyLandGroupTopMessageListViewController.h"
 
 
 #import "LuckyLandHomeViewController.h"
@@ -436,7 +436,7 @@
             [weakSelf.navigationController pushViewController:vc animated:YES];
         } else {
             //群聊-Setting
-            NoaChatGroupSetVC *vc = [NoaChatGroupSetVC new];
+            LuckyLandChatGroupSetVC *vc = [LuckyLandChatGroupSetVC new];
             vc.groupID = weakSelf.sessionID;
             [weakSelf.navigationController pushViewController:vc animated:YES];
         }
@@ -2782,7 +2782,7 @@
 #pragma mark - 合并转发(将选择的消息进行数据转换成合并转发需要的IMChatMessage)
 - (void)sendChatRecordMessage:(NSMutableArray *)msgModels {
     //选择 消息记录 接收者
-    NoaChatMultiSelectViewController *vc = [NoaChatMultiSelectViewController new];
+    LuckyLandChatMultiSelectViewController *vc = [LuckyLandChatMultiSelectViewController new];
     vc.multiSelectType = ZMultiSelectTypeMergeForward;
     vc.mergeMsgCount = msgModels.count;
     [self.navigationController pushViewController:vc animated:YES];
@@ -5672,7 +5672,7 @@
         NSString *foldPath = [NSString getFileDiectoryWithCustomPath:[NSString stringWithFormat:@"%@-%@",UserManager.userInfo.userUID, self.sessionID]];
         NSString *fileFullPath = [NSString stringWithFormat:@"%@/%@", foldPath, bubbleMsgClickModel.message.fileName];
         
-        NoaChatFileDetailViewController *fileDetailVC = [[NoaChatFileDetailViewController alloc] init];
+        LuckyLandChatFileDetailViewController *fileDetailVC = [[LuckyLandChatFileDetailViewController alloc] init];
         fileDetailVC.fileMsgModel = bubbleMsgClickModel;
         fileDetailVC.fromSessionId = self.sessionID;
         fileDetailVC.localFilePath = fileFullPath;
@@ -5687,7 +5687,7 @@
         [self.navigationController pushViewController:userHomeVC animated:YES];
     } else if (bubbleMsgClickModel.message.messageType == CIMChatMessageType_ForwardMessage) {
         //消息记录详情页面
-        NoaChatRecordDetailViewController *chatRecordDetailVC = [[NoaChatRecordDetailViewController alloc] init];
+        LuckyLandChatRecordDetailViewController *chatRecordDetailVC = [[LuckyLandChatRecordDetailViewController alloc] init];
         chatRecordDetailVC.levelNum = 1;
         chatRecordDetailVC.model = bubbleMsgClickModel;
         [self.navigationController pushViewController:chatRecordDetailVC animated:YES];
@@ -5821,7 +5821,7 @@
 //群成员活跃等级标签点击
 - (void)groupMemberActivityLevelTagClick:(NSIndexPath *)cellIndex {
     if (self.groupInfo.isActiveEnabled == 1) {
-        NoaChatActivityLevelVC *vc = [[NoaChatActivityLevelVC alloc] init];
+        LuckyLandChatActivityLevelVC *vc = [[LuckyLandChatActivityLevelVC alloc] init];
         vc.groupInfo = self.groupInfo;
         [self.navigationController pushViewController:vc animated:YES];
     }
@@ -6109,7 +6109,7 @@
 }
 //转发
 - (void)messageForwardActionWithMsgList:(NSArray *)msgModelList multiSelectType:(ZMultiSelectType)multiSelectType {
-    NoaChatMultiSelectViewController *vc = [NoaChatMultiSelectViewController new];
+    LuckyLandChatMultiSelectViewController *vc = [LuckyLandChatMultiSelectViewController new];
     vc.multiSelectType = multiSelectType;
     vc.fromSessionId = self.sessionID;
     vc.forwardMsgList = msgModelList;
@@ -7484,7 +7484,7 @@
 #pragma mark - ZGroupTopMessageViewDelegate
 - (void)groupTopMessageViewDidClickListButton:(ZGroupTopMessageView *)view {
     // 跳转到消息置顶列表页面
-    ZGroupTopMessageListViewController *vc = [[ZGroupTopMessageListViewController alloc] init];
+    LuckyLandGroupTopMessageListViewController *vc = [[LuckyLandGroupTopMessageListViewController alloc] init];
     vc.groupId = self.sessionID;
     vc.groupInfo = self.groupInfo;
     // 传递会话类型

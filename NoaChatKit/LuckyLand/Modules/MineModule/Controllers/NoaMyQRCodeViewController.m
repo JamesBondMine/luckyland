@@ -8,7 +8,7 @@
 #import "NoaMyQRCodeViewController.h"
 #import "NoaBaseImageView.h"
 #import "UIImage+YYImageHelper.h"
-#import "NoaChatMultiSelectViewController.h"
+#import "LuckyLandChatMultiSelectViewController.h"
 #import "NoaMyQRCodeView.h"
 
 @interface NoaMyQRCodeViewController ()
@@ -292,7 +292,7 @@
     UIGraphicsEndImageContext();
     
     //分享二维码
-    NoaChatMultiSelectViewController *vc = [NoaChatMultiSelectViewController new];
+    LuckyLandChatMultiSelectViewController *vc = [LuckyLandChatMultiSelectViewController new];
     vc.multiSelectType = ZMultiSelectTypeShareQRImg;
     vc.fromSessionId = @"";
     vc.qrCodeImg = image;

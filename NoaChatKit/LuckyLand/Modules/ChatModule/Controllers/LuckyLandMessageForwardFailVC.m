@@ -1,19 +1,19 @@
 //
-//  NoaMessageForwardFailVC.m
+//  LuckyLandMessageForwardFailVC.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2024/3/18.
 //
 
-#import "NoaMessageForwardFailVC.h"
+#import "LuckyLandMessageForwardFailVC.h"
 #import "NoaMessageForwardFailCell.h"
 #import "NoaForwardMsgPrecheckModel.h"
 
-@interface NoaMessageForwardFailVC () <UITableViewDataSource,UITableViewDelegate>
+@interface LuckyLandMessageForwardFailVC () <UITableViewDataSource,UITableViewDelegate>
 
 @end
 
-@implementation NoaMessageForwardFailVC
+@implementation LuckyLandMessageForwardFailVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];

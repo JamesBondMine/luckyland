@@ -1,5 +1,5 @@
 //
-//  NoaChatHistoryChoiceUserVC.h
+//  LuckyLandChatHistoryChoiceUserVC.h
 //  NoaKit
 //
 //  Created by LuckyLand on 2024/8/12.
@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface NoaChatHistoryChoiceUserVC : LuckyLandBaseViewController
+@interface LuckyLandChatHistoryChoiceUserVC : LuckyLandBaseViewController
 
 @property (nonatomic, assign) CIMChatType chatType;//会话类型
 @property (nonatomic, copy) NSString *sessionID;//会话ID(单聊userUid 群聊groupID)

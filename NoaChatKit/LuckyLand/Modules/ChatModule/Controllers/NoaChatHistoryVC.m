@@ -9,16 +9,16 @@
 
 #import <JXCategoryView/JXCategoryView.h>
 #import "NoaScrollView.h"
-#import "NoaChatHistoryTextVC.h"//文本
-#import "NoaChatHistoryMediaVC.h"//图片/视频
+#import "LuckyLandChatHistoryTextVC.h"//文本
+#import "LuckyLandChatHistoryMediaVC.h"//图片/视频
 #import "NoaChatHistoryFileVC.h"//文件
 
 @interface NoaChatHistoryVC () <JXCategoryViewDelegate,UIScrollViewDelegate>
 
 @property (nonatomic, strong) JXCategoryTitleView *viewCategory;
 @property (nonatomic, strong) NoaScrollView *scrollView;
-@property (nonatomic, strong) NoaChatHistoryTextVC *vcText;
-@property (nonatomic, strong) NoaChatHistoryMediaVC *vcMedia;
+@property (nonatomic, strong) LuckyLandChatHistoryTextVC *vcText;
+@property (nonatomic, strong) LuckyLandChatHistoryMediaVC *vcMedia;
 @property (nonatomic, strong) NoaChatHistoryFileVC *vcFile;
 
 @end
@@ -81,7 +81,7 @@
     [self.view addSubview:self.scrollView];
     self.viewCategory.contentScrollView = self.scrollView;
     
-    _vcText = [NoaChatHistoryTextVC new];
+    _vcText = [LuckyLandChatHistoryTextVC new];
     _vcText.chatType = _chatType;
     _vcText.sessionID = _sessionID;
     _vcText.groupInfo = self.groupInfoModel;
@@ -89,7 +89,7 @@
     [self addChildViewController:_vcText];
     [self.scrollView addSubview:_vcText.view];
     
-    _vcMedia = [NoaChatHistoryMediaVC new];
+    _vcMedia = [LuckyLandChatHistoryMediaVC new];
     _vcMedia.chatType = _chatType;
     _vcMedia.sessionID = _sessionID;
     _vcMedia.groupInfo = self.groupInfoModel;

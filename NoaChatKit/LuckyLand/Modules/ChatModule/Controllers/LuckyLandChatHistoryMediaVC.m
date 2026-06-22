@@ -1,19 +1,19 @@
 //
-//  NoaChatHistoryMediaVC.m
+//  LuckyLandChatHistoryMediaVC.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2026/11/11.
 //
 
-#import "NoaChatHistoryMediaVC.h"
+#import "LuckyLandChatHistoryMediaVC.h"
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 #import "NoaChatHistoryMediaCell.h"
 #import "NoaToolManager.h"
 #import "KNPhotoBrowser.h"//图片+视频的浏览器
 #import "NoaChatHistoryHeaderView.h"
-#import "NoaChatHistoryChoiceUserVC.h"
+#import "LuckyLandChatHistoryChoiceUserVC.h"
 
-@interface NoaChatHistoryMediaVC () <UICollectionViewDataSource,UICollectionViewDelegate,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate,KNPhotoBrowserDelegate, ZChatHistoryHeaderViewDelegate, ZChatHistoryChoiceUserDelegate>
+@interface LuckyLandChatHistoryMediaVC () <UICollectionViewDataSource,UICollectionViewDelegate,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate,KNPhotoBrowserDelegate, ZChatHistoryHeaderViewDelegate, ZChatHistoryChoiceUserDelegate>
 
 @property (nonatomic, strong) NSMutableArray *historyList;
 @property (nonatomic, strong) UICollectionView *collectionView;
@@ -21,7 +21,7 @@
 
 @end
 
-@implementation NoaChatHistoryMediaVC
+@implementation LuckyLandChatHistoryMediaVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -85,7 +85,7 @@
 
 #pragma mark - ZChatHistoryHeaderViewDelegate
 - (void)headerClickAction {
-    NoaChatHistoryChoiceUserVC *vc = [[NoaChatHistoryChoiceUserVC alloc] init];
+    LuckyLandChatHistoryChoiceUserVC *vc = [[LuckyLandChatHistoryChoiceUserVC alloc] init];
     vc.choicedList = self.selectHeadView.userInfoList;
     vc.chatType = self.chatType;
     vc.sessionID = self.sessionID;

@@ -1,5 +1,5 @@
 //
-//  NoaChatGroupSetVC.h
+//  LuckyLandChatGroupSetVC.h
 //  NoaKit
 //
 //  Created by LuckyLand on 2026/11/5.
@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaChatGroupSetVC : LuckyLandBaseViewController
+@interface LuckyLandChatGroupSetVC : LuckyLandBaseViewController
 
 @property (nonatomic, copy) NSString *groupID;
 

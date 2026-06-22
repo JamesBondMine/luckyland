@@ -1,11 +1,11 @@
 //
-//  NoaChatMultiSelectViewController.m
+//  LuckyLandChatMultiSelectViewController.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2023/4/11.
 //
 
-#import "NoaChatMultiSelectViewController.h"
+#import "LuckyLandChatMultiSelectViewController.h"
 #import "NoaSearchView.h"
 #import "NoaChatMultiSelectedView.h"
 #import "NoaChatMultiSelectHeaderView.h"
@@ -18,7 +18,7 @@
 #import "NoaChatMultiSelectTipsView.h"
 #import "NoaChatMultiSelectSendHander.h"
 #import "NoaMessageAlertView.h"
-#import "NoaMessageForwardFailVC.h"
+#import "LuckyLandMessageForwardFailVC.h"
 #import "NoaForwardMsgPrecheckModel.h"
 #import "NoaMassMessageSelectModel.h"
 #import "NoaExcursionSelectCell.h"
@@ -30,7 +30,7 @@
 #define List_Show_Type_Default      1   //默认：只显示 最近会话
 #define List_Show_Type_Search       2   //搜索结果：只显示 联系人和群聊
 
-@interface NoaChatMultiSelectViewController () <ZSearchViewDelegate,UITableViewDataSource,UITableViewDelegate,ZBaseCellDelegate>
+@interface LuckyLandChatMultiSelectViewController () <ZSearchViewDelegate,UITableViewDataSource,UITableViewDelegate,ZBaseCellDelegate>
 
 @property (nonatomic, strong) NoaNoDataView *viewNoData;
 
@@ -46,7 +46,7 @@
 @property (nonatomic, strong) NSMutableArray<NoaBaseUserModel *> *disableList;//不符合时间间隔的列表
 @end
 
-@implementation NoaChatMultiSelectViewController
+@implementation LuckyLandChatMultiSelectViewController
 
 - (void)viewWillAppear:(BOOL)animated{
     //隐藏导系统的航栏，使用自定义的navbar
@@ -417,7 +417,7 @@
         };
         forwardFailAlert.cancelBtnBlock = ^{
             //跳转异常详情
-            NoaMessageForwardFailVC *failVC = [[NoaMessageForwardFailVC alloc] init];
+            LuckyLandMessageForwardFailVC *failVC = [[LuckyLandMessageForwardFailVC alloc] init];
             failVC.forwardErroInfoList = newErrorInfoList;
             [weakSelf.navigationController pushViewController:failVC animated:YES];
         };
@@ -540,7 +540,7 @@
         };
         forwardFailAlert.cancelBtnBlock = ^{
             //跳转异常详情
-            NoaMessageForwardFailVC *failVC = [[NoaMessageForwardFailVC alloc] init];
+            LuckyLandMessageForwardFailVC *failVC = [[LuckyLandMessageForwardFailVC alloc] init];
             failVC.forwardErroInfoList = newErrorInfoList;
             [weakSelf.navigationController pushViewController:failVC animated:YES];
         };

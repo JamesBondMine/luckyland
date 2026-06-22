@@ -1,16 +1,16 @@
 //
-//  NoaChatHistoryChoiceUserVC.m
+//  LuckyLandChatHistoryChoiceUserVC.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2024/8/12.
 //
 
-#import "NoaChatHistoryChoiceUserVC.h"
+#import "LuckyLandChatHistoryChoiceUserVC.h"
 #import "NoaSearchView.h"
 #import "NoaHistoryChoiceUserCell.h"
 #import "NoaHistoryChoiceUseredTopView.h"
 
-@interface NoaChatHistoryChoiceUserVC () <ZSearchViewDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface LuckyLandChatHistoryChoiceUserVC () <ZSearchViewDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) NoaSearchView *viewSearch;//搜索控件
 @property (nonatomic, strong) NoaHistoryChoiceUseredTopView *choiceTopView;//已选择的
@@ -21,7 +21,7 @@
 
 @end
 
-@implementation NoaChatHistoryChoiceUserVC
+@implementation LuckyLandChatHistoryChoiceUserVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];

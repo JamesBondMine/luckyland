@@ -17,7 +17,7 @@
 #import "NoaToolManager.h"
 #import "NoaMessageAlertView.h"
 #import "NoaMessageTools.h"
-#import "NoaChatFileDetailViewController.h"
+#import "LuckyLandChatFileDetailViewController.h"
 
 @interface NoaMyCollectionViewController ()<UITableViewDataSource,UITableViewDelegate, MGSwipeTableCellDelegate, DZNEmptyDataSetSource,DZNEmptyDataSetDelegate, KNPhotoBrowserDelegate>
 
@@ -219,7 +219,7 @@
             [browserMessages addObjectIfNotNil:item];
         } else if (model.itemModel.mtype == CIMChatMessageType_FileMessage) {
             NSString *collectionFileFullPath = [NSString stringWithFormat:@"%@/%@", [NSString getCollcetionMessageFileDiectoryPath], model.itemModel.body.name];
-            NoaChatFileDetailViewController *fileDetailVC = [[NoaChatFileDetailViewController alloc] init];
+            LuckyLandChatFileDetailViewController *fileDetailVC = [[LuckyLandChatFileDetailViewController alloc] init];
             fileDetailVC.collectionMsgModel = model;
             fileDetailVC.localFilePath = collectionFileFullPath;
             fileDetailVC.isShowRightBtn = NO;

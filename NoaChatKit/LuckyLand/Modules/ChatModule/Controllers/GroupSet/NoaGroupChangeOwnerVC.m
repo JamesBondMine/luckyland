@@ -15,7 +15,7 @@
 #import "LingIMGroup.h"
 #import "NoaChatViewController.h"
 #import "NoaMessageAlertView.h"
-#import "NoaChatGroupSetVC.h"
+#import "LuckyLandChatGroupSetVC.h"
 
 @interface NoaGroupChangeOwnerVC ()<ZSearchViewDelegate,UITableViewDataSource,UITableViewDelegate,ZBaseCellDelegate>
 
@@ -104,10 +104,10 @@
     }
     [IMSDKManager groupChangeGroupOwnerWith:dict onSuccess:^(id _Nullable data, NSString * _Nullable traceId) {
         if (data) {
-            NoaChatGroupSetVC * vc;
+            LuckyLandChatGroupSetVC * vc;
             for (UIViewController * ctrl in weakSelf.navigationController.childViewControllers) {
-                if ([ctrl isKindOfClass:[NoaChatGroupSetVC class]]) {
-                    vc = (NoaChatGroupSetVC *)ctrl;
+                if ([ctrl isKindOfClass:[LuckyLandChatGroupSetVC class]]) {
+                    vc = (LuckyLandChatGroupSetVC *)ctrl;
                     break;
                 }
             }

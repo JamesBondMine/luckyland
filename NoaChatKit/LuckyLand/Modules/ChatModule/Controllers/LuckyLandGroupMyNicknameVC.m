@@ -1,20 +1,20 @@
 //
-//  NoaGroupMyNicknameVC.m
+//  LuckyLandGroupMyNicknameVC.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2026/11/11.
 //
 
-#import "NoaGroupMyNicknameVC.h"
+#import "LuckyLandGroupMyNicknameVC.h"
 #import "NoaToolManager.h"
-@interface NoaGroupMyNicknameVC () <UITextViewDelegate>
+@interface LuckyLandGroupMyNicknameVC () <UITextViewDelegate>
 
 @property (nonatomic, strong) UITextView *tvNickname;
 @property (nonatomic, strong) UILabel *lblNumber;
 
 @end
 
-@implementation NoaGroupMyNicknameVC
+@implementation LuckyLandGroupMyNicknameVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];

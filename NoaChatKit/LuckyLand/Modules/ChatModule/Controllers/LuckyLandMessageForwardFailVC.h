@@ -1,5 +1,5 @@
 //
-//  NoaMessageForwardFailVC.h
+//  LuckyLandMessageForwardFailVC.h
 //  NoaKit
 //
 //  Created by LuckyLand on 2024/3/18.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaMessageForwardFailVC : LuckyLandBaseViewController
+@interface LuckyLandMessageForwardFailVC : LuckyLandBaseViewController
 
 @property (nonatomic, strong)NSArray *forwardErroInfoList;
 

@@ -11,9 +11,9 @@
 #import "NoaMessageAlertView.h"
 #import "NoaMessageModel.h"
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
-#import "NoaChatFileDetailViewController.h"
+#import "LuckyLandChatFileDetailViewController.h"
 #import "NoaChatHistoryHeaderView.h"
-#import "NoaChatHistoryChoiceUserVC.h"
+#import "LuckyLandChatHistoryChoiceUserVC.h"
 
 @interface NoaChatHistoryFileVC ()<ZSearchViewDelegate,UITableViewDelegate,UITableViewDataSource,MGSwipeTableCellDelegate,ZChatHistoryFileCellDelegate,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate, ZChatHistoryHeaderViewDelegate, ZChatHistoryChoiceUserDelegate>
 
@@ -101,7 +101,7 @@
 
 #pragma mark - ZChatHistoryHeaderViewDelegate
 - (void)headerClickAction {
-    NoaChatHistoryChoiceUserVC *vc = [[NoaChatHistoryChoiceUserVC alloc] init];
+    LuckyLandChatHistoryChoiceUserVC *vc = [[LuckyLandChatHistoryChoiceUserVC alloc] init];
     vc.choicedList = self.selectHeadView.userInfoList;
     vc.chatType = self.chatType;
     vc.sessionID = self.sessionID;
@@ -218,7 +218,7 @@
     NSString *foldPath = [NSString getFileDiectoryWithCustomPath:[NSString stringWithFormat:@"%@-%@",UserManager.userInfo.userUID, self.sessionID]];
     NSString *fileFullPath = [NSString stringWithFormat:@"%@/%@", foldPath, model.fileName];
     
-    NoaChatFileDetailViewController *fileDetailVC = [[NoaChatFileDetailViewController alloc] init];
+    LuckyLandChatFileDetailViewController *fileDetailVC = [[LuckyLandChatFileDetailViewController alloc] init];
     fileDetailVC.fileMsgModel = fileMsgModel;
     fileDetailVC.fromSessionId = self.sessionID;
     fileDetailVC.localFilePath = fileFullPath;

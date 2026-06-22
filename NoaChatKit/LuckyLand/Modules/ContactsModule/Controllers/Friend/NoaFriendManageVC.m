@@ -9,7 +9,7 @@
 #import "NoaMessageAlertView.h"
 #import "NoaMessageTools.h"
 #import "NoaSheetInputView.h"
-#import "NoaChatMultiSelectViewController.h"  //推荐给朋友选择转发对象
+#import "LuckyLandChatMultiSelectViewController.h"  //推荐给朋友选择转发对象
 #import "NoaComplainVC.h"//投诉与支持
 #import "NoaFriendGroupManagerVC.h"//好友分组管理
 
@@ -311,7 +311,7 @@
 
 //推荐给朋友
 - (void)recommendToFriendClick {
-    NoaChatMultiSelectViewController *vc = [NoaChatMultiSelectViewController new];
+    LuckyLandChatMultiSelectViewController *vc = [LuckyLandChatMultiSelectViewController new];
     vc.multiSelectType = ZMultiSelectTypeRecommentCard;
     vc.cardFriendInfo = self.userModel;
     [self.navigationController pushViewController:vc animated:YES];
