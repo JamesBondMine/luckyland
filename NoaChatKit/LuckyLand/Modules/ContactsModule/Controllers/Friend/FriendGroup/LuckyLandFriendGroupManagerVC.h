@@ -1,5 +1,5 @@
 //
-//  NoaFriendGroupManagerVC.h
+//  LuckyLandFriendGroupManagerVC.h
 //  NoaKit
 //
 //  Created by LuckyLand on 2023/7/3.
@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaFriendGroupManagerVC : LuckyLandBaseViewController
+@interface LuckyLandFriendGroupManagerVC : LuckyLandBaseViewController
 //好友分组是否可以编辑
 @property (nonatomic, assign) BOOL friendGroupCanEdit;
 //当前好友所属好友分组信息

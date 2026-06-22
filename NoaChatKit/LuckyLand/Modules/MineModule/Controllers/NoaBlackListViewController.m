@@ -9,7 +9,7 @@
 #import "NoaChineseSort.h"
 #import "NoaBlackListHeaderView.h"
 #import "NoaBlackListCell.h"
-#import "NoaUserHomePageVC.h"
+#import "LuckyLandUserHomePageVC.h"
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 
 @interface NoaBlackListViewController () <UITableViewDataSource,UITableViewDelegate, MGSwipeTableCellDelegate, DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
@@ -127,7 +127,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     LingIMFriendModel *friendModel = [[self.blackList objectAtIndexSafe:indexPath.section] objectAtIndexSafe:indexPath.row];
-    NoaUserHomePageVC *vc = [NoaUserHomePageVC new];
+    LuckyLandUserHomePageVC *vc = [LuckyLandUserHomePageVC new];
     vc.userUID = friendModel.friendUserUID;
     vc.groupID = @"";
     [self.navigationController pushViewController:vc animated:YES];

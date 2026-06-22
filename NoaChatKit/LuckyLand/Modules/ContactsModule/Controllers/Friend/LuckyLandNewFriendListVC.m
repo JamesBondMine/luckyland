@@ -1,22 +1,22 @@
 //
-//  NoaNewFriendListVC.m
+//  LuckyLandNewFriendListVC.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2026/9/9.
 //
 
-#import "NoaNewFriendListVC.h"
+#import "LuckyLandNewFriendListVC.h"
 #import "NoaSearchView.h"
 #import "NoaNewFriendListCell.h"
 #import "NoaNoDataView.h"
 
 #import "NoaFriendApplyModel.h"
 #import "NoaFriendReqModel.h"
-#import "NoaFriendApplyPassVC.h"//好友申请验证通过
-#import "NoaUserHomePageVC.h"//好友主页
+#import "LuckyLandFriendApplyPassVC.h"//好友申请验证通过
+#import "LuckyLandUserHomePageVC.h"//好友主页
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 
-@interface NoaNewFriendListVC () <UITableViewDataSource, UITableViewDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate, MGSwipeTableCellDelegate, NoaToolUserDelegate, ZNewFriendListCellDelegate>
+@interface LuckyLandNewFriendListVC () <UITableViewDataSource, UITableViewDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate, MGSwipeTableCellDelegate, NoaToolUserDelegate, ZNewFriendListCellDelegate>
 @property (nonatomic, assign) NSInteger pageNum;
 @property (nonatomic, strong) NoaNoDataView *viewNoMore;
 @property (nonatomic, strong) NSMutableArray *hiddenApply;//隐藏好友申请，本地操作
@@ -24,7 +24,7 @@
 @property (nonatomic, strong) NSMutableArray *requestList;//好友申请列表
 @end
 
-@implementation NoaNewFriendListVC
+@implementation LuckyLandNewFriendListVC
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
@@ -280,13 +280,13 @@
     LingIMFriendModel *friendModel = [IMSDKManager toolCheckMyFriendWith:userID];
     if (friendModel) {
         //已是好友
-        NoaUserHomePageVC *vc = [NoaUserHomePageVC new];
+        LuckyLandUserHomePageVC *vc = [LuckyLandUserHomePageVC new];
         vc.userUID = userID;
         vc.groupID = @"";
         [self.navigationController pushViewController:vc animated:YES];
     }else {
         //不是好友
-        NoaFriendApplyPassVC *vc = [NoaFriendApplyPassVC new];
+        LuckyLandFriendApplyPassVC *vc = [LuckyLandFriendApplyPassVC new];
         vc.applyModel = model;
         [self.navigationController pushViewController:vc animated:YES];
     }

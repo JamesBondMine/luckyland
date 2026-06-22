@@ -1,5 +1,5 @@
 //
-//  NoaFriendApplyPassVC.h
+//  LuckyLandFriendApplyPassVC.h
 //  NoaKit
 //
 //  Created by LuckyLand on 2026/10/21.
@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaFriendApplyPassVC : LuckyLandBaseViewController
+@interface LuckyLandFriendApplyPassVC : LuckyLandBaseViewController
 @property (nonatomic, strong) NoaFriendApplyModel *applyModel;//好友申请信息
 @end
 

@@ -42,7 +42,7 @@
 #import "NoaChatMultiSelectSendHander.h"
 #import "NoaMessageMultiBottomView.h" //多选bottom
 #import "LuckyLandChatRecordDetailViewController.h" //会话记录详情
-#import "NoaUserHomePageVC.h"//用户主页
+#import "LuckyLandUserHomePageVC.h"//用户主页
 #import "NoaMessageAlertView.h"//弹窗提示类的控件
 #import "NoaMessageTools.h"//消息工具类
 #import "LuckyLandFileHelperSetVC.h"//文件助手 设置VC
@@ -1485,7 +1485,7 @@
     if (role == 3) return;
     
     //文件助手，属于单聊
-    NoaUserHomePageVC *vc = [NoaUserHomePageVC new];
+    LuckyLandUserHomePageVC *vc = [LuckyLandUserHomePageVC new];
     vc.userUID = userId;
     vc.groupID = @"";
     [self.navigationController pushViewController:vc animated:YES];
@@ -1863,7 +1863,7 @@
         [self.navigationController pushViewController:fileDetailVC animated:YES];
     } else if (bubbleMsgClickModel.message.messageType == CIMChatMessageType_CardMessage) {
         //名片消息-用户个人资料页
-        NoaUserHomePageVC *userHomeVC = [NoaUserHomePageVC new];
+        LuckyLandUserHomePageVC *userHomeVC = [LuckyLandUserHomePageVC new];
         userHomeVC.userUID = bubbleMsgClickModel.message.cardUserId;
         userHomeVC.groupID = @"";
         [self.navigationController pushViewController:userHomeVC animated:YES];

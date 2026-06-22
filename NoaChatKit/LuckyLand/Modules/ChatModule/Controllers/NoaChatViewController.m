@@ -40,7 +40,7 @@
 #import "NoaChatSingleSetVC.h"            //单聊设置VC
 #import "LuckyLandChatGroupSetVC.h"             //群聊设置VC
 #import "NoaMsgAtListViewController.h"    //@用户的列表
-#import "NoaUserHomePageVC.h"             //用户个人资料
+#import "LuckyLandUserHomePageVC.h"             //用户个人资料
 #import "NoaAudioPlayManager.h"           //语音消息播放单例
 #import "LuckyLandChatFileDetailViewController.h"   //文件消息中文件详情
 #import "NoaChatGroupNoticeTipView.h"    //群公告提示
@@ -4553,7 +4553,7 @@
     if (self.multiSelectStatus) return;
     
     if (_chatType == CIMChatType_SingleChat) {
-        NoaUserHomePageVC *vc = [NoaUserHomePageVC new];
+        LuckyLandUserHomePageVC *vc = [LuckyLandUserHomePageVC new];
         vc.userUID = userId;
         vc.groupID = @"";
         [self.navigationController pushViewController:vc animated:YES];
@@ -4564,7 +4564,7 @@
         //机器人
         if (role == 3) return;
         if ([UserManager.userRoleAuthInfo.groupSecurity.configValue isEqualToString:@"true"]) {
-            NoaUserHomePageVC *vc = [NoaUserHomePageVC new];
+            LuckyLandUserHomePageVC *vc = [LuckyLandUserHomePageVC new];
             vc.userUID = userId;
             vc.groupID = self.groupInfo.groupId;
             [self.navigationController pushViewController:vc animated:YES];
@@ -4572,7 +4572,7 @@
             //群开启了群内禁止私聊，普通群成员不可以点击用户头像跳转
             if (_groupInfo.isPrivateChat && _groupInfo.userGroupRole == 0) return;
             
-            NoaUserHomePageVC *vc = [NoaUserHomePageVC new];
+            LuckyLandUserHomePageVC *vc = [LuckyLandUserHomePageVC new];
             vc.userUID = userId;
             vc.groupID = self.groupInfo.groupId;
             [self.navigationController pushViewController:vc animated:YES];
@@ -5681,7 +5681,7 @@
         [self.navigationController pushViewController:fileDetailVC animated:YES];
     } else if (bubbleMsgClickModel.message.messageType == CIMChatMessageType_CardMessage) {
         //名片消息-用户个人资料页
-        NoaUserHomePageVC *userHomeVC = [NoaUserHomePageVC new];
+        LuckyLandUserHomePageVC *userHomeVC = [LuckyLandUserHomePageVC new];
         userHomeVC.userUID = bubbleMsgClickModel.message.cardUserId;
         userHomeVC.groupID = @"";
         [self.navigationController pushViewController:userHomeVC animated:YES];

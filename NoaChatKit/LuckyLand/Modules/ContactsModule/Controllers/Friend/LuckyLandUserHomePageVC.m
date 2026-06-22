@@ -1,25 +1,25 @@
 //
-//  NoaUserHomePageVC.m
+//  LuckyLandUserHomePageVC.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2026/10/20.
 //
 
-#import "NoaUserHomePageVC.h"
+#import "LuckyLandUserHomePageVC.h"
 #import "NoaSampleUserInfoView.h"
 #import "NoaKnownTipView.h"
 #import "NoaChatViewController.h"//聊天
-#import "NoaFriendManageVC.h"//好友管理
+#import "LuckyLandFriendManageVC.h"//好友管理
 #import "NoaMediaCallManager.h"//音视频通话
 #import "NoaToolManager.h"
-#import "NoaFriendApplyPassVC.h"
-#import "NoaNewFriendListVC.h"
+#import "LuckyLandFriendApplyPassVC.h"
+#import "LuckyLandNewFriendListVC.h"
 #import "NoaSheetInputView.h"
 
 #import "NoaCallManager.h"//新的音视频通话
 #import "NoaCallSingleVC.h"//单聊
 
-@interface NoaUserHomePageVC ()
+@interface LuckyLandUserHomePageVC ()
 @property (nonatomic, strong) NoaSampleUserInfoView *viewHeader;
 @property (nonatomic, strong) UILabel *blackStatusLbl;//被拉黑后的提示
 @property (nonatomic, strong) UIButton *btnAddFriend;//添加好友
@@ -37,7 +37,7 @@
 @property (nonatomic, assign)BOOL isMyFriend;//是否是好友
 @end
 
-@implementation NoaUserHomePageVC
+@implementation LuckyLandUserHomePageVC
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -72,17 +72,17 @@
         BOOL isHaveApplyVC = NO;
         BOOL isHaveNewFriendVC = NO;
         for (UIViewController *controller in self.navigationController.viewControllers) {
-            if ([controller isKindOfClass:[NoaFriendApplyPassVC class]]) {
+            if ([controller isKindOfClass:[LuckyLandFriendApplyPassVC class]]) {
                 isHaveApplyVC = YES;
             }
-            if ([controller isKindOfClass:[NoaNewFriendListVC class]]) {
+            if ([controller isKindOfClass:[LuckyLandNewFriendListVC class]]) {
                 isHaveNewFriendVC = YES;
             }
         }
         //判断是否从新添加好友页面返回，如果同时包含ZFriendApplyPassVC和ZNewFriendListVC，则是从新添加好友页面返回
         if(isHaveApplyVC && isHaveNewFriendVC){
             for (UIViewController *controller in self.navigationController.viewControllers) {
-                if ([controller isKindOfClass:[NoaNewFriendListVC class]]) {
+                if ([controller isKindOfClass:[LuckyLandNewFriendListVC class]]) {
                     [self.navigationController popToViewController:controller animated:YES];
                 }
             }
@@ -573,7 +573,7 @@
 }
 
 -(void)navBtnRightClicked {
-    NoaFriendManageVC *vc = [NoaFriendManageVC new];
+    LuckyLandFriendManageVC *vc = [LuckyLandFriendManageVC new];
     vc.friendUID = _userUID;
     vc.userModel = self.userModel;
     [self.navigationController pushViewController:vc animated:YES];

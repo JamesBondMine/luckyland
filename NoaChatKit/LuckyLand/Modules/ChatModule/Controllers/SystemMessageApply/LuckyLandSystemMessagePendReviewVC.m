@@ -9,7 +9,7 @@
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 #import "NoaSystemMessageModel.h"
 #import "NoaSystemMessagePendReviewCell.h"
-#import "NoaUserHomePageVC.h"
+#import "LuckyLandUserHomePageVC.h"
 #import "NoaGroupApplyBottomView.h"
 #import "SyncMutableArray.h"
 #import "NoaMessageAlertView.h"
@@ -287,7 +287,7 @@
 #pragma mark - ZGroupJoinApplyCellDelegate
 //点击用户昵称或者头像跳转到个人资料详情页
 - (void)systemMessageCellClickNickNameAction:(NSString *)userUid {
-    NoaUserHomePageVC *vc = [NoaUserHomePageVC new];
+    LuckyLandUserHomePageVC *vc = [LuckyLandUserHomePageVC new];
     vc.userUID = userUid;
     vc.groupID = @"";
     [self.navigationController pushViewController:vc animated:YES];

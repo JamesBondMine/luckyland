@@ -1,25 +1,25 @@
 //
-//  NoaFriendManageVC.m
+//  LuckyLandFriendManageVC.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2026/10/22.
 //
 
-#import "NoaFriendManageVC.h"
+#import "LuckyLandFriendManageVC.h"
 #import "NoaMessageAlertView.h"
 #import "NoaMessageTools.h"
 #import "NoaSheetInputView.h"
 #import "LuckyLandChatMultiSelectViewController.h"  //推荐给朋友选择转发对象
 #import "NoaComplainVC.h"//投诉与支持
-#import "NoaFriendGroupManagerVC.h"//好友分组管理
+#import "LuckyLandFriendGroupManagerVC.h"//好友分组管理
 
-@interface NoaFriendManageVC ()
+@interface LuckyLandFriendManageVC ()
 @property (nonatomic, strong) UIButton *blackBtn;//加入黑名单
 @property (nonatomic, strong) UILabel *lblFriendGroup;//好友分组
 @property (nonatomic, strong) LingIMFriendGroupModel *currentFriendGroupModel;//当前好友所属好友分组信息
 @end
 
-@implementation NoaFriendManageVC
+@implementation LuckyLandFriendManageVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -302,7 +302,7 @@
 
 //好友分组
 - (void)btnFriendGroupClick {
-    NoaFriendGroupManagerVC *vc = [NoaFriendGroupManagerVC new];
+    LuckyLandFriendGroupManagerVC *vc = [LuckyLandFriendGroupManagerVC new];
     vc.friendGroupCanEdit = NO;
     vc.currentFriendGroupModel = _currentFriendGroupModel;
     vc.friendID = _friendUID;

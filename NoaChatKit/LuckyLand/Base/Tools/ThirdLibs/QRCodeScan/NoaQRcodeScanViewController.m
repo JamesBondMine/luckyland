@@ -10,7 +10,7 @@
 #import "NoaImagePickerVC.h"      //相册
 #import "NoaToolManager.h"
 
-#import "NoaUserHomePageVC.h" //用户个人资料页
+#import "LuckyLandUserHomePageVC.h" //用户个人资料页
 #import "LuckyLandAuthPCloginViewController.h"  //授权登录
 #import "NoaMessageAlertView.h"   //跳转到safari提醒弹窗
 #import "NoaQrcodeTextContentViewController.h"    //纯文本展示
@@ -529,7 +529,7 @@
                 if (dataDic) {
                     NSDictionary *userInfoDic = (NSDictionary *)[dataDic objectForKey:@"userInfo"];
                     NSString *uidStr = (NSString *)[userInfoDic objectForKey:@"uid"];
-                    NoaUserHomePageVC *vc = [NoaUserHomePageVC new];
+                    LuckyLandUserHomePageVC *vc = [LuckyLandUserHomePageVC new];
                     vc.isFromQRCode = YES;
                     vc.userUID = uidStr;
                     vc.groupID = @"";

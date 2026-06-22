@@ -12,7 +12,7 @@
 
 #import "NoaChatHistoryVC.h"
 #import "NoaMessageTools.h"
-#import "NoaUserHomePageVC.h"
+#import "LuckyLandUserHomePageVC.h"
 #import "NoaChatSingleSetInfoCell.h"
 #import "NoaChatSingleSetCommonCell.h"
 #import "NoaComplainVC.h"//投诉与支持
@@ -195,7 +195,7 @@
         }];
         
         [cell setTapHeaderBlock:^{
-            NoaUserHomePageVC *vc = [NoaUserHomePageVC new];
+            LuckyLandUserHomePageVC *vc = [LuckyLandUserHomePageVC new];
             vc.userUID = weakSelf.friendUid;
             vc.groupID = @"";
             [self.navigationController pushViewController:vc animated:YES];

@@ -7,7 +7,7 @@
 
 #import "NoaPushNavTools.h"
 #import "NoaChatViewController.h" //聊天详情页
-#import "NoaNewFriendListVC.h"    //新朋友
+#import "LuckyLandNewFriendListVC.h"    //新朋友
 #import "NoaToolManager.h"        //工具类
 
 @implementation NoaPushNavTools
@@ -39,7 +39,7 @@
         }
         if ([navType isEqualToString:@"friend"]) {
             //跳转到新朋友
-            NoaNewFriendListVC *newFriendVC = [[NoaNewFriendListVC alloc] init];
+            LuckyLandNewFriendListVC *newFriendVC = [[LuckyLandNewFriendListVC alloc] init];
             [ZTOOL.getCurrentVC.navigationController pushViewController:newFriendVC animated:YES];
         }
     }

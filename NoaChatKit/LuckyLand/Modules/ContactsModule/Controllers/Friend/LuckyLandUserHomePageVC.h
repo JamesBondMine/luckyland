@@ -1,5 +1,5 @@
 //
-//  NoaUserHomePageVC.h
+//  LuckyLandUserHomePageVC.h
 //  NoaKit
 //
 //  Created by LuckyLand on 2026/10/20.
@@ -18,7 +18,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaUserHomePageVC : LuckyLandBaseViewController
+@interface LuckyLandUserHomePageVC : LuckyLandBaseViewController
 
 /// 用户id
 @property (nonatomic, copy) NSString *userUID;

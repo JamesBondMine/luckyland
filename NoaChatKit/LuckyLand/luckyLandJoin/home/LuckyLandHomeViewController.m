@@ -10,7 +10,7 @@
 #import "LuckyLandBoatView.h"
 #import "LingIMGroup.h"
 #import "NoaMessageTools.h"
-#import "NoaUserHomePageVC.h"
+#import "LuckyLandUserHomePageVC.h"
 
 @interface LuckyLandHomeViewController ()
 
@@ -65,7 +65,7 @@
 
 // 跳转到推荐用户详情
 - (void)pushSuggestUserInfoWithUid:(NSString *)uidStr {
-  NoaUserHomePageVC *vc = [NoaUserHomePageVC new];
+  LuckyLandUserHomePageVC *vc = [LuckyLandUserHomePageVC new];
   vc.isFromQRCode = YES;
   vc.userUID = uidStr;
   vc.groupID = self.groupID ?: @"";

@@ -1,17 +1,17 @@
 //
-//  NoaNewFriendListVC.h
+//  LuckyLandAddFriendVC.h
 //  NoaKit
 //
 //  Created by LuckyLand on 2026/9/9.
 //
 
-// 新朋友 VC
+// 添加好友 搜索用户 VC
 
 #import "LuckyLandBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaNewFriendListVC : LuckyLandBaseViewController
+@interface LuckyLandAddFriendVC : LuckyLandBaseViewController
 
 @end
 

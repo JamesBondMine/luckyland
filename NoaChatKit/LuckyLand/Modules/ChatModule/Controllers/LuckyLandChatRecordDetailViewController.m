@@ -21,7 +21,7 @@
 #import "KNPhotoBrowser.h"//图片视频浏览
 #import "NoaAudioPlayManager.h"//语音消息播放单例
 #import "LuckyLandChatFileDetailViewController.h"//文件详情
-#import "NoaUserHomePageVC.h"//用户资料页(点击名片消息)
+#import "LuckyLandUserHomePageVC.h"//用户资料页(点击名片消息)
 #import "LuckyLandChatRecordDetailViewController.h"//消息记录详情页面
 #import "NoaMessageTools.h"
 #import "NoaMiniAppWebVC.h"
@@ -379,7 +379,7 @@
         [self.navigationController pushViewController:fileDetailVC animated:YES];
     } else if (bubbleMsgClickModel.message.messageType == CIMChatMessageType_CardMessage) {
         //名片消息-用户个人资料页
-        NoaUserHomePageVC *userHomeVC = [NoaUserHomePageVC new];
+        LuckyLandUserHomePageVC *userHomeVC = [LuckyLandUserHomePageVC new];
         userHomeVC.userUID = bubbleMsgClickModel.message.cardUserId;
         userHomeVC.groupID = @"";
         [self.navigationController pushViewController:userHomeVC animated:YES];

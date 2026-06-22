@@ -1,5 +1,5 @@
 //
-//  NoaFriendListVC.h
+//  LuckyLandFriendListVC.h
 //  NoaKit
 //
 //  Created by LuckyLand on 2023/7/3.
@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaFriendListVC : LuckyLandBaseViewController
+@interface LuckyLandFriendListVC : LuckyLandBaseViewController
 
 - (void)friendListScrollEnable:(BOOL)canScroll;
 

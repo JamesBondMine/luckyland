@@ -1,22 +1,22 @@
 //
-//  NoaFriendGroupManagerVC.m
+//  LuckyLandFriendGroupManagerVC.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2023/7/3.
 //
 
-#import "NoaFriendGroupManagerVC.h"
+#import "LuckyLandFriendGroupManagerVC.h"
 #import "NoaFriendGroupManagerCell.h"
 
 #import "NoaFriendGroupAddView.h"
 #import "NoaFriendGroupDeleteView.h"
 
-@interface NoaFriendGroupManagerVC () <UITableViewDataSource, UITableViewDelegate, UITableViewDragDelegate, UITableViewDropDelegate, ZFriendGroupManagerCellDelegate, ZFriendGroupDeleteViewDelegate, ZBaseCellDelegate, NoaToolUserDelegate>
+@interface LuckyLandFriendGroupManagerVC () <UITableViewDataSource, UITableViewDelegate, UITableViewDragDelegate, UITableViewDropDelegate, ZFriendGroupManagerCellDelegate, ZFriendGroupDeleteViewDelegate, ZBaseCellDelegate, NoaToolUserDelegate>
 @property (nonatomic, strong) UIButton *btnFinish;
 @property (nonatomic, strong) NSMutableArray *friendGroupList;
 @end
 
-@implementation NoaFriendGroupManagerVC
+@implementation LuckyLandFriendGroupManagerVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];

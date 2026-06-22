@@ -16,8 +16,8 @@
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 #import "AppDelegate+MiniApp.h"
 //跳转
-#import "NoaGlobalSearchVC.h"//全局搜索
-#import "NoaAddFriendVC.h"//添加好友
+#import "LuckyLandGlobalSearchVC.h"//全局搜索
+#import "LuckyLandAddFriendVC.h"//添加好友
 #import "LuckyLandInviteFriendVC.h"//创建群聊邀请好友
 #import "NoaChatViewController.h"//聊天
 #import "LuckyLandTabBarController.h"//tabbar
@@ -186,13 +186,13 @@
 //        [NoaMineVC presentMineDrawerFromTop];
     };
     _viewTop.searchBlock = ^{
-        NoaGlobalSearchVC *vc = [NoaGlobalSearchVC new];
+        LuckyLandGlobalSearchVC *vc = [LuckyLandGlobalSearchVC new];
         [weakSelf.navigationController pushViewController:vc animated:YES];
     };
     _viewTop.addBlock = ^(ZSessionMoreActionType actionType) {
         if (actionType == ZSessionMoreActionTypeAddFriend) {
             //添加好友
-            NoaAddFriendVC *vc = [NoaAddFriendVC new];
+            LuckyLandAddFriendVC *vc = [LuckyLandAddFriendVC new];
             [weakSelf.navigationController pushViewController:vc animated:YES];
         } else if (actionType == ZSessionMoreActionTypeCreateGroup) {
             //创建群聊

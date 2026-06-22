@@ -11,7 +11,7 @@
 #import "NoaAlertTipView.h"
 #import "NoaTeamMemberModel.h"
 #import "NoaShareInviteViewController.h"
-#import "NoaUserHomePageVC.h"
+#import "LuckyLandUserHomePageVC.h"
 #import "NoaTeamUpdateNameView.h"
 
 @interface LuckyLandTeamDetailVC () <UITableViewDataSource, UITableViewDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate, ZBaseCellDelegate, ZTeamUpdateNameViewDelegate>
@@ -406,7 +406,7 @@
 - (void)cellClickAction:(NSIndexPath *)indexPath {
     NoaTeamMemberModel *memberModel = [_teamMemberList objectAtIndexSafe:indexPath.row];
     if (memberModel) {
-        NoaUserHomePageVC *vc = [NoaUserHomePageVC new];
+        LuckyLandUserHomePageVC *vc = [LuckyLandUserHomePageVC new];
         vc.userUID = memberModel.userUid;
         vc.groupID = @"";
         [self.navigationController pushViewController:vc animated:YES];

@@ -1,21 +1,21 @@
 //
-//  NoaFriendGroupListVC.m
+//  LuckyLandFriendGroupListVC.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2023/7/3.
 //
 
-#import "NoaFriendGroupListVC.h"
+#import "LuckyLandFriendGroupListVC.h"
 #import "NoaFriendGroupSectionHeaderView.h"
 #import "NoaContactListTableCell.h"
 #import "NoaFriendGroupModel.h"
 #import "NoaToolManager.h"//工具类
 #import "NoaChineseSort.h"//排序
 //跳转
-#import "NoaUserHomePageVC.h"//用户主页
-#import "NoaFriendGroupManagerVC.h"//分组管理
+#import "LuckyLandUserHomePageVC.h"//用户主页
+#import "LuckyLandFriendGroupManagerVC.h"//分组管理
 
-@interface NoaFriendGroupListVC () <UITableViewDataSource, UITableViewDelegate, NoaToolUserDelegate, ZBaseCellDelegate, ZFriendGroupSectionHeaderViewDelegate, NoaToolUserDelegate>
+@interface LuckyLandFriendGroupListVC () <UITableViewDataSource, UITableViewDelegate, NoaToolUserDelegate, ZBaseCellDelegate, ZFriendGroupSectionHeaderViewDelegate, NoaToolUserDelegate>
 
 //好友分组列表
 @property (nonatomic, strong) NSMutableArray *friendGroupList;
@@ -24,7 +24,7 @@
 @property (nonatomic, strong) UIView *viewNoData;
 @end
 
-@implementation NoaFriendGroupListVC
+@implementation LuckyLandFriendGroupListVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -169,7 +169,7 @@
     NoaFriendModel *friendModel = [friendGroupModel.friendList objectAtIndexSafe:indexPath.row];
     if (friendModel.userType == 0) {
         //好友 普通用户级别
-        NoaUserHomePageVC *vc = [NoaUserHomePageVC new];
+        LuckyLandUserHomePageVC *vc = [LuckyLandUserHomePageVC new];
         vc.userUID = friendModel.friendUserUID;
         vc.groupID = @"";
         [self.navigationController pushViewController:vc animated:YES];
@@ -230,7 +230,7 @@
     
     WeakSelf
     NoaPresentView *viewAlert = [[NoaPresentView alloc] initWithFrame:CGRectMake(0, 0, DScreenWidth, DScreenHeight) titleItem:nil selectItems:@[item] cancleItem:cancelItem doneClick:^(NSInteger index) {
-        NoaFriendGroupManagerVC *vc = [NoaFriendGroupManagerVC new];
+        LuckyLandFriendGroupManagerVC *vc = [LuckyLandFriendGroupManagerVC new];
         vc.friendGroupCanEdit = YES;
         [weakSelf.navigationController pushViewController:vc animated:YES];
     } cancleClick:^{

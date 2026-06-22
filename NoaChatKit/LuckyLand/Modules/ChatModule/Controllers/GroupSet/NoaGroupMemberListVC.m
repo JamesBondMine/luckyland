@@ -14,7 +14,7 @@
 #import "NoaFriendListSectionHeaderView.h"
 #import "LingIMGroup.h"
 #import "NoaChatViewController.h"
-#import "NoaUserHomePageVC.h"
+#import "LuckyLandUserHomePageVC.h"
 
 @interface NoaGroupMemberListVC ()<ZSearchViewDelegate,UITableViewDataSource,UITableViewDelegate,ZBaseCellDelegate>
 
@@ -179,7 +179,7 @@
     if (groupMemberModel.role == 3) return;
     
     if ([UserManager.userRoleAuthInfo.groupSecurity.configValue isEqualToString:@"true"]) {
-        NoaUserHomePageVC *vc = [NoaUserHomePageVC new];
+        LuckyLandUserHomePageVC *vc = [LuckyLandUserHomePageVC new];
         vc.userUID = groupMemberModel.userUid;
         vc.groupID = self.groupInfoModel.groupId;
         [self.navigationController pushViewController:vc animated:YES];
@@ -187,7 +187,7 @@
         //群开启了群内禁止私聊，普通群成员不可以进行用户头像点击跳转
         if (_groupInfoModel.isPrivateChat && _groupInfoModel.userGroupRole == 0) return;
         
-        NoaUserHomePageVC *vc = [NoaUserHomePageVC new];
+        LuckyLandUserHomePageVC *vc = [LuckyLandUserHomePageVC new];
         vc.userUID = groupMemberModel.userUid;
         vc.groupID = self.groupInfoModel.groupId;
         [self.navigationController pushViewController:vc animated:YES];

@@ -12,14 +12,14 @@
 
 #import <JXCategoryView/JXCategoryView.h>
 #import "NoaScrollView.h"
-#import "NoaFriendListVC.h"//好友列表
-#import "NoaFriendGroupListVC.h"//好友分组列表
+#import "LuckyLandFriendListVC.h"//好友列表
+#import "LuckyLandFriendGroupListVC.h"//好友分组列表
 #import "NoaGroupListVC.h"//群聊列表
 
 //跳转
-#import "NoaAddFriendVC.h"//添加好友
-#import "NoaGlobalSearchVC.h"//搜索
-#import "NoaNewFriendListVC.h"//新朋友
+#import "LuckyLandAddFriendVC.h"//添加好友
+#import "LuckyLandGlobalSearchVC.h"//搜索
+#import "LuckyLandNewFriendListVC.h"//新朋友
 #import "NoaFileHelperVC.h"//文件助手
 #import "LuckyLandSystemMessageVC.h"//群助手
 //#import "NoaShareInviteViewController.h"//分享邀请
@@ -36,8 +36,8 @@
 //指示器控件
 @property (nonatomic, strong) JXCategoryTitleView *viewCategory;
 @property (nonatomic, strong) NoaScrollView *scrollView;
-@property (nonatomic, strong) NoaFriendListVC *friendVC;//好友
-@property (nonatomic, strong) NoaFriendGroupListVC *friendGroupVC;//好友分组
+@property (nonatomic, strong) LuckyLandFriendListVC *friendVC;//好友
+@property (nonatomic, strong) LuckyLandFriendGroupListVC *friendGroupVC;//好友分组
 @property (nonatomic, strong) NoaGroupListVC *groupVC;//群组VC
 @property (nonatomic, assign) NSInteger currentSelectedIndex;//当前选中下标
 @property (nonatomic, strong) UIScreenEdgePanGestureRecognizer *edgePan;
@@ -85,7 +85,7 @@
     __weak typeof(self) weakSelf = self;
     _viewTop = [[NoaSessionTopView alloc] initWithHome:NO];
     _viewTop.searchBlock = ^{
-        NoaGlobalSearchVC *vc = [NoaGlobalSearchVC new];
+        LuckyLandGlobalSearchVC *vc = [LuckyLandGlobalSearchVC new];
         [weakSelf.navigationController pushViewController:vc animated:YES];
     };
     _viewTop.avatarTapBlock = ^{
@@ -176,12 +176,12 @@
     _currentSelectedIndex = 0;
     
     
-    _friendVC = [[NoaFriendListVC alloc] init];
+    _friendVC = [[LuckyLandFriendListVC alloc] init];
     _friendVC.view.frame = CGRectMake(0, 0, DScreenWidth, _scrollView.height);
     [self addChildViewController:_friendVC];
     [self.scrollView addSubview:_friendVC.view];
     
-    _friendGroupVC = [[NoaFriendGroupListVC alloc] init];
+    _friendGroupVC = [[LuckyLandFriendGroupListVC alloc] init];
     _friendGroupVC.view.frame = CGRectMake(DScreenWidth, 0, DScreenWidth, _scrollView.height);
     [self addChildViewController:_friendGroupVC];
     [self.scrollView addSubview:_friendGroupVC.view];
@@ -194,7 +194,7 @@
 
 //添加好友
 - (void)navBtnRightClicked {
-    NoaAddFriendVC *vc = [NoaAddFriendVC new];
+    LuckyLandAddFriendVC *vc = [LuckyLandAddFriendVC new];
     [self.navigationController pushViewController:vc animated:YES];
 }
 #pragma mark - ZContactHeaderViewDelegate
@@ -213,7 +213,7 @@
 }
 //新朋友
 - (void)newFriendAction {
-    NoaNewFriendListVC *newFriendVC = [[NoaNewFriendListVC alloc] init];
+    LuckyLandNewFriendListVC *newFriendVC = [[LuckyLandNewFriendListVC alloc] init];
     [self.navigationController pushViewController:newFriendVC animated:YES];
 }
 
@@ -245,7 +245,7 @@
 
 #pragma mark - SearchClickAction
 - (void)searchViewClickAction {
-    NoaGlobalSearchVC *vc = [NoaGlobalSearchVC new];
+    LuckyLandGlobalSearchVC *vc = [LuckyLandGlobalSearchVC new];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
