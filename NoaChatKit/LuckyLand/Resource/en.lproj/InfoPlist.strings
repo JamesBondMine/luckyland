@@ -13,11 +13,11 @@
 "CFBundleDisplayName" = "Lucky Land";
 "CFBundleName" = "Lucky Land";
 
-"NSCameraUsageDescription" = "Please tap 'OK' to allow access.  you will use the camera to scan code to log in, take photos, avatars, record videos, or make video calls. ";
-"NSLocationWhenInUseUsageDescription" = "Please tap “OK” to allow access to your location information in personal center";
-"NSLocationAlwaysUsageDescription" = "Please tap “OK” to allow access to your location information in personal center ";
-"NSLocationWhenInUseUsageDescription" = "Please tap “OK” to allow access to your location information in personal center ";
-"NSMicrophoneUsageDescription" = "Please tap “OK” to allow access. If it is not allowed, you will not be able to use the voice chat";
-"NSPhotoLibraryUsageDescription" = "Please tap 'OK' to allow access. If you don't, you won't be able to select photos as avatars";
-"NSPhotoLibraryAddUsageDescription" = "Please tap “OK” to allow access. If not, you will not be able to save the pictures you want to download to the phone album. ";
-"NSLocalNetworkUsageDescription" = "Tap OK to allow access to the local network to communicate with the device ! ";
+"NSCameraUsageDescription" = "Lucky Land needs access to your camera to scan QR codes for sign-in, take and update your profile photo, send photo messages, and make video calls.";
+"NSLocationWhenInUseUsageDescription" = "Lucky Land uses your location while you are using the app to provide location-related features and improve our services.";
+"NSLocationAlwaysUsageDescription" = "Lucky Land uses your location in the background to continue providing location-related services while the app is running.";
+"NSLocationWhenInUseUsageDescription" = "Lucky Land needs access to your location both while you are using the app and in the background to provide the full location-related experience.";
+"NSMicrophoneUsageDescription" = "Lucky Land needs access to your microphone to send voice messages and participate in voice or video calls.";
+"NSPhotoLibraryUsageDescription" = "Lucky Land needs access to your photo library to choose images for your profile picture and to share photos and videos with friends.";
+"NSPhotoLibraryAddUsageDescription" = "Lucky Land needs permission to save images and videos to your photo library so you can keep photos and videos from your chats. ";
+"NSLocalNetworkUsageDescription" = "Lucky Land needs access to your local network to connect to our servers and provide chat and calling services on your network.";

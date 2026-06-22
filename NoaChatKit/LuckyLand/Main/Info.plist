@@ -5,7 +5,7 @@
 	<key>AppOptimizationVersion</key>
 	<string>2.0</string>
 	<key>BuildOptimizationDate</key>
-	<string>2025-11-27</string>
+	<string>2026-06-22</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -29,11 +29,13 @@
 		<true/>
 	</dict>
 	<key>OptimizationBuildNumber</key>
-	<string>20251127</string>
+	<string>20260622</string>
 	<key>UIAppFonts</key>
 	<array/>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>App downloads content in response to push some notifications</string>
+		<string>App plays sounds or streams audio/video using AirPlay</string>
 		<string>audio</string>
 		<string>remote-notification</string>
 	</array>

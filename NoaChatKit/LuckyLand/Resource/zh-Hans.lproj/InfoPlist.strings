@@ -13,11 +13,11 @@
 "CFBundleDisplayName" = "幸运岛";
 "CFBundleName" = "幸运岛";
 
-"NSCameraUsageDescription" = "请点击“好”以允许访问。用于正常使用相机进行扫码登录、拍摄照片、头像、录制视频，以及进行视频通话。 ";
-"NSLocationWhenInUseUsageDescription" = "请点击“好”以允许允许访问,用于在个人名片中访问您的位置信息。 ";
-"NSLocationAlwaysUsageDescription" = "请点击“好”以允许允许访问,用于在个人名片中访问您的位置信息。 ";
-"NSLocationWhenInUseUsageDescription" = "请点击“好”以允许允许访问,用于在个人名片中访问您的位置信息。 ";
-"NSMicrophoneUsageDescription" = "请点击“好”以允许访问。用于正常使用语音聊天功能。 ";
-"NSPhotoLibraryUsageDescription" = "请点击“好”以允许访问。用于选择照片作为头像或发送给朋友。 ";
-"NSPhotoLibraryAddUsageDescription" = "请点击“好”以允许访问。用于把您想要下载的图片保存到手机相册。 ";
-"NSLocalNetworkUsageDescription" = "请点击“好”用于允许访问本地网络以便与设备通信。 ";
+"NSCameraUsageDescription" = "幸运岛需要使用相机来扫码登录、拍摄和更新头像、发送图片消息以及进行视频通话。";
+"NSLocationWhenInUseUsageDescription" = "幸运岛需要在您使用应用时获取位置信息，用于提供与位置相关的功能和服务优化。";
+"NSLocationAlwaysUsageDescription" = "幸运岛需要在后台获取位置信息，用于在应用运行期间持续提供与位置相关的服务。";
+"NSLocationWhenInUseUsageDescription" = "幸运岛需要在使用期间及后台访问位置信息，以便为您提供完整的与位置相关的功能体验。";
+"NSMicrophoneUsageDescription" = "幸运岛需要使用麦克风来发送语音消息和进行语音或视频通话。";
+"NSPhotoLibraryUsageDescription" = "幸运岛需要访问您的相册，以便选择图片作为头像或向好友发送照片和视频。";
+"NSPhotoLibraryAddUsageDescription" = "幸运岛需要将图片或视频保存到您的相册，方便您留存聊天中的照片和视频。 ";
+"NSLocalNetworkUsageDescription" = "幸运岛需要访问本地网络，以便在您的网络环境中正常连接服务器并提供聊天与通话服务。";
