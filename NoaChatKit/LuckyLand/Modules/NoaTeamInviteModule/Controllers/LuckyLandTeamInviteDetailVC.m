@@ -9,7 +9,7 @@
 #import "NoaTeamInviteDetailDataHandle.h"
 #import "NoaTeamInviteDetailView.h"
 #import "LuckyLandTeamInviteEditTeamNameVC.h"
-#import "NoaTeamTotalNumberListVC.h"
+#import "LuckyLandTeamTotalNumberListVC.h"
 
 @interface LuckyLandTeamInviteDetailVC ()
 
@@ -91,7 +91,7 @@
     
     [self.teamDetailDataHandle.jumpAllGroupPeoplePageSubject subscribeNext:^(id  _Nullable x) {
         @strongify(self)
-        NoaTeamTotalNumberListVC *totalVC = [NoaTeamTotalNumberListVC new];
+        LuckyLandTeamTotalNumberListVC *totalVC = [LuckyLandTeamTotalNumberListVC new];
         totalVC.teamId = self.currentTeamModel.teamId;
         totalVC.hadTickOutPeopleBlock = ^{
             self.teamDetailDataHandle.isOperation = YES;

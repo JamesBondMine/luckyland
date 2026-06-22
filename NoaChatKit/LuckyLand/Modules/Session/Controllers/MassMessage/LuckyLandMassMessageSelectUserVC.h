@@ -1,5 +1,5 @@
 //
-//  NoaMassMessageSelectUserVC.h
+//  LuckyLandMassMessageSelectUserVC.h
 //  NoaKit
 //
 //  Created by LuckyLand on 2023/4/19.
@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)massMessageSelectedUserList:(NSArray<NoaBaseUserModel *> *)selectedUserList;
 @end
 
-@interface NoaMassMessageSelectUserVC : LuckyLandBaseViewController
+@interface LuckyLandMassMessageSelectUserVC : LuckyLandBaseViewController
 @property (nonatomic, weak) id <ZMassMessageSelectUserDelegate> delegate;
 
 @property (nonatomic, strong) NSMutableArray<NoaBaseUserModel *> *selectedList;//选中的

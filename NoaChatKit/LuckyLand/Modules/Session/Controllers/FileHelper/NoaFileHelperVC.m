@@ -45,7 +45,7 @@
 #import "NoaUserHomePageVC.h"//用户主页
 #import "NoaMessageAlertView.h"//弹窗提示类的控件
 #import "NoaMessageTools.h"//消息工具类
-#import "NoaFileHelperSetVC.h"//文件助手 设置VC
+#import "LuckyLandFileHelperSetVC.h"//文件助手 设置VC
 #import "NoaSensitiveManager.h" //敏感词过滤
 #import "NoaMessageTimeTool.h"
 #import "LuckyLandEmojiShopViewController.h"
@@ -167,7 +167,7 @@
     
     //跳转文件助手设置界面
     _topView.navRightBlock = ^{
-        NoaFileHelperSetVC *vc = [NoaFileHelperSetVC new];
+        LuckyLandFileHelperSetVC *vc = [LuckyLandFileHelperSetVC new];
         vc.sessionID = weakSelf.sessionID;
         [weakSelf.navigationController pushViewController:vc animated:YES];
     };

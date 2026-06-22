@@ -1,5 +1,5 @@
 //
-//  NoaTeamDetailVC.h
+//  LuckyLandTeamDetailVC.h
 //  NoaKit
 //
 //  Created by LuckyLand on 2023/7/20.
@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface NoaTeamDetailVC : LuckyLandBaseViewController
+@interface LuckyLandTeamDetailVC : LuckyLandBaseViewController
 
 @property (nonatomic, strong) NoaTeamModel *teamModel;
 @property (nonatomic, assign) NSInteger listIndex;

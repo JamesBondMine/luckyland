@@ -1,14 +1,14 @@
 //
-//  NoaTeamTotalNumberListVC.m
+//  LuckyLandTeamTotalNumberListVC.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2025/7/23.
 //  团队邀请-团队总人数
 
-#import "NoaTeamTotalNumberListVC.h"
+#import "LuckyLandTeamTotalNumberListVC.h"
 #import "NoaTeamMemberCell.h"
 #import "NoaMessageAlertView.h"
-@interface NoaTeamTotalNumberListVC() <UITableViewDelegate, UITableViewDataSource>
+@interface LuckyLandTeamTotalNumberListVC() <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, assign) NSInteger pageNumber;
 @property (nonatomic, strong) NSMutableArray *teamMemberList;
 
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation NoaTeamTotalNumberListVC
+@implementation LuckyLandTeamTotalNumberListVC
 
 - (void)dealloc {
     CIMLog(@"%@ dealloc", [self class]);

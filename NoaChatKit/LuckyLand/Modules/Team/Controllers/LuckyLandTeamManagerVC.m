@@ -8,8 +8,8 @@
 #import "LuckyLandTeamManagerVC.h"
 #import "NoaTeamModel.h"
 #import "NoaTeamManagerCell.h"
-#import "NoaTeamCreateVC.h"
-#import "NoaTeamDetailVC.h"
+#import "LuckyLandTeamCreateVC.h"
+#import "LuckyLandTeamDetailVC.h"
 #import "NoaAlertTipView.h"
 
 @interface LuckyLandTeamManagerVC () <UITableViewDataSource, UITableViewDelegate, ZTeamManagerCellDelegate, ZTeamDetailVCDelegate>
@@ -123,7 +123,7 @@
         //团队详情
         NoaTeamModel *clickTeamModel = (NoaTeamModel *)[_teamList objectAtIndex:indexPath.row];
         if (![NSString isNil:clickTeamModel.teamId]) {
-            NoaTeamDetailVC *vc = [NoaTeamDetailVC new];
+            LuckyLandTeamDetailVC *vc = [LuckyLandTeamDetailVC new];
             vc.delegate = self;
             vc.teamModel = clickTeamModel;
             [self.navigationController pushViewController:vc animated:YES];
@@ -165,7 +165,7 @@
 
 //新建团队
 - (void)btnCreateClick {
-    NoaTeamCreateVC *vc = [[NoaTeamCreateVC alloc] init];
+    LuckyLandTeamCreateVC *vc = [[LuckyLandTeamCreateVC alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

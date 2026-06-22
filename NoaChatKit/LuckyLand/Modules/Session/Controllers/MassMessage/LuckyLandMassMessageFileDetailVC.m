@@ -1,16 +1,16 @@
 //
-//  NoaMassMessageFileDetailVC.m
+//  LuckyLandMassMessageFileDetailVC.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2023/4/21.
 //
 
-#import "NoaMassMessageFileDetailVC.h"
+#import "LuckyLandMassMessageFileDetailVC.h"
 #import "NoaProgressButton.h"
 #import "NoaFileDownloadManager.h"
 //#import "ZFileNetProgressManager.h"
 
-@interface NoaMassMessageFileDetailVC () <ZFileDownloadTaskDelegate>
+@interface LuckyLandMassMessageFileDetailVC () <ZFileDownloadTaskDelegate>
 
 @property (nonatomic, strong)UIImageView *fileTypeImgView;
 @property (nonatomic, strong)UILabel *fileTypeLbl;
@@ -24,7 +24,7 @@
 
 @end
 
-@implementation NoaMassMessageFileDetailVC
+@implementation LuckyLandMassMessageFileDetailVC
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];

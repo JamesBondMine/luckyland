@@ -1,11 +1,11 @@
 //
-//  NoaMassMessageSelectUserVC.m
+//  LuckyLandMassMessageSelectUserVC.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2023/4/19.
 //
 
-#import "NoaMassMessageSelectUserVC.h"
+#import "LuckyLandMassMessageSelectUserVC.h"
 #import "NoaNoDataView.h"
 #import "NoaSearchView.h"
 #import "NoaInviteFriendHeaderView.h"
@@ -14,7 +14,7 @@
 #import "NoaExcursionSelectCell.h"
 #import "NoaMassMessageGroupSelectedTopView.h"
 
-@interface NoaMassMessageSelectUserVC () <ZSearchViewDelegate,UITableViewDataSource,UITableViewDelegate,ZBaseCellDelegate>
+@interface LuckyLandMassMessageSelectUserVC () <ZSearchViewDelegate,UITableViewDataSource,UITableViewDelegate,ZBaseCellDelegate>
 @property (nonatomic, strong) NoaSearchView *viewSearch;//搜索控件
 @property (nonatomic, strong) NSMutableArray<NoaBaseUserModel *> *searchList;//搜索结果
 @property (nonatomic, strong) NoaNoDataView *viewNoData;//无数据提示
@@ -25,7 +25,7 @@
 @property (nonatomic, strong) NoaMassMessageGroupSelectedTopView *groupSelectedTopView;//已选择的
 @end
 
-@implementation NoaMassMessageSelectUserVC
+@implementation LuckyLandMassMessageSelectUserVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];

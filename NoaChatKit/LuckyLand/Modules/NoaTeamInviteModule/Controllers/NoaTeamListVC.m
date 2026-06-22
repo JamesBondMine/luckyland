@@ -8,8 +8,8 @@
 #import "NoaTeamListVC.h"
 #import "NoaTeamListDataHandle.h"
 #import "NoaTeamListView.h"
-#import "NoaTeamInviteCreateVC.h"
-#import "NoaTeamInviteDetailVC.h"
+#import "LuckyLandTeamInviteCreateVC.h"
+#import "LuckyLandTeamInviteDetailVC.h"
 
 @interface NoaTeamListVC ()
 
@@ -76,7 +76,7 @@
     @weakify(self)
     [self.teamListView.jumpDetailVCSubject subscribeNext:^(id  _Nullable x) {
         @strongify(self)
-        NoaTeamInviteDetailVC *detailVC = [NoaTeamInviteDetailVC new];
+        LuckyLandTeamInviteDetailVC *detailVC = [LuckyLandTeamInviteDetailVC new];
         if ([x isKindOfClass:[NoaTeamModel class]]) {
             NoaTeamModel *teamModel = x;
             detailVC.currentTeamModel = teamModel;
@@ -90,7 +90,7 @@
 }
 
 - (void)navBtnRightClicked {
-    NoaTeamInviteCreateVC *createVC = [NoaTeamInviteCreateVC new];
+    LuckyLandTeamInviteCreateVC *createVC = [LuckyLandTeamInviteCreateVC new];
     @weakify(self)
     createVC.createGroupSuccessHandle = ^{
         @strongify(self)

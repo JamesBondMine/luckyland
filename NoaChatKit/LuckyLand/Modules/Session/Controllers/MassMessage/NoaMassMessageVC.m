@@ -10,9 +10,9 @@
 #import "NoaMassMessageTextCell.h"
 #import "NoaMassMessageAttachmentCell.h"
 
-#import "NoaNewMassMessageVC.h"//新建群发
-#import "NoaMassMessageUserVC.h"//查看接收消息用户列表
-#import "NoaMassMessageFileDetailVC.h"//文件详情
+#import "LuckyLandNewMassMessageVC.h"//新建群发
+#import "LuckyLandMassMessageUserVC.h"//查看接收消息用户列表
+#import "LuckyLandMassMessageFileDetailVC.h"//文件详情
 #import "KNPhotoBrowser.h"//图片视频浏览
 #import "NoaToolManager.h"//工具类
 
@@ -261,14 +261,14 @@
 #pragma mark - ZMassMessageBaseCellDelegate
 //查看全部成员列表
 - (void)cellCheckAllReceiverWith:(LIMMassMessageModel *)messageModel {
-    NoaMassMessageUserVC *vc = [NoaMassMessageUserVC new];
+    LuckyLandMassMessageUserVC *vc = [LuckyLandMassMessageUserVC new];
     vc.allUsers = YES;
     vc.messageModel = messageModel;
     [self.navigationController pushViewController:vc animated:YES];
 }
 //查看发送失败成员列表
 - (void)cellCheckErrorReceiverWith:(LIMMassMessageModel *)messageModel {
-    NoaMassMessageUserVC *vc = [NoaMassMessageUserVC new];
+    LuckyLandMassMessageUserVC *vc = [LuckyLandMassMessageUserVC new];
     vc.allUsers = NO;
     vc.messageModel = messageModel;
     [self.navigationController pushViewController:vc animated:YES];
@@ -277,7 +277,7 @@
 - (void)cellCheckDetailWith:(LIMMassMessageModel *)messageModel {
     if (messageModel.mtype == 5) {
         //文件
-        NoaMassMessageFileDetailVC *vc = [[NoaMassMessageFileDetailVC alloc] init];
+        LuckyLandMassMessageFileDetailVC *vc = [[LuckyLandMassMessageFileDetailVC alloc] init];
         vc.messageModel = messageModel;
         [self.navigationController pushViewController:vc animated:YES];
         
@@ -287,7 +287,7 @@
     }
 }
 - (void)cellSendAgainWith:(LIMMassMessageModel *)messageModel {
-    NoaNewMassMessageVC *vc = [NoaNewMassMessageVC new];
+    LuckyLandNewMassMessageVC *vc = [LuckyLandNewMassMessageVC new];
     vc.messageModel = messageModel;
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -320,7 +320,7 @@
 
 #pragma mark - 右侧按钮点击事件
 - (void)navBtnRightClicked {
-    NoaNewMassMessageVC *vc = [[NoaNewMassMessageVC alloc] init];
+    LuckyLandNewMassMessageVC *vc = [[LuckyLandNewMassMessageVC alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

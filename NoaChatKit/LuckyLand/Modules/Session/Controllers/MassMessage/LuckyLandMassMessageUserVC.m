@@ -1,21 +1,21 @@
 //
-//  NoaMassMessageUserVC.m
+//  LuckyLandMassMessageUserVC.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2023/4/19.
 //
 
-#import "NoaMassMessageUserVC.h"
+#import "LuckyLandMassMessageUserVC.h"
 #import "NoaMassMessageUserCell.h"
 #import "NoaMassMessageUserModel.h"
 #import "NoaMassMessageErrorUserModel.h"
 
-@interface NoaMassMessageUserVC () <UITableViewDataSource, UITableViewDelegate>
+@interface LuckyLandMassMessageUserVC () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, assign) NSInteger pageNumber;
 @property (nonatomic, strong) NSMutableArray *userList;
 @end
 
-@implementation NoaMassMessageUserVC
+@implementation LuckyLandMassMessageUserVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];

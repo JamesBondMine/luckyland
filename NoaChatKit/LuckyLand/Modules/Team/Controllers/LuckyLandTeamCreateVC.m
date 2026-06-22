@@ -1,17 +1,17 @@
 //
-//  NoaTeamCreateVC.m
+//  LuckyLandTeamCreateVC.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2023/7/20.
 //
 
-#import "NoaTeamCreateVC.h"
+#import "LuckyLandTeamCreateVC.h"
 
-@interface NoaTeamCreateVC ()
+@interface LuckyLandTeamCreateVC ()
 @property (nonatomic, strong) UITextField *tfTeam;
 @end
 
-@implementation NoaTeamCreateVC
+@implementation LuckyLandTeamCreateVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];

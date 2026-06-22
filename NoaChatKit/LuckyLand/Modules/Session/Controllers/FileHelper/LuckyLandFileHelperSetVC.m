@@ -1,23 +1,23 @@
 //
-//  NoaFileHelperSetVC.m
+//  LuckyLandFileHelperSetVC.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2023/6/7.
 //
 
-#import "NoaFileHelperSetVC.h"
+#import "LuckyLandFileHelperSetVC.h"
 #import "NoaChatSingleSetCommonCell.h"
 #import "NoaChatHistoryVC.h"//查找聊天记录
 #import "NoaMessageAlertView.h"
 #import "NoaMessageTools.h"
 
 
-@interface NoaFileHelperSetVC () <UITableViewDataSource, UITableViewDelegate, ZBaseCellDelegate>
+@interface LuckyLandFileHelperSetVC () <UITableViewDataSource, UITableViewDelegate, ZBaseCellDelegate>
 //好友 文件助手 信息
 @property (nonatomic, strong) LingIMFriendModel *friendModel;
 @end
 
-@implementation NoaFileHelperSetVC
+@implementation LuckyLandFileHelperSetVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];

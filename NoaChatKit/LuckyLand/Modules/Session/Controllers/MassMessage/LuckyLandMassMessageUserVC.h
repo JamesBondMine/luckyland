@@ -1,5 +1,5 @@
 //
-//  NoaMassMessageUserVC.h
+//  LuckyLandMassMessageUserVC.h
 //  NoaKit
 //
 //  Created by LuckyLand on 2023/4/19.
@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaMassMessageUserVC : LuckyLandBaseViewController
+@interface LuckyLandMassMessageUserVC : LuckyLandBaseViewController
 @property (nonatomic, assign) BOOL allUsers;
 @property (nonatomic, strong) LIMMassMessageModel *messageModel;
 @end

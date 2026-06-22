@@ -10,8 +10,8 @@
 #import "NoaTeamTitleHeaderView.h"
 #import "NoaTeamCell.h"
 #import "NoaTeamModel.h"
-#import "NoaTeamManagerVC.h"
-#import "NoaTeamDetailVC.h"
+#import "LuckyLandTeamManagerVC.h"
+#import "LuckyLandTeamDetailVC.h"
 #import "NoaShareInviteViewController.h"
 #import "NoaAlertTipView.h"
 #import "NoaTeamUpdateNameView.h"
@@ -179,14 +179,14 @@
 #pragma mark - ZTeamHomeHeaderViewDelegate
 - (void)headerTeamListTitleAction {
     //团队列表
-    NoaTeamManagerVC *vc = [[NoaTeamManagerVC alloc] init];
+    LuckyLandTeamManagerVC *vc = [[LuckyLandTeamManagerVC alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)headerTeamItemAction:(NoaTeamModel *)teamModel {
     //团队详情
     if (![NSString isNil:teamModel.teamId]) {
-        NoaTeamDetailVC *vc = [NoaTeamDetailVC new];
+        LuckyLandTeamDetailVC *vc = [LuckyLandTeamDetailVC new];
         vc.teamModel = teamModel;
         [self.navigationController pushViewController:vc animated:YES];
     }
