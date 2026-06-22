@@ -10,7 +10,7 @@
 #import "NoaToolManager.h"
 #import "NoaSensitiveManager.h" //敏感词过滤
 #import "NoaFriendReqModel.h"
-//#import "NoaCharacterBindViewController.h"
+//#import "LuckyLandCharacterBindViewController.h"
 //#import "ZSessionModel.h"
 //#import "ZServceMessageModel.h"
 //#import "ZMessageRecordModel.h"

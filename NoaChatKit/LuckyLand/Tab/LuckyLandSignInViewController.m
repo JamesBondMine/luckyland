@@ -7,8 +7,8 @@
 
 #import "LuckyLandSignInViewController.h"
 #import "NoaRuleViewController.h" //签到规则
-#import "NoaSignRecordsViewController.h" //签到记录
-#import "NoaIntegralDetailViewController.h" //积分明细
+#import "LuckyLandSignRecordsViewController.h" //签到记录
+#import "LuckyLandIntegralDetailViewController.h" //积分明细
 #import "KLSICalendarView.h"
 #import "KLSignInTool.h"
 #import "KLConst.h"
@@ -485,13 +485,13 @@
 #pragma mark - Action
 //积分明细
 - (void)signInIntergralDetailAction {
-    NoaIntegralDetailViewController * signIntergralVC = [[NoaIntegralDetailViewController alloc] init];
+    LuckyLandIntegralDetailViewController * signIntergralVC = [[LuckyLandIntegralDetailViewController alloc] init];
     [self.navigationController pushViewController:signIntergralVC animated:YES];
 }
 
 //签到记录
 - (void)signInRecordListAction {
-    NoaSignRecordsViewController * signRecordsVC = [[NoaSignRecordsViewController alloc] init];
+    LuckyLandSignRecordsViewController * signRecordsVC = [[LuckyLandSignRecordsViewController alloc] init];
     signRecordsVC.totalLoyalty = self.totalLoyalty;
     signRecordsVC.signInRecords = self.signInRecords;
     [self.navigationController pushViewController:signRecordsVC animated:YES];

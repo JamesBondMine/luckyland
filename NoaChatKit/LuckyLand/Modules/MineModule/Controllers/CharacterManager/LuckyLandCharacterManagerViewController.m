@@ -6,8 +6,8 @@
 //
 
 #import "LuckyLandCharacterManagerViewController.h"
-#import "NoaCharacterRegisterViewController.h"//注册账户
-#import "NoaCharacterBindViewController.h"//绑定账户
+#import "LuckyLandCharacterRegisterViewController.h"//注册账户
+#import "LuckyLandCharacterBindViewController.h"//绑定账户
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 
 @interface LuckyLandCharacterManagerViewController ()
@@ -357,7 +357,7 @@
 //未绑定Action
 - (void)charactersManagetRegisterAction {
     //注册账户
-    NoaCharacterRegisterViewController *vc = [[NoaCharacterRegisterViewController alloc] init];
+    LuckyLandCharacterRegisterViewController *vc = [[LuckyLandCharacterRegisterViewController alloc] init];
     vc.isBinded = NO;
     vc.isFromBind = NO;
     [self.navigationController pushViewController:vc animated:YES];
@@ -371,7 +371,7 @@
 
 - (void)charactersManagetBindingAction {
     //绑定账户
-    NoaCharacterBindViewController *vc = [[NoaCharacterBindViewController alloc] init];
+    LuckyLandCharacterBindViewController *vc = [[LuckyLandCharacterBindViewController alloc] init];
     vc.isBinded = NO;
     [self.navigationController pushViewController:vc animated:YES];
     WeakSelf
@@ -385,7 +385,7 @@
 /// 已绑定Action
 //换绑
 - (void)changeBindAction {
-    NoaCharacterBindViewController *vc = [[NoaCharacterBindViewController alloc] init];
+    LuckyLandCharacterBindViewController *vc = [[LuckyLandCharacterBindViewController alloc] init];
     vc.isBinded = YES;
     vc.account = self.nameContentLbl.text;
     [self.navigationController pushViewController:vc animated:YES];

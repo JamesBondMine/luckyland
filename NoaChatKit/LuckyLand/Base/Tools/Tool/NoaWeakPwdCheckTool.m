@@ -8,8 +8,8 @@
 #import "NoaWeakPwdCheckTool.h"
 #import "NoaMessageAlertView.h"
 #import "NoaPwdWeakCheckModel.h"
-#import "NoaInputOldPasswordViewController.h"
-#import "NoaInputNewPasswordViewController.h"
+#import "LuckyLandInputOldPasswordViewController.h"
+#import "LuckyLandInputNewPasswordViewController.h"
 #import "LXChatEncrypt.h"
 
 
@@ -145,7 +145,7 @@ static NSString *const ZPwdWeakCheckModelTypeWeekPassword = @"WEAK_PASSWORD";
 }
 
 - (void)requestCheckUserHasSetPwd {
-    NoaInputOldPasswordViewController *oldPasswordVC = [[NoaInputOldPasswordViewController alloc] init];
+    LuckyLandInputOldPasswordViewController *oldPasswordVC = [[LuckyLandInputOldPasswordViewController alloc] init];
     // 传递强制重置标记以控制返回按钮与手势
     BOOL isForcedReset = self.pwdWeakCheckModel.roleConfigMap.forcedPasswordReset;
     oldPasswordVC.isForcedReset = isForcedReset;

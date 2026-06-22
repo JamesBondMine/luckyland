@@ -10,7 +10,7 @@
 #import "groupSetDorpView.h"
 #import "NoaGroupNoticeTranslateVC.h"
 #import "NoaMessageAlertView.h"
-//#import "NoaCharacterBindViewController.h"
+//#import "LuckyLandCharacterBindViewController.h"
 #import "NoaTranslateChannelLanguageModel.h"
 #import "NoaChatViewController.h"
 #import "NoaGroupNoticeListVC.h"
@@ -588,7 +588,7 @@
     [translateAlertView alertShow];
     translateAlertView.sureBtnBlock = ^(BOOL isCheckBox) {
         //绑定账户-跳转到绑定账户VC
-        NoaCharacterBindViewController *vc = [[NoaCharacterBindViewController alloc] init];
+        LuckyLandCharacterBindViewController *vc = [[LuckyLandCharacterBindViewController alloc] init];
         [weakSelf.navigationController pushViewController:vc animated:YES];
     };
 }

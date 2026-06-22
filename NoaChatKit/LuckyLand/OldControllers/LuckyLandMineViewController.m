@@ -10,19 +10,19 @@
 #import "NoaMineInfoView.h"
 #import "NoaMineCenterCell.h"
 
-#import "NoaUserInfoViewController.h"//个人资料
-#import "NoaBlackListViewController.h"//黑名单
-#import "NoaSafeSettingViewController.h"//安全设置
+#import "LuckyLandUserInfoViewController.h"//个人资料
+#import "LuckyLandBlackListViewController.h"//黑名单
+#import "LuckyLandSafeSettingViewController.h"//安全设置
 #import "LuckyLandSystemSettingViewController.h"//系统设置
-#import "NoaMyQRCodeViewController.h"//我的二维码
-#import "NoaMyCollectionViewController.h"//我的收藏
+#import "LuckyLandMyQRCodeViewController.h"//我的二维码
+#import "LuckyLandMyCollectionViewController.h"//我的收藏
 #import "NoaComplainVC.h"//投诉与支持
-#import "NoaLanguageSetViewController.h"//多语言
+#import "LuckyLandLanguageSetViewController.h"//多语言
 #import "LuckyLandAboutUsViewController.h"//关于我们
-#import "NoaShareInviteViewController.h"//分享邀请
+#import "LuckyLandShareInviteViewController.h"//分享邀请
 #import "LuckyLandSignInViewController.h" //签到页面
 #import "LuckyLandTranslateSetDefaultViewController.h" //翻译管理
-#import "NoaPrivacySettingViewController.h"
+#import "LuckyLandPrivacySettingViewController.h"
 #import "LuckLandTeamViewController.h"//团队
 #import "NoaTeamListVC.h"
 #import "NoaQRCodeModel.h"
@@ -457,13 +457,13 @@
 
     if ([titleName isEqualToString:LanguageToolMatch(@"我的收藏")]) {
         //我的收藏
-        NoaMyCollectionViewController *myCollectionVC = [[NoaMyCollectionViewController alloc] init];
+        LuckyLandMyCollectionViewController *myCollectionVC = [[LuckyLandMyCollectionViewController alloc] init];
         myCollectionVC.isFromChat = NO;
         [self openFullScreen:myCollectionVC];
     }
     if ([titleName isEqualToString:LanguageToolMatch(@"黑名单")]) {
         //黑名单
-        NoaBlackListViewController *blackListVC = [[NoaBlackListViewController alloc] init];
+        LuckyLandBlackListViewController *blackListVC = [[LuckyLandBlackListViewController alloc] init];
         [self openFullScreen:blackListVC];
     }
     if ([titleName isEqualToString:LanguageToolMatch(@"翻译管理")]) {
@@ -473,18 +473,18 @@
     }
     if ([titleName isEqualToString:LanguageToolMatch(@"应用语言")]) {
         //多语言
-        NoaLanguageSetViewController *languageSetVC = [[NoaLanguageSetViewController alloc] init];
+        LuckyLandLanguageSetViewController *languageSetVC = [[LuckyLandLanguageSetViewController alloc] init];
         languageSetVC.changeType = LanguageChangeUITypeTabbar;
         [self openFullScreen:languageSetVC];
     }
     if ([titleName isEqualToString:LanguageToolMatch(@"隐私设置")]) {
         //隐私设置
-        NoaPrivacySettingViewController *privacySettingVC = [[NoaPrivacySettingViewController alloc] init];
+        LuckyLandPrivacySettingViewController *privacySettingVC = [[LuckyLandPrivacySettingViewController alloc] init];
         [self openFullScreen:privacySettingVC];
     }
     if ([titleName isEqualToString:LanguageToolMatch(@"安全设置")]) {
         //安全设置
-        NoaSafeSettingViewController *safeSettingVC = [[NoaSafeSettingViewController alloc] init];
+        LuckyLandSafeSettingViewController *safeSettingVC = [[LuckyLandSafeSettingViewController alloc] init];
         [self openFullScreen:safeSettingVC];
     }
     if ([titleName isEqualToString:LanguageToolMatch(@"投诉与支持")]) {
@@ -515,14 +515,14 @@
 - (void)mineInfoAction:(NSInteger)actionTag {
     if (actionTag == 200) {
         //个人信息
-        NoaUserInfoViewController *userInfoVC = [[NoaUserInfoViewController alloc] init];
+        LuckyLandUserInfoViewController *userInfoVC = [[LuckyLandUserInfoViewController alloc] init];
         [self openFullScreen:userInfoVC];
     }else if (actionTag == 201){
         //系统设置
         LuckyLandSystemSettingViewController *sysSettingVC = [[LuckyLandSystemSettingViewController alloc] init];
         [self openFullScreen:sysSettingVC];
     }else if (actionTag == 202){
-        NoaUserInfoViewController *userInfoVC = [[NoaUserInfoViewController alloc] init];
+        LuckyLandUserInfoViewController *userInfoVC = [[LuckyLandUserInfoViewController alloc] init];
         [self openFullScreen:userInfoVC];
     }else if (actionTag == 9901){
         [self getQtcondeContent];
@@ -546,7 +546,7 @@
         NoaQRCodeModel *model = [NoaQRCodeModel mj_objectWithKeyValues:data];
         NSString *content = model.content;
         //跳转到我的二维码
-        NoaMyQRCodeViewController *myQrcodeVC = [[NoaMyQRCodeViewController alloc] init];
+        LuckyLandMyQRCodeViewController *myQrcodeVC = [[LuckyLandMyQRCodeViewController alloc] init];
         myQrcodeVC.qrcodeContent = ![NSString isNil:content] ? content : @"" ;
         [weakSelf openFullScreen:myQrcodeVC];
     } onFailure:^(NSInteger code, NSString * _Nullable msg, NSString * _Nullable traceId) {

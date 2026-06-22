@@ -38,7 +38,7 @@
 #import "LuckyLandChatFileDetailViewController.h"//文件消息中文件详情
 #import "KNPhotoBrowser.h"//图片视频浏览
 //#import "ZFileNetProgressManager.h"//文件上传
-#import "NoaMyCollectionViewController.h"//收藏
+#import "LuckyLandMyCollectionViewController.h"//收藏
 #import "NoaChatMultiSelectSendHander.h"
 #import "NoaMessageMultiBottomView.h" //多选bottom
 #import "LuckyLandChatRecordDetailViewController.h" //会话记录详情
@@ -608,7 +608,7 @@
 
 //展示收藏列表
 - (void)chatInputViewCollection {
-    NoaMyCollectionViewController *myCollectionVC = [[NoaMyCollectionViewController alloc] init];
+    LuckyLandMyCollectionViewController *myCollectionVC = [[LuckyLandMyCollectionViewController alloc] init];
     myCollectionVC.isFromChat = YES;
     myCollectionVC.chatType = CIMChatType_SingleChat;
     myCollectionVC.chatSession = self.sessionID;

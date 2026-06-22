@@ -51,7 +51,7 @@
 #import "KNPhotoBrowser.h"//图片视频浏览
 #import "NoaFileUploadModel.h"
 #import "NoaGroupModifyNoticeVC.h"
-#import "NoaMyCollectionViewController.h"
+#import "LuckyLandMyCollectionViewController.h"
 #import "NoaMessageTimeDeleteView.h"//消息定时删除配置
 #import "NoaChatMultiSelectSendHander.h"
 #import "NoaMessageMultiBottomView.h" //多选bottom
@@ -2580,7 +2580,7 @@
 
 #pragma mark - 展示收藏列表
 - (void)chatInputViewCollection {
-    NoaMyCollectionViewController *myCollectionVC = [[NoaMyCollectionViewController alloc] init];
+    LuckyLandMyCollectionViewController *myCollectionVC = [[LuckyLandMyCollectionViewController alloc] init];
     myCollectionVC.isFromChat = YES;
     myCollectionVC.chatType = self.chatType;
     myCollectionVC.chatSession = self.sessionID;

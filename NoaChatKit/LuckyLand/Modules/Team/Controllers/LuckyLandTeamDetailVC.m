@@ -10,7 +10,7 @@
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 #import "NoaAlertTipView.h"
 #import "NoaTeamMemberModel.h"
-#import "NoaShareInviteViewController.h"
+#import "LuckyLandShareInviteViewController.h"
 #import "LuckyLandUserHomePageVC.h"
 #import "NoaTeamUpdateNameView.h"
 
@@ -494,7 +494,7 @@
 }
 
 - (void)btnShareClick {
-    NoaShareInviteViewController *vc = [NoaShareInviteViewController new];
+    LuckyLandShareInviteViewController *vc = [LuckyLandShareInviteViewController new];
     vc.teamID = self.teamModel.teamId;
     [self.navigationController pushViewController:vc animated:YES];
 }

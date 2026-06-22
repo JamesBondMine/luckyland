@@ -13,8 +13,8 @@
 #import "NoaQRcodeScanViewController.h"
 #import "AppUseTipView.h"//用户协议弹窗
 #import "NoaFileOssInfoModel.h"
-#import "NoaLanguageSetViewController.h"//多语言
-#import "NoaNetSetViewController.h"
+#import "LuckyLandLanguageSetViewController.h"//多语言
+#import "LuckyLandNetSetViewController.h"
 #import "NoaAlertTipView.h"
 #import "LuckyLandRaceCheckErrorViewController.h"
 #import <CocoaAsyncSocket/GCDAsyncUdpSocket.h>

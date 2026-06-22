@@ -7,14 +7,14 @@
 #import "LuckLandTeamViewController.h"//团队
 #import "NoaTeamListVC.h"
 #import "LuckyLandDrawerPresentationController.h"
-#import "NoaMyCollectionViewController.h"//我的收藏
+#import "LuckyLandMyCollectionViewController.h"//我的收藏
 #import "NoaComplainVC.h"//投诉与支持
-#import "NoaLanguageSetViewController.h"//多语言
-#import "NoaBlackListViewController.h"//黑名单
-#import "NoaSafeSettingViewController.h"//安全设置
+#import "LuckyLandLanguageSetViewController.h"//多语言
+#import "LuckyLandBlackListViewController.h"//黑名单
+#import "LuckyLandSafeSettingViewController.h"//安全设置
 
-#import "NoaPrivacySettingViewController.h"
-#import "NoaUserInfoViewController.h"//个人资料
+#import "LuckyLandPrivacySettingViewController.h"
+#import "LuckyLandUserInfoViewController.h"//个人资料
 #import "LuckyLandSystemSettingViewController.h"//系统设置
 
 // 网络检测页面
@@ -26,7 +26,7 @@
 #import "LuckyLandAboutUsViewController.h"//关于我们
 
 #import "LuckyLandSignInViewController.h" //签到页面
-#import "NoaMyQRCodeViewController.h"//我的二维码
+#import "LuckyLandMyQRCodeViewController.h"//我的二维码
 #import "NoaQRCodeModel.h"
 #import <SDWebImage/SDWebImage.h>
 
@@ -187,26 +187,26 @@ static NSString * const kFlutterMineAvatarCachePrefix = @"flutter_mine_avatar";
             NoaTeamListVC *teamVC = [NoaTeamListVC new];
             [self openFullScreen:teamVC];
         } else if ([action isEqualToString:@"mineTouchIndex1"]) {
-            NoaMyCollectionViewController *myCollectionVC = [[NoaMyCollectionViewController alloc] init];
+            LuckyLandMyCollectionViewController *myCollectionVC = [[LuckyLandMyCollectionViewController alloc] init];
             myCollectionVC.isFromChat = NO;
             [self openFullScreen:myCollectionVC];
         } else if ([action isEqualToString:@"mineTouchIndex2"]) {
             //黑名单
-            NoaBlackListViewController *blackListVC = [[NoaBlackListViewController alloc] init];
+            LuckyLandBlackListViewController *blackListVC = [[LuckyLandBlackListViewController alloc] init];
             [self openFullScreen:blackListVC];
         } else if ([action isEqualToString:@"mineTouchIndex3"]) {
             //多语言
-            NoaLanguageSetViewController *languageSetVC = [[NoaLanguageSetViewController alloc] init];
+            LuckyLandLanguageSetViewController *languageSetVC = [[LuckyLandLanguageSetViewController alloc] init];
             languageSetVC.changeType = LanguageChangeUITypeTabbar;
             [self openFullScreen:languageSetVC];
  
         } else if ([action isEqualToString:@"mineTouchIndex4"]) {
             //安全设置
-            NoaSafeSettingViewController *safeSettingVC = [[NoaSafeSettingViewController alloc] init];
+            LuckyLandSafeSettingViewController *safeSettingVC = [[LuckyLandSafeSettingViewController alloc] init];
             [self openFullScreen:safeSettingVC];
         } else if ([action isEqualToString:@"mineTouchIndex5"]) {
             //隐私设置
-            NoaPrivacySettingViewController *privacySettingVC = [[NoaPrivacySettingViewController alloc] init];
+            LuckyLandPrivacySettingViewController *privacySettingVC = [[LuckyLandPrivacySettingViewController alloc] init];
             [self openFullScreen:privacySettingVC];
         } else if ([action isEqualToString:@"mineTouchIndex6"]) {
             //网络检测
@@ -224,7 +224,7 @@ static NSString * const kFlutterMineAvatarCachePrefix = @"flutter_mine_avatar";
             [self openFullScreen:aboutUsVC];
         } else if ([action isEqualToString:@"mineTouchIndex100"]) {
             //个人信息
-            NoaUserInfoViewController *userInfoVC = [[NoaUserInfoViewController alloc] init];
+            LuckyLandUserInfoViewController *userInfoVC = [[LuckyLandUserInfoViewController alloc] init];
             [self openFullScreen:userInfoVC];
         } else if ([action isEqualToString:@"mineTouchIndex101"]) {
             //系统设置
@@ -238,7 +238,7 @@ static NSString * const kFlutterMineAvatarCachePrefix = @"flutter_mine_avatar";
             [self openFullScreen:signInVC];
         } else if ([action isEqualToString:@"mineTouchIndex104"]) {
             //个人信息
-            NoaUserInfoViewController *userInfoVC = [[NoaUserInfoViewController alloc] init];
+            LuckyLandUserInfoViewController *userInfoVC = [[LuckyLandUserInfoViewController alloc] init];
             [self openFullScreen:userInfoVC];
         } else if ([action isEqualToString:@"mineTouchIndex105"]) {
             [HUD showMessage:LanguageToolMatch(@"复制成功") inView:self.view];
@@ -271,7 +271,7 @@ static NSString * const kFlutterMineAvatarCachePrefix = @"flutter_mine_avatar";
         NoaQRCodeModel *model = [NoaQRCodeModel mj_objectWithKeyValues:data];
         NSString *content = model.content;
         //跳转到我的二维码
-        NoaMyQRCodeViewController *myQrcodeVC = [[NoaMyQRCodeViewController alloc] init];
+        LuckyLandMyQRCodeViewController *myQrcodeVC = [[LuckyLandMyQRCodeViewController alloc] init];
         myQrcodeVC.qrcodeContent = ![NSString isNil:content] ? content : @"" ;
         [weakSelf openFullScreen:myQrcodeVC];
     } onFailure:^(NSInteger code, NSString * _Nullable msg, NSString * _Nullable traceId) {

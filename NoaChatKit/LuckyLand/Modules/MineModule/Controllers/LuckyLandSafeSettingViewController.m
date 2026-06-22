@@ -7,14 +7,14 @@
 
 #import "LuckyLandSafeSettingViewController.h"
 #import "NoaSafeSettingCell.h"
-#import "NoaInputOldPasswordViewController.h"
-#import "NoaInputNewPasswordViewController.h"
+#import "LuckyLandInputOldPasswordViewController.h"
+#import "LuckyLandInputNewPasswordViewController.h"
 #import "NoaGestureLockSetVC.h"
 #import "NoaGestureLockCheckVC.h"
 #import "NoaMessageAlertView.h"
-#import "NoaSafeCodeSettingViewController.h"
-#import "NoaSafeCodeChangeViewController.h"
-#import "NoaSafeCodeCloseViewController.h"
+#import "LuckyLandSafeCodeSettingViewController.h"
+#import "LuckyLandSafeCodeChangeViewController.h"
+#import "LuckyLandSafeCodeCloseViewController.h"
 
 @interface LuckyLandSafeSettingViewController () <UITableViewDelegate, UITableViewDataSource, ZBaseCellDelegate, ZGestureLockCheckVCDelegate>
 
@@ -76,11 +76,11 @@
             BOOL pwdExit = [[dataDict objectForKey:@"pwdExit"] boolValue];
             if (pwdExit) {
                 //存在密码
-                NoaInputOldPasswordViewController *oldPasswordVC = [[NoaInputOldPasswordViewController alloc] init];
+                LuckyLandInputOldPasswordViewController *oldPasswordVC = [[LuckyLandInputOldPasswordViewController alloc] init];
                 [weakSelf.navigationController pushViewController:oldPasswordVC animated:YES];
             } else {
                 //不存在密码
-                NoaInputNewPasswordViewController *newPwInputVC = [[NoaInputNewPasswordViewController alloc] init];
+                LuckyLandInputNewPasswordViewController *newPwInputVC = [[LuckyLandInputNewPasswordViewController alloc] init];
                 [weakSelf.navigationController pushViewController:newPwInputVC animated:YES];
             }
         }
@@ -190,7 +190,7 @@
             //提示
             [self deviceSafeCodeAlertTipView];
         } else {
-            NoaSafeCodeSettingViewController *vc = [[NoaSafeCodeSettingViewController alloc] init];
+            LuckyLandSafeCodeSettingViewController *vc = [[LuckyLandSafeCodeSettingViewController alloc] init];
             [self.navigationController pushViewController:vc animated:YES];
         }
     }
@@ -337,13 +337,13 @@
 
 //修改安全码
 - (void)changeDeviceSafeCode {
-    NoaSafeCodeChangeViewController *vc = [NoaSafeCodeChangeViewController new];
+    LuckyLandSafeCodeChangeViewController *vc = [LuckyLandSafeCodeChangeViewController new];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 //关闭安全码
 - (void)closeDeviceSafeCode {
-    NoaSafeCodeCloseViewController *vc = [NoaSafeCodeCloseViewController new];
+    LuckyLandSafeCodeCloseViewController *vc = [LuckyLandSafeCodeCloseViewController new];
     vc.operatorType = SafeCodeOperatorTypeClose;
     [self.navigationController pushViewController:vc animated:YES];
 }

@@ -22,7 +22,7 @@
 #import "LuckyLandNewFriendListVC.h"//新朋友
 #import "NoaFileHelperVC.h"//文件助手
 #import "LuckyLandSystemMessageVC.h"//群助手
-//#import "NoaShareInviteViewController.h"//分享邀请
+//#import "LuckyLandShareInviteViewController.h"//分享邀请
 
 #import "NoaSessionTopView.h"
 

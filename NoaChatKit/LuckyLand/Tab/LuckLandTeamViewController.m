@@ -12,7 +12,7 @@
 #import "NoaTeamModel.h"
 #import "LuckyLandTeamManagerVC.h"
 #import "LuckyLandTeamDetailVC.h"
-#import "NoaShareInviteViewController.h"
+#import "LuckyLandShareInviteViewController.h"
 #import "NoaAlertTipView.h"
 #import "NoaTeamUpdateNameView.h"
 
@@ -334,7 +334,7 @@
 #pragma mark - 交互事件
 - (void)navBtnRightClicked {
     
-        NoaShareInviteViewController *vc = [NoaShareInviteViewController new];
+        LuckyLandShareInviteViewController *vc = [LuckyLandShareInviteViewController new];
     if (![NSString isNil:_defaultTeamModel.teamId]) {
         vc.teamID = _defaultTeamModel.teamId;
     } else {

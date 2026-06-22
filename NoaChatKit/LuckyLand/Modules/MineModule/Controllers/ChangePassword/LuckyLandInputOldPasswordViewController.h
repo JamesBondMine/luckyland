@@ -1,5 +1,5 @@
 //
-//  LuckyLandInputNewPasswordViewController.h
+//  LuckyLandInputOldPasswordViewController.h
 //  NoaKit
 //
 //  Created by LuckyLand on 2026/11/13.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LuckyLandInputNewPasswordViewController : LuckyLandBaseViewController
+@interface LuckyLandInputOldPasswordViewController : LuckyLandBaseViewController
 
 @property (nonatomic, assign) BOOL isForcedReset; // 是否强制重置，控制返回按钮与手势
 

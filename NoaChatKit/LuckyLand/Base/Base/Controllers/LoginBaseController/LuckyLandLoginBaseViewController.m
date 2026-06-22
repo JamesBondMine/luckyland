@@ -6,8 +6,8 @@
 //
 
 #import "LuckyLandLoginBaseViewController.h"
-#import "NoaNetSetViewController.h"
-#import "NoaLanguageSetViewController.h"
+#import "LuckyLandNetSetViewController.h"
+#import "LuckyLandLanguageSetViewController.h"
 
 @interface LuckyLandLoginBaseViewController ()
 
@@ -191,14 +191,14 @@
 /// 设置网络按钮点击事件（子类重写实现）
 - (void)clickNetworkSetAction {
     // 子类重写实现具体逻辑
-    NoaNetSetViewController *netSetVC = [[NoaNetSetViewController alloc] init];
+    LuckyLandNetSetViewController *netSetVC = [[LuckyLandNetSetViewController alloc] init];
     [self.navigationController pushViewController:netSetVC animated:YES];
 }
 
 /// 设置系统语言点击事件（子类重写实现）
 - (void)clickSystemLanguage {
     // 子类重写实现具体逻辑
-    NoaLanguageSetViewController *languageSetVC = [[NoaLanguageSetViewController alloc] init];
+    LuckyLandLanguageSetViewController *languageSetVC = [[LuckyLandLanguageSetViewController alloc] init];
     languageSetVC.changeType = LanguageChangeUITypeLogin;
     [self.navigationController pushViewController:languageSetVC animated:YES];
 }

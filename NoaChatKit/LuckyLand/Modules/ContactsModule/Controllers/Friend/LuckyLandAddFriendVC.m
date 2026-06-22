@@ -10,7 +10,7 @@
 #import "NoaNoDataView.h"
 #import "NoaAddFriendCell.h"
 #import "LuckyLandUserHomePageVC.h"
-#import "NoaMyQRCodeViewController.h"
+#import "LuckyLandMyQRCodeViewController.h"
 #import "NoaQRCodeModel.h"
 @interface LuckyLandAddFriendVC () <UITableViewDataSource,UITableViewDelegate,ZSearchViewDelegate>
 
@@ -150,7 +150,7 @@
         NoaQRCodeModel *model = [NoaQRCodeModel mj_objectWithKeyValues:data];
         NSString *content = model.content;
         //跳转到我的二维码
-        NoaMyQRCodeViewController *myQrcodeVC = [[NoaMyQRCodeViewController alloc] init];
+        LuckyLandMyQRCodeViewController *myQrcodeVC = [[LuckyLandMyQRCodeViewController alloc] init];
         myQrcodeVC.qrcodeContent = ![NSString isNil:content] ? content : @"" ;
         [weakSelf.navigationController pushViewController:myQrcodeVC animated:YES];
     } onFailure:^(NSInteger code, NSString * _Nullable msg, NSString * _Nullable traceId) {
