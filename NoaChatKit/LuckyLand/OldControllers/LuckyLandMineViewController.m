@@ -28,7 +28,7 @@
 #import "NoaQRCodeModel.h"
 // 网络检测页面
 #import "NoaNetworkDetectionVC.h"
-#import "NoaDrawerPresentationController.h"
+#import "LuckyLandDrawerPresentationController.h"
 #import "NoaDrawerTransitioningDelegate.h"
 #import <objc/runtime.h>
 
@@ -115,8 +115,8 @@
     // 当返回到 ZMineVC（成为顶部 VC）时，恢复抽屉为 0.8 宽度
     if (self.navigationController.topViewController == self) {
         UIPresentationController *pc = self.navigationController.presentationController;
-        if ([pc isKindOfClass:[NoaDrawerPresentationController class]]) {
-            NoaDrawerPresentationController *drawer = (NoaDrawerPresentationController *)pc;
+        if ([pc isKindOfClass:[LuckyLandDrawerPresentationController class]]) {
+            LuckyLandDrawerPresentationController *drawer = (LuckyLandDrawerPresentationController *)pc;
             [drawer updateContentWidthRatio:0.8 animated:YES];
         }
     }
@@ -179,7 +179,7 @@
 
     // 若当前在抽屉容器中，改为先隐藏（dismiss）抽屉效果，再在根部导航上 push 全屏页面
     UIPresentationController *pc = currentNav.presentationController;
-    if ([pc isKindOfClass:[NoaDrawerPresentationController class]]) {
+    if ([pc isKindOfClass:[LuckyLandDrawerPresentationController class]]) {
         [self.navigationController dismissViewControllerAnimated:YES completion:^{
             UIViewController *rootVC = [UIApplication sharedApplication].delegate.window.rootViewController;
             UINavigationController *targetNav = nil;

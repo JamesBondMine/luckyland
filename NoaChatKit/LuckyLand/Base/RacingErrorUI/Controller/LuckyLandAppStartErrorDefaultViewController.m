@@ -1,21 +1,21 @@
 //
-//  NoaAppStartErrorDefaultViewController.m
+//  LuckyLandAppStartErrorDefaultViewController.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2023/5/18.
 //
 
-#import "NoaAppStartErrorDefaultViewController.h"
+#import "LuckyLandAppStartErrorDefaultViewController.h"
 //#import "NoaSsoSetViewController.h"
 #import "LuckyLandSsoSetViewController.h"
 
-@interface NoaAppStartErrorDefaultViewController ()
+@interface LuckyLandAppStartErrorDefaultViewController ()
 
 @property (nonatomic, strong)UILabel *errorMsgLbl;
 
 @end
 
-@implementation NoaAppStartErrorDefaultViewController
+@implementation LuckyLandAppStartErrorDefaultViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

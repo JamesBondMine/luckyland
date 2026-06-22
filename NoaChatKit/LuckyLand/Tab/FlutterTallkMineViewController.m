@@ -6,7 +6,7 @@
 #import "FlutterTallkMineViewController.h"
 #import "LuckLandTeamViewController.h"//团队
 #import "NoaTeamListVC.h"
-#import "NoaDrawerPresentationController.h"
+#import "LuckyLandDrawerPresentationController.h"
 #import "NoaMyCollectionViewController.h"//我的收藏
 #import "NoaComplainVC.h"//投诉与支持
 #import "NoaLanguageSetViewController.h"//多语言
@@ -19,7 +19,7 @@
 
 // 网络检测页面
 #import "NoaNetworkDetectionVC.h"
-#import "NoaDrawerPresentationController.h"
+#import "LuckyLandDrawerPresentationController.h"
 #import "NoaDrawerTransitioningDelegate.h"
 #import <objc/runtime.h>
 
@@ -292,7 +292,7 @@ static NSString * const kFlutterMineAvatarCachePrefix = @"flutter_mine_avatar";
 
     // 若当前在抽屉容器中，改为先隐藏（dismiss）抽屉效果，再在根部导航上 push 全屏页面
     UIPresentationController *pc = currentNav.presentationController;
-    if ([pc isKindOfClass:[NoaDrawerPresentationController class]]) {
+    if ([pc isKindOfClass:[LuckyLandDrawerPresentationController class]]) {
         [self.navigationController dismissViewControllerAnimated:YES completion:^{
             UIViewController *rootVC = [UIApplication sharedApplication].delegate.window.rootViewController;
             UINavigationController *targetNav = nil;

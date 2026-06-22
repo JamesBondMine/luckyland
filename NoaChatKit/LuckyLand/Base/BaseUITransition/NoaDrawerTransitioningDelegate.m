@@ -6,7 +6,7 @@
 //
 
 #import "NoaDrawerTransitioningDelegate.h"
-#import "NoaDrawerPresentationController.h"
+#import "LuckyLandDrawerPresentationController.h"
 #import "NoaDrawerAnimator.h"
 
 @implementation NoaDrawerTransitioningDelegate
@@ -22,7 +22,7 @@
 }
 
 - (UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source {
-    NoaDrawerPresentationController *pc = [[NoaDrawerPresentationController alloc] initWithPresentedViewController:presented presentingViewController:presenting];
+    LuckyLandDrawerPresentationController *pc = [[LuckyLandDrawerPresentationController alloc] initWithPresentedViewController:presented presentingViewController:presenting];
     pc.contentWidthRatio = self.contentWidthRatio;
     pc.preferredDuration = self.duration;
     pc.dimmingColor = self.dimmingColor;

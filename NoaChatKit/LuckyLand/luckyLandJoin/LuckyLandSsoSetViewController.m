@@ -16,7 +16,7 @@
 #import "NoaLanguageSetViewController.h"//多语言
 #import "NoaNetSetViewController.h"
 #import "NoaAlertTipView.h"
-#import "NoaRaceCheckErrorViewController.h"
+#import "LuckyLandRaceCheckErrorViewController.h"
 #import <CocoaAsyncSocket/GCDAsyncUdpSocket.h>
 #import "NoaNetworkDetectionVC.h"
 

@@ -1,5 +1,5 @@
 //
-//  NoaAppStartErrorDefaultViewController.h
+//  LuckyLandAppStartErrorDefaultViewController.h
 //  NoaKit
 //
 //  Created by LuckyLand on 2023/5/18.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaAppStartErrorDefaultViewController : LuckyLandBaseViewController
+@interface LuckyLandAppStartErrorDefaultViewController : LuckyLandBaseViewController
 
 @property (nonatomic, assign)ZNetRacingStep step;
 @property (nonatomic, assign)NSInteger code;

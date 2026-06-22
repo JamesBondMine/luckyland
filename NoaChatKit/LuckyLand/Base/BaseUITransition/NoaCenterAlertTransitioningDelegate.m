@@ -6,7 +6,7 @@
 //
 
 #import "NoaCenterAlertTransitioningDelegate.h"
-#import "NoaCenterAlertPresentationController.h"
+#import "LuckyLandCenterAlertPresentationController.h"
 #import "NoaCenterAlertAnimator.h"
 
 @implementation NoaCenterAlertTransitioningDelegate
@@ -21,7 +21,7 @@
 }
 
 - (UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source {
-    NoaCenterAlertPresentationController *pc = [[NoaCenterAlertPresentationController alloc] initWithPresentedViewController:presented presentingViewController:presenting];
+    LuckyLandCenterAlertPresentationController *pc = [[LuckyLandCenterAlertPresentationController alloc] initWithPresentedViewController:presented presentingViewController:presenting];
     pc.preferredDuration = self.duration;
     pc.dimmingColor = self.dimmingColor;
     return pc;

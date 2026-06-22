@@ -1,17 +1,17 @@
 //
-//  NoaCenterAlertPresentationController.m
+//  LuckyLandCenterAlertPresentationController.m
 //  NoaChatKit
 //
 //  Created by AI on 2025/11/14.
 //
 
-#import "NoaCenterAlertPresentationController.h"
+#import "LuckyLandCenterAlertPresentationController.h"
 
-@interface NoaCenterAlertPresentationController ()
+@interface LuckyLandCenterAlertPresentationController ()
 @property (nonatomic, strong) UIView *dimmingView;
 @end
 
-@implementation NoaCenterAlertPresentationController
+@implementation LuckyLandCenterAlertPresentationController
 
 - (instancetype)initWithPresentedViewController:(UIViewController *)presentedViewController presentingViewController:(UIViewController *)presentingViewController {
     self = [super initWithPresentedViewController:presentedViewController presentingViewController:presentingViewController];

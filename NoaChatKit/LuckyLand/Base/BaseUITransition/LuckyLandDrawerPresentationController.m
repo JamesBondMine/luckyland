@@ -1,17 +1,17 @@
 //
-//  NoaDrawerPresentationController.m
+//  LuckyLandDrawerPresentationController.m
 //  NoaKit
 //
 //  Created by AI on 2025/11/05.
 //
 
-#import "NoaDrawerPresentationController.h"
+#import "LuckyLandDrawerPresentationController.h"
 
-@interface NoaDrawerPresentationController ()
+@interface LuckyLandDrawerPresentationController ()
 @property (nonatomic, strong) UIView *dimmingView;
 @end
 
-@implementation NoaDrawerPresentationController
+@implementation LuckyLandDrawerPresentationController
 
 - (instancetype)initWithPresentedViewController:(UIViewController *)presentedViewController presentingViewController:(UIViewController *)presentingViewController {
     self = [super initWithPresentedViewController:presentedViewController presentingViewController:presentingViewController];

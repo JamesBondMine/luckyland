@@ -13,7 +13,7 @@
 #import "LuckyLandLoginViewController.h"
 //#import "NoaSsoSetViewController.h"
 #import "LuckyLandSsoSetViewController.h"
-#import "NoaAppStartErrorDefaultViewController.h"
+#import "LuckyLandAppStartErrorDefaultViewController.h"
 #import "LuckyLandBaseWebViewController.h"
 #import "NoaKnownTipView.h"
 #import "LuckyLandTabBarController.h"
@@ -297,7 +297,7 @@ static NSString *g_CurrentLoganPublishURL = nil; // 内存记录当前 Logan pub
         
         //需要在主线程中执行
         [ZTOOL doInMain:^{
-            NoaAppStartErrorDefaultViewController *racingFailVC = [[NoaAppStartErrorDefaultViewController alloc] init];
+            LuckyLandAppStartErrorDefaultViewController *racingFailVC = [[LuckyLandAppStartErrorDefaultViewController alloc] init];
             racingFailVC.step = step;
             racingFailVC.code = code;
             NoaNavigationController *nav = [[NoaNavigationController alloc] initWithRootViewController:racingFailVC];

@@ -1,19 +1,19 @@
 //
-//  NoaRaceCheckErrorViewController.m
+//  LuckyLandRaceCheckErrorViewController.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2024/5/11.
 //
 
-#import "NoaRaceCheckErrorViewController.h"
+#import "LuckyLandRaceCheckErrorViewController.h"
 #import "NoaRaceCheckErrorModel.h"
 #import "NoaRaceCheckErrorCell.h"
 
-@interface NoaRaceCheckErrorViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface LuckyLandRaceCheckErrorViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @end
 
-@implementation NoaRaceCheckErrorViewController
+@implementation LuckyLandRaceCheckErrorViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
