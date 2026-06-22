@@ -1,17 +1,17 @@
 //
-//  NoaEmojiShopFeaturedViewController.m
+//  LuckyLandEmojiShopFeaturedViewController.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2023/10/25.
 //
 
-#import "NoaEmojiShopFeaturedViewController.h"
+#import "LuckyLandEmojiShopFeaturedViewController.h"
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 #import "NoaEmojiShopFeaturedHeaderView.h"
 #import "NoaEmojiShopFeaturedCell.h"
 #import "NoaEmojiMenuPopView.h"
 
-@interface NoaEmojiShopFeaturedViewController () <UICollectionViewDelegate, UICollectionViewDataSource, DZNEmptyDataSetSource,DZNEmptyDataSetDelegate, ZEmojiShopFeaturedCellDelegate>
+@interface LuckyLandEmojiShopFeaturedViewController () <UICollectionViewDelegate, UICollectionViewDataSource, DZNEmptyDataSetSource,DZNEmptyDataSetDelegate, ZEmojiShopFeaturedCellDelegate>
 
 @property (nonatomic, strong) NSMutableArray *featuredStickersList;
 @property (nonatomic, strong) UICollectionView *collectionView;
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation NoaEmojiShopFeaturedViewController
+@implementation LuckyLandEmojiShopFeaturedViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

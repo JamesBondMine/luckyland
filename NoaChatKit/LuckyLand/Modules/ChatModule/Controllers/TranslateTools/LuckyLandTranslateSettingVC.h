@@ -1,5 +1,5 @@
 //
-//  NoaTranslateSettingVC.h
+//  LuckyLandTranslateSettingVC.h
 //  NoaKit
 //
 //  Created by LuckyLand on 2023/12/26.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaTranslateSettingVC : LuckyLandBaseViewController
+@interface LuckyLandTranslateSettingVC : LuckyLandBaseViewController
 
 @property (nonatomic, strong) LingIMSessionModel * sessionModel;
 

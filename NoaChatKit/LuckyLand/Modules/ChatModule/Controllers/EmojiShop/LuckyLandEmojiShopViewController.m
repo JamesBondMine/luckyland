@@ -1,26 +1,26 @@
 //
-//  NoaEmojiShopViewController.m
+//  LuckyLandEmojiShopViewController.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2023/10/25.
 //
 
-#import "NoaEmojiShopViewController.h"
+#import "LuckyLandEmojiShopViewController.h"
 #import <JXCategoryView/JXCategoryView.h>
 #import "NoaScrollView.h"
-#import "NoaEmojiShopPackageViewController.h"//表情包
-#import "NoaEmojiShopFeaturedViewController.h"//精选表情
+#import "LuckyLandEmojiShopPackageViewController.h"//表情包
+#import "LuckyLandEmojiShopFeaturedViewController.h"//精选表情
 
-@interface NoaEmojiShopViewController () <JXCategoryViewDelegate,UIScrollViewDelegate>
+@interface LuckyLandEmojiShopViewController () <JXCategoryViewDelegate,UIScrollViewDelegate>
 
 @property (nonatomic, strong) JXCategoryTitleView *viewCategory;
 @property (nonatomic, strong) NoaScrollView *scrollView;
-@property (nonatomic, strong) NoaEmojiShopPackageViewController *emojiPackageVC;
-@property (nonatomic, strong) NoaEmojiShopFeaturedViewController *emojiFeaturedVC;
+@property (nonatomic, strong) LuckyLandEmojiShopPackageViewController *emojiPackageVC;
+@property (nonatomic, strong) LuckyLandEmojiShopFeaturedViewController *emojiFeaturedVC;
 
 @end
 
-@implementation NoaEmojiShopViewController
+@implementation LuckyLandEmojiShopViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -80,12 +80,12 @@
     [self.view addSubview:self.scrollView];
     self.viewCategory.contentScrollView = self.scrollView;
     
-    _emojiPackageVC = [NoaEmojiShopPackageViewController new];
+    _emojiPackageVC = [LuckyLandEmojiShopPackageViewController new];
     _emojiPackageVC.view.frame = CGRectMake(0, 0, DScreenWidth, _scrollView.height);
     [self addChildViewController:_emojiPackageVC];
     [self.scrollView addSubview:_emojiPackageVC.view];
     
-    _emojiFeaturedVC = [NoaEmojiShopFeaturedViewController new];
+    _emojiFeaturedVC = [LuckyLandEmojiShopFeaturedViewController new];
     _emojiFeaturedVC.view.frame = CGRectMake(DScreenWidth, 0, DScreenWidth, _scrollView.height);
     [self addChildViewController:_emojiFeaturedVC];
     [self.scrollView addSubview:_emojiFeaturedVC.view];

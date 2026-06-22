@@ -1,5 +1,5 @@
 //
-//  NoaSystemMessagePendReviewVC.h
+//  LuckyLandSystemMessagePendReviewVC.h
 //  NoaKit
 //
 //  Created by LuckyLand on 2023/5/10.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaSystemMessagePendReviewVC : LuckyLandBaseViewController
+@interface LuckyLandSystemMessagePendReviewVC : LuckyLandBaseViewController
 
 @property (nonatomic, assign)ZGroupHelperFormType groupHelperType;
 @property (nonatomic, copy) NSString *groupId;

@@ -25,7 +25,7 @@
 #import "NoaToolManager.h"    //工具类
 #import "NoaQRcodeScanViewController.h"//扫描二维码
 #import "NoaMassMessageVC.h"  //群发助手
-#import "NoaSystemMessageVC.h"//系统消息(群助手)
+#import "LuckyLandSystemMessageVC.h"//系统消息(群助手)
 #import "NoaAppUpdateTools.h" //检查App版本信息
 #import "NoaWeakPwdCheckTool.h" //检查密码强度
 #import "NoaFileHelperVC.h"//文件助手
@@ -577,7 +577,7 @@
         
         if (model.sessionType == CIMSessionTypeSystemMessage) {
             //系统消息(群助手)
-            NoaSystemMessageVC *vc = [NoaSystemMessageVC new];
+            LuckyLandSystemMessageVC *vc = [LuckyLandSystemMessageVC new];
             vc.groupHelperType = ZGroupHelperFormTypeSessionList;
             vc.groupId = @"";
             vc.sessionModel = model;

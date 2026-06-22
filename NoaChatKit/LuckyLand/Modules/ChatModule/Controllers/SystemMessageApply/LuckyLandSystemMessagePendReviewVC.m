@@ -1,28 +1,33 @@
 //
-//  LuckyLandSystemMessageAllVC.m
+//  LuckyLandSystemMessagePendReviewVC.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2023/5/10.
 //
 
-#import "LuckyLandSystemMessageAllVC.h"
+#import "LuckyLandSystemMessagePendReviewVC.h"
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 #import "NoaSystemMessageModel.h"
-#import "NoaSystemMessageAllReviewCell.h"
+#import "NoaSystemMessagePendReviewCell.h"
 #import "NoaUserHomePageVC.h"
+#import "NoaGroupApplyBottomView.h"
 #import "SyncMutableArray.h"
 #import "NoaMessageAlertView.h"
 
-@interface LuckyLandSystemMessageAllVC () <UITableViewDataSource,UITableViewDelegate, DZNEmptyDataSetSource,DZNEmptyDataSetDelegate, ZSystemMessageAllReviewCellDelegate>
+@interface LuckyLandSystemMessagePendReviewVC ()  <UITableViewDataSource,UITableViewDelegate, DZNEmptyDataSetSource,DZNEmptyDataSetDelegate, ZSystemMessagePendReviewCellDelegate, ZGroupApplyBottomViewDelegate>
 
+//底部操作栏
+@property (nonatomic, strong) NoaGroupApplyBottomView *bottomView;
 //全部通知列表
 @property (nonatomic, strong) SyncMutableArray *systemRecordList;
 //起始页
 @property (nonatomic, assign) NSInteger pageNumber;
+//已选中的申请列表
+@property (nonatomic, strong) SyncMutableArray *selectedApplyList;
 
 @end
 
-@implementation LuckyLandSystemMessageAllVC
+@implementation LuckyLandSystemMessagePendReviewVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,12 +38,14 @@
     self.pageNumber = 1;
     
     //通知
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(requestListData) name:@"ZSystemMessageAllVCReloadListDataNotification" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(requestListData) name:@"ZSystemMessagePendReviewVCReloadListDataNotification" object:nil];
     
     [self requestListData];
 }
 
 - (void)setupUI {
+    [self.view addSubview:self.bottomView];
+    
     [self.view addSubview:self.baseTableView];
     self.baseTableView.tkThemebackgroundColors = @[COLOR_F5F6F9, COLOR_11];
     self.baseTableView.dataSource = self;
@@ -49,13 +56,14 @@
     self.baseTableView.estimatedRowHeight = DWScale(146);
     self.baseTableView.rowHeight = UITableViewAutomaticDimension;//高度自适应
     [self.baseTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
+        make.leading.top.trailing.equalTo(self.view);
+        make.bottom.equalTo(self.bottomView.mas_top);
     }];
     //添加上拉加载更多，分页
     self.baseTableView.mj_footer = self.refreshFooter;
     
     //cell
-    [self.baseTableView registerClass:[NoaSystemMessageAllReviewCell class] forCellReuseIdentifier:NSStringFromClass([NoaSystemMessageAllReviewCell class])];
+    [self.baseTableView registerClass:[NoaSystemMessagePendReviewCell class] forCellReuseIdentifier:NSStringFromClass([NoaSystemMessagePendReviewCell class])];
 }
 
 - (void)footerRefreshData {
@@ -66,19 +74,21 @@
 #pragma mark - Net Working
 - (void)requestListData {
     if (self.groupHelperType == ZGroupHelperFormTypeGroupManager) {
-        [self requesJoinGroupApplyFormGropManager];
+        [self requesPendingJoinGroupApplyFormGropManager];
     }
     if (self.groupHelperType == ZGroupHelperFormTypeSessionList) {
-        [self requesJoinGroupApplyFormSessionHelper];
+        [self requesPendingJoinGroupApplyFormSessionHelper];
     }
 }
+
 //从群管理进入，请求该群相关的入群申请
-- (void)requesJoinGroupApplyFormGropManager {
+- (void)requesPendingJoinGroupApplyFormGropManager {
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     [dict setObjectSafe:[NSNumber numberWithInteger:self.pageNumber] forKey:@"pageNumber"];
     [dict setObjectSafe:@(10) forKey:@"pageSize"];
     [dict setObjectSafe:UserManager.userInfo.userUID forKey:@"userUid"];
     [dict setObjectSafe:self.groupId forKey:@"groupId"];
+    [dict setObjectSafe:@1 forKey:@"beStatus"];
     
     [HUD showActivityMessage:@""];
     WeakSelf
@@ -94,6 +104,11 @@
             NSArray *recordList = [NoaSystemMessageModel mj_objectArrayWithKeyValuesArray:records];
             [weakSelf.systemRecordList addObjectsFromArray:recordList];
             [weakSelf.baseTableView reloadData];
+            if (weakSelf.systemRecordList.count > 0) {
+                weakSelf.bottomView.hidden = NO;
+            } else {
+                weakSelf.bottomView.hidden = YES;
+            }
             if (weakSelf.systemRecordList.count == totalNum) {
                 [weakSelf.baseTableView.mj_footer endRefreshingWithNoMoreData];
             } else {
@@ -108,11 +123,12 @@
 }
 
 //从会话列表群助手进入，请求当前用户相关的群申请
-- (void)requesJoinGroupApplyFormSessionHelper {
+- (void)requesPendingJoinGroupApplyFormSessionHelper {
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     [dict setObjectSafe:[NSNumber numberWithInteger:self.pageNumber] forKey:@"pageNumber"];
     [dict setObjectSafe:@(10) forKey:@"pageSize"];
     [dict setObjectSafe:UserManager.userInfo.userUID forKey:@"userUid"];
+    [dict setObjectSafe:@1 forKey:@"beStatus"];
     
     [HUD showActivityMessage:@""];
     WeakSelf
@@ -128,6 +144,11 @@
             NSArray *recordList = [NoaSystemMessageModel mj_objectArrayWithKeyValuesArray:records];
             [weakSelf.systemRecordList addObjectsFromArray:recordList];
             [weakSelf.baseTableView reloadData];
+            if (weakSelf.systemRecordList.count > 0) {
+                weakSelf.bottomView.hidden = NO;
+            } else {
+                weakSelf.bottomView.hidden = YES;
+            }
             if (weakSelf.systemRecordList.count == totalNum) {
                 [weakSelf.baseTableView.mj_footer endRefreshingWithNoMoreData];
             } else {
@@ -141,23 +162,26 @@
     }];
 }
 
-//单条申请处理 通过/拒绝 （verfiyStatus 1:通过 2：拒绝）
-- (void)requestHandleJoinGroupApplyWithStatus:(ZGroupApplyHandleStatus)handleStatus model:(NoaSystemMessageModel *)model {
+//批量处理申请 通过/拒绝 （verfiyStatus 1:通过 2：拒绝）
+- (void)requestHandleJoinGroupApplyWithStatus:(ZGroupApplyHandleStatus)handleStatus {
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     [dict setObjectSafe:[NSNumber numberWithInteger:handleStatus] forKey:@"verfiyStatus"];
     [dict setObjectSafe:UserManager.userInfo.userUID forKey:@"verfiyUserId"];
     
-    NSMutableDictionary *memreqParamsDic = [NSMutableDictionary dictionary];
-    [memreqParamsDic setObjectSafe:model.groupId forKey:@"groupId"];
-    [memreqParamsDic setObjectSafe:model.memreqUuid forKey:@"memreqUuid"];
-    NSArray *memreqParamsArr = [NSArray arrayWithObject:memreqParamsDic];
+    NSMutableArray *memreqParamsArr = [NSMutableArray array];
+    for (NoaSystemMessageModel *model in self.selectedApplyList.safeArray) {
+        NSMutableDictionary *memreqParamsDic = [NSMutableDictionary dictionary];
+        [memreqParamsDic setObjectSafe:model.groupId forKey:@"groupId"];
+        [memreqParamsDic setObjectSafe:model.memreqUuid forKey:@"memreqUuid"];
+        [memreqParamsArr addObject:memreqParamsDic];
+    }
     [dict setObjectSafe:memreqParamsArr forKey:@"memreqParams"];
     
     [HUD showActivityMessage:@""];
     WeakSelf
     [IMSDKManager groupJoinGroupApplyHandleWithData:dict onSuccess:^(id _Nullable data, NSString * _Nullable traceId) {
         NSArray *dataArr = (NSArray *)data;
-        [weakSelf operationResultHandleWithModel:model resultArr:dataArr];
+        [weakSelf operationResultHandleWithData:dataArr];
     } onFailure:^(NSInteger code, NSString * _Nullable msg, NSString * _Nullable traceId) {
         [HUD hideHUD];
         [HUD showMessageWithCode:code errorMsg:msg];
@@ -165,25 +189,38 @@
 }
 
 #pragma mark - request result handle
-- (void)operationResultHandleWithModel:(NoaSystemMessageModel *)model resultArr:(NSArray *)resultArr {
+- (void)operationResultHandleWithData:(NSArray *)resultArr {
     if (resultArr.count > 0) {
-        NSDictionary *resultDict = (NSDictionary *)[resultArr firstObject];
-        BOOL result = [[resultDict objectForKey:model.memreqUuid] boolValue];
-        NSInteger beStatus = [[resultDict objectForKey:@"beStatus"] integerValue];
-        if (result) {
-            WeakSelf
-            [self.systemRecordList.safeArray enumerateObjectsUsingBlock:^(NoaSystemMessageModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                if ([obj.memreqUuid isEqualToString:model.memreqUuid]) {
-                    obj.beStatus = beStatus;
-                    [weakSelf.systemRecordList replaceObjectAtIndex:idx withObject:obj];
+        WeakSelf
+        for (NoaSystemMessageModel *model in self.selectedApplyList.safeArray) {
+            for (NSDictionary *resultDict in resultArr) {
+                if ([resultDict.allKeys containsObject:model.memreqUuid]) {
+                    BOOL result = [[resultDict objectForKey:model.memreqUuid] boolValue];
+                    NSInteger beStatus = [[resultDict objectForKey:@"beStatus"] integerValue];
+                    if (result) {
+                        [self.systemRecordList.safeArray enumerateObjectsUsingBlock:^(NoaSystemMessageModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                            if ([obj.memreqUuid isEqualToString:model.memreqUuid]) {
+                                obj.beStatus = beStatus;
+                                [weakSelf.systemRecordList replaceObjectAtIndex:idx withObject:obj];
+                            }
+                        }];
+                    } else {
+                        [HUD hideHUD];
+                        [HUD showMessage:LanguageToolMatch(@"操作失败")];
+                    }
                 }
-            }];
-            [HUD hideHUD];
-            [self.baseTableView reloadData];
-        } else {
-            [HUD showMessage:LanguageToolMatch(@"操作失败")];
+            }
         }
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"ZSystemMessagePendReviewVCReloadListDataNotification"
+        [self.selectedApplyList removeAllObjects];
+        [HUD hideHUD];
+        
+        [self.systemRecordList.safeArray enumerateObjectsUsingBlock:^(NoaSystemMessageModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if (obj.beStatus != 1) {
+                [weakSelf.systemRecordList removeObject:obj];
+            }
+        }];
+        [self.baseTableView reloadData];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"ZSystemMessageAllVCReloadListDataNotification"
                                                             object:self];
     }
 }
@@ -209,18 +246,42 @@
     //model
     NoaSystemMessageModel *model = (NoaSystemMessageModel *)[self.systemRecordList objectAtIndex:indexPath.row];
     //cell
-    NoaSystemMessageAllReviewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([NoaSystemMessageAllReviewCell class]) forIndexPath:indexPath];
+    NoaSystemMessagePendReviewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([NoaSystemMessagePendReviewCell class]) forIndexPath:indexPath];
     cell.baseCellIndexPath = indexPath;
     cell.fromType = self.groupHelperType;
     cell.delegate = self;//设置代理
     cell.model = model;
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
-    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    NoaSystemMessageModel *model = (NoaSystemMessageModel *)[self.systemRecordList objectAtIndex:indexPath.row];
+    //申请
+    if (model.beStatus == 1) {
+        model.selectedStatus = !model.selectedStatus;
+        [self.systemRecordList replaceObjectAtIndex:indexPath.row withObject:model];
+        [self.baseTableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil] withRowAnimation:UITableViewRowAnimationNone];
+        
+        if (model.selectedStatus) {
+            [self.selectedApplyList addObject:model];
+        } else {
+            WeakSelf
+            [self.selectedApplyList.safeArray enumerateObjectsUsingBlock:^(NoaSystemMessageModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                if (model.selectedStatus == NO && [obj.batchId isEqualToString:model.batchId]) {
+                    [weakSelf.selectedApplyList removeObject:obj];
+                }
+            }];
+        }
+    }
+    
+    if (self.selectedApplyList.count == self.systemRecordList.count) {
+        self.bottomView.allSelected = YES;
+    } else {
+        self.bottomView.allSelected = NO;
+    }
 }
 
 #pragma mark - ZGroupJoinApplyCellDelegate
@@ -232,8 +293,27 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+#pragma mark - ZGroupJoinApplyCellDelegate
+//一键全选/不选
+- (void)allSelectButtonAction:(BOOL)selected {
+    [self.selectedApplyList removeAllObjects];
+    WeakSelf
+    [self.systemRecordList.safeArray enumerateObjectsUsingBlock:^(NoaSystemMessageModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        //一键全部设置状态
+        obj.selectedStatus = selected;
+        [weakSelf.systemRecordList replaceObjectAtIndex:idx withObject:obj];
+        if (selected) {
+            [weakSelf.selectedApplyList addObject:obj];
+        }
+    }];
+    [self.baseTableView reloadData];
+}
+
 //拒绝
-- (void)refuseSystemMessageAllReviewAction:(NSIndexPath *)indexPath {
+- (void)refuseJoinApplyAction {
+    if (self.selectedApplyList.count <= 0) {
+        return;
+    }
     NoaMessageAlertView *msgAlertView = [[NoaMessageAlertView alloc] initWithMsgAlertType:ZMessageAlertTypeNomal supView:nil];
     msgAlertView.lblContent.text = LanguageToolMatch(@"是否拒绝?");
     [msgAlertView.btnSure setTitle:LanguageToolMatch(@"确认") forState:UIControlStateNormal];
@@ -250,14 +330,15 @@
     [msgAlertView alertShow];
     WeakSelf
     msgAlertView.sureBtnBlock = ^(BOOL isCheckBox) {
-        NoaSystemMessageModel *model = (NoaSystemMessageModel *)[self.systemRecordList objectAtIndex:indexPath.row];
-        [weakSelf requestHandleJoinGroupApplyWithStatus:ZGroupApplyHandleStatusRefuse model:model];
+        [weakSelf requestHandleJoinGroupApplyWithStatus:ZGroupApplyHandleStatusRefuse];
     };
-   
 }
 
 //同意
-- (void)agreeSystemMessageAllReviewAgreeAction:(NSIndexPath *)indexPath {
+- (void)agreeJoinApplyAction {
+    if (self.selectedApplyList.count <= 0) {
+        return;
+    }
     NoaMessageAlertView *msgAlertView = [[NoaMessageAlertView alloc] initWithMsgAlertType:ZMessageAlertTypeNomal supView:nil];
     msgAlertView.lblContent.text = LanguageToolMatch(@"是否同意?");
     [msgAlertView.btnSure setTitle:LanguageToolMatch(@"确认") forState:UIControlStateNormal];
@@ -274,8 +355,7 @@
     [msgAlertView alertShow];
     WeakSelf
     msgAlertView.sureBtnBlock = ^(BOOL isCheckBox) {
-        NoaSystemMessageModel *model = (NoaSystemMessageModel *)[self.systemRecordList objectAtIndex:indexPath.row];
-        [self requestHandleJoinGroupApplyWithStatus:ZGroupApplyHandleStatusAgree model:model];
+        [weakSelf requestHandleJoinGroupApplyWithStatus:ZGroupApplyHandleStatusAgree];
     };
 }
 
@@ -302,6 +382,21 @@
         _systemRecordList = [[SyncMutableArray alloc] init];
     }
     return _systemRecordList;
+}
+
+- (SyncMutableArray *)selectedApplyList {
+    if (!_selectedApplyList) {
+        _selectedApplyList = [[SyncMutableArray alloc] init];
+    }
+    return _selectedApplyList;
+}
+
+- (NoaGroupApplyBottomView *)bottomView {
+    if (!_bottomView) {
+        _bottomView = [[NoaGroupApplyBottomView alloc] initWithFrame:CGRectMake(0, DScreenHeight - DNavStatusBarH - DWScale(40) - DWScale(56) - DHomeBarH, DScreenWidth, DWScale(56) + DHomeBarH)];
+        _bottomView.delegate = self;
+    }
+    return _bottomView;
 }
 
 - (void)dealloc {

@@ -21,7 +21,7 @@
 #import "NoaGlobalSearchVC.h"//搜索
 #import "NoaNewFriendListVC.h"//新朋友
 #import "NoaFileHelperVC.h"//文件助手
-#import "NoaSystemMessageVC.h"//群助手
+#import "LuckyLandSystemMessageVC.h"//群助手
 //#import "NoaShareInviteViewController.h"//分享邀请
 
 #import "NoaSessionTopView.h"
@@ -230,7 +230,7 @@
 - (void)groupHelperAction {
     LingIMSessionModel *sssionModel = [IMSDKManager toolCheckMySessionWithType:CIMSessionTypeSystemMessage];
     //群助手
-    NoaSystemMessageVC *vc = [NoaSystemMessageVC new];
+    LuckyLandSystemMessageVC *vc = [LuckyLandSystemMessageVC new];
     vc.groupHelperType = ZGroupHelperFormTypeSessionList;
     vc.groupId = @"";
     vc.sessionModel = sssionModel;

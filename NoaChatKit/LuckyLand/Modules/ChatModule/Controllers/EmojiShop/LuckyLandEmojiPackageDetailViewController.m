@@ -1,16 +1,16 @@
 //
-//  NoaEmojiPackageDetailViewController.m
+//  LuckyLandEmojiPackageDetailViewController.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2023/10/25.
 //
 
-#import "NoaEmojiPackageDetailViewController.h"
+#import "LuckyLandEmojiPackageDetailViewController.h"
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 #import "NoaEmojiPackageDetailHeaderView.h"
 #import "NoaEmojiPackageDetailCell.h"
 
-@interface NoaEmojiPackageDetailViewController () <UICollectionViewDelegate, UICollectionViewDataSource, DZNEmptyDataSetSource,DZNEmptyDataSetDelegate, ZEmojiPackageDetailHeaderViewDelegate>
+@interface LuckyLandEmojiPackageDetailViewController () <UICollectionViewDelegate, UICollectionViewDataSource, DZNEmptyDataSetSource,DZNEmptyDataSetDelegate, ZEmojiPackageDetailHeaderViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *packageStrickerslList;
 @property (nonatomic, strong) UICollectionView *collectionView;
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation NoaEmojiPackageDetailViewController
+@implementation LuckyLandEmojiPackageDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

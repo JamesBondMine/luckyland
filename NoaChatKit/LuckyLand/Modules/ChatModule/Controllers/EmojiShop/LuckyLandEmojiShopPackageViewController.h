@@ -1,5 +1,5 @@
 //
-//  LuckyLandEmojiShopViewController.h
+//  LuckyLandEmojiShopPackageViewController.h
 //  NoaKit
 //
 //  Created by LuckyLand on 2023/10/25.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LuckyLandEmojiShopViewController : LuckyLandBaseViewController
+@interface LuckyLandEmojiShopPackageViewController : LuckyLandBaseViewController
 
 @end
 

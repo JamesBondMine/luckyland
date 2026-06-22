@@ -1,24 +1,24 @@
 //
-//  NoaTranslateSettingVC.m
+//  LuckyLandTranslateSettingVC.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2023/12/26.
 //
 
-#import "NoaTranslateSettingVC.h"
+#import "LuckyLandTranslateSettingVC.h"
 #import "NoaTranslateSettingCell.h"
 #import "NoaTranslateSetFooterView.h"
 #import "NoaTranslateChannelLanguageView.h"
 #import "NoaTranslateDefaultModel.h"
 
-@interface NoaTranslateSettingVC () <UITableViewDelegate, UITableViewDataSource, ZBaseCellDelegate, ZTranslateChannelLanguageViewDelegate, NoaToolUserDelegate>
+@interface LuckyLandTranslateSettingVC () <UITableViewDelegate, UITableViewDataSource, ZBaseCellDelegate, ZTranslateChannelLanguageViewDelegate, NoaToolUserDelegate>
 
 @property (nonatomic, strong) NSMutableArray *dataArr;
 @property (nonatomic, strong) NoaTranslateDefaultModel *defaultModel;
 
 @end
 
-@implementation NoaTranslateSettingVC
+@implementation LuckyLandTranslateSettingVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];

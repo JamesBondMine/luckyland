@@ -48,8 +48,8 @@
 #import "NoaFileHelperSetVC.h"//文件助手 设置VC
 #import "NoaSensitiveManager.h" //敏感词过滤
 #import "NoaMessageTimeTool.h"
-#import "NoaEmojiShopViewController.h"
-#import "NoaEmojiPackageDetailViewController.h"//表情包详情
+#import "LuckyLandEmojiShopViewController.h"
+#import "LuckyLandEmojiPackageDetailViewController.h"//表情包详情
 #import "NoaFileUploadManager.h"
 #import "NoaMessageSendTask.h"
 
@@ -855,7 +855,7 @@
 
 #pragma mark - 展示输入框表情手势-表情商店
 - (void)chatInputViewSearchMoreEmojiAction {
-    NoaEmojiShopViewController *vc = [[NoaEmojiShopViewController alloc] init];
+    LuckyLandEmojiShopViewController *vc = [[LuckyLandEmojiShopViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -2236,7 +2236,7 @@
 //查找当前表情所属表情包
 - (void)messageStickersSearchPackageActionWithMsg:(NoaMessageModel *)msgModel {
     //跳转表情包详情
-    NoaEmojiPackageDetailViewController *vc = [[NoaEmojiPackageDetailViewController alloc] init];
+    LuckyLandEmojiPackageDetailViewController *vc = [[LuckyLandEmojiPackageDetailViewController alloc] init];
     vc.stickersId = msgModel.message.stickersId;
     [self.navigationController pushViewController:vc animated:YES];
 }

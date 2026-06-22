@@ -306,7 +306,7 @@
 		04A121302A2F143B0082D756 /* AppDelegate+ThirdSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A1212F2A2F143B0082D756 /* AppDelegate+ThirdSDK.m */; };
 		04A1DADA29F4C18700519A5A /* UIImageView+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A1DAD929F4C18700519A5A /* UIImageView+Addition.m */; };
 		04A226962A3879310035BE0A /* LuckyLandNetResultCode.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04A226952A3879310035BE0A /* LuckyLandNetResultCode.plist */; };
-		04A239E92B3AD323006FF4AB /* NoaTranslateSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A239E82B3AD323006FF4AB /* NoaTranslateSettingVC.m */; };
+		04A239E92B3AD323006FF4AB /* LuckyLandTranslateSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A239E82B3AD323006FF4AB /* LuckyLandTranslateSettingVC.m */; };
 		04A239F12B3AD615006FF4AB /* NoaChannelLanguageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A239F02B3AD615006FF4AB /* NoaChannelLanguageCell.m */; };
 		04A239F42B3AD62C006FF4AB /* NoaTranslateSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A239F32B3AD62C006FF4AB /* NoaTranslateSettingCell.m */; };
 		04A2DE772B85D799007655BA /* NoaNoticeTranslateEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A2DE762B85D799007655BA /* NoaNoticeTranslateEditView.m */; };
@@ -356,8 +356,8 @@
 		04AF820928C33CF200927514 /* LuckyLandBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AF820528C33CF100927514 /* LuckyLandBaseViewController.m */; };
 		04B0255E2B82EAB8005A0AD5 /* NoaGroupNoticeTranslateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0255D2B82EAB8005A0AD5 /* NoaGroupNoticeTranslateVC.m */; };
 		04B025612B82FB4A005A0AD5 /* NoaNoticeTranslateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B025602B82FB4A005A0AD5 /* NoaNoticeTranslateCell.m */; };
-		04B044622A0B2EC000E0E3E1 /* NoaSystemMessageAllVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B044612A0B2EC000E0E3E1 /* NoaSystemMessageAllVC.m */; };
-		04B044652A0B2EED00E0E3E1 /* NoaSystemMessagePendReviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B044642A0B2EED00E0E3E1 /* NoaSystemMessagePendReviewVC.m */; };
+		04B044622A0B2EC000E0E3E1 /* LuckyLandSystemMessageAllVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B044612A0B2EC000E0E3E1 /* LuckyLandSystemMessageAllVC.m */; };
+		04B044652A0B2EED00E0E3E1 /* LuckyLandSystemMessagePendReviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B044642A0B2EED00E0E3E1 /* LuckyLandSystemMessagePendReviewVC.m */; };
 		04B0446A2A0B32D700E0E3E1 /* NoaSystemMessageAllReviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B044692A0B32D700E0E3E1 /* NoaSystemMessageAllReviewCell.m */; };
 		04B0446D2A0B32EB00E0E3E1 /* NoaSystemMessagePendReviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0446C2A0B32EB00E0E3E1 /* NoaSystemMessagePendReviewCell.m */; };
 		04B044702A0B3C9200E0E3E1 /* NoaSystemMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0446F2A0B3C9200E0E3E1 /* NoaSystemMessageModel.m */; };
@@ -444,14 +444,14 @@
 		04CDB52229248E7C00EFEABA /* NoaGroupChangeOwnerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CDB52129248E7C00EFEABA /* NoaGroupChangeOwnerVC.m */; };
 		04CDB5252924BEF800EFEABA /* NoaGroupSetGroupManagerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CDB5242924BEF800EFEABA /* NoaGroupSetGroupManagerVC.m */; };
 		04CDB52B2930A81E00EFEABA /* UIImage+YYImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CDB5292930A81D00EFEABA /* UIImage+YYImageHelper.m */; };
-		04CDD48E2AE8ECEF0068D830 /* NoaEmojiShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CDD48D2AE8ECEF0068D830 /* NoaEmojiShopViewController.m */; };
-		04CDD4912AE8EE460068D830 /* NoaEmojiShopPackageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CDD4902AE8EE460068D830 /* NoaEmojiShopPackageViewController.m */; };
-		04CDD4942AE8EE850068D830 /* NoaEmojiShopFeaturedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CDD4932AE8EE850068D830 /* NoaEmojiShopFeaturedViewController.m */; };
+		04CDD48E2AE8ECEF0068D830 /* LuckyLandEmojiShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CDD48D2AE8ECEF0068D830 /* LuckyLandEmojiShopViewController.m */; };
+		04CDD4912AE8EE460068D830 /* LuckyLandEmojiShopPackageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CDD4902AE8EE460068D830 /* LuckyLandEmojiShopPackageViewController.m */; };
+		04CDD4942AE8EE850068D830 /* LuckyLandEmojiShopFeaturedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CDD4932AE8EE850068D830 /* LuckyLandEmojiShopFeaturedViewController.m */; };
 		04CDD4982AE8F5F90068D830 /* NoaEmojiShopPackagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CDD4972AE8F5F90068D830 /* NoaEmojiShopPackagCell.m */; };
 		04CDD49B2AE8F81A0068D830 /* NoaEmojiShopPackageHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CDD49A2AE8F81A0068D830 /* NoaEmojiShopPackageHeaderView.m */; };
 		04CDD49E2AE9076D0068D830 /* NoaEmojiShopFeaturedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CDD49D2AE9076D0068D830 /* NoaEmojiShopFeaturedCell.m */; };
 		04CDD4A42AE907B00068D830 /* NoaEmojiShopFeaturedHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CDD4A32AE907B00068D830 /* NoaEmojiShopFeaturedHeaderView.m */; };
-		04CDD4A72AE90D3A0068D830 /* NoaEmojiPackageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CDD4A62AE90D3A0068D830 /* NoaEmojiPackageDetailViewController.m */; };
+		04CDD4A72AE90D3A0068D830 /* LuckyLandEmojiPackageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CDD4A62AE90D3A0068D830 /* LuckyLandEmojiPackageDetailViewController.m */; };
 		04CDD4AA2AE90D830068D830 /* NoaEmojiPackageDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CDD4A92AE90D830068D830 /* NoaEmojiPackageDetailCell.m */; };
 		04CDD4AD2AE9100B0068D830 /* NoaEmojiPackageDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CDD4AC2AE9100B0068D830 /* NoaEmojiPackageDetailHeaderView.m */; };
 		04CEDBDC29F7CF5800080E17 /* NoaMergeMessageRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CEDBDB29F7CF5800080E17 /* NoaMergeMessageRecordCell.m */; };
@@ -497,7 +497,7 @@
 		04F36B5F2984F486006E38A2 /* VolumeWaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F36B5D2984F485006E38A2 /* VolumeWaverView.m */; };
 		04F36B602984F486006E38A2 /* RecordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F36B5E2984F485006E38A2 /* RecordManager.m */; };
 		04F36B6C298501B2006E38A2 /* NoaLameTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F36B6B298501B2006E38A2 /* NoaLameTool.m */; };
-		04F48A942A0A37D00081A6EA /* NoaSystemMessageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F48A932A0A37D00081A6EA /* NoaSystemMessageVC.m */; };
+		04F48A942A0A37D00081A6EA /* LuckyLandSystemMessageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F48A932A0A37D00081A6EA /* LuckyLandSystemMessageVC.m */; };
 		04F5078128D2C4500048FFB5 /* NoaBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F5078028D2C4500048FFB5 /* NoaBaseModel.m */; };
 		04F5078728D2C6940048FFB5 /* NoaUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F5078628D2C6940048FFB5 /* NoaUserManager.m */; };
 		04F5078D28D2FA930048FFB5 /* NoaSsoInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F5078C28D2FA930048FFB5 /* NoaSsoInfoModel.m */; };
@@ -1390,8 +1390,8 @@
 		04A1DAD829F4C18700519A5A /* UIImageView+Addition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Addition.h"; sourceTree = "<group>"; };
 		04A1DAD929F4C18700519A5A /* UIImageView+Addition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Addition.m"; sourceTree = "<group>"; };
 		04A226952A3879310035BE0A /* LuckyLandNetResultCode.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = LuckyLandNetResultCode.plist; sourceTree = "<group>"; };
-		04A239E72B3AD323006FF4AB /* NoaTranslateSettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaTranslateSettingVC.h; sourceTree = "<group>"; };
-		04A239E82B3AD323006FF4AB /* NoaTranslateSettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaTranslateSettingVC.m; sourceTree = "<group>"; };
+		04A239E72B3AD323006FF4AB /* LuckyLandTranslateSettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LuckyLandTranslateSettingVC.h; sourceTree = "<group>"; };
+		04A239E82B3AD323006FF4AB /* LuckyLandTranslateSettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuckyLandTranslateSettingVC.m; sourceTree = "<group>"; };
 		04A239EF2B3AD615006FF4AB /* NoaChannelLanguageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoaChannelLanguageCell.h; sourceTree = "<group>"; };
 		04A239F02B3AD615006FF4AB /* NoaChannelLanguageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoaChannelLanguageCell.m; sourceTree = "<group>"; };
 		04A239F22B3AD62C006FF4AB /* NoaTranslateSettingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaTranslateSettingCell.h; sourceTree = "<group>"; };
@@ -1486,10 +1486,10 @@
 		04B0255D2B82EAB8005A0AD5 /* NoaGroupNoticeTranslateVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaGroupNoticeTranslateVC.m; sourceTree = "<group>"; };
 		04B0255F2B82FB4A005A0AD5 /* NoaNoticeTranslateCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaNoticeTranslateCell.h; sourceTree = "<group>"; };
 		04B025602B82FB4A005A0AD5 /* NoaNoticeTranslateCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaNoticeTranslateCell.m; sourceTree = "<group>"; };
-		04B044602A0B2EC000E0E3E1 /* NoaSystemMessageAllVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaSystemMessageAllVC.h; sourceTree = "<group>"; };
-		04B044612A0B2EC000E0E3E1 /* NoaSystemMessageAllVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaSystemMessageAllVC.m; sourceTree = "<group>"; };
-		04B044632A0B2EED00E0E3E1 /* NoaSystemMessagePendReviewVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaSystemMessagePendReviewVC.h; sourceTree = "<group>"; };
-		04B044642A0B2EED00E0E3E1 /* NoaSystemMessagePendReviewVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaSystemMessagePendReviewVC.m; sourceTree = "<group>"; };
+		04B044602A0B2EC000E0E3E1 /* LuckyLandSystemMessageAllVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LuckyLandSystemMessageAllVC.h; sourceTree = "<group>"; };
+		04B044612A0B2EC000E0E3E1 /* LuckyLandSystemMessageAllVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuckyLandSystemMessageAllVC.m; sourceTree = "<group>"; };
+		04B044632A0B2EED00E0E3E1 /* LuckyLandSystemMessagePendReviewVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LuckyLandSystemMessagePendReviewVC.h; sourceTree = "<group>"; };
+		04B044642A0B2EED00E0E3E1 /* LuckyLandSystemMessagePendReviewVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuckyLandSystemMessagePendReviewVC.m; sourceTree = "<group>"; };
 		04B044682A0B32D700E0E3E1 /* NoaSystemMessageAllReviewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaSystemMessageAllReviewCell.h; sourceTree = "<group>"; };
 		04B044692A0B32D700E0E3E1 /* NoaSystemMessageAllReviewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaSystemMessageAllReviewCell.m; sourceTree = "<group>"; };
 		04B0446B2A0B32EB00E0E3E1 /* NoaSystemMessagePendReviewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaSystemMessagePendReviewCell.h; sourceTree = "<group>"; };
@@ -1656,12 +1656,12 @@
 		04CDB5242924BEF800EFEABA /* NoaGroupSetGroupManagerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaGroupSetGroupManagerVC.m; sourceTree = "<group>"; };
 		04CDB5292930A81D00EFEABA /* UIImage+YYImageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YYImageHelper.m"; sourceTree = "<group>"; };
 		04CDB52A2930A81D00EFEABA /* UIImage+YYImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+YYImageHelper.h"; sourceTree = "<group>"; };
-		04CDD48C2AE8ECEF0068D830 /* NoaEmojiShopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaEmojiShopViewController.h; sourceTree = "<group>"; };
-		04CDD48D2AE8ECEF0068D830 /* NoaEmojiShopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaEmojiShopViewController.m; sourceTree = "<group>"; };
-		04CDD48F2AE8EE460068D830 /* NoaEmojiShopPackageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaEmojiShopPackageViewController.h; sourceTree = "<group>"; };
-		04CDD4902AE8EE460068D830 /* NoaEmojiShopPackageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaEmojiShopPackageViewController.m; sourceTree = "<group>"; };
-		04CDD4922AE8EE850068D830 /* NoaEmojiShopFeaturedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaEmojiShopFeaturedViewController.h; sourceTree = "<group>"; };
-		04CDD4932AE8EE850068D830 /* NoaEmojiShopFeaturedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaEmojiShopFeaturedViewController.m; sourceTree = "<group>"; };
+		04CDD48C2AE8ECEF0068D830 /* LuckyLandEmojiShopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LuckyLandEmojiShopViewController.h; sourceTree = "<group>"; };
+		04CDD48D2AE8ECEF0068D830 /* LuckyLandEmojiShopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuckyLandEmojiShopViewController.m; sourceTree = "<group>"; };
+		04CDD48F2AE8EE460068D830 /* LuckyLandEmojiShopPackageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LuckyLandEmojiShopPackageViewController.h; sourceTree = "<group>"; };
+		04CDD4902AE8EE460068D830 /* LuckyLandEmojiShopPackageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuckyLandEmojiShopPackageViewController.m; sourceTree = "<group>"; };
+		04CDD4922AE8EE850068D830 /* LuckyLandEmojiShopFeaturedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LuckyLandEmojiShopFeaturedViewController.h; sourceTree = "<group>"; };
+		04CDD4932AE8EE850068D830 /* LuckyLandEmojiShopFeaturedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuckyLandEmojiShopFeaturedViewController.m; sourceTree = "<group>"; };
 		04CDD4962AE8F5F90068D830 /* NoaEmojiShopPackagCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaEmojiShopPackagCell.h; sourceTree = "<group>"; };
 		04CDD4972AE8F5F90068D830 /* NoaEmojiShopPackagCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaEmojiShopPackagCell.m; sourceTree = "<group>"; };
 		04CDD4992AE8F81A0068D830 /* NoaEmojiShopPackageHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaEmojiShopPackageHeaderView.h; sourceTree = "<group>"; };
@@ -1670,8 +1670,8 @@
 		04CDD49D2AE9076D0068D830 /* NoaEmojiShopFeaturedCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaEmojiShopFeaturedCell.m; sourceTree = "<group>"; };
 		04CDD4A22AE907B00068D830 /* NoaEmojiShopFeaturedHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaEmojiShopFeaturedHeaderView.h; sourceTree = "<group>"; };
 		04CDD4A32AE907B00068D830 /* NoaEmojiShopFeaturedHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaEmojiShopFeaturedHeaderView.m; sourceTree = "<group>"; };
-		04CDD4A52AE90D3A0068D830 /* NoaEmojiPackageDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaEmojiPackageDetailViewController.h; sourceTree = "<group>"; };
-		04CDD4A62AE90D3A0068D830 /* NoaEmojiPackageDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaEmojiPackageDetailViewController.m; sourceTree = "<group>"; };
+		04CDD4A52AE90D3A0068D830 /* LuckyLandEmojiPackageDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LuckyLandEmojiPackageDetailViewController.h; sourceTree = "<group>"; };
+		04CDD4A62AE90D3A0068D830 /* LuckyLandEmojiPackageDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuckyLandEmojiPackageDetailViewController.m; sourceTree = "<group>"; };
 		04CDD4A82AE90D830068D830 /* NoaEmojiPackageDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaEmojiPackageDetailCell.h; sourceTree = "<group>"; };
 		04CDD4A92AE90D830068D830 /* NoaEmojiPackageDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaEmojiPackageDetailCell.m; sourceTree = "<group>"; };
 		04CDD4AB2AE9100B0068D830 /* NoaEmojiPackageDetailHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaEmojiPackageDetailHeaderView.h; sourceTree = "<group>"; };
@@ -1759,8 +1759,8 @@
 		04F36B5E2984F485006E38A2 /* RecordManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordManager.m; sourceTree = "<group>"; };
 		04F36B6A298501B2006E38A2 /* NoaLameTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaLameTool.h; sourceTree = "<group>"; };
 		04F36B6B298501B2006E38A2 /* NoaLameTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaLameTool.m; sourceTree = "<group>"; };
-		04F48A922A0A37D00081A6EA /* NoaSystemMessageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaSystemMessageVC.h; sourceTree = "<group>"; };
-		04F48A932A0A37D00081A6EA /* NoaSystemMessageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaSystemMessageVC.m; sourceTree = "<group>"; };
+		04F48A922A0A37D00081A6EA /* LuckyLandSystemMessageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LuckyLandSystemMessageVC.h; sourceTree = "<group>"; };
+		04F48A932A0A37D00081A6EA /* LuckyLandSystemMessageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuckyLandSystemMessageVC.m; sourceTree = "<group>"; };
 		04F5077F28D2C4500048FFB5 /* NoaBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaBaseModel.h; sourceTree = "<group>"; };
 		04F5078028D2C4500048FFB5 /* NoaBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoaBaseModel.m; sourceTree = "<group>"; };
 		04F5078528D2C6940048FFB5 /* NoaUserManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoaUserManager.h; sourceTree = "<group>"; };
@@ -3677,8 +3677,8 @@
 		048C1CBF2AB29F0F000BB2AD /* TranslateTools */ = {
 			isa = PBXGroup;
 			children = (
-				04A239E72B3AD323006FF4AB /* NoaTranslateSettingVC.h */,
-				04A239E82B3AD323006FF4AB /* NoaTranslateSettingVC.m */,
+				04A239E72B3AD323006FF4AB /* LuckyLandTranslateSettingVC.h */,
+				04A239E82B3AD323006FF4AB /* LuckyLandTranslateSettingVC.m */,
 			);
 			path = TranslateTools;
 			sourceTree = "<group>";
@@ -4216,12 +4216,12 @@
 		04B044882A0B893400E0E3E1 /* SystemMessageApply */ = {
 			isa = PBXGroup;
 			children = (
-				04F48A922A0A37D00081A6EA /* NoaSystemMessageVC.h */,
-				04F48A932A0A37D00081A6EA /* NoaSystemMessageVC.m */,
-				04B044602A0B2EC000E0E3E1 /* NoaSystemMessageAllVC.h */,
-				04B044612A0B2EC000E0E3E1 /* NoaSystemMessageAllVC.m */,
-				04B044632A0B2EED00E0E3E1 /* NoaSystemMessagePendReviewVC.h */,
-				04B044642A0B2EED00E0E3E1 /* NoaSystemMessagePendReviewVC.m */,
+				04F48A922A0A37D00081A6EA /* LuckyLandSystemMessageVC.h */,
+				04F48A932A0A37D00081A6EA /* LuckyLandSystemMessageVC.m */,
+				04B044602A0B2EC000E0E3E1 /* LuckyLandSystemMessageAllVC.h */,
+				04B044612A0B2EC000E0E3E1 /* LuckyLandSystemMessageAllVC.m */,
+				04B044632A0B2EED00E0E3E1 /* LuckyLandSystemMessagePendReviewVC.h */,
+				04B044642A0B2EED00E0E3E1 /* LuckyLandSystemMessagePendReviewVC.m */,
 			);
 			path = SystemMessageApply;
 			sourceTree = "<group>";
@@ -4395,14 +4395,14 @@
 		04CDD48B2AE8ECD50068D830 /* EmojiShop */ = {
 			isa = PBXGroup;
 			children = (
-				04CDD48C2AE8ECEF0068D830 /* NoaEmojiShopViewController.h */,
-				04CDD48D2AE8ECEF0068D830 /* NoaEmojiShopViewController.m */,
-				04CDD48F2AE8EE460068D830 /* NoaEmojiShopPackageViewController.h */,
-				04CDD4902AE8EE460068D830 /* NoaEmojiShopPackageViewController.m */,
-				04CDD4922AE8EE850068D830 /* NoaEmojiShopFeaturedViewController.h */,
-				04CDD4932AE8EE850068D830 /* NoaEmojiShopFeaturedViewController.m */,
-				04CDD4A52AE90D3A0068D830 /* NoaEmojiPackageDetailViewController.h */,
-				04CDD4A62AE90D3A0068D830 /* NoaEmojiPackageDetailViewController.m */,
+				04CDD48C2AE8ECEF0068D830 /* LuckyLandEmojiShopViewController.h */,
+				04CDD48D2AE8ECEF0068D830 /* LuckyLandEmojiShopViewController.m */,
+				04CDD48F2AE8EE460068D830 /* LuckyLandEmojiShopPackageViewController.h */,
+				04CDD4902AE8EE460068D830 /* LuckyLandEmojiShopPackageViewController.m */,
+				04CDD4922AE8EE850068D830 /* LuckyLandEmojiShopFeaturedViewController.h */,
+				04CDD4932AE8EE850068D830 /* LuckyLandEmojiShopFeaturedViewController.m */,
+				04CDD4A52AE90D3A0068D830 /* LuckyLandEmojiPackageDetailViewController.h */,
+				04CDD4A62AE90D3A0068D830 /* LuckyLandEmojiPackageDetailViewController.m */,
 			);
 			path = EmojiShop;
 			sourceTree = "<group>";
@@ -6244,7 +6244,7 @@
 				C3F308182E3BB8B000D13F2E /* NoaTeamDetailModel.m in Sources */,
 				046E04912AB407A400429E76 /* UITextField+RTL.m in Sources */,
 				049F60FE2D6C6298001897D9 /* NoaGroupActivityInfoModel.m in Sources */,
-				04CDD4A72AE90D3A0068D830 /* NoaEmojiPackageDetailViewController.m in Sources */,
+				04CDD4A72AE90D3A0068D830 /* LuckyLandEmojiPackageDetailViewController.m in Sources */,
 				042240312A8E00D500350D31 /* NoaChatInputVoiceStateView.m in Sources */,
 				04B044842A0B871F00E0E3E1 /* NoaMessageModel.m in Sources */,
 				6CADF7B32DE1B0D900750D87 /* NoaUrlHostModel.m in Sources */,
@@ -6302,7 +6302,7 @@
 				047812662935E12000F7802C /* NoaClipImageVC.m in Sources */,
 				881556672FA88BE9004702A6 /* NoaInputTextView.m in Sources */,
 				04BE7A3528F5619300B96A7F /* NoaChatMessageMoreItemView.m in Sources */,
-				04F48A942A0A37D00081A6EA /* NoaSystemMessageVC.m in Sources */,
+				04F48A942A0A37D00081A6EA /* LuckyLandSystemMessageVC.m in Sources */,
 				04C321F92A4ADB4800EDCC0F /* NSString+VIMD5.m in Sources */,
 				18AB496928C5CAFE001FCE80 /* NoaChineseSort.m in Sources */,
 				045F1EA928DD4AEB003D2818 /* NoaContactHeaderView.m in Sources */,
@@ -6366,7 +6366,7 @@
 				04B45C3429E52FC800E37A41 /* LuckyLandChatFileDetailViewController.m in Sources */,
 				043482052920F30800456FD0 /* NoaInputOldPasswordViewController.m in Sources */,
 				042D7F55291E86BF00D2BB59 /* NoaScrollView.m in Sources */,
-				04CDD48E2AE8ECEF0068D830 /* NoaEmojiShopViewController.m in Sources */,
+				04CDD48E2AE8ECEF0068D830 /* LuckyLandEmojiShopViewController.m in Sources */,
 				0471E930291FE3F0008A8830 /* NoaMineUserInfoCell.m in Sources */,
 				04F36B592984BA05006E38A2 /* NoaAudioPlayManager.m in Sources */,
 				043481FC2920D79D00456FD0 /* LuckyLandSystemSettingViewController.m in Sources */,
@@ -6377,7 +6377,7 @@
 				048A67832A52BA5B00DB1078 /* NoaContactSectionHeaderView.m in Sources */,
 				6CD0B5D52E17AC42009FCAE5 /* NoaChatAtBannedView.m in Sources */,
 				046ABC642966B1450038C3B7 /* NoaMessageVoiceCell.m in Sources */,
-				04CDD4912AE8EE460068D830 /* NoaEmojiShopPackageViewController.m in Sources */,
+				04CDD4912AE8EE460068D830 /* LuckyLandEmojiShopPackageViewController.m in Sources */,
 				184043EB2B0C54E400E575B0 /* YYTextArchiver.m in Sources */,
 				04A6BCE32A690F7D000A818D /* NoaTeamCreateVC.m in Sources */,
 				04CDB52B2930A81E00EFEABA /* UIImage+YYImageHelper.m in Sources */,
@@ -6410,7 +6410,7 @@
 				0430E1CA29EFE7380071B489 /* NoaCollectionTextCell.m in Sources */,
 				1899A0DC28C1EE1B0045A652 /* LuckyLandMineViewController.m in Sources */,
 				F1A2B3C62E10000100000003 /* FlutterTallkMineViewController.m in Sources */,
-				04CDD4942AE8EE850068D830 /* NoaEmojiShopFeaturedViewController.m in Sources */,
+				04CDD4942AE8EE850068D830 /* LuckyLandEmojiShopFeaturedViewController.m in Sources */,
 				04AE18662B4F79C9007D33F8 /* NoaBaseUserModel.m in Sources */,
 				0453621E2A6CCD7900BF5713 /* NoaChatTextUrlListView.m in Sources */,
 				041EEBAE29F7AECC00CDCC1A /* NoaGroupManageContentCell.m in Sources */,
@@ -6621,7 +6621,7 @@
 				041EEB5429EFC72200CDCC1A /* NoaMassMessageUserVC.m in Sources */,
 				04D21EE02A667B6E000B4572 /* NoaChatNavLinkAddView.m in Sources */,
 				0430E1D629EFE7780071B489 /* NoaCollectionGeoCell.m in Sources */,
-				04A239E92B3AD323006FF4AB /* NoaTranslateSettingVC.m in Sources */,
+				04A239E92B3AD323006FF4AB /* LuckyLandTranslateSettingVC.m in Sources */,
 				04F6F442299349D80021D136 /* NoaChatGroupCallTipView.m in Sources */,
 				043D2D3828D09CAD00DF6A83 /* NoaNewFriendVerifyApplyInfoCell.m in Sources */,
 				049F6A492BBBA40000E0C75B /* NoaChatEmojiToolsCell.m in Sources */,
@@ -6762,7 +6762,7 @@
 				04F1C13C29E64ADD0009D8CD /* NoaMessageCardCell.m in Sources */,
 				041EEB4929EF9EC900CDCC1A /* NoaMassMessageTextCell.m in Sources */,
 				049F6A4D2BBBA40000E0C75B /* NoaChatImageEmojiView.m in Sources */,
-				04B044652A0B2EED00E0E3E1 /* NoaSystemMessagePendReviewVC.m in Sources */,
+				04B044652A0B2EED00E0E3E1 /* LuckyLandSystemMessagePendReviewVC.m in Sources */,
 				047A0F96297294AA00E0E6FC /* NoaMediaCallFloatView.m in Sources */,
 				043D2D1728D09A8000DF6A83 /* NoaDeviceTool.m in Sources */,
 				04CDB50A291E531F00EFEABA /* NoaGroupModifyNoticeVC.m in Sources */,
@@ -6810,7 +6810,7 @@
 				C3F3081B2E3EF84D00D13F2E /* NoaTeamInviteCustomTextField.m in Sources */,
 				042240372A8E00D500350D31 /* NoaChatInputEmojiManager.m in Sources */,
 				04B138682BBA9D890096987F /* UIFont+Extension.swift in Sources */,
-				04B044622A0B2EC000E0E3E1 /* NoaSystemMessageAllVC.m in Sources */,
+				04B044622A0B2EC000E0E3E1 /* LuckyLandSystemMessageAllVC.m in Sources */,
 				046F14D8290521A900B50C0C /* NoaMessageTools.m in Sources */,
 				042240332A8E00D500350D31 /* NoaChatInputCommonEmojiView.m in Sources */,
 				8815566F2FA88BE9004702A6 /* NoaRegisterAccountInputView.m in Sources */,

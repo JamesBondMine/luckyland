@@ -61,9 +61,9 @@
 #import "NoaChatNavLinkAddView.h"
 #import "NoaMiniAppWebVC.h"//跳转webView
 #import "NoaMessageTimeTool.h"
-#import "NoaTranslateSettingVC.h"//翻译配置信息
-#import "NoaEmojiShopViewController.h"//表情商店
-#import "NoaEmojiPackageDetailViewController.h"//表情包详情
+#import "LuckyLandTranslateSettingVC.h"//翻译配置信息
+#import "LuckyLandEmojiShopViewController.h"//表情商店
+#import "LuckyLandEmojiPackageDetailViewController.h"//表情包详情
 #import "NoaTranslateDefaultModel.h"
 #import "NoaFileUploadManager.h"
 #import "NoaMessageSendTask.h"
@@ -2631,14 +2631,14 @@
 
 #pragma mark - 展示翻译选择通道和语种View
 - (void)chatInputViewTranslate {
-    NoaTranslateSettingVC *translateSetVC = [[NoaTranslateSettingVC alloc] init];
+    LuckyLandTranslateSettingVC *translateSetVC = [[LuckyLandTranslateSettingVC alloc] init];
     translateSetVC.sessionModel = _sessionModel;
     [self.navigationController pushViewController:translateSetVC animated:YES];
 }
 
 #pragma mark - 展示输入框表情手势-表情商店
 - (void)chatInputViewSearchMoreEmojiAction {
-    NoaEmojiShopViewController *vc = [[NoaEmojiShopViewController alloc] init];
+    LuckyLandEmojiShopViewController *vc = [[LuckyLandEmojiShopViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -6374,14 +6374,14 @@
 - (void)messageContentTranslateActionWithMsg:(NoaMessageModel *)msgModel {
     if ([NSString isNil:self.sessionModel.receiveTranslateChannel] && [NSString isNil:self.sessionModel.receiveTranslateLanguage]) {
         [HUD showMessage:LanguageToolMatch(@"请选择消息翻译的通道和语种") inView:self.view];
-        NoaTranslateSettingVC *vc = [[NoaTranslateSettingVC alloc] init];
+        LuckyLandTranslateSettingVC *vc = [[LuckyLandTranslateSettingVC alloc] init];
         vc.sessionModel = _sessionModel;
         [self.navigationController pushViewController:vc animated:YES];
         return;
     }
     if ([NSString isNil:self.sessionModel.receiveTranslateLanguage]) {
         [HUD showMessage:LanguageToolMatch(@"请选择消息翻译的语种") inView:self.view];
-        NoaTranslateSettingVC *vc = [[NoaTranslateSettingVC alloc] init];
+        LuckyLandTranslateSettingVC *vc = [[LuckyLandTranslateSettingVC alloc] init];
         vc.sessionModel = _sessionModel;
         [self.navigationController pushViewController:vc animated:YES];
         return;
@@ -6490,7 +6490,7 @@
 //查找当前表情所属表情包
 - (void)messageStickersSearchPackageActionWithMsg:(NoaMessageModel *)msgModel {
     //跳转表情包详情
-    NoaEmojiPackageDetailViewController *vc = [[NoaEmojiPackageDetailViewController alloc] init];
+    LuckyLandEmojiPackageDetailViewController *vc = [[LuckyLandEmojiPackageDetailViewController alloc] init];
     vc.stickersId = ![NSString isNil:msgModel.message.stickersId] ? msgModel.message.stickersId : @"";
     [self.navigationController pushViewController:vc animated:YES];
 }

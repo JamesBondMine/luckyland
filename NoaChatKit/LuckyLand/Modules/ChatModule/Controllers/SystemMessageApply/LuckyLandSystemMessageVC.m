@@ -1,26 +1,26 @@
 //
-//  NoaSystemMessageVC.m
+//  LuckyLandSystemMessageVC.m
 //  NoaKit
 //
 //  Created by LuckyLand on 2023/5/9.
 //
 
-#import "NoaSystemMessageVC.h"
+#import "LuckyLandSystemMessageVC.h"
 #import <JXCategoryView/JXCategoryView.h>
 #import "NoaScrollView.h"
-#import "NoaSystemMessageAllVC.h"//全部
-#import "NoaSystemMessagePendReviewVC.h"//待审核
+#import "LuckyLandSystemMessageAllVC.h"//全部
+#import "LuckyLandSystemMessagePendReviewVC.h"//待审核
 
-@interface NoaSystemMessageVC () <JXCategoryViewDelegate,UIScrollViewDelegate>
+@interface LuckyLandSystemMessageVC () <JXCategoryViewDelegate,UIScrollViewDelegate>
 
 @property (nonatomic, strong) JXCategoryTitleView *viewCategory;
 @property (nonatomic, strong) NoaScrollView *scrollView;
-@property (nonatomic, strong) NoaSystemMessageAllVC *vcAllReview;
-@property (nonatomic, strong) NoaSystemMessagePendReviewVC *vcPendReview;
+@property (nonatomic, strong) LuckyLandSystemMessageAllVC *vcAllReview;
+@property (nonatomic, strong) LuckyLandSystemMessagePendReviewVC *vcPendReview;
 
 @end
 
-@implementation NoaSystemMessageVC
+@implementation LuckyLandSystemMessageVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -85,14 +85,14 @@
     [self.view addSubview:self.scrollView];
     self.viewCategory.contentScrollView = self.scrollView;
     
-    _vcAllReview = [NoaSystemMessageAllVC new];
+    _vcAllReview = [LuckyLandSystemMessageAllVC new];
     _vcAllReview.groupHelperType = self.groupHelperType;
     _vcAllReview.groupId = self.groupId;
     _vcAllReview.view.frame = CGRectMake(0, 0, DScreenWidth, _scrollView.height);
     [self addChildViewController:_vcAllReview];
     [self.scrollView addSubview:_vcAllReview.view];
     
-    _vcPendReview = [NoaSystemMessagePendReviewVC new];
+    _vcPendReview = [LuckyLandSystemMessagePendReviewVC new];
     _vcPendReview.groupHelperType = self.groupHelperType;
     _vcPendReview.groupId = self.groupId;
     _vcPendReview.view.frame = CGRectMake(DScreenWidth, 0, DScreenWidth, _scrollView.height);

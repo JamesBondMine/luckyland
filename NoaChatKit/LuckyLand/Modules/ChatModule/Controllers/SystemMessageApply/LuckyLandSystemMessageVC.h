@@ -1,5 +1,5 @@
 //
-//  NoaSystemMessageVC.h
+//  LuckyLandSystemMessageVC.h
 //  NoaKit
 //
 //  Created by LuckyLand on 2023/5/9.
@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoaSystemMessageVC : LuckyLandBaseViewController
+@interface LuckyLandSystemMessageVC : LuckyLandBaseViewController
 
 @property (nonatomic, assign)ZGroupHelperFormType groupHelperType;
 @property (nonatomic, copy) NSString *groupId;

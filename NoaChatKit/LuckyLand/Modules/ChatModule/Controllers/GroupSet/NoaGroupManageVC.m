@@ -15,7 +15,7 @@
 #import "NoaMessageAlertView.h"
 #import "NoaGroupNotalkMemberModel.h"
 #import "NoaMessageTools.h"
-#import "NoaSystemMessageVC.h"
+#import "LuckyLandSystemMessageVC.h"
 #import "NoaRobotListViewController.h"
 
 @interface NoaGroupManageVC ()<UITableViewDataSource,UITableViewDelegate,ZBaseCellDelegate>
@@ -546,7 +546,7 @@
 }
 
 - (void)navToJoinGroupApplyList {
-    NoaSystemMessageVC *joinApplyVC = [[NoaSystemMessageVC alloc] init];
+    LuckyLandSystemMessageVC *joinApplyVC = [[LuckyLandSystemMessageVC alloc] init];
     joinApplyVC.groupHelperType = ZGroupHelperFormTypeGroupManager;
     joinApplyVC.groupId = self.groupInfoModel.groupId;
     [self.navigationController pushViewController:joinApplyVC animated:YES];
