@@ -1,0 +1,11 @@
+export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="$HOME/flutter_flutter/bin:$PATH"
+# OpenHarmony/HarmonyOS toolchain (from ~/Documents/command-line-tools)
+export COMMAND_LINE_TOOLS_HOME="$HOME/Documents/command-line-tools"
+export HOS_SDK_HOME="$COMMAND_LINE_TOOLS_HOME/sdk"
+
+# ohpm / hvigor (optional but commonly needed)
+export PATH="$COMMAND_LINE_TOOLS_HOME/bin:$COMMAND_LINE_TOOLS_HOME/ohpm/bin:$COMMAND_LINE_TOOLS_HOME/hvigor/bin:$PATH"
+alias hvigor="$HOME/Documents/command-line-tools/bin/hvigorw"
+export PATH="/Applications/DevEco-Studio.app/Contents/sdk/default/openharmony/toolchains:$PATH"
