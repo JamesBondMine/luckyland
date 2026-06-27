@@ -71,12 +71,19 @@ class _MinePageState extends State<MinePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFE5E5E5),
+      backgroundColor: Color.fromARGB(255, 235, 235, 235),
       body: _bodyView(context),
     );
   }
 
+  double _tabBarBottomInset(BuildContext context) {
+    final bottomSafe = MediaQuery.of(context).padding.bottom;
+    // 原生悬浮 TabBar 高度约 49~83，额外留出间距避免遮挡列表
+    return bottomSafe + 88;
+  }
+
   Widget _bodyView(BuildContext context) {
+    final tabBarInset = _tabBarBottomInset(context);
     return Stack(children: [
       Positioned(
           left: 0,
@@ -94,7 +101,7 @@ class _MinePageState extends State<MinePage> {
             clipBehavior: Clip.hardEdge,
             decoration: const BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.all(Radius.circular(20))),
+                borderRadius: BorderRadius.all(Radius.circular(12))),
             child: MineCellItem(
               tag: "mineTouchIndex200",
               title: '通讯录',
@@ -110,16 +117,14 @@ class _MinePageState extends State<MinePage> {
           top: 60 + 160 + MediaQuery.of(context).padding.top,
           bottom: 0,
           child: Container(
+            margin: EdgeInsets.only(bottom: tabBarInset),
             padding: const EdgeInsets.only(top: 16),
             clipBehavior: Clip.hardEdge,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(20),
-                topRight: Radius.circular(20),
-              ),
+              borderRadius: BorderRadius.circular(12),
             ),
-            child: _listView(context, 'title', 'content'),
+            child: _listView(context),
           )),
     ]);
   }
@@ -251,9 +256,9 @@ class _MinePageState extends State<MinePage> {
     );
   }
 
-  Widget _listView(BuildContext context, String title, String content) {
+  Widget _listView(BuildContext context) {
     return ListView(
-      padding: EdgeInsets.zero,
+      padding: const EdgeInsets.only(bottom: 26),
       children: [
         MineCellItem(
           tag: "mineTouchIndex0",

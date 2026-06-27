@@ -9,10 +9,11 @@
 #import "LuckyLandBoatView.h"
 #import <NoaChatCore/LingIMGroupMemberModel.h>
 
-static CGFloat const kLuckyLandSeaTopRatio = 0.34;
-static CGFloat const kLuckyLandBoatWidthRatio = 0.28;
-static CGFloat const kLuckyLandBoatMinScale = 0.55;
-static CGFloat const kLuckyLandBoatMaxScale = 1.0;
+// 海面起始位置（比例越小，天空越少、海面越高）
+static CGFloat const kLuckyLandSeaTopRatio = 0.18;
+static CGFloat const kLuckyLandBoatWidthRatio = 0.19;
+static CGFloat const kLuckyLandBoatMinScale = 0.48;
+static CGFloat const kLuckyLandBoatMaxScale = 0.82;
 
 @interface LuckyLandSeaSceneView ()
 
@@ -139,7 +140,7 @@ static CGFloat const kLuckyLandBoatMaxScale = 1.0;
     CGFloat width = [self boatWidthForNormalizedY:normalizedY];
     CGSize size = [boatView boatImageSizeForWidth:width];
     CGFloat centerY = [self seaYForNormalized:normalizedY];
-    boatView.frame = CGRectMake(0, 0, size.width, size.height);
+    boatView.frame = CGRectMake(0, 0, size.width*1.3, size.height*1.3);
     boatView.center = CGPointMake(-size.width, centerY);
   }
 }
@@ -188,18 +189,24 @@ static CGFloat const kLuckyLandBoatMaxScale = 1.0;
 
 - (NSDictionary *)sailingConfigAtIndex:(NSUInteger)index {
   NSArray *templates = @[
-    @{@"direction": @(LuckyLandBoatDirectionLeftToRight), @"y": @(0.22), @"duration": @(4), @"delay": @(0)},
-    @{@"direction": @(LuckyLandBoatDirectionRightToLeft), @"y": @(0.34), @"duration": @(4), @"delay": @(2)},
-    @{@"direction": @(LuckyLandBoatDirectionRightToLeft), @"y": @(0.04), @"duration": @(28), @"delay": @(1)},
+    @{@"direction": @(LuckyLandBoatDirectionLeftToRight), @"y": @(0.06), @"duration": @(4), @"delay": @(0)},
+    @{@"direction": @(LuckyLandBoatDirectionRightToLeft), @"y": @(0.18), @"duration": @(4), @"delay": @(2)},
+    @{@"direction": @(LuckyLandBoatDirectionRightToLeft), @"y": @(0.30), @"duration": @(28), @"delay": @(1)},
     @{@"direction": @(LuckyLandBoatDirectionLeftToRight), @"y": @(0.42), @"duration": @(16), @"delay": @(4)},
-    @{@"direction": @(LuckyLandBoatDirectionRightToLeft), @"y": @(0.52), @"duration": @(19), @"delay": @(10)},
-    @{@"direction": @(LuckyLandBoatDirectionLeftToRight), @"y": @(0.62), @"duration": @(10), @"delay": @(6)},
-    @{@"direction": @(LuckyLandBoatDirectionRightToLeft), @"y": @(0.74), @"duration": @(24), @"delay": @(8)},
+    @{@"direction": @(LuckyLandBoatDirectionRightToLeft), @"y": @(0.54), @"duration": @(19), @"delay": @(10)},
+    @{@"direction": @(LuckyLandBoatDirectionLeftToRight), @"y": @(0.66), @"duration": @(10), @"delay": @(6)},
+    @{@"direction": @(LuckyLandBoatDirectionRightToLeft), @"y": @(0.68), @"duration": @(24), @"delay": @(8)},
     @{@"direction": @(LuckyLandBoatDirectionLeftToRight), @"y": @(0.12), @"duration": @(25), @"delay": @(12)},
-    @{@"direction": @(LuckyLandBoatDirectionRightToLeft), @"y": @(0.19), @"duration": @(3), @"delay": @(14)},
+    @{@"direction": @(LuckyLandBoatDirectionRightToLeft), @"y": @(0.24), @"duration": @(3), @"delay": @(14)},
   ];
   NSMutableDictionary *config = [[templates[index % templates.count] mutableCopy] ?: @{} mutableCopy];
-  config[@"delay"] = @([config[@"delay"] doubleValue] + (index / templates.count) * 1.5);
+  NSUInteger cycle = index / templates.count;
+  if (cycle > 0) {
+    CGFloat yBase = [config[@"y"] floatValue];
+    CGFloat laneOffset = (cycle % 3) * 0.10;
+    config[@"y"] = @(MIN(yBase + laneOffset, 0.88));
+    config[@"delay"] = @([config[@"delay"] doubleValue] + cycle * 1.5);
+  }
   return [config copy];
 }
 

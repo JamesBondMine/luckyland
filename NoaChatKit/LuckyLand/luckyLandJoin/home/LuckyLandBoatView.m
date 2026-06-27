@@ -7,7 +7,9 @@
 
 #import "LuckyLandBoatView.h"
 
-static CGFloat const kLuckyLandBoatAvatarRatio = 0.44;
+// 头像按屏幕宽度固定尺寸，不随船体缩小而缩小
+static CGFloat const kLuckyLandBoatAvatarScreenRatio = 0.12;
+static CGFloat const kLuckyLandBoatImageScale = 0.82;
 static CGFloat const kLuckyLandBoatBowXWhenFacingLeft = 0.12;
 static CGFloat const kLuckyLandBoatSternXWhenFacingLeft = 0.80;
 static CGFloat const kLuckyLandBoatAvatarCenterY = 0.60;
@@ -117,12 +119,16 @@ static CGFloat const kLuckyLandBoatHitTestInset = 16.f;
   [super layoutSubviews];
 
   self.contentContainer.frame = self.bounds;
-  self.boatImageView.frame = self.contentContainer.bounds;
 
   BOOL facingRight = (self.direction == LuckyLandBoatDirectionLeftToRight);
+  CGFloat boatW = CGRectGetWidth(self.bounds) * kLuckyLandBoatImageScale;
+  CGFloat boatH = CGRectGetHeight(self.bounds) * kLuckyLandBoatImageScale;
+  self.boatImageView.bounds = CGRectMake(0, 0, boatW, boatH);
+  self.boatImageView.center = CGPointMake(CGRectGetMidX(self.contentContainer.bounds),
+                                          CGRectGetMidY(self.contentContainer.bounds) + boatH * 0.08);
   self.boatImageView.transform = facingRight ? CGAffineTransformMakeScale(-1, 1) : CGAffineTransformIdentity;
 
-  CGFloat avatarSize = CGRectGetWidth(self.bounds) * kLuckyLandBoatAvatarRatio;
+  CGFloat avatarSize = CGRectGetWidth([UIScreen mainScreen].bounds) * kLuckyLandBoatAvatarScreenRatio *0.8;
   CGFloat bowX = facingRight ? kLuckyLandBoatSternXWhenFacingLeft : kLuckyLandBoatBowXWhenFacingLeft;
   CGFloat sternX = facingRight ? kLuckyLandBoatBowXWhenFacingLeft : kLuckyLandBoatSternXWhenFacingLeft;
   CGFloat avatarY = CGRectGetHeight(self.bounds) * kLuckyLandBoatAvatarCenterY;
