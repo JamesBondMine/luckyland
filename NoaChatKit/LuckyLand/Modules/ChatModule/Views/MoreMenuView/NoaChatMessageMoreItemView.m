@@ -199,6 +199,12 @@
                 @"imageName" : @"c_more_group_cancel_top"
             };
             break;
+        case MessageMenuItemActionTypeReport:
+            return @{
+                @"titleName" : LanguageToolMatch(@"举报"),
+                @"imageName" : @"c_more_delete"
+            };
+            break;
         default:
             return @{
                 @"titleName" : @"",

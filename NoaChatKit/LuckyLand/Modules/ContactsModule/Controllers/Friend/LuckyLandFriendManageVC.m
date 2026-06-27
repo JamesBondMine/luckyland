@@ -340,7 +340,7 @@
         WeakSelf
         NoaMessageAlertView *msgAlertView = [[NoaMessageAlertView alloc] initWithMsgAlertType:ZMessageAlertTypeTitle supView:nil];
         msgAlertView.lblTitle.text = LanguageToolMatch(@"加入黑名单");
-        msgAlertView.lblContent.text = LanguageToolMatch(@"加入黑名单后，你将接收不到对方信息，如需接收，请关闭加入黑名单或在个人中心移出黑名单");
+        msgAlertView.lblContent.text = LanguageToolMatch(@"加入黑名单后，你将不再收到对方消息，我们会收到相关举报通知，对方会话将立即从你的列表中移除。如需恢复，请在个人中心移出黑名单。");
         msgAlertView.lblContent.textAlignment = NSTextAlignmentLeft;
         [msgAlertView.btnSure setTitle:LanguageToolMatch(@"确认") forState:UIControlStateNormal];
 //        [msgAlertView.btnSure setTkThemeTitleColor:@[COLOR_FF3333, COLOR_FF3333_DARK] forState:UIControlStateNormal];
@@ -500,6 +500,8 @@
             BOOL blackAction = [data boolValue];
             weakSelf.blackBtn.selected = blackAction;
             if (blackAction) {
+                [weakSelf submitBlockReportForUser:weakSelf.friendUID];
+                [weakSelf removeBlockedUserFromFeed];
                 [HUD showMessage:LanguageToolMatch(@"拉黑成功")];
             }else {
                 [HUD showMessage:LanguageToolMatch(@"拉黑失败")];
@@ -513,6 +515,26 @@
                 [HUD showMessageWithCode:code errorMsg:msg];
             }
         }];
+    }
+}
+
+- (void)submitBlockReportForUser:(NSString *)userId {
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setValue:UserManager.userInfo.userUID forKey:@"userUid"];
+    [dict setValue:UserManager.userInfo.nickname forKey:@"nickname"];
+    [dict setValue:UserManager.userInfo.userName forKey:@"username"];
+    [dict setValue:@"5" forKey:@"ufbContentGroup"];
+    [dict setValue:@"0" forKey:@"ufbToType"];
+    [dict setValue:userId forKey:@"ufbToUserId"];
+    [dict setValue:LanguageToolMatch(@"用户通过拉黑功能举报该用户存在不当行为") forKey:@"ufbComment"];
+    [IMSDKManager userAddFeedBackWith:dict onSuccess:nil onFailure:nil];
+}
+
+- (void)removeBlockedUserFromFeed {
+    LingIMSessionModel *sessionModel = [IMSDKManager toolCheckMySessionWith:self.friendUID];
+    if (sessionModel) {
+        [IMSDKManager toolDeleteSessionModelWith:sessionModel andDeleteAllChatModel:NO];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"SessionTopStateChange" object:nil];
     }
 }
 

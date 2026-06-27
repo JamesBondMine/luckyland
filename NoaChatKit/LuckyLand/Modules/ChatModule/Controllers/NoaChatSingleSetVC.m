@@ -20,6 +20,7 @@
 @interface NoaChatSingleSetVC ()<UITableViewDelegate,UITableViewDataSource,ZBaseCellDelegate>
 
 @property (nonatomic, strong) LingIMFriendModel *friendModel;
+@property (nonatomic, assign) BOOL isBlocked;
 
 @end
 
@@ -38,6 +39,7 @@
     self.view.tkThemebackgroundColors = @[COLOR_F5F6F9, COLOR_11];
     
     [self setupUI];
+    [self requestGetBlackStatus];
 }
 
 #pragma mark - 界面布局
@@ -130,6 +132,98 @@
     }];
 }
 
+#pragma mark - 拉黑与举报
+- (void)requestGetBlackStatus {
+    WeakSelf
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setValue:self.friendUid forKey:@"friendUserUid"];
+    [dict setValue:UserManager.userInfo.userUID forKey:@"userUid"];
+    [IMSDKManager getUserBlackStateWith:dict onSuccess:^(id _Nullable data, NSString * _Nullable traceId) {
+        weakSelf.isBlocked = [data boolValue];
+        [weakSelf.baseTableView reloadData];
+    } onFailure:^(NSInteger code, NSString * _Nullable msg, NSString * _Nullable traceId) {
+    }];
+}
+
+- (void)showBlockUserConfirmAlert {
+    WeakSelf
+    NoaMessageAlertView *msgAlertView = [[NoaMessageAlertView alloc] initWithMsgAlertType:ZMessageAlertTypeTitle supView:nil];
+    msgAlertView.lblTitle.text = LanguageToolMatch(@"拉黑用户");
+    msgAlertView.lblContent.text = LanguageToolMatch(@"拉黑后你将不再收到对方消息，我们会收到相关举报通知，对方内容将立即从你的会话列表中移除。");
+    msgAlertView.lblContent.textAlignment = NSTextAlignmentLeft;
+    [msgAlertView.btnSure setTitle:LanguageToolMatch(@"确认拉黑") forState:UIControlStateNormal];
+    [msgAlertView.btnCancel setTitle:LanguageToolMatch(@"取消") forState:UIControlStateNormal];
+    [msgAlertView alertShow];
+    msgAlertView.sureBtnBlock = ^(BOOL isCheckBox) {
+        [weakSelf requestBlockUser];
+    };
+}
+
+- (void)requestBlockUser {
+    WeakSelf
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setValue:UserManager.userInfo.userUID forKey:@"userUid"];
+    [dict setValue:self.friendUid forKey:@"friendUserUid"];
+    [dict setValue:@(1) forKey:@"status"];
+    [IMSDKManager addUserToBlackListWith:dict onSuccess:^(id _Nullable data, NSString * _Nullable traceId) {
+        BOOL blackAction = [data boolValue];
+        if (blackAction) {
+            weakSelf.isBlocked = YES;
+            [weakSelf submitBlockReportForUser:weakSelf.friendUid];
+            [weakSelf removeBlockedUserFromFeed];
+            [HUD showMessage:LanguageToolMatch(@"拉黑成功")];
+            [weakSelf.baseTableView reloadData];
+        } else {
+            [HUD showMessage:LanguageToolMatch(@"拉黑失败")];
+        }
+    } onFailure:^(NSInteger code, NSString * _Nullable msg, NSString * _Nullable traceId) {
+        [HUD showMessageWithCode:code errorMsg:msg];
+    }];
+}
+
+- (void)requestUnblockUser {
+    WeakSelf
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setValue:UserManager.userInfo.userUID forKey:@"userUid"];
+    [dict setValue:self.friendUid forKey:@"friendUserUid"];
+    [dict setValue:@(0) forKey:@"status"];
+    [IMSDKManager removeUserFromBlackListWith:dict onSuccess:^(id _Nullable data, NSString * _Nullable traceId) {
+        BOOL blackAction = [data boolValue];
+        if (blackAction) {
+            weakSelf.isBlocked = NO;
+            [HUD showMessage:LanguageToolMatch(@"解除黑名单成功")];
+            [weakSelf.baseTableView reloadData];
+        } else {
+            [HUD showMessage:LanguageToolMatch(@"解除黑名单失败")];
+        }
+    } onFailure:^(NSInteger code, NSString * _Nullable msg, NSString * _Nullable traceId) {
+        [HUD showMessageWithCode:code errorMsg:msg];
+    }];
+}
+
+- (void)submitBlockReportForUser:(NSString *)userId {
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setValue:UserManager.userInfo.userUID forKey:@"userUid"];
+    [dict setValue:UserManager.userInfo.nickname forKey:@"nickname"];
+    [dict setValue:UserManager.userInfo.userName forKey:@"username"];
+    [dict setValue:@"5" forKey:@"ufbContentGroup"];
+    [dict setValue:@"0" forKey:@"ufbToType"];
+    [dict setValue:userId forKey:@"ufbToUserId"];
+    [dict setValue:LanguageToolMatch(@"用户通过拉黑功能举报该用户存在不当行为") forKey:@"ufbComment"];
+    [IMSDKManager userAddFeedBackWith:dict onSuccess:nil onFailure:nil];
+}
+
+- (void)removeBlockedUserFromFeed {
+    LingIMSessionModel *sessionModel = [IMSDKManager toolCheckMySessionWith:self.friendUid];
+    if (sessionModel) {
+        [IMSDKManager toolDeleteSessionModelWith:sessionModel andDeleteAllChatModel:NO];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"SessionTopStateChange" object:nil];
+    }
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.navigationController popViewControllerAnimated:YES];
+    });
+}
+
 #pragma mark - 交互事件
 //清空聊天记录
 - (void)requestClearSingleHistory {
@@ -152,7 +246,7 @@
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 4;
+    return 5;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -170,7 +264,10 @@
                 return 0;
             }
             break;
-        case 3://投诉
+        case 3://拉黑
+            return 1;
+            break;
+        case 4://举报
             return 1;
             break;
         default:
@@ -252,7 +349,17 @@
         return cell;
     }else if (indexPath.section == 3) {
         NoaChatSingleSetCommonCell *cell = [tableView dequeueReusableCellWithIdentifier:[NoaChatSingleSetCommonCell cellIdentifier] forIndexPath:indexPath];
-        [cell cellConfigWith:ChatSingleSetCellTypeCommon itemStr:LanguageToolMatch(@"投诉与支持") model:self.friendModel];
+        NSString *blockTitle = self.isBlocked ? LanguageToolMatch(@"解除拉黑") : LanguageToolMatch(@"拉黑用户");
+        [cell cellConfigWith:ChatSingleSetCellTypeCommon itemStr:blockTitle model:self.friendModel];
+        cell.baseDelegate = self;
+        cell.viewLine.hidden = YES;
+        cell.baseCellIndexPath = indexPath;
+        [cell setCornerRadiusWithIsShow:YES location:CornerRadiusLocationAll];
+        cell.ivArrow.hidden = YES;
+        return cell;
+    }else if (indexPath.section == 4) {
+        NoaChatSingleSetCommonCell *cell = [tableView dequeueReusableCellWithIdentifier:[NoaChatSingleSetCommonCell cellIdentifier] forIndexPath:indexPath];
+        [cell cellConfigWith:ChatSingleSetCellTypeCommon itemStr:LanguageToolMatch(@"举报") model:self.friendModel];
         cell.baseDelegate = self;
         cell.viewLine.hidden = YES;
         cell.baseCellIndexPath = indexPath;
@@ -326,7 +433,15 @@
             break;
         case 3:
         {
-            //投诉与支持(单聊，投诉好友)
+            if (self.isBlocked) {
+                [self requestUnblockUser];
+            } else {
+                [self showBlockUserConfirmAlert];
+            }
+        }
+            break;
+        case 4:
+        {
             NoaComplainVC *vc = [NoaComplainVC new];
             vc.complainID = self.friendUid;
             vc.complainType = CIMChatType_SingleChat;
@@ -347,6 +462,7 @@
         case 1:
         case 2:
         case 3:
+        case 4:
             return [NoaChatSingleSetCommonCell defaultCellHeight];
             break;
         default:

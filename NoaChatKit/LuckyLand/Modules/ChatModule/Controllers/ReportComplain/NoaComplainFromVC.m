@@ -53,6 +53,16 @@
     self.view.tkThemebackgroundColors = @[COLORWHITE, COLORWHITE_DARK];
     self.navView.hidden = YES;
     [self setupUI];
+    [self applyPrefillCommentIfNeeded];
+}
+
+- (void)applyPrefillCommentIfNeeded {
+    if ([NSString isNil:_prefillComment]) {
+        return;
+    }
+    self.contentTextView.text = _prefillComment;
+    self.contentTextNumLbl.text = [NSString stringWithFormat:@"%lu/%d", (unsigned long)_prefillComment.length, complaint_reson_max_num];
+    [self checkBtnSubmitEnableState];
 }
 
 - (void)setupUI {

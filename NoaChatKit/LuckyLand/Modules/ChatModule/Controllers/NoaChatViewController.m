@@ -38,6 +38,7 @@
 #import "NoaToolManager.h"                //工具类
 #import "LuckyLandChatMultiSelectViewController.h"  //消息转发选择转发对象
 #import "NoaChatSingleSetVC.h"            //单聊设置VC
+#import "NoaComplainVC.h"                 //举报/投诉
 #import "LuckyLandChatGroupSetVC.h"             //群聊设置VC
 #import "NoaMsgAtListViewController.h"    //@用户的列表
 #import "LuckyLandUserHomePageVC.h"             //用户个人资料
@@ -5266,6 +5267,18 @@
         [menuArr removeObject:[NSNumber numberWithInteger:MessageMenuItemActionTypeMultiSelect]];
     }
     
+    // 非自己发送的消息提供举报入口（App Store UGC 合规）
+    if (!longTapModel.isSelf &&
+        longTapModel.message.messageType != CIMChatMessageType_NetCallMessage &&
+        menuArr.count > 0 &&
+        ![menuArr containsObject:[NSNumber numberWithInteger:MessageMenuItemActionTypeReport]]) {
+        [menuArr addObject:[NSNumber numberWithInteger:MessageMenuItemActionTypeReport]];
+    }
+    
+    if (menuArr.count == 0) {
+        return;
+    }
+    
     //计算消息的坐标位置,确定菜单弹窗弹出的位置的坐标
     CGRect targetRect = [self.baseTableView convertRect:longTapCell.frame toView:self.view];
     if (longTapModel.isSelf) {
@@ -5486,6 +5499,10 @@
             case MessageMenuItemActionTypeSingleTopCancel:
                 //单聊取消置顶
                 [weakSelf messageSingleTopCancelActionWithMsg:longTapModel msgMoreMenu:strongMsgMoreMenu];
+                break;
+            case MessageMenuItemActionTypeReport:
+                //举报不当内容
+                [weakSelf messageReportActionWithModel:longTapModel];
                 break;
             default:
                 break;
@@ -6069,6 +6086,45 @@
 }
 
 #pragma mark - 长按菜单弹窗点击事件
+//举报不当内容
+- (void)messageReportActionWithModel:(NoaMessageModel *)menuModel {
+    NoaComplainVC *vc = [NoaComplainVC new];
+    if (self.chatType == CIMChatType_GroupChat) {
+        vc.complainID = self.sessionID;
+        vc.complainType = CIMChatType_GroupChat;
+    } else {
+        NSString *reportedUserId = menuModel.message.fromID.length > 0 ? menuModel.message.fromID : self.sessionID;
+        vc.complainID = reportedUserId;
+        vc.complainType = CIMChatType_SingleChat;
+    }
+    vc.prefillComment = [self reportSummaryForMessage:menuModel];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (NSString *)reportSummaryForMessage:(NoaMessageModel *)menuModel {
+    NSMutableArray *parts = [NSMutableArray array];
+    if (menuModel.message.serviceMsgID.length > 0) {
+        [parts addObject:[NSString stringWithFormat:@"消息ID: %@", menuModel.message.serviceMsgID]];
+    }
+    if (menuModel.message.fromID.length > 0) {
+        [parts addObject:[NSString stringWithFormat:@"发送者: %@", menuModel.message.fromID]];
+    }
+    NSString *content = menuModel.message.showContent;
+    if ([NSString isNil:content]) {
+        content = menuModel.message.textContent;
+    }
+    if ([NSString isNil:content]) {
+        content = menuModel.message.atContent;
+    }
+    if (![NSString isNil:content]) {
+        [parts addObject:[NSString stringWithFormat:@"内容: %@", content]];
+    }
+    if (parts.count == 0) {
+        return LanguageToolMatch(@"举报不当消息内容");
+    }
+    return [parts componentsJoinedByString:@"\n"];
+}
+
 //复制
 - (void)messageCopyActionWithModel:(NoaMessageModel *)menuModel {
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];

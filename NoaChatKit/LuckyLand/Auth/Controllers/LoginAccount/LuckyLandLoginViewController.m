@@ -34,8 +34,11 @@
 #import "LuckyLandVerCodeLoginViewController.h"
 // 忘记密码
 #import "LuckyLandForgetPasswordViewController.h"
+#import "AppUseTipView.h"
 
 @interface LuckyLandLoginViewController ()
+
+@property (nonatomic, strong) AppUseTipView *viewTip;
 
 /// 重新声明 blurView 为子类类型，覆盖父类的声明
 @property (nonatomic, strong, readwrite) NoaLoginAccountManagerView *blurView;
@@ -75,6 +78,7 @@
     [super viewDidAppear:animated];
     // 结束编辑状态
     [self.view endEditing:YES];
+    [self showAppUserAgreementIfNeeded];
 }
 
 - (void)viewDidLoad {
@@ -188,6 +192,15 @@
 
 - (void)clickSetSsoAccount {
     [[NoaToolManager shareManager] setupSsoSetVcUI];
+}
+
+#pragma mark - 用户协议提示框
+- (void)showAppUserAgreementIfNeeded {
+    BOOL agreeAgreement = [[MMKV defaultMMKV] getBoolForKey:@"AgreeUserAgreement"];
+    if (!agreeAgreement && !self.viewTip) {
+        self.viewTip = [AppUseTipView new];
+        [self.viewTip showAppUserAgreement];
+    }
 }
 
 @end

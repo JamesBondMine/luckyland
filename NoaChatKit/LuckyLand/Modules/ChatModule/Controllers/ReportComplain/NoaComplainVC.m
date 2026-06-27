@@ -33,7 +33,7 @@
 #pragma mark - 界面布局
 - (void)setupUI {
     UILabel *titleLbl = [[UILabel alloc] initWithFrame:CGRectMake(DWScale(25), DNavStatusBarH + DWScale(10), DScreenWidth - DWScale(25)*2, DWScale(20))];
-    titleLbl.text = LanguageToolMatch(@"投诉与支持");
+    titleLbl.text = _prefillComment.length > 0 ? LanguageToolMatch(@"举报") : LanguageToolMatch(@"投诉与支持");
     titleLbl.tkThemetextColors = @[COLOR_11, COLOR_11_DARK];
     titleLbl.font = FONTB(18);
     [self.view addSubview:titleLbl];
@@ -90,6 +90,7 @@
     _systemComplainVC.complainVCType = ZComplainTypeSystem;
     _systemComplainVC.complainID = _complainID;
     _systemComplainVC.complainType = _complainType;
+    _systemComplainVC.prefillComment = _prefillComment;
     [self addChildViewController:_systemComplainVC];
     [self.scrollView addSubview:_systemComplainVC.view];
     
@@ -98,6 +99,7 @@
     _domainComplainVC.complainVCType = ZComplainTypeDomain;
     _domainComplainVC.complainID = _complainID;
     _domainComplainVC.complainType = _complainType;
+    _domainComplainVC.prefillComment = _prefillComment;
     [self addChildViewController:_domainComplainVC];
     [self.scrollView addSubview:_domainComplainVC.view];
     

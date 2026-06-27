@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *complainID;//投诉ID
 @property (nonatomic, assign) CIMChatType complainType;//投诉类型 群聊 好友
 @property (nonatomic, assign) ZComplainType complainVCType;//投诉界面类型
+/// 举报消息时预填的投诉说明
+@property (nonatomic, copy, nullable) NSString *prefillComment;
 
 //清空界面内容
 - (void)clearUIContent;
