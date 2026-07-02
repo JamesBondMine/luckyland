@@ -737,6 +737,8 @@
 		C3F666652E73D60B00FE6DA6 /* NoaNetworkQualityDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F666642E73D60B00FE6DA6 /* NoaNetworkQualityDetector.m */; };
 		F1A2B3C62E10000100000003 /* FlutterTallkMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1A2B3C52E10000100000002 /* FlutterTallkMineViewController.m */; };
 		F2A3B4C72E20000100000003 /* FlutterRegisterTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A3B4C62E20000100000002 /* FlutterRegisterTypeViewController.m */; };
+		F3A4B5C82E30000100000003 /* LuckyLandNativeMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A4B5C72E30000100000002 /* LuckyLandNativeMineViewController.m */; };
+		F3A4B5CB2E30000100000006 /* LuckyLandNativeMineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A4B5CA2E30000100000005 /* LuckyLandNativeMineCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -2249,6 +2251,10 @@
 		F1A2B3C52E10000100000002 /* FlutterTallkMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlutterTallkMineViewController.m; sourceTree = "<group>"; };
 		F2A3B4C52E20000100000001 /* FlutterRegisterTypeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlutterRegisterTypeViewController.h; sourceTree = "<group>"; };
 		F2A3B4C62E20000100000002 /* FlutterRegisterTypeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlutterRegisterTypeViewController.m; sourceTree = "<group>"; };
+		F3A4B5C62E30000100000001 /* LuckyLandNativeMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LuckyLandNativeMineViewController.h; sourceTree = "<group>"; };
+		F3A4B5C72E30000100000002 /* LuckyLandNativeMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuckyLandNativeMineViewController.m; sourceTree = "<group>"; };
+		F3A4B5C92E30000100000004 /* LuckyLandNativeMineCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LuckyLandNativeMineCell.h; sourceTree = "<group>"; };
+		F3A4B5CA2E30000100000005 /* LuckyLandNativeMineCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuckyLandNativeMineCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -5778,6 +5784,9 @@
 				04A6BCD32A67E2C1000A818D /* LuckLandTeamViewController.m */,
 				F1A2B3C42E10000100000001 /* FlutterTallkMineViewController.h */,
 				F1A2B3C52E10000100000002 /* FlutterTallkMineViewController.m */,
+				F3A4B5C62E30000100000001 /* LuckyLandNativeMineViewController.h */,
+				F3A4B5C72E30000100000002 /* LuckyLandNativeMineViewController.m */,
+				F3A4B5CC2E30000100000007 /* Views */,
 				1899A0D228C1C5BC0045A652 /* LuckLandContactVC.h */,
 				1899A0D328C1C5BC0045A652 /* LuckLandContactVC.m */,
 				88AE5C662FA87D7C00DA3F8E /* Tabbar */,
@@ -5785,6 +5794,15 @@
 				88AE5C682FA87D7C00DA3F8E /* LuckyLandConversationViewController.m */,
 			);
 			path = Tab;
+			sourceTree = "<group>";
+		};
+		F3A4B5CC2E30000100000007 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F3A4B5C92E30000100000004 /* LuckyLandNativeMineCell.h */,
+				F3A4B5CA2E30000100000005 /* LuckyLandNativeMineCell.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A87AF3714E8DAD2649684484 /* Pods */ = {
@@ -6410,6 +6428,8 @@
 				0430E1CA29EFE7380071B489 /* NoaCollectionTextCell.m in Sources */,
 				1899A0DC28C1EE1B0045A652 /* LuckyLandMineViewController.m in Sources */,
 				F1A2B3C62E10000100000003 /* FlutterTallkMineViewController.m in Sources */,
+				F3A4B5C82E30000100000003 /* LuckyLandNativeMineViewController.m in Sources */,
+				F3A4B5CB2E30000100000006 /* LuckyLandNativeMineCell.m in Sources */,
 				04CDD4942AE8EE850068D830 /* LuckyLandEmojiShopFeaturedViewController.m in Sources */,
 				04AE18662B4F79C9007D33F8 /* NoaBaseUserModel.m in Sources */,
 				0453621E2A6CCD7900BF5713 /* NoaChatTextUrlListView.m in Sources */,

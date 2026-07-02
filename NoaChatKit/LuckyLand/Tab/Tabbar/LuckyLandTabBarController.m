@@ -11,7 +11,7 @@
 #import "UITabBar+Badge.h"
 #import "NoaNavigationController.h"
 #import "LuckyLandSignInViewController.h"
-#import "FlutterTallkMineViewController.h"
+#import "LuckyLandNativeMineViewController.h"
 
 #import "LuckyLandHomeViewController.h"
 #import "LuckyLandConversationViewController.h"
@@ -33,7 +33,7 @@
 @property (nonatomic, strong) LuckLandContactVC  *vcContact;
 @property (nonatomic, strong) LuckyLandSignInViewController  *signvc;
 @property (nonatomic, strong) LuckLandTeamViewController  *teamvc;
-@property (nonatomic, strong) FlutterTallkMineViewController  *mineVc;
+@property (nonatomic, strong) UIViewController  *mineVc;
 
 
 
@@ -100,7 +100,7 @@
 //    [self addChildViewController:_vcContact imageNormal:@"luck_t3_d" imageSelected:@"luck_t3_a" title:LanguageToolMatch(@"通讯录") tag:1002];
 //    
 //    
-    _mineVc  = [FlutterTallkMineViewController new];
+    _mineVc = [LuckyLandNativeMineViewController new];
     [self addChildViewController:_mineVc imageNormal:@"luck_t4_d" imageSelected:@"luck_t4_a" title:LanguageToolMatch(@"我的") tag:1003];
     
     

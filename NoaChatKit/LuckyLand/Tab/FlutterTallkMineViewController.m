@@ -38,6 +38,7 @@ static NSString * const kFlutterMineAvatarCachePrefix = @"flutter_mine_avatar";
 
 @interface FlutterTallkMineViewController ()
 @property (nonatomic, strong) FlutterMethodChannel *bridgeChannel;
+@property (nonatomic, assign) BOOL flutterMineReady;
 @end
 
 @implementation FlutterTallkMineViewController
@@ -50,18 +51,19 @@ static NSString * const kFlutterMineAvatarCachePrefix = @"flutter_mine_avatar";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupMethodChannel];
-    [self sendUserInfoToFlutter];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
-    [self sendUserInfoToFlutter];
+    if (self.flutterMineReady) {
+        [self sendUserInfoToFlutter];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    // Tab 切换时不恢复导航栏，避免 iPad 上与 Flutter 视图生命周期冲突导致 UI 卡死
 }
 
 - (NSString *)flutterMineAvatarCachePathForUserId:(NSString *)userId avatar:(NSString *)avatar {
@@ -135,18 +137,20 @@ static NSString * const kFlutterMineAvatarCachePrefix = @"flutter_mine_avatar";
             return;
         }
 
-        NSString *avatarPath = @"";
-        if (image) {
-            NSData *imageData = data.length > 0 ? data : UIImageJPEGRepresentation(image, 0.9);
-            if (imageData.length > 0 && [imageData writeToFile:localPath atomically:YES]) {
-                avatarPath = localPath;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *avatarPath = @"";
+            if (image) {
+                NSData *imageData = data.length > 0 ? data : UIImageJPEGRepresentation(image, 0.9);
+                if (imageData.length > 0 && [imageData writeToFile:localPath atomically:YES]) {
+                    avatarPath = localPath;
+                }
             }
-        }
 
-        [self.bridgeChannel invokeMethod:@"initMineUserInfo"
-                               arguments:[self jsonStringWithUserName:userName
-                                                               userId:userId
-                                                           avatarPath:avatarPath]];
+            [self.bridgeChannel invokeMethod:@"initMineUserInfo"
+                                   arguments:[self jsonStringWithUserName:userName
+                                                                   userId:userId
+                                                               avatarPath:avatarPath]];
+        });
     }];
 }
 
@@ -157,6 +161,7 @@ static NSString * const kFlutterMineAvatarCachePrefix = @"flutter_mine_avatar";
     [self.bridgeChannel setMethodCallHandler:^(FlutterMethodCall * _Nonnull call, FlutterResult  _Nonnull result) {
         @strongify(self)
         if ([call.method isEqualToString:@"mineReady"]) {
+            self.flutterMineReady = YES;
             [self sendUserInfoToFlutter];
             result(@(YES));
             return;
@@ -179,7 +184,6 @@ static NSString * const kFlutterMineAvatarCachePrefix = @"flutter_mine_avatar";
             return;
         }
 
-        ZLoginAndRegisterTypeMenu registerWay = NSNotFound;
         if ([action isEqualToString:@"mineTouchIndex200"]) {
             LuckLandContactVC *teamVC = [LuckLandContactVC new];
             [self openFullScreen:teamVC];
@@ -244,14 +248,7 @@ static NSString * const kFlutterMineAvatarCachePrefix = @"flutter_mine_avatar";
             [HUD showMessage:LanguageToolMatch(@"复制成功") inView:self.view];
         }
 
-        
-        
-        if (registerWay != NSNotFound) {
-            result(@(YES));
-            return;
-        }
-
-        result(FlutterMethodNotImplemented);
+        result(@(YES));
     }];
 }
 
