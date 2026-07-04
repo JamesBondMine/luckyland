@@ -256,7 +256,7 @@
     _viewHeader.newFriendApplyNum = count;
     
     LuckyLandTabBarController *tab = (LuckyLandTabBarController *)self.tabBarController;
-    [tab setBadgeValue:2 number:count];
+    [tab setBadgeValue:LuckyLandTabBadgeIndexMine number:count];
     
 }
 #pragma mark - UITableViewDataSource

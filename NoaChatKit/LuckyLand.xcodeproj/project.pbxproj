@@ -5796,15 +5796,6 @@
 			path = Tab;
 			sourceTree = "<group>";
 		};
-		F3A4B5CC2E30000100000007 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				F3A4B5C92E30000100000004 /* LuckyLandNativeMineCell.h */,
-				F3A4B5CA2E30000100000005 /* LuckyLandNativeMineCell.m */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		A87AF3714E8DAD2649684484 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -5891,6 +5882,15 @@
 				C397B4EF2E97612F00A030CA /* NoaDraftStore.m */,
 			);
 			path = Draft;
+			sourceTree = "<group>";
+		};
+		F3A4B5CC2E30000100000007 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F3A4B5C92E30000100000004 /* LuckyLandNativeMineCell.h */,
+				F3A4B5CA2E30000100000005 /* LuckyLandNativeMineCell.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -7049,7 +7049,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 704;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
@@ -7292,7 +7292,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.codeappyang.jjtufy;
 				PRODUCT_NAME = "幸运岛";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = 519;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = dev0704;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
@@ -7320,7 +7320,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 704;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
@@ -7563,7 +7563,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.codeappyang.jjtufy;
 				PRODUCT_NAME = "幸运岛";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = 519;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = dev0704;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;

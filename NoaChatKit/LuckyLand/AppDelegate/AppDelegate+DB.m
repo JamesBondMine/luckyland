@@ -38,14 +38,14 @@
         LuckyLandTabBarController *tab = (LuckyLandTabBarController *)self.window.rootViewController;
         //通讯录红点先取本地展示
         NSInteger friendInviteCount = [IMSDKManager toolFriendApplyCount];
-        [tab setBadgeValue:2 number:friendInviteCount];
+        [tab setBadgeValue:LuckyLandTabBadgeIndexMine number:friendInviteCount];
         //会话列表红点先取本地展示
         WeakSelf
         __block NSInteger sessionUnreadCount;
         [ZTOOL doAsync:^{
             sessionUnreadCount = [IMSDKManager toolGetAllSessionUnreadCount];
         } completion:^{
-            [tab setBadgeValue:1 number:sessionUnreadCount];
+            [tab setBadgeValue:LuckyLandTabBadgeIndexSession number:sessionUnreadCount];
             [weakSelf configAppUnreadBadgeWitMessageCount:sessionUnreadCount friendInviteCount:friendInviteCount];
         }];
     }
@@ -139,7 +139,7 @@
     //更新通讯录红点
     if ([self.window.rootViewController isKindOfClass:[LuckyLandTabBarController class]]) {
         LuckyLandTabBarController *tab = (LuckyLandTabBarController *)self.window.rootViewController;
-        [tab setBadgeValue:2 number:friendApplyCount];
+        [tab setBadgeValue:LuckyLandTabBadgeIndexMine number:friendApplyCount];
         //通讯录好友申请，红点更新
         [[NSNotificationCenter defaultCenter] postNotificationName:@"FriendApplyCountChange" object:nil];
     }
@@ -328,8 +328,8 @@
     NSInteger friendInviteCount = [IMSDKManager toolFriendApplyCount];
     if ([self.window.rootViewController isKindOfClass:[LuckyLandTabBarController class]]) {
         LuckyLandTabBarController *tab = (LuckyLandTabBarController *)self.window.rootViewController;
-        [tab setBadgeValue:1 number:totalUnreadCount];
-        [tab setBadgeValue:2 number:friendInviteCount];
+        [tab setBadgeValue:LuckyLandTabBadgeIndexSession number:totalUnreadCount];
+        [tab setBadgeValue:LuckyLandTabBadgeIndexMine number:friendInviteCount];
     }
     
     [self configAppUnreadBadgeWitMessageCount:totalUnreadCount friendInviteCount:friendInviteCount];
@@ -470,7 +470,7 @@
             //更新通讯录红点
             if ([weakSelf.window.rootViewController isKindOfClass:[LuckyLandTabBarController class]]) {
                 LuckyLandTabBarController *tab = (LuckyLandTabBarController *)weakSelf.window.rootViewController;
-                [tab setBadgeValue:2 number:friendApplyCount];
+                [tab setBadgeValue:LuckyLandTabBadgeIndexMine number:friendApplyCount];
                 //通讯录好友申请，红点更新
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"FriendApplyCountChange" object:nil];
             }

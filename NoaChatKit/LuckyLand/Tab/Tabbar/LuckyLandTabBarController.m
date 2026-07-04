@@ -28,12 +28,12 @@
     NSInteger _currentSelectedIndex;//当前选中下标
 }
 
-@property (nonatomic, strong) LuckyLandHomeViewController  *vcLuckyLandHome;
+//@property (nonatomic, strong) LuckyLandHomeViewController  *vcLuckyLandHome;
 @property (nonatomic, strong) LuckyLandConversationViewController  *vcSession;
 @property (nonatomic, strong) LuckLandContactVC  *vcContact;
 @property (nonatomic, strong) LuckyLandSignInViewController  *signvc;
 @property (nonatomic, strong) LuckLandTeamViewController  *teamvc;
-@property (nonatomic, strong) UIViewController  *mineVc;
+@property (nonatomic, strong) LuckyLandNativeMineViewController *mineVc;
 
 
 
@@ -46,7 +46,7 @@
     // Do any additional setup after loading the view.
     
     self.delegate = self;
-    self.tabBarController.tabBar.delegate = self;
+    self.tabBar.delegate = self;
     
     [self showInfo];
     [self setupTabbar];
@@ -56,7 +56,42 @@
 -(void)showInfo{
 //    [HUD showSuccessMessage:@"加载首页"];
 }
-- (void)viewWillLayoutSubviews{
+
+/// iOS 26 / iPad 上系统会自行布局 TabBar（含悬浮样式）。
+/// push 后 pop 回 Tab 根页时，若在此手动改 tabBar.frame，会与系统布局互相触发，导致界面卡死。
+- (BOOL)noa_shouldManuallyLayoutTabBarFrame {
+    if (self.tabBar.isHidden || self.tabBar.alpha < 0.01) {
+        return NO;
+    }
+
+    NSString *systemVersion = UIDevice.currentDevice.systemVersion;
+    if ([systemVersion compare:@"26.0" options:NSNumericSearch] != NSOrderedAscending) {
+        return NO;
+    }
+
+    if (UIDevice.currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+        return NO;
+    }
+
+    UIViewController *selected = self.selectedViewController;
+    if ([selected isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *nav = (UINavigationController *)selected;
+        if (nav.viewControllers.count > 1) {
+            return NO;
+        }
+        if (nav.transitionCoordinator != nil) {
+            return NO;
+        }
+    }
+    return YES;
+}
+
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    if (![self noa_shouldManuallyLayoutTabBarFrame]) {
+        return;
+    }
+
     CGRect tabbarFrame = self.tabBar.frame;
     tabbarFrame.size.height = DTabBarH;
     tabbarFrame.size.width = DScreenWidth;
@@ -90,8 +125,8 @@
 
     [[UITabBarItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, -2)];
     
-    _vcLuckyLandHome = [LuckyLandHomeViewController new];
-    [self addChildViewController:_vcLuckyLandHome imageNormal:@"luck_t1_d" imageSelected:@"luck_t1_a" title:@"幸运岛" tag:1000];
+//    _vcLuckyLandHome = [LuckyLandHomeViewController new];
+//    [self addChildViewController:_vcLuckyLandHome imageNormal:@"luck_t1_d" imageSelected:@"luck_t1_a" title:@"幸运岛" tag:1000];
     
     _vcSession = [LuckyLandConversationViewController new];
     [self addChildViewController:_vcSession imageNormal:@"luck_t2_d" imageSelected:@"luck_t2_a" title:LanguageToolMatch(@"消息") tag:1001];

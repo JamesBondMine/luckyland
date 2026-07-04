@@ -23,15 +23,46 @@
 }
 
 
+#pragma mark - iPadOS 26 TabBar 修复
+
+/// iPadOS 26 上 hidesBottomBarWhenPushed 会破坏 TabBar 状态，导致 push 第三级或 pop 后界面卡死。
+/// 参考: https://developer.apple.com/forums/thread/789148
+- (BOOL)noa_shouldAvoidHidesBottomBarWhenPushed {
+    if (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPad) {
+        return NO;
+    }
+    NSString *systemVersion = UIDevice.currentDevice.systemVersion;
+    return [systemVersion compare:@"26.0" options:NSNumericSearch] != NSOrderedAscending;
+}
+
+- (void)noa_syncTabBarHiddenAnimated:(BOOL)animated {
+    if (![self noa_shouldAvoidHidesBottomBarWhenPushed]) {
+        return;
+    }
+
+    UITabBarController *tabBarController = self.tabBarController;
+    if (!tabBarController) {
+        return;
+    }
+
+    BOOL shouldHide = self.viewControllers.count > 1;
+    if ([tabBarController respondsToSelector:@selector(setTabBarHidden:animated:)]) {
+        [tabBarController setTabBarHidden:shouldHide animated:animated];
+    } else {
+        tabBarController.tabBar.hidden = shouldHide;
+    }
+}
+
 #pragma mark - UINavigationControllerDelegate
 -(void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
     //全局隐藏导航栏
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    [navigationController setNavigationBarHidden:YES animated:animated];
 }
 
 -(void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
     //全局隐藏导航栏
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    [navigationController setNavigationBarHidden:YES animated:animated];
+    [self noa_syncTabBarHiddenAnimated:animated];
 }
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
@@ -47,7 +78,7 @@
 #pragma mark - 跳转处理
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
     if (self.viewControllers.count) {
-        viewController.hidesBottomBarWhenPushed = YES;
+        viewController.hidesBottomBarWhenPushed = [self noa_shouldAvoidHidesBottomBarWhenPushed] ? NO : YES;
     }
     [super pushViewController:viewController animated:animated];
 }
