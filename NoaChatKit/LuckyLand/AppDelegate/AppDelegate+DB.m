@@ -38,7 +38,7 @@
         LuckyLandTabBarController *tab = (LuckyLandTabBarController *)self.window.rootViewController;
         //通讯录红点先取本地展示
         NSInteger friendInviteCount = [IMSDKManager toolFriendApplyCount];
-        [tab setBadgeValue:LuckyLandTabBadgeIndexMine number:friendInviteCount];
+        [tab setBadgeValue:LuckyLandTabBadgeIndexContact number:friendInviteCount];
         //会话列表红点先取本地展示
         WeakSelf
         __block NSInteger sessionUnreadCount;
@@ -139,7 +139,7 @@
     //更新通讯录红点
     if ([self.window.rootViewController isKindOfClass:[LuckyLandTabBarController class]]) {
         LuckyLandTabBarController *tab = (LuckyLandTabBarController *)self.window.rootViewController;
-        [tab setBadgeValue:LuckyLandTabBadgeIndexMine number:friendApplyCount];
+        [tab setBadgeValue:LuckyLandTabBadgeIndexContact number:friendApplyCount];
         //通讯录好友申请，红点更新
         [[NSNotificationCenter defaultCenter] postNotificationName:@"FriendApplyCountChange" object:nil];
     }
@@ -329,7 +329,7 @@
     if ([self.window.rootViewController isKindOfClass:[LuckyLandTabBarController class]]) {
         LuckyLandTabBarController *tab = (LuckyLandTabBarController *)self.window.rootViewController;
         [tab setBadgeValue:LuckyLandTabBadgeIndexSession number:totalUnreadCount];
-        [tab setBadgeValue:LuckyLandTabBadgeIndexMine number:friendInviteCount];
+        [tab setBadgeValue:LuckyLandTabBadgeIndexContact number:friendInviteCount];
     }
     
     [self configAppUnreadBadgeWitMessageCount:totalUnreadCount friendInviteCount:friendInviteCount];
@@ -470,7 +470,7 @@
             //更新通讯录红点
             if ([weakSelf.window.rootViewController isKindOfClass:[LuckyLandTabBarController class]]) {
                 LuckyLandTabBarController *tab = (LuckyLandTabBarController *)weakSelf.window.rootViewController;
-                [tab setBadgeValue:LuckyLandTabBadgeIndexMine number:friendApplyCount];
+                [tab setBadgeValue:LuckyLandTabBadgeIndexContact number:friendApplyCount];
                 //通讯录好友申请，红点更新
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"FriendApplyCountChange" object:nil];
             }

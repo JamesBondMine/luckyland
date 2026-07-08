@@ -9,10 +9,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// TabBar 红点 index（当前 Tab：0=消息，1=我的）
+/// TabBar 红点 index（当前 Tab：0=消息，1=通讯录，2=我的）
 typedef NS_ENUM(NSInteger, LuckyLandTabBadgeIndex) {
     LuckyLandTabBadgeIndexSession = 0,
-    LuckyLandTabBadgeIndexMine = 1,
+    LuckyLandTabBadgeIndexContact = 1,
+    LuckyLandTabBadgeIndexMine = 2,
 };
 
 @interface LuckyLandTabBarController : UITabBarController

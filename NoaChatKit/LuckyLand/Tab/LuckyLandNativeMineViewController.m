@@ -6,7 +6,6 @@
 #import "LuckyLandNativeMineViewController.h"
 #import "LuckyLandNativeMineCell.h"
 
-#import "LuckLandContactVC.h"
 #import "NoaTeamListVC.h"
 #import "LuckyLandMyCollectionViewController.h"
 #import "LuckyLandBlackListViewController.h"
@@ -35,7 +34,6 @@
 @property (nonatomic, strong) UIImageView *avatarImageView;
 @property (nonatomic, strong) UILabel *nameLabel;
 @property (nonatomic, strong) UILabel *idLabel;
-@property (nonatomic, strong) UIView *contactCardView;
 @property (nonatomic, strong) UIView *listContainerView;
 @property (nonatomic, strong) UIStackView *listStackView;
 
@@ -70,7 +68,6 @@
     [self.scrollView addSubview:self.contentView];
 
     [self.contentView addSubview:self.headerView];
-    [self.contentView addSubview:self.contactCardView];
     [self.contentView addSubview:self.listContainerView];
 
     [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -88,21 +85,14 @@
         make.top.leading.trailing.equalTo(self.contentView);
         make.height.mas_equalTo(250 + safeTop);
     }];
-    [self.contactCardView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView).offset(150 + safeTop);
-        make.leading.equalTo(self.contentView).offset(12);
-        make.trailing.equalTo(self.contentView).offset(-12);
-        make.height.mas_equalTo(60);
-    }];
     [self.listContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView).offset(220 + safeTop);
+        make.top.equalTo(self.contentView).offset(150 + safeTop);
         make.leading.equalTo(self.contentView).offset(12);
         make.trailing.equalTo(self.contentView).offset(-12);
         make.bottom.equalTo(self.contentView).offset(-tabBarInset);
     }];
 
     [self setupHeaderContentWithSafeTop:safeTop];
-    [self setupContactCard];
     [self setupListContent];
 }
 
@@ -226,17 +216,6 @@
         make.centerY.equalTo(avatarContainer);
         make.width.mas_equalTo(120);
         make.height.mas_equalTo(40);
-    }];
-}
-
-- (void)setupContactCard {
-    LuckyLandNativeMineCell *cell = [[LuckyLandNativeMineCell alloc] initWithFrame:CGRectZero];
-    [cell configureWithTitle:LanguageToolMatch(@"通讯录") iconName:@"lianxiren"];
-    cell.actionTag = @"mineTouchIndex200";
-    [cell addTarget:self action:@selector(handleMineCellTap:) forControlEvents:UIControlEventTouchUpInside];
-    [self.contactCardView addSubview:cell];
-    [cell mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.contactCardView);
     }];
 }
 
@@ -374,9 +353,7 @@
         return;
     }
 
-    if ([action isEqualToString:@"mineTouchIndex200"]) {
-        [self openFullScreen:[LuckLandContactVC new]];
-    } else if ([action isEqualToString:@"mineTouchIndex0"]) {
+    if ([action isEqualToString:@"mineTouchIndex0"]) {
         [self openFullScreen:[NoaTeamListVC new]];
     } else if ([action isEqualToString:@"mineTouchIndex1"]) {
         LuckyLandMyCollectionViewController *vc = [[LuckyLandMyCollectionViewController alloc] init];
@@ -578,16 +555,6 @@
         _headerView.backgroundColor = COLOR_EB5C5C;
     }
     return _headerView;
-}
-
-- (UIView *)contactCardView {
-    if (!_contactCardView) {
-        _contactCardView = [[UIView alloc] init];
-        _contactCardView.backgroundColor = UIColor.whiteColor;
-        _contactCardView.layer.cornerRadius = 12;
-        _contactCardView.clipsToBounds = YES;
-    }
-    return _contactCardView;
 }
 
 - (UIView *)listContainerView {

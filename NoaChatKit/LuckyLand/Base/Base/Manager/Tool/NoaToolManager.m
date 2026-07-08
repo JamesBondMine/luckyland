@@ -209,7 +209,7 @@ static NSString *g_CurrentLoganPublishURL = nil; // 内存记录当前 Logan pub
         appdelegate.window.rootViewController = tabbarVC;
         //通讯录红点先取本地展示
         NSInteger friendInviteCount = [IMSDKManager toolFriendApplyCount];
-        [tabbarVC setBadgeValue:LuckyLandTabBadgeIndexMine number:friendInviteCount];
+        [tabbarVC setBadgeValue:LuckyLandTabBadgeIndexContact number:friendInviteCount];
         //会话列表红点先取本地展示
         __block NSInteger sessionUnreadCount;
         [ZTOOL doAsync:^{
