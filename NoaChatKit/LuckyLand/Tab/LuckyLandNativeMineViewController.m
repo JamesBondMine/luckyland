@@ -18,6 +18,8 @@
 #import "LuckyLandAboutUsViewController.h"
 #import "LuckyLandUserInfoViewController.h"
 #import "LuckyLandSystemSettingViewController.h"
+#import "LuckyLandAccountRemoveViewController.h"
+#import "NoaMessageAlertView.h"
 #import "LuckyLandSignInViewController.h"
 #import "LuckyLandMyQRCodeViewController.h"
 #import "NoaQRCodeModel.h"
@@ -258,6 +260,7 @@
             @{@"tag": @"mineTouchIndex7", @"title": LanguageToolMatch(@"投诉与支持"), @"icon": @"tousujianyi"},
         ],
         @[@{@"tag": @"mineTouchIndex8", @"title": LanguageToolMatch(@"关于"), @"icon": @"guanyu"}],
+        @[@{@"tag": @"mineTouchIndex9", @"title": LanguageToolMatch(@"删除账号"), @"destructive": @YES}],
     ];
 
     for (NSInteger i = 0; i < sections.count; i++) {
@@ -266,7 +269,11 @@
         }
         for (NSDictionary *item in sections[i]) {
             LuckyLandNativeMineCell *cell = [[LuckyLandNativeMineCell alloc] initWithFrame:CGRectZero];
-            [cell configureWithTitle:item[@"title"] iconName:item[@"icon"]];
+            if ([item[@"destructive"] boolValue]) {
+                [cell configureDestructiveWithTitle:item[@"title"]];
+            } else {
+                [cell configureWithTitle:item[@"title"] iconName:item[@"icon"]];
+            }
             cell.actionTag = item[@"tag"];
             [cell addTarget:self action:@selector(handleMineCellTap:) forControlEvents:UIControlEventTouchUpInside];
             [cell mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -394,6 +401,8 @@
         [self openFullScreen:[NoaComplainVC new]];
     } else if ([action isEqualToString:@"mineTouchIndex8"]) {
         [self openFullScreen:[[LuckyLandAboutUsViewController alloc] init]];
+    } else if ([action isEqualToString:@"mineTouchIndex9"]) {
+        [self showDeleteAccountFlow];
     } else if ([action isEqualToString:@"mineTouchIndex100"] || [action isEqualToString:@"mineTouchIndex104"]) {
         [self openFullScreen:[[LuckyLandUserInfoViewController alloc] init]];
     } else if ([action isEqualToString:@"mineTouchIndex101"]) {
@@ -405,6 +414,22 @@
     } else if ([action isEqualToString:@"mineTouchIndex105"]) {
         [HUD showMessage:LanguageToolMatch(@"复制成功") inView:self.view];
     }
+}
+
+#pragma mark - Delete Account
+
+- (void)showDeleteAccountFlow {
+    NoaMessageAlertView *msgAlertView = [[NoaMessageAlertView alloc] initWithMsgAlertType:ZMessageAlertTypeTitle supView:self.view];
+    msgAlertView.lblTitle.text = LanguageToolMatch(@"删除账号");
+    msgAlertView.lblContent.text = LanguageToolMatch(@"删除账号详细说明");
+    msgAlertView.lblContent.numberOfLines = 0;
+    [msgAlertView.btnSure setTitle:LanguageToolMatch(@"确认") forState:UIControlStateNormal];
+    [msgAlertView.btnCancel setTitle:LanguageToolMatch(@"取消") forState:UIControlStateNormal];
+    [msgAlertView alertShow];
+    WeakSelf
+    msgAlertView.sureBtnBlock = ^(BOOL isCheckBox) {
+        [weakSelf openFullScreen:[[LuckyLandAccountRemoveViewController alloc] init]];
+    };
 }
 
 #pragma mark - QR Code

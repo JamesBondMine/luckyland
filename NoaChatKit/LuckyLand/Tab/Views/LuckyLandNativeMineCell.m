@@ -62,7 +62,21 @@
 
 - (void)configureWithTitle:(NSString *)title iconName:(NSString *)iconName {
     self.titleLabel.text = title ?: @"";
+    self.titleLabel.textColor = HEXCOLOR(@"333333");
+    self.iconImageView.tintColor = UIColor.clearColor;
     self.iconImageView.image = ImgNamed(iconName);
+}
+
+- (void)configureDestructiveWithTitle:(NSString *)title {
+    self.titleLabel.text = title ?: @"";
+    self.titleLabel.textColor = HEXCOLOR(@"FF3333");
+    if (@available(iOS 13.0, *)) {
+        UIImage *image = [[UIImage systemImageNamed:@"person.crop.circle.badge.minus"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        self.iconImageView.image = image;
+        self.iconImageView.tintColor = HEXCOLOR(@"FF3333");
+    } else {
+        self.iconImageView.image = nil;
+    }
 }
 
 @end

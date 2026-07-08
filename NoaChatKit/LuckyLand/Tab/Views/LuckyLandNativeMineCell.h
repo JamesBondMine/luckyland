@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *actionTag;
 
 - (void)configureWithTitle:(NSString *)title iconName:(NSString *)iconName;
+- (void)configureDestructiveWithTitle:(NSString *)title;
 
 @end
 

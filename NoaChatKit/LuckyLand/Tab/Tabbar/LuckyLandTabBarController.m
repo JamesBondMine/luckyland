@@ -23,7 +23,7 @@
 
 #import "LuckyLandHomeViewController.h"
 
-@interface LuckyLandTabBarController () <UITabBarControllerDelegate,UITabBarDelegate>
+@interface LuckyLandTabBarController () <UITabBarControllerDelegate>
 {
     NSInteger _currentSelectedIndex;//当前选中下标
 }
@@ -46,7 +46,6 @@
     // Do any additional setup after loading the view.
     
     self.delegate = self;
-    self.tabBar.delegate = self;
     
     [self showInfo];
     [self setupTabbar];
@@ -230,15 +229,10 @@
     return YES;
 }
 
-#pragma mark - UITabBarDelegate
-- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
-    if (_currentSelectedIndex == item.tag - 1000) {
-        //点击当前选中下标
-    }else{
-        //切换界面
-    }
-    _currentSelectedIndex = item.tag - 1000;
-    
+#pragma mark - UITabBarControllerDelegate
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+    _currentSelectedIndex = tabBarController.selectedIndex;
 }
 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
@@ -247,8 +241,6 @@
     }
     return YES;
 }
-
-#pragma mark - UITabBarControllerDelegate
 
 #pragma mark - 红点设置
 - (void)setBadgeValue:(NSInteger)index number:(NSInteger)number {
