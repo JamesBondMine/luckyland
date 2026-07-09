@@ -47,7 +47,7 @@
 
     BOOL shouldHide = self.viewControllers.count > 1;
     if (@available(iOS 18.0, *)) {
-//        [tabBarController setTabBarHidden:shouldHide animated:animated];
+        [tabBarController setTabBarHidden:shouldHide animated:animated];
     } else {
         tabBarController.tabBar.hidden = shouldHide;
     }

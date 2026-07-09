@@ -6,6 +6,7 @@
 //
 
 #import "LuckyLandSsoSetViewController.h"
+#import "LuckyLandOldSsoSetViewController.h"
 #import "LuckyLandIslandSceneView.h"
 #import "NoaSsoHelpView.h"
 #import "NoaToolManager.h"
@@ -43,6 +44,9 @@
 /// 幸运岛海面场景
 @property (nonatomic, strong) LuckyLandIslandSceneView *islandSceneView;
 
+/// 自定义加入按钮
+@property (nonatomic, strong) UIButton *customJoinBtn;
+
 @end
 
 @implementation LuckyLandSsoSetViewController
@@ -62,6 +66,22 @@
         _blurView = [[NoaSsoAccountManagerView alloc] initWithFrame:CGRectZero IsPopWindows:self.isPopWindows];
     }
     return _blurView;
+}
+
+- (UIButton *)customJoinBtn {
+    if (!_customJoinBtn) {
+        _customJoinBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_customJoinBtn setTitle:LanguageToolMatch(@"或自定义") forState:UIControlStateNormal];
+//        _customJoinBtn.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+        // @[COLOR_66, COLOR_66_DARK];
+        [_customJoinBtn setTkThemeTitleColor:@[COLOR_00, COLOR_00_DARK] forState:UIControlStateNormal];
+        _customJoinBtn.titleLabel.font = FONTM(26);
+//        _customJoinBtn.layer.cornerRadius = 12.0;
+//        _customJoinBtn.layer.masksToBounds = YES;
+        _customJoinBtn.titleEdgeInsets = UIEdgeInsetsMake(5, 10, 5, 10);
+        [_customJoinBtn addTarget:self action:@selector(clickCustomJoinAction) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _customJoinBtn;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -153,11 +173,19 @@
     self.topSubTitleLabel.text = LanguageToolMatch(@"点击小岛加入您的组织");
     [self.view addSubview:self.topTitleLabel];
     [self.view addSubview:self.topSubTitleLabel];
+    [self.view addSubview:self.customJoinBtn];
+    
+    [self.customJoinBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(self.topTitleLabel.mas_trailing).offset(2);
+        make.centerY.equalTo(self.topTitleLabel);
+        make.height.equalTo(@44);
+        make.width.equalTo(@124);
+    }];
     
     [self.topTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.navView.mas_bottom).offset(34.5);
         make.leading.equalTo(@23);
-        make.trailing.equalTo(self.view).offset(-23);
+        make.trailing.lessThanOrEqualTo(self.customJoinBtn.mas_leading).offset(-12);
         make.height.equalTo(@37);
     }];
     
@@ -272,6 +300,16 @@
 }
 
 #pragma mark - Action
+
+- (void)clickCustomJoinAction {
+    LuckyLandOldSsoSetViewController *vc = [[LuckyLandOldSsoSetViewController alloc] init];
+    vc.isRoot = NO;
+    vc.isReset = self.isReset;
+    vc.isPopWindows = self.isPopWindows;
+    vc.configSsoInfoFinish = self.configSsoInfoFinish;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 //输入的是幸运数字，走SSO竞速
 - (void)saveUserInputCompanyIdSSoInfo:(NSString *)liceseId {
     // 重置错误处理标志，表示开始新的竞速流程

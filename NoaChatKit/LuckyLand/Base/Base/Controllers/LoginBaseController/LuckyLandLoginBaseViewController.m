@@ -92,7 +92,7 @@
 - (UILabel *)topTitleLabel {
     if (!_topTitleLabel) {
         _topTitleLabel = [UILabel new];
-        _topTitleLabel.tkThemetextColors = @[COLOR_00, COLOR_00_DARK];
+        _topTitleLabel.tkThemetextColors = @[COLOR_66, COLOR_66_DARK];
         _topTitleLabel.font = FONTM(26);
     }
     return _topTitleLabel;
