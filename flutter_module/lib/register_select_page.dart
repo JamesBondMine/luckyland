@@ -21,7 +21,7 @@ class _RegisterSelectPageState extends State<RegisterSelectPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor:  const Color.fromRGBO(238, 240, 240, 1),
+        backgroundColor: const Color.fromRGBO(238, 240, 240, 1),
         elevation: 0,
         systemOverlayStyle: SystemUiOverlayStyle.dark,
         leading: IconButton(
@@ -31,7 +31,7 @@ class _RegisterSelectPageState extends State<RegisterSelectPage> {
           },
         ),
       ),
-      backgroundColor:  const Color.fromRGBO(238, 240, 240, 1),
+      backgroundColor: const Color.fromRGBO(238, 240, 240, 1),
       body: _bodyView(context),
     );
   }
@@ -40,22 +40,21 @@ class _RegisterSelectPageState extends State<RegisterSelectPage> {
     return Column(
       children: [
         const SizedBox(height: 30),
-        _cardItem(context, Icons.email_outlined, '邮箱注册', '通过邮箱和验证码注册', () {
+        _cardItem(context, 1, '邮箱注册', '通过邮箱和验证码注册', () {
           widget.tap('registerDetail0');
         }),
-        _cardItem(context, Icons.phone_android, '手机号注册', '通过手机号和验证码注册', () {
+        _cardItem(context, 2, '手机号注册', '通过手机号和验证码注册', () {
           widget.tap('registerDetail1');
         }),
-        _cardItem(context, Icons.account_circle_outlined, '账号注册', '通过账号和密码注册',
-            () {
+        _cardItem(context, 3, '账号注册', '通过账号和密码注册', () {
           widget.tap('registerDetail2');
         })
       ],
     );
   }
 
-  Widget _cardItem(BuildContext context, IconData? icon, String title,
-      String content, VoidCallback onTap) {
+  Widget _cardItem(BuildContext context, int icon, String title, String content,
+      VoidCallback onTap) {
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
     return InkWell(
@@ -64,18 +63,17 @@ class _RegisterSelectPageState extends State<RegisterSelectPage> {
         },
         child: Container(
           margin: const EdgeInsets.only(left: 20, right: 20, top: 20),
-          padding: const EdgeInsets.only(left: 12, right: 12, top: 20, bottom: 20),
+          padding:
+              const EdgeInsets.only(left: 12, right: 12, top: 20, bottom: 20),
           decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(12)),
+              color: Colors.white, borderRadius: BorderRadius.circular(8)),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Icon(
-                icon,
-                size: 20,
-                color: Global.primaryColor,
-                
+              Image.asset(
+                'images/auth/shanhai_register${icon}.png',
+                width: 20,
+                height: 20,
               ),
               const SizedBox(width: 12),
               Expanded(
@@ -101,7 +99,7 @@ class _RegisterSelectPageState extends State<RegisterSelectPage> {
                   ])),
               Icon(
                 Icons.arrow_forward_ios,
-                size: 20,
+                size: 16,
                 color: colorScheme.onSurface.withOpacity(0.5),
               ),
             ],

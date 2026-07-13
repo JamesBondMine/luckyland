@@ -27,7 +27,7 @@
         _accountTF.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.05]];
         _accountTF.tkThemetextColors = @[COLOR_11, COLOR_11_DARK];
         // 设置圆角
-        _accountTF.layer.cornerRadius = 16;
+        _accountTF.layer.cornerRadius = 8;
         _accountTF.layer.masksToBounds = YES;
         // 设置边框
         _accountTF.layer.borderWidth = 1.0;

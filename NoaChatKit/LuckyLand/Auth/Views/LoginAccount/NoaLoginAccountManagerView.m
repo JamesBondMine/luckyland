@@ -8,7 +8,7 @@
 #import "NoaLoginAccountManagerView.h"
 // 上方切换页签
 #import "JXCategoryTitleView.h"
-#import "JXCategoryIndicatorLineView.h"
+#import "JXCategoryIndicatorImageView.h"
 // 账号输入
 #import "NoaLoginAccountInputView.h"
 // 手机号码输入
@@ -30,6 +30,9 @@
 
 /// 切换页签
 @property (nonatomic, strong) JXCategoryTitleView *loginTypeCategoryView;
+
+/// tab 之间的竖线分隔
+@property (nonatomic, strong) NSMutableArray<UIView *> *tabSeparatorLines;
 
 /// 解决小屏显示不下
 @property (nonatomic, strong) UIScrollView *scrollView;
@@ -71,6 +74,10 @@
 
 @implementation NoaLoginAccountManagerView
 
+- (BOOL)shouldShowTopRoundedBorder {
+    return NO;
+}
+
 #pragma mark - Lazy Loading
 
 - (JXCategoryTitleView *)loginTypeCategoryView {
@@ -85,22 +92,58 @@
         _loginTypeCategoryView.titleSelectedFont = FONTM(16);
         _loginTypeCategoryView.titleColorGradientEnabled = YES;
         _loginTypeCategoryView.averageCellSpacingEnabled = NO;
-        _loginTypeCategoryView.contentEdgeInsetLeft = 12;
+        _loginTypeCategoryView.contentEdgeInsetLeft = 1;
         _loginTypeCategoryView.contentEdgeInsetRight = 12;
         _loginTypeCategoryView.cellSpacing = 24;
         // 默认第一个
         _loginTypeCategoryView.defaultSelectedIndex = 0;
-        JXCategoryIndicatorLineView *lineView = [[JXCategoryIndicatorLineView alloc] init];
-        // 设置指示器固定宽度
-        lineView.indicatorWidth = 36;
-        lineView.indicatorCornerRadius = 2;
-        lineView.indicatorHeight = 3;
-        lineView.indicatorColor = COLOR_EB5C5C;
-        // 设置指示器位置（底部）
-        lineView.componentPosition = JXCategoryComponentPosition_Bottom;
-        _loginTypeCategoryView.indicators = @[lineView];
+        JXCategoryIndicatorImageView *imageIndicatorView = [[JXCategoryIndicatorImageView alloc] init];
+        imageIndicatorView.indicatorImageViewSize = CGSizeMake(72, 6);
+        imageIndicatorView.indicatorImageView.image = ImgNamed(@"sso_nav");
+        imageIndicatorView.componentPosition = JXCategoryComponentPosition_Bottom;
+        _loginTypeCategoryView.indicators = @[imageIndicatorView];
     }
     return _loginTypeCategoryView;
+}
+
+- (NSMutableArray<UIView *> *)tabSeparatorLines {
+    if (!_tabSeparatorLines) {
+        _tabSeparatorLines = [NSMutableArray array];
+    }
+    return _tabSeparatorLines;
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    [self updateTabSeparatorLineFrame];
+}
+
+- (void)updateTabSeparatorLineFrame {
+    for (UIView *line in self.tabSeparatorLines) {
+        [line removeFromSuperview];
+    }
+    [self.tabSeparatorLines removeAllObjects];
+    
+    NSInteger titleCount = self.loginTypeCategoryView.titles.count;
+    if (titleCount < 2) {
+        return;
+    }
+    for (NSInteger index = 0; index < titleCount - 1; index++) {
+        CGRect leftCellFrame = [self.loginTypeCategoryView getTargetCellFrame:index];
+        CGRect rightCellFrame = [self.loginTypeCategoryView getTargetCellFrame:index + 1];
+        if (CGRectIsEmpty(leftCellFrame) || CGRectIsEmpty(rightCellFrame)) {
+            continue;
+        }
+        UIView *separatorLine = [UIView new];
+        separatorLine.tkThemebackgroundColors = @[COLOR_D9D9D9, COLORWHITE];
+        separatorLine.userInteractionEnabled = NO;
+        CGFloat separatorX = (CGRectGetMaxX(leftCellFrame) + CGRectGetMinX(rightCellFrame)) / 2.0;
+        CGFloat separatorHeight = 14;
+        CGFloat separatorY = (self.loginTypeCategoryView.bounds.size.height - separatorHeight) / 2.0;
+        separatorLine.frame = CGRectMake(separatorX - 0.5, separatorY, 1, separatorHeight);
+        [self.loginTypeCategoryView addSubview:separatorLine];
+        [self.tabSeparatorLines addObject:separatorLine];
+    }
 }
 
 - (UIScrollView *)scrollView {
@@ -196,7 +239,7 @@
         [_loginBtn setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
         _loginBtn.titleLabel.font = FONTM(14);
         _loginBtn.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
-        _loginBtn.layer.cornerRadius = 16;
+        _loginBtn.layer.cornerRadius = 27;
         _loginBtn.layer.masksToBounds = YES;
     }
     return _loginBtn;
@@ -215,7 +258,7 @@
         [_registerBtn setTitle:LanguageToolMatch(@"去注册") forState:UIControlStateNormal];
         [_registerBtn setTkThemeTitleColor:@[COLOR_EB5C5C, COLOR_EB5C5C_DARK] forState:UIControlStateNormal];
         _registerBtn.titleLabel.font = FONTM(16);
-        [_registerBtn setImage:ImgNamed(@"icon_right_arrow") forState:UIControlStateNormal];
+//        [_registerBtn setImage:ImgNamed(@"icon_right_arrow") forState:UIControlStateNormal];
         [_registerBtn setBtnImageAlignmentType:ButtonImageAlignmentTypeRight imageSpace:2];
     }
     return _registerBtn;
@@ -308,14 +351,14 @@
     }];
     
     // 版本
-    [self.scrollView addSubview:self.versionLabel];
-    [self.versionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.registerBtn.mas_bottom).offset(48);
-        make.centerX.equalTo(self.scrollView);
-        make.width.greaterThanOrEqualTo(@121);
-        make.height.equalTo(@14);
-        make.bottom.equalTo(self.scrollView).offset(-DHomeBarH);
-    }];
+//    [self.scrollView addSubview:self.versionLabel];
+//    [self.versionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(self.registerBtn.mas_bottom).offset(48);
+//        make.centerX.equalTo(self.scrollView);
+//        make.width.greaterThanOrEqualTo(@121);
+//        make.height.equalTo(@14);
+//        make.bottom.equalTo(self.scrollView).offset(-DHomeBarH);
+//    }];
 }
 
 - (void)processData {
@@ -332,6 +375,7 @@
         }
         // 不刷新颜色不生效
         [self.loginTypeCategoryView reloadDataWithoutListContainer];
+        [self updateTabSeparatorLineFrame];
     };
     
     // 注册按钮点击事件
@@ -958,6 +1002,7 @@
 - (void)reloadSupportLoginType {
     self.loginTypeCategoryView.titles = self.dataHandle.titleArr;
     [self.loginTypeCategoryView reloadDataWithoutListContainer];
+    [self updateTabSeparatorLineFrame];
     // 默认选中第一个
     [self.loginTypeCategoryView selectItemAtIndex:0];
 }

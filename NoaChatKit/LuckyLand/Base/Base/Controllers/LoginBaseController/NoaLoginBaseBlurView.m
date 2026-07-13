@@ -43,6 +43,8 @@
     self.backgroundColor = UIColor.clearColor;
     self.clipsToBounds = NO;  // 不裁剪内容，允许父视图背景显示
     
+    BOOL showTopRoundedBorder = [self shouldShowTopRoundedBorder];
+    
     // 使用模糊效果（根据当前主题选择）
     UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:[self blurEffectStyleForCurrentTheme]];
     self.blurView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
@@ -52,12 +54,17 @@
     self.blurView.alpha = [self blurViewAlphaForCurrentTheme];
     
     // 设置圆角
-    if (self.isPopWindows) {
-        self.blurView.layer.cornerRadius = BLUR_VIEW_CORNER_RADIUS;
-        self.blurView.layer.masksToBounds = YES;
-    }else {
-        self.blurView.layer.cornerRadius = BLUR_VIEW_CORNER_RADIUS;
-        self.blurView.layer.maskedCorners = kCALayerMinXMinYCorner | kCALayerMaxXMinYCorner;
+    if (showTopRoundedBorder) {
+        if (self.isPopWindows) {
+            self.blurView.layer.cornerRadius = BLUR_VIEW_CORNER_RADIUS;
+            self.blurView.layer.masksToBounds = YES;
+        }else {
+            self.blurView.layer.cornerRadius = BLUR_VIEW_CORNER_RADIUS;
+            self.blurView.layer.maskedCorners = kCALayerMinXMinYCorner | kCALayerMaxXMinYCorner;
+            self.blurView.layer.masksToBounds = YES;
+        }
+    } else {
+        self.blurView.layer.cornerRadius = 0;
         self.blurView.layer.masksToBounds = YES;
     }
     
@@ -67,10 +74,16 @@
     [self setupGradientLayer];
     
     // 添加内阴影
-    [self addInnerShadow];
+    if (showTopRoundedBorder) {
+        [self addInnerShadow];
+    }
     
     // 注册主题变化监听
     [self styleChange];
+}
+
+- (BOOL)shouldShowTopRoundedBorder {
+    return YES;
 }
 
 /// 添加渐变背景层
@@ -87,9 +100,14 @@
     self.gradientLayer.endPoint = CGPointMake(0.5, 1.0);    // 到下结束
     
     // 设置圆角遮罩（只有上边两个圆角）
-    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds
-                                                   byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight
-                                                         cornerRadii:CGSizeMake(BLUR_VIEW_CORNER_RADIUS, BLUR_VIEW_CORNER_RADIUS)];
+    UIBezierPath *maskPath = nil;
+    if ([self shouldShowTopRoundedBorder]) {
+        maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds
+                                         byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight
+                                               cornerRadii:CGSizeMake(BLUR_VIEW_CORNER_RADIUS, BLUR_VIEW_CORNER_RADIUS)];
+    } else {
+        maskPath = [UIBezierPath bezierPathWithRect:self.bounds];
+    }
     CAShapeLayer *maskLayer = [CAShapeLayer layer];
     maskLayer.frame = self.bounds;
     maskLayer.path = maskPath.CGPath;
@@ -158,9 +176,14 @@
     if (self.gradientLayer) {
         self.gradientLayer.frame = self.bounds;
         // 更新圆角遮罩
-        UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds
-                                                   byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight
-                                                         cornerRadii:CGSizeMake(BLUR_VIEW_CORNER_RADIUS, BLUR_VIEW_CORNER_RADIUS)];
+        UIBezierPath *maskPath = nil;
+        if ([self shouldShowTopRoundedBorder]) {
+            maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds
+                                             byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight
+                                                   cornerRadii:CGSizeMake(BLUR_VIEW_CORNER_RADIUS, BLUR_VIEW_CORNER_RADIUS)];
+        } else {
+            maskPath = [UIBezierPath bezierPathWithRect:self.bounds];
+        }
         CAShapeLayer *maskLayer = (CAShapeLayer *)self.gradientLayer.mask;
         if (!maskLayer) {
             maskLayer = [CAShapeLayer layer];

@@ -36,7 +36,7 @@
 - (void)setupUIAndConstraints {
    //复选框
     self.checkBoxBtn = [[UIButton alloc] init];
-    [self.checkBoxBtn setImage:ImgNamed(@"icon_checkbox_unselect") forState:UIControlStateNormal];
+    [self.checkBoxBtn setImage:ImgNamed(@"shanhai_cycle") forState:UIControlStateNormal];
     [self.checkBoxBtn setImage:ImgNamed(@"icon_checkbox_selected") forState:UIControlStateSelected];
     self.checkBoxBtn.selected = NO;
     [self.checkBoxBtn addTarget:self action:@selector(checkBoxAction) forControlEvents:UIControlEventTouchUpInside];

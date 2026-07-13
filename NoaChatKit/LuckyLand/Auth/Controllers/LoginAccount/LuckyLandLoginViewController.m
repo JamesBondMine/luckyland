@@ -46,6 +46,14 @@
 /// 数据处理
 @property (nonatomic, strong, readwrite) NoaLoginAccountDataHandle *dataHandle;
 
+/// SSO 信息卡片
+@property (nonatomic, strong) UIView *ssoInfoCardView;
+@property (nonatomic, strong) UIImageView *ssoIconView;
+@property (nonatomic, strong) UILabel *ssoTypeLabel;
+@property (nonatomic, strong) UILabel *ssoValueLabel;
+@property (nonatomic, strong) UIView *ssoCardSeparatorLine;
+@property (nonatomic, strong) UIButton *ssoChangeBtn;
+
 @end
 
 @implementation LuckyLandLoginViewController
@@ -74,6 +82,64 @@
     return _dataHandle;
 }
 
+- (UIView *)ssoInfoCardView {
+    if (!_ssoInfoCardView) {
+        _ssoInfoCardView = [[UIView alloc] initWithFrame:CGRectZero];
+        _ssoInfoCardView.layer.cornerRadius = 8;
+        _ssoInfoCardView.layer.masksToBounds = YES;
+        _ssoInfoCardView.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.05]];
+    }
+    return _ssoInfoCardView;
+}
+
+- (UIImageView *)ssoIconView {
+    if (!_ssoIconView) {
+        _ssoIconView = [[UIImageView alloc] initWithImage:ImgNamed(@"shanhai_sso")];
+        _ssoIconView.contentMode = UIViewContentModeScaleAspectFit;
+    }
+    return _ssoIconView;
+}
+
+- (UILabel *)ssoTypeLabel {
+    if (!_ssoTypeLabel) {
+        _ssoTypeLabel = [UILabel new];
+        _ssoTypeLabel.font = FONTR(14);
+        _ssoTypeLabel.tkThemetextColors = @[COLOR_66, COLOR_66_DARK];
+    }
+    return _ssoTypeLabel;
+}
+
+- (UILabel *)ssoValueLabel {
+    if (!_ssoValueLabel) {
+        _ssoValueLabel = [UILabel new];
+        _ssoValueLabel.font = FONTM(14);
+        _ssoValueLabel.tkThemetextColors = @[COLOR_66, COLOR_66_DARK];
+    }
+    return _ssoValueLabel;
+}
+
+- (UIView *)ssoCardSeparatorLine {
+    if (!_ssoCardSeparatorLine) {
+        _ssoCardSeparatorLine = [UIView new];
+        _ssoCardSeparatorLine.tkThemebackgroundColors = @[COLOR_D9D9D9, COLORWHITE];
+    }
+    return _ssoCardSeparatorLine;
+}
+
+- (UIButton *)ssoChangeBtn {
+    if (!_ssoChangeBtn) {
+        _ssoChangeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_ssoChangeBtn setImage:ImgNamed(@"shanhai_change") forState:UIControlStateNormal];
+        [_ssoChangeBtn addTarget:self action:@selector(clickSetSsoAccount) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _ssoChangeBtn;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self refreshSsoInfoCard];
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     // 结束编辑状态
@@ -93,15 +159,79 @@
     [self showNetworkDetectionAndSystemLanguageButton:NO];
     [self showSsoAccountSetButton:YES];
     
-    [self.view addSubview:self.topTitleLabel];
-    self.topTitleLabel.numberOfLines = 2;
-    self.topTitleLabel.text = LanguageToolMatch(@"您好，\n欢迎加入我们");
-    [self.topTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.topTitleLabel.hidden = YES;
+    
+    [self.view addSubview:self.ssoInfoCardView];
+    [self.ssoInfoCardView addSubview:self.ssoIconView];
+    [self.ssoInfoCardView addSubview:self.ssoTypeLabel];
+    [self.ssoInfoCardView addSubview:self.ssoValueLabel];
+    [self.ssoInfoCardView addSubview:self.ssoCardSeparatorLine];
+    [self.ssoInfoCardView addSubview:self.ssoChangeBtn];
+    
+    [self.ssoInfoCardView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.navView.mas_bottom).offset(24.5);
-        make.leading.equalTo(@23);
-        make.trailing.equalTo(self.view).offset(-23);
-        make.bottom.equalTo(self.blurView.mas_top).offset(-37.5);
+        make.leading.equalTo(@26);
+        make.trailing.equalTo(self.view).offset(-26);
+        make.height.equalTo(@87);
     }];
+    
+    [self.ssoIconView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(@12);
+        make.top.equalTo(self.ssoInfoCardView).offset(23);
+        make.width.height.equalTo(@20);
+    }];
+    
+    [self.ssoChangeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.trailing.equalTo(self.ssoInfoCardView).offset(-12);
+        make.centerY.equalTo(self.ssoInfoCardView);
+        make.width.height.equalTo(@24);
+    }];
+    
+    [self.ssoCardSeparatorLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.trailing.equalTo(self.ssoChangeBtn.mas_leading).offset(-12);
+        make.centerY.equalTo(self.ssoInfoCardView);
+        make.width.equalTo(@1);
+        make.height.equalTo(@17);
+    }];
+    
+    [self.ssoTypeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(self.ssoIconView.mas_trailing).offset(8);
+        make.bottom.equalTo(self.ssoInfoCardView.mas_centerY).offset(-1);
+        make.trailing.lessThanOrEqualTo(self.ssoCardSeparatorLine.mas_leading).offset(-12);
+    }];
+    
+    [self.ssoValueLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(self.ssoTypeLabel);
+        make.top.equalTo(self.ssoInfoCardView.mas_centerY).offset(1);
+        make.trailing.lessThanOrEqualTo(self.ssoCardSeparatorLine.mas_leading).offset(-12);
+    }];
+    
+    [self.blurView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.ssoInfoCardView.mas_bottom).offset(37.5);
+        make.leading.trailing.equalTo(self.view);
+        make.bottom.equalTo(self.view);
+    }];
+    
+    [self refreshSsoInfoCard];
+}
+
+- (void)refreshSsoInfoCard {
+    NoaSsoInfoModel *ssoModel = [NoaSsoInfoModel getSSOInfo];
+    NSString *ssoValue = @"";
+    NSString *ssoTypeText = LanguageToolMatch(@"企业号");
+    
+    if (ssoModel) {
+        if (![NSString isNil:ssoModel.ipDomainPortStr]) {
+            ssoTypeText = LanguageToolMatch(@"IP/域名");
+            ssoValue = ssoModel.ipDomainPortStr;
+        } else if (![NSString isNil:ssoModel.liceseId]) {
+            ssoTypeText = LanguageToolMatch(@"企业号");
+            ssoValue = ssoModel.liceseId;
+        }
+    }
+    
+    self.ssoTypeLabel.text = ssoTypeText;
+    self.ssoValueLabel.text = ssoValue;
 }
 
 - (void)processData {

@@ -7,7 +7,7 @@
 
 #import "NoaSsoAccountManagerView.h"
 #import "JXCategoryTitleView.h"
-#import "JXCategoryIndicatorLineView.h"
+#import "JXCategoryIndicatorImageView.h"
 
 @interface NoaSsoAccountManagerView ()<JXCategoryViewDelegate, UITextFieldDelegate>
 
@@ -17,10 +17,13 @@
 /// 顶部切换
 @property (nonatomic, strong) JXCategoryTitleView *ssoTypeCategoryView;
 
-/// 幸运数字选择类型
+/// tab 之间的竖线分隔
+@property (nonatomic, strong) UIView *tabSeparatorLine;
+
+/// 企业号选择类型
 @property (nonatomic, assign) ZSsoTypeMenu ssoType;
 
-/// 幸运数字输入
+/// 企业号输入
 @property (nonatomic, strong) UITextField *ssoAccountTF;
 
 /// ip输入
@@ -32,14 +35,14 @@
 /// 端口号
 @property (nonatomic, strong) UITextField *portTF;
 
-/// 幸运数字背景
+/// 企业号背景
 @property (nonatomic, strong) UIView *ssoAccountBgView;
 
 /// ip+端口背景
 @property (nonatomic, strong) UIView *ipAndPortBgView;
 
-/// popWindows时，幸运数字输入Label、ip域名Label下部提示Label
-@property (nonatomic, strong) UILabel *popBottomTipLabel;
+/// popWindows时，企业号输入Label、ip域名Label下部提示Label
+@property (nonatomic, strong) UILabel *subTitleLabel;
 
 /// 加入
 @property (nonatomic, strong) UIButton *joinBtn;
@@ -64,7 +67,7 @@
         _popTopTitleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         _popTopTitleLabel.tkThemetextColors = @[COLOR_11, COLOR_11_DARK];
         _popTopTitleLabel.font = FONTSB(20);
-        _popTopTitleLabel.text = LanguageToolMatch(@"幸运数字加入");
+        _popTopTitleLabel.text = LanguageToolMatch(@"企业号加入");
     }
     return _popTopTitleLabel;
 }
@@ -73,7 +76,7 @@
     if (!_ssoTypeCategoryView) {
         _ssoTypeCategoryView = [JXCategoryTitleView new];
         _ssoTypeCategoryView.delegate = self;
-        _ssoTypeCategoryView.titles = @[LanguageToolMatch(@"幸运数字"), LanguageToolMatch(@"IP/域名")];
+        _ssoTypeCategoryView.titles = @[LanguageToolMatch(@"企业号"), LanguageToolMatch(@"IP/域名")];
         _ssoTypeCategoryView.titleColor = COLOR_00;
         _ssoTypeCategoryView.titleSelectedColor = COLOR_EB5C5C;
         // 设置 title 字体大小（影响 title 高度）
@@ -83,24 +86,49 @@
         // _ssoTypeCategoryView.titleLabelVerticalOffset = 0;
         _ssoTypeCategoryView.titleColorGradientEnabled = YES;
         _ssoTypeCategoryView.averageCellSpacingEnabled = NO;
-        _ssoTypeCategoryView.contentEdgeInsetLeft = 12;
+        _ssoTypeCategoryView.contentEdgeInsetLeft = 1;
         _ssoTypeCategoryView.contentEdgeInsetRight = 12;
         _ssoTypeCategoryView.cellSpacing = 24;
         // 默认第一个
         _ssoTypeCategoryView.defaultSelectedIndex = 0;
-        JXCategoryIndicatorLineView *lineView = [[JXCategoryIndicatorLineView alloc] init];
-        // 设置指示器固定宽度
-        lineView.indicatorWidth = 36;
-        lineView.indicatorCornerRadius = 2;
-        lineView.indicatorHeight = 3;
-        lineView.indicatorColor = COLOR_EB5C5C;
-        // 设置指示器位置（底部）
-        lineView.componentPosition = JXCategoryComponentPosition_Bottom;
-        _ssoTypeCategoryView.indicators = @[lineView];
+        JXCategoryIndicatorImageView *imageIndicatorView = [[JXCategoryIndicatorImageView alloc] init];
+        imageIndicatorView.indicatorImageViewSize = CGSizeMake(72, 6);
+        imageIndicatorView.indicatorImageView.image = ImgNamed(@"sso_nav");
+        imageIndicatorView.componentPosition = JXCategoryComponentPosition_Bottom;
+        _ssoTypeCategoryView.indicators = @[imageIndicatorView];
+        [_ssoTypeCategoryView addSubview:self.tabSeparatorLine];
     }
     return _ssoTypeCategoryView;
 }
 
+- (UIView *)tabSeparatorLine {
+    if (!_tabSeparatorLine) {
+        _tabSeparatorLine = [UIView new];
+        _tabSeparatorLine.tkThemebackgroundColors = @[COLOR_D9D9D9, COLORWHITE];
+        _tabSeparatorLine.userInteractionEnabled = NO;
+    }
+    return _tabSeparatorLine;
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    [self updateTabSeparatorLineFrame];
+}
+
+- (void)updateTabSeparatorLineFrame {
+    if (!self.tabSeparatorLine.superview || self.ssoTypeCategoryView.titles.count < 2) {
+        return;
+    }
+    CGRect firstCellFrame = [self.ssoTypeCategoryView getTargetCellFrame:0];
+    CGRect secondCellFrame = [self.ssoTypeCategoryView getTargetCellFrame:1];
+    if (CGRectIsEmpty(firstCellFrame) || CGRectIsEmpty(secondCellFrame)) {
+        return;
+    }
+    CGFloat separatorX = (CGRectGetMaxX(firstCellFrame) + CGRectGetMinX(secondCellFrame)) / 2.0;
+    CGFloat separatorHeight = 14;
+    CGFloat separatorY = (self.ssoTypeCategoryView.bounds.size.height - separatorHeight) / 2.0;
+    self.tabSeparatorLine.frame = CGRectMake(separatorX - 0.5, separatorY, 1, separatorHeight);
+}
 - (UITextField *)ssoAccountTF {
     if (!_ssoAccountTF) {
         _ssoAccountTF = [[UITextField alloc] initWithFrame:CGRectZero];
@@ -118,7 +146,7 @@
             NSForegroundColorAttributeName: COLOR_99,
             NSFontAttributeName:FONTM(14)
         };
-        _ssoAccountTF.attributedPlaceholder = [[NSAttributedString alloc] initWithString:LanguageToolMatch(@"请输入幸运数字") attributes:attributes];
+        _ssoAccountTF.attributedPlaceholder = [[NSAttributedString alloc] initWithString:LanguageToolMatch(@"请输入企业号") attributes:attributes];
         
         // 获取当前首选语言，判断是否为阿拉伯语(ar)或波斯语(fa)
         NSString *preferredLanguage = [NSLocale preferredLanguages].firstObject;
@@ -189,14 +217,14 @@
     return _ipAndPortLabel;
 }
 
-- (UILabel *)popBottomTipLabel {
-    if (!_popBottomTipLabel) {
-        _popBottomTipLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-        _popBottomTipLabel.tkThemetextColors = @[COLOR_11, COLOR_11_DARK];
-        _popBottomTipLabel.font = FONTR(12);
-        _popBottomTipLabel.text = LanguageToolMatch(@"请输入您幸运岛专属的幸运数字或IP/域名");
+- (UILabel *)subTitleLabel {
+    if (!_subTitleLabel) {
+        _subTitleLabel = [UILabel new];
+        _subTitleLabel.tkThemetextColors = @[COLOR_66, COLOR_66_DARK];
+        _subTitleLabel.font = FONTR(12);
+        _subTitleLabel.text = LanguageToolMatch(@"请输入您幸运岛专属的幸运数字或IP/域名");
     }
-    return _popBottomTipLabel;
+    return _subTitleLabel;
 }
 
 - (UITextField *)portTF {
@@ -263,7 +291,7 @@
         [_joinBtn setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
         _joinBtn.titleLabel.font = FONTM(14);
         _joinBtn.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
-        _joinBtn.layer.cornerRadius = 16;
+        _joinBtn.layer.cornerRadius = 27;
         _joinBtn.layer.masksToBounds = YES;
     }
     return _joinBtn;
@@ -285,12 +313,12 @@
 - (UIButton *)helpBtn {
     if (!_helpBtn) {
         _helpBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_helpBtn setTitle:LanguageToolMatch(@"帮助") forState:UIControlStateNormal];
+        [_helpBtn setTitle:LanguageToolMatch(@"遇到问题") forState:UIControlStateNormal];
         [_helpBtn setTkThemeTitleColor:@[COLOR_11, COLOR_11_DARK] forState:UIControlStateNormal];
         [_helpBtn setImage:ImgNamed(@"icon_sso_help") forState:UIControlStateNormal];
         _helpBtn.titleLabel.font = FONTM(13);
-        [_helpBtn setBtnImageAlignmentType:ButtonImageAlignmentTypeRight imageSpace:6];
-        _helpBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+        [_helpBtn setBtnImageAlignmentType:ButtonImageAlignmentTypeLeft imageSpace:6];
+        _helpBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     }
     return _helpBtn;
 }
@@ -344,7 +372,7 @@
         make.width.equalTo(@200);
     }];
     
-    // 默认展示幸运数字输入
+    // 默认展示企业号输入
     [self addSubview:self.ssoAccountBgView];
     [self.ssoAccountBgView addSubview:self.ssoAccountTF];
     
@@ -396,11 +424,11 @@
         make.height.equalTo(self.ssoAccountBgView);
     }];
     
-    [self addSubview:self.popBottomTipLabel];
-    [self.popBottomTipLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self addSubview:self.subTitleLabel];
+    [self.subTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.ssoAccountBgView.mas_bottom).offset(12);
-        make.leading.equalTo(@33.5);
-        make.trailing.equalTo(self).offset(-33.5);
+        make.leading.equalTo(@20);
+        make.trailing.equalTo(self).offset(-20);
         make.height.equalTo(@12);
     }];
     
@@ -408,7 +436,7 @@
     [self addSubview:self.scanBtn];
     [self addSubview:self.helpBtn];
     [self.joinBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.ssoAccountBgView.mas_bottom).offset(72);
+        make.top.equalTo(self.subTitleLabel.mas_bottom).offset(78);
         make.leading.equalTo(@20);
         make.trailing.equalTo(self).offset(-20);
         make.height.equalTo(@54);
@@ -418,7 +446,7 @@
         make.top.equalTo(self.joinBtn.mas_bottom).offset(12);
         make.leading.equalTo(@26);
         make.width.greaterThanOrEqualTo(@132);
-        make.trailing.greaterThanOrEqualTo(self.helpBtn.mas_leading).offset(-20);
+//        make.trailing.greaterThanOrEqualTo(self.helpBtn.mas_leading).offset(-20);
         make.height.equalTo(@16);
     }];
     
@@ -426,8 +454,9 @@
     CGFloat helpBtnWidth = MAX(46, helpTextWidth + 4 + 16);
    
     [self.helpBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.scanBtn);
-        make.trailing.equalTo(self).offset(-26);
+        make.top.equalTo(self.scanBtn.mas_bottom).offset(90);
+//        make.trailing.equalTo(self).offset(-26);
+        make.leading.equalTo(self).offset(26);
         make.width.equalTo(@(helpBtnWidth));
         make.height.equalTo(@16);
     }];
@@ -442,7 +471,7 @@
         make.width.equalTo(@200);
     }];
     
-    // 默认展示幸运数字输入
+    // 默认展示企业号输入
     [self addSubview:self.ssoAccountBgView];
     [self.ssoAccountBgView addSubview:self.ssoAccountTF];
     
@@ -494,12 +523,20 @@
         make.height.equalTo(self.ssoAccountBgView);
     }];
     
+    [self addSubview:self.subTitleLabel];
+    [self.subTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.ssoAccountBgView.mas_bottom).offset(12);
+        make.leading.equalTo(@20);
+        make.trailing.equalTo(self).offset(-20);
+        make.height.equalTo(@12);
+    }];
+    
     
     [self addSubview:self.joinBtn];
     [self addSubview:self.scanBtn];
     [self addSubview:self.helpBtn];
     [self.joinBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.ssoAccountBgView.mas_bottom).offset(48);
+        make.top.equalTo(self.subTitleLabel.mas_bottom).offset(74);
         make.leading.equalTo(@20);
         make.trailing.equalTo(self).offset(-20);
         make.height.equalTo(@54);
@@ -508,8 +545,8 @@
     [self.scanBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.joinBtn.mas_bottom).offset(12);
         make.leading.equalTo(@26);
-        make.width.greaterThanOrEqualTo(@132);
-        make.trailing.greaterThanOrEqualTo(self.helpBtn.mas_leading).offset(-20);
+        make.width.greaterThanOrEqualTo(@52);
+//        make.trailing.greaterThanOrEqualTo(self.helpBtn.mas_leading).offset(-20);
         make.height.equalTo(@16);
     }];
     
@@ -517,8 +554,8 @@
     CGFloat helpBtnWidth = MAX(46, helpTextWidth + 4 + 16);
    
     [self.helpBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.scanBtn);
-        make.trailing.equalTo(self).offset(-26);
+        make.top.equalTo(self.scanBtn.mas_bottom).offset(90);
+        make.leading.equalTo(@16);
         make.width.equalTo(@(helpBtnWidth));
         make.height.equalTo(@16);
     }];
@@ -532,7 +569,7 @@
 }
 
 - (void)processData {
-    // 默认是输入幸运数字
+    // 默认是输入企业号
     self.ssoType = ZSsoTypeMenuCompanyId;
     
     @weakify(self)
@@ -549,6 +586,7 @@
         }
         // 不刷新颜色不生效
         [self.ssoTypeCategoryView reloadDataWithoutListContainer];
+        [self updateTabSeparatorLineFrame];
     };
     
     // 根据 ssoType 类型动态决定启用按钮的条件
@@ -565,7 +603,7 @@
         BOOL enabled = NO;
         
         if (type == ZSsoTypeMenuCompanyId) {
-            // 幸运数字模式：检查幸运数字输入框是否有值
+            // 企业号模式：检查企业号输入框是否有值
             enabled = (ssoAccountText && ssoAccountText.length > 0);
         } else if (type == ZSsoTypeMenuIPAndDomain) {
             // IP/域名模式：检查 IP 输入框是否有值
@@ -581,7 +619,7 @@
         @strongify(self)
         NSString *ssoStr = @"";
         if (self.ssoType == ZSsoTypeMenuCompanyId) {
-            // 幸运数字类型
+            // 企业号类型
             ssoStr = [NSString isNil:self.ssoAccountTF.text] ? @"" : [self.ssoAccountTF.text lowercaseString];
             if (self.clickLoginBtnAction) {
                 self.clickLoginBtnAction(self.ssoType, ssoStr);
@@ -636,7 +674,7 @@
             return;
         }
         
-        // 幸运数字类型，返回幸运数字
+        // 企业号类型，返回企业号
         NSString *ssoStr = [NSString isNil:self.ssoAccountTF.text] ? @"" : [self.ssoAccountTF.text lowercaseString];
         if (self.clickNetworkDetectionBtnAction) {
             self.clickNetworkDetectionBtnAction(ssoStr);
@@ -650,7 +688,7 @@
     NSInteger selectIndex = 0;
     switch (ssoType) {
         case ZSsoTypeMenuCompanyId:
-            // 幸运数字
+            // 企业号
             selectIndex = 0;
             self.ssoAccountTF.text = ssoInfoStr;
             break;
@@ -660,7 +698,7 @@
             [self analysicIpAndPortWithIpDomainPort:ssoInfoStr];
             break;
         default:
-            // 默认幸运数字
+            // 默认企业号
             selectIndex = 0;
             self.ssoAccountTF.text = ssoInfoStr;
             break;
@@ -697,7 +735,7 @@
 /// MARK: JXCategoryViewDelegate Methods
 - (void)categoryView:(JXCategoryBaseView *)categoryView didSelectedItemAtIndex:(NSInteger)index {
     if (index == 0) {
-        // 幸运数字加入
+        // 企业号加入
         self.ssoAccountBgView.hidden = NO;
         self.ipAndPortBgView.hidden = YES;
         self.ssoType = ZSsoTypeMenuCompanyId;
@@ -724,7 +762,7 @@
         
         // 判断是哪个输入框
         if (textField == self.ssoAccountTF) {
-            // 幸运数字输入框：检查新输入的字符是否是数字或字母
+            // 企业号输入框：检查新输入的字符是否是数字或字母
             NSCharacterSet *allowedCharacters = [[NSCharacterSet alphanumericCharacterSet] invertedSet];
             BOOL isValid = [string rangeOfCharacterFromSet:allowedCharacters].location == NSNotFound;
             return isValid;

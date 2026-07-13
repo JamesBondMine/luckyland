@@ -85,7 +85,7 @@
         _codeTF.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.05]];
         _codeTF.tkThemetextColors = @[COLOR_11, COLOR_11_DARK];
         // 设置圆角
-        _codeTF.layer.cornerRadius = 16;
+        _codeTF.layer.cornerRadius = 8;
         _codeTF.layer.masksToBounds = YES;
         // 设置边框
         _codeTF.layer.borderWidth = 1.0;
@@ -142,7 +142,7 @@
         _passwordTF.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.05]];
         _passwordTF.tkThemetextColors = @[COLOR_11, COLOR_11_DARK];
         // 设置圆角
-        _passwordTF.layer.cornerRadius = 16;
+        _passwordTF.layer.cornerRadius = 8;
         _passwordTF.layer.masksToBounds = YES;
         // 设置边框
         _passwordTF.layer.borderWidth = 1.0;
@@ -198,7 +198,7 @@
         _confirmPasswordTF.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.05]];
         _confirmPasswordTF.tkThemetextColors = @[COLOR_11, COLOR_11_DARK];
         // 设置圆角
-        _confirmPasswordTF.layer.cornerRadius = 16;
+        _confirmPasswordTF.layer.cornerRadius = 8;
         _confirmPasswordTF.layer.masksToBounds = YES;
         // 设置边框
         _confirmPasswordTF.layer.borderWidth = 1.0;
@@ -254,7 +254,7 @@
         _inviteCodeTF.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.05]];
         _inviteCodeTF.tkThemetextColors = @[COLOR_11, COLOR_11_DARK];
         // 设置圆角
-        _inviteCodeTF.layer.cornerRadius = 16;
+        _inviteCodeTF.layer.cornerRadius = 8;
         _inviteCodeTF.layer.masksToBounds = YES;
         // 设置边框
         _inviteCodeTF.layer.borderWidth = 1.0;

@@ -37,7 +37,7 @@
         _phoneNumberContainerView = [[UIView alloc] initWithFrame:CGRectZero];
         _phoneNumberContainerView.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.05]];
         // 设置圆角
-        _phoneNumberContainerView.layer.cornerRadius = 16;
+        _phoneNumberContainerView.layer.cornerRadius = 8;
         _phoneNumberContainerView.layer.masksToBounds = YES;
         // 设置边框
         _phoneNumberContainerView.layer.borderWidth = 1.0;

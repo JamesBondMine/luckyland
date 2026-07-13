@@ -32,7 +32,7 @@
         _emailTF.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.05]];
         _emailTF.tkThemetextColors = @[COLOR_11, COLOR_11_DARK];
         // 设置圆角
-        _emailTF.layer.cornerRadius = 16;
+        _emailTF.layer.cornerRadius = 8;
         _emailTF.layer.masksToBounds = YES;
         // 设置边框
         _emailTF.layer.borderWidth = 1.0;

@@ -117,22 +117,13 @@
     [self showSsoAccountSetButton:NO];
     
     self.topTitleLabel.text = LanguageToolMatch(@"幸运数字加入");
-    self.topSubTitleLabel.text = LanguageToolMatch(@"请输入您幸运岛专属的幸运数字或IP/域名");
     [self.view addSubview:self.topTitleLabel];
-    [self.view addSubview:self.topSubTitleLabel];
     
     [self.topTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.navView.mas_bottom).offset(34.5);
         make.leading.equalTo(@23);
         make.trailing.equalTo(self.view).offset(-23);
         make.height.equalTo(@37);
-    }];
-    
-    [self.topSubTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.topTitleLabel.mas_bottom).offset(12);
-        make.leading.equalTo(self.topTitleLabel);
-        make.trailing.equalTo(self.view).offset(-23);
-        make.height.equalTo(@12);
     }];
     
     // 展示版本号

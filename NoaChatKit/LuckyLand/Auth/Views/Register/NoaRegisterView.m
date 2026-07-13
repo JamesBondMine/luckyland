@@ -65,6 +65,10 @@
 
 @implementation NoaRegisterView
 
+- (BOOL)shouldShowTopRoundedBorder {
+    return NO;
+}
+
 #pragma mark - Lazy Loading
 - (JXCategoryTitleView *)registerTypeCategoryView {
     if (!_registerTypeCategoryView) {
@@ -179,7 +183,7 @@
         [_signUpBtn setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
         _signUpBtn.titleLabel.font = FONTM(14);
         _signUpBtn.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
-        _signUpBtn.layer.cornerRadius = 16;
+        _signUpBtn.layer.cornerRadius = 27;
         _signUpBtn.layer.masksToBounds = YES;
     }
     return _signUpBtn;

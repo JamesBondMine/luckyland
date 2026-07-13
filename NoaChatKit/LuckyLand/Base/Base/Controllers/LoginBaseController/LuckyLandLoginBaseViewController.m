@@ -76,6 +76,7 @@
         [_setSsoAccountBtn addTarget:self action:@selector(btnSetClick:) forControlEvents:UIControlEventTouchUpInside];
         _setSsoAccountBtn.layer.cornerRadius = 12.0;
         _setSsoAccountBtn.layer.masksToBounds = YES;
+        _setSsoAccountBtn.hidden = YES;
         _setSsoAccountBtn.titleEdgeInsets = UIEdgeInsetsMake(5, 10, 5, 10);
     }
     return _setSsoAccountBtn;
@@ -84,7 +85,7 @@
 - (UIImageView *)languageArrow {
     if (!_languageArrow) {
         _languageArrow = [UIImageView new];
-        _languageArrow.image = ImgNamed(@"sso_language_arrow");
+        _languageArrow.image = ImgNamed(@"shanhai_arrow_down");
     }
     return _languageArrow;
 }
@@ -131,38 +132,40 @@
 
 - (void)setupBaseUI {
 
-    [self.navView addSubview:self.networkSetBtn];
-    [self.networkSetBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(@(DStatusBarH + 19));
-        make.leading.equalTo(@16);
-        make.height.equalTo(@14);
-        make.width.greaterThanOrEqualTo(@74);
-    }];
+    
     
     [self.navView addSubview:self.systemLanguageBtn];
     [self.systemLanguageBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.equalTo(self.networkSetBtn.mas_trailing).offset(16);
-        make.centerY.equalTo(self.networkSetBtn);
+        make.trailing.equalTo(self.navView).offset(-32);
+        make.top.equalTo(@(DStatusBarH + 19));
         make.height.equalTo(@14);
         make.width.greaterThanOrEqualTo(@74);
     }];
     
-    CGFloat ssoAccountTextWith = [self calculateButtonWidthForText:self.setSsoAccountBtn.titleLabel.text font:self.setSsoAccountBtn.titleLabel.font];
-    CGFloat ssoAccountBtnWith = MAX(94, ssoAccountTextWith);
-    [self.navView addSubview:self.setSsoAccountBtn];
-    [self.setSsoAccountBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.trailing.equalTo(self.navView).offset(-16);
-        make.centerY.equalTo(self.networkSetBtn);
-        make.height.equalTo(@24);
-        make.width.equalTo(@(ssoAccountBtnWith));
+    [self.navView addSubview:self.networkSetBtn];
+    [self.networkSetBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(@(DStatusBarH + 19));
+        make.trailing.equalTo(self.systemLanguageBtn.mas_leading).offset(-16);
+        make.height.equalTo(@14);
+        make.width.greaterThanOrEqualTo(@74);
     }];
     
+//    CGFloat ssoAccountTextWith = [self calculateButtonWidthForText:self.setSsoAccountBtn.titleLabel.text font:self.setSsoAccountBtn.titleLabel.font];
+//    CGFloat ssoAccountBtnWith = MAX(94, ssoAccountTextWith);
+//    [self.navView addSubview:self.setSsoAccountBtn];
+//    [self.setSsoAccountBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.trailing.equalTo(self.navView).offset(-16);
+//        make.centerY.equalTo(self.networkSetBtn);
+//        make.height.equalTo(@24);
+//        make.width.equalTo(@(ssoAccountBtnWith));
+//    }];
+//    
     [self.navView addSubview:self.languageArrow];
     [self.languageArrow mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(self.systemLanguageBtn.mas_trailing).offset(4);
         make.centerY.equalTo(self.networkSetBtn);
-        make.height.equalTo(@9);
-        make.width.equalTo(@9);
+        make.height.equalTo(@18);
+        make.width.equalTo(@18);
     }];
     
     [self.view addSubview:self.blurView];

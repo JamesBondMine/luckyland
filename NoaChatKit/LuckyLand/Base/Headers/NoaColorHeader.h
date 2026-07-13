@@ -79,7 +79,7 @@
 #define COLOR_8D93A6        HEXCOLOR(@"8D93A6")
 //#define COLOR_5966F2        HEXCOLOR(@"5966F2")  // 蓝紫色
 // #define COLOR_EB5C5C        HEXCOLOR(@"6fc237")  // 绿色
-#define COLOR_EB5C5C        HEXCOLOR(@"EB5C5C")
+#define COLOR_EB5C5C        HEXCOLOR(@"1B2E60")
 // 橙色 EB5C5C
 
 #define COLOR_EEF1FA        HEXCOLOR(@"EEF1FA")

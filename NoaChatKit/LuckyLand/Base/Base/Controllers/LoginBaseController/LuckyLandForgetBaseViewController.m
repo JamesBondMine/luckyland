@@ -46,11 +46,11 @@
 }
 
 - (void)setupBaseUI {
-    [self.view addSubview:self.bgImgView];
-    [self.bgImgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.bottom.equalTo(self.view);
-        make.leading.trailing.equalTo(self.view);
-    }];
+//    [self.view addSubview:self.bgImgView];
+//    [self.bgImgView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.bottom.equalTo(self.view);
+//        make.leading.trailing.equalTo(self.view);
+//    }];
 }
 /*
 #pragma mark - Navigation

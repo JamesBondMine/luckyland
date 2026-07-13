@@ -114,7 +114,7 @@
     [self showSsoAccountSetButton:NO];
     
     self.topTitleLabel.text = LanguageToolMatch(@"邀请码加入");
-    self.topSubTitleLabel.text = LanguageToolMatch(@"请输入您企业专属的邀请码或IP/域名");
+    self.topSubTitleLabel.text = LanguageToolMatch(@"");
     [self.view addSubview:self.topTitleLabel];
     [self.view addSubview:self.topSubTitleLabel];
     
