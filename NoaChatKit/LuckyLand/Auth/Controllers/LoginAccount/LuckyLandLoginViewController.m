@@ -25,7 +25,7 @@
 #import "NoaLoginAccountDataHandle.h"
 // 设备验证码验证页面
 #import "LuckyLandSafeCodeAuthViewController.h"
-// 修改幸运数字页面
+// 修改企业号页面
 //#import "NoaSsoSetViewController.h"
 #import "LuckyLandSsoSetViewController.h"
 // 手机号选择区号页面
@@ -87,7 +87,7 @@
         _ssoInfoCardView = [[UIView alloc] initWithFrame:CGRectZero];
         _ssoInfoCardView.layer.cornerRadius = 8;
         _ssoInfoCardView.layer.masksToBounds = YES;
-        _ssoInfoCardView.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.05]];
+        _ssoInfoCardView.tkThemebackgroundColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.05], [COLOR_1B2E60_DARK colorWithAlphaComponent:0.05]];
     }
     return _ssoInfoCardView;
 }
@@ -155,7 +155,7 @@
 
 - (void)setLoginUI {
     // 隐藏网络设置、隐藏系统语言按钮
-    // 展示左上角的网络检测、系统语言，隐藏设置幸运数字
+    // 展示左上角的网络检测、系统语言，隐藏设置企业号
     [self showNetworkDetectionAndSystemLanguageButton:NO];
     [self showSsoAccountSetButton:YES];
     

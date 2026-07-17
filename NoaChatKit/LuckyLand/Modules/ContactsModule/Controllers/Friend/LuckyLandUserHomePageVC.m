@@ -141,7 +141,7 @@
     [_btnAddFriend setTitle:LanguageToolMatch(@"添加好友") forState:UIControlStateNormal];
     [_btnAddFriend setTitleColor:COLORWHITE forState:UIControlStateNormal];
     _btnAddFriend.titleLabel.font = FONTR(16);
-    _btnAddFriend.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C];
+    _btnAddFriend.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60];
     [_btnAddFriend setTkThemeBackgroundImage:@[[UIImage ImageForColor:COLOR_4069B9],[UIImage ImageForColor:COLOR_4069B9_DARK]] forState:UIControlStateHighlighted];
     [_btnAddFriend addTarget:self action:@selector(btnAddFriendClick) forControlEvents:UIControlEventTouchUpInside];
     _btnAddFriend.layer.cornerRadius = DWScale(14);

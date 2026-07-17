@@ -35,6 +35,9 @@
 @property (nonatomic, strong) NoaContactHeaderView *viewHeader;
 //指示器控件
 @property (nonatomic, strong) JXCategoryTitleView *viewCategory;
+@property (nonatomic, strong) UIView * line;
+
+
 @property (nonatomic, strong) NoaScrollView *scrollView;
 @property (nonatomic, strong) LuckyLandFriendListVC *friendVC;//好友
 @property (nonatomic, strong) LuckyLandFriendGroupListVC *friendGroupVC;//好友分组
@@ -74,6 +77,9 @@
     [self.view addGestureRecognizer:edgePan];
     // 让表格的滚动手势在边缘返回手势失败后再识别，避免冲突
     [self.baseTableView.panGestureRecognizer requireGestureRecognizerToFail:self.edgePan];
+    
+    
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 //初始化导航
@@ -111,7 +117,7 @@
     self.baseTableView.delaysContentTouches = NO;
     self.baseTableView.delegate = self;
     self.baseTableView.dataSource = self;
-    self.baseTableView.backgroundColor = UIColor.clearColor;
+    self.baseTableView.backgroundColor = [UIColor whiteColor];
     [self.baseTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.trailing.mas_equalTo(self.view);
         make.top.mas_equalTo(self.viewTop.mas_bottom).offset(DWScale(6));
@@ -125,8 +131,8 @@
     _viewHeader.newFriendApplyNum = [IMSDKManager toolFriendApplyCount];
     self.baseTableView.tableHeaderView = _viewHeader;
     
-    _viewCategory = [[JXCategoryTitleView alloc] initWithFrame:CGRectMake(0, 0, DScreenWidth/2, DWScale(54))];
-    _viewCategory.tkThemebackgroundColors = @[COLOR_F8F9FB,COLOR_F8F9FB_DARK];
+    _viewCategory = [[JXCategoryTitleView alloc] initWithFrame:CGRectMake(DScreenWidth/4, 0, DScreenWidth/2, DWScale(44))];
+    _viewCategory.tkThemebackgroundColors = @[[UIColor whiteColor],[UIColor whiteColor]];
     _viewCategory.delegate = self;
     _viewCategory.titles = @[LanguageToolMatch(@"好友"), LanguageToolMatch(@"分组"), LanguageToolMatch(@"群聊")];
     _viewCategory.titleColorGradientEnabled = YES;
@@ -135,10 +141,10 @@
     
     JXCategoryIndicatorLineView *lineView = [[JXCategoryIndicatorLineView alloc] init];
     // 设置指示器固定宽度
-    lineView.indicatorWidth = 36;
+    lineView.indicatorWidth = 20;
     lineView.indicatorCornerRadius = 2;
     lineView.indicatorHeight = 3;
-    lineView.indicatorColor = COLOR_EB5C5C;
+    lineView.indicatorColor = COLOR_1B2E60;
     // 设置指示器位置（底部）
     lineView.componentPosition = JXCategoryComponentPosition_Bottom;
     _viewCategory.indicators = @[lineView];
@@ -150,20 +156,26 @@
             {
                 //暗黑
                 weakSelf.viewCategory.titleColor = COLOR_99_DARK;
-                weakSelf.viewCategory.titleSelectedColor = COLOR_EB5C5C;
+                weakSelf.viewCategory.titleSelectedColor = COLOR_1B2E60;
             }
                 break;
                 
             default:
             {
                 weakSelf.viewCategory.titleColor = COLOR_99;
-                weakSelf.viewCategory.titleSelectedColor = COLOR_EB5C5C;
+                weakSelf.viewCategory.titleSelectedColor = COLOR_1B2E60;
             }
                 break;
         }
     };
     
-    _scrollView = [[NoaScrollView alloc] initWithFrame:CGRectMake(0, DWScale(54), DScreenWidth, DScreenHeight - DNavStatusBarH - DWScale(38) - DWScale(54) - DTabBarH)];
+    CGFloat categoryBottom = CGRectGetMaxY(_viewCategory.frame);
+    CGFloat lineHeight = DWScale(8);
+    _line = [[UIView alloc] initWithFrame:CGRectMake(0, categoryBottom+10, DScreenWidth, lineHeight)];
+    _line.backgroundColor = HEXCOLOR(@"F2F3F3");
+    
+    CGFloat scrollTop = CGRectGetMaxY(_line.frame);
+    _scrollView = [[NoaScrollView alloc] initWithFrame:CGRectMake(0, scrollTop +10, DScreenWidth, DScreenHeight - DNavStatusBarH - DWScale(38) - scrollTop - DTabBarH)];
     _scrollView.delegate = self;
     _scrollView.pagingEnabled = YES;
     _scrollView.showsVerticalScrollIndicator = NO;
@@ -266,8 +278,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class]) forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.contentView.tkThemebackgroundColors = @[COLOR_F8F9FB,COLOR_F8F9FB_DARK];
+    cell.contentView.tkThemebackgroundColors = @[[UIColor whiteColor],[UIColor whiteColor]];
     [cell.contentView addSubview:_viewCategory];
+    [cell.contentView addSubview:_line];
     [cell.contentView addSubview:_scrollView];
     return cell;
 }

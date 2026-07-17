@@ -35,13 +35,13 @@
 - (UIView *)phoneNumberContainerView {
     if (!_phoneNumberContainerView) {
         _phoneNumberContainerView = [[UIView alloc] initWithFrame:CGRectZero];
-        _phoneNumberContainerView.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.05]];
+        _phoneNumberContainerView.tkThemebackgroundColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.05], [COLOR_1B2E60_DARK colorWithAlphaComponent:0.05]];
         // 设置圆角
         _phoneNumberContainerView.layer.cornerRadius = 8;
         _phoneNumberContainerView.layer.masksToBounds = YES;
         // 设置边框
         _phoneNumberContainerView.layer.borderWidth = 1.0;
-        _phoneNumberContainerView.layer.tkThemeborderColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLORWHITE colorWithAlphaComponent:0.4]];
+        _phoneNumberContainerView.layer.tkThemeborderColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.05], [COLORWHITE colorWithAlphaComponent:0.4]];
     }
     return _phoneNumberContainerView;
 }

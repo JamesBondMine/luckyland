@@ -24,13 +24,13 @@
 
 /// 根据registerHtml组装生成二维码的url
 /**
- 幸运数字示例：xxx/xxx.html?code=123&server=123456&type=1&userId=12313123123123123123213&userName=小小张
+ 企业号示例：xxx/xxx.html?code=123&server=123456&type=1&userId=12313123123123123123213&userName=小小张
  直连示例：xxx/xxx.html?code=3q24&server=http%3A%2F%2Fwww.baidu.com&type=2&userId=12313123123123123123213&userName=小小张 */
 - (NSString *)handleShareQrcodeUrl {
     // 下载链接
     NSString *html = [NSString isNil:self.registerHtml] ? @"" : self.registerHtml;
     
-    // 幸运数字
+    // 企业号
     NSString *inviteCode = [NSString isNil:self.inviteCode] ? @"" : self.inviteCode;
     if (html.length > 0) {
         //code

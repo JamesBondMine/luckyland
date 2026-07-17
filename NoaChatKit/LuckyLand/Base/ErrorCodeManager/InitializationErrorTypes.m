@@ -54,7 +54,7 @@
             [code isEqualToString:[self OSS_NONEXISTENT_FAILURE]] ||
             [code isEqualToString:[self OSS_VOID_FAILURE]] ||
             [code isEqualToString:[self OSS_DECODE_FAILURE]]) {
-            return @"获取幸运数字失败";
+            return @"获取企业号失败";
         } else if ([code isEqualToString:[self HTTP_FAILURE]] ||
                    [code isEqualToString:[self HTTP_DECODE_FAILURE]]) {
             return @"短链接竞速失败";

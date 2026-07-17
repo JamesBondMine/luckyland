@@ -70,7 +70,7 @@
     
     _translateFailLbl = [[UILabel alloc] init];
     _translateFailLbl.text = LanguageToolMatch(@"字符不足，翻译失败！");
-    _translateFailLbl.tkThemetextColors = @[COLOR_EB5C5C, COLOR_EB5C5C];
+    _translateFailLbl.tkThemetextColors = @[COLOR_1B2E60, COLOR_1B2E60];
     _translateFailLbl.font = FONTN(14);
     _translateFailLbl.textAlignment = NSTextAlignmentLeft;
     _translateFailLbl.hidden = YES;
@@ -87,7 +87,7 @@
     [_retryTranslateBtn setTitle:LanguageToolMatch(@"翻译失败，请重试！") forState:UIControlStateNormal];
     [_retryTranslateBtn setImage:ImgNamed(@"icon_msg_translate_fail") forState:UIControlStateNormal];
     [_retryTranslateBtn setIconInLeftWithSpacing:DWScale(2)];
-    [_retryTranslateBtn setTkThemeTitleColor:@[COLOR_EB5C5C, COLOR_EB5C5C] forState:UIControlStateNormal];
+    [_retryTranslateBtn setTkThemeTitleColor:@[COLOR_1B2E60, COLOR_1B2E60] forState:UIControlStateNormal];
     _retryTranslateBtn.titleLabel.font = FONTN(14);
     _retryTranslateBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     [_retryTranslateBtn addTarget:self action:@selector(retryClick) forControlEvents:UIControlEventTouchUpInside];

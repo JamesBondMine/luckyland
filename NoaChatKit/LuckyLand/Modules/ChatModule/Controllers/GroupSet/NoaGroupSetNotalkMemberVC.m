@@ -95,7 +95,7 @@
     [self.baseTableView registerClass:[NoaFriendListSectionHeaderView class] forHeaderFooterViewReuseIdentifier:NSStringFromClass([NoaFriendListSectionHeaderView class])];
     
     SCIndexViewConfiguration *configuration = [SCIndexViewConfiguration configurationWithIndexViewStyle:SCIndexViewStyleDefault];
-    configuration.indexItemSelectedBackgroundColor = COLOR_EB5C5C;
+    configuration.indexItemSelectedBackgroundColor = COLOR_1B2E60;
     configuration.indexItemsSpace = DWScale(6);
     self.baseTableView.sc_indexViewConfiguration = configuration;
     self.baseTableView.sc_translucentForTableViewInNavigationBar = NO;
@@ -124,7 +124,7 @@
             msgAlertView.lblContent.textAlignment = NSTextAlignmentCenter;
             [msgAlertView.btnSure setTitle:LanguageToolMatch(@"确认") forState:UIControlStateNormal];
             [msgAlertView.btnSure setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
-            msgAlertView.btnSure.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+            msgAlertView.btnSure.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
             [msgAlertView.btnCancel setTitle:LanguageToolMatch(@"取消") forState:UIControlStateNormal];
             [msgAlertView.btnCancel setTkThemeTitleColor:@[COLOR_66, COLOR_66_DARK] forState:UIControlStateNormal];
             msgAlertView.btnCancel.tkThemebackgroundColors = @[COLOR_F6F6F6, COLOR_F6F6F6_DARK];
@@ -215,7 +215,7 @@
     self.navBtnRight.tkThemebackgroundColors = @[COLOR_CCCCCC, COLOR_CCCCCC_DARK];
     if (_selectedFriendList.count > 0) {
         [self.navBtnRight setTitle:[NSString stringWithFormat:LanguageToolMatch(@"完成(%ld)"),_selectedFriendList.count] forState:UIControlStateNormal];
-        self.navBtnRight.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+        self.navBtnRight.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
     }else {
         [self.navBtnRight setTitle:LanguageToolMatch(@"完成") forState:UIControlStateNormal];
     }

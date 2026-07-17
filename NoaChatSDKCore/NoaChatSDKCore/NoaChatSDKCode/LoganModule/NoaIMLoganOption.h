@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *loganUploadExpediteUrl;//日志模块，上传服务器的完整地址(加速)
 @property (nonatomic, copy) NSString *loganUserUnionId;//日志模块，当前用户的唯一标识
 @property (nonatomic, copy) NSString *loganUserName;//日志模块，当前用户的账号名
-@property (nonatomic, copy) NSString *loganLiceseId;//日志模块，幸运数字ID
+@property (nonatomic, copy) NSString *loganLiceseId;//日志模块，企业号ID
 @end
 
 NS_ASSUME_NONNULL_END

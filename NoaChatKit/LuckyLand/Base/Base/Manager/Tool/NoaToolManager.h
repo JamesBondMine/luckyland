@@ -61,7 +61,7 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - 设置竞速失败界面
 - (void)setupRacingErroUIWithResutl:(NSDictionary *)dic;
 
-#pragma mark - 设置幸运数字填写界面
+#pragma mark - 设置企业号填写界面
 - (void)setupSsoSetVcUI;
 
 #pragma mark - 弹窗-跳转登录界面

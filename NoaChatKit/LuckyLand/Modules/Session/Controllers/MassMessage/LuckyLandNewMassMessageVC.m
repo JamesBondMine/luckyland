@@ -163,7 +163,7 @@ typedef NS_ENUM(NSUInteger, MassMessageType) {
     [_btnSend setTitle:LanguageToolMatch(@"立即发送") forState:UIControlStateNormal];
     _btnSend.titleLabel.font = FONTR(16);
     [_btnSend setTkThemeTitleColor:@[COLORWHITE, COLORWHITE_DARK] forState:UIControlStateNormal];
-    [_btnSend setTkThemebackgroundColors:@[COLOR_EB5C5C, COLOR_EB5C5C_DARK]];
+    [_btnSend setTkThemebackgroundColors:@[COLOR_1B2E60, COLOR_1B2E60_DARK]];
     [_btnSend addTarget:self action:@selector(btnSendClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_btnSend];
     [_btnSend mas_makeConstraints:^(MASConstraintMaker *make) {

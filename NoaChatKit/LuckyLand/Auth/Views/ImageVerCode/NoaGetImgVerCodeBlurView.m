@@ -68,14 +68,14 @@
 - (UITextField *)codeTF {
     if (!_codeTF) {
         _codeTF = [[UITextField alloc] initWithFrame:CGRectZero];
-        _codeTF.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.05]];
+        _codeTF.tkThemebackgroundColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.05], [COLOR_1B2E60_DARK colorWithAlphaComponent:0.05]];
         _codeTF.tkThemetextColors = @[COLOR_11, COLOR_11_DARK];
         // 设置圆角
         _codeTF.layer.cornerRadius = 16;
         _codeTF.layer.masksToBounds = YES;
         // 设置边框
         _codeTF.layer.borderWidth = 1.0;
-        _codeTF.layer.tkThemeborderColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLORWHITE colorWithAlphaComponent:0.4]];
+        _codeTF.layer.tkThemeborderColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.05], [COLORWHITE colorWithAlphaComponent:0.4]];
         // 设置左边文字距离左边框间隔
         _codeTF.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 12, 0)];
         _codeTF.leftViewMode = UITextFieldViewModeAlways;
@@ -129,14 +129,14 @@
     if (!_cancelBtn) {
         _cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_cancelBtn setTitle:LanguageToolMatch(@"取消") forState:UIControlStateNormal];
-        [_cancelBtn setTkThemeTitleColor:@[COLOR_EB5C5C, COLOR_EB5C5C_DARK] forState:UIControlStateNormal];
+        [_cancelBtn setTkThemeTitleColor:@[COLOR_1B2E60, COLOR_1B2E60_DARK] forState:UIControlStateNormal];
         _cancelBtn.titleLabel.font = FONTM(14);
         _cancelBtn.tkThemebackgroundColors = @[COLORWHITE, COLORWHITE];
         _cancelBtn.layer.cornerRadius = 16;
         _cancelBtn.layer.masksToBounds = YES;
         // 设置边框
         _cancelBtn.layer.borderWidth = 1.0;
-        _cancelBtn.layer.tkThemeborderColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+        _cancelBtn.layer.tkThemeborderColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
     }
     return _cancelBtn;
 }
@@ -147,7 +147,7 @@
         [_doneBtn setTitle:LanguageToolMatch(@"确认") forState:UIControlStateNormal];
         [_doneBtn setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
         _doneBtn.titleLabel.font = FONTM(14);
-        _doneBtn.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+        _doneBtn.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
         _doneBtn.layer.cornerRadius = 16;
         _doneBtn.layer.masksToBounds = YES;
     }

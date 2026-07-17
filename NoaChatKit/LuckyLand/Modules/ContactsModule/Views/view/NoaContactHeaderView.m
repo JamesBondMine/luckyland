@@ -34,7 +34,7 @@ static const CGFloat kItemVerticalInset = 10.0;
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.tkThemebackgroundColors = @[COLOR_F8F9FB, COLOR_F8F9FB_DARK];
+        self.tkThemebackgroundColors = @[[UIColor whiteColor], [UIColor whiteColor]];
         [self setupUI];
     }
     return self;
@@ -42,7 +42,7 @@ static const CGFloat kItemVerticalInset = 10.0;
 
 #pragma mark - 界面布局
 - (void)setupUI {
-    self.backView.backgroundColor = UIColor.clearColor;
+    self.backView.backgroundColor = UIColor.whiteColor;
     [self addSubview:self.backView];
     [self.backView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.mas_equalTo(DWScale(10));
@@ -61,7 +61,7 @@ static const CGFloat kItemVerticalInset = 10.0;
     _lblRedNum.textColor = COLORWHITE;
     _lblRedNum.font = FONTR(12);
     _lblRedNum.text = @" 0 ";
-    _lblRedNum.backgroundColor = COLOR_F93A2F;
+    _lblRedNum.backgroundColor = [UIColor whiteColor];
     _lblRedNum.layer.cornerRadius = DWScale(9);
     _lblRedNum.layer.masksToBounds = YES;
     _lblRedNum.hidden = YES;
@@ -89,11 +89,11 @@ static const CGFloat kItemVerticalInset = 10.0;
 
 - (UIButton *)createItemButtonWithIcon:(NSString *)iconName title:(NSString *)title action:(SEL)action {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.layer.cornerRadius = DWScale(kItemCornerRadius);
-    button.layer.masksToBounds = YES;
-    button.layer.borderWidth = DWScale(kItemBorderWidth);
-    button.layer.tkThemeborderColors = @[COLOR_E8E8E8, COLOR_E8E8E8_DARK];
-    button.tkThemebackgroundColors = @[COLORWHITE, COLOR_11];
+//    button.layer.cornerRadius = DWScale(kItemCornerRadius);
+//    button.layer.masksToBounds = YES;
+//    button.layer.borderWidth = DWScale(kItemBorderWidth);
+//    button.layer.tkThemeborderColors = @[COLOR_E8E8E8, COLOR_E8E8E8_DARK];
+//    button.tkThemebackgroundColors = @[COLORWHITE, COLOR_11];
     [button setTkThemeBackgroundImage:@[[UIImage ImageForColor:COLORWHITE], [UIImage ImageForColor:COLORWHITE_DARK]]
                              forState:UIControlStateHighlighted];
     [button addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
@@ -103,20 +103,22 @@ static const CGFloat kItemVerticalInset = 10.0;
     iconView.contentMode = UIViewContentModeScaleAspectFit;
     [button addSubview:iconView];
     [iconView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.equalTo(button).offset(DWScale(12));
+//        make.leading.equalTo(button).offset(DWScale(12));
+        make.centerX.equalTo(button);
         make.top.equalTo(button).offset(DWScale(12));
-        make.size.mas_equalTo(CGSizeMake(DWScale(25), DWScale(25)));
+        make.size.mas_equalTo(CGSizeMake(DWScale(50), DWScale(50)));
     }];
     
     UILabel *titleLabel = [UILabel new];
-    titleLabel.tkThemetextColors = @[HEXCOLOR(@"333333"), HEXCOLOR(@"333333")];
-    titleLabel.font = FONTR(12);
+    titleLabel.tkThemetextColors = @[HEXCOLOR(@"000000"), HEXCOLOR(@"000000")];
+    titleLabel.font = FONTR(14);
     titleLabel.textAlignment = NSTextAlignmentLeft;
     titleLabel.text = LanguageToolMatch(title);
     [button addSubview:titleLabel];
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.equalTo(iconView);
-        make.top.equalTo(iconView.mas_bottom).offset(DWScale(8));
+//        make.leading.equalTo(iconView);
+        make.centerX.equalTo(iconView);
+        make.top.equalTo(iconView.mas_bottom).offset(DWScale(10));
         make.trailing.lessThanOrEqualTo(button).offset(-DWScale(4));
     }];
     

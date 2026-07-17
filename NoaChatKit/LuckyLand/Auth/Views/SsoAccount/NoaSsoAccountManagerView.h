@@ -10,8 +10,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /// 点击登录事件回调
-/// @param ssoType - 幸运数字类型
-/// @Param ssoText - 幸运数字/ip拼接域名
+/// @param ssoType - 企业号类型
+/// @Param ssoText - 企业号/ip拼接域名
 typedef void(^ClickLoginBtnAction)(ZSsoTypeMenu ssoType, NSString *ssoText);
 
 /// 点击扫码事件回调
@@ -37,7 +37,7 @@ typedef void(^ClickNetworkDetectionBtnAction)(NSString *ssoText);
 /// 点击网络检测事件回调
 @property (nonatomic, copy) ClickNetworkDetectionBtnAction clickNetworkDetectionBtnAction;
 
-/// 扫码后，修改幸运数字
+/// 扫码后，修改企业号
 - (void)scanQrcodeChangeSsoType:(ZSsoTypeMenu)ssoType SsoInfo:(NSString *)ssoInfo;
 
 - (void)refreshLuckyNumber:(NSString *)number;

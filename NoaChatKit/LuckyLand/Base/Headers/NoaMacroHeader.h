@@ -186,6 +186,9 @@ return __singleton__; \
 // 是否允许兜底重试（五源路径禁用，兜底路径启用）的默认宏
 #define Z_ALLOW_FALLBACK_RETRY_DEFAULT   NO
 
+/// 节点竞速全局超时时间（秒）。超时后直接进入错误页，避免弱网下长期卡在启动页
+#define Z_HOST_NODE_RACE_TIMEOUT         30.0
+
 #pragma mark - 第三方相关
 
 #pragma mark - APP本身
@@ -234,7 +237,7 @@ return __singleton__; \
 
 //https请求证书密码：IP/域名直连
 #define Z_HTTPS_IP_CER_PASSWORD         @"aleim.cc"
-//https请求证书密码：幸运数字
+//https请求证书密码：企业号
 #define Z_COMPANY_ID_IP_CER_PASSWORD    @"test_app_"    //"test_app_" + ossInfo.getAppKey()
 
 

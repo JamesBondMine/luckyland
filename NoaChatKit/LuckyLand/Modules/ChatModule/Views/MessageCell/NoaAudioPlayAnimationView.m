@@ -153,8 +153,8 @@
         _maskLayer.strokeColor = COLORWHITE.CGColor;
     } else {
         _shapeLayer.strokeColor = COLOR_CCCCCC.CGColor; // 路径颜色颜色
-        _backColorLayer.strokeColor = COLOR_EB5C5C.CGColor; // 路径颜色颜色
-        _maskLayer.strokeColor = COLOR_EB5C5C.CGColor;
+        _backColorLayer.strokeColor = COLOR_1B2E60.CGColor; // 路径颜色颜色
+        _maskLayer.strokeColor = COLOR_1B2E60.CGColor;
     }
 }
 
@@ -176,7 +176,7 @@
         _backColorLayer.lineWidth = kDrawLineWidth;
         _backColorLayer.fillColor = [UIColor clearColor].CGColor; // 填充色为透明（不设置为黑色）
         _backColorLayer.lineCap = kCALineCapRound; // 设置线为圆角
-        _backColorLayer.strokeColor = COLOR_EB5C5C.CGColor; // 路径颜色颜色
+        _backColorLayer.strokeColor = COLOR_1B2E60.CGColor; // 路径颜色颜色
     }
     return _backColorLayer;
 }
@@ -185,7 +185,7 @@
     if(!_maskLayer){
         _maskLayer = [[CAShapeLayer alloc] init];
         //路径颜色颜色
-        _maskLayer.strokeColor = COLOR_EB5C5C.CGColor;
+        _maskLayer.strokeColor = COLOR_1B2E60.CGColor;
     }
     return _maskLayer;
 }

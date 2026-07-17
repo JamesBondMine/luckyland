@@ -18,7 +18,7 @@
 /// 系统语言
 @property (nonatomic, strong) UIButton *systemLanguageBtn;
 
-/// 设置幸运数字
+/// 设置企业号
 @property (nonatomic, strong) UIButton *setSsoAccountBtn;
 
 /// 语言设置右侧箭头
@@ -68,8 +68,8 @@
 - (UIButton *)setSsoAccountBtn {
     if (!_setSsoAccountBtn) {
         _setSsoAccountBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_setSsoAccountBtn setTitle:LanguageToolMatch(@"设置幸运数字") forState:UIControlStateNormal];
-        _setSsoAccountBtn.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+        [_setSsoAccountBtn setTitle:LanguageToolMatch(@"设置企业号") forState:UIControlStateNormal];
+        _setSsoAccountBtn.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
         [_setSsoAccountBtn setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
         _setSsoAccountBtn.titleLabel.font = FONTM(14);
         _setSsoAccountBtn.tag = 10003;
@@ -184,7 +184,7 @@
         // 系统语言
         [self clickSystemLanguage];
     }else if (sender.tag == 10003) {
-        // 设置幸运数字
+        // 设置企业号
         [self clickSetSsoAccount];
     }else {
         // 暂不处理
@@ -206,7 +206,7 @@
     [self.navigationController pushViewController:languageSetVC animated:YES];
 }
 
-/// 设置幸运数字点击事件（子类重写实现）
+/// 设置企业号点击事件（子类重写实现）
 - (void)clickSetSsoAccount {
     // 子类重写实现具体逻辑
 }

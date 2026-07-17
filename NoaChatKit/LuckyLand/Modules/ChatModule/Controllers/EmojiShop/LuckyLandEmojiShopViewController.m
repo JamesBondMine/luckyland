@@ -62,7 +62,7 @@
     };
     //指示器
     JXCategoryIndicatorLineView *lineView = [[JXCategoryIndicatorLineView alloc] init];
-    lineView.indicatorColor = COLOR_EB5C5C;
+    lineView.indicatorColor = COLOR_1B2E60;
     lineView.componentPosition = JXCategoryComponentPosition_Bottom;
     lineView.verticalMargin = 5;
     _viewCategory.indicators = @[lineView];

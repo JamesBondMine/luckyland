@@ -86,7 +86,7 @@
     [_btnDelete setTitle:LanguageToolMatch(@"删除") forState:UIControlStateNormal];
     [_btnDelete setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
     _btnDelete.titleLabel.font = FONTR(17);
-    [_btnDelete setTkThemebackgroundColors:@[COLOR_EB5C5C, COLOR_EB5C5C_DARK]];
+    [_btnDelete setTkThemebackgroundColors:@[COLOR_1B2E60, COLOR_1B2E60_DARK]];
     _btnDelete.layer.cornerRadius = DWScale(22);
     _btnDelete.layer.masksToBounds = YES;
     [_btnDelete addTarget:self action:@selector(btnDeleteClick) forControlEvents:UIControlEventTouchUpInside];

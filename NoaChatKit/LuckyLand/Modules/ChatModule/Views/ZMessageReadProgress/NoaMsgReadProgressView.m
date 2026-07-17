@@ -61,9 +61,9 @@
         _fillColor = COLOR_CLEAR;
     } else {
         _statusImgView.hidden = YES;
-        _borderColor = COLOR_EB5C5C;
+        _borderColor = COLOR_1B2E60;
         _borderWidth = 1.5;
-        _fillColor = COLOR_EB5C5C;
+        _fillColor = COLOR_1B2E60;
     }
     [self setNeedsDisplay];
 }

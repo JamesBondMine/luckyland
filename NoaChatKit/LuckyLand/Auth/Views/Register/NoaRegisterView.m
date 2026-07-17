@@ -76,7 +76,7 @@
         _registerTypeCategoryView.delegate = self;
         _registerTypeCategoryView.titles = self.dataHandle.titleArr;
         _registerTypeCategoryView.titleColor = COLOR_00;
-        _registerTypeCategoryView.titleSelectedColor = COLOR_EB5C5C;
+        _registerTypeCategoryView.titleSelectedColor = COLOR_1B2E60;
         // 设置 title 字体大小（影响 title 高度）
         _registerTypeCategoryView.titleFont = FONTSB(16);
         _registerTypeCategoryView.titleSelectedFont = FONTM(16);
@@ -94,7 +94,7 @@
         lineView.indicatorWidth = 36;
         lineView.indicatorCornerRadius = 2;
         lineView.indicatorHeight = 3;
-        lineView.indicatorColor = COLOR_EB5C5C;
+        lineView.indicatorColor = COLOR_1B2E60;
         // 设置指示器位置（底部）
         lineView.componentPosition = JXCategoryComponentPosition_Bottom;
         _registerTypeCategoryView.indicators = @[lineView];
@@ -182,7 +182,7 @@
         [_signUpBtn setTitle:LanguageToolMatch(@"注册并登录") forState:UIControlStateNormal];
         [_signUpBtn setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
         _signUpBtn.titleLabel.font = FONTM(14);
-        _signUpBtn.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+        _signUpBtn.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
         _signUpBtn.layer.cornerRadius = 27;
         _signUpBtn.layer.masksToBounds = YES;
     }
@@ -320,10 +320,10 @@
         @strongify(self)
         if (themeIndex == 0) {
             self.registerTypeCategoryView.titleColor = COLOR_00;
-            self.registerTypeCategoryView.titleSelectedColor = COLOR_EB5C5C;
+            self.registerTypeCategoryView.titleSelectedColor = COLOR_1B2E60;
         }else {
             self.registerTypeCategoryView.titleColor = COLOR_00_DARK;
-            self.registerTypeCategoryView.titleSelectedColor = COLOR_EB5C5C_DARK;
+            self.registerTypeCategoryView.titleSelectedColor = COLOR_1B2E60_DARK;
         }
         // 不刷新颜色不生效
         [self.registerTypeCategoryView reloadDataWithoutListContainer];
@@ -338,7 +338,7 @@
         
         BOOL isDarkMode = (themeIndex != 0);
         UIColor *fullColor = isDarkMode ? COLOR_99_DARK : COLOR_99;
-        UIColor *actionColor = isDarkMode ? COLOR_EB5C5C_DARK : COLOR_EB5C5C;
+        UIColor *actionColor = isDarkMode ? COLOR_1B2E60_DARK : COLOR_1B2E60;
         
         NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:fullText];
         [attrStr addAttribute:NSForegroundColorAttributeName
@@ -380,8 +380,8 @@
             NSString *privateText = LanguageToolMatch(@"《隐私政策》");
             NSString *contentText = [NSString stringWithFormat:LanguageToolMatch(@"请阅读并同意%@和%@"), serveText, privateText];
             NSMutableAttributedString *attText = [[NSMutableAttributedString alloc] initWithString:contentText];
-            [attText addAttribute:NSForegroundColorAttributeName value:COLOR_EB5C5C range:[contentText rangeOfString:serveText]];
-            [attText addAttribute:NSForegroundColorAttributeName value:COLOR_EB5C5C range:[contentText rangeOfString:privateText]];
+            [attText addAttribute:NSForegroundColorAttributeName value:COLOR_1B2E60 range:[contentText rangeOfString:serveText]];
+            [attText addAttribute:NSForegroundColorAttributeName value:COLOR_1B2E60 range:[contentText rangeOfString:privateText]];
             
             // 保存需要使用的字符串，避免在异步回调中访问可能已释放的对象
             NSString *agreeText = LanguageToolMatch(@"请阅读并同意");

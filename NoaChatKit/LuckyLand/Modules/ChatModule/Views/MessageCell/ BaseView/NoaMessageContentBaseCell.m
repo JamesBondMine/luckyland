@@ -124,8 +124,8 @@
     }];
     
     //已读状态(已读人数进度)
-    _readedView = [[NoaMsgReadProgressView alloc] initWithRadius:16 fillColor:COLOR_EB5C5C];
-    [_readedView configBorderWithColor:COLOR_EB5C5C borderWidth:1.5];
+    _readedView = [[NoaMsgReadProgressView alloc] initWithRadius:16 fillColor:COLOR_1B2E60];
+    [_readedView configBorderWithColor:COLOR_1B2E60 borderWidth:1.5];
     _readedView.progress = 0;
     _readedView.frame = CGRectMake(0, 0, DWScale(16), DWScale(16));
     _readedView.hidden = YES;
@@ -1140,7 +1140,7 @@
         _groupRoleView.backgroundColor = COLOR_FF9327;
     } else if (role == 1) {
         roleContent =  LanguageToolMatch(@"管理员");
-        _groupRoleView.backgroundColor = COLOR_EB5C5C;
+        _groupRoleView.backgroundColor = COLOR_1B2E60;
     } else {
         roleContent = @"";
         _groupRoleView.backgroundColor = COLOR_FF9C9C;

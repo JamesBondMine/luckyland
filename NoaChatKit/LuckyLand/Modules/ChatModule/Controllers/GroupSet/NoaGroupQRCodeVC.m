@@ -118,7 +118,7 @@
     
     //分享二维码
     UIButton * shanerQRBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [shanerQRBtn setTkThemebackgroundColors:@[COLOR_EB5C5C, COLOR_EB5C5C_DARK]];
+    [shanerQRBtn setTkThemebackgroundColors:@[COLOR_1B2E60, COLOR_1B2E60_DARK]];
     shanerQRBtn.layer.cornerRadius = DWScale(48/2);
     shanerQRBtn.clipsToBounds = YES;
     [shanerQRBtn setImage:ImgNamed(@"g_share_logo") forState:UIControlStateNormal];

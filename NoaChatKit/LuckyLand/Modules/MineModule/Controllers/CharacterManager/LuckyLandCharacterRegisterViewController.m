@@ -76,10 +76,10 @@
 - (void)checkRegisterBtnAvailable {
     if (self.userNameInput.textLength > 0 && self.passwordInput.textLength > 0 && self.confimPWDInput.textLength > 0) {
         self.registerBtn.enabled = YES;
-        self.registerBtn.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+        self.registerBtn.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
     } else {
         self.registerBtn.enabled = NO;
-        self.registerBtn.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.3], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.3]];
+        self.registerBtn.tkThemebackgroundColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.3], [COLOR_1B2E60_DARK colorWithAlphaComponent:0.3]];
     }
 }
 
@@ -217,7 +217,7 @@
         [_registerBtn setTitle:LanguageToolMatch(@"登录") forState:UIControlStateNormal];
         [_registerBtn setTitleColor:COLORWHITE forState:UIControlStateNormal];
         _registerBtn.enabled = NO;
-        _registerBtn.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.3], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.3]];
+        _registerBtn.tkThemebackgroundColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.3], [COLOR_1B2E60_DARK colorWithAlphaComponent:0.3]];
         [_registerBtn setTkThemeBackgroundImage:@[[UIImage ImageForColor:COLOR_4069B9],[UIImage ImageForColor:COLOR_4069B9_DARK]] forState:UIControlStateSelected];
         [_registerBtn setTkThemeBackgroundImage:@[[UIImage ImageForColor:COLOR_4069B9],[UIImage ImageForColor:COLOR_4069B9_DARK]] forState:UIControlStateHighlighted];
         [_registerBtn rounded:DWScale(14)];

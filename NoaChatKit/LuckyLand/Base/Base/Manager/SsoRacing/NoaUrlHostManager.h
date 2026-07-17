@@ -32,8 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
 //@property (nonatomic, copy)NSString *socketPort;    //socket端口号
 @property (nonatomic, assign)BOOL isReloadRacing;   //是否为竞速失败点击了失败页的重新加载
 @property (nonatomic, strong)NoaSystemSettingModel *appSysSetModel;   //项目基本配置信息
-@property (nonatomic, assign)ZReacingType racingType;   //当前是采用那种方式竞速(幸运数字或者 ip/域名直连)
-@property (nonatomic, copy)NSString *ossInfoAppKey;    //幸运数字AppKey
+@property (nonatomic, assign)ZReacingType racingType;   //当前是采用那种方式竞速(企业号或者 ip/域名直连)
+@property (nonatomic, copy)NSString *ossInfoAppKey;    //企业号AppKey
 @property (nonatomic, strong, nullable)NSData * cerData;
 @property (nonatomic, strong, nullable)NSData * p12Data;
 @property (nonatomic, copy)NSString * p12pwd;

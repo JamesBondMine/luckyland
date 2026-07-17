@@ -409,10 +409,10 @@
             return LanguageToolMatch(@"普通账号");
             break;
         case 2:
-            return LanguageToolMatch(@"幸运岛账号");
+            return LanguageToolMatch(@"企业号账号");
             break;
         case 3:
-            return LanguageToolMatch(@"幸运岛子账号");
+            return LanguageToolMatch(@"企业号子账号");
             break;
             
         default:

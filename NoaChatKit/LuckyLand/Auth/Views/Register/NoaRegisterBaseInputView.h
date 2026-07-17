@@ -23,7 +23,7 @@ typedef void(^GetVerCodeActionBlock)(void);
 /// 设置确认密码输入框约束（子类可重写以自定义）
 - (void)setupConfirmPasswordTextFieldConstraints;
 
-/// 设置幸运数字输入框约束（子类可重写以自定义）
+/// 设置企业号输入框约束（子类可重写以自定义）
 - (void)setupInviteTextFieldConstraints;
 
 /// 设置UI（子类需要调用 super 并实现自己的第一个输入框）
@@ -47,7 +47,7 @@ typedef void(^GetVerCodeActionBlock)(void);
 /// 获取验证码输入框文字
 - (NSString *)getCodeText;
 
-/// 获取幸运数字输入框文字
+/// 获取企业号输入框文字
 - (NSString *)getInviteText;
 
 /// 子类需要实现：获取第一个输入框的文本（账号/邮箱/手机号）
@@ -62,7 +62,7 @@ typedef void(^GetVerCodeActionBlock)(void);
 /// 获取验证码点击事件
 @property (nonatomic, copy) GetVerCodeActionBlock getVerCodeActionBlock;
 
-/// 是否支持幸运数字
+/// 是否支持企业号
 @property (nonatomic, assign) BOOL isSupportInviteCode;
 
 /// 是否支持验证码

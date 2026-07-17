@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * 初始化方法
- * @param appId 应用ID/幸运数字
+ * @param appId 应用ID/企业号
  * @param appType 应用类型 (0:公共打包 1:独立打包)
  * @param bucket 目标服务器信息 (NoaUrlHostModel)
  * @param useProxy 是否使用代理

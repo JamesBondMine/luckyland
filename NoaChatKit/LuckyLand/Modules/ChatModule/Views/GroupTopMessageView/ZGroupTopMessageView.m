@@ -76,7 +76,7 @@
     
     // 单条数据时的竖条
     self.singleIndicatorBar = [[UIView alloc] init];
-    self.singleIndicatorBar.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+    self.singleIndicatorBar.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
     self.singleIndicatorBar.layer.cornerRadius = DWScale(2);
     self.singleIndicatorBar.hidden = YES;
     [self.leftIndicatorView addSubview:self.singleIndicatorBar];
@@ -87,7 +87,7 @@
     // 置顶消息标签
     self.topLabel = [[UILabel alloc] init];
     self.topLabel.text = LanguageToolMatch(@"置顶消息");
-    self.topLabel.tkThemetextColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+    self.topLabel.tkThemetextColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
     self.topLabel.font = FONTN(12);
     [self.containerView addSubview:self.topLabel];
     [self.topLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -222,7 +222,7 @@
     UIView *previousBar = nil;
     for (NSInteger i = 0; i < displayCount; i++) {
         UIView *bar = [[UIView alloc] init];
-        bar.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.3], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.3]];
+        bar.tkThemebackgroundColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.3], [COLOR_1B2E60_DARK colorWithAlphaComponent:0.3]];
         bar.layer.cornerRadius = DWScale(2);
         [self.barsContainer addSubview:bar];
         [self.indicatorBars addObject:bar];
@@ -681,10 +681,10 @@
         UIView *bar = self.indicatorBars[i];
         if (i == barIndex) {
             // 当前索引对应的竖条：高亮
-            bar.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+            bar.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
         } else {
             // 其他竖条：半透明
-            bar.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.3], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.3]];
+            bar.tkThemebackgroundColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.3], [COLOR_1B2E60_DARK colorWithAlphaComponent:0.3]];
         }
     }
 }

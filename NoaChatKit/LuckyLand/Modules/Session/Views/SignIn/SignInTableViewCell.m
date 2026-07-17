@@ -63,13 +63,13 @@
     }
     
     UIView * signWarnTopView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DScreenWidth - DWScale(47) - 16 -25, DWScale(32))];
-    signWarnTopView.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.12], COLOR_EB5C5C];
+    signWarnTopView.tkThemebackgroundColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.12], COLOR_1B2E60];
     signWarnTopView.clipsToBounds = YES;
     [signContentView addSubview:signWarnTopView];
     
     UILabel * signWarnTitleLabel = [[UILabel alloc] init];
     signWarnTitleLabel.text = LanguageToolMatch(@"签到提醒");
-    signWarnTitleLabel.tkThemetextColors = @[COLOR_EB5C5C, COLORWHITE];
+    signWarnTitleLabel.tkThemetextColors = @[COLOR_1B2E60, COLORWHITE];
     signWarnTitleLabel.font = FONTR(16);
     [signWarnTopView addSubview:signWarnTitleLabel];
     [signWarnTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -105,7 +105,7 @@
     UIButton * goSignInButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [goSignInButton setTitle:LanguageToolMatch(@"去签到") forState:UIControlStateNormal];
     goSignInButton.titleLabel.font = FONTR(16);
-    [goSignInButton setTkThemeTitleColor:@[COLOR_EB5C5C, COLOR_EB5C5C] forState:UIControlStateNormal];
+    [goSignInButton setTkThemeTitleColor:@[COLOR_1B2E60, COLOR_1B2E60] forState:UIControlStateNormal];
     [signContentView addSubview:goSignInButton];
     [goSignInButton addTarget:self action:@selector(goSignAction) forControlEvents:UIControlEventTouchUpInside];
     [goSignInButton mas_makeConstraints:^(MASConstraintMaker *make) {

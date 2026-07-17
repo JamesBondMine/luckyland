@@ -69,7 +69,7 @@
     
     _lblCallTip = [UILabel new];
     _lblCallTip.font = FONTR(12);
-    _lblCallTip.textColor = COLOR_EB5C5C;
+    _lblCallTip.textColor = COLOR_1B2E60;
     _lblCallTip.preferredMaxLayoutWidth = DWScale(90);
     [_viewContent addSubview:_lblCallTip];
     [_lblCallTip mas_makeConstraints:^(MASConstraintMaker *make) {

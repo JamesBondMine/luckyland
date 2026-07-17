@@ -19,7 +19,7 @@
 @property (nonatomic, strong) UILabel *lblTeamName;//团队名称
 @property (nonatomic, strong) UILabel *lblTeamGroupNum;//团队名称
 @property (nonatomic, strong) UILabel *lblTotalMember;//当前团队总人数
-@property (nonatomic, strong) UILabel *lblInviteCode;//当前团队幸运数字
+@property (nonatomic, strong) UILabel *lblInviteCode;//当前团队企业号
 @property (nonatomic, strong) UILabel *lblToday;//今日邀请
 @property (nonatomic, strong) UILabel *lblYesterday;//昨日邀请
 @property (nonatomic, strong) UILabel *lblMonth;//本月邀请
@@ -202,7 +202,7 @@
     UILabel *lblInviteCodeTip = [UILabel new];
     lblInviteCodeTip.font = FONTR(12);
     lblInviteCodeTip.tkThemetextColors = @[COLOR_99, COLOR_99_DARK];
-    lblInviteCodeTip.text = LanguageToolMatch(@"幸运数字");
+    lblInviteCodeTip.text = LanguageToolMatch(@"企业号");
     [viewTeamCenter addSubview:lblInviteCodeTip];
     [lblInviteCodeTip mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_lblTotalMember);

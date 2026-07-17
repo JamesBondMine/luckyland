@@ -67,9 +67,9 @@
     
     _btnDeleteAll = [UIButton buttonWithType:UIButtonTypeCustom];
     [_btnDeleteAll setTitle:LanguageToolMatch(@"清空") forState:UIControlStateNormal];
-    [_btnDeleteAll setTkThemeTitleColor:@[COLOR_EB5C5C, COLOR_EB5C5C_DARK] forState:UIControlStateNormal];
+    [_btnDeleteAll setTkThemeTitleColor:@[COLOR_1B2E60, COLOR_1B2E60_DARK] forState:UIControlStateNormal];
     [_btnDeleteAll setTitle:LanguageToolMatch(@"清空全部") forState:UIControlStateSelected];
-    [_btnDeleteAll setTkThemeTitleColor:@[COLOR_EB5C5C, COLOR_EB5C5C_DARK] forState:UIControlStateSelected];
+    [_btnDeleteAll setTkThemeTitleColor:@[COLOR_1B2E60, COLOR_1B2E60_DARK] forState:UIControlStateSelected];
     [_btnDeleteAll addTarget:self action:@selector(btnDeleteAllClick) forControlEvents:UIControlEventTouchUpInside];
     _btnDeleteAll.titleLabel.font = FONTR(14);
     [viewHeader addSubview:_btnDeleteAll];

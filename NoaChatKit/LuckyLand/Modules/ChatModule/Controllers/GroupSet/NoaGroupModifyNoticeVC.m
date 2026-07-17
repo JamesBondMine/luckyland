@@ -147,7 +147,7 @@
         self.translateButton = [[UIButton alloc] init];
         [self.translateButton setTitle:LanguageToolMatch(@"提交翻译") forState:UIControlStateNormal];
         [self.translateButton setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
-        [self.translateButton setTkThemebackgroundColors:@[COLOR_EB5C5C, COLOR_EB5C5C]];
+        [self.translateButton setTkThemebackgroundColors:@[COLOR_1B2E60, COLOR_1B2E60]];
         self.translateButton.titleLabel.font = FONTN(14);
         [self.translateButton rounded:DWScale(8)];
         [self.translateButton addTarget:self action:@selector(confirmTranslateNoticeAction) forControlEvents:UIControlEventTouchUpInside];
@@ -162,10 +162,10 @@
         //直接发布
         self.releaseButton = [[UIButton alloc] init];
         [self.releaseButton setTitle:LanguageToolMatch(@"发布原文") forState:UIControlStateNormal];
-        [self.releaseButton setTkThemeTitleColor:@[COLOR_EB5C5C, COLOR_EB5C5C] forState:UIControlStateNormal];
+        [self.releaseButton setTkThemeTitleColor:@[COLOR_1B2E60, COLOR_1B2E60] forState:UIControlStateNormal];
         [self.releaseButton setTkThemebackgroundColors:@[COLORWHITE, COLOR_11]];
         self.releaseButton.titleLabel.font = FONTN(14);
-        [self.releaseButton rounded:DWScale(8) width:0.8 color:COLOR_EB5C5C];
+        [self.releaseButton rounded:DWScale(8) width:0.8 color:COLOR_1B2E60];
         [self.releaseButton addTarget:self action:@selector(releaseOriginalNoticeAction) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:self.releaseButton];
         [self.releaseButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -581,7 +581,7 @@
     translateAlertView.lblContent.textAlignment = NSTextAlignmentCenter;
     [translateAlertView.btnSure setTitle:LanguageToolMatch(@"绑定账户") forState:UIControlStateNormal];
     [translateAlertView.btnSure setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
-    translateAlertView.btnSure.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C];
+    translateAlertView.btnSure.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60];
     [translateAlertView.btnCancel setTitle:LanguageToolMatch(@"取消") forState:UIControlStateNormal];
     [translateAlertView.btnCancel setTkThemeTitleColor:@[COLOR_66, COLOR_66_DARK] forState:UIControlStateNormal];
     translateAlertView.btnCancel.tkThemebackgroundColors = @[COLOR_F6F6F6, COLOR_F6F6F6_DARK];

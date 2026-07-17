@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 创建团队
 @property (nonatomic, strong) RACCommand *createTeamCommand;
 
-/// 请求随机幸运数字
+/// 请求随机企业号
 @property (nonatomic, strong) RACCommand *requestRandomCodeCommand;
 
 /// 当前的随机验证码
@@ -26,8 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// 展示code验证码异常文案
 @property (nonatomic, strong) RACSubject *showCodeErrorSubject;
 
-/// 判断幸运数字是否符合格式(4位长度，纯数字)
-/// - Parameter code: 幸运数字
+/// 判断企业号是否符合格式(4位长度，纯数字)
+/// - Parameter code: 企业号
 - (BOOL)validateInviteCode:(NSString *)code;
 
 @end

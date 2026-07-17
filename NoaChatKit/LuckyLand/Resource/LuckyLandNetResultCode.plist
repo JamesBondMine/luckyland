@@ -629,7 +629,7 @@
 	<key>920004</key>
 	<string>用户反馈 反馈人，反馈群，长度超过40</string>
 	<key>920005</key>
-	<string>用户反馈 所属幸运岛信息长度超过40</string>
+	<string>用户反馈 所属企业号信息长度超过40</string>
 	<key>920006</key>
 	<string>用户反馈分类错误 0:用户投诉，1:群投诉</string>
 	<key>940001</key>
@@ -673,7 +673,7 @@
 	<key>42013</key>
 	<string>正在创建群聊请勿重复操作</string>
 	<key>43003</key>
-	<string>幸运数字生成超过10次，请优化业务</string>
+	<string>企业号生成超过10次，请优化业务</string>
 	<key>44016</key>
 	<string>提交成功，系统稍后处理</string>
 	<key>44017</key>

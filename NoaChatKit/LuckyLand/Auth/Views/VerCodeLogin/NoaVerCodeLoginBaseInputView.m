@@ -39,14 +39,14 @@
 - (UITextField *)codeTF {
     if (!_codeTF) {
         _codeTF = [[UITextField alloc] initWithFrame:CGRectZero];
-        _codeTF.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.05]];
+        _codeTF.tkThemebackgroundColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.05], [COLOR_1B2E60_DARK colorWithAlphaComponent:0.05]];
         _codeTF.tkThemetextColors = @[COLOR_11, COLOR_11_DARK];
         // 设置圆角
         _codeTF.layer.cornerRadius = 16;
         _codeTF.layer.masksToBounds = YES;
         // 设置边框
         _codeTF.layer.borderWidth = 1.0;
-        _codeTF.layer.tkThemeborderColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLORWHITE colorWithAlphaComponent:0.4]];
+        _codeTF.layer.tkThemeborderColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.05], [COLORWHITE colorWithAlphaComponent:0.4]];
         // 设置左边文字距离左边框间隔
         _codeTF.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 12, 0)];
         _codeTF.leftViewMode = UITextFieldViewModeAlways;
@@ -67,7 +67,7 @@
     if (!_sendCodeBtn) {
         _sendCodeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_sendCodeBtn setTitle:LanguageToolMatch(@"获取验证码") forState:UIControlStateNormal];
-        [_sendCodeBtn setTkThemeTitleColor:@[COLOR_EB5C5C, COLOR_EB5C5C_DARK] forState:UIControlStateNormal];
+        [_sendCodeBtn setTkThemeTitleColor:@[COLOR_1B2E60, COLOR_1B2E60_DARK] forState:UIControlStateNormal];
         _sendCodeBtn.tkThemebackgroundColors = @[COLOR_CLEAR, COLOR_CLEAR];
         _sendCodeBtn.titleLabel.font = FONTM(14);
     }
@@ -313,7 +313,7 @@
         } Finish:^{
             @strongify(self)
             self.sendCodeBtn.enabled = YES;
-            self.sendCodeBtn.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+            self.sendCodeBtn.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
             
             NSString *title = LanguageToolMatch(@"获取验证码");
             [self.sendCodeBtn setTitle:title forState:UIControlStateNormal];

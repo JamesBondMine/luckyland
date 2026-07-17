@@ -104,9 +104,9 @@
         
         self.tkThemeChangeBlock = ^(id  _Nullable itself, NSUInteger themeIndex) {
             if (themeIndex == 0) {
-                [COLOR_EB5C5C set];
+                [COLOR_1B2E60 set];
             }else {
-                [COLOR_EB5C5C_DARK set];
+                [COLOR_1B2E60_DARK set];
             }
         };
         

@@ -133,7 +133,7 @@
         if (![NSString isNil:searchStr]) {
             NSRange rangeName = [model.showName rangeOfString:searchStr options:NSCaseInsensitiveSearch];//不区分大小写
             [attStrName yy_setFont:FONTR(16) range:rangeName];
-            [attStrName yy_setColor:COLOR_EB5C5C range:rangeName];
+            [attStrName yy_setColor:COLOR_1B2E60 range:rangeName];
         }
         _lblName.attributedText = attStrName;
     }

@@ -26,7 +26,7 @@
 
 - (void)setupUI {
     self.contentView.userInteractionEnabled = YES;
-    self.contentView.tkThemebackgroundColors = @[COLOR_F8F9FB, COLORWHITE_DARK];
+    self.contentView.tkThemebackgroundColors = @[UIColor.whiteColor, UIColor.whiteColor];
     
     self.contentLabel = [[UILabel alloc] init];
     self.contentLabel.tkThemetextColors = @[COLOR_11, COLOR_11_DARK];

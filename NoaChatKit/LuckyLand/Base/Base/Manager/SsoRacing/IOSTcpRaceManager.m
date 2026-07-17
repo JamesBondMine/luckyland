@@ -161,7 +161,7 @@ static const NSTimeInterval kSocketTimeout = 2.5; // 2.5秒超时，保证每次
                 return;
             }
             
-            // 7. 解密幸运数字信息
+            // 7. 解密企业号信息
             @try {
 
                 NSData *responseData = [AesEncryptUtils decryptBytes:serverResponse.responseBody secret:[self.appId MD5Encryption]];

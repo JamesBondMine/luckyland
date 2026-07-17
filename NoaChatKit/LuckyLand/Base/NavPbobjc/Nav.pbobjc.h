@@ -175,7 +175,7 @@ typedef GPB_ENUM(Auth_FieldNumber) {
 
 GPB_FINAL @interface Auth : GPBMessage
 
-/** 幸运数字 */
+/** 企业号 */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *appkey;
 
 /** 13位UTC时间戳 */
@@ -205,7 +205,7 @@ typedef GPB_ENUM(AuthAck_FieldNumber) {
 
 GPB_FINAL @interface AuthAck : GPBMessage
 
-/** 状态码 200 成功 401 幸运数字不存在 402 解密失败 403 IP被封禁 404 设备被封禁 501 服务端异常 */
+/** 状态码 200 成功 401 企业号不存在 402 解密失败 403 IP被封禁 404 设备被封禁 501 服务端异常 */
 @property(nonatomic, readwrite) int64_t code;
 
 /** 消息内容 */
@@ -254,7 +254,7 @@ typedef GPB_ENUM(IMServerListRequest_FieldNumber) {
  **/
 GPB_FINAL @interface IMServerListRequest : GPBMessage
 
-/** 【必填】幸运数字 */
+/** 【必填】企业号 */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *appId;
 
 /** app类型 0:公共打包 1:独立打包 */

@@ -15,7 +15,7 @@
 @property (nonatomic, strong) JXCategoryTitleView *viewCategory;
 @property (nonatomic, strong) NoaScrollView *scrollView;
 @property (nonatomic, strong) NoaComplainFromVC *systemComplainVC;    //系统投诉
-@property (nonatomic, strong) NoaComplainFromVC *domainComplainVC;    //幸运数字、域名投诉
+@property (nonatomic, strong) NoaComplainFromVC *domainComplainVC;    //企业号、域名投诉
 @property (nonatomic, assign) NSInteger currentSelectedIndex;//当前选中下标
 
 @end
@@ -40,7 +40,7 @@
     
     _viewCategory = [[JXCategoryTitleView alloc] initWithFrame:CGRectMake(0, DNavStatusBarH + DWScale(10) + DWScale(20) + DWScale(10) , DScreenWidth, DWScale(45))];
     _viewCategory.delegate = self;
-    _viewCategory.titles = @[LanguageToolMatch(@"系统投诉"),[NSString stringWithFormat:@"%@/%@",LanguageToolMatch(@"幸运数字"),LanguageToolMatch(@"IP/域名")]];
+    _viewCategory.titles = @[LanguageToolMatch(@"系统投诉"),[NSString stringWithFormat:@"%@/%@",LanguageToolMatch(@"企业号"),LanguageToolMatch(@"IP/域名")]];
     _viewCategory.titleColorGradientEnabled = YES;
     _viewCategory.titleLabelZoomScale = YES;
     _viewCategory.titleFont = FONTB(16);
@@ -52,14 +52,14 @@
             {
                 //暗黑
                 weakSelf.viewCategory.titleColor = COLOR_66_DARK;
-                weakSelf.viewCategory.titleSelectedColor = COLOR_EB5C5C;
+                weakSelf.viewCategory.titleSelectedColor = COLOR_1B2E60;
             }
                 break;
                 
             default:
             {
                 weakSelf.viewCategory.titleColor = COLOR_66;
-                weakSelf.viewCategory.titleSelectedColor = COLOR_EB5C5C;
+                weakSelf.viewCategory.titleSelectedColor = COLOR_1B2E60;
             }
                 break;
         }
@@ -67,7 +67,7 @@
     
     //指示器
     JXCategoryIndicatorLineView *lineView = [[JXCategoryIndicatorLineView alloc] init];
-    lineView.indicatorColor = COLOR_EB5C5C;
+    lineView.indicatorColor = COLOR_1B2E60;
     lineView.componentPosition = JXCategoryComponentPosition_Bottom;
     lineView.verticalMargin = 0;
     _viewCategory.indicators = @[lineView];
@@ -117,7 +117,7 @@
             //清空系统投诉界面内容
             //[_systemComplainVC clearUIContent];
         }else {
-            //清空幸运数字界面内容
+            //清空企业号界面内容
             //[_domainComplainVC clearUIContent];
         }
     }

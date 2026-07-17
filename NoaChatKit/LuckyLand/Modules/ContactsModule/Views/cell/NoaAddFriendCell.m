@@ -79,7 +79,7 @@
     _btnAdd.titleLabel.font = FONTR(14);
     _btnAdd.layer.cornerRadius = DWScale(12);
     _btnAdd.layer.masksToBounds = YES;
-    [_btnAdd setBackgroundColor:COLOR_EB5C5C];
+    [_btnAdd setBackgroundColor:COLOR_1B2E60];
     [_btnAdd setTkThemeBackgroundImage:@[[UIImage ImageForColor:COLOR_4069B9],[UIImage ImageForColor:COLOR_4069B9_DARK]] forState:UIControlStateHighlighted];
     [_btnAdd addTarget:self action:@selector(btnAddClick) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:_btnAdd];
@@ -151,7 +151,7 @@
         }else {
             //不是好友
             [_btnAdd setTitle:LanguageToolMatch(@"添加好友") forState:UIControlStateNormal];
-            [_btnAdd setTkThemebackgroundColors:@[COLOR_EB5C5C,COLOR_EB5C5C]];
+            [_btnAdd setTkThemebackgroundColors:@[COLOR_1B2E60,COLOR_1B2E60]];
             [_btnAdd setTkThemeBackgroundImage:@[[UIImage ImageForColor:COLOR_4069B9],[UIImage ImageForColor:COLOR_4069B9_DARK]] forState:UIControlStateHighlighted];
             _btnAdd.userInteractionEnabled = YES;
         }

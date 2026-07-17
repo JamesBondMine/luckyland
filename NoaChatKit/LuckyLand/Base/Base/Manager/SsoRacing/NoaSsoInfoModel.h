@@ -35,23 +35,23 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - 保存SSO信息
 - (void)saveSSOInfo;
 
-#pragma mark - 保存对应幸运数字SSO信息
+#pragma mark - 保存对应企业号SSO信息
 - (void)saveSSOInfoWithLiceseId:(NSString *)liceseId;
 
 #pragma mark - 获取SSO信息整体model
 + (NoaSsoInfoModel *)getSSOInfo;
 
-#pragma mark - 获取对应幸运数字SSO信息整体model
+#pragma mark - 获取对应企业号SSO信息整体model
 + (NoaSsoInfoModel *)getSSOInfoWithLiceseId:(NSString *)liceseId;
 
-#pragma mark - 获取SSO信息里的幸运数字或者直连的ip/域名+端口号
+#pragma mark - 获取SSO信息里的企业号或者直连的ip/域名+端口号
 + (NSString *)getSSOInfoDetailInfo;
 
 #pragma mark - 清除SSO信息
 + (void)clearSSOInfo;
 
 
-#pragma mark - 清除对应幸运数字SSO信息
+#pragma mark - 清除对应企业号SSO信息
 + (void)clearSSOInfoWithLiceseId:(NSString *)liceseId;
 
 @end

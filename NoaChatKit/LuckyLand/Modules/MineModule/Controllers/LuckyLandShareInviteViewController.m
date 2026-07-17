@@ -131,7 +131,7 @@
         make.height.mas_equalTo(DWScale(16));
     }];
 
-    //幸运数字
+    //企业号
     UIView *inviteCodeBgView = [[UIView alloc] init];
     inviteCodeBgView.tkThemebackgroundColors = @[COLORWHITE, COLORWHITE_DARK];
     [inviteCodeBgView rounded:DWScale(12)];
@@ -144,9 +144,9 @@
         make.height.mas_equalTo(DWScale(40));
     }];
     
-    // 幸运数字
+    // 企业号
     UILabel *inviteCodeTitleLbl = [[UILabel alloc] init];
-    inviteCodeTitleLbl.text = LanguageToolMatch(@"幸运数字");
+    inviteCodeTitleLbl.text = LanguageToolMatch(@"企业号");
     inviteCodeTitleLbl.tkThemetextColors = @[COLOR_11, COLOR_11_DARK];
     inviteCodeTitleLbl.font = FONTN(14);
     inviteCodeTitleLbl.textAlignment = NSTextAlignmentLeft;
@@ -158,7 +158,7 @@
         make.height.mas_equalTo(DWScale(16));
     }];
     
-    // 幸运数字内容:XXXXXX
+    // 企业号内容:XXXXXX
     _inviteCodeLbl = [[UILabel alloc] init];
     _inviteCodeLbl.text = @"--";
     _inviteCodeLbl.tkThemetextColors = @[COLOR_11, COLOR_11_DARK];
@@ -277,7 +277,7 @@
             NSString *registerHtml = (NSString *)[dataDict objectForKeySafe:@"registerHtml"];
             //已经邀请人数
             weakSelf.invitedNumLbl.text = [NSString stringWithFormat:LanguageToolMatch(@"%d位用户"), friendNum];
-            //幸运数字
+            //企业号
             weakSelf.inviteCodeLbl.text = invitationCode;
             //生成二维码
             UIImage *qrcodeImage = [UIImage getQRCodeImageWithString:[self handleShareQrcodeUrlWithBaseUrl:registerHtml] qrCodeColor:COLOR_00 inputCorrectionLevel:QRCodeInputCorrectionLevel_M];
@@ -295,7 +295,7 @@
     [super navBtnBackClicked];
 }
 
-//复制 幸运数字
+//复制 企业号
 - (void)inviteCodeTapClick {
     [HUD showMessage:LanguageToolMatch(@"复制成功")];
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
@@ -394,7 +394,7 @@
 
 //组装生成二维码的url
 /**
- 幸运数字示例：xxx/xxx.html?code=123&server=123456&type=1&userId=12313123123123123123213&userName=小小张
+ 企业号示例：xxx/xxx.html?code=123&server=123456&type=1&userId=12313123123123123123213&userName=小小张
  直连示例：xxx/xxx.html?code=3q24&server=http%3A%2F%2Fwww.baidu.com&type=2&userId=12313123123123123123213&userName=小小张 */
 - (NSString *)handleShareQrcodeUrlWithBaseUrl:(NSString *)baseUrl {
     if (![NSString isNil:baseUrl]) {
@@ -458,7 +458,7 @@
             
             //已经邀请人数
             weakSelf.invitedNumLbl.text = [NSString stringWithFormat:LanguageToolMatch(@"%d位用户"), friendNum];
-            //幸运数字
+            //企业号
             weakSelf.inviteCodeLbl.text = invitationCode;
             //生成二维码
             UIImage *qrcodeImage = [UIImage getQRCodeImageWithString:[self handleShareQrcodeUrlWithBaseUrl:registerHtml] qrCodeColor:COLOR_00 inputCorrectionLevel:QRCodeInputCorrectionLevel_M];
@@ -490,7 +490,7 @@
                 
                 //已经邀请人数
                 weakSelf.invitedNumLbl.text = [NSString stringWithFormat:LanguageToolMatch(@"%d位用户"), friendNum];
-                //幸运数字
+                //企业号
                 weakSelf.inviteCodeLbl.text = invitationCode;
                 //生成二维码
                 UIImage *qrcodeImage = [UIImage getQRCodeImageWithString:[self handleShareQrcodeUrlWithBaseUrl:registerHtml] qrCodeColor:COLOR_00 inputCorrectionLevel:QRCodeInputCorrectionLevel_M];

@@ -41,7 +41,7 @@
     
     _lblGroupNoticeTip = [UILabel new];
     _lblGroupNoticeTip.text = [NSString stringWithFormat:@"%@:",LanguageToolMatch(@"群公告")];
-    _lblGroupNoticeTip.tkThemetextColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+    _lblGroupNoticeTip.tkThemetextColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
     _lblGroupNoticeTip.font = FONTR(16);
     [_viewGroupNotice addSubview:_lblGroupNoticeTip];
     [_lblGroupNoticeTip mas_makeConstraints:^(MASConstraintMaker *make) {

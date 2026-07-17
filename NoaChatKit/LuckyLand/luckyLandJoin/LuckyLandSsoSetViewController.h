@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 是否是rootController
 @property (nonatomic, assign) BOOL isRoot;
 
-/// 是否是修改幸运数字
+/// 是否是修改企业号
 @property (nonatomic, assign) BOOL isReset;
 
 //设置了SSO信息

@@ -135,7 +135,7 @@
         [_signInBtn setTitle:LanguageToolMatch(@"登录") forState:UIControlStateNormal];
         [_signInBtn setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
         _signInBtn.titleLabel.font = FONTM(14);
-        _signInBtn.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+        _signInBtn.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
         _signInBtn.layer.cornerRadius = 16;
         _signInBtn.layer.masksToBounds = YES;
     }
@@ -268,8 +268,8 @@
             NSString *privateText = LanguageToolMatch(@"《隐私政策》");
             NSString *contentText = [NSString stringWithFormat:LanguageToolMatch(@"请阅读并同意%@和%@"), serveText, privateText];
             NSMutableAttributedString *attText = [[NSMutableAttributedString alloc] initWithString:contentText];
-            [attText addAttribute:NSForegroundColorAttributeName value:COLOR_EB5C5C range:[contentText rangeOfString:serveText]];
-            [attText addAttribute:NSForegroundColorAttributeName value:COLOR_EB5C5C range:[contentText rangeOfString:privateText]];
+            [attText addAttribute:NSForegroundColorAttributeName value:COLOR_1B2E60 range:[contentText rangeOfString:serveText]];
+            [attText addAttribute:NSForegroundColorAttributeName value:COLOR_1B2E60 range:[contentText rangeOfString:privateText]];
             
             // 保存需要使用的字符串，避免在异步回调中访问可能已释放的对象
             NSString *agreeText = LanguageToolMatch(@"请阅读并同意");

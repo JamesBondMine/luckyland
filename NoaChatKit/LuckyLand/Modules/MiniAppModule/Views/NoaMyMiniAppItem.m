@@ -59,7 +59,7 @@
         make.width.height.equalTo(self.imgViewContainer);
     }];
     
-    [self.imgViewContainer rounded:14 width:0.9 color:COLOR_EB5C5C];
+    [self.imgViewContainer rounded:14 width:0.9 color:COLOR_1B2E60];
     
     _btnDelete = [UIButton buttonWithType:UIButtonTypeCustom];
     _btnDelete.hidden = YES;
@@ -123,7 +123,7 @@
         _ivMiniApp.image = ImgNamed(@"mini_app_add_blue");
         _lblMiniApp.text = LanguageToolMatch(@"添加");
         _btnDelete.hidden = YES;
-        [self.imgViewContainer rounded:14 width:0.9 color:COLOR_EB5C5C];
+        [self.imgViewContainer rounded:14 width:0.9 color:COLOR_1B2E60];
         [self.ivMiniApp mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.center.equalTo(self.imgViewContainer);
             make.width.height.equalTo(@12);

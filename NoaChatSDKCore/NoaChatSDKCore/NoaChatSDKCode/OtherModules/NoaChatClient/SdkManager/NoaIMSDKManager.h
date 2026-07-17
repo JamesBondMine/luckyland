@@ -77,10 +77,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param userOptions 用户信息
 - (void)configSDKUserWith:(NoaIMSDKUserOptions *)userOptions;
 ///SDK SSO 相关信息 配置/更新
-/// @param ssoInfoStr 幸运数字 或者 IP/域名+端口
+/// @param ssoInfoStr 企业号 或者 IP/域名+端口
 - (void)configSDKSsoInfo:(NSString *)ssoInfoStr;
 
-/// @param liceseId 幸运数字
+/// @param liceseId 企业号
 - (void)configSDKLiceseId:(NSString *)liceseId;
 
 /// @param tenantCode 接口验签
@@ -126,7 +126,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 上次同步群组列表时间戳
 - (long long)lastSyncGroupTime;
 
-/// 获取当前幸运数字或者IP/域名+端口号下，储存 敏感词 的表名
+/// 获取当前企业号或者IP/域名+端口号下，储存 敏感词 的表名
 - (NSString *)getTableNameForSensitive;
 
 /// 多租户获取

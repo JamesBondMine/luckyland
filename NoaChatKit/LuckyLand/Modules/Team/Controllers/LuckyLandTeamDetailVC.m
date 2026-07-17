@@ -19,7 +19,7 @@
 @property (nonatomic, strong) UILabel *lblTeamName;//团队名称
 @property (nonatomic, strong) UILabel *lblTeamGroupNum;//团队名称
 @property (nonatomic, strong) UILabel *lblTotalMember;//当前团队总人数
-@property (nonatomic, strong) UILabel *lblInviteCode;//当前团队幸运数字
+@property (nonatomic, strong) UILabel *lblInviteCode;//当前团队企业号
 @property (nonatomic, strong) UILabel *lblToday;//今日邀请
 @property (nonatomic, strong) UILabel *lblYesterday;//昨日邀请
 @property (nonatomic, strong) UILabel *lblMonth;//本月邀请
@@ -55,7 +55,7 @@
     } else {
         self.navBtnRight.userInteractionEnabled = YES;
         [self.navBtnRight setTitle:LanguageToolMatch(@"设置默认") forState:UIControlStateNormal];
-        [self.navBtnRight setTkThemeTitleColor:@[COLOR_EB5C5C, COLOR_EB5C5C_DARK] forState:UIControlStateNormal];
+        [self.navBtnRight setTkThemeTitleColor:@[COLOR_1B2E60, COLOR_1B2E60_DARK] forState:UIControlStateNormal];
     }
 }
 
@@ -163,7 +163,7 @@
     [btnShare setTitle:LanguageToolMatch(@"分享") forState:UIControlStateNormal];
     [btnShare setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
     btnShare.titleLabel.font = FONTR(14);
-    [btnShare setTkThemebackgroundColors:@[COLOR_EB5C5C, COLOR_EB5C5C_DARK]];
+    [btnShare setTkThemebackgroundColors:@[COLOR_1B2E60, COLOR_1B2E60_DARK]];
     [btnShare addTarget:self action:@selector(btnShareClick) forControlEvents:UIControlEventTouchUpInside];
     [btnShare rounded: DWScale(9)];
     [viewTeamCenter addSubview:btnShare];
@@ -202,7 +202,7 @@
     UILabel *lblInviteCodeTip = [UILabel new];
     lblInviteCodeTip.font = FONTR(12);
     lblInviteCodeTip.tkThemetextColors = @[COLOR_99, COLOR_99_DARK];
-    lblInviteCodeTip.text = LanguageToolMatch(@"幸运数字");
+    lblInviteCodeTip.text = LanguageToolMatch(@"企业号");
     [viewTeamCenter addSubview:lblInviteCodeTip];
     [lblInviteCodeTip mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_lblTotalMember);
@@ -524,7 +524,7 @@
            alertView.lblContent.textColor = color;
         };
         [alertView.btnSure setTitle:LanguageToolMatch(@"确定") forState:UIControlStateNormal];
-        [alertView.btnSure setTkThemeTitleColor:@[COLOR_EB5C5C, COLOR_EB5C5C_DARK] forState:UIControlStateNormal];
+        [alertView.btnSure setTkThemeTitleColor:@[COLOR_1B2E60, COLOR_1B2E60_DARK] forState:UIControlStateNormal];
         [alertView.btnCancel setTkThemeTitleColor:@[COLOR_11, COLOR_11_DARK] forState:UIControlStateNormal];
         [alertView alertTipViewSHow];
         alertView.sureBtnBlock = ^{
@@ -574,7 +574,7 @@
             self.navBtnRight.userInteractionEnabled = NO;
         }else {
             [self.navBtnRight setTitle:LanguageToolMatch(@"设置默认") forState:UIControlStateNormal];
-            [self.navBtnRight setTkThemeTitleColor:@[COLOR_EB5C5C, COLOR_EB5C5C_DARK] forState:UIControlStateNormal];
+            [self.navBtnRight setTkThemeTitleColor:@[COLOR_1B2E60, COLOR_1B2E60_DARK] forState:UIControlStateNormal];
             self.navBtnRight.userInteractionEnabled = YES;
         }
     }

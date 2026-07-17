@@ -88,7 +88,7 @@
             make.centerY.equalTo(self.contentView);
             make.size.mas_equalTo(CGSizeMake(DWScale(12), DWScale(12)));
         }];
-    } else if ([_titleStr isEqualToString:LanguageToolMatch(@"幸运数字")]) {
+    } else if ([_titleStr isEqualToString:LanguageToolMatch(@"企业号")]) {
         _tipImgView.hidden = NO;
         _tipImgView.image = ImgNamed(@"team_copy");
         [_tipImgView mas_remakeConstraints:^(MASConstraintMaker *make) {

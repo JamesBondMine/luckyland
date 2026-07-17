@@ -45,7 +45,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = HEXCOLOR(@"EBEBEB");
+    self.view.backgroundColor = HEXCOLOR(@"FFFFFF");
     [self setupUI];
     [self setupNotification];
     [self refreshUserInfo];
@@ -83,12 +83,12 @@
 
     [self.headerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.leading.trailing.equalTo(self.contentView);
-        make.height.mas_equalTo(250 + safeTop);
+        make.height.mas_equalTo(400 + safeTop);
     }];
     [self.listContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.contentView).offset(150 + safeTop);
-        make.leading.equalTo(self.contentView).offset(12);
-        make.trailing.equalTo(self.contentView).offset(-12);
+        make.leading.equalTo(self.contentView);
+        make.trailing.equalTo(self.contentView);
         make.bottom.equalTo(self.contentView).offset(-tabBarInset);
     }];
 
@@ -111,7 +111,7 @@
     UILabel *titleLabel = [[UILabel alloc] init];
     titleLabel.text = LanguageToolMatch(@"我的");
     titleLabel.textColor = UIColor.whiteColor;
-    titleLabel.font = [UIFont systemFontOfSize:18 weight:UIFontWeightRegular];
+    titleLabel.font = [UIFont systemFontOfSize:18 weight:UIFontWeightBold];
     titleLabel.textAlignment = NSTextAlignmentCenter;
 
     [safeContent addSubview:signInButton];
@@ -142,7 +142,9 @@
 
     UIView *avatarContainer = [[UIView alloc] init];
     avatarContainer.backgroundColor = UIColor.whiteColor;
-    avatarContainer.layer.cornerRadius = 40;
+    avatarContainer.layer.cornerRadius = 27;
+    avatarContainer.layer.borderWidth = 2;
+    avatarContainer.layer.borderColor = UIColor.whiteColor.CGColor;
     avatarContainer.clipsToBounds = YES;
     avatarContainer.userInteractionEnabled = YES;
     [avatarContainer addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleAvatarTap)]];
@@ -182,12 +184,12 @@
     }];
 
     UIButton *editButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    editButton.backgroundColor = UIColor.whiteColor;
+    editButton.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7];
     editButton.layer.cornerRadius = 20;
     editButton.layer.maskedCorners = kCALayerMinXMinYCorner | kCALayerMinXMaxYCorner;
     editButton.clipsToBounds = YES;
     [editButton setTitle:LanguageToolMatch(@"编辑资料") forState:UIControlStateNormal];
-    [editButton setTitleColor:HEXCOLOR(@"333333") forState:UIControlStateNormal];
+    [editButton setTitleColor:COLOR_1B2E60 forState:UIControlStateNormal];
     editButton.titleLabel.font = [UIFont systemFontOfSize:15 weight:UIFontWeightRegular];
     [editButton addTarget:self action:@selector(handleEditProfileTap) forControlEvents:UIControlEventTouchUpInside];
 
@@ -199,7 +201,7 @@
     [avatarContainer mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(safeContent).offset(16);
         make.top.equalTo(signInButton.mas_bottom).offset(8);
-        make.width.height.mas_equalTo(80);
+        make.width.height.mas_equalTo(54);
     }];
     [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(avatarContainer.mas_trailing).offset(8);
@@ -265,7 +267,7 @@
 
 - (UIView *)dividerView {
     UIView *divider = [[UIView alloc] init];
-    divider.backgroundColor = HEXCOLOR(@"E5E5E5");
+    divider.backgroundColor = HEXCOLOR(@"F2F3F3");
     [divider mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(10);
     }];
@@ -536,7 +538,7 @@
         _scrollView = [[UIScrollView alloc] init];
         _scrollView.showsVerticalScrollIndicator = NO;
         _scrollView.alwaysBounceVertical = YES;
-        _scrollView.backgroundColor = HEXCOLOR(@"EBEBEB");
+        _scrollView.backgroundColor = [UIColor whiteColor];
     }
     return _scrollView;
 }
@@ -544,15 +546,18 @@
 - (UIView *)contentView {
     if (!_contentView) {
         _contentView = [[UIView alloc] init];
-        _contentView.backgroundColor = HEXCOLOR(@"EBEBEB");
+        _contentView.backgroundColor = [UIColor whiteColor];
     }
     return _contentView;
 }
 
 - (UIView *)headerView {
     if (!_headerView) {
-        _headerView = [[UIView alloc] init];
-        _headerView.backgroundColor = COLOR_EB5C5C;
+        UIImageView *bgImageView = [[UIImageView alloc] initWithImage:ImgNamed(@"shanhai_minebg")];
+        bgImageView.contentMode = UIViewContentModeScaleAspectFill;
+        bgImageView.clipsToBounds = YES;
+        bgImageView.userInteractionEnabled = YES;
+        _headerView = bgImageView;
     }
     return _headerView;
 }

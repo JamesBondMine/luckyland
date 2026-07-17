@@ -32,7 +32,7 @@ typedef NS_ENUM(NSUInteger, ZNetworkDetectionStatus) {
 /// 刷新UI
 @property (nonatomic, strong) RACSubject *tableViewReloadDataSubject;
 
-/// 当前幸运数字(未登录时可为空)
+/// 当前企业号(未登录时可为空)
 @property (nonatomic, copy, readonly, nullable) NSString *currentSsoNumber;
 
 /// 检测状态
@@ -42,7 +42,7 @@ typedef NS_ENUM(NSUInteger, ZNetworkDetectionStatus) {
 - (void)changeNetworkDetectionStatus:(ZNetworkDetectionStatus)status;
 
 /// 初始化方法
-/// - Parameter ssoNumber: 幸运数字
+/// - Parameter ssoNumber: 企业号
 - (instancetype)initWithCurrentSsoNumber:(NSString *)ssoNumber;
 
 // MARK: tableview 相关

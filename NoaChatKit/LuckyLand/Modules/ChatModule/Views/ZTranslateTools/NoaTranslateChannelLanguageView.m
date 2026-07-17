@@ -70,7 +70,7 @@
     CGFloat sureTitleWidth = btnSetRect.size.width > DWScale(120) ? DWScale(120) : btnSetRect.size.width;
     UIButton *sureBtn = [[UIButton alloc] init];
     [sureBtn setTitle:sureTitleStr forState:UIControlStateNormal];
-    [sureBtn setTkThemeTitleColor:@[COLOR_EB5C5C, COLOR_EB5C5C] forState:UIControlStateNormal];
+    [sureBtn setTkThemeTitleColor:@[COLOR_1B2E60, COLOR_1B2E60] forState:UIControlStateNormal];
     sureBtn.titleLabel.font = FONTN(16);
     [sureBtn addTarget:self action:@selector(sureBtnClick) forControlEvents:UIControlEventTouchUpInside];
     [_backView addSubview:sureBtn];

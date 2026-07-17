@@ -27,14 +27,14 @@ NS_ASSUME_NONNULL_BEGIN
 /// 设置系统语言点击事件（当前类实现通用，有差异子类重写实现）
 - (void)clickSystemLanguage;
 
-/// 设置幸运数字点击事件（当前类未实现，子类重写实现）
+/// 设置企业号点击事件（当前类未实现，子类重写实现）
 - (void)clickSetSsoAccount;
 
 /// 是否展示左上角网络设置、系统语言
 /// - Parameter isShow: 是否展示
 - (void)showNetworkDetectionAndSystemLanguageButton:(BOOL)isShow;
 
-/// 是否展示幸运数字设置按钮
+/// 是否展示企业号设置按钮
 /// - Parameter isShow: 首付展示
 - (void)showSsoAccountSetButton:(BOOL)isShow;
 

@@ -35,14 +35,14 @@
 - (UITextField *)emailTF {
     if (!_emailTF) {
         _emailTF = [[UITextField alloc] initWithFrame:CGRectZero];
-        _emailTF.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.05]];
+        _emailTF.tkThemebackgroundColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.05], [COLOR_1B2E60_DARK colorWithAlphaComponent:0.05]];
         _emailTF.tkThemetextColors = @[COLOR_11, COLOR_11_DARK];
         // 设置圆角
         _emailTF.layer.cornerRadius = 8;
         _emailTF.layer.masksToBounds = YES;
         // 设置边框
         _emailTF.layer.borderWidth = 1.0;
-        _emailTF.layer.tkThemeborderColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLORWHITE colorWithAlphaComponent:0.4]];
+        _emailTF.layer.tkThemeborderColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.05], [COLORWHITE colorWithAlphaComponent:0.4]];
         // 设置左边文字距离左边框间隔
         _emailTF.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 12, 0)];
         _emailTF.leftViewMode = UITextFieldViewModeAlways;

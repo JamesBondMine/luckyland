@@ -186,7 +186,7 @@
 //                    msgAlertView.btnSure.tkThemebackgroundColors = @[COLOR_F6F6F6, COLOR_F6F6F6_DARK];
                     [msgAlertView.btnCancel setTitle:LanguageToolMatch(@"取消") forState:UIControlStateNormal];
 //                    [msgAlertView.btnCancel setTkThemeTitleColor:@[COLORWHITE, COLORWHITE_DARK] forState:UIControlStateNormal];
-//                    msgAlertView.btnCancel.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+//                    msgAlertView.btnCancel.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
                     [msgAlertView alertShow];
                     msgAlertView.sureBtnBlock = ^(BOOL isCheckBox) {
                         [weakSelf cancelGroupManagerReq:model];

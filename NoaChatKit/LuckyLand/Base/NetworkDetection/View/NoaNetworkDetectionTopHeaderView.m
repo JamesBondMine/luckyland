@@ -65,10 +65,10 @@
 - (UILabel *)ssoLabel {
     if (!_ssoLabel) {
         _ssoLabel = [UILabel new];
-        _ssoLabel.tkThemetextColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+        _ssoLabel.tkThemetextColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
         _ssoLabel.font = FONTR(12);
         _ssoLabel.textAlignment = NSTextAlignmentCenter;
-        _ssoLabel.text = [NSString stringWithFormat:LanguageToolMatch(@"幸运数字：%@"), self.dataHandle.currentSsoNumber];
+        _ssoLabel.text = [NSString stringWithFormat:LanguageToolMatch(@"企业号：%@"), self.dataHandle.currentSsoNumber];
     }
     return _ssoLabel;
 }
@@ -230,7 +230,7 @@
     // 边框宽度
     borderLayer.lineWidth = 1;
     // 边框颜色
-    borderLayer.strokeColor = COLOR_EB5C5C.CGColor;
+    borderLayer.strokeColor = COLOR_1B2E60.CGColor;
     // 填充颜色
     borderLayer.fillColor = HEXACOLOR(@"4791FF", 0.2).CGColor;
     [view.layer addSublayer:borderLayer];
@@ -240,7 +240,7 @@
     borderLayer.tkThemeChangeBlock = ^(id  _Nullable itself, NSUInteger themeIndex) {
         @strongify(borderLayer)
         // 边框颜色
-        borderLayer.strokeColor = COLOR_EB5C5C.CGColor;
+        borderLayer.strokeColor = COLOR_1B2E60.CGColor;
         // 填充颜色
         borderLayer.fillColor = HEXACOLOR(@"4791FF", 0.2).CGColor;
     };
@@ -279,7 +279,7 @@
         // 高亮所有匹配到的数字（和可选的%）
         UIColor *highlightColor;
         if (status == ZNetworkDetecting) {
-            highlightColor = (themeIndex == 0) ? COLOR_EB5C5C : COLOR_EB5C5C_DARK;
+            highlightColor = (themeIndex == 0) ? COLOR_1B2E60 : COLOR_1B2E60_DARK;
         }else if (status == ZNetworkDetectFinish) {
             highlightColor = (themeIndex == 0) ? COLOR_F93A2F : COLOR_F93A2F_DARK;
         }else {

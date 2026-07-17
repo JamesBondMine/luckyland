@@ -49,7 +49,7 @@
     [_btnKnown setTitleColor:COLORWHITE forState:UIControlStateNormal];
     _btnKnown.layer.cornerRadius = DWScale(18);
     _btnKnown.layer.masksToBounds = YES;
-    [_btnKnown setBackgroundColor:COLOR_EB5C5C];
+    [_btnKnown setBackgroundColor:COLOR_1B2E60];
     [_btnKnown setTkThemeBackgroundImage:@[[UIImage ImageForColor:COLOR_4069B9],[UIImage ImageForColor:COLOR_4069B9_DARK]] forState:UIControlStateHighlighted];
     [_btnKnown addTarget:self action:@selector(knownTipViewDismiss) forControlEvents:UIControlEventTouchUpInside];
     [_viewBg addSubview:_btnKnown];

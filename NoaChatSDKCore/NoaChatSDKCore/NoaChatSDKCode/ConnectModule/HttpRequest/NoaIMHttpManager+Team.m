@@ -116,7 +116,7 @@
         [self netRequestWithType:LingIMHttpRequestTypePOST path:Team_DefaultShare_Url parameters:params onSuccess:onSuccess onFailure:onFailure];
     }
 }
-#pragma mark - 随机幸运数字
+#pragma mark - 随机企业号
 - (void)teamGetRandomCodeWith:(NSMutableDictionary * _Nullable)params onSuccess:(LingIMSuccessCallback)onSuccess onFailure:(LingIMFailureCallback)onFailure {
     if (kAllHttpRequestUseTcp) {
         [LingIMTcpRequestModel sendTcpRequestWithParam:params Url:Team_GetRandomCoe Method:LingRequestPost SuccessFunc:onSuccess FailureFunc:onFailure];

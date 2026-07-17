@@ -97,11 +97,11 @@
     [self.authLoginButton setTitle:LanguageToolMatch(@"登录") forState:UIControlStateNormal];
     [self.authLoginButton setTitleColor:COLORWHITE forState:UIControlStateNormal];
     self.authLoginButton.enabled = NO;
-    self.authLoginButton.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.3], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.3]];
+    self.authLoginButton.tkThemebackgroundColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.3], [COLOR_1B2E60_DARK colorWithAlphaComponent:0.3]];
     [self.authLoginButton setTkThemeBackgroundImage:@[[UIImage ImageForColor:COLOR_4069B9],[UIImage ImageForColor:COLOR_4069B9_DARK]] forState:UIControlStateSelected];
     [self.authLoginButton setTkThemeBackgroundImage:@[[UIImage ImageForColor:COLOR_4069B9],[UIImage ImageForColor:COLOR_4069B9_DARK]] forState:UIControlStateHighlighted];
     [self.authLoginButton rounded:DWScale(14)];
-    [self.authLoginButton shadow:COLOR_EB5C5C opacity:0.15 radius:5 offset:CGSizeMake(0, 0)];
+    [self.authLoginButton shadow:COLOR_1B2E60 opacity:0.15 radius:5 offset:CGSizeMake(0, 0)];
     self.authLoginButton.clipsToBounds = YES;
     [self.authLoginButton addTarget:self action:@selector(authLoginAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.authLoginButton];
@@ -123,10 +123,10 @@
 - (void)checkLoginBtnAvailable {
     if (self.safeCodeTextInput.textLength > 0) {
         self.authLoginButton.enabled = YES;
-        self.authLoginButton.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+        self.authLoginButton.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
     } else {
         self.authLoginButton.enabled = NO;
-        self.authLoginButton.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.3], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.3]];
+        self.authLoginButton.tkThemebackgroundColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.3], [COLOR_1B2E60_DARK colorWithAlphaComponent:0.3]];
     }
 }
 

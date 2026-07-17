@@ -36,9 +36,9 @@ static const CGFloat kMiniAppEntryTopMargin = 11.0;
 + (CGFloat)preferredFirstRowHeightIsHome:(BOOL)isHome {
     CGFloat height = DStatusBarH + DWScale(kFirstRowTopMargin);
     if (isHome) {
-        height += kFirstRowAvatarSize + 40;
+        height += kFirstRowAvatarSize;
     } else {
-        height += DWScale(kFirstRowTitleHeight) + 40;
+        height += DWScale(kFirstRowTitleHeight);
     }
     return height;
 }
@@ -77,64 +77,61 @@ static const CGFloat kMiniAppEntryTopMargin = 11.0;
 #pragma mark - 界面布局
 - (void)setupUI {
     UIView *titleAnchorView = nil;
-//    if (_isHome == YES) {
-        _ivHeader = [[NoaBaseImageView alloc] init];
-        _ivHeader.layer.cornerRadius = DWScale(34)/2;
-        _ivHeader.layer.masksToBounds = YES;
-        
-        // https://niumowangai.top/userfile/oss/luckyland_land-2.png
-        [_ivHeader sd_setImageWithURL:[NSURL URLWithString:@"https://niumowangai.top/userfile/oss/luckyland_land-2.png"] placeholderImage:DefaultAvatar options:SDWebImageAllowInvalidSSLCertificates];
+    if (_isHome == YES) {
+//        _ivHeader = [[NoaBaseImageView alloc] init];
+//        _ivHeader.layer.cornerRadius = DWScale(34)/2;
+//        _ivHeader.layer.masksToBounds = YES;
+//        
+//        // https://niumowangai.top/userfile/oss/luckyland_land-2.png
+//        [_ivHeader sd_setImageWithURL:[NSURL URLWithString:@"https://niumowangai.top/userfile/oss/luckyland_land-2.png"] placeholderImage:DefaultAvatar options:SDWebImageAllowInvalidSSLCertificates];
         
 //        [_ivHeader sd_setImageWithURL:[UserManager.userInfo.avatar getImageFullUrl] placeholderImage:DefaultAvatar options:SDWebImageAllowInvalidSSLCertificates];
-        [self addSubview:_ivHeader];
-        [_ivHeader mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.leading.equalTo(self).offset(DWScale(16));
-            make.top.equalTo(self).offset(DWScale(5) + DStatusBarH);
-            make.size.mas_equalTo(CGSizeMake(64, 64));
-        }];
-        _ivHeader.userInteractionEnabled = YES;
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onAvatarTapped)];
-        [_ivHeader addGestureRecognizer:tap];
+//        [self addSubview:_ivHeader];
+//        [_ivHeader mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.leading.equalTo(self).offset(DWScale(16));
+//            make.top.equalTo(self).offset(DWScale(5) + DStatusBarH);
+//            make.size.mas_equalTo(CGSizeMake(64, 64));
+//        }];
+//        _ivHeader.userInteractionEnabled = YES;
+//        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onAvatarTapped)];
+//        [_ivHeader addGestureRecognizer:tap];
         
         _lblUser = [UILabel new];
 //        _lblUser.text = UserManager.userInfo.nickname;
-    _lblUser.text = @"Lucky Land 9780021";
-        _lblUser.tkThemetextColors = @[COLOR_11, COLOR_11_DARK];
-        _lblUser.font = FONTB(16);
+    _lblUser.text = @"消息0021";
+        _lblUser.tkThemetextColors = @[COLOR_33, COLOR_11_DARK];
+        _lblUser.font = FONTB(18);
+        _lblUser.textAlignment = NSTextAlignmentCenter;
         [self addSubview:_lblUser];
-        [_lblUser mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.leading.equalTo( _ivHeader.mas_trailing).offset(DWScale(10));
-            make.size.mas_equalTo(CGSizeMake(DWScale(200), DWScale(24)));
-            make.centerY.mas_equalTo(_ivHeader);
-        }];
-        titleAnchorView = _ivHeader;
-//    } else {
-//        _lblUser = [UILabel new];
-//        _lblUser.text = LanguageToolMatch(@"通讯录");
-//        _lblUser.tkThemetextColors = @[COLOR_11, COLOR_11_DARK];
-//        _lblUser.font = FONTB(16);
-//        [self addSubview:_lblUser];
+       
+    } else {
+        _lblUser = [UILabel new];
+        _lblUser.text = LanguageToolMatch(@"通讯录");
+        _lblUser.tkThemetextColors = @[COLOR_33, COLOR_11_DARK];
+        _lblUser.font = FONTB(18);
+        _lblUser.textAlignment = NSTextAlignmentCenter;
+        [self addSubview:_lblUser];
 //        [_lblUser mas_makeConstraints:^(MASConstraintMaker *make) {
 //            make.leading.equalTo(self).offset(DWScale(10));
 //            make.size.mas_equalTo(CGSizeMake(DWScale(200), DWScale(24)));
 //            make.top.equalTo(self).offset(DWScale(5) + DStatusBarH);
 //        }];
 //        titleAnchorView = _lblUser;
-//    }
+    }
     
     
     
-    _lblRequestState = [UILabel new];
-    _lblRequestState.text = LanguageToolMatch(@"数据加载中...");
-    _lblRequestState.font = FONTN(10);
-    _lblRequestState.hidden = YES;
-    _lblRequestState.tkThemetextColors = @[[COLOR_FFA500 colorWithAlphaComponent:0.6], [COLOR_FFA500 colorWithAlphaComponent:0.6]];
-    [self addSubview:_lblRequestState];
-    [_lblRequestState mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_lblUser.mas_bottom);
-        make.leading.equalTo(_lblUser);
-        make.width.mas_equalTo(DWScale(300));
-    }];
+//    _lblRequestState = [UILabel new];
+//    _lblRequestState.text = LanguageToolMatch(@"数据加载中...");
+//    _lblRequestState.font = FONTN(10);
+//    _lblRequestState.hidden = YES;
+//    _lblRequestState.tkThemetextColors = @[[COLOR_FFA500 colorWithAlphaComponent:0.6], [COLOR_FFA500 colorWithAlphaComponent:0.6]];
+//    [self addSubview:_lblRequestState];
+//    [_lblRequestState mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(_lblUser.mas_bottom);
+//        make.leading.equalTo(_lblUser);
+//        make.width.mas_equalTo(DWScale(300));
+//    }];
     
     _btnAdd = [UIButton buttonWithType:UIButtonTypeCustom];
     [_btnAdd setTkThemeImage:@[ImgNamed(@"acon_add"), ImgNamed(@"acon_add")] forState:UIControlStateNormal];
@@ -155,6 +152,14 @@ static const CGFloat kMiniAppEntryTopMargin = 11.0;
         make.trailing.equalTo(_btnAdd.mas_leading).offset(-DWScale(20));
         make.size.mas_equalTo(CGSizeMake(24, 24));
     }];
+    
+    
+    [_lblUser mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(DWScale(200), DWScale(24)));
+        make.centerY.mas_equalTo(_btnSearch);
+        make.centerX.mas_equalTo(self);
+    }];
+    titleAnchorView = _lblUser;
     
     if (_isHome) {
         [self setupMiniAppEntryBelowView:titleAnchorView];
@@ -227,7 +232,7 @@ static const CGFloat kMiniAppEntryTopMargin = 11.0;
 - (void)setShowLoading:(BOOL)showLoading {
     _showLoading = showLoading;
     
-    _lblRequestState.hidden = !_showLoading;
+//    _lblRequestState.hidden = !_showLoading;
 }
 
 #pragma mark - 我的应用展开/收起

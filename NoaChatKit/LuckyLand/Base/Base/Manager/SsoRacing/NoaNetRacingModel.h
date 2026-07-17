@@ -44,7 +44,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NoaNetRacingModel : NoaBaseModel
 
 @property (nonatomic, copy)NSString *version;   //版本
-@property (nonatomic, copy)NSString *appKey;    //幸运数字id
+@property (nonatomic, copy)NSString *appKey;    //企业号id
 @property (nonatomic, copy)NSString *clientCer;
 @property (nonatomic, copy)NSString *clientP12;
 @property (nonatomic, copy)NSString *clientKey;

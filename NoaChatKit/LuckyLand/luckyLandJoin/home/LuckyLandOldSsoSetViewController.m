@@ -113,7 +113,7 @@
     [self showNetworkDetectionAndSystemLanguageButton:YES];
     [self showSsoAccountSetButton:NO];
     
-    self.topTitleLabel.text = LanguageToolMatch(@"邀请码加入");
+    self.topTitleLabel.text = LanguageToolMatch(@"企业号加入");
     self.topSubTitleLabel.text = LanguageToolMatch(@"");
     [self.view addSubview:self.topTitleLabel];
     [self.view addSubview:self.topSubTitleLabel];

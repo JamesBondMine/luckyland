@@ -18,22 +18,22 @@
 /// 团队名称输入
 @property (nonatomic, strong) NoaTeamInviteCustomTextField *teamNameInputTF;
 
-/// 幸运数字标题label
+/// 企业号标题label
 @property (nonatomic, strong) UILabel *codeLabel;
 
-/// 幸运数字输入底部背景view
+/// 企业号输入底部背景view
 @property (nonatomic, strong) UIView *codeInputBgView;
 
-/// 幸运数字输入
+/// 企业号输入
 @property (nonatomic, strong) NoaTeamInviteCustomTextField *codeInputTF;
 
-/// 幸运数字输入右侧分割线
+/// 企业号输入右侧分割线
 @property (nonatomic, strong) UIView *codeInputDividingLine;
 
 /// 随机生成验证码按钮
 @property (nonatomic, strong) UIButton *randomGenerationButton;
 
-/// 幸运数字错误提示label
+/// 企业号错误提示label
 @property (nonatomic, strong) UILabel *codeErrorTipLabel;
 
 /// 是否置顶文案
@@ -110,7 +110,7 @@
         _codeLabel = [UILabel new];
         _codeLabel.tkThemetextColors = @[COLOR_11, COLOR_11_DARK];
         _codeLabel.font = FONTR(14);
-        _codeLabel.text = LanguageToolMatch(@"请输入幸运数字");
+        _codeLabel.text = LanguageToolMatch(@"请输入企业号");
     }
     return _codeLabel;
 }
@@ -127,7 +127,7 @@
     if (!_codeInputTF) {
         _codeInputTF = [NoaTeamInviteCustomTextField new];
         // 为了适配rtl（阿拉伯、波斯语布局，只能用NSMutableAttributedString）
-        NSMutableAttributedString *placeHolderAttStr = [[NSMutableAttributedString alloc] initWithString:LanguageToolMatch(@"请输入幸运数字") attributes:@{
+        NSMutableAttributedString *placeHolderAttStr = [[NSMutableAttributedString alloc] initWithString:LanguageToolMatch(@"请输入企业号") attributes:@{
             NSForegroundColorAttributeName: COLOR_99
         }];
         _codeInputTF.textField.attributedPlaceholder = placeHolderAttStr;
@@ -150,9 +150,9 @@
     if (!_randomGenerationButton) {
         _randomGenerationButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_randomGenerationButton setTitle:LanguageToolMatch(@"随机生成") forState:UIControlStateNormal];
-        [_randomGenerationButton setTitleColor:COLOR_EB5C5C forState:UIControlStateNormal];
+        [_randomGenerationButton setTitleColor:COLOR_1B2E60 forState:UIControlStateNormal];
         _randomGenerationButton.titleLabel.font = FONTR(14);
-        _randomGenerationButton.titleLabel.tkThemetextColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+        _randomGenerationButton.titleLabel.tkThemetextColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
         _randomGenerationButton.contentEdgeInsets = UIEdgeInsetsMake(16, 14, 14, 16);
     }
     return _randomGenerationButton;
@@ -163,7 +163,7 @@
         _codeErrorTipLabel = [UILabel new];
         _codeErrorTipLabel.tkThemetextColors = @[COLOR_F93A2F, COLOR_F93A2F_DARK];;
         _codeErrorTipLabel.font = FONTR(12);
-        _codeErrorTipLabel.text = LanguageToolMatch(@"幸运数字暂时无法使用，请更换其他幸运数字");
+        _codeErrorTipLabel.text = LanguageToolMatch(@"企业号暂时无法使用，请更换其他企业号");
         // 默认隐藏
         _codeErrorTipLabel.hidden = YES;
     }
@@ -184,7 +184,7 @@
     if (!_topSwitch) {
         _topSwitch = [UISwitch new];
         // 开启颜色
-        _topSwitch.tkThemeonTintColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+        _topSwitch.tkThemeonTintColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
         _topSwitch.tkThemetintColors = @[HEXCOLOR(@"D4D4D4"), HEXCOLOR(@"D4D4D4")];
     }
     return _topSwitch;
@@ -196,7 +196,7 @@
         [_saveButton setTitle:LanguageToolMatch(@"保存") forState:UIControlStateNormal];
         _saveButton.titleLabel.font = FONTM(16);
         _saveButton.titleLabel.tkThemetextColors = @[COLORWHITE, COLORWHITE];
-        _saveButton.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+        _saveButton.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
         _saveButton.enabled = NO;
         _saveButton.alpha = 0.5;
     }

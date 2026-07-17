@@ -7,6 +7,7 @@
 
 #import "NoaUrlHostManager.h"
 #import "NoaToolManager.h"
+#import "AppDelegate.h"
 #import "NoaCallManager.h"
 #import "NoaRoleConfigModel.h"
 #import "NoaRaceCheckErrorModel.h"
@@ -74,6 +75,10 @@ static dispatch_once_t onceToken;
 @property (nonatomic, assign) NSInteger currentRaceSessionId;
 @property (nonatomic, assign) BOOL isRacing;
 @property (nonatomic, strong) NSMutableArray<NSURLSessionDataTask *> *raceTasks;
+/// 本轮竞速是否已收敛（成功/失败/超时），防止重复跳转与迟到回调
+@property (atomic, assign) BOOL raceHasSettled;
+/// 全局竞速超时 block（可取消）
+@property (nonatomic, copy, nullable) dispatch_block_t raceTimeoutBlock;
 /// 多源并发控制
 @property (atomic, assign) BOOL ossFirstSuccessGlobal;
 @property (atomic, assign) NSInteger multiSourceFinishedCount;
@@ -543,6 +548,9 @@ static NSArray<NSString *> *ZParseDNSResponseA(const uint8_t *buf, ssize_t len, 
     // 启动新一轮前，停止上一轮：取消HTTP任务，重置标记（不调用网络质量检测停止）
     self.currentRaceSessionId += 1;
     self.isRacing = YES;
+    self.raceHasSettled = NO;
+    NSInteger raceSession = self.currentRaceSessionId; // 捕获本轮会话ID
+    [self scheduleHostNodeRaceTimeoutWithSession:raceSession isNetworkQualityTrigger:isNetworkQualityTrigger];
     if (self.raceTasks.count > 0) {
         CIMLog(@"[竞速会话] 取消上轮HTTP任务数量: %lu", (unsigned long)self.raceTasks.count);
         for (NSURLSessionDataTask *task in self.raceTasks) {
@@ -558,6 +566,8 @@ static NSArray<NSString *> *ZParseDNSResponseA(const uint8_t *buf, ssize_t len, 
         self.racingType = ZReacingTypeNone;
         // 移除通知，避免通知泄漏
         [self removeEcdhNotification];
+        self.raceHasSettled = YES;
+        [self cancelHostNodeRaceTimeout];
         if (isNetworkQualityTrigger) {
             return;
         }
@@ -567,7 +577,7 @@ static NSArray<NSString *> *ZParseDNSResponseA(const uint8_t *buf, ssize_t len, 
     
     if (![NSString isNil:ssoModel.liceseId]) {
         [IMSDKManager configLoganLiceseId:ssoModel.liceseId];
-        //幸运数字，走oss、http、tcp 竞速择优
+        //企业号，走oss、http、tcp 竞速择优
         self.racingType = ZReacingTypeCompanyId;
         // 初始化五源并发控制
         self.ossFirstSuccessGlobal = NO;
@@ -575,12 +585,12 @@ static NSArray<NSString *> *ZParseDNSResponseA(const uint8_t *buf, ssize_t len, 
         self.multiSourceFinishedCount = 0;
         self.multiSourceDirectFailCount = 0;
         self.multiSourceTotalCount = 5; // ALIDNS + AliDoH TXT + CF TXT + CF AAAA + Tencent DoH AAAA
-        NSInteger raceSession = self.currentRaceSessionId; // 捕获本轮会话ID
         dispatch_group_t group = dispatch_group_create();
         
         void (^consumeList)(NSArray<NoaUrlHostModel *> *, NSString *sourceTag) = ^(NSArray<NoaUrlHostModel *> *list, NSString *sourceTag){
             if (!weakSelf.multiSourceActive) return;
             if (raceSession != weakSelf.currentRaceSessionId) return;
+            if (weakSelf.raceHasSettled) return;
             if (list.count <= 0) {
                 @synchronized (weakSelf) {
                     weakSelf.multiSourceFinishedCount++;
@@ -593,6 +603,7 @@ static NSArray<NSString *> *ZParseDNSResponseA(const uint8_t *buf, ssize_t len, 
                         CIMLog(@"[DNS并发] 五源均无结果，触发 Resolver 旧逻辑兜底");
                         BOOL isProxyFB = ([ZTOOL getCurrentProxyType] == ProxyTypeSOCKS5);
                         [weakSelf getDirectOssUrlListFromDNSComplete:^(NSArray<NoaUrlHostModel *> *ossUrlList) {
+                            if (raceSession != weakSelf.currentRaceSessionId || weakSelf.raceHasSettled) return;
                             NSArray<NoaUrlHostModel *> *normalizedFB = [weakSelf normalizeDomainToIP:ossUrlList];
                             [weakSelf netWorkDirectWithFiltrateBestOssRacingWithOssList:normalizedFB iscontinue:!isProxyFB allowFallbackRetry:YES sourceTag:@"OLDRESOLVER" isNetworkQualityTrigger:isNetworkQualityTrigger];
                         }];
@@ -612,6 +623,7 @@ static NSArray<NSString *> *ZParseDNSResponseA(const uint8_t *buf, ssize_t len, 
                         CIMLog(@"[DNS并发] 五源均无可用 normalize 结果，触发 Resolver 旧逻辑兜底");
                         BOOL isProxyFB = ([ZTOOL getCurrentProxyType] == ProxyTypeSOCKS5);
                         [weakSelf getDirectOssUrlListFromDNSComplete:^(NSArray<NoaUrlHostModel *> *ossUrlList) {
+                            if (raceSession != weakSelf.currentRaceSessionId || weakSelf.raceHasSettled) return;
                             NSArray<NoaUrlHostModel *> *normalizedFB = [weakSelf normalizeDomainToIP:ossUrlList];
                             [weakSelf netWorkDirectWithFiltrateBestOssRacingWithOssList:normalizedFB iscontinue:!isProxyFB allowFallbackRetry:YES sourceTag:@"OLDRESOLVER" isNetworkQualityTrigger:isNetworkQualityTrigger];
                         }];
@@ -621,6 +633,7 @@ static NSArray<NSString *> *ZParseDNSResponseA(const uint8_t *buf, ssize_t len, 
             }
             @synchronized (weakSelf) {
                 if (raceSession != weakSelf.currentRaceSessionId) return;
+                if (weakSelf.raceHasSettled) return;
                 if (weakSelf.ossFirstSuccessGlobal) return;
                 BOOL isProxy = ([ZTOOL getCurrentProxyType] == ProxyTypeSOCKS5);
                 CIMLog(@"[DNS并发] 源%@ 返回可用 %lu 条，开始直连竞速", sourceTag, (unsigned long)normalized.count);
@@ -677,13 +690,13 @@ static NSArray<NSString *> *ZParseDNSResponseA(const uint8_t *buf, ssize_t len, 
                 CIMLog(@"[竞速会话] 分组完成但已过期，忽略");
                 return;
             }
-            // 仅结束分组，不在此触发兜底，兜底在源级失败收敛中触发
-            weakSelf.isRacing = NO;
+            // DNS 五源分组结束 ≠ 整轮竞速结束；isRacing 仅在最终收敛时清掉，避免 networkChange 中途二次竞速
+            CIMLog(@"[DNS并发] 五源分组完成，等待直连/兜底收敛");
         });
         return;
     }else {
         
-        // 非幸运数字，不走竞速，需要将线路择优移除，否则会出现ip地址连接不上
+        // 非企业号，不走竞速，需要将线路择优移除，否则会出现ip地址连接不上
         [self stopNetworkQualityDetection];
     }
     
@@ -695,7 +708,91 @@ static NSArray<NSString *> *ZParseDNSResponseA(const uint8_t *buf, ssize_t len, 
     }
     
     // 移除通知，避免通知泄漏
+    self.raceHasSettled = YES;
+    [self cancelHostNodeRaceTimeout];
     [self removeEcdhNotification];
+}
+
+#pragma mark - 竞速全局超时
+
+- (void)scheduleHostNodeRaceTimeoutWithSession:(NSInteger)raceSession
+                       isNetworkQualityTrigger:(BOOL)isNetworkQualityTrigger {
+    [self cancelHostNodeRaceTimeout];
+    WeakSelf
+    dispatch_block_t block = dispatch_block_create(0, ^{
+        if (!weakSelf) { return; }
+        if (raceSession != weakSelf.currentRaceSessionId) { return; }
+        if (weakSelf.raceHasSettled) { return; }
+        weakSelf.isRacing = NO;
+        weakSelf.multiSourceActive = NO;
+        CIMLog(@"[竞速超时] 超过 %.0f 秒仍未完成，进入错误页 (nqTrigger=%d, reloadRacing=%d)",
+               Z_HOST_NODE_RACE_TIMEOUT, isNetworkQualityTrigger, weakSelf.isReloadRacing);
+        if (weakSelf.raceTasks.count > 0) {
+            for (NSURLSessionDataTask *task in weakSelf.raceTasks) {
+                if (task.state == NSURLSessionTaskStateRunning) {
+                    [task cancel];
+                }
+            }
+            [weakSelf.raceTasks removeAllObjects];
+        }
+        [weakSelf.codeBuilder withInitializationErrorType:[InitializationErrorTypes OSS_FAILURE]];
+        // 全局超时：强制进错误页（不走 isNetworkQualityTrigger 静默 return）
+        [weakSelf forceRacingTimeoutToErrorPageWithStep:ZNetRacingStepOss racingCode:10000];
+    });
+    self.raceTimeoutBlock = block;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(Z_HOST_NODE_RACE_TIMEOUT * NSEC_PER_SEC)),
+                   dispatch_get_main_queue(),
+                   block);
+}
+
+- (void)cancelHostNodeRaceTimeout {
+    if (self.raceTimeoutBlock) {
+        dispatch_block_cancel(self.raceTimeoutBlock);
+        self.raceTimeoutBlock = nil;
+    }
+}
+
+/// 全局超时强制跳转错误页（忽略 isNetworkQualityTrigger 静默逻辑）
+- (void)forceRacingTimeoutToErrorPageWithStep:(ZNetRacingStep)step racingCode:(NSInteger)racingCode {
+    @synchronized (self) {
+        if (self.raceHasSettled) {
+            CIMLog(@"[竞速超时] 本轮已收敛，忽略超时跳转");
+            return;
+        }
+        self.raceHasSettled = YES;
+    }
+    [self cancelHostNodeRaceTimeout];
+    self.isRacing = NO;
+    self.multiSourceActive = NO;
+    [self removeEcdhNotification];
+    
+    // 已在主界面的网络质量静默重竞速：可不打断用户；启动页/未进主界面必须跳错误页
+    AppDelegate *appdelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    UIViewController *root = appdelegate.window.rootViewController;
+    BOOL alreadyOnMainUI = [root isKindOfClass:NSClassFromString(@"LuckyLandTabBarController")];
+    if (alreadyOnMainUI && !self.isReloadRacing) {
+        CIMLog(@"[竞速超时] 已在主界面且非冷启动竞速，静默结束");
+        return;
+    }
+    
+    CIMLog(@"[竞速超时] 强制跳转错误页 step=%ld code=%ld root=%@",
+           (long)step, (long)racingCode, NSStringFromClass([root class]));
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setObjectSafe:@(step) forKey:@"step"];
+    [dict setObjectSafe:@(racingCode) forKey:@"code"];
+    [ZTOOL setupRacingErroUIWithResutl:dict];
+}
+
+/// 冷启动/本轮竞速未收敛时，禁止网络变化等路径再次拉起「静默」竞速
+- (BOOL)shouldSkipExternalRaceRetrigger {
+    // 已开启过竞速会话，且尚未收敛（成功/失败/超时）
+    if (self.currentRaceSessionId > 0 && !self.raceHasSettled) {
+        return YES;
+    }
+    if (self.isRacing) {
+        return YES;
+    }
+    return NO;
 }
 
 // 腾讯 DoH AAAA（JSON API）
@@ -1055,7 +1152,23 @@ static inline NSString *Z_SHA256Hex(NSString *input) {
     [[DNSResolver share] clearHostCache:nil];
     __block NSMutableArray<NoaUrlHostModel *> *ossUrlList = [NSMutableArray array];
     WeakSelf
+    __block BOOL finished = NO;
+    void (^finishOnce)(NSArray<NoaUrlHostModel *> *) = ^(NSArray<NoaUrlHostModel *> *list) {
+        if (finished) { return; }
+        finished = YES;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (complete) { complete(list ?: @[]); }
+        });
+    };
+    // 与 DoH 源对齐：5s 超时，避免 Resolver 不回调导致五源无法收敛
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (!finished) {
+            CIMLog(@"[DNS] ALIDNS 超时，返回空结果");
+            finishOnce(@[]);
+        }
+    });
     [[DNSResolver share] getIpv6DataWithDomain:ALI_HTTPDNS_TEST_DOMAIN complete:^(NSArray<NSString *> *dataArray) {
+        if (finished) { return; }
         BOOL analysisResult = NO;
         NSString *analysisDomain = @"";
         NSMutableArray *ipV6List = [NSMutableArray array];
@@ -1098,10 +1211,7 @@ static inline NSString *Z_SHA256Hex(NSString *input) {
                 }
             }
         }
-        // 子线程回调，切主线程返回结果
-        dispatch_async(dispatch_get_main_queue(), ^{
-            complete(ossUrlList);
-        });
+        finishOnce([ossUrlList copy]);
     }];
 }
 
@@ -1117,6 +1227,30 @@ static inline NSString *Z_SHA256Hex(NSString *input) {
     __block BOOL bucketDNS = NO;
     __block NSMutableArray<NoaUrlHostModel *> *ossUrlList = [NSMutableArray array];
     WeakSelf
+    __block BOOL finished = NO;
+    void (^finishOnce)(void) = ^{
+        if (finished) { return; }
+        finished = YES;
+        if (mainDNS && bucketDNS) {
+            self.subModulesDNSCode = @"4";
+        } else {
+            if (mainDNS) {
+                self.subModulesDNSCode = @"5";
+            } else if (bucketDNS) {
+                self.subModulesDNSCode = @"6";
+            } else {
+                self.subModulesDNSCode = @"0";
+            }
+        }
+        if (complete) { complete([ossUrlList copy]); }
+    };
+    // OLDRESOLVER 超时保护：弱网下 getIpv6DataWithDomain 可能永不回调
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (!finished) {
+            CIMLog(@"[DNS] OLDRESOLVER 超时，强制返回当前结果");
+            finishOnce();
+        }
+    });
     dispatch_group_t group = dispatch_group_create();
     //tcp主域名
     dispatch_group_enter(group);
@@ -1202,19 +1336,7 @@ static inline NSString *Z_SHA256Hex(NSString *input) {
         dispatch_group_leave(group);
     }];
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
-        if (mainDNS && bucketDNS) {
-            self.subModulesDNSCode = @"4";
-        } else {
-            if (mainDNS) {
-                self.subModulesDNSCode = @"5";
-            } else if (bucketDNS) {
-                self.subModulesDNSCode = @"6";
-            } else {
-                self.subModulesDNSCode = @"0";
-            }
-        }
-        //处理数据
-        complete(ossUrlList);
+        finishOnce();
     });
 }
 
@@ -1457,6 +1579,8 @@ static inline NSString *Z_SHA256Hex(NSString *input) {
     if (ssoModel == nil || ssoModel.liceseId == nil) {
         // 移除通知，避免通知泄漏
         [self removeEcdhNotification];
+        self.raceHasSettled = YES;
+        [self cancelHostNodeRaceTimeout];
         
         if (isNetworkQualityTrigger) {
             return;
@@ -1464,15 +1588,35 @@ static inline NSString *Z_SHA256Hex(NSString *input) {
         [ZTOOL setupSsoSetVcUI];
         return;
     }
+    // 空列表必须收敛，否则 for 循环不进、也不会走 failure，会永久卡在启动页
+    if (ossList.count <= 0) {
+        CIMLog(@"[OSS竞速] 源%@ 列表为空，走失败收敛", sourceTag ?: @"unknown");
+        [self.codeBuilder withInitializationErrorType:[InitializationErrorTypes OSS_FAILURE]];
+        [self ossRacingDirectFailResultHandle:1
+                                     totalNum:1
+                                   iscontinue:iscontinue
+                           allowFallbackRetry:allowFallbackRetry
+                                    sourceTag:sourceTag
+                                      ossList:ossList ?: @[]
+                      isNetworkQualityTrigger:isNetworkQualityTrigger];
+        return;
+    }
+    if (self.raceHasSettled) {
+        CIMLog(@"[OSS竞速] 竞速已收敛，忽略源%@", sourceTag ?: @"unknown");
+        return;
+    }
     //ssoInfo
     [IMSDKManager configSDKSsoInfo:[NoaSsoInfoModel getSSOInfoDetailInfo]];
     
     @weakify(self)
     [ZTOOL getDevicePublicNetworkIPWithCompletion:^(NSString * _Nonnull ip) {
+        @strongify(self)
+        if (!self || self.raceHasSettled) { return; }
         for (NoaUrlHostModel *ossUrlModel in ossList) {
             if (hasResult) {
                 break;
             }
+            if (self.raceHasSettled) { return; }
             
             IOSTcpRaceManager *manager = [[IOSTcpRaceManager alloc]
                                           initWithAppId:ssoModel.liceseId
@@ -1483,6 +1627,7 @@ static inline NSString *Z_SHA256Hex(NSString *input) {
             CIMLog(@"\n\noss竞速======%@ ------🔥🔥🔥🔥🔥🔥🔥🔥-------\nliceseId:%@\nurlString:%@\nip:%@\n-------------------",[NSDate now], ssoModel.liceseId,ossUrlModel.urlString, ip);
             [manager executeWithSuccess:^(IMServerListResponseBody * _Nonnull serverResponse) {
                 @strongify(self)
+                if (!self || self.raceHasSettled) { return; }
                 
                 NSArray *imArr = serverResponse.imEndpointsArray;
                 CIMLog(@"✅ 单个TCP竞速成功: %@, 当前成功的地址: %@", imArr, ossUrlModel.urlString);
@@ -1608,6 +1753,7 @@ static inline NSString *Z_SHA256Hex(NSString *input) {
                 }
             } failure:^(NSError * _Nonnull error) {
                 @strongify(self)
+                if (!self || self.raceHasSettled) { return; }
                 CIMLog(@"❌ 单个TCP竞速失败: %@, 错误: %@", ossUrlModel.urlString, error.localizedDescription);
                 CIMLog(@"oss竞速失败 %@ ********************** %@\n",[NSDate now], ossUrlModel.urlString);
                 if (error.code == 1) {
@@ -1637,6 +1783,7 @@ static inline NSString *Z_SHA256Hex(NSString *input) {
                             BOOL isProxyFB = ([ZTOOL getCurrentProxyType] == ProxyTypeSOCKS5);
                             [self getDirectOssUrlListFromDNSComplete:^(NSArray<NoaUrlHostModel *> *ossUrlList) {
                                 @strongify(self)
+                                if (!self || self.raceHasSettled) { return; }
                                 NSArray<NoaUrlHostModel *> *normalizedFB = [self normalizeDomainToIP:ossUrlList];
                                 [self netWorkDirectWithFiltrateBestOssRacingWithOssList:normalizedFB iscontinue:!isProxyFB allowFallbackRetry:YES sourceTag:@"OLDRESOLVER" isNetworkQualityTrigger:isNetworkQualityTrigger];
                             }];
@@ -1658,7 +1805,8 @@ static inline NSString *Z_SHA256Hex(NSString *input) {
                 isNetworkQualityTrigger:(BOOL)isNetworkQualityTrigger {
     if (ossNum >= totalNum) {
         // 若当前已是兜底列表（type=="5"），全部失败则直接失败出栈，避免再次触发 DNS 或其它回路
-        __block BOOL isFallbackList = YES;
+        // 空列表不能当成 fallbackList，否则会跳过本地兜底地址重试
+        __block BOOL isFallbackList = (ossList.count > 0);
         [ossList enumerateObjectsUsingBlock:^(NoaUrlHostModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             if (![obj.type isEqualToString:@"5"]) {
                 isFallbackList = NO;
@@ -1927,7 +2075,7 @@ static inline NSString *Z_SHA256Hex(NSString *input) {
         uOpt.userAvatar   = UserManager.userInfo.avatar;
         [IMSDKManager configSDKUserWith:uOpt];
         
-        // 配置幸运数字 & 验证渠道
+        // 配置企业号 & 验证渠道
         NoaSsoInfoModel *sso = [NoaSsoInfoModel getSSOInfo];
         [IMSDKManager configSDKLiceseId:sso.liceseId];
         [IMSDKManager configSDKCaptchaChannel:self.appSysSetModel.captchaChannel];
@@ -2006,7 +2154,7 @@ static inline NSString *Z_SHA256Hex(NSString *input) {
                     uOpt.userAvatar   = UserManager.userInfo.avatar;
                     [IMSDKManager configSDKUserWith:uOpt];
                     
-                    // 配置幸运数字 & 验证渠道
+                    // 配置企业号 & 验证渠道
                     NoaSsoInfoModel *sso = [NoaSsoInfoModel getSSOInfo];
                     [IMSDKManager configSDKLiceseId:sso.liceseId];
                     [IMSDKManager configSDKCaptchaChannel:weakSelf.appSysSetModel.captchaChannel];
@@ -2316,7 +2464,7 @@ static inline NSString *Z_SHA256Hex(NSString *input) {
         [self tcpNodePickCompanyIdWithSsoModel:ssoModel.ossRacingModel index:0];
         return;
     }else {
-        // 非幸运数字，不走竞速，需要将线路择优移除，否则会出现ip地址连接不上
+        // 非企业号，不走竞速，需要将线路择优移除，否则会出现ip地址连接不上
         [self stopNetworkQualityDetection];
     }
     
@@ -2327,7 +2475,7 @@ static inline NSString *Z_SHA256Hex(NSString *input) {
     }
 }
 
-#pragma mark - 单独竞速TCP 幸运数字
+#pragma mark - 单独竞速TCP 企业号
 - (void)tcpNodePickCompanyIdWithSsoModel:(NoaNetRacingModel *)racingModel index:(NSInteger)index  {
     WeakSelf
     if (index < racingModel.tcpArr.count) {
@@ -2820,6 +2968,18 @@ static inline NSString *Z_SHA256Hex(NSString *input) {
                              result:(BOOL)result
                          racingCode:(NSInteger)racingCode
             isNetworkQualityTrigger:(BOOL)isNetworkQualityTrigger {
+    // 同一轮竞速只收敛一次，避免超时与失败回调重复跳转
+    @synchronized (self) {
+        if (self.raceHasSettled) {
+            CIMLog(@"[竞速结果] 本轮已收敛，忽略重复结果 step=%ld result=%d", (long)step, result);
+            return;
+        }
+        self.raceHasSettled = YES;
+    }
+    [self cancelHostNodeRaceTimeout];
+    self.isRacing = NO;
+    self.multiSourceActive = NO;
+    
     // 移除通知，避免通知泄漏
     [self removeEcdhNotification];
     
@@ -3317,7 +3477,7 @@ static inline NSString *Z_SHA256Hex(NSString *input) {
 - (void)startNetworkQualityDetection:(NSString *)liceseId {
     [NoaLocalLogger info:@"[网络检测启动] 启动网络质量检测"];
     
-    // 检查幸运数字是否有变化
+    // 检查企业号是否有变化
     BOOL isLicenseIdChanged = ![liceseId isEqualToString:self.networkQualityDetector.currentLiceseId] && self.networkQualityDetector.currentLiceseId.length > 0;
     
     // 检查服务器列表是否有差异
@@ -3325,7 +3485,7 @@ static inline NSString *Z_SHA256Hex(NSString *input) {
     
     // 根据检查结果决定是否停止检测
     if (isLicenseIdChanged) {
-        [NoaLocalLogger info:@"[网络检测启动] 幸运数字发生变化，停止当前检测"];
+        [NoaLocalLogger info:@"[网络检测启动] 企业号发生变化，停止当前检测"];
         [self stopNetworkQualityDetection];
     }
     
@@ -3334,7 +3494,7 @@ static inline NSString *Z_SHA256Hex(NSString *input) {
         [self stopNetworkQualityDetection];
     }
     
-    // 修改当前正在网络环境质量检测的幸运数字值
+    // 修改当前正在网络环境质量检测的企业号值
     self.networkQualityDetector.currentLiceseId = liceseId;
     
     // 更新服务器列表
@@ -3417,6 +3577,11 @@ static inline NSString *Z_SHA256Hex(NSString *input) {
         return;
     };
     
+    if ([self shouldSkipExternalRaceRetrigger]) {
+        [NoaLocalLogger info:@"[网络检测] 冷启动/本轮竞速未结束，跳过静默重竞速"];
+        return;
+    }
+    
     NSInteger errorCode = error.code;
     [NoaLocalLogger error:[NSString stringWithFormat:@"[网络检测] 当前网络质量检测所有接口都失败了，errorCode: %ld, error说明: %@", errorCode, error.localizedDescription]];
     BOOL isConnectNet = [[NetWorkStatusManager shared] getConnectStatus];
@@ -3476,6 +3641,11 @@ static inline NSString *Z_SHA256Hex(NSString *input) {
         return;
     }
     
+    if ([self shouldSkipExternalRaceRetrigger]) {
+        [NoaLocalLogger info:@"[APP后台进入前台] 本轮竞速未结束，跳过静默重竞速"];
+        return;
+    }
+    
     BOOL isConnectNet = [[NetWorkStatusManager shared] getConnectStatus];
     if (isConnectNet) {
         // 重新开始竞速
@@ -3495,6 +3665,11 @@ static inline NSString *Z_SHA256Hex(NSString *input) {
         [NoaLocalLogger info:@"[网络变化] 用户未登录，不处理网络变化(不执行竞速)"];
         return;
     };
+    
+    if ([self shouldSkipExternalRaceRetrigger]) {
+        [NoaLocalLogger info:@"[网络变化] 冷启动/本轮竞速未结束，跳过静默重竞速"];
+        return;
+    }
     
     BOOL isConnectNet = [[NetWorkStatusManager shared] getConnectStatus];
     if (isConnectNet) {

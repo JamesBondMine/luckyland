@@ -94,7 +94,7 @@
     _btnSure = [UIButton buttonWithType:UIButtonTypeCustom];
     [_btnSure setTitle:LanguageToolMatch(@"发送") forState:UIControlStateNormal];
     [_btnSure setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
-    _btnSure.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C];
+    _btnSure.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60];
     [_btnSure setTkThemeBackgroundImage:@[[UIImage ImageForColor:COLOR_4069B9],[UIImage ImageForColor:COLOR_4069B9_DARK]] forState:UIControlStateSelected];
     [_btnSure setTkThemeBackgroundImage:@[[UIImage ImageForColor:COLOR_4069B9],[UIImage ImageForColor:COLOR_4069B9_DARK]] forState:UIControlStateHighlighted];
     _btnSure.titleLabel.font = FONTN(17);

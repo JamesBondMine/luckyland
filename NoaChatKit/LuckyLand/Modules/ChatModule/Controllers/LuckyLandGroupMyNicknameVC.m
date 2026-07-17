@@ -31,7 +31,7 @@
     self.navBtnRight.hidden = NO;
     [self.navBtnRight setTitle:LanguageToolMatch(@"保存") forState:UIControlStateNormal];
     [self.navBtnRight setTitleColor:COLORWHITE forState:UIControlStateNormal];
-    [self.navBtnRight setBackgroundColor:COLOR_EB5C5C];
+    [self.navBtnRight setBackgroundColor:COLOR_1B2E60];
     self.navBtnRight.layer.cornerRadius = DWScale(12);
     self.navBtnRight.layer.masksToBounds = YES;
     [self.navBtnRight mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -81,7 +81,7 @@
     
     if (_tvNickname.text.length <= 30 && ![_tvNickname.text isEqualToString:_groupInfoModel.nicknameInGroup]) {
         self.navBtnRight.enabled = YES;
-        [self.navBtnRight setBackgroundColor:COLOR_EB5C5C];
+        [self.navBtnRight setBackgroundColor:COLOR_1B2E60];
     } else {
         self.navBtnRight.enabled = NO;
         [self.navBtnRight setBackgroundColor:COLOR_99];
@@ -124,7 +124,7 @@
     }
     if (toBeString.length <= 30 && ![toBeString isEqualToString:_groupInfoModel.nicknameInGroup]) {
         self.navBtnRight.enabled = YES;
-        [self.navBtnRight setBackgroundColor:COLOR_EB5C5C];
+        [self.navBtnRight setBackgroundColor:COLOR_1B2E60];
     } else {
         self.navBtnRight.enabled = NO;
         [self.navBtnRight setBackgroundColor:COLOR_99];

@@ -239,11 +239,11 @@
     _saveBtn = [[UIButton alloc] init];
     [_saveBtn setTitle:LanguageToolMatch(@"保存") forState:UIControlStateNormal];
     [_saveBtn setTitleColor:COLORWHITE forState:UIControlStateNormal];
-    _saveBtn.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+    _saveBtn.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
     [_saveBtn setTkThemeBackgroundImage:@[[UIImage ImageForColor:COLOR_4069B9],[UIImage ImageForColor:COLOR_4069B9_DARK]] forState:UIControlStateSelected];
     [_saveBtn setTkThemeBackgroundImage:@[[UIImage ImageForColor:COLOR_4069B9],[UIImage ImageForColor:COLOR_4069B9_DARK]] forState:UIControlStateHighlighted];
     [_saveBtn rounded:DWScale(14)];
-    [_saveBtn shadow:COLOR_EB5C5C opacity:0.15 radius:5 offset:CGSizeMake(0, 0)];
+    [_saveBtn shadow:COLOR_1B2E60 opacity:0.15 radius:5 offset:CGSizeMake(0, 0)];
     _saveBtn.clipsToBounds = YES;
     [_saveBtn addTarget:self action:@selector(saveBtnAction) forControlEvents:UIControlEventTouchUpInside];
     [_viewBg addSubview:_saveBtn];

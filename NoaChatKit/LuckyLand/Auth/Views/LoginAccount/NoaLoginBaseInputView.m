@@ -50,14 +50,14 @@
 - (UITextField *)passwordTF {
     if (!_passwordTF) {
         _passwordTF = [[UITextField alloc] initWithFrame:CGRectZero];
-        _passwordTF.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.05]];
+        _passwordTF.tkThemebackgroundColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.05], [COLOR_1B2E60_DARK colorWithAlphaComponent:0.05]];
         _passwordTF.tkThemetextColors = @[COLOR_11, COLOR_11_DARK];
         // 设置圆角
         _passwordTF.layer.cornerRadius = 8;
         _passwordTF.layer.masksToBounds = YES;
         // 设置边框
         _passwordTF.layer.borderWidth = 1.0;
-        _passwordTF.layer.tkThemeborderColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLORWHITE colorWithAlphaComponent:0.4]];
+        _passwordTF.layer.tkThemeborderColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.05], [COLORWHITE colorWithAlphaComponent:0.4]];
         // 设置左边文字距离左边框间隔
         _passwordTF.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 12, 0)];
         _passwordTF.leftViewMode = UITextFieldViewModeAlways;
@@ -111,14 +111,14 @@
 - (UITextField *)codeTF {
     if (!_codeTF) {
         _codeTF = [[UITextField alloc] initWithFrame:CGRectZero];
-        _codeTF.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.05]];
+        _codeTF.tkThemebackgroundColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.05], [COLOR_1B2E60_DARK colorWithAlphaComponent:0.05]];
         _codeTF.tkThemetextColors = @[COLOR_11, COLOR_11_DARK];
         // 设置圆角
         _codeTF.layer.cornerRadius = 8;
         _codeTF.layer.masksToBounds = YES;
         // 设置边框
         _codeTF.layer.borderWidth = 1.0;
-        _codeTF.layer.tkThemeborderColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLORWHITE colorWithAlphaComponent:0.4]];
+        _codeTF.layer.tkThemeborderColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.05], [COLORWHITE colorWithAlphaComponent:0.4]];
         // 设置左边文字距离左边框间隔
         _codeTF.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 12, 0)];
         _codeTF.leftViewMode = UITextFieldViewModeAlways;

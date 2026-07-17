@@ -189,7 +189,7 @@
     self.navBtnRight.tkThemebackgroundColors = @[COLOR_CCCCCC, COLOR_CCCCCC_DARK];
     if (self.choicedList.count > 0) {
         [self.navBtnRight setTitle:[NSString stringWithFormat:LanguageToolMatch(@"完成(%ld)"),self.choicedList.count] forState:UIControlStateNormal];
-        self.navBtnRight.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+        self.navBtnRight.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
         self.navBtnRight.enabled = YES;
     }else {
         [self.navBtnRight setTitle:LanguageToolMatch(@"完成") forState:UIControlStateNormal];

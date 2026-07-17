@@ -177,7 +177,7 @@
             [weakSelf.delegate systemMessageCellClickNickNameAction:weakSelf.model.beInviteUserId];
         }
     }];
-    [text yy_setTextHighlightRange:[contentText rangeOfString:applyedUserNick] color:COLOR_EB5C5C backgroundColor:COLOR_CLEAR tapAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
+    [text yy_setTextHighlightRange:[contentText rangeOfString:applyedUserNick] color:COLOR_1B2E60 backgroundColor:COLOR_CLEAR tapAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
         //跳转到被邀请用户个人主页
         if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(systemMessageCellClickNickNameAction:)]) {
             [weakSelf.delegate systemMessageCellClickNickNameAction:weakSelf.model.userUid];
@@ -204,7 +204,7 @@
             }
             [(NSMutableAttributedString *)itself addAttribute:NSForegroundColorAttributeName value:color range:NSMakeRange(0, groupInfoContent.length)];
         };
-        [groupInfoAtt configAttStrLightColor:COLOR_EB5C5C darkColor:COLOR_EB5C5C fullStr:groupInfoContent appointStr:groupName];
+        [groupInfoAtt configAttStrLightColor:COLOR_1B2E60 darkColor:COLOR_1B2E60 fullStr:groupInfoContent appointStr:groupName];
         self.groupInfoLbl.attributedText = groupInfoAtt;
     }
     //附言
@@ -241,7 +241,7 @@
         {
             self.statusLbl.hidden = NO;
             self.statusLbl.text = LanguageToolMatch(@"已同意");
-            self.statusLbl.tkThemetextColors = @[COLOR_EB5C5C, COLOR_EB5C5C];
+            self.statusLbl.tkThemetextColors = @[COLOR_1B2E60, COLOR_1B2E60];
             self.refuseBtn.hidden = YES;
             self.agreeBtn.hidden = YES;
         }
@@ -404,7 +404,7 @@
         _agreeBtn = [[UIButton alloc] init];
         [_agreeBtn setTitle:LanguageToolMatch(@"确认") forState:UIControlStateNormal];
         [_agreeBtn setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
-        _agreeBtn.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+        _agreeBtn.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
         [_agreeBtn rounded:DWScale(25)/2];
         _agreeBtn.titleLabel.font = FONTN(12);
         [_agreeBtn addTarget:self action:@selector(agreeBtnAction) forControlEvents:UIControlEventTouchUpInside];

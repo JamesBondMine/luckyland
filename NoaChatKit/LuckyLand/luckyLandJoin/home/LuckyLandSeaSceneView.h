@@ -13,7 +13,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// 幸运岛首页海面场景：背景 + 群成员小船
+/// 企业号首页海面场景：背景 + 群成员小船
 @interface LuckyLandSeaSceneView : UIView
 
 /// 点击小船回调，memberUid 为群成员 userUid

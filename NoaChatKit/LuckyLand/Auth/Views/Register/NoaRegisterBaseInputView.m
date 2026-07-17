@@ -54,17 +54,17 @@
 @property (nonatomic, strong) UILabel *confirmPasswordErrorTipLabel;
 // MARK: 确认密码输入↑
 
-// MARK: 幸运数字输入(动态隐藏+展示)↓
-/// 幸运数字输入框
+// MARK: 企业号输入(动态隐藏+展示)↓
+/// 企业号输入框
 @property (nonatomic, strong) UITextField *inviteCodeTF;
 
-/// 幸运数字输入清理文本按钮
+/// 企业号输入清理文本按钮
 @property (nonatomic, strong) UIButton *inviteCodeTFClearBtn;
 
-/// 幸运数字错误提示
+/// 企业号错误提示
 @property (nonatomic, strong) UILabel *inviteCodeErrorTipLabel;
 
-// MARK: 幸运数字输入(动态隐藏+展示)↑
+// MARK: 企业号输入(动态隐藏+展示)↑
 
 // MARK: 其他↓
 /// 输入验证结果信号（内部实现）
@@ -82,14 +82,14 @@
 - (UITextField *)codeTF {
     if (!_codeTF) {
         _codeTF = [[UITextField alloc] initWithFrame:CGRectZero];
-        _codeTF.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.05]];
+        _codeTF.tkThemebackgroundColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.05], [COLOR_1B2E60_DARK colorWithAlphaComponent:0.05]];
         _codeTF.tkThemetextColors = @[COLOR_11, COLOR_11_DARK];
         // 设置圆角
         _codeTF.layer.cornerRadius = 8;
         _codeTF.layer.masksToBounds = YES;
         // 设置边框
         _codeTF.layer.borderWidth = 1.0;
-        _codeTF.layer.tkThemeborderColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLORWHITE colorWithAlphaComponent:0.4]];
+        _codeTF.layer.tkThemeborderColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.05], [COLORWHITE colorWithAlphaComponent:0.4]];
         // 设置左边文字距离左边框间隔
         _codeTF.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 12, 0)];
         _codeTF.leftViewMode = UITextFieldViewModeAlways;
@@ -110,7 +110,7 @@
     if (!_sendCodeBtn) {
         _sendCodeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_sendCodeBtn setTitle:LanguageToolMatch(@"获取验证码") forState:UIControlStateNormal];
-        [_sendCodeBtn setTkThemeTitleColor:@[COLOR_EB5C5C, COLOR_EB5C5C_DARK] forState:UIControlStateNormal];
+        [_sendCodeBtn setTkThemeTitleColor:@[COLOR_1B2E60, COLOR_1B2E60_DARK] forState:UIControlStateNormal];
         _sendCodeBtn.tkThemebackgroundColors = @[COLOR_CLEAR, COLOR_CLEAR];
         _sendCodeBtn.titleLabel.font = FONTM(14);
     }
@@ -139,14 +139,14 @@
 - (UITextField *)passwordTF {
     if (!_passwordTF) {
         _passwordTF = [[UITextField alloc] initWithFrame:CGRectZero];
-        _passwordTF.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.05]];
+        _passwordTF.tkThemebackgroundColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.05], [COLOR_1B2E60_DARK colorWithAlphaComponent:0.05]];
         _passwordTF.tkThemetextColors = @[COLOR_11, COLOR_11_DARK];
         // 设置圆角
         _passwordTF.layer.cornerRadius = 8;
         _passwordTF.layer.masksToBounds = YES;
         // 设置边框
         _passwordTF.layer.borderWidth = 1.0;
-        _passwordTF.layer.tkThemeborderColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLORWHITE colorWithAlphaComponent:0.4]];
+        _passwordTF.layer.tkThemeborderColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.05], [COLORWHITE colorWithAlphaComponent:0.4]];
         // 设置左边文字距离左边框间隔
         _passwordTF.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 12, 0)];
         _passwordTF.leftViewMode = UITextFieldViewModeAlways;
@@ -195,14 +195,14 @@
 - (UITextField *)confirmPasswordTF {
     if (!_confirmPasswordTF) {
         _confirmPasswordTF = [[UITextField alloc] initWithFrame:CGRectZero];
-        _confirmPasswordTF.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.05]];
+        _confirmPasswordTF.tkThemebackgroundColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.05], [COLOR_1B2E60_DARK colorWithAlphaComponent:0.05]];
         _confirmPasswordTF.tkThemetextColors = @[COLOR_11, COLOR_11_DARK];
         // 设置圆角
         _confirmPasswordTF.layer.cornerRadius = 8;
         _confirmPasswordTF.layer.masksToBounds = YES;
         // 设置边框
         _confirmPasswordTF.layer.borderWidth = 1.0;
-        _confirmPasswordTF.layer.tkThemeborderColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLORWHITE colorWithAlphaComponent:0.4]];
+        _confirmPasswordTF.layer.tkThemeborderColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.05], [COLORWHITE colorWithAlphaComponent:0.4]];
         // 设置左边文字距离左边框间隔
         _confirmPasswordTF.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 12, 0)];
         _confirmPasswordTF.leftViewMode = UITextFieldViewModeAlways;
@@ -251,14 +251,14 @@
 - (UITextField *)inviteCodeTF {
     if (!_inviteCodeTF) {
         _inviteCodeTF = [[UITextField alloc] initWithFrame:CGRectZero];
-        _inviteCodeTF.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.05]];
+        _inviteCodeTF.tkThemebackgroundColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.05], [COLOR_1B2E60_DARK colorWithAlphaComponent:0.05]];
         _inviteCodeTF.tkThemetextColors = @[COLOR_11, COLOR_11_DARK];
         // 设置圆角
         _inviteCodeTF.layer.cornerRadius = 8;
         _inviteCodeTF.layer.masksToBounds = YES;
         // 设置边框
         _inviteCodeTF.layer.borderWidth = 1.0;
-        _inviteCodeTF.layer.tkThemeborderColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLORWHITE colorWithAlphaComponent:0.4]];
+        _inviteCodeTF.layer.tkThemeborderColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.05], [COLORWHITE colorWithAlphaComponent:0.4]];
         // 设置左边文字距离左边框间隔
         _inviteCodeTF.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 12, 0)];
         _inviteCodeTF.leftViewMode = UITextFieldViewModeAlways;
@@ -270,7 +270,7 @@
             NSForegroundColorAttributeName: COLOR_99,
             NSFontAttributeName:FONTM(14)
         };
-        _inviteCodeTF.attributedPlaceholder = [[NSAttributedString alloc] initWithString:LanguageToolMatch(@"请输入幸运数字") attributes:attributes];
+        _inviteCodeTF.attributedPlaceholder = [[NSAttributedString alloc] initWithString:LanguageToolMatch(@"请输入企业号") attributes:attributes];
     }
     return _inviteCodeTF;
 }
@@ -415,7 +415,7 @@
     }];
 }
 
-/// 设置幸运数字输入框约束（子类可重写以自定义）
+/// 设置企业号输入框约束（子类可重写以自定义）
 - (void)setupInviteTextFieldConstraints {
     self.inviteCodeTF.hidden = !self.isSupportInviteCode;
     self.inviteCodeErrorTipLabel.hidden = !self.isSupportInviteCode;
@@ -539,7 +539,7 @@
         }
         
         if (self.isSupportInviteCode) {
-            // 如果支持幸运数字，幸运数字也需要有值
+            // 如果支持企业号，企业号也需要有值
             isValid = isValid && inviteCode.length > 0;
         }
         return @(isValid);
@@ -851,7 +851,7 @@
         @strongify(self)
         updateClearButtonVisibility();
         
-        // 编辑结束，校验幸运数字是否合法
+        // 编辑结束，校验企业号是否合法
         [LuckkyLandRegisterDataHandle checkInviteCodeInputWithRegisterType:self.currentRegisterTypeMenu
                                                   InviteCodeInput:self.inviteCodeTF.text
                                                    WhenEditFinish:^(BOOL res, NSString * _Nullable errorText) {
@@ -968,7 +968,7 @@
         } Finish:^{
             @strongify(self)
             self.sendCodeBtn.enabled = YES;
-            self.sendCodeBtn.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+            self.sendCodeBtn.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
             
             NSString *title = LanguageToolMatch(@"获取验证码");
             [self.sendCodeBtn setTitle:title forState:UIControlStateNormal];

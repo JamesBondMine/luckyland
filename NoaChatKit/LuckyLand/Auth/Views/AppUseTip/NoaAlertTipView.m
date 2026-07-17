@@ -117,7 +117,7 @@
     //确定按钮
     _btnSure = [UIButton buttonWithType:UIButtonTypeCustom];
     [_btnSure setTitle:LanguageToolMatch(@"确认") forState:UIControlStateNormal];
-    [_btnSure setTkThemeTitleColor:@[COLOR_EB5C5C, COLOR_EB5C5C_DARK] forState:UIControlStateNormal];
+    [_btnSure setTkThemeTitleColor:@[COLOR_1B2E60, COLOR_1B2E60_DARK] forState:UIControlStateNormal];
     [_btnSure setTkThemeBackgroundImage:@[[UIImage ImageForColor:COLOR_EEEEEE],[UIImage ImageForColor:COLOR_EEEEEE_DARK]] forState:UIControlStateSelected];
     [_btnSure setTkThemeBackgroundImage:@[[UIImage ImageForColor:COLOR_EEEEEE],[UIImage ImageForColor:COLOR_EEEEEE_DARK]] forState:UIControlStateHighlighted];
     _btnSure.tkThemebackgroundColors = @[COLORWHITE, COLOR_11];

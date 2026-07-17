@@ -21,7 +21,7 @@
 #define kLoginModuleParamImgCodeKey @"LoginModuleParamImgCodeKey"
 // 登录、注册、重置密码-验证码key
 #define kLoginModuleParamVerCodeKey @"LoginModuleParamVerCodeKey"
-// 幸运数字key
+// 企业号key
 #define kLoginModuleParamInviteCodeKey @"LoginModuleParamInviteCodeKey"
 // 密码配合加密密钥key
 #define kLoginModuleParamPasswordEncryptKey @"LoginModuleParamPasswordEncryptKey"
@@ -41,7 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 确认密码-kLoginModuleParamConfirmPasswordKey
 /// 图文验证码-kLoginModuleParamImgCodeKey
 /// 登录、注册、重置密码-验证码-kLoginModuleParamVerCodeKey
-/// 幸运数字-kLoginModuleParamInviteCodeKey
+/// 企业号-kLoginModuleParamInviteCodeKey
 /// 密码配合加密密钥-kLoginModuleParamPasswordEncryptKey
 /// 加密密钥-kLoginModuleParamEncryptKeyKey
 typedef NSDictionary<NSString *, NSString *> *_Nullable(^GetInputTextBlock)(ZLoginAndRegisterTypeMenu loginType);
@@ -106,7 +106,7 @@ typedef NSDictionary<NSString *, NSString *> *_Nullable(^GetInputTextBlock)(ZLog
 /// 获取验证码类型
 - (NSInteger)getVerCodeType;
 
-/// 获取是否支持幸运数字
+/// 获取是否支持企业号
 - (BOOL)getInviteCodeSupportState;
 
 // MARK: UI输入框信息获取↓
@@ -125,7 +125,7 @@ typedef NSDictionary<NSString *, NSString *> *_Nullable(^GetInputTextBlock)(ZLog
 /// 获取当前登录类型的图文验证码输入框文字
 - (NSString *)getImgVerCodeText;
 
-/// 获取当前注册类型的幸运数字输入框文字
+/// 获取当前注册类型的企业号输入框文字
 - (NSString *)getInviteCodeText;
 
 /// 获取手机号码区号
@@ -186,10 +186,10 @@ typedef NSDictionary<NSString *, NSString *> *_Nullable(^GetInputTextBlock)(ZLog
                              VerCodeInput:(NSString * _Nullable)verCodeInputString
                            WhenEditFinish:(void(^)(BOOL res,  NSString * _Nullable errorText))resultFunc;
 
-/// 检查幸运数字合法性
+/// 检查企业号合法性
 /// - Parameters:
 ///   - registerType: 注册类型
-///   - inviteCodeInputString: 幸运数字
+///   - inviteCodeInputString: 企业号
 ///   - resultFunc: 回调: res-是否通过，errorText-错误文案
 + (void)checkInviteCodeInputWithRegisterType:(ZLoginAndRegisterTypeMenu)registerType
                              InviteCodeInput:(NSString * _Nullable)inviteCodeInputString

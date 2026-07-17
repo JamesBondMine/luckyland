@@ -309,7 +309,7 @@ static const NSTimeInterval kKeyExchangeTimeout = 15.0;
                 [SOCKETMANAGERTOOL cimConnectFailWithError:error];
                 [self updateConnectState:LingIMSocketConnectStateDisconnected];
                 [self startingSocketReconnect];
-                [NoaLocalLogger error:@"[幸运数字竞速] 通知连接失败"];
+                [NoaLocalLogger error:@"[企业号竞速] 通知连接失败"];
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"socketECDHDidConnectFailure" object:nil];
             } else {
                 [NoaLocalLogger info: @"[socket连接] 参数配置成功，已成功创建连接，等待连接成功"];
@@ -515,14 +515,14 @@ static const NSTimeInterval kKeyExchangeTimeout = 15.0;
     
     _socketOrgName = hostOptions.socketOrgName;
     if (!isNeedCreateNewConnect && self.connectState != LingIMSocketConnectStateDisconnected) {
-        // 为什么连接的ip端口号，且忽略未连接状态:因为幸运数字配置页面，需要断开socket连接，并且不能重连
+        // 为什么连接的ip端口号，且忽略未连接状态:因为企业号配置页面，需要断开socket连接，并且不能重连
         if ([self currentSocketConnectStatus]) {
             // 已连接,且ip与端口号一致,直接通知上层连接成功
-            [NoaLocalLogger info:@"[幸运数字竞速] 幸运数字竞速成功，通知连接成功"];
+            [NoaLocalLogger info:@"[企业号竞速] 企业号竞速成功，通知连接成功"];
             
             [[NSNotificationCenter defaultCenter] postNotificationName:@"socketECDHDidConnectSuccese" object:nil];
         }else {
-            [NoaLocalLogger error:[NSString stringWithFormat:@"[幸运数字竞速] 正在连接中,且ip与端口号一致,暂不处理，等待连接回调发送通知，当前连接状态:%ld, 是否支持重连:%@", (long)self.connectState, self.isCanReconnect ? @"支持" : @"禁止"]];
+            [NoaLocalLogger error:[NSString stringWithFormat:@"[企业号竞速] 正在连接中,且ip与端口号一致,暂不处理，等待连接回调发送通知，当前连接状态:%ld, 是否支持重连:%@", (long)self.connectState, self.isCanReconnect ? @"支持" : @"禁止"]];
         }
         return;
     }
@@ -1021,7 +1021,7 @@ static const NSTimeInterval kKeyExchangeTimeout = 15.0;
         [NoaLocalLogger info:@"[socket] 断开了连接，原因:客户端主动断开"];
     }
     
-    [NoaLocalLogger error:@"[幸运数字竞速] socketDidDisconnect断开连接"];
+    [NoaLocalLogger error:@"[企业号竞速] socketDidDisconnect断开连接"];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"socketECDHDidConnectFailure" object:nil];
     
     // 更新连接状态
@@ -1107,7 +1107,7 @@ static const NSTimeInterval kKeyExchangeTimeout = 15.0;
                 // 发送缓存接口(仅限短连接转长连接的)
                 [SOCKETMANAGERTOOL sendAllCacheRequest];
                 
-                [NoaLocalLogger info:@"[幸运数字竞速] ECDH交换,通知连接成功"];
+                [NoaLocalLogger info:@"[企业号竞速] ECDH交换,通知连接成功"];
                 
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"socketECDHDidConnectSuccese" object:nil];
                 

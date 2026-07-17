@@ -222,12 +222,12 @@
     return containsLetter && containsNumber;
 }
 
-#pragma mark - 校验幸运数字
+#pragma mark - 校验企业号
 + (BOOL)checkInviteCodeWithText:(NSString *)text
                     IsShowToast:(BOOL)isShowToast {
     if (text.length <= 0) {
         if (isShowToast) {
-            [HUD showMessage:LanguageToolMatch(@"幸运数字不能为空")];
+            [HUD showMessage:LanguageToolMatch(@"企业号不能为空")];
         }
         return NO;
     }

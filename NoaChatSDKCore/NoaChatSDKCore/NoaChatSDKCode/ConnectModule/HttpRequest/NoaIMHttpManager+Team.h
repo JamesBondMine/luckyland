@@ -33,7 +33,7 @@
 #define Team_Share_Url                @"/biz/team/share"
 //默认团队分享(仅在个人中心分享使用)
 #define Team_DefaultShare_Url                @"/biz/team/defaultShare"
-//随机幸运数字
+//随机企业号
 #define Team_GetRandomCoe               @"/biz/team/getRandomCode"
 
 #import "NoaIMHttpManager.h"
@@ -89,7 +89,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 默认团队分享
 /// @param params {userUid:操作用户ID}
 - (void)teamDefaultShareWith:(NSMutableDictionary * _Nullable)params onSuccess:(LingIMSuccessCallback)onSuccess onFailure:(LingIMFailureCallback)onFailure;
-/// 随机幸运数字
+/// 随机企业号
 - (void)teamGetRandomCodeWith:(NSMutableDictionary * _Nullable)params onSuccess:(LingIMSuccessCallback)onSuccess onFailure:(LingIMFailureCallback)onFailure;
 
 @end

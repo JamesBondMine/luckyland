@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 团队名称
 @property (nonatomic, copy) NSString *teamName;
 
-/// 幸运数字
+/// 企业号
 @property (nonatomic, copy) NSString *inviteCode;
 
 /// 下载链接

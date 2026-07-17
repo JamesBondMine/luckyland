@@ -74,7 +74,7 @@
         _packageAddBtn.enabled = NO;
     } else {
         [_packageAddBtn setTitle:LanguageToolMatch(@"添加") forState:UIControlStateNormal];
-        _packageAddBtn.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C];
+        _packageAddBtn.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60];
         _packageAddBtn.enabled = YES;
     }
 }

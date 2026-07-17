@@ -56,7 +56,7 @@
                 }
                 
                 // 账号信息
-                // 账号信息-账号+手机验证码+幸运数字
+                // 账号信息-账号+手机验证码+企业号
                 NSString *account = [self getAccountText];
                 NSString *verCode = [self getVerCodeText];
                 

@@ -96,9 +96,9 @@
     _btnCancel = [UIButton buttonWithType:UIButtonTypeCustom];
     [_btnCancel setTitle:LanguageToolMatch(@"取消") forState:UIControlStateNormal];
     [_btnCancel setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
-    _btnCancel.tkThemebackgroundColors = @[COLOR_EB5C5C,COLOR_EB5C5C_DARK];
+    _btnCancel.tkThemebackgroundColors = @[COLOR_1B2E60,COLOR_1B2E60_DARK];
     // 去掉点击效果
-    [_btnCancel setTkThemeBackgroundImage:@[[UIImage ImageForColor:COLOR_EB5C5C],[UIImage ImageForColor:COLOR_EB5C5C_DARK]] forState:UIControlStateSelected];
+    [_btnCancel setTkThemeBackgroundImage:@[[UIImage ImageForColor:COLOR_1B2E60],[UIImage ImageForColor:COLOR_1B2E60_DARK]] forState:UIControlStateSelected];
 
     _btnCancel.titleLabel.font = FONTN(17);
     [_btnCancel rounded:DWScale(12)];

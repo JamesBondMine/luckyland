@@ -1297,7 +1297,7 @@ static NSString * notReachable = @"notReachable";
     return isMatch;
 }
 
-#pragma mark - 幸运数字只能输入：纯小写字母 或 纯数字 或 小写字母+数字
+#pragma mark - 企业号只能输入：纯小写字母 或 纯数字 或 小写字母+数字
 - (BOOL)inputLiceseIdCheck {
     //校验是否为纯小写字母
     NSString *letterRegex = @"^[a-z]+$";//纯小写字母

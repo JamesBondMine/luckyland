@@ -134,7 +134,7 @@
         _agreeBtn = [[UIButton alloc] init];
         [_agreeBtn setTitle:LanguageToolMatch(@"同意") forState:UIControlStateNormal];
         [_agreeBtn setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
-        _agreeBtn.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+        _agreeBtn.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
         [_agreeBtn rounded:12];
         _agreeBtn.titleLabel.font = FONTN(14);
         [_agreeBtn addTarget:self action:@selector(agreeJoinApplyAction) forControlEvents:UIControlEventTouchUpInside];

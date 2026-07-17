@@ -67,8 +67,8 @@
         _topStateButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_topStateButton setTitle:LanguageToolMatch(@"置顶") forState:UIControlStateNormal];
         _topStateButton.titleLabel.font = FONTR(11);
-        [_topStateButton setTitleColor:COLOR_EB5C5C forState:UIControlStateNormal];
-        _topStateButton.titleLabel.tkThemetextColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+        [_topStateButton setTitleColor:COLOR_1B2E60 forState:UIControlStateNormal];
+        _topStateButton.titleLabel.tkThemetextColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
         _topStateButton.tkThemebackgroundColors = @[HEXACOLOR(@"4791FF", 0.2), HEXACOLOR(@"4791FF", 0.2)];
         _topStateButton.titleEdgeInsets = UIEdgeInsetsMake(0, 16, 0, 16);
         _topStateButton.userInteractionEnabled = NO;

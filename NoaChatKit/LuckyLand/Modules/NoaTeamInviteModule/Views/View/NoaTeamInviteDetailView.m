@@ -167,7 +167,7 @@ typedef void(^ClickCopyButtonActionBlock)(void);
 /// 需要显示的标题
 @property (nonatomic, copy) NSString *title;
 
-/// 需要显示的下方文字内容，一般为幸运数字或者链接地址等。
+/// 需要显示的下方文字内容，一般为企业号或者链接地址等。
 @property (nonatomic, copy) NSString *detailTitle;
 
 /// 顶部标题Label
@@ -331,7 +331,7 @@ typedef void(^LongPressQRImageViewActionBlock)(UIImage *image);
 /// 二维码
 @property (nonatomic, strong) UIImageView *qrCodeImgView;
 
-/// 团队幸运数字
+/// 团队企业号
 @property (nonatomic, strong) NoaTeamInviteTeamDetailTextView *teamInviteCodeView;
 
 /// 下载链接
@@ -372,12 +372,12 @@ typedef void(^LongPressQRImageViewActionBlock)(UIImage *image);
 - (NoaTeamInviteTeamDetailTextView *)teamInviteCodeView {
     if (!_teamInviteCodeView) {
         _teamInviteCodeView = [[NoaTeamInviteTeamDetailTextView alloc] initWithFrame:CGRectZero];
-        _teamInviteCodeView.title = LanguageToolMatch(@"团队幸运数字");
+        _teamInviteCodeView.title = LanguageToolMatch(@"团队企业号");
         _teamInviteCodeView.detailTitle = @"";
         @weakify(self)
         _teamInviteCodeView.clickCopyButtonActionBlock = ^{
             @strongify(self)
-            // 复制团队幸运数字
+            // 复制团队企业号
             if (![NSString isNil:self.teamDetailModel.inviteCode]) {
                 UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
                 pasteboard.string = self.teamDetailModel.inviteCode;
@@ -413,7 +413,7 @@ typedef void(^LongPressQRImageViewActionBlock)(UIImage *image);
     }
     _teamDetailModel = teamDetailModel;
     
-    // 幸运数字
+    // 企业号
     self.teamInviteCodeView.detailTitle = [NSString isNil:_teamDetailModel.inviteCode] ? @"" : _teamDetailModel.inviteCode;
     
     // 下载链接
@@ -607,7 +607,7 @@ typedef void(^LongPressQRImageViewActionBlock)(UIImage *image);
         [_configureTopButton setTitle:LanguageToolMatch(@"设为置顶") forState:UIControlStateNormal];
         _configureTopButton.titleLabel.font = FONTM(14);
         _configureTopButton.titleLabel.tkThemetextColors = @[COLORWHITE, COLORWHITE];
-        _configureTopButton.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+        _configureTopButton.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
         _configureTopButton.titleEdgeInsets = UIEdgeInsetsMake(6, 16, 6, 12);
     }
     return _configureTopButton;
@@ -696,7 +696,7 @@ typedef void(^LongPressQRImageViewActionBlock)(UIImage *image);
     [self.scrollView addSubview:self.teamInfoTopContainerView];
     [self.teamInfoTopContainerView addSubview:self.teamInfoTopView];
     
-    // 幸运数字、二维码等
+    // 企业号、二维码等
     [self.scrollView addSubview:self.teamInfoBottomContainerView];
     [self.teamInfoBottomContainerView addSubview:self.teamInfoBottomView];
     //
@@ -806,7 +806,7 @@ typedef void(^LongPressQRImageViewActionBlock)(UIImage *image);
     }
     
     // 2. 设置容器视图的阴影
-    self.configureTopContainerView.layer.shadowColor = COLOR_EB5C5C
+    self.configureTopContainerView.layer.shadowColor = COLOR_1B2E60
         .CGColor;
     self.configureTopContainerView.layer.shadowOffset = CGSizeMake(4, 4);
     self.configureTopContainerView.layer.shadowOpacity = 0.4;

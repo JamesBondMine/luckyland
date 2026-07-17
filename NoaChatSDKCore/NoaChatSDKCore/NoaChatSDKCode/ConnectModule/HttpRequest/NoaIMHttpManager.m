@@ -977,7 +977,7 @@ static NoaIMHttpManager *manager = nil;
         NoaIMHttpResponse *resp = [NoaIMHttpResponse mj_objectWithKeyValues:responseObject];
         if ([fullPath containsString:@"adm-license/feedback/addFeedBack"]) {
             if (resp.code == 200) {
-                //幸运数字/域名 投诉与支持 提交数据到另一个项目，该项目里接口成功的code为200，不是10000
+                //企业号/域名 投诉与支持 提交数据到另一个项目，该项目里接口成功的code为200，不是10000
                 if (onSuccess) {
                     onSuccess(resp.data, ztid);
                 }

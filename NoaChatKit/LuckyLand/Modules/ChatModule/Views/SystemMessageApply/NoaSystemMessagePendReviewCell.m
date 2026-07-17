@@ -164,7 +164,7 @@
             [weakSelf.delegate systemMessageCellClickNickNameAction:weakSelf.model.beInviteUserId];
         }
     }];
-    [text yy_setTextHighlightRange:[contentText rangeOfString:applyedUserNick] color:COLOR_EB5C5C backgroundColor:COLOR_CLEAR tapAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
+    [text yy_setTextHighlightRange:[contentText rangeOfString:applyedUserNick] color:COLOR_1B2E60 backgroundColor:COLOR_CLEAR tapAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
         //跳转到被邀请用户个人主页
         if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(systemMessageCellClickNickNameAction:)]) {
             [weakSelf.delegate systemMessageCellClickNickNameAction:weakSelf.model.userUid];
@@ -191,7 +191,7 @@
             }
             [(NSMutableAttributedString *)itself addAttribute:NSForegroundColorAttributeName value:color range:NSMakeRange(0, groupInfoContent.length)];
         };
-        [groupInfoAtt configAttStrLightColor:COLOR_EB5C5C darkColor:COLOR_EB5C5C fullStr:groupInfoContent appointStr:groupName];
+        [groupInfoAtt configAttStrLightColor:COLOR_1B2E60 darkColor:COLOR_1B2E60 fullStr:groupInfoContent appointStr:groupName];
         self.groupInfoLbl.attributedText = groupInfoAtt;
     }
     

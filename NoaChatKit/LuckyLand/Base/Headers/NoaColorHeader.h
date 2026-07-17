@@ -12,6 +12,7 @@
 #define COLOR_CLEAR         [UIColor clearColor]
 #define COLORWHITE          HEXCOLOR(@"FFFFFF")
 #define COLOR_00            HEXCOLOR(@"000000")
+#define COLOR_33            HEXCOLOR(@"333333")
 #define COLOR_22            HEXCOLOR(@"222222")
 #define COLOR_11            HEXCOLOR(@"111111")
 #define COLOR_66            HEXCOLOR(@"666666")
@@ -78,8 +79,8 @@
 #define COLOR_E8E8E8        HEXCOLOR(@"E8E8E8")
 #define COLOR_8D93A6        HEXCOLOR(@"8D93A6")
 //#define COLOR_5966F2        HEXCOLOR(@"5966F2")  // 蓝紫色
-// #define COLOR_EB5C5C        HEXCOLOR(@"6fc237")  // 绿色
-#define COLOR_EB5C5C        HEXCOLOR(@"1B2E60")
+// #define COLOR_1B2E60        HEXCOLOR(@"6fc237")  // 绿色
+#define COLOR_1B2E60        HEXCOLOR(@"1B2E60")
 // 橙色 EB5C5C
 
 #define COLOR_EEF1FA        HEXCOLOR(@"EEF1FA")
@@ -146,8 +147,8 @@
 #define COLOR_F81205_DARK       HEXCOLOR(@"F81205")
 #define COLOR_E8E8E8_DARK       HEXCOLOR(@"E8E8E8")
 #define COLOR_8D93A6_DARK       HEXCOLOR(@"FFFFFF")
-//#define COLOR_EB5C5C_DARK       HEXCOLOR(@"5966F2")
-#define COLOR_EB5C5C_DARK       HEXCOLOR(@"EB5C5C")
+//#define COLOR_1B2E60_DARK       HEXCOLOR(@"5966F2")
+#define COLOR_1B2E60_DARK       HEXCOLOR(@"EB5C5C")
 
 #define COLOR_EEF1FA_DARK       HEXCOLOR(@"3C3E45")
 #define COLOR_EFEFF2_DARK       HEXCOLOR(@"EFEFF2")

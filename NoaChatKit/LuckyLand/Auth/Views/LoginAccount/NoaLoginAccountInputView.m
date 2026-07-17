@@ -24,14 +24,14 @@
 - (UITextField *)accountTF {
     if (!_accountTF) {
         _accountTF = [[UITextField alloc] initWithFrame:CGRectZero];
-        _accountTF.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.05]];
+        _accountTF.tkThemebackgroundColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.05], [COLOR_1B2E60_DARK colorWithAlphaComponent:0.05]];
         _accountTF.tkThemetextColors = @[COLOR_11, COLOR_11_DARK];
         // 设置圆角
         _accountTF.layer.cornerRadius = 8;
         _accountTF.layer.masksToBounds = YES;
         // 设置边框
         _accountTF.layer.borderWidth = 1.0;
-        _accountTF.layer.tkThemeborderColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLORWHITE colorWithAlphaComponent:0.4]];
+        _accountTF.layer.tkThemeborderColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.05], [COLORWHITE colorWithAlphaComponent:0.4]];
         _accountTF.keyboardType = UIKeyboardTypeDefault;
         _accountTF.delegate = self;
         // 创建属性字符串

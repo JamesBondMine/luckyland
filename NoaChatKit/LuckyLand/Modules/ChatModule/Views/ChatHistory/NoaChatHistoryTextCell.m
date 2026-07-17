@@ -160,7 +160,7 @@
     [attributedStr addAttribute:NSForegroundColorAttributeName value:normalColor range:searchResultRange];
     
     NSRange searchValueRange = [searchResult rangeOfString:searchValue options:NSCaseInsensitiveSearch];//不区分大小写
-    [attributedStr addAttribute:NSForegroundColorAttributeName value:COLOR_EB5C5C range:searchValueRange];
+    [attributedStr addAttribute:NSForegroundColorAttributeName value:COLOR_1B2E60 range:searchValueRange];
     
     return attributedStr;
 }

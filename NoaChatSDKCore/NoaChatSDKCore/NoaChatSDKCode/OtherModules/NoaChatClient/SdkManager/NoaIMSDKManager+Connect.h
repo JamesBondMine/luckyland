@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 主动断开socket连接(会自动重连，主要用于账号退出后，主动断开socket连接，避免收到上一个账号的消息)
 - (void)toolDisconnectCanReconnect;
 
-/// 主动断开socket连接(不会自动重连，主要用于在幸运数字加入页面，主动断开socket连接，并且直到竞速后，重新连接)
+/// 主动断开socket连接(不会自动重连，主要用于在企业号加入页面，主动断开socket连接，并且直到竞速后，重新连接)
 - (void)toolDisconnectNoReconnect;
 
 @end

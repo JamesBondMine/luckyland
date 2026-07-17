@@ -58,7 +58,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 默认团队分享
 /// @param params {userUid:操作用户ID}
 - (void)imTeamDefaultShareWith:(NSMutableDictionary * _Nullable)params onSuccess:(LingIMSuccessCallback)onSuccess onFailure:(LingIMFailureCallback)onFailure;
-/// 随机幸运数字
+/// 随机企业号
 - (void)imTeamGetRandomCodeWith:(NSMutableDictionary * _Nullable)params onSuccess:(LingIMSuccessCallback)onSuccess onFailure:(LingIMFailureCallback)onFailure;
 @end
 

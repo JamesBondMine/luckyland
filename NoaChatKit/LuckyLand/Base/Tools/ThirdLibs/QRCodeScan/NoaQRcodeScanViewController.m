@@ -295,7 +295,7 @@
     //设置线条宽度
     CGContextSetLineWidth(context, 6.0f);
     //设置线条颜色
-    CGContextSetStrokeColorWithColor(context, COLOR_EB5C5C.CGColor);
+    CGContextSetStrokeColorWithColor(context, COLOR_1B2E60.CGColor);
     //路径
     CGContextBeginPath(context);
     //设置起点坐标
@@ -339,7 +339,7 @@
                 msgAlertView.lblContent.textAlignment = NSTextAlignmentLeft;
                 [msgAlertView.btnSure setTitle:LanguageToolMatch(@"我知道了") forState:UIControlStateNormal];
                 [msgAlertView.btnSure setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
-                msgAlertView.btnSure.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C];
+                msgAlertView.btnSure.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60];
                 [msgAlertView alertShow];
                 WeakSelf
                 msgAlertView.sureBtnBlock = ^(BOOL isCheckBox) {
@@ -354,7 +354,7 @@
                 msgAlertView.lblContent.textAlignment = NSTextAlignmentLeft;
                 [msgAlertView.btnSure setTitle:LanguageToolMatch(@"是") forState:UIControlStateNormal];
                 [msgAlertView.btnSure setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
-                msgAlertView.btnSure.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C];
+                msgAlertView.btnSure.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60];
                 [msgAlertView.btnCancel setTitle:LanguageToolMatch(@"否") forState:UIControlStateNormal];
                 [msgAlertView.btnCancel setTkThemeTitleColor:@[COLOR_66, COLOR_66_DARK] forState:UIControlStateNormal];
                 msgAlertView.btnCancel.tkThemebackgroundColors = @[COLOR_F6F6F6, COLOR_F6F6F6_DARK];
@@ -375,7 +375,7 @@
     return result;
 }
 
-#pragma mark - 判断扫码结果是不是幸运数字相关操作
+#pragma mark - 判断扫码结果是不是企业号相关操作
 - (BOOL)checkSacnResultForLicense:(NSString *)content {
     BOOL result = NO;
     NSDictionary *contentDic = [NSString jsonStringToDic:content];
@@ -396,7 +396,7 @@
             msgAlertView.lblContent.textAlignment = NSTextAlignmentLeft;
             [msgAlertView.btnSure setTitle:LanguageToolMatch(@"是") forState:UIControlStateNormal];
             [msgAlertView.btnSure setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
-            msgAlertView.btnSure.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C];
+            msgAlertView.btnSure.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60];
             [msgAlertView.btnCancel setTitle:LanguageToolMatch(@"否") forState:UIControlStateNormal];
             [msgAlertView.btnCancel setTkThemeTitleColor:@[COLOR_66, COLOR_66_DARK] forState:UIControlStateNormal];
             msgAlertView.btnCancel.tkThemebackgroundColors = @[COLOR_F6F6F6, COLOR_F6F6F6_DARK];
@@ -434,7 +434,7 @@
             msgAlertView.lblContent.textAlignment = NSTextAlignmentLeft;
             [msgAlertView.btnSure setTitle:LanguageToolMatch(@"是") forState:UIControlStateNormal];
             [msgAlertView.btnSure setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
-            msgAlertView.btnSure.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C];
+            msgAlertView.btnSure.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60];
             [msgAlertView.btnCancel setTitle:LanguageToolMatch(@"否") forState:UIControlStateNormal];
             [msgAlertView.btnCancel setTkThemeTitleColor:@[COLOR_66, COLOR_66_DARK] forState:UIControlStateNormal];
             msgAlertView.btnCancel.tkThemebackgroundColors = @[COLOR_F6F6F6, COLOR_F6F6F6_DARK];
@@ -469,7 +469,7 @@
             msgAlertView.lblContent.textAlignment = NSTextAlignmentLeft;
             [msgAlertView.btnSure setTitle:LanguageToolMatch(@"我知道了") forState:UIControlStateNormal];
             [msgAlertView.btnSure setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
-            msgAlertView.btnSure.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C];
+            msgAlertView.btnSure.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60];
             [msgAlertView alertShow];
             WeakSelf
             msgAlertView.sureBtnBlock = ^(BOOL isCheckBox) {
@@ -508,7 +508,7 @@
             msgAlertView.lblContent.textAlignment = NSTextAlignmentLeft;
             [msgAlertView.btnSure setTitle:LanguageToolMatch(@"我知道了") forState:UIControlStateNormal];
             [msgAlertView.btnSure setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
-            msgAlertView.btnSure.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C];
+            msgAlertView.btnSure.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60];
             [msgAlertView alertShow];
             WeakSelf
             msgAlertView.sureBtnBlock = ^(BOOL isCheckBox) {

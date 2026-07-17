@@ -228,10 +228,10 @@
 - (void)checkLoginBtnAvailable {
     if (self.passwordInput.textLength > 0) {
         self.loginBtn.enabled = YES;
-        self.loginBtn.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+        self.loginBtn.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
     } else {
         self.loginBtn.enabled = NO;
-        self.loginBtn.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.3], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.3]];
+        self.loginBtn.tkThemebackgroundColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.3], [COLOR_1B2E60_DARK colorWithAlphaComponent:0.3]];
     }
 }
 
@@ -779,7 +779,7 @@
         _switchBtn = [[UIButton alloc] init];
         [_switchBtn setTitle:LanguageToolMatch(@"验证码登录") forState:UIControlStateNormal];
         [_switchBtn setTitle:LanguageToolMatch(@"账密登录") forState:UIControlStateSelected];
-        [_switchBtn setTkThemeTitleColor:@[COLOR_EB5C5C, COLOR_EB5C5C_DARK] forState:UIControlStateNormal];
+        [_switchBtn setTkThemeTitleColor:@[COLOR_1B2E60, COLOR_1B2E60_DARK] forState:UIControlStateNormal];
         _switchBtn.titleLabel.font = FONTN(14);
         [_switchBtn setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
         [_switchBtn addTarget:self action:@selector(switchLoginTypeAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -814,7 +814,7 @@
         [_loginBtn setTitle:LanguageToolMatch(@"登录") forState:UIControlStateNormal];
         [_loginBtn setTitleColor:COLORWHITE forState:UIControlStateNormal];
         _loginBtn.enabled = NO;
-        _loginBtn.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.3], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.3]];
+        _loginBtn.tkThemebackgroundColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.3], [COLOR_1B2E60_DARK colorWithAlphaComponent:0.3]];
         [_loginBtn setTkThemeBackgroundImage:@[[UIImage ImageForColor:COLOR_4069B9],[UIImage ImageForColor:COLOR_4069B9_DARK]] forState:UIControlStateSelected];
         [_loginBtn setTkThemeBackgroundImage:@[[UIImage ImageForColor:COLOR_4069B9],[UIImage ImageForColor:COLOR_4069B9_DARK]] forState:UIControlStateHighlighted];
         _loginBtn.titleLabel.font = FONTN(16);

@@ -4053,7 +4053,7 @@
         self.groupAlertView.btnCancel.hidden = YES;
         [self.groupAlertView.btnSure setTitle:btnName forState:UIControlStateNormal];
         [self.groupAlertView.btnSure setTkThemeTitleColor:@[COLORWHITE, COLORWHITE_DARK] forState:UIControlStateNormal];
-        self.groupAlertView.btnSure.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C];
+        self.groupAlertView.btnSure.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60];
         [self.groupAlertView.btnSure mas_updateConstraints:^(MASConstraintMaker *make) {
             make.centerX.mas_equalTo(self.groupAlertView);
         }];
@@ -4628,7 +4628,7 @@
         msgAlertView.lblContent.textAlignment = NSTextAlignmentCenter;
         [msgAlertView.btnSure setTitle:LanguageToolMatch(@"确认") forState:UIControlStateNormal];
         [msgAlertView.btnSure setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
-        msgAlertView.btnSure.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+        msgAlertView.btnSure.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
         [msgAlertView.btnCancel setTitle:LanguageToolMatch(@"取消") forState:UIControlStateNormal];
         [msgAlertView.btnCancel setTkThemeTitleColor:@[COLOR_66, COLOR_66_DARK] forState:UIControlStateNormal];
         msgAlertView.btnCancel.tkThemebackgroundColors = @[COLOR_F6F6F6, COLOR_F6F6F6_DARK];
@@ -4668,7 +4668,7 @@
         msgAlertView.lblContent.textAlignment = NSTextAlignmentCenter;
         [msgAlertView.btnSure setTitle:LanguageToolMatch(@"确认") forState:UIControlStateNormal];
         [msgAlertView.btnSure setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
-        msgAlertView.btnSure.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+        msgAlertView.btnSure.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
         [msgAlertView.btnCancel setTitle:LanguageToolMatch(@"取消") forState:UIControlStateNormal];
         [msgAlertView.btnCancel setTkThemeTitleColor:@[COLOR_66, COLOR_66_DARK] forState:UIControlStateNormal];
         msgAlertView.btnCancel.tkThemebackgroundColors = @[COLOR_F6F6F6, COLOR_F6F6F6_DARK];
@@ -6275,7 +6275,7 @@
     msgAlertView.lblContent.text = LanguageToolMatch(@"撤回所选消息");
     [msgAlertView.btnSure setTitle:LanguageToolMatch(@"确认") forState:UIControlStateNormal];
     [msgAlertView.btnSure setTkThemeTitleColor:@[COLORWHITE,COLORWHITE] forState:UIControlStateNormal];
-    msgAlertView.btnSure.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C];
+    msgAlertView.btnSure.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60];
     [msgAlertView.btnSure setTkThemeBackgroundImage:@[[UIImage ImageForColor:COLOR_4069B9],[UIImage ImageForColor:COLOR_4069B9_DARK]] forState:UIControlStateSelected];
     [msgAlertView.btnSure setTkThemeBackgroundImage:@[[UIImage ImageForColor:COLOR_4069B9],[UIImage ImageForColor:COLOR_4069B9_DARK]] forState:UIControlStateHighlighted];
     
@@ -6566,7 +6566,7 @@
         alertView.lblContent.text = LanguageToolMatch(@"你确定置顶本条消息吗?");
         [alertView.btnSure setTitle:LanguageToolMatch(@"确认") forState:UIControlStateNormal];
         [alertView.btnSure setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
-        alertView.btnSure.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+        alertView.btnSure.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
         [alertView.btnCancel setTitle:LanguageToolMatch(@"取消") forState:UIControlStateNormal];
         [alertView.btnCancel setTkThemeTitleColor:@[COLOR_66, COLOR_66_DARK] forState:UIControlStateNormal];
         alertView.btnCancel.tkThemebackgroundColors = @[COLOR_F6F6F6, COLOR_F6F6F6_DARK];
@@ -6585,7 +6585,7 @@
         alertView.checkboxLblContent.text = LanguageToolMatch(@"为所有群成员置顶");
         [alertView.btnSure setTitle:LanguageToolMatch(@"确认") forState:UIControlStateNormal];
         [alertView.btnSure setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
-        alertView.btnSure.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+        alertView.btnSure.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
         [alertView.btnCancel setTitle:LanguageToolMatch(@"取消") forState:UIControlStateNormal];
         [alertView.btnCancel setTkThemeTitleColor:@[COLOR_66, COLOR_66_DARK] forState:UIControlStateNormal];
         alertView.btnCancel.tkThemebackgroundColors = @[COLOR_F6F6F6, COLOR_F6F6F6_DARK];
@@ -6682,7 +6682,7 @@
     alertView.lblContent.text = LanguageToolMatch(@"你确定取消本条消息的全局置顶吗?");
     [alertView.btnSure setTitle:LanguageToolMatch(@"确认") forState:UIControlStateNormal];
     [alertView.btnSure setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
-    alertView.btnSure.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+    alertView.btnSure.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
     [alertView.btnCancel setTitle:LanguageToolMatch(@"取消") forState:UIControlStateNormal];
     [alertView.btnCancel setTkThemeTitleColor:@[COLOR_66, COLOR_66_DARK] forState:UIControlStateNormal];
     alertView.btnCancel.tkThemebackgroundColors = @[COLOR_F6F6F6, COLOR_F6F6F6_DARK];
@@ -6702,7 +6702,7 @@
     alertView.lblContent.text = LanguageToolMatch(@"你确定取消本条置顶消息吗?");
     [alertView.btnSure setTitle:LanguageToolMatch(@"确认") forState:UIControlStateNormal];
     [alertView.btnSure setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
-    alertView.btnSure.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+    alertView.btnSure.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
     [alertView.btnCancel setTitle:LanguageToolMatch(@"取消") forState:UIControlStateNormal];
     [alertView.btnCancel setTkThemeTitleColor:@[COLOR_66, COLOR_66_DARK] forState:UIControlStateNormal];
     alertView.btnCancel.tkThemebackgroundColors = @[COLOR_F6F6F6, COLOR_F6F6F6_DARK];
@@ -6752,7 +6752,7 @@
     alertView.checkboxLblContent.text = LanguageToolMatch(@"我和对方均置顶");
     [alertView.btnSure setTitle:LanguageToolMatch(@"确认") forState:UIControlStateNormal];
     [alertView.btnSure setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
-    alertView.btnSure.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+    alertView.btnSure.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
     [alertView.btnCancel setTitle:LanguageToolMatch(@"取消") forState:UIControlStateNormal];
     [alertView.btnCancel setTkThemeTitleColor:@[COLOR_66, COLOR_66_DARK] forState:UIControlStateNormal];
     alertView.btnCancel.tkThemebackgroundColors = @[COLOR_F6F6F6, COLOR_F6F6F6_DARK];
@@ -6818,7 +6818,7 @@
     alertView.lblContent.text = LanguageToolMatch(@"你确定取消本条消息的全局置顶吗?");
     [alertView.btnSure setTitle:LanguageToolMatch(@"确认") forState:UIControlStateNormal];
     [alertView.btnSure setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
-    alertView.btnSure.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+    alertView.btnSure.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
     [alertView.btnCancel setTitle:LanguageToolMatch(@"取消") forState:UIControlStateNormal];
     [alertView.btnCancel setTkThemeTitleColor:@[COLOR_66, COLOR_66_DARK] forState:UIControlStateNormal];
     alertView.btnCancel.tkThemebackgroundColors = @[COLOR_F6F6F6, COLOR_F6F6F6_DARK];
@@ -6838,7 +6838,7 @@
     alertView.lblContent.text = LanguageToolMatch(@"你确定取消本条置顶消息吗?");
     [alertView.btnSure setTitle:LanguageToolMatch(@"确认") forState:UIControlStateNormal];
     [alertView.btnSure setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
-    alertView.btnSure.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+    alertView.btnSure.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
     [alertView.btnCancel setTitle:LanguageToolMatch(@"取消") forState:UIControlStateNormal];
     [alertView.btnCancel setTkThemeTitleColor:@[COLOR_66, COLOR_66_DARK] forState:UIControlStateNormal];
     alertView.btnCancel.tkThemebackgroundColors = @[COLOR_F6F6F6, COLOR_F6F6F6_DARK];

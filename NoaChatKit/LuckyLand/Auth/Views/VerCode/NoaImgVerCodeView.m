@@ -122,7 +122,7 @@
     //确定
     UIButton *sureBtn = [[UIButton alloc] init];
     [sureBtn setTitle:LanguageToolMatch(@"确认") forState:UIControlStateNormal];
-    [sureBtn setTkThemeTitleColor:@[COLOR_EB5C5C, COLOR_EB5C5C_DARK] forState:UIControlStateNormal];
+    [sureBtn setTkThemeTitleColor:@[COLOR_1B2E60, COLOR_1B2E60_DARK] forState:UIControlStateNormal];
     [sureBtn setTkThemeBackgroundImage:@[[UIImage ImageForColor:COLOR_EEEEEE],[UIImage ImageForColor:COLOR_EEEEEE_DARK]] forState:UIControlStateSelected];
     [sureBtn setTkThemeBackgroundImage:@[[UIImage ImageForColor:COLOR_EEEEEE],[UIImage ImageForColor:COLOR_EEEEEE_DARK]] forState:UIControlStateHighlighted];
     sureBtn.tkThemebackgroundColors = @[COLORWHITE, COLOR_11];

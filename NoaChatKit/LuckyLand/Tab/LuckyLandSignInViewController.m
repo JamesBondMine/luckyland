@@ -36,7 +36,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.tkThemebackgroundColors = @[COLOR_F5F6F9, COLOR_11];
+    self.view.tkThemebackgroundColors = @[COLORWHITE, COLORWHITE_DARK];
     self.navTitleStr = LanguageToolMatch(@"每日签到");
     [self signSetUI];
     [self requestGetSignInfo];
@@ -51,13 +51,13 @@
     
     
     self.navTitleStr = LanguageToolMatch(@"每日签到");
-    self.navView.tkThemebackgroundColors = @[COLORWHITE, COLORWHITE_DARK];
-    self.navBtnRight.hidden = YES;
-    
+    // 导航栏透明，悬浮在背景图上方
+    self.navView.tkThemebackgroundColors = @[UIColor.clearColor, UIColor.clearColor];
+    self.navTitleLabel.tkThemetextColors = @[COLORWHITE, COLORWHITE];
+    [self.navBtnBack setTkThemeImage:@[ImgNamed(@"nav_back_white"), ImgNamed(@"nav_back_white")] forState:UIControlStateNormal];
     self.navBtnRight.hidden = NO;
-    [self.navBtnRight setTitle:LanguageToolMatch(@"签到记录") forState:UIControlStateNormal];
-    [self.navBtnRight setTkThemeTitleColor:@[HEXCOLOR(@"333333"), HEXCOLOR(@"333333")] forState:UIControlStateNormal];
-//    self.navBtnRight.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C];
+    [self.navBtnRight setTitle:LanguageToolMatch(@"规则") forState:UIControlStateNormal];
+    [self.navBtnRight setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
     [self.navBtnRight rounded:DWScale(12)];
     [self.navBtnRight mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.navTitleLabel);
@@ -66,26 +66,21 @@
         make.width.mas_equalTo(DWScale(60));
     }];
     
-    [self.navBtnRight addTarget:self action:@selector(signInRecordListAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.navBtnRight addTarget:self action:@selector(ruleGotoAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view bringSubviewToFront:self.navView];
 
 }
 
 -(void)signSetUI{
-    //顶部背景图片
-    UIImageView * signInBgImageView = [[UIImageView alloc] init];
-    signInBgImageView.image = ImgNamed(@"signIn_bg");
-    [self.view addSubview:signInBgImageView];
-    [signInBgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(self.view);
-    }];
-    
-    [self.view addSubview:self.scrollView];
+    // scrollView 从页面顶部开始，便于背景图延伸到导航栏下方
+    self.scrollView.backgroundColor = COLOR_CLEAR;
+    [self.view insertSubview:self.scrollView belowSubview:self.navView];
     [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view).offset(DStatusBarH +44);
-        make.leading.trailing.mas_equalTo(self.view);
+        make.top.leading.trailing.mas_equalTo(self.view);
         make.bottom.equalTo(self.view).offset(-(DWScale(25)));
     }];
     
+    // 内容容器透明：上半部分露出背景图，下半部分用白色底板
     UIView *contentBackView = [[UIView alloc] init];
     contentBackView.backgroundColor = COLOR_CLEAR;
     [self.scrollView addSubview:contentBackView];
@@ -94,18 +89,79 @@
         make.width.mas_equalTo(DScreenWidth);
     }];
     
-    //中间线
-    UIView * lineSpaceView = [[UIView alloc] init];
-    lineSpaceView.backgroundColor = HEXCOLOR(@"927BF7");
-    [contentBackView addSubview:lineSpaceView];
-    [lineSpaceView mas_makeConstraints:^(MASConstraintMaker *make) {
+    // 顶部预留导航栏高度，内容从导航栏下方开始
+    UIView *topNavSpacer = [[UIView alloc] init];
+    topNavSpacer.backgroundColor = COLOR_CLEAR;
+    [contentBackView addSubview:topNavSpacer];
+    [topNavSpacer mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.leading.trailing.equalTo(contentBackView);
+        make.height.mas_equalTo(DNavStatusBarH);
+    }];
+    
+    // 签到盒子logo（置顶，其下为横向三列数据）
+    UIImageView * SignInGiftImgView = [[UIImageView alloc] init];
+    SignInGiftImgView.image = ImgNamed(@"shanhai_signlogo");
+    [contentBackView addSubview:SignInGiftImgView];
+    [SignInGiftImgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(contentBackView);
-        make.top.mas_equalTo(contentBackView.mas_top).offset(DWScale(33));
+        make.top.mas_equalTo(topNavSpacer.mas_bottom).offset(DWScale(8));
+        make.size.mas_equalTo(CGSizeMake(DWScale(154), DWScale(138)));
+    }];
+    
+    // 横向三列分隔线：今日已领积分 | 累计签到 | 积分
+    CGFloat columnWidth = DScreenWidth / 3.0;
+    UIView * leftLineSpace = [[UIView alloc] init];
+    leftLineSpace.backgroundColor = HEXCOLOR(@"927BF7");
+    [contentBackView addSubview:leftLineSpace];
+    [leftLineSpace mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.mas_equalTo(contentBackView).offset(columnWidth);
+        make.top.mas_equalTo(SignInGiftImgView.mas_bottom).offset(DWScale(12));
         make.width.mas_equalTo(1);
         make.height.mas_equalTo(DWScale(27));
     }];
     
-    //累计签到
+    UIView * rightLineSpace = [[UIView alloc] init];
+    rightLineSpace.backgroundColor = HEXCOLOR(@"927BF7");
+    [contentBackView addSubview:rightLineSpace];
+    [rightLineSpace mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.mas_equalTo(contentBackView).offset(columnWidth * 2);
+        make.top.mas_equalTo(leftLineSpace);
+        make.width.mas_equalTo(1);
+        make.height.mas_equalTo(DWScale(27));
+    }];
+    
+    // 第一列：今日已领/可领积分
+    UILabel * pointLabelCountLabel = [[UILabel alloc] init];
+    pointLabelCountLabel.text = @"-";
+    pointLabelCountLabel.textAlignment = NSTextAlignmentCenter;
+    pointLabelCountLabel.textColor = HEXCOLOR(@"FFFFFF");
+    pointLabelCountLabel.font = FONTN(14);
+    [contentBackView addSubview:pointLabelCountLabel];
+    self.pointLabelCountLabel = pointLabelCountLabel;
+    [pointLabelCountLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.mas_equalTo(contentBackView);
+        make.trailing.mas_equalTo(leftLineSpace.mas_leading);
+        make.top.mas_equalTo(SignInGiftImgView.mas_bottom).offset(DWScale(8));
+        make.height.mas_equalTo(DWScale(18));
+    }];
+    
+    UILabel * todayGetPointLabel = [[UILabel alloc] init];
+    todayGetPointLabel.text = LanguageToolMatch(@"今日可领积分");
+    todayGetPointLabel.textColor = HEXCOLOR(@"FFFFFF");
+    todayGetPointLabel.font = FONTR(14);
+    todayGetPointLabel.textAlignment = NSTextAlignmentCenter;
+    todayGetPointLabel.adjustsFontSizeToFitWidth = YES;
+    todayGetPointLabel.minimumScaleFactor = 0.7;
+    [contentBackView addSubview:todayGetPointLabel];
+    self.todayGetPointLabel = todayGetPointLabel;
+    [todayGetPointLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.mas_equalTo(contentBackView);
+        make.trailing.mas_equalTo(leftLineSpace.mas_leading);
+        make.top.mas_equalTo(pointLabelCountLabel.mas_bottom).offset(DWScale(8));
+        make.height.mas_equalTo(DWScale(18));
+    }];
+    
+    // 第二列：累计签到
     UILabel * signTotalCountLabel = [[UILabel alloc] init];
     signTotalCountLabel.text = @"-";
     signTotalCountLabel.textAlignment = NSTextAlignmentCenter;
@@ -114,9 +170,9 @@
     [contentBackView addSubview:signTotalCountLabel];
     self.signTotalCountLabel = signTotalCountLabel;
     [signTotalCountLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.mas_equalTo(contentBackView);
-        make.trailing.mas_equalTo(lineSpaceView.mas_leading);
-        make.top.mas_equalTo(contentBackView).offset(DWScale(23));
+        make.leading.mas_equalTo(leftLineSpace.mas_trailing);
+        make.trailing.mas_equalTo(rightLineSpace.mas_leading);
+        make.top.mas_equalTo(pointLabelCountLabel);
         make.height.mas_equalTo(DWScale(18));
     }];
     
@@ -127,8 +183,8 @@
     signTotalLabel.textAlignment = NSTextAlignmentCenter;
     [contentBackView addSubview:signTotalLabel];
     [signTotalLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.mas_equalTo(contentBackView);
-        make.trailing.mas_equalTo(lineSpaceView.mas_leading);
+        make.leading.mas_equalTo(leftLineSpace.mas_trailing);
+        make.trailing.mas_equalTo(rightLineSpace.mas_leading);
         make.top.mas_equalTo(signTotalCountLabel.mas_bottom).offset(DWScale(8));
         make.height.mas_equalTo(DWScale(18));
     }];
@@ -137,13 +193,13 @@
     [signTotalControl addTarget:self action:@selector(signInRecordListAction) forControlEvents:UIControlEventTouchUpInside];
     [contentBackView addSubview:signTotalControl];
     [signTotalControl mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.mas_equalTo(contentBackView);
-        make.trailing.mas_equalTo(lineSpaceView.mas_leading);
-        make.top.mas_equalTo(contentBackView).offset(DWScale(23));
+        make.leading.mas_equalTo(leftLineSpace.mas_trailing);
+        make.trailing.mas_equalTo(rightLineSpace.mas_leading);
+        make.top.mas_equalTo(pointLabelCountLabel);
         make.height.mas_equalTo(DWScale(44));
     }];
     
-    //积分
+    // 第三列：积分
     UILabel * signPointsCountLabel = [[UILabel alloc] init];
     signPointsCountLabel.text = @"-";
     signPointsCountLabel.textAlignment = NSTextAlignmentCenter;
@@ -152,9 +208,9 @@
     [contentBackView addSubview:signPointsCountLabel];
     self.signPointsCountLabel = signPointsCountLabel;
     [signPointsCountLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.mas_equalTo(rightLineSpace.mas_trailing);
         make.trailing.mas_equalTo(contentBackView);
-        make.leading.mas_equalTo(lineSpaceView.mas_trailing);
-        make.top.mas_equalTo(contentBackView).offset(DWScale(23));
+        make.top.mas_equalTo(pointLabelCountLabel);
         make.height.mas_equalTo(DWScale(18));
     }];
     
@@ -165,8 +221,8 @@
     signPointsLabel.textAlignment = NSTextAlignmentCenter;
     [contentBackView addSubview:signPointsLabel];
     [signPointsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.mas_equalTo(rightLineSpace.mas_trailing);
         make.trailing.mas_equalTo(contentBackView);
-        make.leading.mas_equalTo(lineSpaceView.mas_trailing);
         make.top.mas_equalTo(signPointsCountLabel.mas_bottom).offset(DWScale(8));
         make.height.mas_equalTo(DWScale(18));
     }];
@@ -176,125 +232,39 @@
     [signIntergralControl addTarget:self action:@selector(signInIntergralDetailAction) forControlEvents:UIControlEventTouchUpInside];
     [contentBackView addSubview:signIntergralControl];
     [signIntergralControl mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(contentBackView).offset(DWScale(23));
-        make.leading.mas_equalTo(lineSpaceView.mas_trailing);
+        make.top.mas_equalTo(pointLabelCountLabel);
+        make.leading.mas_equalTo(rightLineSpace.mas_trailing);
         make.trailing.mas_equalTo(contentBackView);
         make.height.mas_equalTo(DWScale(44));
     }];
     
     //中间签到领积分区域
     UIView * middleView = [[UIView alloc] init];
-    middleView.tkThemebackgroundColors = @[COLORWHITE, COLOR_F5F6F9_DARK];
-    middleView.layer.cornerRadius = 12;
+//    middleView.tkThemebackgroundColors = @[COLORWHITE, COLOR_F5F6F9_DARK];
+//    middleView.layer.cornerRadius = 12;
     [contentBackView addSubview:middleView];
     [middleView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.mas_equalTo(contentBackView).offset(16);
         make.trailing.mas_equalTo(contentBackView).offset(-16);
         make.top.mas_equalTo(signPointsLabel.mas_bottom).offset(DWScale(27));
-        make.height.mas_equalTo(DWScale(274));
-    }];
-    
-    UIButton * ruleAction = [UIButton buttonWithType:UIButtonTypeCustom];
-    [ruleAction setTitle:LanguageToolMatch(@"规则") forState:UIControlStateNormal];
-    [ruleAction setTkThemeTitleColor:@[COLOR_11, COLORWHITE] forState:UIControlStateNormal];
-    ruleAction.titleLabel.font = FONTR(12);
-    [ruleAction addTarget:self action:@selector(ruleGotoAction) forControlEvents:UIControlEventTouchUpInside];
-    [middleView addSubview:ruleAction];
-    [ruleAction mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.trailing.mas_equalTo(middleView.mas_trailing).offset(-16);
-        make.top.mas_equalTo(middleView.mas_top).offset(16);
-        make.height.mas_equalTo(DWScale(18));
-    }];
-    
-    //签到盒子logo
-    UIImageView * SignInGiftImgView = [[UIImageView alloc] init];
-    SignInGiftImgView.image = ImgNamed(@"amine_sign_logo");
-    [contentBackView addSubview:SignInGiftImgView];
-    [SignInGiftImgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(contentBackView);
-        make.top.mas_equalTo(lineSpaceView.mas_bottom).offset(-5);
-        make.size.mas_equalTo(CGSizeMake(DWScale(154), DWScale(138)));
-    }];
-    //签到领积分
-    UILabel * signGetPointLabel = [[UILabel alloc] init];
-    signGetPointLabel.text = LanguageToolMatch(@"签到领积分");
-    signGetPointLabel.tkThemetextColors = @[HEXCOLOR(@"4B4B4C"), COLORWHITE];
-    signGetPointLabel.font = FONTSB(16);
-    signGetPointLabel.textAlignment = NSTextAlignmentCenter;
-    [middleView addSubview:signGetPointLabel];
-    [signGetPointLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(middleView.mas_top).offset(DWScale(112));
-        make.leading.mas_equalTo(middleView);
-        make.trailing.mas_equalTo(middleView);
-        make.height.mas_equalTo(DWScale(18));
-    }];
-    
-    //今日可领积分
-    UILabel * todayGetPointLabel = [[UILabel alloc] init];
-    todayGetPointLabel.text = LanguageToolMatch(@"今日可领积分");
-    float todayGetPointWidth = [todayGetPointLabel.text widthForFont:FONTR(12)] + 10;
-    todayGetPointLabel.tkThemetextColors = @[COLOR_99, COLORWHITE];
-    todayGetPointLabel.font = FONTR(12);
-    todayGetPointLabel.textAlignment = NSTextAlignmentCenter;
-    [middleView addSubview:todayGetPointLabel];
-    self.todayGetPointLabel = todayGetPointLabel;
-    [todayGetPointLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(middleView);
-        make.top.mas_equalTo(signGetPointLabel.mas_bottom).offset(DWScale(12));
-        make.width.mas_equalTo(DWScale(todayGetPointWidth));
-        make.height.mas_equalTo(DWScale(18));
-    }];
-    
-    UIView * leftLineSpaceView = [[UIView alloc] init];
-    leftLineSpaceView.tkThemebackgroundColors = @[HEXCOLOR(@"F7F3F9"), COLOR_99];
-    [middleView addSubview:leftLineSpaceView];
-    
-    UIView * rightLineSpaceView = [[UIView alloc] init];
-    rightLineSpaceView.tkThemebackgroundColors = @[HEXCOLOR(@"F7F3F9"), COLOR_99];
-    [middleView addSubview:rightLineSpaceView];
-    
-    [leftLineSpaceView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.mas_equalTo(middleView.mas_leading).offset(DWScale(16));
-        make.trailing.mas_equalTo(self.todayGetPointLabel.mas_leading).offset(DWScale(-10));
-        make.centerY.mas_equalTo(self.todayGetPointLabel);
-        make.height.mas_equalTo(1);
-    }];
-    [rightLineSpaceView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.mas_equalTo(self.todayGetPointLabel.mas_trailing).offset(DWScale(10));
-        make.trailing.mas_equalTo(middleView.mas_trailing).offset(DWScale(-16));
-        make.centerY.mas_equalTo(self.todayGetPointLabel);
-        make.height.mas_equalTo(1);
-    }];
-    
-    UILabel * pointLabelCountLabel = [[UILabel alloc] init];
-    pointLabelCountLabel.text = @"--";
-    pointLabelCountLabel.tkThemetextColors = @[COLOR_11, COLORWHITE];
-    pointLabelCountLabel.textAlignment = NSTextAlignmentCenter;
-    pointLabelCountLabel.font = FONTR(18);
-    [middleView addSubview:pointLabelCountLabel];
-    self.pointLabelCountLabel = pointLabelCountLabel;
-    [pointLabelCountLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.mas_equalTo(middleView);
-        make.trailing.mas_equalTo(middleView);
-        make.top.mas_equalTo(self.todayGetPointLabel.mas_bottom).offset(DWScale(12));
-        make.height.mas_equalTo(DWScale(18));
     }];
     
     UIView * signViewAction = [[UIView alloc] init];
-    signViewAction.backgroundColor = HEXCOLOR(@"7154F5");
+    signViewAction.backgroundColor = HEXCOLOR(@"F9DAB3");
     signViewAction.layer.cornerRadius = DWScale(21);
     [middleView addSubview:signViewAction];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(atOnceSignAction)];
     [signViewAction addGestureRecognizer:tap];
     [signViewAction mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(middleView);
-        make.bottom.equalTo(middleView.mas_bottom).offset(DWScale(-6));
+        make.top.mas_equalTo(middleView.mas_top);
         make.width.mas_equalTo(DWScale(180));
+        make.height.mas_equalTo(DWScale(42));
     }];
     
     UILabel * signViewAtOneLabel = [[UILabel alloc] init];
     signViewAtOneLabel.text = LanguageToolMatch(@"立即签到");
-    signViewAtOneLabel.textColor = HEXCOLOR(@"FFFFFF");
+    signViewAtOneLabel.textColor = HEXCOLOR(@"001133");
     signViewAtOneLabel.font = FONTR(14);
     signViewAtOneLabel.textAlignment = NSTextAlignmentCenter;
     signViewAtOneLabel.numberOfLines = 2;
@@ -306,7 +276,7 @@
         make.trailing.mas_equalTo(signViewAction.mas_trailing).offset(DWScale(-4));
     }];
     UILabel * signViewAtOneTipLabel = [[UILabel alloc] init];
-    signViewAtOneTipLabel.textColor = HEXACOLOR(@"FFFFFF", 0.6);
+    signViewAtOneTipLabel.textColor = HEXACOLOR(@"001133", 0.6);
     signViewAtOneTipLabel.font = FONTR(10);
     signViewAtOneTipLabel.textAlignment = NSTextAlignmentCenter;
     signViewAtOneTipLabel.numberOfLines = 2;
@@ -319,15 +289,49 @@
         make.trailing.mas_equalTo(signViewAction.mas_trailing).offset(DWScale(-4));
     }];
     
+    // 签到记录按钮放在签到按钮下方（与导航栏「规则」文案/事件对调）
+    UIButton * recordAction = [UIButton buttonWithType:UIButtonTypeCustom];
+    [recordAction setTitle:LanguageToolMatch(@"签到记录") forState:UIControlStateNormal];
+    [recordAction setTkThemeTitleColor:@[HEXCOLOR(@"F9DAB3"), HEXCOLOR(@"F9DAB3")] forState:UIControlStateNormal];
+    recordAction.titleLabel.font = FONTR(12);
+    [recordAction addTarget:self action:@selector(signInRecordListAction) forControlEvents:UIControlEventTouchUpInside];
+    [middleView addSubview:recordAction];
+    [recordAction mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(middleView);
+        make.top.mas_equalTo(signViewAction.mas_bottom).offset(DWScale(20));
+        make.height.mas_equalTo(DWScale(18));
+        make.bottom.mas_equalTo(middleView.mas_bottom).offset(-20);
+    }];
+    
+    // 当前日期起（含日期行）为白色区域；其上半部分透明透出背景图
+    UIView *whiteBottomView = [[UIView alloc] init];
+    whiteBottomView.tkThemebackgroundColors = @[COLORWHITE, COLORWHITE_DARK];
+    [contentBackView insertSubview:whiteBottomView atIndex:0];
+    [whiteBottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(middleView.mas_bottom);
+        make.leading.trailing.bottom.equalTo(contentBackView);
+    }];
+    
+    // 背景图仅铺在「当前日期」上方（含导航栏区域）
+    UIImageView * signInBgImageView = [[UIImageView alloc] init];
+    signInBgImageView.image = ImgNamed(@"shanhai_signbg");
+    signInBgImageView.contentMode = UIViewContentModeScaleAspectFill;
+    signInBgImageView.clipsToBounds = YES;
+    [contentBackView insertSubview:signInBgImageView atIndex:0];
+    [signInBgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.leading.trailing.equalTo(contentBackView);
+        make.bottom.equalTo(whiteBottomView.mas_top);
+    }];
+    
     UILabel * currentDataLabel = [[UILabel alloc] init];
     currentDataLabel.text = [NSString stringWithFormat:@"%ld-%ld",[NSDate getYearWithCurrentDate],[NSDate getMonthWithCurrentDate]];
-    currentDataLabel.tkThemetextColors = @[COLOR_00, COLORWHITE];
+    currentDataLabel.tkThemetextColors = @[COLOR_00, COLOR_00];
     currentDataLabel.font = FONTR(16);
     [contentBackView addSubview:currentDataLabel];
     
     UILabel * signInstructionsLabel = [[UILabel alloc] init];
     signInstructionsLabel.text = LanguageToolMatch(@"明天签到，您将会获得连签奖励");
-    signInstructionsLabel.tkThemetextColors = @[COLOR_99, COLORWHITE];
+    signInstructionsLabel.tkThemetextColors = @[COLOR_99, COLOR_99];
     signInstructionsLabel.font = FONTR(12);
     signInstructionsLabel.textAlignment = NSTextAlignmentRight;
     [contentBackView addSubview:signInstructionsLabel];
@@ -346,11 +350,11 @@
     }];
     
     UIView * spaceLineView = [[UIView alloc] init];
-    spaceLineView.tkThemebackgroundColors = @[HEXCOLOR(@"7154F5"), HEXCOLOR(@"7154F5")];
+    spaceLineView.tkThemebackgroundColors = @[HEXCOLOR(@"EAEBEF"), HEXCOLOR(@"EAEBEF")];
     [contentBackView addSubview:spaceLineView];
     [spaceLineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.mas_equalTo(contentBackView.mas_leading).offset(16);
-        make.trailing.mas_equalTo(contentBackView.mas_trailing).offset(-16);
+        make.leading.mas_equalTo(contentBackView.mas_leading);
+        make.trailing.mas_equalTo(contentBackView.mas_trailing);
         make.top.mas_equalTo(currentDataLabel.mas_bottom).offset(DWScale(7));
         make.height.mas_equalTo(1);
     }];

@@ -10,14 +10,14 @@
   
 */
 // 简体中文
-"CFBundleDisplayName" = "幸运岛";
-"CFBundleName" = "幸运岛";
+"CFBundleDisplayName" = "山海信";
+"CFBundleName" = "山海信";
 
-"NSCameraUsageDescription" = "幸运岛需要使用相机来扫码登录、拍摄和更新头像、发送图片消息以及进行视频通话。";
-"NSLocationWhenInUseUsageDescription" = "幸运岛需要在您使用应用时获取位置信息，用于提供与位置相关的功能和服务优化。";
-"NSLocationAlwaysUsageDescription" = "幸运岛需要在后台获取位置信息，用于在应用运行期间持续提供与位置相关的服务。";
-"NSLocationWhenInUseUsageDescription" = "幸运岛需要在使用期间及后台访问位置信息，以便为您提供完整的与位置相关的功能体验。";
-"NSMicrophoneUsageDescription" = "幸运岛需要使用麦克风来发送语音消息和进行语音或视频通话。";
-"NSPhotoLibraryUsageDescription" = "幸运岛需要访问您的相册，以便选择图片作为头像或向好友发送照片和视频。";
-"NSPhotoLibraryAddUsageDescription" = "幸运岛需要将图片或视频保存到您的相册，方便您留存聊天中的照片和视频。 ";
-"NSLocalNetworkUsageDescription" = "幸运岛需要访问本地网络，以便在您的网络环境中正常连接服务器并提供聊天与通话服务。";
+"NSCameraUsageDescription" = "企业号需要使用相机来扫码登录、拍摄和更新头像、发送图片消息以及进行视频通话。";
+"NSLocationWhenInUseUsageDescription" = "企业号需要在您使用应用时获取位置信息，用于提供与位置相关的功能和服务优化。";
+"NSLocationAlwaysUsageDescription" = "企业号需要在后台获取位置信息，用于在应用运行期间持续提供与位置相关的服务。";
+"NSLocationWhenInUseUsageDescription" = "企业号需要在使用期间及后台访问位置信息，以便为您提供完整的与位置相关的功能体验。";
+"NSMicrophoneUsageDescription" = "企业号需要使用麦克风来发送语音消息和进行语音或视频通话。";
+"NSPhotoLibraryUsageDescription" = "企业号需要访问您的相册，以便选择图片作为头像或向好友发送照片和视频。";
+"NSPhotoLibraryAddUsageDescription" = "企业号需要将图片或视频保存到您的相册，方便您留存聊天中的照片和视频。 ";
+"NSLocalNetworkUsageDescription" = "企业号需要访问本地网络，以便在您的网络环境中正常连接服务器并提供聊天与通话服务。";

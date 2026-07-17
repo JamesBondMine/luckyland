@@ -115,7 +115,7 @@ typedef NS_ENUM(NSInteger, ZNetworkQualityExceptionType) {
     // 应用状态异常
     ZNetworkQualityExceptionTypeAppBackgroundResume = 4001,   // 应用后台恢复
     ZNetworkQualityExceptionTypeManualRefresh = 4002,         // 手动刷新
-    ZNetworkQualityExceptionTypeSwitchEnterprise = 4003,      // 切换幸运数字
+    ZNetworkQualityExceptionTypeSwitchEnterprise = 4003,      // 切换企业号
     
     // 时间相关异常已移除 - 由外部组件处理
     
@@ -188,7 +188,7 @@ typedef NS_ENUM(NSInteger, ZNetworkQualityExceptionType) {
 /// 是否启用网络质量检测 (YES: 启用检测, NO: 禁用检测)
 @property (nonatomic, assign, readonly) BOOL enableDetection;
 
-/// 当前正在网络质量检测的幸运数字
+/// 当前正在网络质量检测的企业号
 @property (nonatomic, copy) NSString *currentLiceseId;
 
 /// 单例

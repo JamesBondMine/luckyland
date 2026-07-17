@@ -323,7 +323,7 @@
     self.navBtnRight.tkThemebackgroundColors = @[COLOR_CCCCCC, COLOR_CCCCCC_DARK];
     if (self.selectedList.count > 0) {
         [self.navBtnRight setTitle:[NSString stringWithFormat:LanguageToolMatch(@"完成(%ld)"),self.selectedList.count] forState:UIControlStateNormal];
-        self.navBtnRight.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+        self.navBtnRight.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
         self.navBtnRight.enabled = YES;
     }else {
         [self.navBtnRight setTitle:LanguageToolMatch(@"完成") forState:UIControlStateNormal];
@@ -407,7 +407,7 @@
         forwardFailAlert.lblContent.text = LanguageToolMatch(@"所选会话存在异常，继续发送将排除异常会话");
         [forwardFailAlert.btnSure setTitle:LanguageToolMatch(@"继续发送") forState:UIControlStateNormal];
         [forwardFailAlert.btnSure setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
-        forwardFailAlert.btnSure.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.3], [COLOR_EB5C5C colorWithAlphaComponent:0.3]];
+        forwardFailAlert.btnSure.tkThemebackgroundColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.3], [COLOR_1B2E60 colorWithAlphaComponent:0.3]];
         forwardFailAlert.btnSure.enabled = NO;
         [forwardFailAlert.btnCancel setTitle:LanguageToolMatch(@"异常详情") forState:UIControlStateNormal];
         [forwardFailAlert.btnCancel setTkThemeTitleColor:@[COLOR_11, COLOR_11_DARK] forState:UIControlStateNormal];
@@ -524,11 +524,11 @@
         [forwardFailAlert.btnSure setTitle:LanguageToolMatch(@"继续发送") forState:UIControlStateNormal];
         [forwardFailAlert.btnSure setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
         if (newErrorInfoList.count == self.selectedList.count) {
-            forwardFailAlert.btnSure.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.3], [COLOR_EB5C5C colorWithAlphaComponent:0.3]];
+            forwardFailAlert.btnSure.tkThemebackgroundColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.3], [COLOR_1B2E60 colorWithAlphaComponent:0.3]];
             forwardFailAlert.btnSure.enabled = NO;
         } else {
             forwardFailAlert.btnSure.enabled = YES;
-            forwardFailAlert.btnSure.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C];
+            forwardFailAlert.btnSure.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60];
         }
         [forwardFailAlert.btnCancel setTitle:LanguageToolMatch(@"异常详情") forState:UIControlStateNormal];
         [forwardFailAlert.btnCancel setTkThemeTitleColor:@[COLOR_11, COLOR_11_DARK] forState:UIControlStateNormal];

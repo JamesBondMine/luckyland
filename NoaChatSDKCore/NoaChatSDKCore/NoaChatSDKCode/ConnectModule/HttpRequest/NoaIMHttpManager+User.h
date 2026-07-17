@@ -37,7 +37,7 @@
 #define User_Reset_Password_Url                 @"/auth/user/resetPassword"
 //投诉与支持-系统投诉
 #define User_Feedback_Url                       @"/biz/feedback/addFeedBack"
-//投诉与支持-幸运数字投诉
+//投诉与支持-企业号投诉
 #define Sso_Feedback_Url                       @"/biz/feedback/addCompanyFeedBack"
 //获取用户角色权限
 #define User_Role_AuthorityList_Url             @"/biz/user/getUserRoleAuthorityList"
@@ -129,7 +129,7 @@ NS_ASSUME_NONNULL_BEGIN
     ufbComment:反馈内容
     ufbContentGroup:反馈内容分类 (1发布违法有害信息 2发布垃圾广告 3种族歧视 4存在文化歧视 5辱骂骚扰 6帐号可能被盗 7其他 8存在欺诈行为)
     ufbImages:反馈图片 以"," 分隔最多9个 列子 http://ccc.com/111/ccc.png,http://ccc.com/222/bbb.png
-    ufbTo:所属的IP,域名，幸运数字
+    ufbTo:所属的IP,域名，企业号
     ufbToGroupId:投诉的用户id，投诉的用户id 或者 群id 只能有一个
     ufbToType:0:用户投诉，1:群投诉
     ufbToUserId:投诉的用户id，投诉的用户id 或者 群id 只能有一个
@@ -139,7 +139,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)userAddFeedBackWith:(NSMutableDictionary *)params onSuccess:(nullable LingIMSuccessCallback)onSuccess onFailure:(nullable LingIMFailureCallback)onFailure;
 
-/// 幸运数字投诉接口
+/// 企业号投诉接口
 /// - Parameters:
 ///   - params: 参数
 ///   - onSuccess: 成功回调

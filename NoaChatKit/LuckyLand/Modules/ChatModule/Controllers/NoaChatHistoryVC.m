@@ -49,21 +49,21 @@
             {
                 //暗黑
                 weakSelf.viewCategory.titleColor = COLOR_99_DARK;
-                weakSelf.viewCategory.titleSelectedColor = COLOR_EB5C5C_DARK;
+                weakSelf.viewCategory.titleSelectedColor = COLOR_1B2E60_DARK;
             }
                 break;
                 
             default:
             {
                 weakSelf.viewCategory.titleColor = COLOR_99;
-                weakSelf.viewCategory.titleSelectedColor = COLOR_EB5C5C;
+                weakSelf.viewCategory.titleSelectedColor = COLOR_1B2E60;
             }
                 break;
         }
     };
     //指示器
     JXCategoryIndicatorLineView *lineView = [[JXCategoryIndicatorLineView alloc] init];
-    lineView.indicatorColor = COLOR_EB5C5C;
+    lineView.indicatorColor = COLOR_1B2E60;
     lineView.componentPosition = JXCategoryComponentPosition_Bottom;
     lineView.verticalMargin = 4;
     _viewCategory.indicators = @[lineView];

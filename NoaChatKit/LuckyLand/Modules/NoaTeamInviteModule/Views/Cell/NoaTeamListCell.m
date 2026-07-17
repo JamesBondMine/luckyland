@@ -17,10 +17,10 @@
 /// 团队名称label
 @property (nonatomic, strong) UILabel *teamNameLabel;
 
-/// 幸运数字label
+/// 企业号label
 @property (nonatomic, strong) UILabel *teamInviteCodeLabel;
 
-/// 复制幸运数字button
+/// 复制企业号button
 @property (nonatomic, strong) UIButton *codeCopyButton;
 
 /// 右侧箭头
@@ -42,9 +42,9 @@
     NSString *title = [NSString stringWithFormat:@"%@(%ld)", teamName, teamCount];
     self.teamNameLabel.text = title;
     
-    // 幸运数字
+    // 企业号
     NSString *inviteCode = [NSString isNil:_teamModel.inviteCode] ? @"" : _teamModel.inviteCode;
-    self.teamInviteCodeLabel.text = [NSString stringWithFormat:@"%@：%@", LanguageToolMatch(@"幸运数字"), inviteCode];
+    self.teamInviteCodeLabel.text = [NSString stringWithFormat:@"%@：%@", LanguageToolMatch(@"企业号"), inviteCode];
 }
 
 - (UIView *)bgView {
@@ -60,8 +60,8 @@
         _topStateButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_topStateButton setTitle:LanguageToolMatch(@"已置顶") forState:UIControlStateNormal];
         _topStateButton.titleLabel.font = FONTR(11);
-        [_topStateButton setTitleColor:COLOR_EB5C5C forState:UIControlStateNormal];
-        _topStateButton.titleLabel.tkThemetextColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+        [_topStateButton setTitleColor:COLOR_1B2E60 forState:UIControlStateNormal];
+        _topStateButton.titleLabel.tkThemetextColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
         _topStateButton.tkThemebackgroundColors = @[HEXACOLOR(@"4791FF", 0.2), HEXACOLOR(@"4791FF", 0.2)];
         _topStateButton.titleEdgeInsets = UIEdgeInsetsMake(0, 16, 0, 16);
         _topStateButton.userInteractionEnabled = NO;
@@ -164,7 +164,7 @@
     @weakify(self)
     [[self.codeCopyButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
         @strongify(self)
-        // 复制团队幸运数字
+        // 复制团队企业号
         if (![NSString isNil:self.teamInviteCodeLabel.text]) {
             UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
             pasteboard.string = self.teamModel.inviteCode;

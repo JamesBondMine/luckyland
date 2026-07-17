@@ -401,7 +401,7 @@
     }
 }
 
-/// 获取是否支持幸运数字
+/// 获取是否支持企业号
 - (BOOL)getInviteCodeSupportState {
     return ![ZHostTool.appSysSetModel.isMustInviteCode isEqualToString:@"0"];
 }
@@ -446,7 +446,7 @@
 }
 
 - (NSString *)getInviteCodeText {
-    // 不允许设置幸运数字，直接返回@""
+    // 不允许设置企业号，直接返回@""
     if (![self getInviteCodeSupportState]) {
         return @"";
     }
@@ -676,7 +676,7 @@
     NSString *inviteCodeStr = [NSString isNil:inviteCodeInputString] ? @"" : inviteCodeInputString;
     if (![LuckyLandAuthInputTools checkInviteCodeWithText:inviteCodeStr IsShowToast:NO]) {
         if (resultFunc) {
-            resultFunc(NO, LanguageToolMatch(@"幸运数字不能为空"));
+            resultFunc(NO, LanguageToolMatch(@"企业号不能为空"));
         }
         return;
     }

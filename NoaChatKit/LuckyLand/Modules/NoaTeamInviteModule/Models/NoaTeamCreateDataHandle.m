@@ -110,14 +110,14 @@
 - (BOOL)validateInviteCode:(NSString *)code {
     // 检查长度是否为4位
        if (code.length != 4) {
-           [HUD showMessage:LanguageToolMatch(@"请输入4位数字幸运数字")];
+           [HUD showMessage:LanguageToolMatch(@"请输入4位数字企业号")];
            return NO;
        }
        
        // 检查是否为纯数字
        NSCharacterSet *nonDigitSet = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
        if ([code rangeOfCharacterFromSet:nonDigitSet].location != NSNotFound) {
-           [HUD showMessage:LanguageToolMatch(@"请输入4位数字幸运数字")];
+           [HUD showMessage:LanguageToolMatch(@"请输入4位数字企业号")];
            return NO;
        }
        return YES;

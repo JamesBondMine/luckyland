@@ -358,7 +358,7 @@
 
 - (NoaProgressButton *)fileHandleBtn {
     if (!_fileHandleBtn) {
-        _fileHandleBtn = [NoaProgressButton crearProgressButtonWithFrame:CGRectMake(0, 0, DWScale(220), DWScale(48)) title:@"" lineWidth:DWScale(48) lineColor:COLOR_EB5C5C textColor:COLORWHITE backColor:COLOR_EB5C5C isRound:NO];
+        _fileHandleBtn = [NoaProgressButton crearProgressButtonWithFrame:CGRectMake(0, 0, DWScale(220), DWScale(48)) title:@"" lineWidth:DWScale(48) lineColor:COLOR_1B2E60 textColor:COLORWHITE backColor:COLOR_1B2E60 isRound:NO];
         _fileHandleBtn.titleLabel.font = FONTN(17);
         [_fileHandleBtn addTarget:self action:@selector(fileHandleClick) forControlEvents:UIControlEventTouchUpInside];
     }

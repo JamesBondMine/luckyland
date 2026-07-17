@@ -99,9 +99,9 @@ NS_ASSUME_NONNULL_BEGIN
 ///   - text: 密码
 + (BOOL)checkCreatPasswordEndWithTextFormat:(NSString *)text;
 
-/// 校验幸运数字
+/// 校验企业号
 /// - Parameters:
-///   - text: 幸运数字
+///   - text: 企业号
 ///   - isShowToast: 是否Toast提示
 + (BOOL)checkInviteCodeWithText:(NSString *)text
                     IsShowToast:(BOOL)isShowToast;

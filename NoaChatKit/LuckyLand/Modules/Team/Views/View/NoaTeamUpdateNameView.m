@@ -98,7 +98,7 @@
     [_btnSure setTitle:LanguageToolMatch(@"确定") forState:UIControlStateNormal];
     [_btnSure setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
     _btnSure.titleLabel.font = FONTR(17);
-    [_btnSure setTkThemebackgroundColors:@[COLOR_EB5C5C, COLOR_EB5C5C_DARK]];
+    [_btnSure setTkThemebackgroundColors:@[COLOR_1B2E60, COLOR_1B2E60_DARK]];
     _btnSure.layer.cornerRadius = DWScale(22);
     _btnSure.layer.masksToBounds = YES;
     [_btnSure addTarget:self action:@selector(btnSureClick) forControlEvents:UIControlEventTouchUpInside];

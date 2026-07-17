@@ -45,7 +45,7 @@
         self.navBtnRight.hidden = NO;
         [self.navBtnRight setTitle:LanguageToolMatch(@"新建") forState:UIControlStateNormal];
         [self.navBtnRight setTitleColor:COLORWHITE forState:UIControlStateNormal];
-        self.navBtnRight.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+        self.navBtnRight.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
         self.navBtnRight.layer.cornerRadius = DWScale(12);
         self.navBtnRight.layer.masksToBounds = YES;
     } else {

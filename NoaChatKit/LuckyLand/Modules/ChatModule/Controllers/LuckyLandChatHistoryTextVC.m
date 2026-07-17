@@ -203,11 +203,11 @@
 - (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView {
     if (![NSString isNil:_searchStr]) {
         NSString *string = LanguageToolMatch(@"换个关键词试试吧～");
-        NSMutableAttributedString *accessAttributeString  = [[NSMutableAttributedString alloc] initWithString:string attributes:@{NSFontAttributeName:FONTR(16),NSForegroundColorAttributeName:COLOR_EB5C5C}];
+        NSMutableAttributedString *accessAttributeString  = [[NSMutableAttributedString alloc] initWithString:string attributes:@{NSFontAttributeName:FONTR(16),NSForegroundColorAttributeName:COLOR_1B2E60}];
         return accessAttributeString;
     }else {
         NSString *string = @" ";
-        NSMutableAttributedString *accessAttributeString  = [[NSMutableAttributedString alloc] initWithString:string attributes:@{NSFontAttributeName:FONTR(16),NSForegroundColorAttributeName:COLOR_EB5C5C}];
+        NSMutableAttributedString *accessAttributeString  = [[NSMutableAttributedString alloc] initWithString:string attributes:@{NSFontAttributeName:FONTR(16),NSForegroundColorAttributeName:COLOR_1B2E60}];
         return accessAttributeString;
     }
 }

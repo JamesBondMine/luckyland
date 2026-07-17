@@ -49,8 +49,8 @@ NS_ASSUME_NONNULL_BEGIN
 //群组消息发送最小时间间隔 单位:毫秒
 @property (nonatomic, assign)long long groupMessageInterval;
 
-//注册时，是否需要输入幸运数字，来觉得调用注册接口时是否对幸运数字输入框输入的内容做非空判断(0:否，1是)
-//isMustInviteCode 来控制是否显示幸运数字输入框 (0:隐藏，1:显示)
+//注册时，是否需要输入企业号，来觉得调用注册接口时是否对企业号输入框输入的内容做非空判断(0:否，1是)
+//isMustInviteCode 来控制是否显示企业号输入框 (0:隐藏，1:显示)
 @property (nonatomic, copy)NSString *isMustInviteCode;
 
 //群聊中是否允许 群主/管理员 撤回群内其他人发生的消息（是否开启群管理消息撤回： 0关闭，1开启）

@@ -30,7 +30,7 @@
 
     _titleLabel = [[UILabel alloc] init];
     _titleLabel.font = [UIFont systemFontOfSize:15 weight:UIFontWeightMedium];
-    _titleLabel.textColor = HEXCOLOR(@"333333");
+    _titleLabel.textColor = COLOR_1B2E60;
     [self addSubview:_titleLabel];
 
     UIImage *arrow = nil;

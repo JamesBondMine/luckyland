@@ -250,10 +250,10 @@
 - (void)checkFindAndLoginBtnAvailable {
     if (self.accountInput.textLength > 0 && self.vercodeInput.textLength > 0 && self.passwordInput.textLength > 0 && self.confimPasswordInput.textLength > 0) {
         self.loginBtn.enabled = YES;
-        self.loginBtn.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+        self.loginBtn.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
     } else {
         self.loginBtn.enabled = NO;
-        self.loginBtn.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.3], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.3]];
+        self.loginBtn.tkThemebackgroundColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.3], [COLOR_1B2E60_DARK colorWithAlphaComponent:0.3]];
     }
 }
 
@@ -652,13 +652,13 @@
         _loginBtn = [[UIButton alloc] init];
         _loginBtn.clipsToBounds = YES;
         _loginBtn.enabled = NO;
-        _loginBtn.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.3], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.3]];
+        _loginBtn.tkThemebackgroundColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.3], [COLOR_1B2E60_DARK colorWithAlphaComponent:0.3]];
         [_loginBtn setTitle:LanguageToolMatch(@"登录") forState:UIControlStateNormal];
         [_loginBtn setTitleColor:COLORWHITE forState:UIControlStateNormal];
         [_loginBtn setTkThemeBackgroundImage:@[[UIImage ImageForColor:COLOR_4069B9],[UIImage ImageForColor:COLOR_4069B9_DARK]] forState:UIControlStateSelected];
         [_loginBtn setTkThemeBackgroundImage:@[[UIImage ImageForColor:COLOR_4069B9],[UIImage ImageForColor:COLOR_4069B9_DARK]] forState:UIControlStateHighlighted];
         [_loginBtn rounded:DWScale(14)];
-        [_loginBtn shadow:COLOR_EB5C5C opacity:0.15 radius:5 offset:CGSizeMake(0, 0)];
+        [_loginBtn shadow:COLOR_1B2E60 opacity:0.15 radius:5 offset:CGSizeMake(0, 0)];
         [_loginBtn addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
     }
     return _loginBtn;

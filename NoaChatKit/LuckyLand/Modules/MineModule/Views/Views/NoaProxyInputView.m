@@ -76,8 +76,8 @@
     // 完成按钮
     self.completeBtn = [[UIButton alloc] init];
     [self.completeBtn setTitle:LanguageToolMatch(@"完成") forState:UIControlStateNormal];
-    [self.completeBtn setTkThemeTitleColor:@[[COLOR_EB5C5C colorWithAlphaComponent:0.5], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.5]] forState:UIControlStateDisabled];
-    [self.completeBtn setTkThemeTitleColor:@[COLOR_EB5C5C,COLOR_EB5C5C_DARK] forState:UIControlStateNormal];
+    [self.completeBtn setTkThemeTitleColor:@[[COLOR_1B2E60 colorWithAlphaComponent:0.5], [COLOR_1B2E60_DARK colorWithAlphaComponent:0.5]] forState:UIControlStateDisabled];
+    [self.completeBtn setTkThemeTitleColor:@[COLOR_1B2E60,COLOR_1B2E60_DARK] forState:UIControlStateNormal];
     self.completeBtn.titleLabel.font = FONTB(16);
     [self.completeBtn addTarget:self action:@selector(completeBtnClick) forControlEvents:UIControlEventTouchUpInside];
     [self.completeBtn setEnlargeEdge:DWScale(10)];
@@ -100,7 +100,7 @@
     // 检测链接
     UIButton *checkBtn = [[UIButton alloc] init];
     [checkBtn setTitle:LanguageToolMatch(@"测试连接") forState:UIControlStateNormal];
-    [checkBtn setTkThemeTitleColor:@[COLOR_EB5C5C,COLOR_EB5C5C_DARK] forState:UIControlStateNormal];
+    [checkBtn setTkThemeTitleColor:@[COLOR_1B2E60,COLOR_1B2E60_DARK] forState:UIControlStateNormal];
     checkBtn.titleLabel.font = FONTR(16);
     [checkBtn addTarget:self action:@selector(checkBtnClick) forControlEvents:UIControlEventTouchUpInside];
     

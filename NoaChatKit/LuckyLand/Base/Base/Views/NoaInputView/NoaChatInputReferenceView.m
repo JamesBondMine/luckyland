@@ -30,7 +30,7 @@
     [self addSubview:ivReference];
     
     _lblReferenceUser = [UILabel new];
-    _lblReferenceUser.textColor = COLOR_EB5C5C;
+    _lblReferenceUser.textColor = COLOR_1B2E60;
     _lblReferenceUser.text = LanguageToolMatch(@"引用：");
     _lblReferenceUser.font = FONTR(16);
     [self addSubview:_lblReferenceUser];

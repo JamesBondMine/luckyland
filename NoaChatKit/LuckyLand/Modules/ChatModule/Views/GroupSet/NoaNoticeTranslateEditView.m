@@ -116,7 +116,7 @@
     [_saveButton setTitle:LanguageToolMatch(@"保存") forState:UIControlStateNormal];
     [_saveButton setTitleColor:COLORWHITE forState:UIControlStateNormal];
     [_saveButton rounded:DWScale(22)];
-    [_saveButton setBackgroundColor:COLOR_EB5C5C];
+    [_saveButton setBackgroundColor:COLOR_1B2E60];
     [_saveButton setTkThemeBackgroundImage:@[[UIImage ImageForColor:COLOR_4069B9],[UIImage ImageForColor:COLOR_4069B9_DARK]] forState:UIControlStateHighlighted];
     [_saveButton addTarget:self action:@selector(saveBtnClicl) forControlEvents:UIControlEventTouchUpInside];
     [_viewBg addSubview:_saveButton];

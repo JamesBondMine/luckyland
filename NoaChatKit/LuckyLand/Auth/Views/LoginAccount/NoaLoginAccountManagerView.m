@@ -86,7 +86,7 @@
         _loginTypeCategoryView.delegate = self;
         _loginTypeCategoryView.titles = self.dataHandle.titleArr;
         _loginTypeCategoryView.titleColor = COLOR_00;
-        _loginTypeCategoryView.titleSelectedColor = COLOR_EB5C5C;
+        _loginTypeCategoryView.titleSelectedColor = COLOR_1B2E60;
         // 设置 title 字体大小（影响 title 高度）
         _loginTypeCategoryView.titleFont = FONTSB(16);
         _loginTypeCategoryView.titleSelectedFont = FONTM(16);
@@ -238,7 +238,7 @@
         [_loginBtn setTitle:LanguageToolMatch(@"登录") forState:UIControlStateNormal];
         [_loginBtn setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
         _loginBtn.titleLabel.font = FONTM(14);
-        _loginBtn.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+        _loginBtn.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
         _loginBtn.layer.cornerRadius = 27;
         _loginBtn.layer.masksToBounds = YES;
     }
@@ -256,7 +256,7 @@
     if (!_registerBtn) {
         _registerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_registerBtn setTitle:LanguageToolMatch(@"去注册") forState:UIControlStateNormal];
-        [_registerBtn setTkThemeTitleColor:@[COLOR_EB5C5C, COLOR_EB5C5C_DARK] forState:UIControlStateNormal];
+        [_registerBtn setTkThemeTitleColor:@[COLOR_1B2E60, COLOR_1B2E60_DARK] forState:UIControlStateNormal];
         _registerBtn.titleLabel.font = FONTM(16);
 //        [_registerBtn setImage:ImgNamed(@"icon_right_arrow") forState:UIControlStateNormal];
         [_registerBtn setBtnImageAlignmentType:ButtonImageAlignmentTypeRight imageSpace:2];
@@ -368,10 +368,10 @@
         @strongify(self)
         if (themeIndex == 0) {
             self.loginTypeCategoryView.titleColor = COLOR_00;
-            self.loginTypeCategoryView.titleSelectedColor = COLOR_EB5C5C;
+            self.loginTypeCategoryView.titleSelectedColor = COLOR_1B2E60;
         }else {
             self.loginTypeCategoryView.titleColor = COLOR_00_DARK;
-            self.loginTypeCategoryView.titleSelectedColor = COLOR_EB5C5C_DARK;
+            self.loginTypeCategoryView.titleSelectedColor = COLOR_1B2E60_DARK;
         }
         // 不刷新颜色不生效
         [self.loginTypeCategoryView reloadDataWithoutListContainer];
@@ -396,8 +396,8 @@
             NSString *privateText = LanguageToolMatch(@"《隐私政策》");
             NSString *contentText = [NSString stringWithFormat:LanguageToolMatch(@"请阅读并同意%@和%@"), serveText, privateText];
             NSMutableAttributedString *attText = [[NSMutableAttributedString alloc] initWithString:contentText];
-            [attText addAttribute:NSForegroundColorAttributeName value:COLOR_EB5C5C range:[contentText rangeOfString:serveText]];
-            [attText addAttribute:NSForegroundColorAttributeName value:COLOR_EB5C5C range:[contentText rangeOfString:privateText]];
+            [attText addAttribute:NSForegroundColorAttributeName value:COLOR_1B2E60 range:[contentText rangeOfString:serveText]];
+            [attText addAttribute:NSForegroundColorAttributeName value:COLOR_1B2E60 range:[contentText rangeOfString:privateText]];
             
             // 保存需要使用的字符串，避免在异步回调中访问可能已释放的对象
             NSString *agreeText = LanguageToolMatch(@"请阅读并同意");

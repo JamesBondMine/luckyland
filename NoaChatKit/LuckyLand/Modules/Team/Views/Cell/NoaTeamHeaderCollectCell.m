@@ -40,7 +40,7 @@
     
     _defaultTipBtn = [UIButton new];
     [_defaultTipBtn setTitle:LanguageToolMatch(@"选为默认") forState:UIControlStateNormal];
-    [_defaultTipBtn setTkThemeTitleColor:@[COLOR_EB5C5C, COLOR_EB5C5C_DARK] forState:UIControlStateNormal];
+    [_defaultTipBtn setTkThemeTitleColor:@[COLOR_1B2E60, COLOR_1B2E60_DARK] forState:UIControlStateNormal];
     [_defaultTipBtn rounded:DWScale(10) width:1 color:COLOR_ECECEC];
     _defaultTipBtn.tkThemebackgroundColors = @[COLOR_F6F6F6, COLOR_F6F6F6_DARK];
     _defaultTipBtn.titleLabel.font = FONTN(12);
@@ -100,11 +100,11 @@
         [_defaultTipBtn setTitle:LanguageToolMatch(@"当前默认") forState:UIControlStateNormal];
         [_defaultTipBtn setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
         [_defaultTipBtn rounded:DWScale(10) width:0 color:COLOR_CLEAR];
-        _defaultTipBtn.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+        _defaultTipBtn.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
     } else {
         _defaultTipBtn.userInteractionEnabled = YES;
         [_defaultTipBtn setTitle:LanguageToolMatch(@"选为默认") forState:UIControlStateNormal];
-        [_defaultTipBtn setTkThemeTitleColor:@[COLOR_EB5C5C, COLOR_EB5C5C_DARK] forState:UIControlStateNormal];
+        [_defaultTipBtn setTkThemeTitleColor:@[COLOR_1B2E60, COLOR_1B2E60_DARK] forState:UIControlStateNormal];
         [_defaultTipBtn rounded:DWScale(10) width:1 color:COLOR_ECECEC];
         _defaultTipBtn.tkThemebackgroundColors = @[COLOR_F6F6F6, COLOR_F6F6F6_DARK];
     }
@@ -114,7 +114,7 @@
     NSString *memberNumStr = [NSString stringWithFormat:@"%@%@", numTitleStr, numStr];
     NSMutableAttributedString *memberNumAttStr = [[NSMutableAttributedString alloc] initWithString:memberNumStr];
     [memberNumAttStr configAttStrLightColor:COLOR_11 darkColor:COLOR_11_DARK range:NSMakeRange(0, memberNumStr.length)];
-    [memberNumAttStr configAttStrLightColor:COLOR_EB5C5C darkColor:COLOR_EB5C5C_DARK range:NSMakeRange(numTitleStr.length, numStr.length)];
+    [memberNumAttStr configAttStrLightColor:COLOR_1B2E60 darkColor:COLOR_1B2E60_DARK range:NSMakeRange(numTitleStr.length, numStr.length)];
     [memberNumAttStr addAttribute:NSFontAttributeName value:FONTN(10) range:NSMakeRange(0, memberNumStr.length)];
     [memberNumAttStr addAttribute:NSFontAttributeName value:FONTN(14) range:NSMakeRange(numTitleStr.length, numStr.length)];
     _teamMemberNumLbl.attributedText = memberNumAttStr;

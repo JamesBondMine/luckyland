@@ -22,7 +22,7 @@
         CGContextSetFillColorWithColor(context, _bgFillColor.CGColor);
     } else {
         //气泡颜色
-        CGContextSetFillColorWithColor(context, COLOR_EB5C5C.CGColor);
+        CGContextSetFillColorWithColor(context, COLOR_1B2E60.CGColor);
     }
     if (ZLanguageTOOL.isRTL) {
         CGContextMoveToPoint(context, k_radius, k_height);

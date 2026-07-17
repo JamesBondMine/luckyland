@@ -62,7 +62,7 @@
     [relaodButton setTitleColor:COLORWHITE forState:UIControlStateNormal];
     [relaodButton setTkThemeBackgroundImage:@[[UIImage ImageForColor:COLOR_4069B9],[UIImage ImageForColor:COLOR_4069B9_DARK]] forState:UIControlStateSelected];
     [relaodButton setTkThemeBackgroundImage:@[[UIImage ImageForColor:COLOR_4069B9],[UIImage ImageForColor:COLOR_4069B9_DARK]] forState:UIControlStateHighlighted];
-    relaodButton.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C];
+    relaodButton.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60];
     relaodButton.titleLabel.font = FONTN(16);
     [relaodButton rounded:DWScale(14)];
     [relaodButton addTarget:self action:@selector(reloadInstallNodeAction) forControlEvents:UIControlEventTouchUpInside];
@@ -87,7 +87,7 @@
                 self.errorMsgLbl.text = LanguageToolMatch(@"服务器连接失败 ，请联系管理员");
             } else {
                 if (self.code == 404 || self.code == 403) {
-                    self.errorMsgLbl.text = LanguageToolMatch(@"幸运数字不存在");
+                    self.errorMsgLbl.text = LanguageToolMatch(@"企业号不存在");
                 } else {
                     self.errorMsgLbl.text = LanguageToolMatch(@"服务器连接失败");
                 }

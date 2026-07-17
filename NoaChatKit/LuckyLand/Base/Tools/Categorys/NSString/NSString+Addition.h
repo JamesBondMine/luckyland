@@ -168,7 +168,7 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - 判断字符是否是URL
 -(BOOL)checkStringIsUrl;
 
-#pragma mark - 幸运数字只能输入：纯小写字母 或 纯数字 或 小写字母+数字
+#pragma mark - 企业号只能输入：纯小写字母 或 纯数字 或 小写字母+数字
 - (BOOL)inputLiceseIdCheck;
 
 #pragma mark - 检测url地址是否为IP地址

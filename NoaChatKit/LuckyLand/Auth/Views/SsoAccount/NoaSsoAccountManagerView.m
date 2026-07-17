@@ -78,7 +78,7 @@
         _ssoTypeCategoryView.delegate = self;
         _ssoTypeCategoryView.titles = @[LanguageToolMatch(@"企业号"), LanguageToolMatch(@"IP/域名")];
         _ssoTypeCategoryView.titleColor = COLOR_00;
-        _ssoTypeCategoryView.titleSelectedColor = COLOR_EB5C5C;
+        _ssoTypeCategoryView.titleSelectedColor = COLOR_1B2E60;
         // 设置 title 字体大小（影响 title 高度）
         _ssoTypeCategoryView.titleFont = FONTSB(16);
         _ssoTypeCategoryView.titleSelectedFont = FONTM(16);
@@ -137,7 +137,7 @@
         _ssoAccountTF.layer.masksToBounds = YES;
         // 设置边框
         _ssoAccountTF.layer.borderWidth = 1.0;
-        _ssoAccountTF.layer.tkThemeborderColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLORWHITE colorWithAlphaComponent:0.4]];
+        _ssoAccountTF.layer.tkThemeborderColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.05], [COLORWHITE colorWithAlphaComponent:0.4]];
         _ssoAccountTF.tkThemetextColors = @[COLOR_11, COLOR_11_DARK];
         _ssoAccountTF.keyboardType = UIKeyboardTypeASCIICapable;
         _ssoAccountTF.delegate = self;
@@ -170,14 +170,14 @@
 - (UITextField *)ipTF {
     if (!_ipTF) {
         _ipTF = [[UITextField alloc] initWithFrame:CGRectZero];
-        _ipTF.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.05]];
+        _ipTF.tkThemebackgroundColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.05], [COLOR_1B2E60_DARK colorWithAlphaComponent:0.05]];
         _ipTF.tkThemetextColors = @[COLOR_11, COLOR_11_DARK];
         // 设置圆角
         _ipTF.layer.cornerRadius = 16;
         _ipTF.layer.masksToBounds = YES;
         // 设置边框
         _ipTF.layer.borderWidth = 1.0;
-        _ipTF.layer.tkThemeborderColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLORWHITE colorWithAlphaComponent:0.4]];
+        _ipTF.layer.tkThemeborderColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.05], [COLORWHITE colorWithAlphaComponent:0.4]];
         _ipTF.keyboardType = UIKeyboardTypeASCIICapable;
         _ipTF.delegate = self;
         // 创建属性字符串
@@ -222,7 +222,7 @@
         _subTitleLabel = [UILabel new];
         _subTitleLabel.tkThemetextColors = @[COLOR_66, COLOR_66_DARK];
         _subTitleLabel.font = FONTR(12);
-        _subTitleLabel.text = LanguageToolMatch(@"请输入您幸运岛专属的幸运数字或IP/域名");
+        _subTitleLabel.text = LanguageToolMatch(@"请输入您企业号专属的企业号或IP/域名");
     }
     return _subTitleLabel;
 }
@@ -230,14 +230,14 @@
 - (UITextField *)portTF {
     if (!_portTF) {
         _portTF = [[UITextField alloc] initWithFrame:CGRectZero];
-        _portTF.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.05]];
+        _portTF.tkThemebackgroundColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.05], [COLOR_1B2E60_DARK colorWithAlphaComponent:0.05]];
         _portTF.tkThemetextColors = @[COLOR_11, COLOR_11_DARK];
         // 设置圆角
         _portTF.layer.cornerRadius = 16;
         _portTF.layer.masksToBounds = YES;
         // 设置边框
         _portTF.layer.borderWidth = 1.0;
-        _portTF.layer.tkThemeborderColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLORWHITE colorWithAlphaComponent:0.4]];
+        _portTF.layer.tkThemeborderColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.05], [COLORWHITE colorWithAlphaComponent:0.4]];
         _portTF.keyboardType = UIKeyboardTypeNumberPad;
         _portTF.delegate = self;
         // 创建属性字符串
@@ -271,7 +271,7 @@
         _ssoAccountBgView = [[UIView alloc] initWithFrame:CGRectZero];
         _ssoAccountBgView.layer.cornerRadius = 16;
         _ssoAccountBgView.layer.masksToBounds = YES;
-        _ssoAccountBgView.tkThemebackgroundColors = @[[COLOR_EB5C5C colorWithAlphaComponent:0.05], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.05]];
+        _ssoAccountBgView.tkThemebackgroundColors = @[[COLOR_1B2E60 colorWithAlphaComponent:0.05], [COLOR_1B2E60_DARK colorWithAlphaComponent:0.05]];
     }
     return _ssoAccountBgView;
 }
@@ -290,7 +290,7 @@
         [_joinBtn setTitle:LanguageToolMatch(@"加入") forState:UIControlStateNormal];
         [_joinBtn setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
         _joinBtn.titleLabel.font = FONTM(14);
-        _joinBtn.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+        _joinBtn.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
         _joinBtn.layer.cornerRadius = 27;
         _joinBtn.layer.masksToBounds = YES;
     }
@@ -301,7 +301,7 @@
     if (!_scanBtn) {
         _scanBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_scanBtn setTitle:LanguageToolMatch(@"扫一扫加入服务器") forState:UIControlStateNormal];
-        [_scanBtn setTkThemeTitleColor:@[COLOR_EB5C5C, COLOR_EB5C5C_DARK] forState:UIControlStateNormal];
+        [_scanBtn setTkThemeTitleColor:@[COLOR_1B2E60, COLOR_1B2E60_DARK] forState:UIControlStateNormal];
         [_scanBtn setImage:ImgNamed(@"icon_sso_scan") forState:UIControlStateNormal];
         _scanBtn.titleLabel.font = FONTM(14);
         [_scanBtn setBtnImageAlignmentType:ButtonImageAlignmentTypeLeft imageSpace:4];
@@ -579,10 +579,10 @@
         @strongify(self)
         if (themeIndex == 0) {
             self.ssoTypeCategoryView.titleColor = COLOR_00;
-            self.ssoTypeCategoryView.titleSelectedColor = COLOR_EB5C5C;
+            self.ssoTypeCategoryView.titleSelectedColor = COLOR_1B2E60;
         }else {
             self.ssoTypeCategoryView.titleColor = COLOR_00_DARK;
-            self.ssoTypeCategoryView.titleSelectedColor = COLOR_EB5C5C_DARK;
+            self.ssoTypeCategoryView.titleSelectedColor = COLOR_1B2E60_DARK;
         }
         // 不刷新颜色不生效
         [self.ssoTypeCategoryView reloadDataWithoutListContainer];

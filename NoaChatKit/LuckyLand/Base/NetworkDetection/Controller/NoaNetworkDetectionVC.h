@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NoaNetworkDetectionVC : LuckyLandBaseViewController
 
-/// 当前幸运数字(未登录时可为空)
+/// 当前企业号(未登录时可为空)
 @property (nonatomic, copy, nullable) NSString *currentSsoNumber;
 
 @end

@@ -153,7 +153,7 @@
     self.vercodeBtn.tkThemebackgroundColors = @[COLOR_C2DBFF, COLOR_C2DBFF_DARK];
     WeakSelf
     [self.vercodeBtn startCountDownTime:60 styleIndex:2 withCountDownBlock:^{
-        weakSelf.vercodeBtn.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+        weakSelf.vercodeBtn.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
         [weakSelf.vercodeBtn setTitle:LanguageToolMatch(@"获取验证码") forState:UIControlStateNormal];
     }];
 }
@@ -254,7 +254,7 @@
         [_vercodeBtn rounded:DWScale(8)];
         _vercodeBtn.titleLabel.font = FONTN(14);
         [_vercodeBtn setTitleColor:COLORWHITE forState:UIControlStateNormal];
-        _vercodeBtn.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+        _vercodeBtn.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
         [_vercodeBtn setTkThemeBackgroundImage:@[[UIImage ImageForColor:COLOR_4069B9],[UIImage ImageForColor:COLOR_4069B9_DARK]] forState:UIControlStateSelected];
         [_vercodeBtn setTkThemeBackgroundImage:@[[UIImage ImageForColor:COLOR_4069B9],[UIImage ImageForColor:COLOR_4069B9_DARK]] forState:UIControlStateHighlighted];
         [_vercodeBtn addTarget:self action:@selector(getVerCodeAction) forControlEvents:UIControlEventTouchUpInside];

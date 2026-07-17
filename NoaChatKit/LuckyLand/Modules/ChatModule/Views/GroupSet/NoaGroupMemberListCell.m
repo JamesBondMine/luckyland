@@ -124,7 +124,7 @@
     if (![NSString isNil:searchStr]) {
         NSRange rangeName = [model.showName rangeOfString:searchStr options:NSCaseInsensitiveSearch];//不区分大小写
         [attStrName yy_setFont:FONTR(16) range:rangeName];
-        [attStrName yy_setColor:COLOR_EB5C5C range:rangeName];
+        [attStrName yy_setColor:COLOR_1B2E60 range:rangeName];
     }
     _lblUserName.attributedText = attStrName;
     
@@ -149,7 +149,7 @@
     if(role == 1) { //群管理
         self.groupRoleLabel.hidden = NO;
         self.groupRoleLabel.text = LanguageToolMatch(@"管理员");
-        self.groupRoleLabel.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C];
+        self.groupRoleLabel.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60];
 
         CGSize roleTextSize = [LanguageToolMatch(@"管理员") sizeWithFont:FONTR(10) constrainedToSize:CGSizeMake(10000, DWScale(16))];
         [self.groupRoleLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -207,7 +207,7 @@
         self.groupRoleLabel.tkThemebackgroundColors = @[COLOR_FF9327, COLOR_FF9327];
     } else if (role == 1) {
         roleContent =  LanguageToolMatch(@"管理员");
-        self.groupRoleLabel.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C];
+        self.groupRoleLabel.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60];
     } else {
         roleContent = @"";
         self.groupRoleLabel.tkThemebackgroundColors = @[COLOR_FF9C9C, COLOR_FF9C9C];

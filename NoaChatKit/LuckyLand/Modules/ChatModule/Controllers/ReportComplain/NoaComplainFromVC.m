@@ -35,11 +35,11 @@
 @property (nonatomic, strong)UIButton *btnSubmit;//提交投诉
 
 @property (nonatomic, copy) NSString *comImages;//投诉图片(非全路径)(系统投诉)
-@property (nonatomic, copy) NSString *comFullImages;//投诉图片(全路径)(幸运数字/域名)
+@property (nonatomic, copy) NSString *comFullImages;//投诉图片(全路径)(企业号/域名)
 @property (nonatomic, copy) NSString *comContent;//投诉内容
 @property (nonatomic, copy) NSString *comType;//投诉类型
 @property (nonatomic, copy) NSString *comEmail;//邮箱
-@property (nonatomic, copy) NSString *comCompany;//幸运数字/域名
+@property (nonatomic, copy) NSString *comCompany;//企业号/域名
 @end
 
 @implementation NoaComplainFromVC
@@ -87,7 +87,7 @@
     [self setupItemContentView];
     //邮箱输入框
     [self setupEmailContentView];
-    //幸运数字/域名输入框
+    //企业号/域名输入框
     [self setupDomainContentView];
    
    
@@ -99,7 +99,7 @@
     [_btnSubmit setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
     _btnSubmit.titleLabel.font = FONTR(12);
     _btnSubmit.enabled = NO;
-    [_btnSubmit setTkThemebackgroundColors:@[[COLOR_EB5C5C colorWithAlphaComponent:0.3], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.3]]];
+    [_btnSubmit setTkThemebackgroundColors:@[[COLOR_1B2E60 colorWithAlphaComponent:0.3], [COLOR_1B2E60_DARK colorWithAlphaComponent:0.3]]];
     [_btnSubmit addTarget:self action:@selector(btnSubmitClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_btnSubmit];
     [_btnSubmit mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -274,7 +274,7 @@
     }];
 }
 
-//幸运数字/域名输入框
+//企业号/域名输入框
 - (void)setupDomainContentView {
     [self.containerView addSubview:self.domainBackView];
     [self.domainBackView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -293,7 +293,7 @@
     }];
 }
 
-//区分 系统投诉 和 幸运数字/域名投诉
+//区分 系统投诉 和 企业号/域名投诉
 - (void)setComplainVCType:(ZComplainType)complainVCType {
     _complainVCType = complainVCType;
     if (_complainVCType == ZComplainTypeSystem) {
@@ -670,9 +670,9 @@
     }
     
     if (_btnSubmit.isEnabled) {
-        [_btnSubmit setTkThemebackgroundColors:@[COLOR_EB5C5C, COLOR_EB5C5C_DARK]];
+        [_btnSubmit setTkThemebackgroundColors:@[COLOR_1B2E60, COLOR_1B2E60_DARK]];
     }else {
-        [_btnSubmit setTkThemebackgroundColors:@[[COLOR_EB5C5C colorWithAlphaComponent:0.3], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.3]]];
+        [_btnSubmit setTkThemebackgroundColors:@[[COLOR_1B2E60 colorWithAlphaComponent:0.3], [COLOR_1B2E60_DARK colorWithAlphaComponent:0.3]]];
     }
 }
 
@@ -690,7 +690,7 @@
         //系统投诉
         [self requestComplainSubmitForSystem];
     }else if (_complainVCType == ZComplainTypeDomain) {
-        //幸运数字/域名
+        //企业号/域名
         [self requestComplainSubmitForCompany];
     }
 }
@@ -719,7 +719,7 @@
         [dict setValue:_comEmail forKey:@"ufbUserEmail"];//反馈人邮箱
     }
     if (![NSString isNil:_comCompany]) {
-        [dict setValue:_comCompany forKey:@"ufbTo"];//投诉幸运数字
+        [dict setValue:_comCompany forKey:@"ufbTo"];//投诉企业号
     }
     if (![NSString isNil:_complainID]) {
         if (_complainType == CIMChatType_SingleChat) {
@@ -744,7 +744,7 @@
     }];
 }
 
-#pragma mark - 投诉与支持接口 (幸运数字/域名)
+#pragma mark - 投诉与支持接口 (企业号/域名)
 - (void)requestComplainSubmitForCompany {
     
     if ([NSString isNil:_comImages]) {
@@ -754,10 +754,10 @@
     
     _comContent = [self.contentTextView.text trimString];
     _comEmail = [self.emailTextField.text trimString];
-    //自动填充 幸运数字/域名
+    //自动填充 企业号/域名
     NoaSsoInfoModel *ssoModel = [NoaSsoInfoModel getSSOInfo];
     if (![NSString isNil:ssoModel.liceseId]) {
-        //幸运数字
+        //企业号
         _comCompany = [ssoModel.liceseId trimString];
     }
     if (![NSString isNil:ssoModel.ipDomainPortStr]) {
@@ -778,7 +778,7 @@
         [dict setValue:_comEmail forKey:@"ufbUserEmail"];//反馈人邮箱
     }
     if (![NSString isNil:_comCompany]) {
-        [dict setValue:_comCompany forKey:@"ufbTo"];//投诉幸运数字
+        [dict setValue:_comCompany forKey:@"ufbTo"];//投诉企业号
     }
     if (![NSString isNil:_complainID]) {
         if (_complainType == CIMChatType_SingleChat) {
@@ -795,7 +795,7 @@
     }
     [dict setValue:@"alex" forKey:@"productCode"];//投诉来源App
     
-//    //根据后端返回的配置信息里的环境信息，调用不同环境下的 幸运数字投诉url的域名
+//    //根据后端返回的配置信息里的环境信息，调用不同环境下的 企业号投诉url的域名
 //    NSString *urlHostStr = complainBaseurl;
 //    WeakSelf
 //    [IMSDKHTTPTOOL netRequestWorkCommonBaseUrl:urlHostStr Path:@"/feedback/addFeedBack" medth:LingIMHttpRequestTypePOST parameters:dict onSuccess:^(id _Nullable data, NSString * _Nullable traceId) {
@@ -837,7 +837,7 @@
     self.emailTextField.text = @"";
     //提交按钮
     _btnSubmit.enabled = NO;
-    [_btnSubmit setTkThemebackgroundColors:@[[COLOR_EB5C5C colorWithAlphaComponent:0.3], [COLOR_EB5C5C_DARK colorWithAlphaComponent:0.3]]];
+    [_btnSubmit setTkThemebackgroundColors:@[[COLOR_1B2E60 colorWithAlphaComponent:0.3], [COLOR_1B2E60_DARK colorWithAlphaComponent:0.3]]];
 }
 #pragma mark - 实时监听邮箱的输入值
 - (void)emailTextFieldChanged:(UITextField *)tfEmail {
@@ -944,14 +944,14 @@
 - (UITextField *)domainTextField {
     if (!_domainTextField) {
         _domainTextField = [[UITextField alloc] init];
-        _domainTextField.placeholder = LanguageToolMatch(@"请输入幸运数字/域名");
+        _domainTextField.placeholder = LanguageToolMatch(@"请输入企业号/域名");
         _domainTextField.tkThemetextColors = @[COLOR_99, COLOR_99_DARK];
         _domainTextField.font = FONTN(12);
         
         NoaSsoInfoModel *ssoModel = [NoaSsoInfoModel getSSOInfo];
         if (![NSString isNil:ssoModel.liceseId]) {
-            //幸运数字
-            _domainTextField.text = [NSString stringWithFormat:@"%@：%@", LanguageToolMatch(@"幸运数字"), ssoModel.liceseId];
+            //企业号
+            _domainTextField.text = [NSString stringWithFormat:@"%@：%@", LanguageToolMatch(@"企业号"), ssoModel.liceseId];
         }
         if (![NSString isNil:ssoModel.ipDomainPortStr]) {
             // IP/Doamin

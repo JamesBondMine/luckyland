@@ -80,7 +80,7 @@
     [[NoaIMHttpManager sharedManager] teamDefaultShareWith:params onSuccess:onSuccess onFailure:onFailure];
 }
 
-#pragma mark - 随机幸运数字
+#pragma mark - 随机企业号
 - (void)imTeamGetRandomCodeWith:(NSMutableDictionary * _Nullable)params onSuccess:(LingIMSuccessCallback)onSuccess onFailure:(LingIMFailureCallback)onFailure {
     [[NoaIMHttpManager sharedManager] teamGetRandomCodeWith:params onSuccess:onSuccess onFailure:onFailure];
 }

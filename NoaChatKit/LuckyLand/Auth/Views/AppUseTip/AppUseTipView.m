@@ -82,11 +82,11 @@
     NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:contentText];
     [text configAttStrLightColor:COLOR_66 darkColor:COLOR_66_DARK range:NSMakeRange(0, contentText.length)];
     
-    [text yy_setTextHighlightRange:[contentText rangeOfString:serveText] color:COLOR_EB5C5C backgroundColor:COLOR_CLEAR tapAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
+    [text yy_setTextHighlightRange:[contentText rangeOfString:serveText] color:COLOR_1B2E60 backgroundColor:COLOR_CLEAR tapAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
         //服务协议
         [ZTOOL setupServeAgreement];
     }];
-    [text yy_setTextHighlightRange:[contentText rangeOfString:privateText] color:COLOR_EB5C5C backgroundColor:COLOR_CLEAR tapAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
+    [text yy_setTextHighlightRange:[contentText rangeOfString:privateText] color:COLOR_1B2E60 backgroundColor:COLOR_CLEAR tapAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
         //隐私政策
         [ZTOOL setupPrivePolicy];
     }];
@@ -120,7 +120,7 @@
     [_btnAgree setTitle:LanguageToolMatch(@"同意") forState:UIControlStateNormal];
     [_btnAgree setTkThemeTitleColor:@[COLORWHITE, COLORWHITE_DARK] forState:UIControlStateNormal];
     _btnAgree.titleLabel.font = FONTR(14);
-    [_btnAgree setTkThemebackgroundColors:@[COLOR_EB5C5C, COLOR_EB5C5C_DARK]];
+    [_btnAgree setTkThemebackgroundColors:@[COLOR_1B2E60, COLOR_1B2E60_DARK]];
     [_btnAgree addTarget:self action:@selector(btnAgreeClick) forControlEvents:UIControlEventTouchUpInside];
     [_viewContent addSubview:_btnAgree];
     [_btnAgree mas_makeConstraints:^(MASConstraintMaker *make) {

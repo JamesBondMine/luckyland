@@ -70,7 +70,7 @@
                 }
                 
                 // 账号信息
-                // 账号信息-账号+手机验证码+幸运数字
+                // 账号信息-账号+手机验证码+企业号
                 NSString *account = [self getAccountText];
                 NSString *verCode = [self getVerCodeText];
                 NSString *inviteCode = [self getInviteCodeText];
@@ -163,7 +163,7 @@
     NSString *password = [self getPasswordText];
     // 确认密码
     NSString *confirmPassword = [self getConfirmPasswordText];
-    // 幸运数字
+    // 企业号
     NSString *inviteCode = [self getInviteCodeText];
     switch (self.currentLoginTypeMenu) {
         case ZLoginTypeMenuAccountPassword:
@@ -213,7 +213,7 @@
         return NO;
     }
     
-    // 需要设置幸运数字时，需要检测幸运数字是否正确
+    // 需要设置企业号时，需要检测企业号是否正确
     if ([self getInviteCodeSupportState] &&
         ![LuckyLandAuthInputTools checkInviteCodeWithText:inviteCode IsShowToast:YES]) {
         return NO;

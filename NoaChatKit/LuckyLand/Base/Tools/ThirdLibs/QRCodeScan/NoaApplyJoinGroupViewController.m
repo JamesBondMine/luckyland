@@ -136,7 +136,7 @@
     UIButton *joinButton = [[UIButton alloc] init];
     [joinButton setTitle:LanguageToolMatch(@"加入群聊") forState:UIControlStateNormal];
     [joinButton setTitleColor:COLORWHITE forState:UIControlStateNormal];
-    joinButton.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+    joinButton.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
     [joinButton setTkThemeBackgroundImage:@[[UIImage ImageForColor:COLOR_4069B9],[UIImage ImageForColor:COLOR_4069B9_DARK]] forState:UIControlStateSelected];
     [joinButton setTkThemeBackgroundImage:@[[UIImage ImageForColor:COLOR_4069B9],[UIImage ImageForColor:COLOR_4069B9_DARK]] forState:UIControlStateHighlighted];
     [joinButton rounded:DWScale(16)];

@@ -297,6 +297,7 @@ static NSString *g_CurrentLoganPublishURL = nil; // 内存记录当前 Logan pub
         
         //需要在主线程中执行
         [ZTOOL doInMain:^{
+            CIMLog(@"[竞速失败UI] 设置 rootViewController = LuckyLandAppStartErrorDefaultViewController step=%ld code=%ld", (long)step, (long)code);
             LuckyLandAppStartErrorDefaultViewController *racingFailVC = [[LuckyLandAppStartErrorDefaultViewController alloc] init];
             racingFailVC.step = step;
             racingFailVC.code = code;
@@ -307,7 +308,7 @@ static NSString *g_CurrentLoganPublishURL = nil; // 内存记录当前 Logan pub
     }
 }
 
-#pragma mark - 设置幸运数字填写界面
+#pragma mark - 设置企业号填写界面
 - (void)setupSsoSetVcUI {
     [ZTOOL doInMain:^{
         //多语言设置初始化
@@ -402,7 +403,7 @@ static NSString *g_CurrentLoganPublishURL = nil; // 内存记录当前 Logan pub
     bannedAlertView.lblTitle.text = LanguageToolMatch(@"提示");
     bannedAlertView.lblContent.text = LanguageToolMatch(@"账号信息发生变化，请重新登录");
     [bannedAlertView.btnCancel setTitle:LanguageToolMatch(@"重新登录") forState:UIControlStateNormal];
-    [bannedAlertView.btnCancel setTkThemeTitleColor:@[COLOR_EB5C5C, COLOR_EB5C5C_DARK] forState:UIControlStateNormal];
+    [bannedAlertView.btnCancel setTkThemeTitleColor:@[COLOR_1B2E60, COLOR_1B2E60_DARK] forState:UIControlStateNormal];
     [bannedAlertView alertTipViewSHow];
     WeakSelf
     bannedAlertView.cancelBtnBlock = ^{
@@ -492,11 +493,14 @@ static NSString *g_CurrentLoganPublishURL = nil; // 内存记录当前 Logan pub
 }
 
 - (void)doInMain:(void(^)(void))block {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        if (block) {
+    if (!block) { return; }
+    if ([NSThread isMainThread]) {
+        block();
+    } else {
+        dispatch_async(dispatch_get_main_queue(), ^{
             block();
-        }
-    });
+        });
+    }
 }
 
 - (void)doAsync:(void(^)(void))block completion:(void(^)(void))completion {

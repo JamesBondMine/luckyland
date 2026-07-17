@@ -21,7 +21,7 @@
 #import <CocoaAsyncSocket/GCDAsyncUdpSocket.h>
 #import "NoaNetworkDetectionVC.h"
 
-// 幸运数字输入、IP/域名
+// 企业号输入、IP/域名
 #import "NoaSsoAccountManagerView.h"
 
 #import "AppDelegate.h"
@@ -41,7 +41,7 @@
 /// 是否已经处理过本次竞速的错误提示（确保一次用户操作只显示一次错误）
 @property (nonatomic, assign) BOOL hasHandledRacingError;
 
-/// 幸运岛海面场景
+/// 企业号海面场景
 @property (nonatomic, strong) LuckyLandIslandSceneView *islandSceneView;
 
 /// 自定义加入按钮
@@ -72,7 +72,7 @@
     if (!_customJoinBtn) {
         _customJoinBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_customJoinBtn setTitle:LanguageToolMatch(@"或自定义") forState:UIControlStateNormal];
-//        _customJoinBtn.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+//        _customJoinBtn.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
         // @[COLOR_66, COLOR_66_DARK];
         [_customJoinBtn setTkThemeTitleColor:@[COLOR_00, COLOR_00_DARK] forState:UIControlStateNormal];
         _customJoinBtn.titleLabel.font = FONTM(26);
@@ -107,7 +107,7 @@
     // 断开连接，禁止重连-直到竞速成功
     [IMSDKManager toolDisconnectNoReconnect];
     
-    // 取消网络质量检测(进入到幸运数字页面，用户需要输入幸运数字，故不需要网络质量检测 --- 需要用户在tcp竞速成功后，使用最新节点进行质量检测 --- 解决在用户输入幸运数字过程中，网络质量检测导致的节点切换问题)
+    // 取消网络质量检测(进入到企业号页面，用户需要输入企业号，故不需要网络质量检测 --- 需要用户在tcp竞速成功后，使用最新节点进行质量检测 --- 解决在用户输入企业号过程中，网络质量检测导致的节点切换问题)
     [[NoaUrlHostManager shareManager] stopNetworkQualityDetection];
 
     [self setupLuckyLandSceneUI];
@@ -132,11 +132,11 @@
     }
 }
 
-#pragma mark - 幸运数字加入
+#pragma mark - 企业号加入
 
 - (void)joinOrganizationWithLuckyNumber:(NSString *)luckyNumber {
     if (luckyNumber.length == 0) {
-        [HUD showMessage:LanguageToolMatch(@"幸运数字错误") inView:self.view];
+        [HUD showMessage:LanguageToolMatch(@"企业号错误") inView:self.view];
         return;
     }
 
@@ -165,7 +165,7 @@
 }
 
 - (void)setupSsoSetUI {
-    // 展示左上角的网络检测、系统语言，隐藏设置幸运数字
+    // 展示左上角的网络检测、系统语言，隐藏设置企业号
     [self showNetworkDetectionAndSystemLanguageButton:YES];
     [self showSsoAccountSetButton:NO];
     
@@ -247,7 +247,7 @@
     
     self.blurView.clickScanBtnAction = ^{
         @strongify(self)
-        //幸运数字 扫一扫
+        //企业号 扫一扫
         NoaQRcodeScanViewController *vc = [[NoaQRcodeScanViewController alloc] init];
         vc.isRacing = YES;
         [self.navigationController pushViewController:vc animated:YES];
@@ -310,7 +310,7 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-//输入的是幸运数字，走SSO竞速
+//输入的是企业号，走SSO竞速
 - (void)saveUserInputCompanyIdSSoInfo:(NSString *)liceseId {
     // 重置错误处理标志，表示开始新的竞速流程
     self.hasHandledRacingError = NO;
@@ -424,7 +424,7 @@
             {
                 NSString *lastTwo = errorCode.length >= 2 ? [errorCode substringFromIndex:errorCode.length - 2] : errorCode;
                 if ([lastTwo isEqualToString:@"01"]) {
-                    [self showErrorMessageWithMessage:[NSString stringWithFormat:@"%@%@",LanguageToolMatch(@"获取幸运数字配置失败"),errorCode] errorCode:errorCode];
+                    [self showErrorMessageWithMessage:[NSString stringWithFormat:@"%@%@",LanguageToolMatch(@"获取企业号配置失败"),errorCode] errorCode:errorCode];
                 } else {
                     //OSS
                     if (code == 100000) {
@@ -432,7 +432,7 @@
                     } else {
                         if (code == 404 || code == 403) {
                             //不存在时：阿里云返回404，亚马逊返回403
-                            [self showErrorMessageWithMessage:[NSString stringWithFormat:@"%@%@",LanguageToolMatch(@"获取幸运数字配置失败"),errorCode] errorCode:errorCode];
+                            [self showErrorMessageWithMessage:[NSString stringWithFormat:@"%@%@",LanguageToolMatch(@"获取企业号配置失败"),errorCode] errorCode:errorCode];
                         } else {
                             [self showErrorMessageWithMessage:[NSString stringWithFormat:@"%@%@",LanguageToolMatch(@"服务器连接失败"),errorCode] errorCode:errorCode];
                         }

@@ -125,7 +125,7 @@
     [[UITabBarItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, -2)];
     
 //    _vcLuckyLandHome = [LuckyLandHomeViewController new];
-//    [self addChildViewController:_vcLuckyLandHome imageNormal:@"luck_t1_d" imageSelected:@"luck_t1_a" title:@"幸运岛" tag:1000];
+//    [self addChildViewController:_vcLuckyLandHome imageNormal:@"luck_t1_d" imageSelected:@"luck_t1_a" title:@"企业号" tag:1000];
     
     _vcSession = [LuckyLandConversationViewController new];
     [self addChildViewController:_vcSession imageNormal:@"luck_t2_d" imageSelected:@"luck_t2_a" title:LanguageToolMatch(@"消息") tag:1001];
@@ -146,7 +146,7 @@
     UITabBarAppearance *tabBarAppearance = [[UITabBarAppearance alloc] init];
     tabBarAppearance.backgroundColor = modeType == 0 ? COLORWHITE : COLOR_11;
     tabBarAppearance.backgroundImage = [UIImage new];
-    tabBarAppearance.shadowColor = modeType == 0 ? COLOR_EB5C5C : COLOR_11;
+    tabBarAppearance.shadowColor = modeType == 0 ? COLOR_1B2E60 : COLOR_11;
     tabBarAppearance.shadowImage = [UIImage new];
 
     UITabBarItemAppearance *itemAppearance = [[UITabBarItemAppearance alloc] init];
@@ -191,9 +191,9 @@
     nav.tabBarItem.tkThemeChangeBlock = ^(id  _Nullable itself, NSUInteger themeIndex) {
         UIColor *color = nil;
         if (themeIndex == 0) {
-            color = COLOR_EB5C5C;
+            color = COLOR_1B2E60;
         } else {
-            color = COLOR_EB5C5C_DARK;
+            color = COLOR_1B2E60_DARK;
         }
         [(UITabBarItem *)itself setTitleTextAttributes:@{NSForegroundColorAttributeName:color,NSFontAttributeName : FONTR(11)} forState:UIControlStateSelected];
     };

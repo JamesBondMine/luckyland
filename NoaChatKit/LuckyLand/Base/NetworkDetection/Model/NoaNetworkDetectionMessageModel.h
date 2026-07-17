@@ -22,7 +22,7 @@ typedef NS_ENUM(NSUInteger, ZNetworkDetectionSectionType) {
     ZNetworkDetectionDomainNameResolutionSectionType,
     /// 导航链接检测
     ZNetworkDetectionNavConnectDetectionSectionType,
-    /// 服务器链接检测(仅限输入幸运数字)
+    /// 服务器链接检测(仅限输入企业号)
     ZNetworkDetectionServerConnectDetectionSectionType
 };
 

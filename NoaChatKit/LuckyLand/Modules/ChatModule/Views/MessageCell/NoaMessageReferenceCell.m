@@ -147,7 +147,7 @@
     [_reTranslateBtn setTitle:LanguageToolMatch(@"翻译失败") forState:UIControlStateNormal];
     [_reTranslateBtn setImage:ImgNamed(@"icon_msg_translate_fail") forState:UIControlStateNormal];
     [_reTranslateBtn setIconInLeftWithSpacing:DWScale(2)];
-    [_reTranslateBtn setTkThemeTitleColor:@[COLOR_EB5C5C, COLOR_EB5C5C] forState:UIControlStateNormal];
+    [_reTranslateBtn setTkThemeTitleColor:@[COLOR_1B2E60, COLOR_1B2E60] forState:UIControlStateNormal];
     _reTranslateBtn.titleLabel.font = FONTN(16);
     [_reTranslateBtn addTarget:self action:@selector(reTranslateAction) forControlEvents:UIControlEventTouchUpInside];
     _reTranslateBtn.hidden = YES;
@@ -426,7 +426,7 @@
                     [weakSelf textMsgUrlClick:urlStr];
                 }];
             } else {
-                [model.attStr yy_setTextHighlightRange:[model.attStr.string rangeOfString:urlStr] color:COLOR_EB5C5C backgroundColor:COLOR_CLEAR tapAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
+                [model.attStr yy_setTextHighlightRange:[model.attStr.string rangeOfString:urlStr] color:COLOR_1B2E60 backgroundColor:COLOR_CLEAR tapAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
                     [weakSelf textMsgUrlClick:urlStr];
                 }];
             }
@@ -476,7 +476,7 @@
                         [weakSelf textMsgUrlClick:translateUrlStr];
                     }];
                 } else {
-                    [model.attStr yy_setTextHighlightRange:[model.translateAttStr.string rangeOfString:translateUrlStr] color:COLOR_EB5C5C backgroundColor:COLOR_CLEAR tapAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
+                    [model.attStr yy_setTextHighlightRange:[model.translateAttStr.string rangeOfString:translateUrlStr] color:COLOR_1B2E60 backgroundColor:COLOR_CLEAR tapAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
                         [weakSelf textMsgUrlClick:translateUrlStr];
                     }];
                 }
@@ -519,7 +519,7 @@
             [_reTranslateBtn setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
         } else {
             [_reTranslateBtn setImage:ImgNamed(@"icon_msg_translate_fail") forState:UIControlStateNormal];
-            [_reTranslateBtn setTkThemeTitleColor:@[COLOR_EB5C5C, COLOR_EB5C5C] forState:UIControlStateNormal];
+            [_reTranslateBtn setTkThemeTitleColor:@[COLOR_1B2E60, COLOR_1B2E60] forState:UIControlStateNormal];
         }
         [_reTranslateBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.leading.equalTo(self.contentView).offset(_contentRect.origin.x);
@@ -542,7 +542,7 @@
         _referenceContentLabel.tkThemetextColors = @[COLORWHITE, COLORWHITE];
     } else {
         _referenceTipImgView.image = ImgNamed(@"img_msg_reference_tip_blue");
-        _referenceLineView.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C_DARK];
+        _referenceLineView.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60_DARK];
         _referenceNameLabel.tkThemetextColors = @[COLOR_11, COLOR_11_DARK];
         _referenceContentLabel.tkThemetextColors = @[COLOR_99, COLOR_99_DARK];
     }

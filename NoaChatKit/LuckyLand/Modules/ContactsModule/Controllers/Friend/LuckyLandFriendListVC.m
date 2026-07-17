@@ -64,6 +64,8 @@
     
     //数据库获得好友信息
     [self requestFriendListFromDB:YES];
+    
+    self.view.backgroundColor =UIColor.whiteColor;
 }
 
 #pragma mark - 界面布局
@@ -78,7 +80,7 @@
     self.baseTableView.delegate = self;
     self.baseTableView.emptyDataSetSource = self;
     self.baseTableView.emptyDataSetDelegate = self;
-    self.baseTableView.tkThemebackgroundColors = @[COLOR_F8F9FB, COLOR_F8F9FB_DARK];
+    self.baseTableView.tkThemebackgroundColors = @[UIColor.whiteColor, UIColor.whiteColor];
     [self.baseTableView registerClass:[NoaContactListTableCell class] forCellReuseIdentifier:[NoaContactListTableCell cellIdentifier]];
     [self.baseTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
@@ -88,7 +90,7 @@
     
     if(!ZLanguageTOOL.isRTL){
         SCIndexViewConfiguration *configuration = [SCIndexViewConfiguration configurationWithIndexViewStyle:SCIndexViewStyleDefault];
-        configuration.indexItemSelectedBackgroundColor = COLOR_EB5C5C;
+        configuration.indexItemSelectedBackgroundColor = COLOR_1B2E60;
         self.tkThemeChangeBlock = ^(id  _Nullable itself, NSUInteger themeIndex) {
             if (themeIndex == 0) {
                 configuration.indexItemTextColor = COLOR_66;

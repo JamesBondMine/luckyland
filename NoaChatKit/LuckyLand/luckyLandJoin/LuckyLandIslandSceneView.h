@@ -15,7 +15,7 @@ typedef NS_ENUM(NSInteger, LuckyLandIslandIndex) {
     LuckyLandIslandIndexGrassy = 2,
 };
 
-/// 幸运岛海面场景：展示海岛背景，点击海岛时直升机从左下角飞入
+/// 企业号海面场景：展示海岛背景，点击海岛时直升机从左下角飞入
 @interface LuckyLandIslandSceneView : UIView
 
 /// 仅负责海岛点击与直升机动画，背景透明，可叠在表单上方

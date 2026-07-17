@@ -88,7 +88,7 @@ typedef NS_ENUM(NSUInteger, ZQrCodeResult) {
     ZQrCodeResultUser = 1,          //结果为用户二维码
     ZQrCodeResultGroup = 2,         //结果为群二维码
     ZQrCodeResultPCAuth = 3,        //结果为授权PC登录
-    ZQrCodeResultAuth = 5,          //幸运数字导航
+    ZQrCodeResultAuth = 5,          //企业号导航
     ZQrCodeResultTxt = 100,         //结果为纯文本
     ZQrCodeResultUrl = 101,         //结果为Url
     
@@ -125,7 +125,7 @@ typedef NS_ENUM(NSUInteger, ZNetRacingStep) {
 
 // 节点竞速输入框方式
 typedef NS_ENUM(NSUInteger, ZSsoTypeMenu) {
-    ZSsoTypeMenuCompanyId = 1,   //幸运数字
+    ZSsoTypeMenuCompanyId = 1,   //企业号
     ZSsoTypeMenuIPAndDomain = 2,   //IP/域名
 };
 
@@ -149,7 +149,7 @@ typedef NS_ENUM(NSUInteger, ZCallUserState) {
 //投诉与支持 类型
 typedef NS_ENUM(NSUInteger, ZComplainType) {
     ZComplainTypeSystem = 1,   //系统投诉
-    ZComplainTypeDomain = 2,   //幸运数字、域名
+    ZComplainTypeDomain = 2,   //企业号、域名
 };
 
 //聊天接收、发送消息翻译选择通道或语种 类型
@@ -163,7 +163,7 @@ typedef NS_ENUM(NSUInteger, ZMsgTranslateType) {
 //app启动时，使用哪种方式进行竞速
 typedef NS_ENUM(NSUInteger, ZReacingType) {
     ZReacingTypeNone = 1,       //无，默认占位
-    ZReacingTypeCompanyId = 2,  //幸运数字竞速方式
+    ZReacingTypeCompanyId = 2,  //企业号竞速方式
     ZReacingTypeIpDomain = 3,   //ip/域名 直连竞速
 };
 
@@ -214,7 +214,7 @@ typedef NS_ENUM(NSUInteger, ZDNSLocalModelType) {
 //event_message
 //接口调用失败
 //event_http
-//幸运数字加入失败
+//企业号加入失败
 //event_enterprise
 //图片加载失败
 //event_image

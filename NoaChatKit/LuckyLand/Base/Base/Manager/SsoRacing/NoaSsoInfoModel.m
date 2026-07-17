@@ -45,7 +45,7 @@
     }
 }
 
-#pragma mark - 保存对应幸运数字SSO信息
+#pragma mark - 保存对应企业号SSO信息
 - (void)saveSSOInfoWithLiceseId:(NSString *)liceseId {
     //保存
     if ([self conformsToProtocol:@protocol(NSCoding)]) {
@@ -69,7 +69,7 @@
     return nil;
 }
 
-#pragma mark - 获取对应幸运数字SSO信息整体model
+#pragma mark - 获取对应企业号SSO信息整体model
 + (NoaSsoInfoModel *)getSSOInfoWithLiceseId:(NSString *)liceseId {
     if ([self conformsToProtocol:@protocol(NSCoding)]) {
         NSString *key = [NSString stringWithFormat:@"%@%@",OSS_LOCAL_CACHE,liceseId];
@@ -83,7 +83,7 @@
     return nil;
 }
 
-#pragma mark - 获取SSO信息里的幸运数字或者直连的ip/域名+端口号
+#pragma mark - 获取SSO信息里的企业号或者直连的ip/域名+端口号
 + (NSString *)getSSOInfoDetailInfo {
     NSString *ssoDetailInfo = @"";
     if ([self conformsToProtocol:@protocol(NSCoding)]) {
@@ -109,7 +109,7 @@
     [[MMKV defaultMMKV] removeValueForKey:NSStringFromClass([self class])];
 }
 
-#pragma mark - 清除对应幸运数字SSO信息
+#pragma mark - 清除对应企业号SSO信息
 + (void)clearSSOInfoWithLiceseId:(NSString *)liceseId{
     NSString *key = [NSString stringWithFormat:@"%@%@",OSS_LOCAL_CACHE,liceseId];
     [[MMKV defaultMMKV] removeValueForKey:key];

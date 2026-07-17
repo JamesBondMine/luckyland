@@ -14,7 +14,7 @@
 
 @interface NoaNetworkDetectionHandle ()
 
-/// 当前幸运数字(未登录时可为空)
+/// 当前企业号(未登录时可为空)
 @property (nonatomic, copy, readwrite, nullable) NSString *currentSsoNumber;
 
 /// 检测状态
@@ -209,7 +209,7 @@
             ] mutableCopy];
             
             if (self.currentSsoNumber && self.currentSsoNumber.length > 0) {
-                // 如果当前用户设置了幸运数字，增加服务器检测
+                // 如果当前用户设置了企业号，增加服务器检测
                 [self.tableDataSource addObject:serverConnectDetectionMessageModel];
             }
         }
@@ -386,7 +386,7 @@
                         if (self.currentSsoNumber && self.currentSsoNumber.length > 0) {
                             [self.startServerConnectDetectionSubject sendNext:@1];
                         }else {
-                            // 用户未输入幸运数字，完成测试
+                            // 用户未输入企业号，完成测试
                             // 所有检测全部完成
                             [self changeNetworkDetectionStatus:ZNetworkDetectFinish];
                             
@@ -982,10 +982,10 @@
         return;
     }
     
-    // 优先使用当前幸运数字
+    // 优先使用当前企业号
     NSString *ssoNumber = self.currentSsoNumber;
     if (!ssoNumber || ssoNumber.length == 0) {
-        // 如果在幸运数字配置页面，并且用户没有输入幸运数字，则生成两位随机字符串为幸运数字
+        // 如果在企业号配置页面，并且用户没有输入企业号，则生成两位随机字符串为企业号
         ssoNumber = [self generateRandomTwoCharactersWithEqualProbability];
     }
     
@@ -1038,7 +1038,7 @@
 
 /// 执行单个导航检测（确保时间戳独立）
 /// @param urlModel OSS URL 模型
-/// @param ssoNumber 幸运数字
+/// @param ssoNumber 企业号
 /// @param publicIp 公网 IP
 /// @param group 并发组
 - (void)executeNavDetectionWithUrlModel:(NoaUrlHostModel *)urlModel
@@ -1138,10 +1138,10 @@
         
         NSDictionary *resultInfo;
         NSString *code = [error.userInfo objectForKey:NSUnderlyingErrorKey];
-        // 使用随机幸运数字进行检测导航，则节点返回状态码【200000/400002】均可认为连接正常
-        // 使用用户输入的幸运数字进行检测导航，则节点返回状态码【200000】可认为连接正常
+        // 使用随机企业号进行检测导航，则节点返回状态码【200000/400002】均可认为连接正常
+        // 使用用户输入的企业号进行检测导航，则节点返回状态码【200000】可认为连接正常
         if (!self.currentSsoNumber || self.currentSsoNumber.length == 0) {
-            // 当前使用的是随机幸运数字
+            // 当前使用的是随机企业号
             if ([code isEqualToString:[NSString stringWithFormat:@"%ld", NavDataTypeSuccess]] ||
                 [code isEqualToString:[NSString stringWithFormat:@"%ld", NavDataTypeAppIdInvalid]]) {
                 resultInfo = @{

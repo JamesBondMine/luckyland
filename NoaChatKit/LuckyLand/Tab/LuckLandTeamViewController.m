@@ -57,7 +57,7 @@
 //    self.navTitleStr = LanguageToolMatch(@"团队邀请");
     self.navBtnRight.hidden = NO;
     [self.navBtnRight setTitle:LanguageToolMatch(@"分享默认") forState:UIControlStateNormal];
-    [self.navBtnRight setTkThemeTitleColor:@[COLOR_EB5C5C, COLOR_EB5C5C_DARK] forState:UIControlStateNormal];
+    [self.navBtnRight setTkThemeTitleColor:@[COLOR_1B2E60, COLOR_1B2E60_DARK] forState:UIControlStateNormal];
 }
 
 - (void)setupUI {
@@ -84,7 +84,7 @@
     self.quickCreateBtn = [UIButton new];
     [self.quickCreateBtn setTitle:LanguageToolMatch(@"一键建群") forState:UIControlStateNormal];
     [self.quickCreateBtn setTkThemeTitleColor:@[COLORWHITE, COLORWHITE] forState:UIControlStateNormal];
-    self.quickCreateBtn.tkThemebackgroundColors = @[COLOR_EB5C5C, COLOR_EB5C5C];
+    self.quickCreateBtn.tkThemebackgroundColors = @[COLOR_1B2E60, COLOR_1B2E60];
     self.quickCreateBtn.titleLabel.font = FONTN(14);
     [self.quickCreateBtn rounded:DWScale(8)];
     [self.quickCreateBtn addTarget:self action:@selector(defaultTeamQuickCreateGroupClick) forControlEvents:UIControlEventTouchUpInside];
@@ -166,7 +166,7 @@
             [viewUpdate updateViewShow];
         }
         if (indexPath.row == 1) {
-            //复制团队幸运数字
+            //复制团队企业号
             if (![NSString isNil:_defaultTeamModel.inviteCode]) {
                 UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
                 pasteboard.string = _defaultTeamModel.inviteCode;
@@ -223,7 +223,7 @@
            alertView.lblContent.textColor = color;
         };
         [alertView.btnSure setTitle:LanguageToolMatch(@"确定") forState:UIControlStateNormal];
-        [alertView.btnSure setTkThemeTitleColor:@[COLOR_EB5C5C, COLOR_EB5C5C_DARK] forState:UIControlStateNormal];
+        [alertView.btnSure setTkThemeTitleColor:@[COLOR_1B2E60, COLOR_1B2E60_DARK] forState:UIControlStateNormal];
         [alertView.btnCancel setTkThemeTitleColor:@[COLOR_11, COLOR_11_DARK] forState:UIControlStateNormal];
         [alertView alertTipViewSHow];
         alertView.sureBtnBlock = ^{
@@ -316,7 +316,7 @@
         [_defaultDataArr removeAllObjects];
         
         [_defaultDataArr addObject:@{@"titleStr":LanguageToolMatch(@"团队名称"), @"subTitleStr":_defaultTeamModel.teamName}];
-        [_defaultDataArr addObject:@{@"titleStr":LanguageToolMatch(@"幸运数字"), @"subTitleStr":_defaultTeamModel.inviteCode}];
+        [_defaultDataArr addObject:@{@"titleStr":LanguageToolMatch(@"企业号"), @"subTitleStr":_defaultTeamModel.inviteCode}];
         
         [_defaultDataArr addObject:@{@"titleStr":LanguageToolMatch(@"团队总人数"), @"subTitleStr":[NSString stringWithFormat:@"%ld", (long)_defaultTeamModel.totalInviteNum]}];
         

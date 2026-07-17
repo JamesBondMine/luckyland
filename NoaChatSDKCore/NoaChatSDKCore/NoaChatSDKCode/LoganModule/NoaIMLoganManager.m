@@ -95,7 +95,7 @@ static dispatch_once_t onceToken;
         NSString *appId = [[NSBundle mainBundle]bundleIdentifier];//当前应用的唯一标识,在多App时区分日志来源App
         NSString *unionId = _loganOption.loganUserUnionId.length > 0 ? _loganOption.loganUserUnionId : @"NONE";//当前用户的唯一标识,用来区分日志来源用户
         //设备标识
-        NSString *companyID = _loganOption.loganLiceseId.length > 0 ? _loganOption.loganLiceseId : @"NONE COMPANY / IP"; //幸运数字/IP/域名
+        NSString *companyID = _loganOption.loganLiceseId.length > 0 ? _loganOption.loganLiceseId : @"NONE COMPANY / IP"; //企业号/IP/域名
         NSString *deviceId; //deviceId 设备号
         if (_loganOption.loganUserUnionId.length > 0) {
             if (_loganOption.loganUserName.length > 0) {
@@ -147,7 +147,7 @@ static dispatch_once_t onceToken;
     //当前用户ID
     NSString *userID = _loganOption.loganUserUnionId.length > 0 ? _loganOption.loganUserUnionId : @"NONE";
     [dictLogan setValue:userID forKey:@"userUid"];
-    //幸运数字/IP/域名
+    //企业号/IP/域名
     NSString *companyID = _loganOption.loganLiceseId.length > 0 ? _loganOption.loganLiceseId : @"NONE COMPANY / IP";
     [dictLogan setValue:companyID forKey:@"liceseId"];
     
